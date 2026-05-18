@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lietuva · Demografinė situacija 2024</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1a1a1a;
+  --ink2: #4a4845;
+  --ink3: #8a8784;
+  --paper: #f5f0e8;
+  --paper2: #ede8de;
+  --paper3: #e0d9cc;
+  --red: #c0392b;
+  --red-light: #f5e0de;
+  --amber: #b8620a;
+  --amber-light: #faeeda;
+  --green: #2d6a3f;
+  --green-light: #e0f0e5;
+  --blue: #1a4a7a;
+  --blue-mid: #2e6da8;
+  --blue-light: #dce8f5;
+  --rule: #c8c0b0;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Instrument Sans', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* MASTHEAD */
+.masthead {
+  border-bottom: 2px solid var(--ink);
+  padding: 0 3rem;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1rem;
+}
+.masthead-left { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--ink3); letter-spacing: .08em; text-transform: uppercase; }
+.masthead-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(28px, 5vw, 52px);
+  line-height: 1;
+  text-align: center;
+  padding: 1.5rem 0 1rem;
+  border-left: 1px solid var(--rule);
+  border-right: 1px solid var(--rule);
+}
+.masthead-title em { font-style: italic; color: var(--red); }
+.masthead-right { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--ink3); text-align: right; text-transform: uppercase; letter-spacing: .06em; }
+.masthead-sub {
+  grid-column: 1 / -1;
+  border-top: 1px solid var(--rule);
+  padding: .75rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--ink3);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+/* NAV */
+nav {
+  background: var(--ink);
+  padding: .6rem 3rem;
+  display: flex;
+  gap: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  overflow-x: auto;
+}
+nav a {
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: .4rem 1.2rem;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  white-space: nowrap;
+  transition: color .2s;
+}
+nav a:first-child { padding-left: 0; }
+nav a:hover, nav a.active { color: #fff; }
+
+/* LAYOUT */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 3rem; }
+section { padding: 3rem 0; border-bottom: 1px solid var(--rule); }
+section:last-child { border-bottom: none; }
+
+.section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  margin-bottom: .5rem;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+.section-label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(22px, 3vw, 34px);
+  font-weight: 400;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+}
+h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: .75rem;
+}
+
+/* KPI ROW */
+.kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-bottom: 2rem; }
+.kpi {
+  background: var(--paper);
+  padding: 1.25rem 1.5rem;
+  position: relative;
+}
+.kpi-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 38px;
+  line-height: 1;
+  color: var(--ink);
+  margin-bottom: .25rem;
+}
+.kpi-num.red { color: var(--red); }
+.kpi-num.amber { color: var(--amber); }
+.kpi-num.green { color: var(--green); }
+.kpi-label { font-size: 12px; color: var(--ink3); line-height: 1.4; }
+.kpi-delta { font-family: 'DM Mono', monospace; font-size: 11px; margin-top: .4rem; }
+.kpi-delta.neg { color: var(--red); }
+.kpi-delta.pos { color: var(--green); }
+
+/* BADGES */
+.badge { display: inline-flex; align-items: center; gap: 4px; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .04em; padding: 2px 8px; border-radius: 2px; }
+.badge-real { background: var(--green-light); color: var(--green); }
+.badge-est  { background: var(--amber-light); color: var(--amber); }
+
+/* ALERTS */
+.alert {
+  padding: .9rem 1.2rem;
+  margin-bottom: 1.5rem;
+  border-left: 3px solid;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.alert strong { font-weight: 600; }
+.alert-red   { background: var(--red-light);   border-color: var(--red);   color: #5a1a13; }
+.alert-amber { background: var(--amber-light);  border-color: var(--amber); color: #5a2e04; }
+.alert-blue  { background: var(--blue-light);   border-color: var(--blue);  color: #0f2d50; }
+.alert-green { background: var(--green-light);  border-color: var(--green); color: #14371f; }
+
+/* CHARTS */
+.chart-wrap { position: relative; width: 100%; margin-bottom: .5rem; }
+.chart-caption { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--ink3); margin-top: .4rem; letter-spacing: .04em; }
+
+/* TWO COL */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 1.5rem; }
+@media (max-width: 680px) { .two-col { grid-template-columns: 1fr; } }
+
+/* DATA TABLE */
+table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 1rem; }
+thead tr { border-bottom: 2px solid var(--ink); }
+th { text-align: left; padding: .5rem .75rem; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink3); font-weight: 500; }
+td { padding: .55rem .75rem; border-bottom: 1px solid var(--rule); color: var(--ink); }
+tr:last-child td { border-bottom: none; }
+.td-num { font-family: 'DM Mono', monospace; text-align: right; }
+.td-red { color: var(--red); font-weight: 500; }
+.td-green { color: var(--green); font-weight: 500; }
+
+/* LEGEND */
+.legend { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; margin-bottom: .75rem; }
+.leg { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--ink2); }
+.leg-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.leg-line { width: 20px; height: 2px; flex-shrink: 0; }
+
+/* FINDINGS BOX */
+.findings { display: grid; gap: .75rem; margin-top: 1.5rem; }
+.finding {
+  background: var(--paper2);
+  border: 1px solid var(--paper3);
+  padding: 1rem 1.25rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+.finding-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 28px;
+  color: var(--ink3);
+  line-height: 1;
+  opacity: .5;
+}
+.finding-title { font-weight: 600; font-size: 14px; margin-bottom: .3rem; }
+.finding-body { font-size: 13px; color: var(--ink2); line-height: 1.55; }
+
+/* TRŪKSTAMI */
+.gap-row { display: grid; grid-template-columns: 2fr 1fr 2fr; gap: 1rem; align-items: start; padding: .65rem 0; border-bottom: 1px solid var(--rule); font-size: 13px; }
+.gap-row:last-child { border-bottom: none; }
+.gap-code { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--ink2); }
+.gap-src { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--ink3); }
+.status-pill { display: inline-block; padding: 2px 8px; border-radius: 2px; font-family: 'DM Mono', monospace; font-size: 10px; }
+.s-done   { background: var(--green-light); color: var(--green); }
+.s-manual { background: var(--amber-light); color: var(--amber); }
+.s-check  { background: var(--red-light);   color: var(--red);   }
+
+/* FOOTER */
+footer {
+  background: var(--ink);
+  color: rgba(255,255,255,0.5);
+  padding: 2rem 3rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .04em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+footer strong { color: rgba(255,255,255,0.85); display: block; margin-bottom: .4rem; }
+footer a { color: rgba(255,255,255,0.55); }
+
+/* PRINT */
+@media print {
+  nav, .no-print { display: none; }
+  section { break-inside: avoid; }
+}
+
+/* REGION SELECTOR */
+select {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  background: var(--paper2);
+  border: 1px solid var(--rule);
+  padding: .35rem .75rem;
+  color: var(--ink);
+  cursor: pointer;
+  margin-right: .5rem;
+  margin-bottom: 1rem;
+}
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-left">OSP · Eurostat<br>2021–2026</div>
+  <div class="masthead-title">Lietuva<br><em>Demografinė situacija</em></div>
+  <div class="masthead-right">Parengta Oleg M. + Claude <br>2026-05-19</div>
+  <div class="masthead-sub">
+    <span>TFR · Gimstamumas</span>
+    <span>Lyčių struktūra</span>
+    <span>Santuokos · Ištuokos</span>
+    <span>10 apskričių</span>
+    <span>2021–2026</span>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav>
+  <a href="#tfr">TFR tendencija</a>
+  <a href="#regionai">Regionai</a>
+  <a href="#lytys">Lyčių struktūra</a>
+  <a href="#santuokos">Santuokos</a>
+  <a href="#istuokos">Ištuokos</a>
+  <a href="#amzius">Gimimo amžius</a>
+  <a href="#sinteze">Sintezė</a>
+  <a href="#trukstami">Trūkstami duomenys</a>
+</nav>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 1. TFR -->
+<!-- ═══════════════════════════════════════════ -->
+<section id="tfr">
+<div class="container">
+  <div class="section-label">01 · Suminis gimstamumo rodiklis <span class="badge badge-real">✓ Eurostat demo_r_find3</span></div>
+  <h2>Gimstamumas Lietuvoje krenta<br>sparčiausiai ES</h2>
+
+  <div class="kpi-row">
+    <div class="kpi"><div class="kpi-num red">1,11</div><div class="kpi-label">TFR · Lietuva 2024</div><div class="kpi-delta neg">↓ nuo 1,37 per 3 m.</div></div>
+    <div class="kpi"><div class="kpi-num">2,10</div><div class="kpi-label">Atkūrimo lygis</div><div class="kpi-delta neg">–47 % žemiau</div></div>
+    <div class="kpi"><div class="kpi-num amber">~1,38</div><div class="kpi-label">ES vidurkis 2023</div><div class="kpi-delta neg">Lietuva –0,27</div></div>
+    <div class="kpi"><div class="kpi-num red">0,96</div><div class="kpi-label">Žemiausias TFR 2024</div><div class="kpi-label" style="margin-top:.25rem">Alytus · Utena</div></div>
+    <div class="kpi"><div class="kpi-num green">1,21</div><div class="kpi-label">Aukščiausias TFR 2024</div><div class="kpi-label" style="margin-top:.25rem">Tauragės aps.</div></div>
+  </div>
+
+  <div class="alert alert-red"><strong>Kritinė tendencija:</strong> TFR krito nuo 1,37 (2021) iki 1,11 (2024) — tai −0,26 per tris metus. Europinis kontekstas: Pietų Korėja 2023 m. pasiekė 0,72, tačiau Lietuva artėja prie rytų Azijos lygio greičiau nei bet kuri ES valstybė.</div>
+
+  <div class="chart-wrap" style="height:280px"><canvas id="tfrNatChart" aria-label="Nacionalinis TFR 2021–2024 mažėja nuo 1,37 iki 1,11"></canvas></div>
+  <p class="chart-caption">Šaltinis: Eurostat demo_r_find3 · TOTFERRT · Lietuva 2021–2024</p>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 2. REGIONAI -->
+<!-- ═══════════════════════════════════════════ -->
+<section id="regionai">
+<div class="container">
+  <div class="section-label">02 · Regioninė analizė <span class="badge badge-real">✓ Eurostat NUTS3</span></div>
+  <h2>Didelis skirtumas tarp apskričių —<br>iki 0,25 TFR vienetų</h2>
+
+  <div style="margin-bottom:1rem">
+    <select id="yearSel" onchange="updateRegionCharts()">
+      <option value="2024" selected>2024</option>
+      <option value="2023">2023</option>
+      <option value="2022">2022</option>
+      <option value="2021">2021</option>
+    </select>
+    <select id="metricSel" onchange="updateRegionCharts()">
+      <option value="tfr">TFR</option>
+      <option value="age">Motinos vidutinis amžius</option>
+    </select>
+  </div>
+
+  <div class="chart-wrap" style="height:300px"><canvas id="regionBarChart" aria-label="TFR pagal apskritis pasirinktiems metams"></canvas></div>
+  <p class="chart-caption">Šaltinis: Eurostat demo_r_find3 · TOTFERRT / AGEMOTH · 10 NUTS3 apskritys</p>
+
+  <br>
+  <h3>TFR pokyčiai 2021–2024</h3>
+  <table>
+    <thead><tr><th>Apskritis</th><th class="td-num">2021</th><th class="td-num">2022</th><th class="td-num">2023</th><th class="td-num">2024</th><th class="td-num">Pokytis</th></tr></thead>
+    <tbody id="regionTableBody"></tbody>
+  </table>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 3. LYČIŲ STRUKTŪRA -->
+<!-- ═══════════════════════════════════════════ -->
+<section id="lytys">
+<div class="container">
+  <div class="section-label">03 · Lyčių struktūra pagal amžių <span class="badge badge-real">✓ OSP eksperimentinė statistika 2023</span></div>
+  <h2>Reprodukciniame amžiuje —<br>moterų struktūrinis trūkumas</h2>
+
+  <div class="two-col">
+    <div>
+      <div class="kpi-row" style="grid-template-columns:1fr 1fr">
+        <div class="kpi"><div class="kpi-num">2 877 337</div><div class="kpi-label">Gyventojų iš viso · 2023</div></div>
+        <div class="kpi"><div class="kpi-num red">0,883</div><div class="kpi-label">M/V santykis · 35–39 m.</div><div class="kpi-delta neg">99 202 vs 112 332</div></div>
+      </div>
+      <div class="alert alert-red"><strong>Emigracijos žymė:</strong> 25–44 m. grupėse vyrų <em>daugiau</em> nei moterų. Tai retas reiškinys — biologiškai moterys turėtų vyrauti. Šio amžiaus moterys emigravo anksčiau ir jų tiesiog fiziškai mažiau Lietuvoje.</div>
+      <div class="alert alert-amber"><strong>Ryšys su TFR:</strong> Net jei kiekviena likusi moteris gimdytų daugiau — potencialių motinų baseinas yra struktūriškai mažesnis. Tai TFR kritimo priežastis, kurią sunku kompensuoti politinėmis priemonėmis.</div>
+    </div>
+    <div>
+      <h3>Lyčių santykis pagal amžių · Excel failas</h3>
+      <p style="font-size:13px;color:var(--ink2);margin-bottom:1rem">Moterų skaičius, tenkantis 1 000 vyrų · metų pradžioje</p>
+      <div class="chart-wrap" style="height:280px"><canvas id="ratioLineChart" aria-label="Lyčių santykio pokytis 25–44 metų grupėse 2022–2026"></canvas></div>
+      <p class="chart-caption">Šaltinis: OSP · Gyventojai pagal lytį ir amžių · Excel failas</p>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span class="leg"><span class="leg-dot" style="background:#185FA5"></span>Vyrai · 2023</span>
+    <span class="leg"><span class="leg-dot" style="background:#D4537E"></span>Moterys · 2023</span>
+    <span class="leg" style="font-size:11px;color:var(--ink3);font-family:'DM Mono',monospace">← Žemiau 1000 = vyrų persvara &nbsp;|&nbsp; Virš 1000 = moterų persvara →</span>
+  </div>
+  <div class="chart-wrap" style="height:400px"><canvas id="pyramidChart" aria-label="Lietuvos gyventojų piramidė pagal lytį ir amžių 2023, vyrų persvara 25–44 metų grupėse"></canvas></div>
+  <p class="chart-caption">Šaltinis: OSP eksperimentinė statistika (Algoritmas K-Prototype) · 2023 m. pradžioje</p>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 4. SANTUOKOS -->
+<!-- ═══════════════════════════════════════════ -->
+<section id="santuokos">
+<div class="container">
+  <div class="section-label">04 · Santuokos <span class="badge badge-real">✓ OSP</span></div>
+  <h2>Santuokų griūtis: −23 %<br>per trejus metus</h2>
+
+  <div class="kpi-row">
+    <div class="kpi"><div class="kpi-num">16 795</div><div class="kpi-label">Santuokos 2021</div></div>
+    <div class="kpi"><div class="kpi-num red">12 890</div><div class="kpi-label">Santuokos 2024</div><div class="kpi-delta neg">↓ −23,3 %</div></div>
+    <div class="kpi"><div class="kpi-num amber">13 059</div><div class="kpi-label">Santuokos 2025*</div><div class="kpi-delta" style="color:var(--ink3)">*preliminarūs</div></div>
+    <div class="kpi"><div class="kpi-num red">8 541</div><div class="kpi-label">Miestas 2024</div><div class="kpi-delta neg">↓ nuo 11 620 (−26,5 %)</div></div>
+    <div class="kpi"><div class="kpi-num">4 349</div><div class="kpi-label">Kaimas 2024</div><div class="kpi-delta neg">↓ nuo 5 175 (−16 %)</div></div>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div class="chart-wrap" style="height:260px"><canvas id="santChart" aria-label="Santuokų skaičius iš viso, miestas ir kaimas 2021–2025"></canvas></div>
+      <p class="chart-caption">Santuokos iš viso · miestas · kaimas · 2021–2025 · OSP</p>
+    </div>
+    <div>
+      <div class="chart-wrap" style="height:260px"><canvas id="santTypeChart" aria-label="Santuokų tipai: civilinės, bažnytinės, užsienyje 2021–2025"></canvas></div>
+      <p class="chart-caption">Santuokų tipai: civilinės · bažnytinės · užsienyje · OSP</p>
+    </div>
+  </div>
+
+  <div class="alert alert-red"><strong>Kritinis kontekstas gimstamumo analizei:</strong> Lietuva nėra Skandinavija — čia vaikai dažniausiai gimsta santuokoje. Santuokų kritimas −23 % tiesiogiai lemia mažiau šeimų su vaikais. Bažnytinių santuokų dalis lieka stabili (~22 %), tačiau absoliutus skaičius mažėja proporcingai.</div>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 5. IŠTUOKOS -->
+<!-- ═══════════════════════════════════════════ -->
+<section id="istuokos">
+<div class="container">
+  <div class="section-label">05 · Ištuokos <span class="badge badge-real">✓ OSP · išsituokę vyrai pagal amžių</span></div>
+  <h2>Ištuokos mažėja lėčiau<br>nei santuokos</h2>
+
+  <div class="kpi-row">
+    <div class="kpi"><div class="kpi-num">7 822</div><div class="kpi-label">Išsituokę vyrai 2021</div></div>
+    <div class="kpi"><div class="kpi-num amber">7 127</div><div class="kpi-label">Išsituokę vyrai 2024</div><div class="kpi-delta neg">↓ −8,9 %</div></div>
+    <div class="kpi"><div class="kpi-num red">1,8:1</div><div class="kpi-label">Sant./Ištuoka 2024</div><div class="kpi-delta" style="color:var(--ink3)">buvo 2,2:1 (2021)</div></div>
+    <div class="kpi"><div class="kpi-num">35–39</div><div class="kpi-label">Aktyviausia ištuokų grupė</div><div class="kpi-delta" style="color:var(--ink3)">1 379 vyrų 2024</div></div>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div class="chart-wrap" style="height:260px"><canvas id="istuokChart" aria-label="Išsituokę vyrai iš viso ir pagal amžiaus grupes 2020–2024"></canvas></div>
+      <p class="chart-caption">Išsituokę vyrai: iš viso · 30–34 · 35–39 · 40–44 m. · OSP</p>
+    </div>
+    <div>
+      <h3>Santykis: santuokos vs ištuokos</h3>
+      <div class="chart-wrap" style="height:260px"><canvas id="ratioChart" aria-label="Santuokų ir ištuokų santykis 2020–2024 mažėja nuo 2,2 iki 1,8"></canvas></div>
+      <p class="chart-caption">Santuokos / Ištuokos santykis · 2020–2024</p>
+    </div>
+  </div>
+
+  <div class="alert alert-amber"><strong>Interpretacija:</strong> Ištuokų skaičius mažėja, nes mažiau santuokų = mažiau kas gali išsituokti. Santykinis nestabilumas <em>nemažėja</em> — 2021 m. 1 iš 2,2 santuokų baigdavosi skyrybomis, 2024 m. jau 1 iš 1,8. Tai papildomas demografinis spaudimas gimstamumui.</div>
+
+  <h3 style="margin-top:1rem">Išsituokę vyrai pagal amžių · detalūs duomenys</h3>
+  <table>
+    <thead><tr><th>Amžiaus grupė</th><th class="td-num">2020</th><th class="td-num">2021</th><th class="td-num">2022</th><th class="td-num">2023</th><th class="td-num">2024</th><th class="td-num">Pokytis</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Iš viso</strong></td><td class="td-num">7 544</td><td class="td-num">7 822</td><td class="td-num">7 395</td><td class="td-num">7 231</td><td class="td-num">7 127</td><td class="td-num td-red">−5,5 %</td></tr>
+      <tr><td>20–24</td><td class="td-num">83</td><td class="td-num">96</td><td class="td-num">75</td><td class="td-num">65</td><td class="td-num">79</td><td class="td-num td-green">−4,8 %</td></tr>
+      <tr><td>25–29</td><td class="td-num">615</td><td class="td-num">492</td><td class="td-num">477</td><td class="td-num">378</td><td class="td-num">367</td><td class="td-num td-red">−40 %</td></tr>
+      <tr><td>30–34</td><td class="td-num">1 240</td><td class="td-num">1 245</td><td class="td-num">1 036</td><td class="td-num">1 066</td><td class="td-num">961</td><td class="td-num td-red">−22,5 %</td></tr>
+      <tr><td><strong>35–39</strong></td><td class="td-num">1 501</td><td class="td-num">1 471</td><td class="td-num">1 379</td><td class="td-num">1 352</td><td class="td-num"><strong>1 379</strong></td><td class="td-num td-red">−8,1 %</td></tr>
+      <tr><td>40–44</td><td class="td-num">1 265</td><td class="td-num">1 363</td><td class="td-num">1 264</td><td class="td-num">1 211</td><td class="td-num">1 313</td><td class="td-num td-red">+3,8 %</td></tr>
+      <tr><td>45–49</td><td class="td-num">1 099</td><td class="td-num">1 087</td><td class="td-num">991</td><td class="td-num">972</td><td class="td-num">1 033</td><td class="td-num td-red">−6,0 %</td></tr>
+    </tbody>
+  </table>
+  <p class="chart-caption">* 1 santuoka = pirmą kartą besituokiantieji · duomenų eilutė apima abu segmentus</p>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 6. PIRMO VAIKO AMŽIUS -->
+<!-- ═══════════════════════════════════════════ -->
+<section id="amzius">
+<div class="container">
+  <div class="section-label">06 · Pirmo vaiko gimimo amžius <span class="badge badge-real">✓ OSP</span></div>
+  <h2>Pirmasis vaikas vis vėliau —<br>+0,8 metų per ketverius metus</h2>
+
+  <div class="kpi-row" style="grid-template-columns:repeat(3,1fr)">
+    <div class="kpi"><div class="kpi-num">27,9</div><div class="kpi-label">Vidutinis amžius 2020</div></div>
+    <div class="kpi"><div class="kpi-num red">28,7</div><div class="kpi-label">Vidutinis amžius 2024</div><div class="kpi-delta neg">+0,8 m. per 4 metus</div></div>
+    <div class="kpi"><div class="kpi-num amber">+0,2</div><div class="kpi-label">Metinis augimas</div><div class="kpi-delta" style="color:var(--ink3)">vidutiniškai</div></div>
+  </div>
+
+  <div class="chart-wrap" style="height:220px"><canvas id="amzChart" aria-label="Vidutinis pirmo vaiko gimimo motinos amžius auga nuo 27,9 iki 28,7 metų 2020–2024"></canvas></div>
+  <p class="chart-caption">Šaltinis: OSP · vidutinis pirmą vaiką gimdančių moterų amžius · 2020–2024<br>Pastaba: 2012–2020 m. duomenys parengti remiantis 2021 m. gyventojų ir būstų surašymo rezultatais</p>
+
+  <div class="alert alert-blue" style="margin-top:1.5rem"><strong>Ryšys su TFR:</strong> Vėlesnė pirmo vaiko gimimo pradžia (28,7 m.) biologiškai susiaurina laiko langą antram ir trečiam vaikui. Kiekvieni +1 metai motinos amžiuje statistiškai atitinka ~0,05–0,08 TFR vienetų kritimą. Per 2020–2024 m. +0,8 m. pokytis gali paaiškinti iki ~0,06 iš 0,26 bendro TFR kritimo.</div>
+
+  <div class="alert alert-amber"><strong>Regioninis skirtumas:</strong> Vilnius — vidutiniškai 31,3 m. (2024), Marijampolė — 29,4 m. Šis 1,9 m. skirtumas iš dalies paaiškina regioninius TFR skirtumus tarp sostinės ir periferijos.</div>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 7. SINTEZĖ -->
+<!-- ═══════════════════════════════════════════ -->
+<section id="sinteze">
+<div class="container">
+  <div class="section-label">07 · Sintezė</div>
+  <h2>Keturi veiksniai, lemiantys<br>gimstamumo krizę</h2>
+
+  <div class="findings">
+    <div class="finding">
+      <div class="finding-num">01</div>
+      <div>
+        <div class="finding-title">Moterų struktūrinis trūkumas reprodukciniame amžiuje <span class="badge badge-real" style="vertical-align:2px">✓ tikri</span></div>
+        <div class="finding-body">25–44 m. grupėse Lietuvoje yra <em>daugiau vyrų nei moterų</em> — tai emigracijos padarinys, ne biologinis reiškinys. 35–39 m.: 112 332 vyrai vs 99 202 moterys. Net esant didesniam gimdymo norui, potencialių motinų bazė yra struktūriškai mažesnė. Šis veiksnys yra struktūrinis ir sunkiai kompensuojamas.</div>
+      </div>
+    </div>
+    <div class="finding">
+      <div class="finding-num">02</div>
+      <div>
+        <div class="finding-title">Santuokų griūtis <span class="badge badge-real" style="vertical-align:2px">✓ tikri</span></div>
+        <div class="finding-body">−23 % santuokų per trejus metus (16 795 → 12 890). Lietuva nėra Skandinavija — didžioji dalis vaikų gimsta santuokoje. Kohabitacijos modelis dar nėra plačiai paplitęs, todėl santuokų kritimas tiesiogiai verčiamas į mažiau šeimų su vaikais. Miestuose kritimas ryškesnis (−26,5 %).</div>
+      </div>
+    </div>
+    <div class="finding">
+      <div class="finding-num">03</div>
+      <div>
+        <div class="finding-title">Vėlesnis pirmas vaikas <span class="badge badge-real" style="vertical-align:2px">✓ tikri</span></div>
+        <div class="finding-body">Nuo 27,9 m. (2020) iki 28,7 m. (2024) — +0,8 m. per ketverius metus. Vėlesnė pradžia biologiškai susiaurina galimybių langą antram ir trečiam vaikui. Vilniuje vidutinis amžius jau 31,3 m. — tai artima Vakarų Europos lygiams.</div>
+      </div>
+    </div>
+    <div class="finding">
+      <div class="finding-num">04</div>
+      <div>
+        <div class="finding-title">Regioninė poliarizacija ir gyventojų tankio skirtumas <span class="badge badge-real" style="vertical-align:2px">✓ tikri</span></div>
+        <div class="finding-body">Vilnius 91,3 gyv/km² (auga), Utena 16,7 (mažėja). Periferija praranda jaunus žmones — dvigubas efektas: mažiau potencialių tėvų ir didesnė izoliacija. Alytus ir Utena 2024 m. pasiekė TFR = 0,96 — rekordiškai žemą lygį.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert alert-blue" style="margin-top:1.5rem"><strong>Ko dar trūksta pilnai analizei:</strong> Išsituokusių <em>moterų</em> duomenų pagal amžių · gimimų pagal santuokinį statusą (ar auga kohabitacijos gimstamumas?) · regioninių santuokų rodiklių pagal apskritį · migracijos rodiklių pagal apskritį · GDP pagal regioną.</div>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 8. TRŪKSTAMI DUOMENYS -->
+<!-- ═══════════════════════════════════════════ -->
+<section id="trukstami">
+<div class="container">
+  <div class="section-label">08 · Duomenų kokybė ir trūkumai</div>
+  <h2>Kas žinoma, kas trūksta,<br>kaip papildyti</h2>
+
+  <div style="margin-bottom:1.5rem">
+    <div style="display:grid;grid-template-columns:2fr 1fr 2fr;gap:1rem;padding:.5rem 0;border-bottom:2px solid var(--ink)">
+      <span style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3)">Rodiklis / šaltinis</span>
+      <span style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3)">Statusas</span>
+      <span style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3)">Sprendimas</span>
+    </div>
+    <div class="gap-row"><div><span class="gap-code">tfr · mean_age_birth</span><br><span class="gap-src">demo_r_find3defaultview_linear_2_0.csv</span></div><div><span class="status-pill s-done">✓ turima</span></div><div style="font-size:12px;color:var(--ink2)">Naudoti demo_r_find3defaultview... failą — duomenys yra</div></div>
+    <div class="gap-row"><div><span class="gap-code">median_age · share_y15_29 · share_y65 · old_age_dep</span><br><span class="gap-src">demo_r_pjanind3</span></div><div><span class="status-pill s-manual">rankinis</span></div><div style="font-size:12px;color:var(--ink2)">Parsisiųsti rankiniu būdu iš Eurostat Databrowser → demo_r_pjangrp3</div></div>
+    <div class="gap-row"><div><span class="gap-code">nat_change_rate · net_migration_rate · pop_growth_rate</span><br><span class="gap-src">demo_r_gind3</span></div><div><span class="status-pill s-manual">rankinis</span></div><div style="font-size:12px;color:var(--ink2)">Parsisiųsti demo_r_gind3 rankiniu būdu iš Eurostat</div></div>
+    <div class="gap-row"><div><span class="gap-code">pop_density</span><br><span class="gap-src">OSP ekranšotas · viename km²</span></div><div><span class="status-pill s-done">✓ turima</span></div><div style="font-size:12px;color:var(--ink2)">Duomenys iš OSP ekranšoto — 2022–2026, visos apskritys</div></div>
+    <div class="gap-row"><div><span class="gap-code">gdp_pps_per_inh</span><br><span class="gap-src">nama_10r_3gdp</span></div><div><span class="status-pill s-check">abejotina</span></div><div style="font-size:12px;color:var(--ink2)">NUTS3 GDP dažnai vėluoja 2+ metais. Tikrinti nama_10r_3gdp arba naudoti NUTS2</div></div>
+    <div class="gap-row"><div><span class="gap-code">asfr_25_29 · asfr_30_34</span><br><span class="gap-src">demo_r_find3</span></div><div><span class="status-pill s-check">abejotina</span></div><div style="font-size:12px;color:var(--ink2)">Gali nebūti NUTS3 lygiu — tikrinti metaduomenis</div></div>
+    <div class="gap-row"><div><span class="gap-code">Išsituokusios moterys pagal amžių</span><br><span class="gap-src">OSP · Santuokos</span></div><div><span class="status-pill s-manual">rankinis</span></div><div style="font-size:12px;color:var(--ink2)">Atsisiųsti iš osp.stat.gov.lt → Šeima → Santuokos ir ištuokos</div></div>
+    <div class="gap-row"><div><span class="gap-code">Gimtys pagal santuokinį statusą</span><br><span class="gap-src">OSP · Gimstamumo rodikliai</span></div><div><span class="status-pill s-manual">rankinis</span></div><div style="font-size:12px;color:var(--ink2)">Svarbu: parodo kohabitacijos gimstamumo dalį — OSP → Gimstamumo rodikliai</div></div>
+  </div>
+
+  <h3>Rekomenduojama projekto struktūra</h3>
+  <div style="background:var(--paper2);border:1px solid var(--rule);padding:1.25rem;margin-top:.75rem;font-family:'DM Mono',monospace;font-size:12px;line-height:1.9;color:var(--ink2)">
+    lt-demography-panel/<br>
+    &nbsp;&nbsp;data/<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;raw/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← originalūs Eurostat TSV, OSP xlsx failai<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;processed/ &nbsp;&nbsp;← dataset_tikras.csv ir kiti apdoroti<br>
+    &nbsp;&nbsp;scripts/<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;download_eurostat.py<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;merge_osp.py<br>
+    &nbsp;&nbsp;docs/<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;DATA_SOURCES.md<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;data_dictionary.csv<br>
+    &nbsp;&nbsp;lietuva_demografija_2024.html &nbsp;← šis failas<br>
+    &nbsp;&nbsp;README.md
+  </div>
+  <p style="font-size:12px;color:var(--ink3);margin-top:.5rem">Rekomenduojama: GitHub repozitorija su versijų istorija arba Google Sheets „MANUAL_FILL" lapas papildymams</p>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <strong>Šaltiniai</strong>
+    Eurostat demo_r_find3 · NUTS3 apskritys · TFR, AGEMOTH, MEDAGEMOTH · 2021–2024<br>
+    OSP Oficialiosios statistikos portalas · osp.stat.gov.lt<br>
+    OSP eksperimentinė statistika · Algoritmas K-Prototype · 2023<br>
+    OSP Gyventojai pagal lytį ir amžių · Excel failas · 2022–2026<br>
+    OSP Santuokos ir ištuokos · 2020–2025
+  </div>
+  <div>
+    <strong>Metodologinės pastabos</strong>
+    Visi duomenys be žymos yra tikri (✓).<br>
+    Įvertinti (~) skaičiai pažymėti tekste.<br>
+    TFR = suminis gimstamumo rodiklis (Total Fertility Rate)<br>
+    Atkūrimo lygis = 2,10 vaikų vienai moteriai<br>
+    Parengta: 2026-05-19
+  </div>
+</footer>
+
+<script>
+// ══════════════════════════════════
+// DUOMENYS
+// ══════════════════════════════════
+const tfrData = {
+  "Alytaus apskritis":     {2021:1.22,2022:1.01,2023:1.01,2024:0.96},
+  "Kauno apskritis":       {2021:1.36,2022:1.30,2023:1.19,2024:1.16},
+  "Klaipėdos apskritis":  {2021:1.46,2022:1.32,2023:1.26,2024:1.15},
+  "Marijampolės apskritis":{2021:1.30,2022:1.17,2023:1.14,2024:1.03},
+  "Panevėžio apskritis":  {2021:1.31,2022:1.09,2023:1.15,2024:1.08},
+  "Tauragės apskritis":   {2021:1.29,2022:1.26,2023:1.16,2024:1.21},
+  "Telšių apskritis":     {2021:1.45,2022:1.18,2023:1.22,2024:1.11},
+  "Utenos apskritis":     {2021:1.27,2022:1.06,2023:1.01,2024:0.96},
+  "Vilniaus apskritis":   {2021:1.36,2022:1.35,2023:1.18,2024:1.10},
+  "Šiaulių apskritis":    {2021:1.35,2022:1.29,2023:1.23,2024:1.09}
+};
+const ageData = {
+  "Alytaus apskritis":     {2021:30.2,2022:30.0,2023:29.8,2024:29.9},
+  "Kauno apskritis":       {2021:30.3,2022:30.2,2023:30.4,2024:30.5},
+  "Klaipėdos apskritis":  {2021:30.1,2022:30.0,2023:29.9,2024:30.1},
+  "Marijampolės apskritis":{2021:29.8,2022:29.6,2023:29.6,2024:29.4},
+  "Panevėžio apskritis":  {2021:30.5,2022:30.0,2023:30.0,2024:30.1},
+  "Tauragės apskritis":   {2021:30.0,2022:29.3,2023:29.8,2024:29.8},
+  "Telšių apskritis":     {2021:30.0,2022:29.7,2023:29.8,2024:29.7},
+  "Utenos apskritis":     {2021:30.3,2022:30.1,2023:30.5,2024:30.1},
+  "Vilniaus apskritis":   {2021:30.9,2022:30.8,2023:31.1,2024:31.3},
+  "Šiaulių apskritis":    {2021:30.1,2022:29.5,2023:29.8,2024:29.8}
+};
+const regionNames = Object.keys(tfrData);
+const shortNames  = regionNames.map(r=>r.replace(' apskritis',''));
+
+// ══════════════════════════════════
+// 1. TFR NATIONAL
+// ══════════════════════════════════
+new Chart(document.getElementById('tfrNatChart'),{
+  type:'line',
+  data:{
+    labels:['2021','2022','2023','2024'],
+    datasets:[
+      {label:'TFR Lietuva',data:[1.37,1.28,1.19,1.11],borderColor:'#c0392b',backgroundColor:'rgba(192,57,43,0.06)',borderWidth:2.5,pointRadius:6,pointBackgroundColor:'#c0392b',fill:true,tension:0.3},
+      {label:'Atkūrimo lygis 2,10',data:[2.1,2.1,2.1,2.1],borderColor:'rgba(100,100,100,0.35)',borderWidth:1,borderDash:[6,4],pointRadius:0,fill:false}
+    ]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.dataset.label+': '+c.parsed.y.toFixed(2)}}},
+    scales:{y:{min:0.9,max:2.3,ticks:{callback:v=>v.toFixed(2)},grid:{color:'rgba(0,0,0,0.06)'}},x:{grid:{display:false}}}
+  }
+});
+
+// ══════════════════════════════════
+// 2. REGION BAR + TABLE
+// ══════════════════════════════════
+let regionChart;
+function updateRegionCharts(){
+  const yr = parseInt(document.getElementById('yearSel').value);
+  const metric = document.getElementById('metricSel').value;
+  const src = metric==='tfr' ? tfrData : ageData;
+  const vals = regionNames.map(r=>src[r][yr]);
+  const colors = metric==='tfr'
+    ? vals.map(v=>v>=1.2?'#2d6a3f':v>=1.05?'#b8620a':'#c0392b')
+    : vals.map(()=>'#1a4a7a');
+  if(regionChart) regionChart.destroy();
+  regionChart = new Chart(document.getElementById('regionBarChart'),{
+    type:'bar',
+    data:{labels:shortNames,datasets:[{data:vals,backgroundColor:colors,borderWidth:0}]},
+    options:{
+      responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.parsed.y.toFixed(metric==='tfr'?2:1)+(metric==='age'?' m.':'')}}},
+      scales:{y:{min:metric==='tfr'?0.7:28.5,ticks:{callback:v=>metric==='tfr'?v.toFixed(2):v.toFixed(1)},grid:{color:'rgba(0,0,0,0.06)'}},x:{grid:{display:false},ticks:{font:{size:11}}}}
+    }
+  });
+  // Table
+  const tbody = document.getElementById('regionTableBody');
+  tbody.innerHTML = regionNames.map((r,i)=>{
+    const d=tfrData[r]; const diff=(d[2024]-d[2021]).toFixed(2);
+    const cls=diff<0?'td-red':'td-green';
+    return`<tr><td>${shortNames[i]}</td><td class="td-num">${d[2021].toFixed(2)}</td><td class="td-num">${d[2022].toFixed(2)}</td><td class="td-num">${d[2023].toFixed(2)}</td><td class="td-num">${d[2024].toFixed(2)}</td><td class="td-num ${cls}">${diff>0?'+':''}${diff}</td></tr>`;
+  }).join('');
+}
+updateRegionCharts();
+
+// ══════════════════════════════════
+// 3. LYČIŲ SANTYKIS (linijinis)
+// ══════════════════════════════════
+new Chart(document.getElementById('ratioLineChart'),{
+  type:'line',
+  data:{
+    labels:['2022','2023','2024','2025','2026'],
+    datasets:[
+      {label:'30–34 m.',data:[957,951,901,884,883],borderColor:'#c0392b',borderWidth:2,pointRadius:4,fill:false,tension:0.3},
+      {label:'35–39 m.',data:[959,951,893,878,870],borderColor:'#D4537E',borderWidth:2,pointRadius:4,fill:false,tension:0.3},
+      {label:'25–29 m.',data:[947,948,933,925,915],borderColor:'#b8620a',borderWidth:2,pointRadius:4,fill:false,tension:0.3},
+      {label:'20–24 m.',data:[957,961,957,954,950],borderColor:'#2d6a3f',borderWidth:1.5,pointRadius:3,fill:false,tension:0.3,borderDash:[4,3]}
+    ]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{labels:{font:{size:11},boxWidth:12}},tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${c.parsed.y} m./1000 v.`}}},
+    scales:{y:{min:870,max:980,ticks:{callback:v=>v},grid:{color:'rgba(0,0,0,0.06)'}},x:{grid:{display:false}}}
+  }
+});
+
+// ══════════════════════════════════
+// 4. PIRAMIDĖ
+// ══════════════════════════════════
+const ageGroups=['0–4','5–9','10–14','15–19','20–24','25–29','30–34','35–39','40–44','45–49','50–54','55–59','60–64','65–69','70–74','75–79','80–84','85–89','90–94','95+'];
+const males2023  =[65323,78150,78676,68566,67994,81192,107281,112332,97823,94965,99721,95527,96229,73999,55090,35267,26666,13295,4481,716];
+const females2023=[62073,74110,75013,65914,65128,76040,96308,99202,89411,94817,105854,109245,121069,103089,92312,70928,64563,39722,15723,3167];
+new Chart(document.getElementById('pyramidChart'),{
+  type:'bar',
+  data:{
+    labels:ageGroups,
+    datasets:[
+      {label:'Vyrai',data:males2023,backgroundColor:'rgba(24,95,165,0.75)',borderWidth:0},
+      {label:'Moterys',data:females2023,backgroundColor:'rgba(212,83,126,0.75)',borderWidth:0}
+    ]
+  },
+  options:{
+    indexAxis:'y',responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{labels:{font:{size:11},boxWidth:12}},tooltip:{callbacks:{label:c=>c.dataset.label+': '+c.parsed.x.toLocaleString('lt-LT')}}},
+    scales:{x:{ticks:{callback:v=>(v/1000).toFixed(0)+'k'},grid:{color:'rgba(0,0,0,0.06)'}},y:{grid:{display:false},ticks:{font:{size:11}}}}
+  }
+});
+
+// ══════════════════════════════════
+// 5. SANTUOKOS
+// ══════════════════════════════════
+new Chart(document.getElementById('santChart'),{
+  type:'bar',
+  data:{
+    labels:['2021','2022','2023','2024','2025*'],
+    datasets:[
+      {label:'Iš viso',data:[16795,16016,13997,12890,13059],backgroundColor:'#1a4a7a',borderWidth:0},
+      {label:'Miestas',data:[11620,10458,9305,8541,8704],backgroundColor:'#2e6da8',borderWidth:0},
+      {label:'Kaimas',data:[5175,5558,4692,4349,4355],backgroundColor:'#85B7EB',borderWidth:0}
+    ]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{labels:{font:{size:11},boxWidth:12}},tooltip:{callbacks:{label:c=>c.dataset.label+': '+c.parsed.y.toLocaleString('lt-LT')}}},
+    scales:{y:{ticks:{callback:v=>v.toLocaleString('lt-LT')},grid:{color:'rgba(0,0,0,0.06)'}},x:{grid:{display:false}}}
+  }
+});
+new Chart(document.getElementById('santTypeChart'),{
+  type:'bar',
+  data:{
+    labels:['2021','2022','2023','2024','2025*'],
+    datasets:[
+      {label:'Civilinės',data:[10913,11381,9998,9391,9393],backgroundColor:'#1a4a7a',borderWidth:0},
+      {label:'Bažnytinės',data:[3684,3914,3287,2865,2964],backgroundColor:'#6B8FA8',borderWidth:0},
+      {label:'Užsienyje',data:[2198,721,712,634,702],backgroundColor:'#B8C8D4',borderWidth:0}
+    ]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{labels:{font:{size:11},boxWidth:12}}},
+    scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,ticks:{callback:v=>v.toLocaleString('lt-LT')},grid:{color:'rgba(0,0,0,0.06)'}}}
+  }
+});
+
+// ══════════════════════════════════
+// 6. IŠTUOKOS
+// ══════════════════════════════════
+new Chart(document.getElementById('istuokChart'),{
+  type:'line',
+  data:{
+    labels:['2020','2021','2022','2023','2024'],
+    datasets:[
+      {label:'Iš viso',data:[7544,7822,7395,7231,7127],borderColor:'#888',backgroundColor:'rgba(136,136,136,0.06)',borderWidth:1.5,pointRadius:3,fill:false,tension:0.3,borderDash:[5,3]},
+      {label:'35–39 m.',data:[1501,1471,1379,1352,1379],borderColor:'#D4537E',borderWidth:2,pointRadius:4,fill:false,tension:0.3},
+      {label:'30–34 m.',data:[1240,1245,1036,1066,961],borderColor:'#993556',borderWidth:2,pointRadius:4,fill:false,tension:0.3},
+      {label:'40–44 m.',data:[1265,1363,1264,1211,1313],borderColor:'#C49AAE',borderWidth:2,pointRadius:4,fill:false,tension:0.3}
+    ]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{labels:{font:{size:11},boxWidth:12}}},
+    scales:{y:{ticks:{callback:v=>v.toLocaleString('lt-LT')},grid:{color:'rgba(0,0,0,0.06)'}},x:{grid:{display:false}}}
+  }
+});
+new Chart(document.getElementById('ratioChart'),{
+  type:'line',
+  data:{
+    labels:['2020','2021','2022','2023','2024'],
+    datasets:[{
+      label:'Santuokos / Ištuokos',
+      data:[
+        +(15099/7544).toFixed(2),
+        +(16795/7822).toFixed(2),
+        +(16016/7395).toFixed(2),
+        +(13997/7231).toFixed(2),
+        +(12890/7127).toFixed(2)
+      ],
+      borderColor:'#b8620a',backgroundColor:'rgba(184,98,10,0.07)',borderWidth:2.5,pointRadius:5,pointBackgroundColor:'#b8620a',fill:true,tension:0.3
+    }]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>'Santykis: '+c.parsed.y.toFixed(2)+':1'}}},
+    scales:{y:{min:1.5,max:2.5,ticks:{callback:v=>v.toFixed(1)+':1'},grid:{color:'rgba(0,0,0,0.06)'}},x:{grid:{display:false}}}
+  }
+});
+
+// ══════════════════════════════════
+// 7. PIRMO VAIKO AMŽIUS
+// ══════════════════════════════════
+new Chart(document.getElementById('amzChart'),{
+  type:'line',
+  data:{
+    labels:['2020','2021','2022','2023','2024'],
+    datasets:[{
+      label:'Vidutinis amžius',
+      data:[27.9,28.2,28.2,28.4,28.7],
+      borderColor:'#2d6a3f',backgroundColor:'rgba(45,106,63,0.07)',borderWidth:2.5,pointRadius:6,pointBackgroundColor:'#2d6a3f',fill:true,tension:0.3
+    }]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.parsed.y.toFixed(1)+' m.'}}},
+    scales:{y:{min:27.5,max:29.2,ticks:{callback:v=>v.toFixed(1)+' m.'},grid:{color:'rgba(0,0,0,0.06)'}},x:{grid:{display:false}}}
+  }
+});
+
+// ══════════════════════════════════
+// NAV ACTIVE STATE
+// ══════════════════════════════════
+const sections = document.querySelectorAll('section[id]');
+const navLinks  = document.querySelectorAll('nav a');
+window.addEventListener('scroll',()=>{
+  let cur='';
+  sections.forEach(s=>{ if(window.scrollY>=s.offsetTop-80) cur=s.id; });
+  navLinks.forEach(a=>{ a.classList.toggle('active', a.getAttribute('href')==='#'+cur); });
+},{passive:true});
+</script>
+</body>
+</html>
