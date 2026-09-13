@@ -8,13 +8,14 @@ on:
     branches: [main]
     paths:
       - 'scripts/update_sex_ratio.py'
+      - 'scripts/update_tfr_nowcast.py'
       - '.github/workflows/update-demography-data.yml'
 
 permissions:
   contents: write
 
 jobs:
-  update-sex-age-history:
+  update-demography-data:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -25,17 +26,20 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Fetch official Eurostat data
+      - name: Fetch official Eurostat sex-age data
         run: python scripts/update_sex_ratio.py
+
+      - name: Fetch official Eurostat 2025 TFR nowcast
+        run: python scripts/update_tfr_nowcast.py
 
       - name: Commit updated data if changed
         shell: bash
         run: |
-          if [[ -n "$(git status --porcelain data/sex-ratio-history.json)" ]]; then
+          if [[ -n "$(git status --porcelain data/)" ]]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add data/sex-ratio-history.json
-            git commit -m "Update Eurostat sex-age history data"
+            git add data/sex-ratio-history.json data/tfr-nowcast-2025.json
+            git commit -m "Update Eurostat demographic data"
             git push
           else
             echo "No data changes"
