@@ -1,0 +1,104 @@
+{
+  "source": {
+    "organisation": "Eurostat",
+    "dataset": "demo_find",
+    "title": "Fertility indicators",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table?lang=en",
+    "api_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_find?lang=EN&geo=LT&sinceTimePeriod=2005&untilTimePeriod=2012",
+    "updated": "2026-09-09T23:00:00+0200"
+  },
+  "status": "Observed annual Eurostat fertility indicators",
+  "country": "LT",
+  "period": [
+    2005,
+    2012
+  ],
+  "indicators": {
+    "tfr": {
+      "code": "TOTFERRT",
+      "label": "Total fertility rate"
+    },
+    "first_birth_share": {
+      "code": "LBIRTHR1PC",
+      "label": "Percentage first order live births"
+    },
+    "second_birth_share": {
+      "code": "LBIRTHR2PC",
+      "label": "Percentage second order live births"
+    },
+    "third_birth_share": {
+      "code": "LBIRTHR3PC",
+      "label": "Percentage third order live births"
+    },
+    "fourth_plus_birth_share": {
+      "code": "LBIRTHR4_MAXPC",
+      "label": "Percentage fourth and higher order live births"
+    }
+  },
+  "data": [
+    {
+      "year": 2005,
+      "tfr": 1.29,
+      "first_birth_share": 48.9,
+      "second_birth_share": 34.1,
+      "third_birth_share": 10.3,
+      "fourth_plus_birth_share": 6.8
+    },
+    {
+      "year": 2006,
+      "tfr": 1.33,
+      "first_birth_share": 50.5,
+      "second_birth_share": 34.0,
+      "third_birth_share": 9.6,
+      "fourth_plus_birth_share": 5.9
+    },
+    {
+      "year": 2007,
+      "tfr": 1.36,
+      "first_birth_share": 51.5,
+      "second_birth_share": 33.6,
+      "third_birth_share": 9.6,
+      "fourth_plus_birth_share": 5.3
+    },
+    {
+      "year": 2008,
+      "tfr": 1.45,
+      "first_birth_share": 51.0,
+      "second_birth_share": 34.8,
+      "third_birth_share": 9.3,
+      "fourth_plus_birth_share": 4.9
+    },
+    {
+      "year": 2009,
+      "tfr": 1.5,
+      "first_birth_share": 49.3,
+      "second_birth_share": 35.9,
+      "third_birth_share": 10.0,
+      "fourth_plus_birth_share": 4.8
+    },
+    {
+      "year": 2010,
+      "tfr": 1.5,
+      "first_birth_share": 46.6,
+      "second_birth_share": 38.1,
+      "third_birth_share": 10.5,
+      "fourth_plus_birth_share": 4.8
+    },
+    {
+      "year": 2011,
+      "tfr": 1.55,
+      "first_birth_share": 46.5,
+      "second_birth_share": 38.2,
+      "third_birth_share": 10.6,
+      "fourth_plus_birth_share": 4.7
+    },
+    {
+      "year": 2012,
+      "tfr": 1.6,
+      "first_birth_share": 46.8,
+      "second_birth_share": 37.5,
+      "third_birth_share": 11.0,
+      "fourth_plus_birth_share": 4.7
+    }
+  ]
+}
