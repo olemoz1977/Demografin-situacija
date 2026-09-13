@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 import json
-import math
 import os
 import urllib.parse
 import urllib.request
 from functools import reduce
 from operator import mul
 
-DATASET = "demo_pjangroup"
+DATASET = "demo_pjan"
 BASE = f"https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/{DATASET}"
 PARAMS = {
     "lang": "EN",
@@ -18,8 +17,12 @@ PARAMS = {
 }
 URL = BASE + "?" + urllib.parse.urlencode(PARAMS)
 
-REPRODUCTIVE_15_49 = ["Y15-19", "Y20-24", "Y25-29", "Y30-34", "Y35-39", "Y40-44", "Y45-49"]
-CORE_25_44 = ["Y25-29", "Y30-34", "Y35-39", "Y40-44"]
+REPRODUCTIVE_15_49 = [f"Y{i}" for i in range(15, 50)]
+CORE_25_44 = [f"Y{i}" for i in range(25, 45)]
+FIVE_YEAR_GROUPS = [
+    (15, 19), (20, 24), (25, 29), (30, 34), (35, 39),
+    (40, 44), (45, 49), (50, 54), (55, 59), (60, 64), (65, 69),
+]
 
 
 def ordered_codes(dataset, dim):
@@ -65,11 +68,15 @@ def sex_code(dataset, preferred):
 
 def group_total(dataset, year, sex, ages):
     vals = []
+    missing = []
     for age in ages:
         v = get_value(dataset, {"freq": "A", "unit": "NR", "geo": "LT", "sex": sex, "age": age, "time": str(year)})
         if v is None:
-            raise ValueError(f"Missing value: year={year}, sex={sex}, age={age}")
-        vals.append(float(v))
+            missing.append(age)
+        else:
+            vals.append(float(v))
+    if missing:
+        raise ValueError(f"Missing values: year={year}, sex={sex}, ages={','.join(missing)}")
     return int(round(sum(vals)))
 
 
@@ -98,17 +105,18 @@ def main():
 
     latest = max(years)
     by_age = []
-    for age in REPRODUCTIVE_15_49 + ["Y50-54", "Y55-59", "Y60-64", "Y65-69"]:
-        f = group_total(dataset, latest, female, [age])
-        m = group_total(dataset, latest, male, [age])
-        by_age.append({"age": age.replace("Y", "").replace("-", "–"), "women": f, "men": m, "women_per_1000_men": ratio(f, m)})
+    for start, end in FIVE_YEAR_GROUPS:
+        ages = [f"Y{i}" for i in range(start, end + 1)]
+        f = group_total(dataset, latest, female, ages)
+        m = group_total(dataset, latest, male, ages)
+        by_age.append({"age": f"{start}–{end}", "women": f, "men": m, "women_per_1000_men": ratio(f, m)})
 
     output = {
         "source": {
             "organisation": "Eurostat",
             "dataset": DATASET,
-            "title": "Population on 1 January by age group and sex",
-            "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_pjangroup/default/table?lang=en",
+            "title": "Population on 1 January by age and sex",
+            "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_pjan/default/table?lang=en",
             "api_url": URL,
             "dataset_updated": dataset.get("updated"),
             "generated_from_official_absolute_counts": True,
