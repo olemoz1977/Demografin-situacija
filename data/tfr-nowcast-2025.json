@@ -1,0 +1,33 @@
+{
+  "source": {
+    "organisation": "Eurostat",
+    "dataset": "proj_25naasfr",
+    "title": "Assumptions for fertility rates by age and type of projection",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/proj_25naasfr/default/table?lang=en",
+    "api_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/proj_25naasfr?lang=EN&geo=LT&time=2025",
+    "updated": "2026-05-20T23:00:00+0200"
+  },
+  "status": "EUROPOP2025 baseline nowcast / projection assumption, not observed final TFR",
+  "year": 2025,
+  "country": "LT",
+  "baseline": {
+    "projection_code": "BSL",
+    "projection_label": "Baseline projections",
+    "tfr_2025": 1.0293,
+    "age_specific_sum_raw": 1.02927
+  },
+  "all_projection_variants": [
+    {
+      "projection_code": "BSL",
+      "projection_label": "Baseline projections",
+      "tfr_2025": 1.0293,
+      "age_specific_sum_raw": 1.02927
+    },
+    {
+      "projection_code": "LFRT",
+      "projection_label": "Sensitivity test: lower fertility",
+      "tfr_2025": 1.0293,
+      "age_specific_sum_raw": 1.02927
+    }
+  ]
+}
