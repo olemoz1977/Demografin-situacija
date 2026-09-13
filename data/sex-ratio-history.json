@@ -1,0 +1,223 @@
+{
+  "source": {
+    "organisation": "Eurostat",
+    "dataset": "demo_pjan",
+    "title": "Population on 1 January by age and sex",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_pjan/default/table?lang=en",
+    "api_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_pjan?lang=EN&geo=LT&unit=NR&sinceTimePeriod=2015&untilTimePeriod=2025",
+    "dataset_updated": "2026-08-14T23:00:00+0200",
+    "generated_from_official_absolute_counts": true
+  },
+  "definitions": {
+    "reproductive_age": "15–49 m. (standartinis vaisingumo rodiklių amžiaus intervalas)",
+    "additional_core_slice": "25–44 m. (papildomas pjūvis, ne standartinis reprodukcinio amžiaus apibrėžimas)",
+    "ratio": "moterų skaičius 1 000 to paties amžiaus intervalo vyrų"
+  },
+  "series_15_49": [
+    {
+      "year": 2015,
+      "women": 675253,
+      "men": 667589,
+      "women_per_1000_men": 1011.5
+    },
+    {
+      "year": 2016,
+      "women": 659730,
+      "men": 651887,
+      "women_per_1000_men": 1012.0
+    },
+    {
+      "year": 2017,
+      "women": 640417,
+      "men": 633488,
+      "women_per_1000_men": 1010.9
+    },
+    {
+      "year": 2018,
+      "women": 621854,
+      "men": 616716,
+      "women_per_1000_men": 1008.3
+    },
+    {
+      "year": 2019,
+      "women": 610938,
+      "men": 608187,
+      "women_per_1000_men": 1004.5
+    },
+    {
+      "year": 2020,
+      "women": 602541,
+      "men": 606882,
+      "women_per_1000_men": 992.8
+    },
+    {
+      "year": 2021,
+      "women": 595237,
+      "men": 603879,
+      "women_per_1000_men": 985.7
+    },
+    {
+      "year": 2022,
+      "women": 589016,
+      "men": 602561,
+      "women_per_1000_men": 977.5
+    },
+    {
+      "year": 2023,
+      "women": 600495,
+      "men": 620769,
+      "women_per_1000_men": 967.3
+    },
+    {
+      "year": 2024,
+      "women": 599162,
+      "men": 648488,
+      "women_per_1000_men": 923.9
+    },
+    {
+      "year": 2025,
+      "women": 597891,
+      "men": 657384,
+      "women_per_1000_men": 909.5
+    }
+  ],
+  "series_25_44": [
+    {
+      "year": 2015,
+      "women": 384186,
+      "men": 377088,
+      "women_per_1000_men": 1018.8
+    },
+    {
+      "year": 2016,
+      "women": 379085,
+      "men": 372596,
+      "women_per_1000_men": 1017.4
+    },
+    {
+      "year": 2017,
+      "women": 372185,
+      "men": 367276,
+      "women_per_1000_men": 1013.4
+    },
+    {
+      "year": 2018,
+      "women": 366915,
+      "men": 363384,
+      "women_per_1000_men": 1009.7
+    },
+    {
+      "year": 2019,
+      "women": 365060,
+      "men": 363601,
+      "women_per_1000_men": 1004.0
+    },
+    {
+      "year": 2020,
+      "women": 362977,
+      "men": 367311,
+      "women_per_1000_men": 988.2
+    },
+    {
+      "year": 2021,
+      "women": 361959,
+      "men": 370366,
+      "women_per_1000_men": 977.3
+    },
+    {
+      "year": 2022,
+      "women": 360469,
+      "men": 373148,
+      "women_per_1000_men": 966.0
+    },
+    {
+      "year": 2023,
+      "women": 371361,
+      "men": 388951,
+      "women_per_1000_men": 954.8
+    },
+    {
+      "year": 2024,
+      "women": 369653,
+      "men": 410903,
+      "women_per_1000_men": 899.6
+    },
+    {
+      "year": 2025,
+      "women": 367848,
+      "men": 416270,
+      "women_per_1000_men": 883.7
+    }
+  ],
+  "latest_by_age": {
+    "year": 2025,
+    "values": [
+      {
+        "age": "15–19",
+        "women": 70334,
+        "men": 73734,
+        "women_per_1000_men": 953.9
+      },
+      {
+        "age": "20–24",
+        "women": 64925,
+        "men": 70215,
+        "women_per_1000_men": 924.7
+      },
+      {
+        "age": "25–29",
+        "women": 74466,
+        "men": 84219,
+        "women_per_1000_men": 884.2
+      },
+      {
+        "age": "30–34",
+        "women": 94176,
+        "men": 107322,
+        "women_per_1000_men": 877.5
+      },
+      {
+        "age": "35–39",
+        "women": 103438,
+        "men": 117952,
+        "women_per_1000_men": 876.9
+      },
+      {
+        "age": "40–44",
+        "women": 95768,
+        "men": 106777,
+        "women_per_1000_men": 896.9
+      },
+      {
+        "age": "45–49",
+        "women": 94784,
+        "men": 97165,
+        "women_per_1000_men": 975.5
+      },
+      {
+        "age": "50–54",
+        "women": 104208,
+        "men": 97989,
+        "women_per_1000_men": 1063.5
+      },
+      {
+        "age": "55–59",
+        "women": 108456,
+        "men": 95956,
+        "women_per_1000_men": 1130.3
+      },
+      {
+        "age": "60–64",
+        "women": 119235,
+        "men": 97773,
+        "women_per_1000_men": 1219.5
+      },
+      {
+        "age": "65–69",
+        "women": 110028,
+        "men": 79928,
+        "women_per_1000_men": 1376.6
+      }
+    ]
+  }
+}
