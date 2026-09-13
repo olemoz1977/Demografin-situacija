@@ -3,64 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Lietuvos demografinė situacija pagal Eurostat ir Valstybės duomenų agentūros oficialiai paskelbtus rodiklius. Be autorinių įverčių ir nepatvirtintų prielaidų.">
+<meta name="description" content="Lietuvos demografinė situacija ir skaitmeninio naudojimo kontekstas pagal Eurostat, Valstybės duomenų agentūros, WHO ir kitų oficialių institucijų paskelbtus rodiklius. Be autorinių įverčių ir nepatvirtintų prielaidų.">
 <title>Lietuva · Demografinė situacija · Patvirtinti duomenys</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{
-  --ink:#1a1a1a;--ink2:#4a4845;--ink3:#7c7872;--paper:#f5f0e8;--paper2:#ece6db;--paper3:#ded6c8;
-  --red:#b9382b;--red-light:#f4dfdc;--amber:#a95d12;--amber-light:#faecd8;--green:#2f6942;--green-light:#dfeee4;
-  --blue:#1d4f7d;--blue-light:#dce8f4;--rule:#c8c0b0;--white:#fff;
-}
-*{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth}
-body{font-family:'Instrument Sans',sans-serif;background:var(--paper);color:var(--ink);font-size:15px;line-height:1.6}
-a{color:var(--blue)}
-.masthead{border-bottom:2px solid var(--ink);padding:0 3rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem}
-.masthead-left,.masthead-right{font-family:'DM Mono',monospace;font-size:11px;color:var(--ink3);letter-spacing:.06em;text-transform:uppercase}
-.masthead-right{text-align:right}.masthead-title{font-family:'DM Serif Display',serif;font-size:clamp(30px,5vw,54px);line-height:1;text-align:center;padding:1.5rem 2rem 1rem;border-left:1px solid var(--rule);border-right:1px solid var(--rule)}
-.masthead-title em{font-style:italic;color:var(--red)}
-.masthead-sub{grid-column:1/-1;border-top:1px solid var(--rule);padding:.75rem 0;display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;font-family:'DM Mono',monospace;font-size:10px;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em}
-nav{background:var(--ink);padding:.6rem 3rem;display:flex;position:sticky;top:0;z-index:100;overflow-x:auto}
-nav a{color:rgba(255,255,255,.58);text-decoration:none;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:.4rem 1rem;border-right:1px solid rgba(255,255,255,.1);white-space:nowrap}
-nav a:first-child{padding-left:0} nav a:hover{color:#fff}
-.container{max-width:1120px;margin:0 auto;padding:0 3rem} section{padding:3rem 0;border-bottom:1px solid var(--rule)}
-.section-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);margin-bottom:.55rem;display:flex;align-items:center;gap:.75rem}
-.section-label:after{content:'';flex:1;height:1px;background:var(--rule)}
-h2{font-family:'DM Serif Display',serif;font-size:clamp(24px,3vw,36px);font-weight:400;line-height:1.12;margin-bottom:1.5rem} h3{font-family:'DM Serif Display',serif;font-size:21px;font-weight:400;margin-bottom:.65rem}
-.lead{font-size:17px;color:var(--ink2);max-width:850px;margin-bottom:1.5rem}.small{font-size:12px;color:var(--ink3)}
-.badge{display:inline-flex;align-items:center;gap:4px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.03em;padding:2px 7px;border-radius:2px}
-.badge-final{background:var(--green-light);color:var(--green)}.badge-official{background:var(--blue-light);color:var(--blue)}.badge-gap{background:var(--amber-light);color:var(--amber)}
-.alert{padding:1rem 1.2rem;margin-bottom:1.5rem;border-left:3px solid;font-size:14px}.alert strong{font-weight:600}
-.alert-green{background:var(--green-light);border-color:var(--green);color:#153b23}.alert-blue{background:var(--blue-light);border-color:var(--blue);color:#123451}.alert-amber{background:var(--amber-light);border-color:var(--amber);color:#5b3008}.alert-red{background:var(--red-light);border-color:var(--red);color:#5a1b14}
+:root{--ink:#1a1a1a;--ink2:#4a4845;--ink3:#7c7872;--paper:#f5f0e8;--paper2:#ece6db;--paper3:#ded6c8;--red:#b9382b;--red-light:#f4dfdc;--amber:#a95d12;--amber-light:#faecd8;--green:#2f6942;--green-light:#dfeee4;--blue:#1d4f7d;--blue-light:#dce8f4;--rule:#c8c0b0}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:'Instrument Sans',sans-serif;background:var(--paper);color:var(--ink);font-size:15px;line-height:1.6}a{color:var(--blue)}
+.masthead{border-bottom:2px solid var(--ink);padding:0 3rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem}.masthead-left,.masthead-right{font-family:'DM Mono',monospace;font-size:11px;color:var(--ink3);letter-spacing:.06em;text-transform:uppercase}.masthead-right{text-align:right}.masthead-title{font-family:'DM Serif Display',serif;font-size:clamp(30px,5vw,54px);line-height:1;text-align:center;padding:1.5rem 2rem 1rem;border-left:1px solid var(--rule);border-right:1px solid var(--rule)}.masthead-title em{font-style:italic;color:var(--red)}.masthead-sub{grid-column:1/-1;border-top:1px solid var(--rule);padding:.75rem 0;display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;font-family:'DM Mono',monospace;font-size:10px;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em}
+nav{background:var(--ink);padding:.6rem 3rem;display:flex;position:sticky;top:0;z-index:100;overflow-x:auto}nav a{color:rgba(255,255,255,.58);text-decoration:none;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:.4rem 1rem;border-right:1px solid rgba(255,255,255,.1);white-space:nowrap}nav a:first-child{padding-left:0}nav a:hover{color:#fff}
+.container{max-width:1120px;margin:0 auto;padding:0 3rem}section{padding:3rem 0;border-bottom:1px solid var(--rule)}.section-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);margin-bottom:.55rem;display:flex;align-items:center;gap:.75rem}.section-label:after{content:'';flex:1;height:1px;background:var(--rule)}h2{font-family:'DM Serif Display',serif;font-size:clamp(24px,3vw,36px);font-weight:400;line-height:1.12;margin-bottom:1.5rem}h3{font-family:'DM Serif Display',serif;font-size:21px;font-weight:400;margin-bottom:.65rem}.lead{font-size:17px;color:var(--ink2);max-width:880px;margin-bottom:1.5rem}.small{font-size:12px;color:var(--ink3)}
+.badge{display:inline-flex;align-items:center;gap:4px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.03em;padding:2px 7px;border-radius:2px}.badge-final{background:var(--green-light);color:var(--green)}.badge-official{background:var(--blue-light);color:var(--blue)}.badge-gap{background:var(--amber-light);color:var(--amber)}
+.alert{padding:1rem 1.2rem;margin-bottom:1.5rem;border-left:3px solid;font-size:14px}.alert strong{font-weight:600}.alert-green{background:var(--green-light);border-color:var(--green);color:#153b23}.alert-blue{background:var(--blue-light);border-color:var(--blue);color:#123451}.alert-amber{background:var(--amber-light);border-color:var(--amber);color:#5b3008}.alert-red{background:var(--red-light);border-color:var(--red);color:#5a1b14}
 .kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:2rem}.kpi{background:var(--paper);padding:1.2rem 1.35rem;min-height:126px}.kpi-num{font-family:'DM Serif Display',serif;font-size:38px;line-height:1;margin-bottom:.3rem}.kpi-num.red{color:var(--red)}.kpi-num.green{color:var(--green)}.kpi-num.blue{color:var(--blue)}.kpi-label{font-size:12px;color:var(--ink3);line-height:1.35}.kpi-note{font-family:'DM Mono',monospace;font-size:10px;margin-top:.45rem;color:var(--ink2)}
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:1.5rem}.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.5rem}.card{background:var(--paper2);border:1px solid var(--paper3);padding:1.1rem 1.25rem}.card p{font-size:13px;color:var(--ink2)}
-.chart-wrap{position:relative;width:100%;height:330px;margin:1rem 0 .35rem}.chart-caption{font-family:'DM Mono',monospace;font-size:10px;color:var(--ink3);margin-top:.45rem;line-height:1.5}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:1.5rem}.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.5rem}.card{background:var(--paper2);border:1px solid var(--paper3);padding:1.1rem 1.25rem}.card p{font-size:13px;color:var(--ink2)}.chart-wrap{position:relative;width:100%;height:330px;margin:1rem 0 .35rem}.chart-caption{font-family:'DM Mono',monospace;font-size:10px;color:var(--ink3);margin-top:.45rem;line-height:1.5}
 table{width:100%;border-collapse:collapse;font-size:13px;margin:1rem 0}thead tr{border-bottom:2px solid var(--ink)}th{text-align:left;padding:.5rem .65rem;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink3);font-weight:500}td{padding:.55rem .65rem;border-bottom:1px solid var(--rule)}.td-num{font-family:'DM Mono',monospace;text-align:right}.td-red{color:var(--red);font-weight:500}.td-green{color:var(--green);font-weight:500}
-.source-line{margin-top:.8rem;font-family:'DM Mono',monospace;font-size:10px;color:var(--ink3);line-height:1.55}.source-line a{color:var(--blue);text-decoration:none;border-bottom:1px solid rgba(29,79,125,.3)}.source-line a:hover{border-color:var(--blue)}
-.findings{display:grid;gap:.75rem;margin-top:1rem}.finding{background:var(--paper2);border:1px solid var(--paper3);padding:1rem 1.2rem;display:grid;grid-template-columns:auto 1fr;gap:1rem}.finding-num{font-family:'DM Serif Display',serif;font-size:28px;color:var(--ink3);opacity:.55;line-height:1}.finding-title{font-weight:600;font-size:14px;margin-bottom:.2rem}.finding-body{font-size:13px;color:var(--ink2)}
-.sources{display:grid;gap:.7rem}.source-card{border:1px solid var(--rule);padding:1rem 1.2rem;background:rgba(255,255,255,.15)}.source-card strong{display:block;font-size:13px;margin-bottom:.25rem}.source-card a{font-family:'DM Mono',monospace;font-size:10px;word-break:break-all}
-.method-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.method{padding:1rem;border:1px solid var(--rule);background:var(--paper2)}.method strong{display:block;margin-bottom:.3rem}.method p{font-size:13px;color:var(--ink2)}
+.source-line{margin-top:.8rem;font-family:'DM Mono',monospace;font-size:10px;color:var(--ink3);line-height:1.55}.source-line a{color:var(--blue);text-decoration:none;border-bottom:1px solid rgba(29,79,125,.3)}.source-line a:hover{border-color:var(--blue)}.findings{display:grid;gap:.75rem;margin-top:1rem}.finding{background:var(--paper2);border:1px solid var(--paper3);padding:1rem 1.2rem;display:grid;grid-template-columns:auto 1fr;gap:1rem}.finding-num{font-family:'DM Serif Display',serif;font-size:28px;color:var(--ink3);opacity:.55;line-height:1}.finding-title{font-weight:600;font-size:14px;margin-bottom:.2rem}.finding-body{font-size:13px;color:var(--ink2)}.sources{display:grid;gap:.7rem}.source-card{border:1px solid var(--rule);padding:1rem 1.2rem;background:rgba(255,255,255,.15)}.source-card strong{display:block;font-size:13px;margin-bottom:.25rem}.source-card a{font-family:'DM Mono',monospace;font-size:10px;word-break:break-all}.method-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.method{padding:1rem;border:1px solid var(--rule);background:var(--paper2)}.method strong{display:block;margin-bottom:.3rem}.method p{font-size:13px;color:var(--ink2)}
 footer{background:var(--ink);color:rgba(255,255,255,.58);padding:2rem 3rem;font-family:'DM Mono',monospace;font-size:10px;display:grid;grid-template-columns:1fr 1fr;gap:1rem}footer strong{color:rgba(255,255,255,.9);display:block;margin-bottom:.35rem}footer a{color:rgba(255,255,255,.7)}
-@media(max-width:760px){.masthead{padding:0 1rem;grid-template-columns:1fr}.masthead-left,.masthead-right{text-align:center;padding-top:.6rem}.masthead-title{border-left:0;border-right:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:1rem 0}.masthead-sub{gap:.8rem}.container{padding:0 1rem}nav{padding:.6rem 1rem}.two-col,.three-col,.method-grid{grid-template-columns:1fr}.chart-wrap{height:300px}footer{grid-template-columns:1fr;padding:2rem 1rem}}
-@media print{nav{display:none}section{break-inside:avoid}}
+@media(max-width:760px){.masthead{padding:0 1rem;grid-template-columns:1fr}.masthead-left,.masthead-right{text-align:center;padding-top:.6rem}.masthead-title{border-left:0;border-right:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:1rem 0}.masthead-sub{gap:.8rem}.container{padding:0 1rem}nav{padding:.6rem 1rem}.two-col,.three-col,.method-grid{grid-template-columns:1fr}.chart-wrap{height:300px}footer{grid-template-columns:1fr;padding:2rem 1rem}}@media print{nav{display:none}section{break-inside:avoid}}
 </style>
 </head>
 <body>
 <header class="masthead">
-  <div class="masthead-left">Eurostat · Valstybės duomenų agentūra<br>Tik oficialiai paskelbti rodikliai</div>
+  <div class="masthead-left">Eurostat · VDA · WHO · EC<br>Tik oficialiai paskelbti rodikliai</div>
   <div class="masthead-title">Lietuva<br><em>Demografinė situacija</em></div>
-  <div class="masthead-right">Atnaujinta 2026-09-13<br>Duomenys iki 2024 / 2025-01-01</div>
-  <div class="masthead-sub"><span>TFR</span><span>Gimimai ir natūrali kaita</span><span>10 apskričių</span><span>Santuokos · Ištuokos</span><span>Pirmojo vaiko amžius</span></div>
+  <div class="masthead-right">Atnaujinta 2026-09-13<br>Demografija iki 2024 · skaitmena iki 2025</div>
+  <div class="masthead-sub"><span>TFR</span><span>Gimimai ir natūrali kaita</span><span>10 apskričių</span><span>Santuokos · Ištuokos</span><span>Pirmojo vaiko amžius</span><span>Skaitmeninis naudojimas</span></div>
 </header>
 <nav>
-  <a href="#apzvalga">Apžvalga</a><a href="#tfr">TFR</a><a href="#regionai">Regionai</a><a href="#gyventojai">Gyventojai</a><a href="#santuokos">Santuokos</a><a href="#amzius">Pirmas vaikas</a><a href="#isvados">Ką leidžia teigti</a><a href="#metodika">Metodika</a><a href="#saltiniai">Šaltiniai</a>
+  <a href="#apzvalga">Apžvalga</a><a href="#tfr">TFR</a><a href="#regionai">Regionai</a><a href="#gyventojai">Gyventojai</a><a href="#santuokos">Santuokos</a><a href="#amzius">Pirmas vaikas</a><a href="#skaitmena">Skaitmeninis kontekstas</a><a href="#isvados">Ką leidžia teigti</a><a href="#metodika">Metodika</a><a href="#saltiniai">Šaltiniai</a>
 </nav>
 
 <section id="apzvalga"><div class="container">
   <div class="section-label">00 · Duomenų taisyklė <span class="badge badge-final">BE PRIELAIDŲ</span></div>
   <h2>Rodome tik tai, ką galima patikrinti oficialiame šaltinyje</h2>
-  <div class="alert alert-green"><strong>Šioje versijoje nėra autorinių įverčių.</strong> Jei konkretaus laikotarpio rodiklio nerasta Eurostat, Valstybės duomenų agentūros ar kitos oficialios institucijos paskelbtame šaltinyje, jis nepateikiamas. Paprasti aritmetiniai skirtumai žymimi kaip skaičiavimas iš oficialių rodiklių, o ne kaip naujas statistinis rodiklis.</div>
+  <div class="alert alert-green"><strong>Šioje versijoje nėra autorinių įverčių.</strong> Jei konkretaus laikotarpio rodiklio nerasta Eurostat, Valstybės duomenų agentūros, WHO ar kitos oficialios institucijos paskelbtame šaltinyje, jis nepateikiamas. Paprasti aritmetiniai skirtumai žymimi kaip skaičiavimas iš oficialių rodiklių, o ne kaip naujas statistinis rodiklis.</div>
   <div class="kpi-row">
     <div class="kpi"><div class="kpi-num red">1,11</div><div class="kpi-label">Suminis gimstamumo rodiklis · Lietuva 2024</div><div class="kpi-note">Eurostat / VDA</div></div>
     <div class="kpi"><div class="kpi-num">19 086</div><div class="kpi-label">Gyvi gimę kūdikiai · 2024</div><div class="kpi-note">VDA</div></div>
@@ -68,7 +45,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.58);padding:2rem 3rem;font-
     <div class="kpi"><div class="kpi-num green">+23,1 tūkst.</div><div class="kpi-label">Neto tarptautinė migracija · 2024</div><div class="kpi-note">VDA</div></div>
     <div class="kpi"><div class="kpi-num blue">2 890,7 tūkst.</div><div class="kpi-label">Nuolatiniai gyventojai · 2025-01-01</div><div class="kpi-note">VDA</div></div>
   </div>
-  <p class="lead">Naujausias šiame projekte naudojamas pilnas nacionalinis TFR yra 2024 m. rodiklis. 2025 m. TFR čia nerodomas, kol nėra patikrinto analogiško oficialaus metinio rodiklio.</p>
+  <p class="lead">Naujausias šiame projekte naudojamas pilnas nacionalinis TFR yra 2024 m. rodiklis. 2025 m. TFR nerodomas, kol nėra patikrinto analogiško oficialaus metinio rodiklio.</p>
   <div class="source-line">Šaltinis: <a href="https://publikacijos.stat.gov.lt/lietuva-skaiciais-2025/lt/categories/3" target="_blank" rel="noopener">Valstybės duomenų agentūra · Lietuva skaičiais 2025</a></div>
 </div></section>
 
@@ -76,77 +53,25 @@ footer{background:var(--ink);color:rgba(255,255,255,.58);padding:2rem 3rem;font-
   <div class="section-label">01 · Suminis gimstamumo rodiklis <span class="badge badge-final">LT 2024</span> <span class="badge badge-official">EUROSTAT</span></div>
   <h2>Lietuvos TFR 2024 m. – 1,11: trečias žemiausias Europos Sąjungoje</h2>
   <p class="lead">2024 m. mažesnis TFR ES buvo tik Maltoje (1,01) ir Ispanijoje (1,10). ES agregatas buvo 1,34. Eurostat 2024 m. ES agregatą žymi kaip estimated/provisional; Lietuvos 2024 m. rodiklis šia pastaba nepažymėtas.</p>
-  <div class="kpi-row">
-    <div class="kpi"><div class="kpi-num red">1,11</div><div class="kpi-label">Lietuva · 2024</div><div class="kpi-note">2023: 1,18</div></div>
-    <div class="kpi"><div class="kpi-num">1,34</div><div class="kpi-label">ES · 2024</div><div class="kpi-note">Eurostat agregatas</div></div>
-    <div class="kpi"><div class="kpi-num">2,1</div><div class="kpi-label">Kartų kaitos orientyras išsivysčiusiose šalyse</div><div class="kpi-note">Eurostat metodinė pastaba</div></div>
-    <div class="kpi"><div class="kpi-num red">−0,23</div><div class="kpi-label">Lietuvos pokytis 2021→2024</div><div class="kpi-note">1,34 → 1,11 · aritmetinis skirtumas</div></div>
-  </div>
-  <div class="chart-wrap"><canvas id="tfrChart"></canvas></div>
-  <div class="chart-caption">Lietuva: VDA / Eurostat. ES: Eurostat. 2021–2024. ES 2024 agregatas Eurostat pažymėtas estimated/provisional.</div>
-  <div class="alert alert-blue" style="margin-top:1.4rem"><strong>Svarbi korekcija ankstesnei projekto versijai:</strong> negalima teigti, kad 2023→2024 m. TFR sparčiausiai krito Lietuvoje. Eurostat nurodo, kad didžiausias metinis sumažėjimas tuo laikotarpiu buvo Rumunijoje: 1,54 → 1,39.</div>
-  <div class="source-line">Šaltiniai: <a href="https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260306-1" target="_blank" rel="noopener">Eurostat · EU fertility rate at 1.34 in 2024</a> · <a href="https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table?lang=en" target="_blank" rel="noopener">dataset demo_find</a> · <a href="https://publikacijos.stat.gov.lt/lietuva-skaiciais-2025/lt/categories/3" target="_blank" rel="noopener">VDA</a></div>
+  <div class="kpi-row"><div class="kpi"><div class="kpi-num red">1,11</div><div class="kpi-label">Lietuva · 2024</div><div class="kpi-note">2023: 1,18</div></div><div class="kpi"><div class="kpi-num">1,34</div><div class="kpi-label">ES · 2024</div><div class="kpi-note">Eurostat agregatas</div></div><div class="kpi"><div class="kpi-num">2,1</div><div class="kpi-label">Kartų kaitos orientyras išsivysčiusiose šalyse</div><div class="kpi-note">Eurostat metodinė pastaba</div></div><div class="kpi"><div class="kpi-num red">−0,23</div><div class="kpi-label">Lietuvos pokytis 2021→2024</div><div class="kpi-note">1,34 → 1,11 · aritmetinis skirtumas</div></div></div>
+  <div class="chart-wrap"><canvas id="tfrChart"></canvas></div><div class="chart-caption">Lietuva: VDA / Eurostat. ES: Eurostat. 2021–2024. ES 2024 agregatas Eurostat pažymėtas estimated/provisional.</div>
+  <div class="alert alert-blue" style="margin-top:1.4rem"><strong>Svarbi korekcija:</strong> negalima teigti, kad 2023→2024 m. TFR sparčiausiai krito Lietuvoje. Eurostat nurodo, kad didžiausias metinis sumažėjimas tuo laikotarpiu buvo Rumunijoje: 1,54 → 1,39.</div>
+  <div class="source-line">Šaltiniai: <a href="https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260306-1" target="_blank" rel="noopener">Eurostat · EU fertility rate at 1.34 in 2024</a> · <a href="https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table?lang=en" target="_blank" rel="noopener">demo_find</a> · <a href="https://publikacijos.stat.gov.lt/lietuva-skaiciais-2025/lt/categories/3" target="_blank" rel="noopener">VDA</a></div>
 </div></section>
 
 <section id="regionai"><div class="container">
   <div class="section-label">02 · Apskritys · NUTS 3 <span class="badge badge-official">EUROSTAT demo_r_find3</span></div>
   <h2>2024 m. visose 10 Lietuvos apskričių TFR buvo mažesnis nei 1,30</h2>
-  <p class="lead">Didžiausias rodiklis – Tauragės apskrityje 1,21; mažiausias – Alytaus ir Utenos apskrityse po 0,96. Eurostat terminijoje TFR mažesnis nei 1,3 dažnai vadinamas „lowest-low fertility“.</p>
-  <div class="two-col">
-    <div><div class="chart-wrap"><canvas id="regionChart"></canvas></div><div class="chart-caption">2024 · gyvų gimusių vaikų skaičius vienai moteriai · NUTS 3.</div></div>
-    <div>
-      <table><thead><tr><th>Apskritis</th><th class="td-num">TFR 2024</th></tr></thead><tbody>
-        <tr><td>Tauragės</td><td class="td-num td-green">1,21</td></tr>
-        <tr><td>Kauno</td><td class="td-num">1,16</td></tr>
-        <tr><td>Klaipėdos</td><td class="td-num">1,15</td></tr>
-        <tr><td>Telšių</td><td class="td-num">1,11</td></tr>
-        <tr><td>Vilniaus</td><td class="td-num">1,10</td></tr>
-        <tr><td>Šiaulių</td><td class="td-num">1,09</td></tr>
-        <tr><td>Panevėžio</td><td class="td-num">1,08</td></tr>
-        <tr><td>Marijampolės</td><td class="td-num">1,03</td></tr>
-        <tr><td>Utenos</td><td class="td-num td-red">0,96</td></tr>
-        <tr><td>Alytaus</td><td class="td-num td-red">0,96</td></tr>
-      </tbody></table>
-      <div class="alert alert-amber"><strong>Metodinė pastaba.</strong> Eurostat nurodo, kad NUTS 2 ir NUTS 3 demografiniai rodikliai skaičiuojami iš kitokio amžiaus detalumo įvesties nei nacionaliniai rodikliai, todėl to paties rodiklio reikšmės skirtingais teritoriniais lygiais gali nežymiai skirtis.</div>
-    </div>
-  </div>
-  <div class="source-line">Šaltinis: <a href="https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3/default/table?lang=en" target="_blank" rel="noopener">Eurostat · Fertility indicators by NUTS 3 region · demo_r_find3</a> · <a href="https://ec.europa.eu/eurostat/cache/metadata/EN/demo_r_gind3_esms.htm" target="_blank" rel="noopener">regioninių demografinių rodiklių metadata</a></div>
+  <p class="lead">Didžiausias rodiklis – Tauragės apskrityje 1,21; mažiausias – Alytaus ir Utenos apskrityse po 0,96.</p>
+  <div class="two-col"><div><div class="chart-wrap"><canvas id="regionChart"></canvas></div><div class="chart-caption">2024 · gyvų gimusių vaikų skaičius vienai moteriai · NUTS 3.</div></div><div><table><thead><tr><th>Apskritis</th><th class="td-num">TFR 2024</th></tr></thead><tbody><tr><td>Tauragės</td><td class="td-num td-green">1,21</td></tr><tr><td>Kauno</td><td class="td-num">1,16</td></tr><tr><td>Klaipėdos</td><td class="td-num">1,15</td></tr><tr><td>Telšių</td><td class="td-num">1,11</td></tr><tr><td>Vilniaus</td><td class="td-num">1,10</td></tr><tr><td>Šiaulių</td><td class="td-num">1,09</td></tr><tr><td>Panevėžio</td><td class="td-num">1,08</td></tr><tr><td>Marijampolės</td><td class="td-num">1,03</td></tr><tr><td>Utenos</td><td class="td-num td-red">0,96</td></tr><tr><td>Alytaus</td><td class="td-num td-red">0,96</td></tr></tbody></table><div class="alert alert-amber"><strong>Metodinė pastaba.</strong> Eurostat nurodo, kad NUTS 2 ir NUTS 3 demografiniai rodikliai skaičiuojami iš kitokio amžiaus detalumo įvesties nei nacionaliniai rodikliai, todėl reikšmės skirtingais teritoriniais lygiais gali nežymiai skirtis.</div></div></div>
+  <div class="source-line">Šaltinis: <a href="https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3/default/table?lang=en" target="_blank" rel="noopener">Eurostat · demo_r_find3</a> · <a href="https://ec.europa.eu/eurostat/cache/metadata/EN/demo_r_gind3_esms.htm" target="_blank" rel="noopener">regioninių rodiklių metadata</a></div>
 </div></section>
 
 <section id="gyventojai"><div class="container">
   <div class="section-label">03 · Gyventojai ir natūrali kaita <span class="badge badge-final">VDA</span></div>
   <h2>2024 m. natūrali kaita buvo neigiama, tačiau gyventojų skaičius padidėjo dėl migracijos</h2>
-  <div class="kpi-row">
-    <div class="kpi"><div class="kpi-num">2 885,9 tūkst.</div><div class="kpi-label">Gyventojai · 2024-01-01</div></div>
-    <div class="kpi"><div class="kpi-num blue">2 890,7 tūkst.</div><div class="kpi-label">Gyventojai · 2025-01-01</div></div>
-    <div class="kpi"><div class="kpi-num red">−18,4 tūkst.</div><div class="kpi-label">Natūrali kaita · 2024</div></div>
-    <div class="kpi"><div class="kpi-num green">+23,1 tūkst.</div><div class="kpi-label">Neto tarptautinė migracija · 2024</div></div>
-    <div class="kpi"><div class="kpi-num green">+4,8 tūkst.</div><div class="kpi-label">Bendras gyventojų skaičiaus pokytis</div></div>
-  </div>
-  <div class="two-col">
-    <div>
-      <h3>2024 m. demografinis balansas</h3>
-      <table><thead><tr><th>Rodiklis</th><th class="td-num">Reikšmė</th></tr></thead><tbody>
-        <tr><td>Gyvi gimę</td><td class="td-num">19 086</td></tr>
-        <tr><td>Mirusieji</td><td class="td-num">37 453</td></tr>
-        <tr><td>Natūrali gyventojų kaita</td><td class="td-num td-red">−18 367</td></tr>
-        <tr><td>Neto tarptautinė migracija</td><td class="td-num td-green">+23,1 tūkst.</td></tr>
-        <tr><td>Gyventojų skaičiaus pokytis</td><td class="td-num td-green">+4,8 tūkst.</td></tr>
-      </tbody></table>
-      <p class="small">Skirtingas pateikimo tikslumas (vienetai / tūkstančiai) paliktas toks, kokį oficialiai skelbia VDA.</p>
-    </div>
-    <div>
-      <h3>Struktūra 2025 m. pradžioje</h3>
-      <table><thead><tr><th>Rodiklis</th><th class="td-num">Reikšmė</th></tr></thead><tbody>
-        <tr><td>Moterys</td><td class="td-num">1 517,0 tūkst. · 52,5 %</td></tr>
-        <tr><td>Vyrai</td><td class="td-num">1 373,7 tūkst.</td></tr>
-        <tr><td>65 metų ir vyresni</td><td class="td-num">603,5 tūkst. · 20,9 %</td></tr>
-        <tr><td>Miestų gyventojai</td><td class="td-num">1 980,4 tūkst. · 68,5 %</td></tr>
-        <tr><td>Kaimo gyventojai</td><td class="td-num">910,2 tūkst. · 31,5 %</td></tr>
-      </tbody></table>
-    </div>
-  </div>
-  <div class="alert alert-blue"><strong>Ką tai reiškia faktiškai:</strong> 2024 m. mirusiųjų buvo daugiau nei gimusiųjų, todėl natūrali kaita buvo neigiama. Teigiama neto tarptautinė migracija buvo didesnė už natūralų sumažėjimą, todėl bendras nuolatinių gyventojų skaičius per metus padidėjo 4,8 tūkst.</div>
+  <div class="kpi-row"><div class="kpi"><div class="kpi-num">2 885,9 tūkst.</div><div class="kpi-label">Gyventojai · 2024-01-01</div></div><div class="kpi"><div class="kpi-num blue">2 890,7 tūkst.</div><div class="kpi-label">Gyventojai · 2025-01-01</div></div><div class="kpi"><div class="kpi-num red">−18,4 tūkst.</div><div class="kpi-label">Natūrali kaita · 2024</div></div><div class="kpi"><div class="kpi-num green">+23,1 tūkst.</div><div class="kpi-label">Neto tarptautinė migracija · 2024</div></div><div class="kpi"><div class="kpi-num green">+4,8 tūkst.</div><div class="kpi-label">Bendras gyventojų skaičiaus pokytis</div></div></div>
+  <div class="two-col"><div><h3>2024 m. demografinis balansas</h3><table><thead><tr><th>Rodiklis</th><th class="td-num">Reikšmė</th></tr></thead><tbody><tr><td>Gyvi gimę</td><td class="td-num">19 086</td></tr><tr><td>Mirusieji</td><td class="td-num">37 453</td></tr><tr><td>Natūrali gyventojų kaita</td><td class="td-num td-red">−18 367</td></tr><tr><td>Neto tarptautinė migracija</td><td class="td-num td-green">+23,1 tūkst.</td></tr><tr><td>Gyventojų skaičiaus pokytis</td><td class="td-num td-green">+4,8 tūkst.</td></tr></tbody></table><p class="small">Skirtingas pateikimo tikslumas paliktas toks, kokį oficialiai skelbia VDA.</p></div><div><h3>Struktūra 2025 m. pradžioje</h3><table><thead><tr><th>Rodiklis</th><th class="td-num">Reikšmė</th></tr></thead><tbody><tr><td>Moterys</td><td class="td-num">1 517,0 tūkst. · 52,5 %</td></tr><tr><td>Vyrai</td><td class="td-num">1 373,7 tūkst.</td></tr><tr><td>65 metų ir vyresni</td><td class="td-num">603,5 tūkst. · 20,9 %</td></tr><tr><td>Miestų gyventojai</td><td class="td-num">1 980,4 tūkst. · 68,5 %</td></tr><tr><td>Kaimo gyventojai</td><td class="td-num">910,2 tūkst. · 31,5 %</td></tr></tbody></table></div></div>
   <div class="source-line">Šaltinis: <a href="https://publikacijos.stat.gov.lt/lietuva-skaiciais-2025/lt/categories/3" target="_blank" rel="noopener">Valstybės duomenų agentūra · Lietuva skaičiais 2025</a></div>
 </div></section>
 
@@ -154,24 +79,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.58);padding:2rem 3rem;font-
   <div class="section-label">04 · Santuokos ir ištuokos <span class="badge badge-final">VDA 2024</span> <span class="badge badge-official">EUROSTAT</span></div>
   <h2>2024 m.: 12 890 santuokų ir 7 127 ištuokos</h2>
   <p class="lead">Lietuvos bendrasis santuokų rodiklis buvo 4,5 santuokos 1 000 gyventojų, o ištuokų – 2,5. Eurostat ES agregatai 2024 m. buvo atitinkamai 3,9 ir 1,6; ES agregatai pateikiami kaip oficialūs Eurostat įverčiai.</p>
-  <div class="two-col">
-    <div><div class="chart-wrap"><canvas id="marriageChart"></canvas></div><div class="chart-caption">Bendrieji rodikliai 1 000 gyventojų · Lietuva · VDA.</div></div>
-    <div>
-      <table><thead><tr><th>Metai</th><th class="td-num">Santuokos</th><th class="td-num">Santuokų rod.</th><th class="td-num">Ištuokos</th><th class="td-num">Ištuokų rod.</th></tr></thead><tbody>
-        <tr><td>2020</td><td class="td-num">15 299</td><td class="td-num">5,4</td><td class="td-num">7 544</td><td class="td-num">2,7</td></tr>
-        <tr><td>2021</td><td class="td-num">16 795</td><td class="td-num">6,0</td><td class="td-num">7 822</td><td class="td-num">2,8</td></tr>
-        <tr><td>2022</td><td class="td-num">16 016</td><td class="td-num">5,7</td><td class="td-num">7 395</td><td class="td-num">2,6</td></tr>
-        <tr><td>2023</td><td class="td-num">13 997</td><td class="td-num">4,9</td><td class="td-num">7 231</td><td class="td-num">2,5</td></tr>
-        <tr><td>2024</td><td class="td-num">12 890</td><td class="td-num">4,5</td><td class="td-num">7 127</td><td class="td-num">2,5</td></tr>
-      </tbody></table>
-      <div class="alert alert-red"><strong>Ko šie skaičiai nereiškia:</strong> tų pačių metų ištuokų ir santuokų santykis nėra tikimybė, kad tais metais sudaryta santuoka iširs. Ištuokos apima ankstesniais metais sudarytas santuokas.</div>
-    </div>
-  </div>
-  <div class="three-col">
-    <div class="card"><h3>4,5</h3><p>Lietuvos santuokų rodiklis 2024 m. 1 000 gyventojų.</p></div>
-    <div class="card"><h3>2,5</h3><p>Lietuvos ištuokų rodiklis 2024 m. 1 000 gyventojų.</p></div>
-    <div class="card"><h3>2 vieta ES</h3><p>Eurostat 2024 m. didžiausią ištuokų rodiklį fiksavo Latvijoje (2,8), po jos – Lietuvoje (2,5).</p></div>
-  </div>
+  <div class="two-col"><div><div class="chart-wrap"><canvas id="marriageChart"></canvas></div><div class="chart-caption">Bendrieji rodikliai 1 000 gyventojų · Lietuva · VDA.</div></div><div><table><thead><tr><th>Metai</th><th class="td-num">Santuokos</th><th class="td-num">Rod.</th><th class="td-num">Ištuokos</th><th class="td-num">Rod.</th></tr></thead><tbody><tr><td>2020</td><td class="td-num">15 299</td><td class="td-num">5,4</td><td class="td-num">7 544</td><td class="td-num">2,7</td></tr><tr><td>2021</td><td class="td-num">16 795</td><td class="td-num">6,0</td><td class="td-num">7 822</td><td class="td-num">2,8</td></tr><tr><td>2022</td><td class="td-num">16 016</td><td class="td-num">5,7</td><td class="td-num">7 395</td><td class="td-num">2,6</td></tr><tr><td>2023</td><td class="td-num">13 997</td><td class="td-num">4,9</td><td class="td-num">7 231</td><td class="td-num">2,5</td></tr><tr><td>2024</td><td class="td-num">12 890</td><td class="td-num">4,5</td><td class="td-num">7 127</td><td class="td-num">2,5</td></tr></tbody></table><div class="alert alert-red"><strong>Ko šie skaičiai nereiškia:</strong> tų pačių metų ištuokų ir santuokų santykis nėra tikimybė, kad tais metais sudaryta santuoka iširs.</div></div></div>
   <div class="source-line">Šaltiniai: <a href="https://publikacijos.stat.gov.lt/lietuva-skaiciais-2025/lt/categories/3" target="_blank" rel="noopener">VDA</a> · <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Marriage_and_divorce_statistics" target="_blank" rel="noopener">Eurostat · Marriage and divorce statistics</a> · <a href="https://ec.europa.eu/eurostat/databrowser/view/demo_nind/default/table?lang=en" target="_blank" rel="noopener">demo_nind</a></div>
 </div></section>
 
@@ -179,72 +87,86 @@ footer{background:var(--ink);color:rgba(255,255,255,.58);padding:2rem 3rem;font-
   <div class="section-label">05 · Pirmojo vaiko gimdymo amžius <span class="badge badge-final">VDA / EUROSTAT</span></div>
   <h2>2024 m. pirmąjį vaiką gimdžiusių moterų vidutinis amžius Lietuvoje – 28,7 metų</h2>
   <p class="lead">Eurostat 2024 m. ES vidurkis buvo 29,9 metų. Lietuva buvo žemiau ES vidurkio, todėl vien iš vėlesnio motinystės amžiaus negalima paaiškinti žemo Lietuvos TFR.</p>
-  <div class="two-col">
-    <div><div class="chart-wrap"><canvas id="ageChart"></canvas></div><div class="chart-caption">Vidutinis pirmąjį vaiką gimdančių moterų amžius · Lietuva.</div></div>
+  <div class="two-col"><div><div class="chart-wrap"><canvas id="ageChart"></canvas></div><div class="chart-caption">Vidutinis pirmąjį vaiką gimdančių moterų amžius · Lietuva.</div></div><div><table><thead><tr><th>Metai</th><th class="td-num">Lietuva</th></tr></thead><tbody><tr><td>2021</td><td class="td-num">28,2</td></tr><tr><td>2022</td><td class="td-num">28,2</td></tr><tr><td>2023</td><td class="td-num">28,4</td></tr><tr><td>2024</td><td class="td-num">28,7</td></tr></tbody></table><div class="alert alert-amber"><strong>Nenaudojamas ankstesnis projekto teiginys</strong> apie konkretų „TFR kritimą už +1 motinos amžiaus metus“, nes patikrintuose oficialiuose šaltiniuose tokio universalaus priežastinio koeficiento nėra.</div></div></div>
+  <div class="source-line">Šaltiniai: <a href="https://publikacijos.stat.gov.lt/lietuva-skaiciais-2025/lt/categories/3" target="_blank" rel="noopener">VDA</a> · <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Fertility_statistics" target="_blank" rel="noopener">Eurostat · Fertility statistics</a></div>
+</div></section>
+
+<section id="skaitmena"><div class="container">
+  <div class="section-label">06 · Skaitmeninio naudojimo kontekstas <span class="badge badge-official">EUROSTAT / EIGE / WHO / EC</span></div>
+  <h2>Skaitmenizavimą rodome kaip kontekstą, ne kaip demografijos priežastį</h2>
+  <div class="alert alert-blue"><strong>Nėra vieno oficialaus „Lietuvos skaitmenizavimo %“.</strong> Todėl naudojamas ilgas ir palyginamas Eurostat rodiklis – kasdien internetą naudojančių 16–74 m. gyventojų dalis. Jis apibūdina skaitmeninio naudojimo paplitimą, bet nėra bendras šalies skaitmenizacijos indeksas.</div>
+
+  <h3>Kasdienis interneto naudojimas · Lietuva ir ES</h3>
+  <div class="chart-wrap" style="height:390px"><canvas id="digitalChart"></canvas></div>
+  <div class="chart-caption">16–74 m. asmenų, internetą naudojančių kasdien, dalis (%). Eurostat isoc_ci_ifp_fu; EIGE oficialiai publikuoja Eurostat šaltinio eilutę. ES-27 dabartinės sudėties agregatas pateikiamas nuo 2007 m.</div>
+  <div class="kpi-row" style="margin-top:1.2rem"><div class="kpi"><div class="kpi-num">29,38 %</div><div class="kpi-label">Lietuva · 2007</div><div class="kpi-note">ES-27: 32,00 %</div></div><div class="kpi"><div class="kpi-num">56,54 %</div><div class="kpi-label">Lietuva · 2014</div><div class="kpi-note">ES-27: 60,02 %</div></div><div class="kpi"><div class="kpi-num">72,79 %</div><div class="kpi-label">Lietuva · 2019</div><div class="kpi-note">ES-27: 75,74 %</div></div><div class="kpi"><div class="kpi-num blue">87,37 %</div><div class="kpi-label">Lietuva · 2025</div><div class="kpi-note">ES-27: 89,44 %</div></div></div>
+  <div class="source-line">Šaltinis: <a href="https://dgs-p.eige.europa.eu/data/view?code=ta_resdig_dig_intuse__isoc_ci_ifp_fu" target="_blank" rel="noopener">European Institute for Gender Equality · Eurostat isoc_ci_ifp_fu</a> · <a href="https://ec.europa.eu/eurostat/databrowser/view/isoc_ci_ifp_fu/default/table?lang=en" target="_blank" rel="noopener">Eurostat Data Browser</a></div>
+
+  <div class="two-col" style="margin-top:2rem">
     <div>
-      <table><thead><tr><th>Metai</th><th class="td-num">Lietuva</th></tr></thead><tbody>
-        <tr><td>2021</td><td class="td-num">28,2</td></tr>
-        <tr><td>2022</td><td class="td-num">28,2</td></tr>
-        <tr><td>2023</td><td class="td-num">28,4</td></tr>
-        <tr><td>2024</td><td class="td-num">28,7</td></tr>
+      <h3>„Smartphone eros“ patvirtinti orientyrai</h3>
+      <table><thead><tr><th>Metai</th><th>Rodiklis</th><th class="td-num">LT</th><th class="td-num">ES</th></tr></thead><tbody>
+        <tr><td>2012</td><td>Internetas mobiliuose įrenginiuose ne namuose / darbe, 16–74 m.</td><td class="td-num">18 %</td><td class="td-num">32 %</td></tr>
+        <tr><td>2022</td><td>Kasdien internetą naudojantys 16–29 m.</td><td class="td-num">99 %</td><td class="td-num">96 %</td></tr>
+        <tr><td>2025</td><td>Kasdien internetą naudojantys 16–74 m.</td><td class="td-num">87,37 %</td><td class="td-num">89,44 %</td></tr>
       </tbody></table>
-      <div class="kpi-row" style="margin-top:1rem"><div class="kpi"><div class="kpi-num">29,9</div><div class="kpi-label">ES · 2024</div><div class="kpi-note">Eurostat</div></div><div class="kpi"><div class="kpi-num">28,7</div><div class="kpi-label">Lietuva · 2024</div><div class="kpi-note">VDA / Eurostat</div></div></div>
-      <div class="alert alert-amber"><strong>Nenaudojamas ankstesnis projekto teiginys</strong> apie konkretų „TFR kritimą už +1 motinos amžiaus metus“, nes patikrintuose oficialiuose šaltiniuose tokio universalaus priežastinio koeficiento nėra.</div>
+      <div class="alert alert-amber"><strong>Serijų nejungiame mechaniškai.</strong> 2012 m. mobiliojo interneto rodiklis ir kasdienio interneto naudojimo rodiklis matuoja skirtingus dalykus. Eurostat mobiliojo naudojimo kintamieji ir klausimynai per laiką keitėsi, todėl iš jų nekuriama dirbtinė viena 2011–2025 „smartphone penetration“ kreivė.</div>
+      <div class="source-line">Šaltiniai: <a href="https://ec.europa.eu/eurostat/documents/3433488/5585460/KS-SF-12-050-EN.PDF/39000dab-e2b7-49b2-bc4b-6aad0bf01279" target="_blank" rel="noopener">Eurostat · Internet use in households and by individuals in 2012</a> · <a href="https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20230714-1" target="_blank" rel="noopener">Eurostat · young people, 2022</a> · <a href="https://dgs-p.eige.europa.eu/data/information/ta_resdig_dig_intacc__isoc_ci_im_i" target="_blank" rel="noopener">EIGE / Eurostat · mobile internet access 2011–2019 metadata</a></div>
+    </div>
+    <div>
+      <h3>Ekrano naudojimas pagal amžių · Lietuva 2014</h3>
+      <div class="chart-wrap" style="height:300px"><canvas id="screenChart"></canvas></div>
+      <div class="chart-caption">Dalis 11, 13 ir 15 m. jaunuolių, kurie kompiuteriu naudojosi ≥2 val. kiekvieną darbo dieną. WHO HBSC / European Commission Knowledge4Policy. Berniukai: 59 %, 54 %, 63 %; mergaitės: 54 %, 62 %, 58 %.</div>
+      <div class="alert alert-red"><strong>Tai nėra metinė ekrano laiko kreivė.</strong> WHO Gateway šiam konkrečiam „screen time“ indikatoriui nurodo tik 2014 m. duomenis. Todėl tarpinių metų, vidutinių valandų per dieną ar 2015–2025 trajektorijos neapskaičiuojame.</div>
+      <div class="source-line">Šaltiniai: <a href="https://gateway.euro.who.int/en/indicators/hbsc_68-screen-time/" target="_blank" rel="noopener">WHO Europe · HBSC Screen time</a> · <a href="https://knowledge4policy.ec.europa.eu/health-promotion-knowledge-gateway/physical-activity-sedentary-behaviour-table-4c_en" target="_blank" rel="noopener">European Commission · Knowledge4Policy · Lithuania age/sex table</a></div>
     </div>
   </div>
-  <div class="source-line">Šaltiniai: <a href="https://publikacijos.stat.gov.lt/lietuva-skaiciais-2025/lt/categories/3" target="_blank" rel="noopener">VDA</a> · <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Fertility_statistics" target="_blank" rel="noopener">Eurostat · Fertility statistics</a> · <a href="https://ec.europa.eu/eurostat/cache/metadata/en/demo_fer_esms.htm" target="_blank" rel="noopener">fertility metadata</a></div>
+
+  <div class="alert alert-green"><strong>Interpretavimo taisyklė.</strong> Skaitmeninio naudojimo ir demografinių rodiklių kreivės gali būti rodomos greta kaip laikmečio kontekstas. Vien jų sutapimas laike nėra įrodymas, kad skaitmenizacija, smartphone naudojimas ar ekrano laikas sukėlė TFR pokytį.</div>
 </div></section>
 
 <section id="isvados"><div class="container">
-  <div class="section-label">06 · Faktinė sintezė</div>
+  <div class="section-label">07 · Faktinė sintezė</div>
   <h2>Ką šie duomenys leidžia teigti – ir ko ne</h2>
-  <div class="findings">
-    <div class="finding"><div class="finding-num">01</div><div><div class="finding-title">Lietuvos TFR yra itin žemas ES kontekste.</div><div class="finding-body">2024 m. 1,11 buvo trečias žemiausias ES rodiklis po Maltos ir Ispanijos.</div></div></div>
-    <div class="finding"><div class="finding-num">02</div><div><div class="finding-title">2024 m. gimimų skaičius sumažėjo.</div><div class="finding-body">VDA: 19 086 gyvi gimę, t. y. 7,5 % mažiau nei 2023 m.</div></div></div>
-    <div class="finding"><div class="finding-num">03</div><div><div class="finding-title">Regioninis žemumas yra platus, ne vienos apskrities problema.</div><div class="finding-body">Visų 10 NUTS 3 apskričių 2024 m. TFR buvo mažesnis nei 1,30.</div></div></div>
-    <div class="finding"><div class="finding-num">04</div><div><div class="finding-title">Gyventojų skaičiaus augimas 2024 m. nebuvo natūralaus prieaugio rezultatas.</div><div class="finding-body">Natūrali kaita buvo −18,4 tūkst., neto tarptautinė migracija +23,1 tūkst., o bendras pokytis +4,8 tūkst.</div></div></div>
-    <div class="finding"><div class="finding-num">05</div><div><div class="finding-title">Ištuokų rodiklis Lietuvoje aukštas ES kontekste.</div><div class="finding-body">2024 m. 2,5 ištuokos 1 000 gyventojų – antras didžiausias Eurostat skelbiamas rodiklis ES po Latvijos.</div></div></div>
-    <div class="finding"><div class="finding-num">06</div><div><div class="finding-title">Priežastinio modelio iš šių rodiklių nekuriame.</div><div class="finding-body">Nepriskiriame TFR kritimo moterų skaičiui, santuokų skaičiui ar pirmojo vaiko amžiui be atskiro patvirtinto priežastinio tyrimo.</div></div></div>
-  </div>
+  <div class="findings"><div class="finding"><div class="finding-num">01</div><div><div class="finding-title">Lietuvos TFR yra itin žemas ES kontekste.</div><div class="finding-body">2024 m. 1,11 buvo trečias žemiausias ES rodiklis po Maltos ir Ispanijos.</div></div></div><div class="finding"><div class="finding-num">02</div><div><div class="finding-title">2024 m. gimimų skaičius sumažėjo.</div><div class="finding-body">VDA: 19 086 gyvi gimę, t. y. 7,5 % mažiau nei 2023 m.</div></div></div><div class="finding"><div class="finding-num">03</div><div><div class="finding-title">Regioninis žemumas yra platus.</div><div class="finding-body">Visų 10 NUTS 3 apskričių 2024 m. TFR buvo mažesnis nei 1,30.</div></div></div><div class="finding"><div class="finding-num">04</div><div><div class="finding-title">Gyventojų skaičiaus augimas 2024 m. nebuvo natūralaus prieaugio rezultatas.</div><div class="finding-body">Natūrali kaita buvo −18,4 tūkst., neto tarptautinė migracija +23,1 tūkst.</div></div></div><div class="finding"><div class="finding-num">05</div><div><div class="finding-title">Lietuva per du dešimtmečius tapo beveik visuotinai kasdien internetu besinaudojančia visuomene.</div><div class="finding-body">Kasdien internetą naudojančių 16–74 m. dalis išaugo nuo 29,38 % 2007 m. iki 87,37 % 2025 m. Tai kontekstinis, o ne priežastinis demografijos rodiklis.</div></div></div><div class="finding"><div class="finding-num">06</div><div><div class="finding-title">Priežastinio modelio iš šių kreivių nekuriame.</div><div class="finding-body">TFR kritimo nepriskiriame santuokoms, motinystės amžiui, migracijai, internetui, smartphone ar ekrano laikui be atskiro priežastinio tyrimo.</div></div></div></div>
 </div></section>
 
 <section id="metodika"><div class="container">
-  <div class="section-label">07 · Metodika ir ribos</div>
+  <div class="section-label">08 · Metodika ir ribos</div>
   <h2>Kaip skaityti rodiklius</h2>
-  <div class="method-grid">
-    <div class="method"><strong>TFR ≠ gimimų skaičius</strong><p>Eurostat TFR apskaičiuoja sumuojant amžiui specifinius moterų gimstamumo rodiklius. Mažesnis reprodukcinio amžiaus moterų skaičius gali mažinti absoliutų gimimų skaičių, bet savaime nėra matematinė mažesnio TFR priežastis.</p></div>
-    <div class="method"><strong>Bendrasis santuokų / ištuokų rodiklis</strong><p>Tai atitinkamų įvykių skaičius per metus, tenkantis 1 000 vidutinių metų gyventojų. Jis nėra konkrečios santuokos iširimo tikimybė.</p></div>
-    <div class="method"><strong>Oficialus įvertis ≠ mūsų prielaida</strong><p>Jei Eurostat pats pažymi ES agregatą kaip estimated/provisional, projekte jis gali būti rodomas tik aiškiai nurodant šį statusą. Savarankiškų prognozių nedarome.</p></div>
-    <div class="method"><strong>2025 m. TFR</strong><p>Šioje versijoje nepateikiamas. Naudojamas naujausias patikrintas ir tarpusavyje suderintas 2024 m. rodiklis. Naujesnis skaičius bus įtrauktas tik atsiradus oficialiam šaltiniui.</p></div>
-  </div>
-  <div class="source-line">Apibrėžimai: <a href="https://ec.europa.eu/eurostat/cache/metadata/en/demo_fer_esms.htm" target="_blank" rel="noopener">Eurostat fertility metadata</a> · <a href="https://ec.europa.eu/eurostat/cache/metadata/EN/demo_nup_esms.htm" target="_blank" rel="noopener">Eurostat marriage/divorce metadata</a></div>
+  <div class="method-grid"><div class="method"><strong>TFR ≠ gimimų skaičius</strong><p>Eurostat TFR apskaičiuoja sumuojant amžiui specifinius moterų gimstamumo rodiklius. Mažesnis reprodukcinio amžiaus moterų skaičius gali mažinti absoliutų gimimų skaičių, bet savaime nėra matematinė mažesnio TFR priežastis.</p></div><div class="method"><strong>Koreliacija ≠ priežastis</strong><p>Vienu metu kintantys demografiniai, socialiniai ar skaitmeniniai rodikliai pateikiami kaip kontekstas. Priežastinis teiginys galimas tik remiantis atitinkamu tyrimu.</p></div><div class="method"><strong>„Skaitmenizavimo %“</strong><p>Nenaudojamas kaip vienas universalus rodiklis. Ilgai laiko eilei pasirenkamas aiškiai apibrėžtas Eurostat kasdienio interneto naudojimo rodiklis.</p></div><div class="method"><strong>Ekrano laikas</strong><p>WHO HBSC 2014 rodiklis yra dalis jaunuolių, pasiekiančių ≥2 val. kompiuterio naudojimo darbo dienomis ribą. Tai nėra vidutinės valandos per dieną ir nėra kasmetinė serija.</p></div><div class="method"><strong>Mobiliojo interneto serijos</strong><p>Eurostat kintamieji, įrenginiai ir klausimyno formuluotės keitėsi. Todėl skirtingų metodikų taškai nejungiami į tariamai vientisą smartphone naudojimo kreivę.</p></div><div class="method"><strong>2025 m. TFR</strong><p>Nepateikiamas, kol nėra patikrinto analogiško oficialaus metinio rodiklio. Naujesnis skaičius bus įtrauktas tik atsiradus oficialiam šaltiniui.</p></div></div>
+  <div class="source-line">Apibrėžimai: <a href="https://ec.europa.eu/eurostat/cache/metadata/en/demo_fer_esms.htm" target="_blank" rel="noopener">Eurostat fertility metadata</a> · <a href="https://ec.europa.eu/eurostat/cache/metadata/EN/demo_nup_esms.htm" target="_blank" rel="noopener">Eurostat marriage/divorce metadata</a> · <a href="https://ec.europa.eu/eurostat/documents/341889/725159/Variables%2Bcollected_published_ICT%2Busage%2Bin%2Bhouseholds%2Band%2Bby%2Bindividuals%2Bincl%2B2023.pdf/fbc37d26-3b9d-f447-08de-c8c29a20469d?t=1705330607413" target="_blank" rel="noopener">Eurostat ICT variables by year</a></div>
 </div></section>
 
 <section id="saltiniai"><div class="container">
-  <div class="section-label">08 · Pirminiai šaltiniai</div>
-  <h2>Visos nuorodos, iš kurių paimti šiame puslapyje naudojami skaičiai</h2>
+  <div class="section-label">09 · Pirminiai šaltiniai</div>
+  <h2>Nuorodos, iš kurių paimti šiame puslapyje naudojami skaičiai</h2>
   <div class="sources">
-    <div class="source-card"><strong>Valstybės duomenų agentūra · Lietuva skaičiais 2025 · Nuolatiniai gyventojai</strong><a href="https://publikacijos.stat.gov.lt/lietuva-skaiciais-2025/lt/categories/3" target="_blank" rel="noopener">https://publikacijos.stat.gov.lt/lietuva-skaiciais-2025/lt/categories/3</a></div>
-    <div class="source-card"><strong>Eurostat · Fertility statistics · 2024 duomenys</strong><a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Fertility_statistics" target="_blank" rel="noopener">https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Fertility_statistics</a></div>
-    <div class="source-card"><strong>Eurostat · dataset demo_find · nacionaliniai gimstamumo rodikliai</strong><a href="https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table?lang=en" target="_blank" rel="noopener">https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table?lang=en</a></div>
-    <div class="source-card"><strong>Eurostat · dataset demo_r_find3 · NUTS 3 gimstamumo rodikliai</strong><a href="https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3/default/table?lang=en" target="_blank" rel="noopener">https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3/default/table?lang=en</a></div>
-    <div class="source-card"><strong>Eurostat · Marriage and divorce statistics</strong><a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Marriage_and_divorce_statistics" target="_blank" rel="noopener">https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Marriage_and_divorce_statistics</a></div>
-    <div class="source-card"><strong>Eurostat · dataset demo_nind · santuokų ir ištuokų rodikliai</strong><a href="https://ec.europa.eu/eurostat/databrowser/view/demo_nind/default/table?lang=en" target="_blank" rel="noopener">https://ec.europa.eu/eurostat/databrowser/view/demo_nind/default/table?lang=en</a></div>
-    <div class="source-card"><strong>Eurostat · Fertility metadata · rodiklių apibrėžimai</strong><a href="https://ec.europa.eu/eurostat/cache/metadata/en/demo_fer_esms.htm" target="_blank" rel="noopener">https://ec.europa.eu/eurostat/cache/metadata/en/demo_fer_esms.htm</a></div>
-    <div class="source-card"><strong>Eurostat · Marriages metadata · rodiklių apibrėžimai</strong><a href="https://ec.europa.eu/eurostat/cache/metadata/EN/demo_nup_esms.htm" target="_blank" rel="noopener">https://ec.europa.eu/eurostat/cache/metadata/EN/demo_nup_esms.htm</a></div>
+    <div class="source-card"><strong>Valstybės duomenų agentūra · Lietuva skaičiais 2025</strong><a href="https://publikacijos.stat.gov.lt/lietuva-skaiciais-2025/lt/categories/3" target="_blank" rel="noopener">https://publikacijos.stat.gov.lt/lietuva-skaiciais-2025/lt/categories/3</a></div>
+    <div class="source-card"><strong>Eurostat · Fertility statistics / demo_find</strong><a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Fertility_statistics" target="_blank" rel="noopener">https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Fertility_statistics</a></div>
+    <div class="source-card"><strong>Eurostat · NUTS 3 fertility · demo_r_find3</strong><a href="https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3/default/table?lang=en" target="_blank" rel="noopener">https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3/default/table?lang=en</a></div>
+    <div class="source-card"><strong>Eurostat · Marriage and divorce statistics / demo_nind</strong><a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Marriage_and_divorce_statistics" target="_blank" rel="noopener">https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Marriage_and_divorce_statistics</a></div>
+    <div class="source-card"><strong>EIGE · Eurostat isoc_ci_ifp_fu · kasdienis interneto naudojimas 2003–2025</strong><a href="https://dgs-p.eige.europa.eu/data/view?code=ta_resdig_dig_intuse__isoc_ci_ifp_fu" target="_blank" rel="noopener">https://dgs-p.eige.europa.eu/data/view?code=ta_resdig_dig_intuse__isoc_ci_ifp_fu</a></div>
+    <div class="source-card"><strong>Eurostat · Internet use in households and by individuals in 2012</strong><a href="https://ec.europa.eu/eurostat/documents/3433488/5585460/KS-SF-12-050-EN.PDF/39000dab-e2b7-49b2-bc4b-6aad0bf01279" target="_blank" rel="noopener">Eurostat Statistics in Focus 50/2012</a></div>
+    <div class="source-card"><strong>Eurostat · Young people and daily internet use · 2022</strong><a href="https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20230714-1" target="_blank" rel="noopener">https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20230714-1</a></div>
+    <div class="source-card"><strong>WHO Europe · HBSC Screen time · 2014</strong><a href="https://gateway.euro.who.int/en/indicators/hbsc_68-screen-time/" target="_blank" rel="noopener">https://gateway.euro.who.int/en/indicators/hbsc_68-screen-time/</a></div>
+    <div class="source-card"><strong>European Commission Knowledge4Policy · screen time pagal šalį, amžių ir lytį</strong><a href="https://knowledge4policy.ec.europa.eu/health-promotion-knowledge-gateway/physical-activity-sedentary-behaviour-table-4c_en" target="_blank" rel="noopener">https://knowledge4policy.ec.europa.eu/health-promotion-knowledge-gateway/physical-activity-sedentary-behaviour-table-4c_en</a></div>
+    <div class="source-card"><strong>EIGE · Eurostat isoc_ci_im_i · mobile internet access 2011–2019 metadata</strong><a href="https://dgs-p.eige.europa.eu/data/information/ta_resdig_dig_intacc__isoc_ci_im_i" target="_blank" rel="noopener">https://dgs-p.eige.europa.eu/data/information/ta_resdig_dig_intacc__isoc_ci_im_i</a></div>
   </div>
 </div></section>
 
-<footer><div><strong>Lietuva · Demografinė situacija</strong>Duomenų projektas. Atnaujinta 2026-09-13. Rodomi tik oficialiai paskelbti rodikliai ir aiškiai pažymėti oficialūs Eurostat įverčiai.</div><div><strong>Duomenų principas</strong>Jei oficialaus rodiklio nėra arba jo nepavyko patikrinti – skaičius nepateikiamas. Koreliacija nepateikiama kaip priežastis.</div></footer>
+<footer><div><strong>Lietuva · Demografinė situacija</strong>Duomenų projektas. Atnaujinta 2026-09-13. Rodomi tik oficialiai paskelbti rodikliai ir aiškiai pažymėti oficialūs įverčiai.</div><div><strong>Duomenų principas</strong>Jei oficialaus rodiklio nėra arba jo nepavyko patikrinti – skaičius nepateikiamas. Koreliacija nepateikiama kaip priežastis.</div></footer>
 
 <script>
-Chart.defaults.font.family="'Instrument Sans', sans-serif";
-Chart.defaults.color='#4a4845';
-const grid='rgba(74,72,69,.12)', red='#b9382b', blue='#1d4f7d', green='#2f6942', amber='#a95d12';
+Chart.defaults.font.family="'Instrument Sans', sans-serif";Chart.defaults.color='#4a4845';
+const grid='rgba(74,72,69,.12)',red='#b9382b',blue='#1d4f7d',green='#2f6942',amber='#a95d12';
 new Chart(document.getElementById('tfrChart'),{type:'line',data:{labels:['2021','2022','2023','2024'],datasets:[{label:'Lietuva',data:[1.34,1.27,1.18,1.11],borderColor:red,backgroundColor:red,tension:.25,pointRadius:4,borderWidth:3},{label:'ES',data:[1.53,1.46,1.38,1.34],borderColor:blue,backgroundColor:blue,tension:.25,pointRadius:4,borderWidth:2}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom'}},scales:{y:{min:1,max:1.65,grid:{color:grid},title:{display:true,text:'Gyvų gimusių vaikų / moteriai'}},x:{grid:{display:false}}}}});
-new Chart(document.getElementById('regionChart'),{type:'bar',data:{labels:['Tauragės','Kauno','Klaipėdos','Telšių','Vilniaus','Šiaulių','Panevėžio','Marijampolės','Utenos','Alytaus'],datasets:[{data:[1.21,1.16,1.15,1.11,1.10,1.09,1.08,1.03,.96,.96],backgroundColor:[green,blue,blue,blue,blue,blue,blue,amber,red,red],borderWidth:0}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.raw.toFixed(2).replace('.',',')}}},scales:{x:{min:.8,max:1.3,grid:{color:grid}},y:{grid:{display:false}}}}});
+new Chart(document.getElementById('regionChart'),{type:'bar',data:{labels:['Tauragės','Kauno','Klaipėdos','Telšių','Vilniaus','Šiaulių','Panevėžio','Marijampolės','Utenos','Alytaus'],datasets:[{data:[1.21,1.16,1.15,1.11,1.10,1.09,1.08,1.03,.96,.96],backgroundColor:[green,blue,blue,blue,blue,blue,blue,amber,red,red],borderWidth:0}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{min:.8,max:1.3,grid:{color:grid}},y:{grid:{display:false}}}}});
 new Chart(document.getElementById('marriageChart'),{type:'line',data:{labels:['2020','2021','2022','2023','2024'],datasets:[{label:'Santuokų rodiklis',data:[5.4,6.0,5.7,4.9,4.5],borderColor:blue,backgroundColor:blue,tension:.25,pointRadius:4,borderWidth:2},{label:'Ištuokų rodiklis',data:[2.7,2.8,2.6,2.5,2.5],borderColor:red,backgroundColor:red,tension:.25,pointRadius:4,borderWidth:2}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom'}},scales:{y:{min:0,max:7,grid:{color:grid},title:{display:true,text:'1 000 gyventojų'}},x:{grid:{display:false}}}}});
 new Chart(document.getElementById('ageChart'),{type:'line',data:{labels:['2021','2022','2023','2024'],datasets:[{label:'Lietuva',data:[28.2,28.2,28.4,28.7],borderColor:amber,backgroundColor:amber,tension:.2,pointRadius:5,borderWidth:3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{min:27.5,max:30.2,grid:{color:grid},title:{display:true,text:'Metai'}},x:{grid:{display:false}}}}});
+const digitalYears=['2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025'];
+new Chart(document.getElementById('digitalChart'),{type:'line',data:{labels:digitalYears,datasets:[{label:'Lietuva',data:[29.38,37.16,41.36,44.97,47.56,49.17,53.03,56.54,56.82,61.25,64.62,69.13,72.79,76.01,78.65,82.83,85.89,86.45,87.37],borderColor:red,backgroundColor:red,tension:.2,pointRadius:3,borderWidth:3},{label:'ES-27',data:[32,37.14,41.77,46.87,50.8,52.86,56.24,60.02,62.91,66.73,68.9,72.58,75.74,78.9,80.1,83.34,85.42,87.93,89.44],borderColor:blue,backgroundColor:blue,tension:.2,pointRadius:3,borderWidth:2}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom'}},scales:{y:{min:20,max:100,grid:{color:grid},title:{display:true,text:'% 16–74 m. gyventojų'}},x:{grid:{display:false}}}}});
+new Chart(document.getElementById('screenChart'),{type:'bar',data:{labels:['11 m.','13 m.','15 m.'],datasets:[{label:'Berniukai',data:[59,54,63],backgroundColor:blue},{label:'Mergaitės',data:[54,62,58],backgroundColor:red}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom'}},scales:{y:{min:0,max:100,grid:{color:grid},title:{display:true,text:'% ≥2 val. darbo dienomis'}},x:{grid:{display:false}}}}});
 </script>
 </body>
 </html>
