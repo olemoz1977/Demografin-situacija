@@ -1,0 +1,42 @@
+name: Update demographic data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 6 1 * *'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/update_sex_ratio.py'
+      - '.github/workflows/update-demography-data.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update-sex-age-history:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Fetch official Eurostat data
+        run: python scripts/update_sex_ratio.py
+
+      - name: Commit updated data if changed
+        shell: bash
+        run: |
+          if [[ -n "$(git status --porcelain data/sex-ratio-history.json)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/sex-ratio-history.json
+            git commit -m "Update Eurostat sex-age history data"
+            git push
+          else
+            echo "No data changes"
+          fi
