@@ -7,11 +7,12 @@
   const block=document.createElement('div');
   block.id='policyFreBlock';
   block.innerHTML=`
-    <h3 style="margin-top:2rem">Kaip palyginti skirtingas sistemas be Lt / €, infliacijos ir 2019 m. bruto reformos?</h3>
-    <p class="lead">Nominalių sumų nelyginame. Vietoje jų naudojame <strong>supaprastintą OECD „full-rate equivalent“ (FRE) principu paremtą indeksą</strong>: kiek 100 % ankstesnių pajamų mėnesių atitiktų konkretaus 24 mėn. režimo bazinės išmokų normos.</p>
+    <h3 style="margin-top:2rem">Kiek „100 % pajamų mėnesių“ atitinka skirtingos išmokų schemos?</h3>
+    <p class="lead"><strong>FRE (full-rate equivalent)</strong> – paprastas būdas skirtingas išmokų normas paversti į vieną bendrą matą. Įsivaizduojame, kad vietoj skirtingų procentų visa išmoka būtų mokama po <strong>100 % ankstesnių pajamų</strong>. Tada klausiame: kiek tokių „pilno tarifo mėnesių“ susidarytų per visą laikotarpį?</p>
+    <div class="alert alert-blue"><strong>Pavyzdys.</strong> 2008 m. schema buvo 12 mėn. po 100 % ir dar 12 mėn. po 85 %. Skaičiuojame: 12 × 100 % + 12 × 85 % = <strong>22,2 pilno tarifo mėnesio</strong>. Tai <strong>nereiškia</strong>, kad 22,2 mėn. buvo mokama 100 % – tai tik bendras tos schemos ekvivalentas.</div>
     <div class="chart-wrap" style="height:330px"><canvas id="policyFreChart"></canvas></div>
-    <div class="chart-caption"><strong>Supaprastintas 24 mėn. bazinio režimo FRE indeksas.</strong> Skaičiavimas: 12 × pirmųjų metų norma + 12 × antrųjų metų norma. Tai nėra faktinė šeimai išmokėta suma: neįtraukiamos išmokų lubos, mokesčiai, nėštumo ir gimdymo išmoka, faktinė vaiko priežiūros išmokos pradžios data ir kitos individualios taisyklės.</div>
-    <div class="alert alert-blue" style="margin-top:1.2rem"><strong>Kaip skaityti grafiką.</strong> 2008 m. 100 % / 85 % režimas duoda 22,2 pilno atlygio ekvivalento mėnesio (vidutiniškai 92,5 % per du metų blokus); 2010 m. 90 % / 75 % – 19,8 mėn.; 2011 m. dvejų metų 70 % / 40 % pasirinkimas – 13,2 mėn.; dabartinės 24 mėn. schemos bazinės 45 % / 30 % normos – 9,0 mėn. <strong>Dabartinės sistemos 2 + 2 neperleidžiami mėnesiai, mokami 78 %, į šią bazinę juostą sąmoningai neįtraukti</strong>, nes jų vieta laikotarpyje ir šeimos pasirinkimas keičia tikslų bendrą FRE.</div>
+    <div class="chart-caption"><strong>Supaprastintas 24 mėn. FRE palyginimas.</strong> Jis leidžia palyginti sistemas nenaudojant litų ar eurų, todėl valiutos pakeitimas ir infliacija čia netrukdo. Tačiau grafikas lygina tik bazines išmokų normas: <strong>lubos, mokesčiai ir individualios taisyklės neįtrauktos</strong>.</div>
+    <div class="alert alert-amber" style="margin-top:1.2rem"><strong>Kaip skaityti.</strong> Kuo daugiau „100 % pajamų mėnesių“, tuo dosnesnė bazinė išmokų schema. 2008 m. – 22,2; 2010 m. – 19,8; 2011 m. dvejų metų variantas – 13,2; dabartinės 24 mėn. schemos bazinės 45 % / 30 % normos – 9,0. <strong>Dabartinės sistemos 2 + 2 neperleidžiami mėnesiai po 78 % į šią bazinę juostą neįtraukti</strong>, todėl 9,0 nėra visos dabartinės sistemos galutinis FRE.</div>
     <div class="source-line">Metodikos orientyras: <a href="https://www.oecd.org/els/family/PF2_4_Parental_leave_replacement_rates.pdf" target="_blank" rel="noopener">OECD Family Database · PF2.4 · Parental leave replacement rates</a> · Dabartinės normos: <a href="https://sodra.lt/ismokos/seimos-ismokos/vaiko-prieziuros-ismoka-nuo-2023-m" target="_blank" rel="noopener">Sodra · vaiko priežiūros išmoka</a>. Istorinės normos – aukščiau pateikti E-Seimo šaltiniai.</div>
   `;
 
@@ -36,10 +37,10 @@
         maintainAspectRatio:false,
         plugins:{
           legend:{display:false},
-          tooltip:{callbacks:{label:(ctx)=>`${ctx.parsed.y.toLocaleString('lt-LT',{minimumFractionDigits:1,maximumFractionDigits:1})} pilno atlygio mėn.`}}
+          tooltip:{callbacks:{label:(ctx)=>`${ctx.parsed.y.toLocaleString('lt-LT',{minimumFractionDigits:1,maximumFractionDigits:1})} pilno tarifo mėn.`}}
         },
         scales:{
-          y:{beginAtZero:true,max:24,title:{display:true,text:'100 % pajamų ekvivalento mėnesiai'},grid:{color:'rgba(74,72,69,.12)'}},
+          y:{beginAtZero:true,max:24,title:{display:true,text:'„100 % pajamų“ mėnesių ekvivalentas'},grid:{color:'rgba(74,72,69,.12)'}},
           x:{grid:{display:false}}
         }
       }
