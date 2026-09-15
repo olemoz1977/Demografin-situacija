@@ -11,32 +11,17 @@
     all:{label:'Visas tyrimas',title:'Visas tyrimas',desc:'Visos sekcijos viename ilgame puslapyje.'}
   };
   const SECTION_VIEWS={
-    apzvalga:'overview',
-    researchHome:'overview',
-    tfr:'fertility',
-    regionai:'fertility',
-    amzius:'fertility',
-    'lytis-amzius':'population',
-    gyventojai:'migration',
-    'migration-sex-section':'migration',
-    uzsienieciai:'migration',
-    santuokos:'family',
-    'parama-istorija':'family',
-    infrastruktura:'family',
-    skaitmena:'family',
-    'family-hypotheses-section':'family',
-    scenarijai:'future',
-    isvados:'all',
-    metodika:'methods',
-    saltiniai:'methods'
+    apzvalga:'overview',researchHome:'overview',tfr:'fertility',regionai:'fertility',amzius:'fertility',
+    'lytis-amzius':'population',gyventojai:'migration','migration-sex-section':'migration',uzsienieciai:'migration',
+    santuokos:'family','parama-istorija':'family',infrastruktura:'family',skaitmena:'family','family-hypotheses-section':'family',
+    scenarijai:'future',isvados:'all',metodika:'methods',saltiniai:'methods'
   };
   const HASH_VIEW={
-    '#apzvalga':'overview','#tfr':'fertility','#regionai':'fertility','#amzius':'fertility',
-    '#lytis-amzius':'population','#gyventojai':'migration','#uzsienieciai':'migration',
-    '#santuokos':'family','#parama-istorija':'family','#infrastruktura':'family','#skaitmena':'family',
-    '#familyFormationHypotheses':'family','#scenarijai':'future','#metodika':'methods','#saltiniai':'methods','#isvados':'all'
+    '#apzvalga':'overview','#tfr':'fertility','#regionai':'fertility','#amzius':'fertility','#lytis-amzius':'population',
+    '#gyventojai':'migration','#uzsienieciai':'migration','#santuokos':'family','#parama-istorija':'family',
+    '#infrastruktura':'family','#skaitmena':'family','#familyFormationHypotheses':'family','#scenarijai':'future',
+    '#metodika':'methods','#saltiniai':'methods','#isvados':'all'
   };
-
   const qs=new URLSearchParams(location.search);
   let view=qs.get('view');
   if(!VALID_VIEWS.includes(view)) view=HASH_VIEW[location.hash]||'overview';
@@ -45,7 +30,6 @@
   css.rel='stylesheet'; css.href='research-nav.css?v=20260915a';
   document.head.appendChild(css);
   document.body.classList.add('research-routed');
-
   const makeUrl=v=>`${location.pathname}?view=${encodeURIComponent(v)}`;
 
   function updateHeader(){
@@ -53,9 +37,7 @@
     if(right) right.innerHTML='Atnaujinta 2026-09-15<br>2025* – išankstiniai, kai pažymėta';
     const sub=document.querySelector('.masthead-sub');
     if(sub) sub.innerHTML='<span>Gimstamumas</span><span>Gyventojų struktūra</span><span>Migracija</span><span>Šeimos aplinka</span><span>Ateitis</span>';
-    document.querySelectorAll('footer').forEach(f=>{
-      f.innerHTML=f.innerHTML.replace(/Atnaujinta\s+2026-09-13/g,'Atnaujinta 2026-09-15');
-    });
+    document.querySelectorAll('footer').forEach(f=>{f.innerHTML=f.innerHTML.replace(/Atnaujinta\s+2026-09-13/g,'Atnaujinta 2026-09-15');});
   }
 
   function buildNav(){
@@ -64,9 +46,7 @@
     nav.classList.add('research-primary');
     nav.innerHTML='';
     ['overview','fertility','population','migration','family','future','methods','all'].forEach(v=>{
-      const a=document.createElement('a');
-      a.href=makeUrl(v);
-      a.textContent=VIEW_META[v].label;
+      const a=document.createElement('a'); a.href=makeUrl(v); a.textContent=VIEW_META[v].label;
       if(v===view) a.classList.add('active');
       nav.appendChild(a);
     });
@@ -77,8 +57,7 @@
     const overview=document.getElementById('apzvalga');
     if(!overview) return;
     const section=document.createElement('section');
-    section.id='researchHome';
-    section.className='research-home';
+    section.id='researchHome'; section.className='research-home';
     section.innerHTML=`<div class="container">
       <div class="section-label">Tyrimo žemėlapis <span class="badge badge-official">ATNAUJINTA 2026-09-15</span></div>
       <h2>Ne vienas skaičius. Penkios susijusios tyrimo kryptys.</h2>
@@ -104,61 +83,37 @@
   function normalizeDynamicBlocks(){
     const migrationBlock=document.getElementById('migrationSexBlock');
     if(migrationBlock && !document.getElementById('migration-sex-section')){
-      const section=document.createElement('section');
-      section.id='migration-sex-section';
-      const container=document.createElement('div');
-      container.className='container';
-      section.appendChild(container);
-      container.appendChild(migrationBlock);
+      const section=document.createElement('section'); section.id='migration-sex-section';
+      const container=document.createElement('div'); container.className='container'; section.appendChild(container); container.appendChild(migrationBlock);
       const gyventojai=document.getElementById('gyventojai');
-      if(gyventojai) gyventojai.insertAdjacentElement('afterend',section);
-      else document.body.appendChild(section);
+      if(gyventojai) gyventojai.insertAdjacentElement('afterend',section); else document.body.appendChild(section);
     }
-
     const familyBlock=document.getElementById('familyFormationHypotheses');
     if(familyBlock && !document.getElementById('family-hypotheses-section')){
-      const section=document.createElement('section');
-      section.id='family-hypotheses-section';
-      const container=document.createElement('div');
-      container.className='container';
-      section.appendChild(container);
-      container.appendChild(familyBlock);
-      const infra=document.getElementById('infrastruktura');
-      const synthesis=document.getElementById('isvados');
-      if(infra) infra.insertAdjacentElement('afterend',section);
-      else if(synthesis) synthesis.insertAdjacentElement('beforebegin',section);
-      else document.body.appendChild(section);
+      const section=document.createElement('section'); section.id='family-hypotheses-section';
+      const container=document.createElement('div'); container.className='container'; section.appendChild(container); container.appendChild(familyBlock);
+      const infra=document.getElementById('infrastruktura'); const synthesis=document.getElementById('isvados');
+      if(infra) infra.insertAdjacentElement('afterend',section); else if(synthesis) synthesis.insertAdjacentElement('beforebegin',section); else document.body.appendChild(section);
     }
   }
 
   function ensureTopicIntro(){
     let intro=document.getElementById('researchTopicIntro');
-    if(view==='overview' || view==='all'){
-      intro?.remove();
-      return;
-    }
-    if(!intro){
-      intro=document.createElement('section');
-      intro.id='researchTopicIntro';
-      intro.className='research-topic-intro';
-    }
+    if(view==='overview'||view==='all'){intro?.remove();return;}
+    if(!intro){intro=document.createElement('section');intro.id='researchTopicIntro';intro.className='research-topic-intro';}
     intro.innerHTML=`<div class="container"><div class="eyebrow">Teminis tyrimo puslapis</div><h2>${VIEW_META[view].title}<span class="research-view-badge">${VIEW_META[view].label}</span></h2><p class="lead">${VIEW_META[view].desc}</p></div>`;
     const first=[...document.querySelectorAll('body > section')].find(s=>SECTION_VIEWS[s.id]===view);
-    if(first && intro.nextElementSibling!==first) first.insertAdjacentElement('beforebegin',intro);
+    if(first&&intro.nextElementSibling!==first) first.insertAdjacentElement('beforebegin',intro);
   }
 
   function renumberVisible(){
-    const sections=[...document.querySelectorAll('body > section')].filter(s=>!s.classList.contains('research-hidden') && !['researchHome','researchTopicIntro'].includes(s.id));
+    const sections=[...document.querySelectorAll('body > section')].filter(s=>!s.classList.contains('research-hidden')&&!['researchHome','researchTopicIntro'].includes(s.id));
     let i=0;
     sections.forEach(section=>{
-      const label=section.querySelector(':scope > .container > .section-label');
-      if(!label) return;
+      const label=section.querySelector(':scope > .container > .section-label'); if(!label) return;
       const n=String(i++).padStart(2,'0');
-      const firstText=[...label.childNodes].find(n=>n.nodeType===Node.TEXT_NODE);
-      if(firstText){
-        const clean=firstText.textContent.replace(/^\s*\d{2}\s*·\s*/,'').trimStart();
-        firstText.textContent=`${n} · ${clean}`;
-      }
+      const firstText=[...label.childNodes].find(x=>x.nodeType===Node.TEXT_NODE);
+      if(firstText){const clean=firstText.textContent.replace(/^\s*\d{2}\s*·\s*/,'').trimStart();firstText.textContent=`${n} · ${clean}`;}
     });
   }
 
@@ -166,54 +121,38 @@
     document.querySelectorAll('.research-next').forEach(n=>n.remove());
     const order=['fertility','population','migration','family','future','methods'];
     if(!order.includes(view)) return;
-    const idx=order.indexOf(view);
-    const next=order[idx+1];
-    if(!next) return;
-    const visible=[...document.querySelectorAll('body > section')].filter(s=>!s.classList.contains('research-hidden') && s.id!=='researchTopicIntro');
-    const last=visible[visible.length-1];
-    const container=last?.querySelector(':scope > .container');
-    if(!container) return;
-    const div=document.createElement('div');
-    div.className='research-next';
+    const next=order[order.indexOf(view)+1]; if(!next) return;
+    const visible=[...document.querySelectorAll('body > section')].filter(s=>!s.classList.contains('research-hidden')&&s.id!=='researchTopicIntro');
+    const container=visible[visible.length-1]?.querySelector(':scope > .container'); if(!container) return;
+    const div=document.createElement('div'); div.className='research-next';
     div.innerHTML=`Toliau tyrime: <a href="${makeUrl(next)}">${VIEW_META[next].label} →</a>`;
     container.appendChild(div);
   }
 
   function applyVisibility(){
-    normalizeDynamicBlocks();
-    ensureHome();
-    ensureTopicIntro();
-    const sections=[...document.querySelectorAll('body > section')];
-    sections.forEach(section=>{
+    normalizeDynamicBlocks(); ensureHome(); ensureTopicIntro();
+    [...document.querySelectorAll('body > section')].forEach(section=>{
       if(section.id==='researchTopicIntro') return;
-      let show=true;
-      if(view!=='all'){
-        const owner=SECTION_VIEWS[section.id];
-        show=owner===view;
-      }
+      const show=view==='all'||SECTION_VIEWS[section.id]===view;
       section.classList.toggle('research-hidden',!show);
     });
     const intro=document.getElementById('researchTopicIntro');
     if(intro) intro.classList.toggle('research-hidden',view==='overview'||view==='all');
-    renumberVisible();
-    addNextLink();
+    renumberVisible(); addNextLink();
     document.title=`Lietuva · Demografinė situacija · ${VIEW_META[view].title}`;
   }
 
-  updateHeader();
-  buildNav();
-  ensureHome();
-  applyVisibility();
+  updateHeader(); buildNav(); ensureHome(); applyVisibility();
 
   let timer=null;
-  const observer=new MutationObserver(()=>{
-    clearTimeout(timer);
-    timer=setTimeout(applyVisibility,60);
+  const watched='#lytis-amzius,#migrationSexBlock,#parama-istorija,#infrastruktura,#scenarijai,#familyFormationHypotheses';
+  const observer=new MutationObserver(mutations=>{
+    const relevant=mutations.some(m=>[...m.addedNodes].some(node=>node.nodeType===1&&(node.matches?.(watched)||node.querySelector?.(watched))));
+    if(!relevant) return;
+    clearTimeout(timer); timer=setTimeout(applyVisibility,60);
   });
   observer.observe(document.body,{childList:true,subtree:true});
   [200,600,1200,2500].forEach(ms=>setTimeout(applyVisibility,ms));
 
-  if(location.hash){
-    setTimeout(()=>document.querySelector(location.hash)?.scrollIntoView({block:'start'}),900);
-  }
+  if(location.hash) setTimeout(()=>document.querySelector(location.hash)?.scrollIntoView({block:'start'}),900);
 })();
