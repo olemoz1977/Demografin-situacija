@@ -10,6 +10,7 @@ on:
       - 'scripts/update_sex_ratio.py'
       - 'scripts/update_tfr_nowcast.py'
       - 'scripts/update_family_policy_history.py'
+      - 'scripts/update_migration_sex.py'
       - '.github/workflows/update-demography-data.yml'
 
 permissions:
@@ -36,13 +37,16 @@ jobs:
       - name: Fetch official Eurostat 2005-2012 fertility history
         run: python scripts/update_family_policy_history.py
 
+      - name: Fetch official Eurostat migration by sex data
+        run: python scripts/update_migration_sex.py
+
       - name: Commit updated data if changed
         shell: bash
         run: |
           if [[ -n "$(git status --porcelain data/)" ]]; then
             git config user.name "github-actions[bot]"
             git config user.email "4189822+github-actions[bot]@users.noreply.github.com"
-            git add data/sex-ratio-history.json data/tfr-nowcast-2025.json data/family-policy-history.json
+            git add data/sex-ratio-history.json data/tfr-nowcast-2025.json data/family-policy-history.json data/migration-sex-history.json
             git commit -m "Update Eurostat demographic data"
             git push
           else
