@@ -1,0 +1,222 @@
+{
+  "source": {
+    "organisation": "Eurostat",
+    "datasets": {
+      "immigration_total": "migr_imm8",
+      "emigration_total": "migr_emi2",
+      "immigration_by_citizenship": "migr_imm1ctz",
+      "emigration_by_citizenship": "migr_emi1ctz"
+    },
+    "urls": {
+      "migr_imm8": "https://ec.europa.eu/eurostat/databrowser/view/migr_imm8/default/table?lang=en",
+      "migr_emi2": "https://ec.europa.eu/eurostat/databrowser/view/migr_emi2/default/table?lang=en",
+      "migr_imm1ctz": "https://ec.europa.eu/eurostat/databrowser/view/migr_imm1ctz/default/table?lang=en",
+      "migr_emi1ctz": "https://ec.europa.eu/eurostat/databrowser/view/migr_emi1ctz/default/table?lang=en"
+    },
+    "api_urls": [
+      "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/migr_imm8?lang=EN&freq=A&geo=LT&unit=NR&sinceTimePeriod=2015&untilTimePeriod=2024",
+      "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/migr_emi2?lang=EN&freq=A&geo=LT&unit=NR&sinceTimePeriod=2015&untilTimePeriod=2024",
+      "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/migr_imm1ctz?lang=EN&freq=A&geo=LT&unit=NR&sinceTimePeriod=2015&untilTimePeriod=2024&citizen=LT",
+      "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/migr_emi1ctz?lang=EN&freq=A&geo=LT&unit=NR&sinceTimePeriod=2015&untilTimePeriod=2024&citizen=LT"
+    ],
+    "updated": {
+      "migr_imm8": "2026-07-01T23:00:00+0200",
+      "migr_emi2": "2026-07-01T23:00:00+0200",
+      "migr_imm1ctz": "2026-05-29T23:00:00+0200",
+      "migr_emi1ctz": "2026-07-01T23:00:00+0200"
+    }
+  },
+  "definitions": {
+    "age": "25–44 m.",
+    "return_migration": "Lietuvos piliečių imigracija į Lietuvą; agreguotas grįžtamosios migracijos rodiklis, ne individualus to paties asmens sekimas.",
+    "net": "imigracija minus emigracija tais pačiais metais ir tai pačiai lyčiai.",
+    "age_definition_total_immigration": "COMPLET",
+    "age_definition_total_emigration": "COMPLET",
+    "age_definition_lt_citizen_immigration": "COMPLET",
+    "age_definition_lt_citizen_emigration": "COMPLET"
+  },
+  "total_25_44": [
+    {
+      "year": 2015,
+      "immigration_men": 8947,
+      "immigration_women": 8563,
+      "emigration_men": 12407,
+      "emigration_women": 10544,
+      "net_men": -3460,
+      "net_women": -1981
+    },
+    {
+      "year": 2016,
+      "immigration_men": 9599,
+      "immigration_women": 8478,
+      "emigration_men": 13854,
+      "emigration_women": 12076,
+      "net_men": -4255,
+      "net_women": -3598
+    },
+    {
+      "year": 2017,
+      "immigration_men": 9873,
+      "immigration_women": 8957,
+      "emigration_men": 13177,
+      "emigration_women": 11368,
+      "net_men": -3304,
+      "net_women": -2411
+    },
+    {
+      "year": 2018,
+      "immigration_men": 11904,
+      "immigration_women": 9664,
+      "emigration_men": 9679,
+      "emigration_women": 7903,
+      "net_men": 2225,
+      "net_women": 1761
+    },
+    {
+      "year": 2019,
+      "immigration_men": 16398,
+      "immigration_women": 10296,
+      "emigration_men": 9070,
+      "emigration_women": 7086,
+      "net_men": 7328,
+      "net_women": 3210
+    },
+    {
+      "year": 2020,
+      "immigration_men": 17427,
+      "immigration_women": 9123,
+      "emigration_men": 7610,
+      "emigration_women": 4004,
+      "net_men": 9817,
+      "net_women": 5119
+    },
+    {
+      "year": 2021,
+      "immigration_men": 17003,
+      "immigration_women": 6227,
+      "emigration_men": 9853,
+      "emigration_women": 2989,
+      "net_men": 7150,
+      "net_women": 3238
+    },
+    {
+      "year": 2022,
+      "immigration_men": 24691,
+      "immigration_women": 18099,
+      "emigration_men": 4509,
+      "emigration_women": 2554,
+      "net_men": 20182,
+      "net_women": 15545
+    },
+    {
+      "year": 2023,
+      "immigration_men": 32564,
+      "immigration_women": 7460,
+      "emigration_men": 6111,
+      "emigration_women": 4474,
+      "net_men": 26453,
+      "net_women": 2986
+    },
+    {
+      "year": 2024,
+      "immigration_men": 22968,
+      "immigration_women": 6297,
+      "emigration_men": 12797,
+      "emigration_women": 3474,
+      "net_men": 10171,
+      "net_women": 2823
+    }
+  ],
+  "lithuanian_citizens_25_44": [
+    {
+      "year": 2015,
+      "return_men": 5983,
+      "return_women": 7860,
+      "emigration_men": 9790,
+      "emigration_women": 9157,
+      "net_men": -3807,
+      "net_women": -1297
+    },
+    {
+      "year": 2016,
+      "return_men": 5640,
+      "return_women": 7641,
+      "emigration_men": 11658,
+      "emigration_women": 11345,
+      "net_men": -6018,
+      "net_women": -3704
+    },
+    {
+      "year": 2017,
+      "return_men": 3737,
+      "return_women": 8175,
+      "emigration_men": 11315,
+      "emigration_women": 10202,
+      "net_men": -7578,
+      "net_women": -2027
+    },
+    {
+      "year": 2018,
+      "return_men": 5135,
+      "return_women": 8149,
+      "emigration_men": 7611,
+      "emigration_women": 7032,
+      "net_men": -2476,
+      "net_women": 1117
+    },
+    {
+      "year": 2019,
+      "return_men": 5908,
+      "return_women": 8502,
+      "emigration_men": 6348,
+      "emigration_women": 6451,
+      "net_men": -440,
+      "net_women": 2051
+    },
+    {
+      "year": 2020,
+      "return_men": 6036,
+      "return_women": 7180,
+      "emigration_men": 3298,
+      "emigration_women": 3582,
+      "net_men": 2738,
+      "net_women": 3598
+    },
+    {
+      "year": 2021,
+      "return_men": 5225,
+      "return_women": 4444,
+      "emigration_men": 7337,
+      "emigration_women": 2229,
+      "net_men": -2112,
+      "net_women": 2215
+    },
+    {
+      "year": 2022,
+      "return_men": 5235,
+      "return_women": 3710,
+      "emigration_men": 3341,
+      "emigration_women": 2369,
+      "net_men": 1894,
+      "net_women": 1341
+    },
+    {
+      "year": 2023,
+      "return_men": 5061,
+      "return_women": 3380,
+      "emigration_men": 2586,
+      "emigration_women": 2055,
+      "net_men": 2475,
+      "net_women": 1325
+    },
+    {
+      "year": 2024,
+      "return_men": 5040,
+      "return_women": 3515,
+      "emigration_men": 2336,
+      "emigration_women": 1905,
+      "net_men": 2704,
+      "net_women": 1610
+    }
+  ]
+}
