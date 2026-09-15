@@ -1,0 +1,32 @@
+{
+  "source": {
+    "organisation": "United Nations Statistics Division",
+    "dataset": "Demographic Yearbook",
+    "title": "Live births by sex and urban/rural residence",
+    "url_1985_1998": "https://unstats.un.org/unsd/demographic/products/dyb/DYBNat/NatStatTab01.pdf",
+    "url_1999": "https://unstats.un.org/unsd/demographic-social/products/dyb/dybsets/2000%20DYB.pdf",
+    "note": "UN Demographic Yearbook compiles official national civil-registration statistics. Code C denotes data assessed as virtually complete (at least 90%). For Lithuania, the 1999 value uses the later revised 2000 Yearbook record; the 1999 natality special table showed a provisional total without sex breakdown."
+  },
+  "coverage": {
+    "sex_split_start": 1985,
+    "sex_split_end": 1999,
+    "note": "The UN 1980–1999 natality table reports Lithuania's total births for 1980–1984 but does not publish a male/female split for those years, therefore the comparable sex-ratio series starts in 1985."
+  },
+  "data": [
+    {"year":1985,"male":29778,"female":28676},
+    {"year":1986,"male":31030,"female":28675},
+    {"year":1987,"male":30417,"female":28943},
+    {"year":1988,"male":29090,"female":27637},
+    {"year":1989,"male":28679,"female":27103},
+    {"year":1990,"male":29136,"female":27732},
+    {"year":1991,"male":28895,"female":27324},
+    {"year":1992,"male":27408,"female":26209},
+    {"year":1993,"male":24480,"female":22984},
+    {"year":1994,"male":21677,"female":20699},
+    {"year":1995,"male":21171,"female":20024},
+    {"year":1996,"male":19970,"female":19096},
+    {"year":1997,"male":19500,"female":18312},
+    {"year":1998,"male":19220,"female":17799},
+    {"year":1999,"male":18756,"female":17659}
+  ]
+}
