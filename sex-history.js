@@ -2,7 +2,7 @@
   const red='#b9382b', blue='#1d4f7d', amber='#a95d12', ink3='#7c7872';
   const grid='rgba(74,72,69,.12)';
 
-  fetch('data/sex-ratio-history.json?v=20260913')
+  fetch('data/sex-ratio-history.json?v=20260915')
     .then(r => { if(!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
     .then(data => {
       const histCanvas=document.getElementById('womenPer1000Chart');
@@ -46,6 +46,7 @@
       if(pyramid && !document.getElementById('sexRatioByAge2025Chart')){
         const pyramidCaption=pyramid.parentElement?.nextElementSibling;
         const block=document.createElement('div');
+        block.id='sexRatioByAgeBlock';
         block.style.marginTop='2rem';
         block.innerHTML=`<h3>Moterys 1 000 vyrų pagal amžių · ${data.latest_by_age.year}</h3><div class="chart-wrap" style="height:360px"><canvas id="sexRatioByAge2025Chart"></canvas></div><div class="chart-caption">Eurostat <code>demo_pjan</code> · absoliutūs gyventojų skaičiai. 1 000 = vienodas moterų ir vyrų skaičius toje amžiaus grupėje.</div>`;
         if(pyramidCaption) pyramidCaption.insertAdjacentElement('afterend',block);
@@ -62,6 +63,56 @@
           options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom'}},scales:{y:{min:800,max:1450,grid:{color:grid},title:{display:true,text:'Moterų 1 000 vyrų'}},x:{grid:{display:false}}}}
         });
       }
+
+      // Gimimų santykis vs. dabartinis tų pačių apytikslių amžiaus kohortų santykis.
+      fetch('data/birth-sex-history.json?v=20260915',{cache:'no-store'})
+        .then(r=>{if(!r.ok) throw new Error(`HTTP ${r.status}`); return r.json();})
+        .then(births=>{
+          if(document.getElementById('sexBirthCohortBlock')) return;
+          const rows=births.data||[];
+          const groups=[
+            {from:1985,to:1989,age:'35–39'},
+            {from:1990,to:1994,age:'30–34'},
+            {from:1995,to:1999,age:'25–29'}
+          ].map(g=>{
+            const subset=rows.filter(r=>r.year>=g.from&&r.year<=g.to);
+            const male=subset.reduce((s,r)=>s+r.male,0);
+            const female=subset.reduce((s,r)=>s+r.female,0);
+            const now=data.latest_by_age.values.find(v=>v.age===g.age);
+            return {
+              label:`${g.from}–${String(g.to).slice(-2)} → ${g.age} m.`,
+              born:male?Math.round(female/male*10000)/10:null,
+              now:now?.women_per_1000_men??null
+            };
+          });
+          const anchor=document.getElementById('sexRatioByAgeBlock');
+          if(!anchor) return;
+          const block=document.createElement('div');
+          block.id='sexBirthCohortBlock';
+          block.style.marginTop='2.4rem';
+          block.innerHTML=`
+            <h3>Ar vien gimimų santykis paaiškina dabartinį disbalansą?</h3>
+            <p class="lead">Ne. 1985–1999 m. Lietuvoje gimstant mergaičių ir berniukų santykis buvo maždaug <strong>942–950 mergaičių 1 000 berniukų</strong>. 2025 m. atitinkamose 25–39 m. gyventojų grupėse santykis jau buvo tik <strong>877–884 moterys 1 000 vyrų</strong>.</p>
+            <div class="chart-wrap" style="height:340px"><canvas id="sexBirthCohortChart"></canvas></div>
+            <div class="chart-caption">Gimimų santykis: UN Statistics Division Demographic Yearbook, oficialios civilinės registracijos statistika. 2025 m. gyventojų santykis: Eurostat <code>demo_pjan</code>. Penkerių metų gimimo laikotarpiai lyginami su beveik atitinkančiomis amžiaus grupėmis 2025-01-01.</div>
+            <div class="alert alert-amber" style="margin-top:1.1rem"><strong>Svarbi metodinė riba.</strong> Tai nėra uždara tos pačios kohortos sekimo studija. Gimimų duomenys rodo vaikus, gimusius Lietuvoje, o 2025 m. gyventojų duomenys – tuo metu Lietuvoje gyvenančius žmones nepriklausomai nuo gimimo šalies. Skirtumą gali keisti tarptautinė migracija, mirtingumas ir gyventojų apskaitos pokyčiai. Todėl grafikas parodo, kad <strong>vien biologinio santykio gimstant dabartiniam skirtumui paaiškinti nepakanka</strong>, bet pats savaime neįrodo priežasties.</div>
+            <p class="small">UN 1980–1999 lentelėje Lietuvos bendras gimimų skaičius pateiktas ir 1980–1984 m., tačiau vyrų / moterų pjūvis tiems metams ten nepaskelbtas, todėl palyginama lyčių serija čia pradedama 1985 m.</p>
+            <div class="source-line">Šaltiniai: <a href="${births.source.url_1985_1998}" target="_blank" rel="noopener">UN Demographic Yearbook · 1985–1998 gimimai pagal lytį</a> · <a href="${births.source.url_1999}" target="_blank" rel="noopener">UN Demographic Yearbook · 1999 patikslinti duomenys</a> · <a href="https://ec.europa.eu/eurostat/databrowser/view/demo_pjan/default/table?lang=en" target="_blank" rel="noopener">Eurostat · demo_pjan</a></div>`;
+          anchor.insertAdjacentElement('afterend',block);
+
+          const c=document.getElementById('sexBirthCohortChart');
+          if(c&&window.Chart){
+            new Chart(c,{
+              type:'bar',
+              data:{labels:groups.map(g=>g.label),datasets:[
+                {label:'Gimstant · mergaičių 1 000 berniukų',data:groups.map(g=>g.born),backgroundColor:amber},
+                {label:'2025 m. · moterų 1 000 vyrų',data:groups.map(g=>g.now),backgroundColor:blue}
+              ]},
+              options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom'}},scales:{y:{min:820,max:1000,grid:{color:grid},title:{display:true,text:'Moterų / mergaičių 1 000 vyrų / berniukų'}},x:{grid:{display:false}}}}
+            });
+          }
+        })
+        .catch(err=>console.error('Nepavyko įkelti istorinių gimimų pagal lytį:',err));
 
       const source=document.querySelector('#lytis-amzius .source-line');
       if(source && !source.innerHTML.includes('demo_pjan')){
