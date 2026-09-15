@@ -21,13 +21,10 @@
     html('#skaitmena .alert-green','<strong>Kaip tai skaityti.</strong> Skaitmeninio naudojimo ir demografinių rodiklių kreivės gali keistis tuo pačiu metu. Vien toks sutapimas dar nepasako, kad vienas reiškinys sukėlė kitą.');
 
     html('#uzsienieciai .lead','2025 m. gruodžio 31 d. Lietuvoje gyveno <strong>217 067 užsienio piliečiai</strong> – 7,5 % šalies gyventojų. Čia žiūrime į bendrą mastą, neskirstydami žmonių pagal pilietybės valstybes.');
-    text('#uzsienieciai .two-col h3:nth-of-type(1)','2025* užsienio piliečių migracijos balansas');
     replace('#uzsienieciai .alert-amber','Ilgalaikės prognozės riba.','Ko čia neprognozuojame.');
 
     text('#metodika h2','Kaip skaityti šį tyrimą');
-
-    const synthesis=q('#isvados h2');
-    if(synthesis) synthesis.textContent='Ką duomenys leidžia pasakyti – ir kur prasideda nežinomybė';
+    text('#isvados h2','Ką duomenys leidžia pasakyti – ir kur prasideda nežinomybė');
   }
 
   function homeCopy(){
@@ -36,7 +33,6 @@
     replace('#researchHome .research-summary .card:nth-child(2) p','Gimimų santykis vienas to nepaaiškina; migracijos pjūvis rodo stiprų papildomą mechanizmą.','Gimimų santykis vienas to nepaaiškina. Migracijos duomenys rodo stiprų papildomą mechanizmą, kurį verta nagrinėti atskirai.');
     replace('#researchHome .topic-card:nth-child(4) p','Išmokų istorija ir FRE, infrastruktūra, santuokos, skaitmeninis kontekstas ir partnerystės hipotezės.','Išmokų istorija ir FRE, infrastruktūra, santuokos, darbo–šeimos aplinka bei partnerystės ir skaitmeninio konteksto hipotezės.');
     replace('#researchHome .alert-blue','Kaip skaityti tyrimą.','Tyrimo taisyklė.');
-
     const intro=q('#researchTopicIntro .eyebrow');
     if(intro) intro.textContent='TYRIMO KRYPTIS';
   }
@@ -46,7 +42,7 @@
     replace('#reproLatestNote','Visos populiacijos bendras 2025 m. rodiklis (1 104) šį amžiaus skirtumą paslepia.','Bendras visų amžiaus grupių 2025 m. rodiklis – 1 104 – šio skirtumo reprodukciniame amžiuje neparodo.');
 
     text('#sexBirthCohortBlock h3','Ar dabartinį disbalansą galima paaiškinti vien tuo, kad gimė mažiau mergaičių?');
-    html('#sexBirthCohortBlock .lead','<strong>Ne vien tuo.</strong> 1985–1999 m. Lietuvoje gimstant santykis buvo maždaug <strong>942–950 mergaičių 1 000 berniukų</strong>. 2025 m. atitinkamose 25–39 m. gyventojų grupėse jis jau buvo tik <strong>877–884 moterys 1 000 vyrų</strong>. Vadinasi, gimimo metu buvęs skirtumas dabartinio santykio nepaaiškina visas.');
+    html('#sexBirthCohortBlock .lead','<strong>Ne vien tuo.</strong> 1985–1999 m. Lietuvoje gimstant santykis buvo maždaug <strong>942–950 mergaičių 1 000 berniukų</strong>. 2025 m. atitinkamose 25–39 m. gyventojų grupėse jis jau buvo tik <strong>877–884 moterys 1 000 vyrų</strong>. Vadinasi, gimimo metu buvęs skirtumas dabartinio santykio visiškai nepaaiškina.');
     replace('#sexBirthCohortBlock .alert-amber','Svarbi metodinė riba.','Šio palyginimo riba.');
     replace('#sexBirthCohortBlock .alert-amber','Todėl grafikas parodo, kad <strong>vien biologinio santykio gimstant dabartiniam skirtumui paaiškinti nepakanka</strong>, bet pats savaime neįrodo priežasties.','Todėl grafikas leidžia pasakyti vieną dalyką: <strong>gimimų santykio dabartiniam skirtumui nepakanka</strong>. Kas skirtumą padidino vėliau, reikia tikrinti atskirai.');
   }
@@ -62,14 +58,16 @@
   function policyCopy(){
     text('#parama-istorija h2','2007–2012 m. dosnios išmokos sutapo su TFR kilimu. Sutapimas dar nėra priežastis');
     htmlAt('#parama-istorija .alert-amber',0,'<strong>Svarbi korekcija.</strong> 2008–2009 m. sistema nebuvo tiesiog „be lubų“. Išmokos buvo labai dosnios, tačiau maksimalus kompensuojamasis uždarbis buvo ribojamas. Todėl toliau ją vadiname <strong>labai dosnia / aukštų lubų sistema</strong>.');
-    html('#parama-istorija #policyTfrChart + .chart-caption','Eurostat stebėtas Lietuvos TFR · 2005–2012. Trūkstamų reikšmių neinterpoliuojame.');
+
+    const tfrCanvas=q('#policyTfrChart');
+    const tfrCaption=tfrCanvas?.closest('.chart-wrap')?.nextElementSibling;
+    if(tfrCaption?.classList.contains('chart-caption')) tfrCaption.innerHTML='Eurostat stebėtas Lietuvos TFR · 2005–2012. Trūkstamų reikšmių neinterpoliuojame.';
 
     const blue=qa('#parama-istorija .alert-blue').find(el=>el.textContent.includes('Ką galima pasakyti') || el.textContent.includes('Eurostat fiksuoja'));
-    if(blue){
-      blue.innerHTML='<strong>Ką iš to galime pasakyti.</strong> Lietuvos TFR nuo 1,29 2005 m. pakilo iki 1,50 2010 m., 1,55 2011 m. ir 1,60 2012 m. Kilimas sutapo su ypač dosnios šeimos politikos laikotarpiu, tačiau prasidėjo dar iki 2008 m. reformos. Tuo pačiu metu keitėsi ekonomika, migracija, amžiaus struktūra ir galėjo realizuotis anksčiau atidėti gimimai. Todėl tai yra <strong>įdomus politikos poveikio signalas, bet ne priežasties įrodymas</strong>.';
-    }
+    if(blue) blue.innerHTML='<strong>Ką iš to galime pasakyti.</strong> Lietuvos TFR nuo 1,29 2005 m. pakilo iki 1,50 2010 m., 1,55 2011 m. ir 1,60 2012 m. Kilimas sutapo su ypač dosnios šeimos politikos laikotarpiu, tačiau prasidėjo dar iki 2008 m. reformos. Tuo pačiu metu keitėsi ekonomika, migracija, amžiaus struktūra ir galėjo realizuotis anksčiau atidėti gimimai. Todėl tai yra <strong>įdomus politikos poveikio signalas, bet ne priežasties įrodymas</strong>.';
 
-    text('#parama-istorija h3:nth-of-type(3)','Ar keitėsi pirmų, antrų ir trečių vaikų dalis?');
+    const orderTitle=qa('#parama-istorija h3').find(el=>el.textContent.trim()==='Ar keitėsi gimimų eiliškumas?');
+    if(orderTitle) orderTitle.textContent='Ar keitėsi pirmų, antrų ir trečių vaikų dalis?';
     const birthLead=qa('#parama-istorija .lead').find(el=>el.textContent.includes('demo_find'));
     if(birthLead) birthLead.innerHTML='Svarbu žiūrėti ne tik į bendrą TFR. <strong>Gimimų eiliškumas</strong> parodo, ar tuo laikotarpiu keitėsi pirmų, antrų ir trečių vaikų dalis. Tai padeda tiksliau klausti, ar finansinis saugumas galėjo būti svarbesnis sprendžiant dėl antro ar trečio vaiko.';
 
@@ -115,8 +113,7 @@
   }
 
   function familyHypothesisCopy(){
-    const block=q('#familyFormationHypotheses');
-    if(!block) return;
+    if(!q('#familyFormationHypotheses')) return;
     htmlAt('#familyFormationHypotheses .alert-amber',0,'<strong>Kur baigiasi duomenys.</strong> Žemiau nėra vieno „atsakymo“, kodėl Lietuvos TFR toks žemas. Tai skirtingo įrodymų stiprumo mechanizmai: vienus gana gerai palaiko tarptautiniai tyrimai, kitus laikome hipotezėmis. Socialinių tinklų grandinė iki gimstamumo aiškiai pažymėta kaip autoriaus hipotezė.');
     textAt('#familyFormationHypotheses .finding-title',0,'Vėlesnis pirmas vaikas palieka mažiau laiko antram ir trečiam');
     textAt('#familyFormationHypotheses .finding-title',3,'Daug pasirinkimo nebūtinai palengvina partnerio pasirinkimą');
@@ -124,7 +121,8 @@
 
     const author=qa('#familyFormationHypotheses .alert-blue').find(el=>el.textContent.includes('Autoriaus nuomonė'));
     if(author) author.innerHTML='<strong>Autoriaus hipotezė.</strong> Socialiniai tinklai ir pažinčių platformos gali kelti „tinkamo partnerio“ lūkesčių kartelę: realus žmogus lyginamas ne tik su artima aplinka, bet ir su nuolatiniu atrinktų bei pagražintų alternatyvų srautu. Kartu gali mažėti gyvo bendravimo praktika – gebėjimas toleruoti netobulumą, spręsti konfliktą ir atpažinti realų suderinamumą. <strong>Grandinės socialiniai tinklai → partnerio pasirinkimas → vėlesnė stabili partnerystė → vėlesnis pirmas vaikas → mažiau aukštesnio eiliškumo gimimų Lietuvai priežastiniu tyrimu nepatvirtinome.</strong>';
-    text('#familyFormationHypotheses h3:nth-of-type(2)','Grandinė, kurią būtų verta patikrinti Lietuvoje');
+    const chainTitle=qa('#familyFormationHypotheses h3').find(el=>el.textContent.includes('Hipotezinė grandinė'));
+    if(chainTitle) chainTitle.textContent='Grandinė, kurią būtų verta patikrinti Lietuvoje';
   }
 
   function freCopy(){
