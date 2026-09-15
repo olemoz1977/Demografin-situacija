@@ -18,6 +18,8 @@
       const sum=(rows,key)=>rows.reduce((s,r)=>s+(Number(r[key])||0),0);
       const maleNet=sum(total,'net_men');
       const femaleNet=sum(total,'net_women');
+      const ltMaleNet=sum(lt,'net_men');
+      const ltFemaleNet=sum(lt,'net_women');
       const latest=total[total.length-1];
       const ltLatest=lt.length?lt[lt.length-1]:null;
       const start=total[0].year, end=latest.year;
@@ -37,6 +39,7 @@
         ${lt.length?`
         <h3 style="margin-top:2rem">O Lietuvos piliečių grįžimas?</h3>
         <p>Čia „grįžtamąją migraciją“ apibrėžiame kaip <strong>Lietuvos piliečių imigraciją į Lietuvą</strong>. Tai agreguotas oficialus rodiklis – jis neseka, ar grįžo tas pats anksčiau išvykęs žmogus.</p>
+        <div class="alert alert-blue"><strong>Svarbus kontrastas.</strong> Per ${start}–${end} m. 25–44 m. Lietuvos piliečių srautų balansas buvo <strong>${signed(ltMaleNet)} vyrams</strong> ir <strong>${signed(ltFemaleNet)} moterims</strong>. Vadinasi, šio laikotarpio bendro vyrų migracijos pertekliaus <strong>negalima paaiškinti Lietuvos vyrų grįžimu</strong>: Lietuvos piliečių vyrų neto balansas per visą laikotarpį buvo ${ltMaleNet<0?'neigiamas':'teigiamas'}.</div>
         <div class="chart-wrap" style="height:360px"><canvas id="ltCitizenMigrationSexChart"></canvas></div>
         <div class="chart-caption">25–44 m. Lietuvos piliečiai pagal lytį · grįžo į Lietuvą ir išvyko iš Lietuvos. Eurostat <code>migr_imm1ctz</code> ir <code>migr_emi1ctz</code>.</div>
         ${ltLatest?`<div class="alert alert-green" style="margin-top:1.1rem"><strong>${ltLatest.year} m. Lietuvos piliečiai, 25–44 m.</strong> Grįžo <strong>${fmt(ltLatest.return_men)} vyrų</strong> ir <strong>${fmt(ltLatest.return_women)} moterų</strong>; išvyko <strong>${fmt(ltLatest.emigration_men)} vyrų</strong> ir <strong>${fmt(ltLatest.emigration_women)} moterų</strong>. Neto: <strong>${signed(ltLatest.net_men)} vyrams</strong>, <strong>${signed(ltLatest.net_women)} moterims</strong>.</div>`:''}
