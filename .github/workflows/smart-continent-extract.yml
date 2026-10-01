@@ -1,0 +1,54 @@
+name: Smart Continent Power BI extraction
+
+on:
+  push:
+    branches:
+      - feature/housing-affordability
+    paths:
+      - ".github/workflows/smart-continent-extract.yml"
+      - "scripts/extract_smart_continent_powerbi.mjs"
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/housing-affordability
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install Playwright
+        run: |
+          npm init -y >/dev/null 2>&1
+          npm install playwright@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Extract public Power BI report
+        run: |
+          rm -rf research/raw/smart-continent-powerbi/latest
+          mkdir -p research/raw/smart-continent-powerbi/latest
+          node scripts/extract_smart_continent_powerbi.mjs
+
+      - name: Remove binary screenshots before commit
+        run: |
+          rm -f research/raw/smart-continent-powerbi/latest/*.png
+
+      - name: Commit diagnostics
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/raw/smart-continent-powerbi/latest
+          if git diff --cached --quiet; then
+            echo "No extraction changes to commit"
+          else
+            git commit -m "Capture Smart Continent Power BI diagnostics [skip ci]"
+            git push origin HEAD:feature/housing-affordability
+          fi
