@@ -21,6 +21,16 @@ import pandas as pd
 import requests
 
 DEFAULT_URL = "https://get.data.gov.lt/datasets/gov/lsd/butu_pirkimai_gardelese/ButuPirkimas"
+HEADERS_JSON = {
+    "Accept": "application/json",
+    "User-Agent": "Mozilla/5.0 (compatible; DemografineSituacijaResearch/1.0)",
+    "Referer": "https://data.gov.lt/",
+}
+HEADERS_CSV = {
+    "Accept": "text/csv",
+    "User-Agent": "Mozilla/5.0 (compatible; DemografineSituacijaResearch/1.0)",
+    "Referer": "https://data.gov.lt/",
+}
 
 
 def build_query(limit: int | None, cursor: str | None) -> str:
@@ -50,7 +60,7 @@ def fetch_json(base: str, limit: int, sleep_s: float, timeout_s: int):
     page_no = 0
     while True:
         url = base + build_query(limit, cursor)
-        r = requests.get(url, headers={"Accept": "application/json"}, timeout=timeout_s)
+        r = requests.get(url, headers=HEADERS_JSON, timeout=timeout_s)
         r.raise_for_status()
         payload = r.json()
         page_rows = payload.get("_data", [])
@@ -76,7 +86,7 @@ def fetch_csv(base: str, sleep_s: float, timeout_s: int):
     page_no = 0
     while True:
         url = format_url + build_query(None, cursor)
-        r = requests.get(url, headers={"Accept": "text/csv"}, timeout=timeout_s)
+        r = requests.get(url, headers=HEADERS_CSV, timeout=timeout_s)
         r.raise_for_status()
         frame = pd.read_csv(io.StringIO(r.text), low_memory=False)
         next_cursor = None
@@ -100,7 +110,7 @@ def fetch_csv(base: str, sleep_s: float, timeout_s: int):
 
 def fetch_all(base: str, limit: int, sleep_s: float, timeout_s: int):
     try:
-        rows, pages, mode = fetch_json(base, limit, sleep_s, timeout_s)
+        rows, pages, mode = fetch_json(base, (limit or None), sleep_s, timeout_s)
         return pd.DataFrame(rows), pages, mode
     except (requests.HTTPError, requests.JSONDecodeError, ValueError) as exc:
         print(f"JSON pagination unavailable ({exc}); switching to CSV pagination.", flush=True)
@@ -110,7 +120,7 @@ def fetch_all(base: str, limit: int, sleep_s: float, timeout_s: int):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--url", default=DEFAULT_URL)
-    p.add_argument("--limit", type=int, default=1000)
+    p.add_argument("--limit", type=int, default=0, help="0 = server default page size")
     p.add_argument("--sleep", type=float, default=0.25)
     p.add_argument("--timeout", type=int, default=90)
     p.add_argument("--out", type=Path, default=Path("data/raw/ButuPirkimas-full.csv"))
