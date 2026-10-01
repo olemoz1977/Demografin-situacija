@@ -1,0 +1,19 @@
+city,county,updated_date,monthly_rent_eur,area_m2,eur_m2,rooms,source,source_url,status,notes
+Marijampolė,Marijampolės,2025-02-15,350,34,10.29,1,Skelbiu.lt,https://www.skelbiu.lt/skelbimai/modernaus-1-kambario-buto-nuoma-centre-78346541.html,usable,long-term self-contained
+Marijampolė,Marijampolės,2025-06-20,250,30,8.33,1,Skelbiu.lt,https://www.skelbiu.lt/skelbimai/1-kambario-butas-79545938.html,usable,self-contained
+Marijampolė,Marijampolės,2025-07-22,350,30,11.67,1,Skelbiu.lt,https://www.skelbiu.lt/skelbimai/isnuomojamas-vieno-kambario-butas-71927494.html,usable,self-contained
+Marijampolė,Marijampolės,2025-07-28,300,36.62,8.19,1,Skelbiu.lt,https://www.skelbiu.lt/skelbimai/isnuomojamas-1-kambario-butas-marijampoleje-80789105.html,usable,long-term self-contained
+Marijampolė,Marijampolės,2025-08-19,330,22.78,14.49,1,Skelbiu.lt,https://www.skelbiu.lt/skelbimai/naujai-irengto-1-k-buto-nuoma-marijampoleje-70048359.html,usable,long-term self-contained
+Marijampolė,Marijampolės,2025-11-29,190,37,5.14,1,Skelbiu.lt,https://www.skelbiu.lt/skelbimai/isnuomojamas-1-kambario-butas-82122518.html,usable,long-term self-contained
+Marijampolė,Marijampolės,2025-12-22,260,33,7.88,1,Skelbiu.lt,https://www.skelbiu.lt/skelbimai/vieno-kambario-butas-ne-bendrabutis-82169434.html,usable,explicitly not dormitory
+Alytus,Alytaus,2025-07-29,300,36,8.33,1,Skelbiu.lt,https://www.skelbiu.lt/skelbimai/nuomojamas-1-o-kambario-butas-alytuje-79337552.html,usable,long-term self-contained
+Alytus,Alytaus,2025-08-05,200,28.33,7.06,1,Skelbiu.lt,https://www.skelbiu.lt/skelbimai/isnuomojamas-1-kambario-butas-80197875.html,usable,self-contained
+Alytus,Alytaus,2025-09-03,300,30,10.00,1,Skelbiu.lt,https://www.skelbiu.lt/skelbimai/isnuomojamas-1-kambario-butas-alytuje-81313543.html,usable,long-term self-contained
+Alytus,Alytaus,2025-09-15,280,34,8.24,1,Skelbiu.lt,https://www.skelbiu.lt/skelbimai/nuomojamas-1-kambario-butas-alytuje-81465715.html,usable,self-contained
+Alytus,Alytaus,2025-09-24,290,40,7.25,1,Skelbiu.lt,https://www.skelbiu.lt/skelbimai/nuomojamas-1-kambario-butas-alytuje-81001515.html,usable,structured header used; description mentions 300 EUR and 41 m2
+Alytus,Alytaus,2025-10-17,280,34,8.24,1,Skelbiu.lt,https://www.skelbiu.lt/skelbimai/nuomojamas-1-kambario-butas-81800556.html,usable,long-term self-contained
+Utena,Utenos,2025-10-08,250,42,5.95,1,Skelbiu.lt,https://www.skelbiu.lt/skelbimai/nuomojamas-butas-81763782.html,usable,self-contained
+Utena,Utenos,2025-12-17,280,36,7.78,1,Skelbiu.lt,https://www.skelbiu.lt/skelbimai/isnuomojamas-1-kamb-butas-82590925.html,usable,self-contained
+Tauragė,Tauragės,2025-12-19,250,40,6.25,1,Skelbiu.lt,https://www.skelbiu.lt/skelbimai/isnuomojamas-1-kambario-butas-82777379.html,usable,long-term self-contained
+Telšiai,Telšių,2025-04-24,230,20,11.50,1,Skelbiu.lt,https://www.skelbiu.lt/skelbimai/mascio-g-32-naujai-irengtas-butas-ilgam-trumpam-78681730.html,usable,advertised for long or short term
+Telšiai,Telšių,2025-12-03,250,36,6.94,1,Skelbiu.lt,https://www.skelbiu.lt/skelbimai/isnuomoju-1-kambario-buta-80841797.html,usable,long-term self-contained
