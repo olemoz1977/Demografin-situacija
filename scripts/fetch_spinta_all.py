@@ -49,10 +49,26 @@ def fetch_all(base: str, limit: int, sleep_s: float, timeout_s: int):
     rows = []
     seen = set()
 
+    current_limit = limit
     while True:
-        url = build_url(base, limit, cursor)
-        r = requests.get(url, timeout=timeout_s)
-        r.raise_for_status()
+        url = build_url(base, current_limit, cursor)
+        attempts = 0
+        while True:
+            attempts += 1
+            r = requests.get(url, timeout=timeout_s)
+            if r.status_code in {500, 502, 503, 504} and current_limit > 100:
+                current_limit = max(100, current_limit // 2)
+                url = build_url(base, current_limit, cursor)
+                print(f"server={r.status_code}; retrying with limit={current_limit}")
+                time.sleep(max(sleep_s, 1.0))
+                continue
+            if r.status_code == 429 and attempts <= 8:
+                wait = min(30.0, max(1.0, sleep_s) * (2 ** (attempts - 1)))
+                print(f"rate_limited; waiting {wait:.1f}s")
+                time.sleep(wait)
+                continue
+            r.raise_for_status()
+            break
         payload = r.json()
 
         page_rows = payload.get("_data", [])
@@ -78,7 +94,7 @@ def fetch_all(base: str, limit: int, sleep_s: float, timeout_s: int):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--url", default=DEFAULT_URL)
-    p.add_argument("--limit", type=int, default=5000)
+    p.add_argument("--limit", type=int, default=1000)
     p.add_argument("--sleep", type=float, default=0.25)
     p.add_argument("--timeout", type=int, default=60)
     p.add_argument("--out", type=Path, default=Path("data/raw/ButuPirkimas-full.csv"))
