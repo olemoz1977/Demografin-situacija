@@ -4,12 +4,12 @@ Data: 2026-10-02
 
 ## Prioritetų tvarka po 2026-10-02 audito
 
-1. **Aplinkos ministerijos / Smart Continent savivaldybių būsto prieinamumo švieslentė** –
-   pirmas pasirinkimas, jei 4 psl. pradinių duomenų eksportas patvirtina faktinių / aiškiai
-   apibrėžtų rinkos sandorių kainas visoms 60 savivaldybių.
-2. **Registrų centro Rinkos sandorių duomenų teikimas (RSi)** – atsarginis A lygio kelias,
-   jei viešas AM duomenų modelis neleidžia gauti tikslių skaitinių reikšmių ar metodika
-   nepakankamai skaidri.
+1. **Registrų centro agreguotas / individualiai parengtas 2024 m. butų sandorių sluoksnis** –
+   dabartinis pirmas pasirinkimas po Smart Continent 4 psl. FAIL. Laukiamas RC atsakymas į
+   2026-10-01 užklausą dėl visų 60 savivaldybių, EUR/m², kainos ir publikavimo sąlygų.
+2. **Aplinkos ministerijos / Smart Continent švieslentė** – naudoti QA / diagnostikai.
+   4 psl. sėkmingai išgautas, bet jo 2024 m. rodiklis yra bendras būsto, ne butų sluoksnis:
+   37 009 sandoriai ir 557 Eur/m²; todėl pagrindiniam vardikliui FAIL.
 3. **Registrų centro masinio vertinimo dokumentai** – validacijai / B planui, bet ne
    tiesioginis faktinių 2024 m. sandorių kainų pakaitalas.
 4. **Finansų ministerijos savivaldybių NT apžvalgos** – sandorių skaičiaus ir aprėpties QA.
@@ -23,7 +23,11 @@ ir duomenų švieslentę. Oficialus puslapis nurodo, kad:
 - galima filtruoti metus, regioną, savivaldybių grupę ir konkrečią savivaldybę;
 - 4 švieslentės puslapyje pateikiami indekso skaičiavimui naudoti pradiniai duomenys.
 
-Tai šiuo metu yra stipriausias NEMOKAMAS kandidatas mūsų 10 apskričių kainų sluoksniui.
+Tai buvo stipriausias NEMOKAMAS kandidatas, tačiau 2026-10-02 techninis auditas jį
+atmetė kaip pagrindinį butų kainų sluoksnį. 4 psl. apima visas 60 savivaldybių, bet
+naudoja bendrą `Vid. būsto sandorio kaina, Eur/kv.m` matą, kurio nacionalinė 2024 m.
+reikšmė yra 557 Eur/m², o sandorių suma 37 009. Tai neatitinka butų kontrolės
+(1 669 Eur/m² ir apie 27 330 sandorių).
 
 Oficialus puslapis:
 https://am.lrv.lt/lt/veiklos-sritys-1/busto-prieinamumas/savivaldybiu-busto-prieinamumo-indeksas/
@@ -49,13 +53,8 @@ Smart Continent taip pat oficialiai prašė 2024/2025 m. savivaldybių lygmens a
 pajamų duomenų būtent šiam vertinimui:
 https://data.gov.lt/requests/14511/
 
-Statusas: PRIORITETINIS AUDITAS. Prieš naudojant reikia:
-1. patvirtinti pirminį kainos duomenų šaltinį ir atranką;
-2. patvirtinti, kad „vidutinė butų kaina“ yra faktinių / aiškiai apibrėžtų rinkos sandorių,
-   o ne pasiūlos kaina;
-3. gauti tikslias 60 savivaldybių skaitines reikšmes;
-4. nustatyti agregavimo metodą;
-5. patikrinti Lietuvos agregatą prieš 1 669 Eur/m².
+Statusas: **FAIL pagrindiniam butų kainų sluoksniui; QA ONLY.**
+Detalus auditas: `research/smart-continent-housing-source-audit.md`.
 
 ## 2. Registrų centro Rinkos sandorių duomenų teikimas (RSi)
 
@@ -70,13 +69,34 @@ Registrų centro dokumentuose nurodyta, kad galima:
 Svarbus pranašumas: ši paslauga gali pateikti ir kelių objektų sandorių požymius bei
 „paskirstytą kainą“, kai ji prieinama.
 
+### Svarbi RSi apimties kliūtis
+
+Vieša RC sutartis rodo, kad standartinė „nesudėtinga“ internetinė paieška pirmiausia
+parodo kriterijus atitinkančių sandorių **kiekį**, tačiau mokamas eksportas pateikia tik
+iki **25** arba **50 naujausių** sandorių. Jei atitikmenų daugiau, gaunamas ne visas
+laikotarpis, o naujausi įrašai.
+
+„Sudėtingos“ individualios užklausos priede taip pat nurodyta, kad jei kriterijus atitinka
+daugiau nei 25 sandoriai, pateikiami naujausi sandoriai. Todėl standartinis RSi eksportas
+nėra vieno žingsnio būdas gauti visus 2024 m. Lietuvos butų mikrolygmens sandorius.
+
+Tai pakeičia praktinį prioritetą:
+- **pirmenybė** – RC individualiai parengtas agreguotas / nuasmenintas 60 savivaldybių
+  failas, kurio jau paprašyta el. paštu;
+- standartinį RSi naudoti mikrolygmens QA / atrankos metodikai arba tik jei RC pasiūlys
+  ekonomiškai ir teisiškai tinkamą pilnos imties gavimo būdą;
+- neplanuoti brangaus visos rinkos atkūrimo daugybe 25/50 eilučių užklausų, kol nežinoma
+  paslaugos kaina ir publikavimo teisės.
+
 Šaltiniai:
 - https://www.registrucentras.lt/bylos/dokumentai/ntr/Rinkos%20sandoriu%20duomenu%20teikimas%20su%20asmens%20duomenimis%20%28fiziniams_asmenims%29.pdf
 - https://www.registrucentras.lt/sanduzk/jsp/login.jsp
 
-Statusas: mokama / sutartinė paslauga. 2026-10-01 Registrų centrui jau išsiųsta užklausa
-dėl 2024 m. duomenų visoms 60 savivaldybių, kainos, formato ir viešo agreguotų rezultatų
-publikavimo sąlygų. Laukiama atsakymo.
+Statusas: **PRIORITETINIS KELIAS, LAUKIAMA RC ATSAKYMO.** 2026-10-01 Registrų centrui
+jau išsiųsta užklausa dėl 2024 m. duomenų visoms 60 savivaldybių, kainos, formato ir
+viešo agreguotų rezultatų publikavimo sąlygų. Vieša RSi specifikacija patvirtina, kad
+techniniame duomenų modelyje egzistuoja mums reikalingi laukai, bet standartinės
+25/50 įrašų išdavimo ribos neleidžia laikyti RSi savitarnos pilnos imties eksportu.
 
 ## 3. Registrų centro masinio vertinimo dokumentai
 
@@ -109,10 +129,12 @@ visa rinka. Paprastas 474 / 27 330 santykis yra apie 1,7 %, tačiau tai nėra fo
 
 ## Darbo seka
 
-1. Išgauti AM/Smart Continent švieslentės 4 psl. pradinių duomenų eksportą.
-2. Patikrinti kainos šaltinį, 60 savivaldybių pilnumą ir Lietuvos 1 669 Eur/m² kontrolę.
-3. Jei PASS – statyti 2024 m. savivaldybė → apskritis pardavimo kainos sluoksnį.
-4. Jei FAIL – pereiti prie jau išsiųstos Registrų centro RSi užklausos.
+1. Smart Continent 4 psl. – **DONE / FAIL** pagrindiniam butų sluoksniui.
+2. Registrų centro agreguota 60 savivaldybių užklausa – **WAITING RESPONSE**.
+3. Iki atsakymo – parengti tikslią RC gavinių QA ir agregavimo metodiką, kad gautą XLSX/CSV
+   būtų galima tikrinti automatiškai.
+4. Jei RC pasiūlo tik standartinį RSi 25/50 sandorių režimą, pirmiausia įvertinti kainą,
+   pilnos imties atkūrimo galimybę ir publikavimo apribojimus; nepirkti aklai.
 5. Gardelių rinkinį 2559 naudoti tik kaip papildomą faktinių sandorių / anomalijų QA.
 
 
