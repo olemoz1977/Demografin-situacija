@@ -69,7 +69,8 @@
     "VDA oficiali pirkimo kainų serija neturi 10 apskričių aprėpties.",
     "VDA oficiali nuomos serija apima tik 5 didžiųjų miestų savivaldybes.",
     "Apskrities centro duomenų negalima vadinti apskrities vidurkiu.",
-    "Live/main nekeisti, kol nepasirinkta ir neužpildyta pilna geografinė metodika."
+    "Live/main nekeisti, kol nepasirinkta ir neužpildyta pilna geografinė metodika.",
+    "Aruodas 2025-12 benchmark: 1-room offer averages were Vilnius 484 EUR/month, Kaunas 379, Klaipėda 371; use only for rent-method validation, not as county values."
   ],
   "sources": [
     {
@@ -84,5 +85,49 @@
       "name": "VDA apartment rent metadata",
       "url": "https://osp.stat.gov.lt/documents/10180/5118910/But%C5%B3%2Bnuomos%2Bvidutin%C4%97s%2Bmetin%C4%97s%2Bkainos%2B%5BLT%5D%2B163640000.html"
     }
-  ]
+  ],
+  "acquisition_status": {
+    "updated": "2026-10-01",
+    "sale_layer": {
+      "status": "source_locked",
+      "source": "VDA / Registrų centras 1x1 km apartment purchase transaction grid",
+      "dataset_url": "https://data.gov.lt/datasets/2559/",
+      "api_endpoint": "https://get.data.gov.lt/datasets/gov/lsd/butu_pirkimai_gardelese/ButuPirkimas",
+      "csv_endpoint": "https://get.data.gov.lt/datasets/gov/lsd/butu_pirkimai_gardelese/ButuPirkimas/:format/csv",
+      "grid_lookup": "https://data.gov.lt/datasets/2047/data/Grid1KmSq/?select(_id,grid_id,x_centroid,y_centroid,sav_pav,sav_kodas,geometrija)",
+      "target_period": 2025,
+      "note": "Current research environment can inspect metadata/API schema but cannot directly download get.data.gov.lt payload; pipeline is ready for the export."
+    },
+    "income_layer": {
+      "status": "source_locked",
+      "source": "Sodra open data: Vidutinės apdraustųjų pajamos",
+      "dataset_url": "https://data.gov.lt/datasets/1510/",
+      "direct_archive_seen": "https://atvira.sodra.lt/downloads/lt-eur/apdraustieji_det.zip",
+      "target_period": "2025-11 / 2025-Q4",
+      "note": "Municipality income data are available in Sodra open-data exports; national 25–30 benchmark already verified."
+    },
+    "rent_layer": {
+      "status": "partial_validation",
+      "primary_method": "same-window 1-room long-term offer sample by municipality, median after deduplication",
+      "official_validation": "VDA official rent series for 5 largest cities",
+      "secondary_validation": "Aruodas historical/current offer statistics where available"
+    }
+  },
+  "rent_validation_benchmarks_aruodas_2025_12": {
+    "Vilnius": {
+      "one_room_eur_month": 484,
+      "scope": "city offer average",
+      "source": "Aruodas"
+    },
+    "Kaunas": {
+      "one_room_eur_month": 379,
+      "scope": "city offer average",
+      "source": "Aruodas"
+    },
+    "Klaipėda": {
+      "one_room_eur_month": 371,
+      "scope": "city offer average",
+      "source": "Aruodas"
+    }
+  }
 }
