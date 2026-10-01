@@ -1,0 +1,46 @@
+{
+  "status": "research",
+  "period": "2025-Q4 / 2025-11 where noted",
+  "county_net_wage_all_workers_eur_month": {
+    "Vilniaus": 1680.5,
+    "Kauno": 1558,
+    "Klaipėdos": 1451.8,
+    "Telšių": 1388.4,
+    "Panevėžio": 1346.6,
+    "Šiaulių": 1325,
+    "Alytaus": 1316.9,
+    "Tauragės": 1314,
+    "Utenos": 1300.4,
+    "Marijampolės": 1282.2
+  },
+  "national_youth_25_30": {
+    "period": "2025-11",
+    "gross_eur_month": 2516,
+    "net_eur_month": 1535,
+    "population_definition": "visą mėnesį dirbę apdraustieji, 25–30 m."
+  },
+  "required_fields_not_yet_validated": {
+    "county_net_income_25_30_eur_month": null,
+    "county_one_room_rent_eur_month": null,
+    "county_sale_price_eur_m2": null
+  },
+  "notes": [
+    "County wage series is all employees, not age 25–30; do not publish it as youth income.",
+    "Final affordability values must not be computed until rent and sale price series use a consistent territorial definition and source.",
+    "Lithuanian central bank PSBKI provides reliable price indices but not 10-county absolute EUR/m² levels."
+  ],
+  "sources": [
+    {
+      "name": "Sodra 2025 Q4 income review",
+      "url": "https://sodra.lt/wp-content/uploads/2026/02/20260224_Sodra_2025-4-ketvircio-darbo-pajamu-apzvalga.pdf"
+    },
+    {
+      "name": "VDA 2025 Q4 county wage table (republished from VDA release)",
+      "url": "https://nyksciai.lt/anyksciai-pagal-darbo-uzmokesti-neziba"
+    },
+    {
+      "name": "Lietuvos bankas PSBKI",
+      "url": "https://www.lb.lt/lt/m_statistika/t-pasikartojanciu-sandoriu-busto-kainu-indeksai/"
+    }
+  ]
+}
