@@ -1,5 +1,6 @@
 {
   "status": "research",
+  "audit_date": "2026-10-01",
   "period": "2025-Q4 / 2025-11 where noted",
   "county_net_wage_all_workers_eur_month": {
     "Vilniaus": 1680.5,
@@ -19,15 +20,56 @@
     "net_eur_month": 1535,
     "population_definition": "visą mėnesį dirbę apdraustieji, 25–30 m."
   },
+  "official_housing_source_audit": {
+    "VDA_purchase_prices": {
+      "coverage": [
+        "Lietuva",
+        "Vilniaus m. sav.",
+        "Alytaus m. sav.",
+        "Kauno m. sav.",
+        "Klaipėdos m. sav.",
+        "Panevėžio m. sav.",
+        "Šiaulių m. sav."
+      ],
+      "county_coverage": false,
+      "source_basis": "Registrų centro faktinių sandorių duomenys",
+      "periodicity": "annual",
+      "since": 2017,
+      "metadata_url": "https://osp.stat.gov.lt/documents/10180/5118910/B%C5%ABsto%2Bpirkimo-pardavimo%2Bvidutin%C4%97s%2Bkainos%2B%5BLT%5D%2B155070000.html"
+    },
+    "VDA_rent_prices": {
+      "coverage": [
+        "Vilniaus m. sav.",
+        "Kauno m. sav.",
+        "Klaipėdos m. sav.",
+        "Panevėžio m. sav.",
+        "Šiaulių m. sav."
+      ],
+      "county_coverage": false,
+      "unit": "EUR/m2/year",
+      "source_basis": "NT agentūrų ir internetinių portalų nuomos kainos",
+      "periodicity": "annual",
+      "since": 2019,
+      "metadata_url": "https://osp.stat.gov.lt/documents/10180/5118910/But%C5%B3%2Bnuomos%2Bvidutin%C4%97s%2Bmetin%C4%97s%2Bkainos%2B%5BLT%5D%2B163640000.html",
+      "gis_url": "https://www.arcgis.com/apps/dashboards/3fba56c8042649aabbb5fc85329b2f70"
+    }
+  },
+  "geography_options": {
+    "A": "5 didžiųjų miestų griežtai oficialus palyginimas",
+    "B": "10 apskričių centrų rinkos modelis",
+    "C": "10 apskričių tikras agregatas iš savivaldybių lygmens duomenų"
+  },
   "required_fields_not_yet_validated": {
-    "county_net_income_25_30_eur_month": null,
-    "county_one_room_rent_eur_month": null,
-    "county_sale_price_eur_m2": null
+    "county_or_city_net_income_25_30_eur_month": null,
+    "rent": null,
+    "sale_price_eur_m2": null
   },
   "notes": [
-    "County wage series is all employees, not age 25–30; do not publish it as youth income.",
-    "Final affordability values must not be computed until rent and sale price series use a consistent territorial definition and source.",
-    "Lithuanian central bank PSBKI provides reliable price indices but not 10-county absolute EUR/m² levels."
+    "Apskričių atlyginimų serija apima visus darbuotojus, ne tik 25–30 m.; nepublikuoti kaip tiesioginio jaunimo pajamų rodiklio.",
+    "VDA oficiali pirkimo kainų serija neturi 10 apskričių aprėpties.",
+    "VDA oficiali nuomos serija apima tik 5 didžiųjų miestų savivaldybes.",
+    "Apskrities centro duomenų negalima vadinti apskrities vidurkiu.",
+    "Live/main nekeisti, kol nepasirinkta ir neužpildyta pilna geografinė metodika."
   ],
   "sources": [
     {
@@ -35,12 +77,12 @@
       "url": "https://sodra.lt/wp-content/uploads/2026/02/20260224_Sodra_2025-4-ketvircio-darbo-pajamu-apzvalga.pdf"
     },
     {
-      "name": "VDA 2025 Q4 county wage table (republished from VDA release)",
-      "url": "https://nyksciai.lt/anyksciai-pagal-darbo-uzmokesti-neziba"
+      "name": "VDA housing purchase price metadata",
+      "url": "https://osp.stat.gov.lt/documents/10180/5118910/B%C5%ABsto%2Bpirkimo-pardavimo%2Bvidutin%C4%97s%2Bkainos%2B%5BLT%5D%2B155070000.html"
     },
     {
-      "name": "Lietuvos bankas PSBKI",
-      "url": "https://www.lb.lt/lt/m_statistika/t-pasikartojanciu-sandoriu-busto-kainu-indeksai/"
+      "name": "VDA apartment rent metadata",
+      "url": "https://osp.stat.gov.lt/documents/10180/5118910/But%C5%B3%2Bnuomos%2Bvidutin%C4%97s%2Bmetin%C4%97s%2Bkainos%2B%5BLT%5D%2B163640000.html"
     }
   ]
 }
