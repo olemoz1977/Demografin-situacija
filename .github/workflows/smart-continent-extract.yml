@@ -7,6 +7,7 @@ on:
     paths:
       - ".github/workflows/smart-continent-extract.yml"
       - "scripts/extract_smart_continent_powerbi.mjs"
+      - "scripts/parse_smart_continent_powerbi_raw.mjs"
 
 permissions:
   contents: write
@@ -36,6 +37,10 @@ jobs:
           rm -rf research/raw/smart-continent-powerbi/latest
           mkdir -p research/raw/smart-continent-powerbi/latest
           node scripts/extract_smart_continent_powerbi.mjs
+
+      - name: Parse page 4 and run QA
+        run: |
+          node scripts/parse_smart_continent_powerbi_raw.mjs
 
       - name: Remove binary screenshots before commit
         run: |
