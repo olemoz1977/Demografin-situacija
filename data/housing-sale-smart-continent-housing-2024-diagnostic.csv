@@ -1,0 +1,61 @@
+municipality,year,housing_transactions,avg_housing_transaction_eur_m2_raw,scope,price_type,use_status,quality_note
+Akmenės r. sav.,2024,345,159.791921,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Alytaus m. sav.,2024,503,592.143830,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Alytaus r. sav.,2024,302,283.780691,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Anykščių r. sav.,2024,248,316.302714,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Birštono sav.,2024,54,1240.828664,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Biržų r. sav.,2024,247,251.727558,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Druskininkų sav.,2024,282,619.846060,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Elektrėnų sav.,2024,237,629.069408,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Ignalinos r. sav.,2024,175,166.861690,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Jonavos r. sav.,2024,591,445.409915,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Joniškio r. sav.,2024,245,181.090790,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Jurbarko r. sav.,2024,310,188.047091,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Kaišiadorių r. sav.,2024,295,381.433182,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Kalvarijos sav.,2024,91,177.521442,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Kauno m. sav.,2024,4127,995.008701,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Kauno r. sav.,2024,1496,906.381843,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Kazlų Rūdos sav.,2024,112,320.809793,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Kėdainių r. sav.,2024,548,344.496071,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Kelmės r. sav.,2024,278,244.438266,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Klaipėdos m. sav.,2024,2461,1015.636885,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Klaipėdos r. sav.,2024,985,901.862393,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Kretingos r. sav.,2024,449,496.350583,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Kupiškio r. sav.,2024,189,169.453766,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Lazdijų r. sav.,2024,167,245.621802,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Marijampolės sav.,2024,581,469.481420,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Mažeikių r. sav.,2024,582,385.022309,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Molėtų r. sav.,2024,181,572.416990,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Neringos sav.,2024,44,3992.698080,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Pagėgių sav.,2024,90,146.889038,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Pakruojo r. sav.,2024,181,247.467508,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Palangos m. sav.,2024,459,1645.725635,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Panevėžio m. sav.,2024,997,586.478907,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Panevėžio r. sav.,2024,494,337.098168,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Pasvalio r. sav.,2024,232,224.371074,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Plungės r. sav.,2024,327,454.651953,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Prienų r. sav.,2024,265,474.412421,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Radviliškio r. sav.,2024,494,238.411481,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Raseinių r. sav.,2024,358,402.455149,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Rietavo sav.,2024,48,331.995410,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Rokiškio r. sav.,2024,367,184.396683,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Šakių r. sav.,2024,254,225.381511,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Šalčininkų r. sav.,2024,178,521.070476,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Šiaulių m. sav.,2024,1364,722.456024,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Šiaulių r. sav.,2024,528,460.783347,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Šilalės r. sav.,2024,160,290.500245,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Šilutės r. sav.,2024,411,414.320032,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Širvintų r. sav.,2024,160,518.292022,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Skuodo r. sav.,2024,157,214.397353,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Švenčionių r. sav.,2024,204,278.507316,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Tauragės r. sav.,2024,386,344.799107,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Telšių r. sav.,2024,443,378.358156,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Trakų r. sav.,2024,360,830.060575,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Ukmergės r. sav.,2024,450,399.734254,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Utenos r. sav.,2024,318,512.799419,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Varėnos r. sav.,2024,212,324.395268,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Vilkaviškio r. sav.,2024,388,201.700505,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Vilniaus m. sav.,2024,8973,1753.189188,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Vilniaus r. sav.,2024,1159,2550.247785,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Visagino sav.,2024,288,295.980266,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer
+Zarasų r. sav.,2024,179,215.582768,housing_all_types_dashboard_measure,transaction_price,diagnostic_only_not_apartment_specific,Power BI page 4 raw measure; do not use as apartment price layer

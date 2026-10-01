@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-10-01T23:39:25.854Z",
+  "source_response": "research/raw/smart-continent-powerbi/latest/response-071-querydata.txt",
+  "year": 2024,
+  "municipality_count": 60,
+  "dashboard_total_housing_transactions": 37009,
+  "municipality_transaction_sum": 37009,
+  "dashboard_total_avg_housing_transaction_eur_m2": 557.0073817116668,
+  "simple_mean_of_60_municipality_prices_eur_m2": 557.0073817116669,
+  "transaction_count_weighted_mean_of_60_municipality_prices_eur_m2": 962.3262418717234,
+  "total_equals_simple_municipality_mean_abs_diff": 1.1368683772161603e-13,
+  "total_equals_transaction_weighted_mean_abs_diff": 405.3188601600566,
+  "apartment_control_price_eur_m2_from_interim_presentation": 1669,
+  "apartment_control_transactions_approx_from_rc": 27330,
+  "verdict": "FAIL_FOR_APARTMENT_PRICE_LAYER",
+  "reasons": [
+    "Page-4 measure is generic housing transaction price, not apartment-only.",
+    "Dashboard total transactions are 37009, materially broader than the apartment-only control population.",
+    "Dashboard total price is the unweighted arithmetic mean of 60 municipality price measures, not a transaction-count-weighted national aggregate.",
+    "The dashboard total price 557 EUR/m2 does not reproduce the 1669 EUR/m2 national apartment control."
+  ]
+}
