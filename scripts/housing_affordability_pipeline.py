@@ -101,8 +101,46 @@ def aggregate_transactions(transactions: pd.DataFrame, grid: pd.DataFrame, munic
         })
     return pd.DataFrame(rows)
 
+def npd_2025(gross: float) -> float:
+    if gross <= 1038:
+        return 747.0
+    if gross <= 2387.29:
+        return max(0.0, 747.0 - 0.49 * (gross - 1038.0))
+    return max(0.0, 400.0 - 0.18 * (gross - 642.0))
+
+
+def net_salary_2025(gross: float, pension_extra_rate: float = 0.0) -> float:
+    """Approximate monthly net salary under 2025 LT payroll rules.
+    Base employee social rate = 19.5%; optional pension_extra_rate is 0.03 for II-pillar contribution.
+    """
+    social = 0.195 + pension_extra_rate
+    npd = npd_2025(gross)
+    gpm = 0.20 * max(0.0, gross - npd)
+    return gross - social * gross - gpm
+
+
+def build_youth_income_model(
+    municipality: pd.DataFrame,
+    national_youth_gross: float = 2516.0,
+    national_all_full_month_gross: float = 2407.0,
+    pension_extra_rate: float = 0.0,
+) -> pd.DataFrame:
+    required = {"apskritis", "gross_all_eur_2025_11", "insured_thousand_2025_11"}
+    missing = required - set(municipality.columns)
+    if missing:
+        raise ValueError(f"Municipality income file missing columns: {sorted(missing)}")
+    out = municipality.copy()
+    factor = national_youth_gross / national_all_full_month_gross
+    out["income_gross_model_25_30"] = out["gross_all_eur_2025_11"] * factor
+    out["income_net_model_25_30"] = out["income_gross_model_25_30"].map(
+        lambda x: net_salary_2025(float(x), pension_extra_rate=pension_extra_rate)
+    )
+    out["weight_young_workers"] = out["insured_thousand_2025_11"]
+    return out
+
+
 def aggregate_income(income: pd.DataFrame) -> pd.DataFrame:
-    required = {"sav_kodas", "apskritis", "income_net_model_25_30", "weight_young_workers"}
+    required = {"apskritis", "income_net_model_25_30", "weight_young_workers"}
     missing = required - set(income.columns)
     if missing:
         raise ValueError(f"Income file missing columns: {sorted(missing)}")
@@ -170,10 +208,17 @@ def main():
     muni["sav_kodas"] = muni["sav_kodas"].map(clean_code)
     sale = aggregate_transactions(tx, grid, muni)
 
-    income = pd.read_csv(args.income, dtype={"sav_kodas": str})
-    rent = pd.read_csv(args.rent, dtype={"sav_kodas": str})
-    income["sav_kodas"] = income["sav_kodas"].map(clean_code)
-    rent["sav_kodas"] = rent["sav_kodas"].map(clean_code)
+    income = pd.read_csv(args.income)
+    # Two accepted income contracts:
+    # A) already-modelled: apskritis,income_net_model_25_30,weight_young_workers
+    # B) raw verified Sodra municipality table:
+    #    apskritis,gross_all_eur_2025_11,insured_thousand_2025_11
+    if "income_net_model_25_30" not in income.columns:
+        income = build_youth_income_model(income)
+
+    rent = pd.read_csv(args.rent)
+    if "sav_kodas" in rent.columns:
+        rent["sav_kodas"] = rent["sav_kodas"].map(clean_code)
 
     result = calculate(sale, aggregate_income(income), aggregate_rent(rent))
     args.out.parent.mkdir(parents=True, exist_ok=True)
