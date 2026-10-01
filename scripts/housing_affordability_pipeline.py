@@ -51,6 +51,15 @@ def load_grid(path: Path) -> pd.DataFrame:
 
 def load_transactions(path: Path, year: int | None = None, start_year: int | None = None, end_year: int | None = None) -> pd.DataFrame:
     df = pd.read_csv(path)
+    # Spinta CSV exports can represent only one API page. If a non-empty
+    # _page.next cursor is present, the snapshot is incomplete and MUST NOT
+    # be used for territorial statistics.
+    if "_page.next" in df.columns and df["_page.next"].notna().any():
+        cursor = str(df.loc[df["_page.next"].notna(), "_page.next"].iloc[0])
+        raise ValueError(
+            "Incomplete Spinta snapshot: _page.next cursor is present. "
+            f"Fetch remaining pages before aggregation. Cursor={cursor}"
+        )
     grid_col = "sq_grid_id._id" if "sq_grid_id._id" in df.columns else "sq_grid_id"
     required = {grid_col, "data_nuo", "objektu_sk", "vid_buto_verte", "buto_verte_p50"}
     missing = required - set(df.columns)
