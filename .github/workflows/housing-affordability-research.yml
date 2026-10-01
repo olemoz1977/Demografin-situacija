@@ -2,14 +2,6 @@ name: Build housing sale research layer
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - feature/housing-affordability
-    paths:
-      - 'scripts/fetch_spinta_all.py'
-      - 'scripts/build_housing_sale_layer.py'
-      - 'data/municipality-county-map.csv'
-      - '.github/workflows/housing-affordability-research.yml'
 
 permissions:
   contents: write
@@ -34,14 +26,14 @@ jobs:
       - name: Fetch complete ButuPirkimas snapshot
         run: |
           python scripts/fetch_spinta_all.py \
-            --url https://test.data.gov.lt/datasets/gov/lsd/butu_pirkimai_gardelese/ButuPirkimas \
+            --url https://get.data.gov.lt/datasets/gov/lsd/butu_pirkimai_gardelese/ButuPirkimas \
             --out /tmp/ButuPirkimas-full.csv \
             --meta /tmp/ButuPirkimas-full.meta.json
 
       - name: Fetch complete Grid1KmSq snapshot
         run: |
           python scripts/fetch_spinta_all.py \
-            --url https://test.data.gov.lt/datasets/gov/lsd/grid/Grid1KmSq \
+            --url https://get.data.gov.lt/datasets/gov/lsd/grid/Grid1KmSq \
             --out /tmp/Grid1KmSq-full.csv \
             --meta /tmp/Grid1KmSq-full.meta.json
 
