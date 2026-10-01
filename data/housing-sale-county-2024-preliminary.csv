@@ -1,0 +1,11 @@
+county,grid_rows,transactions,objects,mean_eur_m2,weighted_grid_p50_eur_m2,max_grid_mean_eur_m2,quality
+Vilniaus,35,72.00,68.00,1948.94,1817.28,4001.00,A
+Kauno,34,121.00,104.00,1162.52,1126.76,2965.25,A
+Klaipėdos,6,8.00,7.00,858.79,827.57,1172.00,C
+Šiaulių,21,148.00,133.00,532.82,511.70,884.00,A
+Panevėžio,23,99.00,95.00,502.53,450.93,1168.00,A
+Alytaus,15,47.00,47.00,344.15,286.38,1012.00,B
+Marijampolės,3,4.00,4.00,526.00,479.00,1492.00,C
+Utenos,9,17.00,16.00,3085.19,369.75,14591.00,C-outlier
+Telšių,0,0.00,0.00,,,,no_2024_data
+Tauragės,0,0.00,0.00,,,,no_2024_data
