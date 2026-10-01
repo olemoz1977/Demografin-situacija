@@ -29,3 +29,18 @@ Apskrities modelinė reikšmė = savivaldybių modelinių neto pajamų svertinis
 - Savivaldybių atlyginimų lentelė nėra tiesioginis 25–30 m. pjūvis.
 - Apdraustųjų skaičius naudojamas kaip svoris, nes viešame pjūvyje nėra 25–30 m. dirbančiųjų skaičiaus pagal savivaldybes.
 - Dėl to rezultatas yra modelinis teritorinis 25–30 m. pajamų įvertis, ne oficiali tiesioginė statistika.
+
+
+## 2026-10-01 medianos prieinamumo patikra
+Lietuvos atvirų duomenų portale 2026-05-06 registruotame duomenų poreikyje nurodyta, kad
+„Apdraustųjų pajamų analizės“ masyvas leidžia skaičiuoti savivaldybių medianines pajamas 2026 m.,
+tačiau analogiškų 2024 ir 2025 m. masyvų viešai nerasta ir jų buvo oficialiai paprašyta būsto prieinamumo vertinimui.
+
+Šaltinis:
+https://data.gov.lt/requests/submitted/?date_from=2026-01-01&date_to=2026-12-31&lang=lt&selected_facets=status_exact%3ACREATED
+
+Išvada šiam tyrimui:
+- 2025 m. savivaldybių medianos negalima išgalvoti ar rekonstruoti iš vidurkio;
+- pagrindinis pajamų sluoksnis lieka „Sodros“ 2025-11 savivaldybių vidutinės pajamos + nacionalinė 25–30 m. korekcija;
+- rezultate aiškiai žymėti „vidutinių pajamų modelis“, ne „tipinės/medianinės pajamos“;
+- jei 2024/2025 medianų masyvas vėliau bus atvertas, pipeline turi būti perskaičiuotas kaip jautrumo patikra.
