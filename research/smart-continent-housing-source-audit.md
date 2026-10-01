@@ -1,106 +1,178 @@
 # AM / Smart Continent būsto švieslentės šaltinio auditas
 
-Data: 2026-10-02
-Statusas: OPEN – prioritetinis nemokamas šaltinis.
+Data: 2026-10-02  
+Statusas: **FAIL pagrindiniam butų kainų sluoksniui; palikti QA / diagnostikai.**
 
-## Kodėl tai svarbu
+## Sprendimas
 
-Aplinkos ministerija 2026-09-01 viešai paskelbė Savivaldybių būsto prieinamumo indeksą ir
-švieslentę. Oficialus aprašymas nurodo, kad indeksas šiuo metu skaičiuojamas iš 2022–2024 m.
-duomenų, turi metų, regiono, savivaldybių grupės ir konkrečios savivaldybės filtrus, o
-4 puslapyje pateikiami indekso skaičiavimui naudoti pradiniai duomenys.
+Aplinkos ministerijos / Smart Continent viešos „Power BI“ švieslentės 4 puslapis
+„Pradiniai duomenys“ sėkmingai išgautas iki semantinio modelio ir tikslių skaitinių
+reikšmių. Lentelė apima visas 60 savivaldybių ir 2024 m. pateikia vienodai pavadintus
+rodiklius:
 
-Tai beveik tiesiogiai sutampa su mūsų poreikiu: vienodas visos Lietuvos savivaldybių
-duomenų sluoksnis, kurį galima agreguoti į 10 apskričių.
+- `Būstų pirkimo-pardavimo sandorių skaičius`;
+- `Vid. būsto sandorio kaina, Eur/kv.m`.
 
-Oficiali švieslentė:
-https://am.lrv.lt/lt/veiklos-sritys-1/busto-prieinamumas/savivaldybiu-busto-prieinamumo-indeksas/
+Tai yra **sandorio**, ne skelbimo / pasiūlos kainos rodiklis. Tačiau jis yra bendras
+**būsto** rodiklis ir nėra butų daugiabučiuose kainos rodiklis. Todėl šaltinis
+neatitinka A varianto reikalavimo pagrindiniam butų kainų vardikliui.
 
-Vertinimo puslapis:
-https://am.lrv.lt/lt/veiklos-sritys-1/busto-prieinamumas/busto-prieinamumo-lietuvoje-didinimo-galimybiu-vertinimas/
+## Reproducibilus išgavimas
 
-## Kas jau patvirtinta iš viešo pristatymo
+Viešos ataskaitos semantinis modelis pasiekiamas per `Power BI` viešą reportą.
+Feature šakoje pridėti:
 
-Tarpinių rezultatų skaidrėse pateikiama:
-- visų savivaldybių būstų pirkimo–pardavimo sandorių dinamika;
-- 2024 m. atskiri individualių namų ir butų daugiabučiuose sandorių skaičiai;
-- savivaldybių žemėlapiai „Vidutinė namų kaina už 1 kv. m“ ir „Vidutinė butų kaina už 1 kv. m“;
-- Lietuvos 2024 m. vidutinė buto kaina 1 669 Eur/m²;
-- Lietuvos 2024 m. vidutinis neto DU 1 368 Eur/mėn.;
-- demonstracinis įperkamumo skaičiavimas: taupant 40 % pajamų 10 metų – 39,3 m² buto.
+- `scripts/extract_smart_continent_powerbi.mjs` – viešo reporto tinklo užklausų,
+  modelio ir 4 psl. duomenų išgavimas;
+- `scripts/parse_smart_continent_powerbi_raw.mjs` – 60 savivaldybių lentelės
+  dekodavimas ir QA;
+- `.github/workflows/smart-continent-extract.yml` – feature-only reproducibilus
+  paleidimas;
+- `research/raw/smart-continent-powerbi/latest/` – žali `Power BI` atsakymai;
+- `data/housing-sale-smart-continent-housing-2024-diagnostic.csv` – diagnostinis
+  60 savivaldybių sluoksnis;
+- `research/smart-continent-housing-page4-qa-2024.json` – automatinės kontrolės.
 
-Pristatymas:
-https://lntpa.lt/wp-content/uploads/2026/04/Tarpiniu-vertinimo-rezultatu-pristatymas.pdf
+`main` / live nekeičiami.
 
-Svarbu: skaidrės kainos rodiklį aprašo kaip vidutinę būstų / butų pirkimo–pardavimo kainą
-ir toliau analizėje vartoja terminą „sandorių kainos“. Tai yra stiprus signalas, kad kalbama
-apie rinkos sandorius, tačiau pirminis kainų duomenų šaltinis ir tiksli atranka dar turi būti
-patvirtinti galutinėje metodikoje / pradinių duomenų sluoksnyje.
+## Kas tiksliai yra 4 puslapyje
 
-## Institucinis ir techninis pagrindas
+Pagrindinė 4 psl. `pivotTable` naudoja savivaldybę kaip eilutę ir šiuos pradinius
+rodiklius:
 
-Vertinimą 2025–2026 m. atliko UAB „Smart Continent Management Institute“. Aplinkos
-ministerija nurodo, kad priežiūros grupėje dalyvavo Aplinkos, Finansų, Socialinės apsaugos
-ir darbo, Vidaus reikalų ministerijos, CPVA, ILTE, Lietuvos savivaldybių asociacijos ir kitų
-organizacijų atstovai. Vertinimo rezultatai naudojami rengiant nacionalinę būsto
-prieinamumo politiką.
+- būsto naudingas plotas gyventojui;
+- būstų skaičius metų pabaigoje;
+- būstai, kuriuose nėra deklaruotų gyventojų;
+- pastatytų būstų skaičius;
+- būstų pirkimo-pardavimo sandorių skaičius;
+- investicinių sandorių skaičius;
+- **vid. būsto sandorio kaina, Eur/kv. m**;
+- socialinio būsto poreikis;
+- savivaldybės nuosavybės būstų skaičius.
 
-Viešojo pirkimo techniniame apraše buvo reikalaujami ne tik vertinimo dokumentai, bet ir
-atskiras „Integralaus aktualių duomenų modelis“, kurį naudojant strateginis dokumentas
-rengiamas ir galėtų būti aktualizuojamas. Vertinimas turėjo apimti 2000–2024 m. duomenis.
-Tai stiprina interpretaciją, kad vieša švieslentė yra vertinimo duomenų modelio / jo
-publikavimo sluoksnio dalis, o ne vien pristatymo vizualizacija.
+2024 m. užklausa grąžina 61 rezultatą: 60 savivaldybių + `Iš viso`.
 
-Pirkimas:
-https://viesiejipirkimai.lt/epps/cft/prepareViewCfTWS.do?resourceId=2272550
+## Kritinės kontrolės
 
-## Nepriklausomas duomenų poreikio įrodymas
+### 1. Sandorių populiacija neatitinka butų populiacijos
 
-2026-05-06 Smart Continent, aiškiai nurodydamas, kad dirba Aplinkos ministerijos užsakymu,
-Lietuvos atvirų duomenų portale pateikė poreikį 2024 ir 2025 m. „Apdraustųjų pajamų
-analizės“ duomenims. Poreikyje tiesiogiai nurodyta, kad būsto prieinamumo vertinimui
-reikalingos medianinės gyventojų pajamos SAVIVALDYBIŲ lygiu, skirtos palyginimui ir
-išvestiniams rodikliams.
+4 psl. `Iš viso`:
 
-Tai patvirtina, kad vertinimo metodika sąmoningai konstruota savivaldybių lygmeniu ir kad
-rengėjai patys ieškojo administracinių, o ne vien rinkos portalų duomenų.
+- būstų pirkimo-pardavimo sandorių: **37 009**;
+- vid. būsto sandorio kaina: **557.0073817 Eur/m²** (UI rodo 557).
 
-Poreikis:
-https://data.gov.lt/requests/14511/
+Mūsų nepriklausomas 2024 m. kontrolinis taškas butams yra apie **27 330**
+parduotų butų. Tarpinių vertinimo rezultatų pristatyme butai daugiabučiuose ir
+individualūs namai taip pat rodomi kaip atskiros kategorijos.
+
+Išvada: 37 009 eilutė yra platesnė būsto sandorių populiacija ir negali būti
+naudojama kaip butų sandorių skaičius.
+
+### 2. 557 Eur/m² neatitinka butų kainos kontrolės
+
+Smart Continent tarpinių rezultatų pristatyme 2024 m. Lietuvos kontrolės:
+
+- vidutinė **buto** kaina: **1 669 Eur/m²**;
+- vidutinė **namo** kaina: **595 Eur/m²**.
+
+Švieslentės 4 psl. bendras `Vid. būsto sandorio kaina` rodiklis yra 557 Eur/m².
+Tai ne tas pats rodiklis kaip 1 669 Eur/m² butų kaina.
+
+### 3. Nacionalinis 557 yra nesvertas savivaldybių vidurkis
+
+Visų 60 savivaldybių 2024 m. kainų patikra:
+
+- paprastas aritmetinis 60 savivaldybių kainų vidurkis:
+  **557.0073817 Eur/m²**;
+- `Power BI` `Iš viso`: **557.0073817 Eur/m²**;
+- savivaldybių kainų vidurkis, svertas 37 009 sandorių skaičiumi:
+  **962.3262419 Eur/m²**.
+
+Taigi `Iš viso` kaina praktiškai tiksliai lygi **nesvertam 60 savivaldybių
+aritmetiniam vidurkiui**, o ne sandorių skaičiumi svertam nacionaliniam agregatui.
+
+Tai yra atskiras aukšto svarbumo QA signalas: net jei rodiklio objektų tipas būtų
+tinkamas, nacionalinio `Iš viso` negalima naudoti kaip svorinio agregavimo
+kontrolės be papildomos metodikos.
+
+## Faktinės ar pasiūlos kainos?
+
+**PASS tik šiam aspektui.**
+
+Semantinio modelio lauko pavadinimas yra `Vid. būsto sandorio kaina, Eur/kv.m`,
+o susijęs rodiklis – `Būstų pirkimo-pardavimo sandorių skaičius`. Todėl tai nėra
+skelbimų / pasiūlos kainų sluoksnis.
+
+Tačiau pirminis administracinis kainų šaltinis (pvz., konkretus Registrų centro
+duomenų produktas / atranka) vien iš viešo `Power BI` modelio **nenustatytas**.
+Modelyje nerastas šaltinio metaduomuo, leidžiantis sąžiningai teigti
+„Registrų centras“.
+
+## Vienoda metodika visoms savivaldybėms?
+
+**Dalinis PASS.**
+
+Ataskaitos semantiniame sluoksnyje visoms 60 savivaldybių taikomas tas pats
+`_measures.Vid. būsto sandorio kaina, Eur/kv.m` matas, tas pats 2024 m. filtras
+ir ta pati lentelė. Tai patvirtina vienodą **reportavimo** metodiką.
+
+Neužtenka įrodyti vienodą pirminę sandorių atranką, kelių objektų sandorių
+tvarkymą, outlier taisykles ir kainos paskirstymą. Tam reikalinga galutinė
+metodika / duomenų šaltinio aprašas.
 
 ## Santykis su mūsų metodika
 
-Smart Continent nacionalinis pavyzdys naudoja:
-- vidutinę buto kainą Eur/m²;
-- neto darbo užmokestį;
-- 40 % pajamų taupymo normą;
-- įperkamą m² skaičių.
+Smart Continent švieslentė išlieka naudinga:
 
-Mūsų rodiklis kitoks ir jo nekopijuojame: naudojame 25–30 m. jaunos poros pajamas ir
-atimame faktinę / modeliuotą vieno kambario nuomos naštą. Tačiau jų savivaldybių kainų
-sluoksnis gali būti labai geras vardiklis mūsų formulei.
+- 60 savivaldybių pilnumo kontrolei;
+- bendro būsto rinkos signalų diagnostikai;
+- savivaldybių sandorių apimčių sanity-check;
+- `Power BI` agregavimo metodikos audito pavyzdžiui;
+- būsimų RC duomenų kryžminei validacijai.
 
-## Dar nepatvirtinta
+Ji **nenaudojama**:
 
-Kol neišeksportuotas švieslentės 4 psl. pradinių duomenų sluoksnis ir nepatikrinta galutinės
-ataskaitos metodika, NEGALIMA galutinai teigti, kad:
-- kainos yra būtent Registrų centro faktinių sandorių kainos;
-- savivaldybių kainos apskaičiuotos pagal vienodą atranką visose 60 savivaldybių;
-- vidurkis svertas sandorių skaičiumi, plotu ar kitu svoriu;
-- kelių objektų sandoriai įtraukti / paskirstyti vienodai;
-- savivaldybės kainos ir sandorių skaičiaus rodikliai turi identišką atranką.
+- pagrindiniam 2024 m. butų EUR/m² sluoksniui;
+- 10 apskričių butų kainoms skaičiuoti;
+- 1 669 Eur/m² butų nacionalinei kontrolei reprodukuoti.
 
-## A varianto priėmimo kriterijus
+## A varianto priėmimo kriterijų rezultatas
 
-Šaltinį galima kelti į pagrindinį pardavimo kainos sluoksnį, jei patvirtiname:
-1. kainos = faktinės arba aiškiai apibrėžtos rinkos sandorių kainos;
-2. vienoda 2024 m. metodika visoms 60 savivaldybių;
-3. yra tikslūs skaitiniai savivaldybių duomenys, ne vien žemėlapio intervalai;
-4. žinomas arba pagrįstai atkuriamas apskrities agregavimo svoris;
-5. Lietuvos agregatas po mūsų agregavimo artimas jų 1 669 Eur/m² kontroliniam taškui.
+1. faktinės / sandorių kainos – **PASS**;
+2. vienoda semantinė metodika 60 savivaldybių – **PASS**, pirminė atranka – **OPEN**;
+3. tikslūs skaitiniai duomenys – **PASS**;
+4. tinkamas apskrities agregavimo svoris – sandorių skaičius yra, bet objektų tipas
+   netinkamas – **FAIL pagrindiniam sluoksniui**;
+5. 1 669 Eur/m² butų kontrolės reprodukcija – **FAIL**.
 
-## Kitas konkretus veiksmas
+Bendras sprendimas: **FAIL pagrindiniam butų kainų sluoksniui.**
 
-Prioritetas – gauti švieslentės 4 psl. pradinių duomenų eksportą (CSV/XLSX) arba galutinės
-ataskaitos/priedų lentelę su 2024 m. savivaldybių kainomis ir sandorių skaičiais. Jei viešas
-eksportas prieinamas, jo pakanka tęsti be mokamos Registrų centro RSi paslaugos.
+## Tolimesnis kelias
+
+Pagal iš anksto sutartą metodiką po šio FAIL prioritetas pereina į
+**Registrų centro RSi / individualios rinkos sandorių užklausos** kelią.
+
+RC viešai aprašytas RSi produktas leidžia gauti registruotų NT sandorių duomenis
+pagal individualią užklausą. Sutarties priede nurodomi laukai apima savivaldybę,
+sandorio tipą, kainos tipą, sandorio sumą, vieneto kainą (patalpoms – Eur/m²),
+objekto plotą, objekto tipą, paskirtį ir kitus atrankai reikalingus požymius.
+Tai techniškai atitinka mūsų poreikį suformuoti 2024 m. butų faktinių sandorių
+sluoksnį ir kontroliuoti atranką.
+
+Jau išsiųsta atskira užklausa `rinkos.duomenys@registrucentras.lt`; iki atsakymo
+RSi vieša dokumentacija naudojama tik techniniam duomenų modelio ir QA plano
+parengimui.
+
+## Šaltiniai
+
+- Aplinkos ministerijos švieslentė:
+  https://am.lrv.lt/lt/veiklos-sritys-1/busto-prieinamumas/savivaldybiu-busto-prieinamumo-indeksas/
+- Aplinkos ministerijos vertinimo puslapis:
+  https://am.lrv.lt/lt/veiklos-sritys-1/busto-prieinamumas/busto-prieinamumo-lietuvoje-didinimo-galimybiu-vertinimas/
+- Smart Continent tarpinių rezultatų pristatymas:
+  https://lntpa.lt/wp-content/uploads/2026/04/Tarpiniu-vertinimo-rezultatu-pristatymas.pdf
+- Registrų centro RSi prieiga:
+  https://www.registrucentras.lt/p/prisijungimai-prie-informaciniu-sistemu-posistemiu-ir-irankiu
+- Registrų centro rinkos sandorių duomenų teikimo sutarties / individualios
+  užklausos sąlygų viešas dokumentas:
+  https://www.registrucentras.lt/bylos/dokumentai/Rinkos%20sandoriu%20duomenu%20teikimas%20su%20asmens%20duomen%C5%B3%20teikimu.JA.pdf
