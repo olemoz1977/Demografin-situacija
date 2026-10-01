@@ -11,11 +11,11 @@ Statusas: SPRENDIMAS PRIIMTAS — pasirinktas A variantas.
 - Statusas: tinkamas analizei kaip B-modelled, bet ne kaip tiesioginis amžius × savivaldybė matavimas.
 
 ### Pardavimo kaina
-- Optimalus šaltinis nustatytas: VDA / Registrų centro faktinių butų sandorių 1 km gardelės.
+- Optimalus šaltinis nustatytas: VDA / Registrų centro faktinių butų sandorių 1 km gardelės, tačiau jo rinkos aprėptis dar turi būti paaiškinta.
 - JOIN su Grid1KmSq techniškai validuotas.
 - Pipeline turi pagination saugiklius ir outlier / robustumo diagnostiką.
-- Vartotojo eksportai pasirodė esantys tik pirmi Spinta puslapiai (_page.next).
-- Automatizuotas gavimas iš get.data.gov.lt ir test.data.gov.lt GitHub Actions aplinkoje kartotinai baigėsi HTTP 500.
+- Pakartotinis `page("cursor")` bandymas grąžino tik CSV antraštę ir 0 eilučių, todėl 4 630 eilučių `ButuPirkimas.csv` laikomas pilnu šio endpointo snapshot; `_page.next` paskutinėje netuščio puslapio eilutėje yra normalus Spinta elgesys.
+- Automatizuotas gavimas iš get.data.gov.lt ir test.data.gov.lt GitHub Actions aplinkoje vis dar kartotinai baigėsi HTTP 500.
 - Adresynas.lt 2026-08-21 sėkmingai buvo atsisiuntęs tą patį oficialų rinkinį ir viešai rodo 2024 m. gardelių statistiką; tai patvirtina šaltinio egzistavimą, bet nėra patogaus pilno apskrities eksporto.
 
 ### Nuoma
@@ -77,3 +77,7 @@ Tai reiškia:
 - research šakoje tęsti šaltinių gavimą, validaciją ir QA.
 
 Kitas išorinis blokatorius: `get.data.gov.lt` pilno rinkinio endpointai šiuo metu GitHub Actions aplinkoje grąžina HTTP 500. Oficialus rinkinio puslapis nurodo du kontaktus: atverimas@stat.gov.lt duomenų klausimams ir atviriduomenys@vssa.lt techniniams portalo sutrikimams.
+
+
+### 2026-10-01 vakaro korekcija
+ButuPirkimas snapshot techninis pilnumas patvirtintas tuščiu sekančiu puslapiu. Naujas blokatorius yra ne pagination, o aprėptis: 2024 m. faile tik 516 sandorių / 474 objektai, 33 savivaldybės ir 8 apskritys. Pasirinktas A variantas reiškia, kad prieš publikaciją reikia oficialaus paaiškinimo, kokia atranka lemia tokią apimtį.
