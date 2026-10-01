@@ -5,7 +5,7 @@
     "title": "Fertility indicators",
     "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table?lang=en",
     "api_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_find?lang=EN&geo=LT&sinceTimePeriod=2005&untilTimePeriod=2012",
-    "updated": "2026-09-09T23:00:00+0200"
+    "updated": "2026-09-30T23:00:00+0200"
   },
   "status": "Observed annual Eurostat fertility indicators",
   "country": "LT",
