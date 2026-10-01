@@ -63,3 +63,16 @@ Pakartotinai atsisiųstas failas patikrintas kaip tikras CSV:
 - `_id` unikalūs 4 630 / 4 630.
 
 Išvada: pakartotinis atsisiuntimas vis tiek yra tik vienas Spinta puslapis, ne pilnas rinkinys.
+
+
+## Svarbi korekcija po antro puslapio bandymo
+2026-10-01 vartotojas atidarė `page("cursor")` tęsinį ir atsisiųstas CSV turėjo tik antraštes, be duomenų eilučių.
+
+Tai pakeičia ankstesnę interpretaciją:
+- `_page.next` buvimas paskutinėje CSV duomenų eilutėje NEREIŠKIA, kad egzistuoja dar vienas netuščias puslapis;
+- Spinta CSV formate cursor gali būti pateikiamas ir paskutiniame netuščio puslapio įraše;
+- tuščias sekantis puslapis yra end-of-data patvirtinimas.
+
+Todėl 4 630 eilučių `ButuPirkimas.csv` šiuo metu laikomas pilnu šio endpointo snapshot (1998–2024), o ankstesnė pastaba „nepilnas vieno puslapio eksportas“ atšaukiama.
+
+Tačiau lieka atskiras DUOMENŲ APRĖPTIES klausimas: 2024 m. snapshot sudaro tik 516 sandorių / 474 objektai ir neturi 2024 m. eilučių Telšių bei Tauragės apskritims. Tai reikia aiškintis su duomenų teikėju prieš naudojant kaip visos rinkos reprezentatyvų apskričių kainų sluoksnį.
