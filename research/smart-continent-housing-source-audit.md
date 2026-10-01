@@ -120,6 +120,30 @@ Neužtenka įrodyti vienodą pirminę sandorių atranką, kelių objektų sandor
 tvarkymą, outlier taisykles ir kainos paskirstymą. Tam reikalinga galutinė
 metodika / duomenų šaltinio aprašas.
 
+## Papildoma semantinio modelio patikra
+
+Po 4 psl. FAIL papildomai patikrintas visas viešos `Power BI` ataskaitos
+`conceptualschema` ir reporto aprašas, kad nebūtų praleistas paslėptas
+butų-daugiabučiuose kainos matas.
+
+Rezultatas:
+- `FactBPI` turi tik bendrą lauką `Vid būsto sandorio kaina, Eur/kv.m.` ir jo ankstesnių metų variantą;
+- `_measures` turi tik bendrą `Vid. būsto sandorio kaina, Eur/kv.m` matą;
+- `FactNacionaliniai` turi `Bendras butų daugiabučiuose skaičius`, tačiau neturi
+  butų sandorių kainos EUR/m² lauko;
+- reporto apraše nerasta nei 1 669 reikšmės, nei atskiro `Vidutinė butų kaina` /
+  `Vidutinė buto kaina` mato.
+
+Todėl nemokamo Smart Continent švieslentės kelio negalima „išgelbėti“ tiesiogiai
+užklausiant kitą paslėptą matą. 2024 m. 1 669 Eur/m² butų kontrolė yra pateikta
+tarpinių rezultatų pristatyme, bet jos savivaldybių duomenys į šį viešą semantinį
+modelį neįkelti.
+
+Pirminis 1 669 Eur/m² rodiklio administracinis šaltinis kol kas paliekamas **OPEN**.
+Viešame `Power BI` modelyje nėra šaltinio metaduomens, leidžiančio jį patikimai
+priskirti Registrų centrui, todėl tokio teiginio nedarome be atskiro metodikos
+dokumento / šaltinio patvirtinimo.
+
 ## Santykis su mūsų metodika
 
 Smart Continent švieslentė išlieka naudinga:
