@@ -49,3 +49,18 @@ Toliau reikia:
 1. išsiaiškinti aktualius šios paslaugos įkainius;
 2. įvertinti, ar viena sudėtinga užklausa gali apimti visas 60 savivaldybių / visus 2024 m. butų sandorius;
 3. jei kaina priimtina, naudoti ją kaip A varianto pagrindinį pardavimo kainų sluoksnį.
+
+
+## Nacionalinis kontrolinis taškas
+
+Registrų centro 2025 m. masinio vertinimo ataskaitoje nurodyta, kad 2024 m. Lietuvoje sandoriais
+buvo parduota 27 330 butų. Tuo tarpu pilname atviro rinkinio 2559 2024 m. snapshot yra tik
+474 butų objektai (516 sandorių).
+
+Paprastas santykis 474 / 27 330 = ~1,73 %. Tai NĖRA formaliai įrodytas rinkinio „coverage rate“,
+nes abiejų šaltinių atrankos ir skaičiavimo apibrėžimai gali skirtis. Tačiau dydžių skirtumas
+patvirtina, kad rinkinys 2559 yra siaura visos rinkos poaibė ir negali būti traktuojamas kaip
+visų 2024 m. Lietuvos butų sandorių imtis.
+
+Šaltinis:
+https://finmin.lrv.lt/public/canonical/1767615731/26246/LR%2Bteritorijos%2Bnekilnojamojo%2Bturto%2Bmasinio%2Bvertinimo%2Bataskaita.pdf
