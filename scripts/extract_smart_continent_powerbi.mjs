@@ -161,7 +161,7 @@ try {
   await snapshot("page-initial");
 
   // First try direct visible labels for the 4th page; if not found, click next three times.
-  for (const label of ["4", "4 psl.", "Pradiniai duomenys", "Indekso apskaičiavimui naudoti pradiniai duomenys"]) {
+  for (const label of ["Pradiniai duomenys", "Indekso apskaičiavimui naudoti pradiniai duomenys", "4 psl."]) {
     const r = await clickPageLabel(label);
     navLog.push({ action: "direct", label, ...r });
     if (r.clicked) break;
