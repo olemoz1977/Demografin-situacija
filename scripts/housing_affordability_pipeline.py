@@ -41,6 +41,12 @@ def clean_code(v):
 
 def load_grid(path: Path) -> pd.DataFrame:
     df = pd.read_csv(path)
+    if "_page.next" in df.columns and df["_page.next"].notna().any():
+        cursor = str(df.loc[df["_page.next"].notna(), "_page.next"].iloc[0])
+        raise ValueError(
+            "Incomplete Spinta Grid1KmSq snapshot: _page.next cursor is present. "
+            f"Fetch remaining pages before aggregation. Cursor={cursor}"
+        )
     required = {"_id", "sav_pav", "sav_kodas"}
     missing = required - set(df.columns)
     if missing:
