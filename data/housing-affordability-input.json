@@ -129,5 +129,41 @@
       "scope": "city offer average",
       "source": "Aruodas"
     }
+  },
+  "income_model_2025_11": {
+    "source_pdf": "https://sodra.lt/wp-content/uploads/2026/02/20260224_Sodra_2025-4-ketvircio-darbo-pajamu-apzvalga.pdf",
+    "national_full_month_all_gross_eur": 2407,
+    "national_25_30_gross_eur": 2516,
+    "national_25_30_net_eur": 1535,
+    "territorial_ratio": 1.0452845866223515,
+    "tax_assumptions_2025": {
+      "employee_social_rate": 0.195,
+      "gpm_rate": 0.2,
+      "npd_rules_source": "VMI 2025 NPD formulas"
+    },
+    "county_model_net_eur_month": {
+      "Vilniaus": 1660.7,
+      "Kauno": 1480.8,
+      "Klaipėdos": 1402.5,
+      "Telšių": 1292.2,
+      "Utenos": 1277.4,
+      "Panevėžio": 1268.5,
+      "Alytaus": 1264.1,
+      "Šiaulių": 1253.3,
+      "Marijampolės": 1234.8,
+      "Tauragės": 1210.2
+    },
+    "quality": "B-modelled",
+    "note": "Savivaldybių pajamų struktūra iš Sodra 2025-11 lentelės; jaunimo lygis modeliuotas nacionaliniu 25–30 / visų visą mėnesį dirbusių santykiu; apskrities svoris — savivaldybės apdraustųjų skaičius."
+  },
+  "validation_benchmarks_sale_offer_or_market": {
+    "OberHaus_2025_09_big_cities_eur_m2": {
+      "Vilnius": 2850,
+      "Kaunas": 2002,
+      "Klaipėda": 1863,
+      "Šiauliai": 1242,
+      "Panevėžys": 1219
+    },
+    "usage": "validation only; final sale layer must use VDA/Registru centras transaction grid"
   }
 }
