@@ -1,9 +1,35 @@
 [
   {
     "action": "direct",
-    "label": "4",
+    "label": "Pradiniai duomenys",
+    "clicked": false
+  },
+  {
+    "action": "direct",
+    "label": "Indekso apskaičiavimui naudoti pradiniai duomenys",
+    "clicked": false
+  },
+  {
+    "action": "direct",
+    "label": "4 psl.",
+    "clicked": false
+  },
+  {
+    "action": "next",
+    "step": 1,
     "clicked": true,
-    "selector": "text=\"4\"",
-    "frame": "https://app.powerbi.com/view?r=eyJrIjoiYzhmZGZlMjYtM2UwMi00ODc1LWJiODMtYWZjY2JkYTUxZmE1IiwidCI6ImUwM2ViNjEzLTMyY2ItNDBlZi04MGQ2LTY5YmYwNTBmZDc5OCIsImMiOjl9"
+    "descriptor": "Kitas puslapis"
+  },
+  {
+    "action": "next",
+    "step": 2,
+    "clicked": true,
+    "descriptor": "Kitas puslapis"
+  },
+  {
+    "action": "next",
+    "step": 3,
+    "clicked": true,
+    "descriptor": "Kitas puslapis"
   }
 ]

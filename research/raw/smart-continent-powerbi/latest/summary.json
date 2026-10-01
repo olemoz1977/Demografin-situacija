@@ -1,19 +1,45 @@
 {
-  "generatedAt": "2026-10-01T23:23:56.238Z",
+  "generatedAt": "2026-10-01T23:26:17.804Z",
   "reportUrl": "https://app.powerbi.com/view?r=eyJrIjoiYzhmZGZlMjYtM2UwMi00ODc1LWJiODMtYWZjY2JkYTUxZmE1IiwidCI6ImUwM2ViNjEzLTMyY2ItNDBlZi04MGQ2LTY5YmYwNTBmZDc5OCIsImMiOjl9",
   "fatal": null,
-  "requestCount": 44,
-  "responseCount": 44,
-  "queryDataRequests": 16,
-  "queryDataResponses": 16,
-  "capturedBodyBytes": 17821613,
+  "requestCount": 71,
+  "responseCount": 71,
+  "queryDataRequests": 36,
+  "queryDataResponses": 36,
+  "capturedBodyBytes": 18565293,
   "navigation": [
     {
       "action": "direct",
-      "label": "4",
+      "label": "Pradiniai duomenys",
+      "clicked": false
+    },
+    {
+      "action": "direct",
+      "label": "Indekso apskaičiavimui naudoti pradiniai duomenys",
+      "clicked": false
+    },
+    {
+      "action": "direct",
+      "label": "4 psl.",
+      "clicked": false
+    },
+    {
+      "action": "next",
+      "step": 1,
       "clicked": true,
-      "selector": "text=\"4\"",
-      "frame": "https://app.powerbi.com/view?r=eyJrIjoiYzhmZGZlMjYtM2UwMi00ODc1LWJiODMtYWZjY2JkYTUxZmE1IiwidCI6ImUwM2ViNjEzLTMyY2ItNDBlZi04MGQ2LTY5YmYwNTBmZDc5OCIsImMiOjl9"
+      "descriptor": "Kitas puslapis"
+    },
+    {
+      "action": "next",
+      "step": 2,
+      "clicked": true,
+      "descriptor": "Kitas puslapis"
+    },
+    {
+      "action": "next",
+      "step": 3,
+      "clicked": true,
+      "descriptor": "Kitas puslapis"
     }
   ]
 }
