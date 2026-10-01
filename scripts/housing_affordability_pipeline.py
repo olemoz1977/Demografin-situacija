@@ -49,14 +49,23 @@ def load_grid(path: Path) -> pd.DataFrame:
     df["sav_kodas"] = df["sav_kodas"].map(clean_code)
     return df[["grid_ref_id", "sav_pav", "sav_kodas"]]
 
-def load_transactions(path: Path, year: int) -> pd.DataFrame:
+def load_transactions(path: Path, year: int | None = None, start_year: int | None = None, end_year: int | None = None) -> pd.DataFrame:
     df = pd.read_csv(path)
-    required = {"sq_grid_id", "data_nuo", "objektu_sk", "vid_buto_verte", "buto_verte_p50"}
+    grid_col = "sq_grid_id._id" if "sq_grid_id._id" in df.columns else "sq_grid_id"
+    required = {grid_col, "data_nuo", "objektu_sk", "vid_buto_verte", "buto_verte_p50"}
     missing = required - set(df.columns)
     if missing:
         raise ValueError(f"Transaction file missing columns: {sorted(missing)}")
     df["data_nuo"] = pd.to_datetime(df["data_nuo"], errors="coerce")
-    df = df[df["data_nuo"].dt.year.eq(year)].copy()
+    df["year"] = df["data_nuo"].dt.year
+    if year is not None:
+        df = df[df["year"].eq(year)].copy()
+    else:
+        if start_year is not None:
+            df = df[df["year"].ge(start_year)].copy()
+        if end_year is not None:
+            df = df[df["year"].le(end_year)].copy()
+    df = df.rename(columns={grid_col: "grid_ref_id"})
     df["objektu_sk"] = pd.to_numeric(df["objektu_sk"], errors="coerce")
     df["vid_buto_verte"] = pd.to_numeric(df["vid_buto_verte"], errors="coerce")
     df["buto_verte_p50"] = pd.to_numeric(df["buto_verte_p50"], errors="coerce")
@@ -76,10 +85,19 @@ def weighted_mean(values, weights):
         return float("nan")
     return (values[mask] * weights[mask]).sum() / weights[mask].sum()
 
+
+def weighted_median(values, weights):
+    mask = values.notna() & weights.notna() & weights.gt(0)
+    if not mask.any():
+        return float("nan")
+    x = pd.DataFrame({"v": values[mask].astype(float), "w": weights[mask].astype(float)}).sort_values("v")
+    cutoff = x["w"].sum() / 2
+    return float(x.loc[x["w"].cumsum().ge(cutoff), "v"].iloc[0])
+
+
 def aggregate_transactions(transactions: pd.DataFrame, grid: pd.DataFrame, municipality_county: pd.DataFrame):
     tx = transactions.copy()
-    # sq_grid_id may be exported as the referenced object id or a structured value.
-    tx["grid_ref_id"] = tx["sq_grid_id"].astype(str).str.extract(r"([0-9a-fA-F-]{20,})", expand=False).fillna(tx["sq_grid_id"].astype(str))
+    tx["grid_ref_id"] = tx["grid_ref_id"].astype(str)
     tx = tx.merge(grid, on="grid_ref_id", how="left", validate="many_to_one")
     tx = tx.merge(
         municipality_county[["sav_kodas", "apskritis"]].drop_duplicates(),
@@ -96,6 +114,7 @@ def aggregate_transactions(transactions: pd.DataFrame, grid: pd.DataFrame, munic
             "apskritis": county,
             "sale_eur_m2_mean_weighted": weighted_mean(g["vid_buto_verte"], g["objektu_sk"]),
             "sale_eur_m2_p50_weighted": weighted_mean(g["buto_verte_p50"], g["objektu_sk"]),
+            "sale_eur_m2_p50_weighted_median": weighted_median(g["buto_verte_p50"], g["objektu_sk"]),
             "transaction_objects_n": g["objektu_sk"].sum(min_count=1),
             "grid_rows_n": len(g),
         })
@@ -198,12 +217,14 @@ def main():
     p.add_argument("--municipality-county", required=True, type=Path)
     p.add_argument("--income", required=True, type=Path)
     p.add_argument("--rent", required=True, type=Path)
-    p.add_argument("--year", type=int, default=2025)
+    p.add_argument("--year", type=int, default=None)
+    p.add_argument("--start-year", type=int, default=None)
+    p.add_argument("--end-year", type=int, default=None)
     p.add_argument("--out", required=True, type=Path)
     args = p.parse_args()
 
     grid = load_grid(args.grid)
-    tx = load_transactions(args.transactions, args.year)
+    tx = load_transactions(args.transactions, year=args.year, start_year=args.start_year, end_year=args.end_year)
     muni = pd.read_csv(args.municipality_county, dtype={"sav_kodas": str})
     muni["sav_kodas"] = muni["sav_kodas"].map(clean_code)
     sale = aggregate_transactions(tx, grid, muni)
