@@ -127,6 +127,10 @@ def fetch_json(base: str, limit: int | None, sleep_s: float, timeout_s: int):
         page_no += 1
         print(f"json page={page_no} rows={len(page_rows)} next={'yes' if next_cursor else 'no'}", flush=True)
         rows.extend(flatten_record(x) for x in page_rows)
+        # Spinta may emit a cursor on the last non-empty page. Completion is
+        # established only after requesting that cursor and receiving 0 rows.
+        if not page_rows:
+            return pd.DataFrame(rows), page_no, "json_cursor"
         if not next_cursor:
             return pd.DataFrame(rows), page_no, "json_cursor"
         if next_cursor in seen:
@@ -161,6 +165,10 @@ def fetch_csv(base: str, sleep_s: float, timeout_s: int):
         page_no += 1
         print(f"csv page={page_no} rows={len(frame)} next={'yes' if next_cursor else 'no'}", flush=True)
         pages.append(frame)
+        # CSV last data page can still contain _page.next. Follow it once more;
+        # an empty header-only page confirms end-of-data.
+        if len(frame) == 0:
+            return pd.concat(pages, ignore_index=True), page_no, "csv_cursor"
         if not next_cursor:
             return pd.concat(pages, ignore_index=True), page_no, "csv_cursor"
         if next_cursor in seen:
