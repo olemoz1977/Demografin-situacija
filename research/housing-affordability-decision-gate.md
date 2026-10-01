@@ -1,6 +1,6 @@
 # Būsto įperkamumo duomenų sprendimo vartai — 2026-10-01
 
-Statusas: STRATEGINIS SPRENDIMAS REIKALINGAS prieš keičiant analizės geografiją ar kokybės kartelę.
+Statusas: SPRENDIMAS PRIIMTAS — pasirinktas A variantas.
 
 ## Kas jau uždaryta
 
@@ -64,3 +64,16 @@ Bent vieną iš jų tektų susilpninti arba palaukti papildomų duomenų.
 Jei prioritetas yra patikimumas ir svetainės principas „jei patikimo rodiklio nėra — skaičius nepateikiamas“, rinktis A. Jei prioritetas yra greitai turėti pilną 10 teritorijų palyginimą, rinktis B, bet klausimą pervadinti į apskričių centrų įperkamumą.
 
 Kol sprendimas nepriimtas, main nekeičiamas.
+
+
+## 2026-10-01 savininko sprendimas
+Pasirinktas A variantas: išlaikyti 10 apskričių ir aukštą kokybės kartelę.
+
+Tai reiškia:
+- nekeisti pradinio klausimo ir nepervadinti apskričių į apskričių centrus;
+- nemaišyti faktinių sandorių ir pasiūlos kainų kaip lygiaverčių apskričių rodiklių;
+- nepublikuoti 10 apskričių reitingo, kol nėra pilno faktinių sandorių snapshot ir pakankamo nuomos sluoksnio;
+- `main` nekeisti;
+- research šakoje tęsti šaltinių gavimą, validaciją ir QA.
+
+Kitas išorinis blokatorius: `get.data.gov.lt` pilno rinkinio endpointai šiuo metu GitHub Actions aplinkoje grąžina HTTP 500. Oficialus rinkinio puslapis nurodo du kontaktus: atverimas@stat.gov.lt duomenų klausimams ir atviriduomenys@vssa.lt techniniams portalo sutrikimams.
