@@ -50,3 +50,16 @@ Taisyklė suvienodinta abiem šaltiniams:
 - `ButuPirkimas` ir `Grid1KmSq` turi būti parsisiųsti iki puslapio be `_page.next`;
 - tik tada leidžiamas teritorinis agregavimas;
 - pipeline dabar blokuoja abu nepilnus eksportus.
+
+
+## Pakartotinis vartotojo eksportas — 2026-10-01 vakaras
+Pakartotinai atsisiųstas failas patikrintas kaip tikras CSV:
+- failo dydis: 2 469 147 baitai;
+- 4 630 duomenų eilučių;
+- 58 stulpeliai, įskaitant `_page.next`;
+- `_page.next` turi vieną neužbaigtą cursor;
+- naujausias `data_nuo`: 2024-01-01;
+- 2024 m. eilučių šiame puslapyje: 146;
+- `_id` unikalūs 4 630 / 4 630.
+
+Išvada: pakartotinis atsisiuntimas vis tiek yra tik vienas Spinta puslapis, ne pilnas rinkinys.
