@@ -2,21 +2,20 @@
 """
 Download a complete Spinta model snapshot by following _page.next cursors.
 
-Default target:
-VDA / Registrų centras apartment purchase transaction grid (ButuPirkimas).
-
-The script intentionally uses JSON pagination first and writes one normalized CSV
-only after the final page has been reached. This avoids accidentally treating a
-single API page as a complete dataset.
+Strategy:
+1. Try the JSON API with explicit Accept header.
+2. If that backend rejects paginated JSON, fall back to Spinta's CSV formatter,
+   which is the same export path used by data.gov.lt UI.
+3. Never mark a snapshot complete until the last page has no next cursor.
 """
 
 from __future__ import annotations
 
 import argparse
+import io
 import json
 import time
 from pathlib import Path
-from urllib.parse import quote
 
 import pandas as pd
 import requests
@@ -24,12 +23,13 @@ import requests
 DEFAULT_URL = "https://get.data.gov.lt/datasets/gov/lsd/butu_pirkimai_gardelese/ButuPirkimas"
 
 
-def build_url(base: str, limit: int, cursor: str | None) -> str:
-    expr = [f"limit({limit})"]
+def build_query(limit: int | None, cursor: str | None) -> str:
+    expr = []
+    if limit:
+        expr.append(f"limit({limit})")
     if cursor:
-        # Spinta accepts page("BASE64_CURSOR") as a query expression.
         expr.append(f'page("{cursor}")')
-    return base + "?" + "&".join(expr)
+    return ("?" + "&".join(expr)) if expr else ""
 
 
 def flatten_record(row: dict) -> dict:
@@ -43,52 +43,68 @@ def flatten_record(row: dict) -> dict:
     return out
 
 
-def fetch_all(base: str, limit: int, sleep_s: float, timeout_s: int):
+def fetch_json(base: str, limit: int, sleep_s: float, timeout_s: int):
     cursor = None
-    page_no = 0
     rows = []
     seen = set()
-
-    current_limit = limit
+    page_no = 0
     while True:
-        url = build_url(base, current_limit, cursor)
-        attempts = 0
-        while True:
-            attempts += 1
-            r = requests.get(url, timeout=timeout_s)
-            if r.status_code in {500, 502, 503, 504} and current_limit > 100:
-                current_limit = max(100, current_limit // 2)
-                url = build_url(base, current_limit, cursor)
-                print(f"server={r.status_code}; retrying with limit={current_limit}")
-                time.sleep(max(sleep_s, 1.0))
-                continue
-            if r.status_code == 429 and attempts <= 8:
-                wait = min(30.0, max(1.0, sleep_s) * (2 ** (attempts - 1)))
-                print(f"rate_limited; waiting {wait:.1f}s")
-                time.sleep(wait)
-                continue
-            r.raise_for_status()
-            break
+        url = base + build_query(limit, cursor)
+        r = requests.get(url, headers={"Accept": "application/json"}, timeout=timeout_s)
+        r.raise_for_status()
         payload = r.json()
-
         page_rows = payload.get("_data", [])
         next_cursor = payload.get("_page", {}).get("next")
-
         page_no += 1
-        print(f"page={page_no} rows={len(page_rows)} next={'yes' if next_cursor else 'no'}")
+        print(f"json page={page_no} rows={len(page_rows)} next={'yes' if next_cursor else 'no'}", flush=True)
         rows.extend(flatten_record(x) for x in page_rows)
-
         if not next_cursor:
-            break
+            return rows, page_no, "json"
         if next_cursor in seen:
-            raise RuntimeError("Repeated pagination cursor detected; aborting.")
+            raise RuntimeError("Repeated JSON pagination cursor detected.")
         seen.add(next_cursor)
         cursor = next_cursor
-
         if sleep_s:
             time.sleep(sleep_s)
 
-    return rows, page_no
+
+def fetch_csv(base: str, sleep_s: float, timeout_s: int):
+    format_url = base.rstrip("/") + "/:format/csv"
+    cursor = None
+    pages = []
+    seen = set()
+    page_no = 0
+    while True:
+        url = format_url + build_query(None, cursor)
+        r = requests.get(url, headers={"Accept": "text/csv"}, timeout=timeout_s)
+        r.raise_for_status()
+        frame = pd.read_csv(io.StringIO(r.text), low_memory=False)
+        next_cursor = None
+        if "_page.next" in frame.columns:
+            values = frame["_page.next"].dropna()
+            if not values.empty:
+                next_cursor = str(values.iloc[-1])
+            frame = frame.drop(columns=["_page.next"])
+        page_no += 1
+        print(f"csv page={page_no} rows={len(frame)} next={'yes' if next_cursor else 'no'}", flush=True)
+        pages.append(frame)
+        if not next_cursor:
+            return pd.concat(pages, ignore_index=True), page_no, "csv"
+        if next_cursor in seen:
+            raise RuntimeError("Repeated CSV pagination cursor detected.")
+        seen.add(next_cursor)
+        cursor = next_cursor
+        if sleep_s:
+            time.sleep(sleep_s)
+
+
+def fetch_all(base: str, limit: int, sleep_s: float, timeout_s: int):
+    try:
+        rows, pages, mode = fetch_json(base, limit, sleep_s, timeout_s)
+        return pd.DataFrame(rows), pages, mode
+    except (requests.HTTPError, requests.JSONDecodeError, ValueError) as exc:
+        print(f"JSON pagination unavailable ({exc}); switching to CSV pagination.", flush=True)
+        return fetch_csv(base, sleep_s, timeout_s)
 
 
 def main():
@@ -96,13 +112,12 @@ def main():
     p.add_argument("--url", default=DEFAULT_URL)
     p.add_argument("--limit", type=int, default=1000)
     p.add_argument("--sleep", type=float, default=0.25)
-    p.add_argument("--timeout", type=int, default=60)
+    p.add_argument("--timeout", type=int, default=90)
     p.add_argument("--out", type=Path, default=Path("data/raw/ButuPirkimas-full.csv"))
     p.add_argument("--meta", type=Path, default=Path("data/raw/ButuPirkimas-full.meta.json"))
     args = p.parse_args()
 
-    rows, page_count = fetch_all(args.url, args.limit, args.sleep, args.timeout)
-    df = pd.DataFrame(rows)
+    df, page_count, mode = fetch_all(args.url, args.limit, args.sleep, args.timeout)
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
     df.to_csv(args.out, index=False)
@@ -114,6 +129,7 @@ def main():
 
     meta = {
         "source": args.url,
+        "transport": mode,
         "page_count": page_count,
         "row_count": len(df),
         "first_year": years[0] if years else None,
@@ -121,8 +137,9 @@ def main():
         "pagination_complete": True,
         "downloaded_fields": list(df.columns),
     }
+    args.meta.parent.mkdir(parents=True, exist_ok=True)
     args.meta.write_text(json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(json.dumps(meta, ensure_ascii=False, indent=2))
+    print(json.dumps(meta, ensure_ascii=False, indent=2), flush=True)
 
 
 if __name__ == "__main__":
