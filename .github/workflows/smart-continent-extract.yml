@@ -12,6 +12,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: smart-continent-extract-feature
+  cancel-in-progress: true
+
 jobs:
   extract:
     runs-on: ubuntu-latest
@@ -50,10 +54,14 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add research/raw/smart-continent-powerbi/latest
+          git add research/raw/smart-continent-powerbi/latest \
+            data/housing-sale-smart-continent-housing-2024-diagnostic.csv \
+            research/smart-continent-housing-page4-qa-2024.json
           if git diff --cached --quiet; then
             echo "No extraction changes to commit"
           else
             git commit -m "Capture Smart Continent Power BI diagnostics [skip ci]"
+            git fetch origin feature/housing-affordability
+            git rebase origin/feature/housing-affordability
             git push origin HEAD:feature/housing-affordability
           fi
