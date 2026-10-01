@@ -54,3 +54,41 @@ savivaldybėms, todėl jos naudojamos sandorių skaičiaus validacijai.
    2024 m., objektas „butai“, su vieneto / paskirstytos kainos laukais.
 2. Jei kaina priimtina — naudoti RSi kaip pagrindinį A varianto pardavimo kainų šaltinį.
 3. Jei ne — audituoti 2024 m. masinio vertinimo modelius kaip galimą oficialų B-planą.
+
+
+## 4. Aplinkos ministerijos / Smart Continent savivaldybių būsto prieinamumo indeksas
+
+2026-09-01 Aplinkos ministerija viešai paskelbė „Savivaldybių būsto prieinamumo indeksą“
+ir duomenų švieslentę. Oficialus puslapis nurodo, kad:
+- indeksas yra 2025–2026 m. Smart Continent atlikto Būsto prieinamumo vertinimo dalis;
+- šiuo metu naudojami 2022–2024 m. duomenys;
+- galima filtruoti metus, regioną, savivaldybių grupę ir konkrečią savivaldybę;
+- 4 švieslentės puslapyje pateikiami indekso skaičiavimui naudoti pradiniai duomenys.
+
+Tai šiuo metu yra stipriausias NEMOKAMAS kandidatas mūsų 10 apskričių kainų sluoksniui,
+nes tas pats tyrimas viešai pateikia 2024 m. vidutinę buto kainą Eur/m² ir savivaldybių pjūvį.
+
+Oficialus puslapis:
+https://am.lrv.lt/lt/veiklos-sritys-1/busto-prieinamumas/savivaldybiu-busto-prieinamumo-indeksas/
+
+Vertinimo puslapis:
+https://am.lrv.lt/lt/veiklos-sritys-1/busto-prieinamumas/busto-prieinamumo-lietuvoje-didinimo-galimybiu-vertinimas/
+
+Tarpinių rezultatų pristatyme:
+- pateikiami būstų pirkimo–pardavimo sandorių skaičiai pagal savivaldybes;
+- pateikiami atskiri 2024 m. butų daugiabučiuose ir individualių namų sandorių skaičiai;
+- pateikiamas žemėlapis „Vidutinė butų kaina už 1 kv. m“ pagal savivaldybes;
+- Lietuvos 2024 m. kontrolinė vidutinė buto kaina = 1 669 Eur/m².
+
+Pristatymas:
+https://lntpa.lt/wp-content/uploads/2026/04/Tarpiniu-vertinimo-rezultatu-pristatymas.pdf
+
+Statusas: PRIORITETINIS AUDITAS. Prieš naudojant reikia išsiaiškinti:
+1. pirminį kainos duomenų šaltinį ir atranką;
+2. ar „vidutinė butų kaina“ yra faktinių sandorių, o ne pasiūlos kaina;
+3. tikslų agregavimo metodą;
+4. ar 4 psl. pradiniai duomenys gali būti eksportuoti struktūrizuotu formatu;
+5. ar savivaldybių sandorių skaičiai gali būti naudojami kaip svoriai apskričių agregacijai.
+
+Jei šie punktai patvirtinami, šis šaltinis gali pakeisti mokamą RSi kaip pagrindinį
+A varianto pardavimo kainų sluoksnį.
