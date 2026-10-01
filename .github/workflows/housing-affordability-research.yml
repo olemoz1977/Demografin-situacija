@@ -34,14 +34,14 @@ jobs:
       - name: Fetch complete ButuPirkimas snapshot
         run: |
           python scripts/fetch_spinta_all.py \
-            --url https://get.data.gov.lt/datasets/gov/lsd/butu_pirkimai_gardelese/ButuPirkimas \
+            --url https://test.data.gov.lt/datasets/gov/lsd/butu_pirkimai_gardelese/ButuPirkimas \
             --out /tmp/ButuPirkimas-full.csv \
             --meta /tmp/ButuPirkimas-full.meta.json
 
       - name: Fetch complete Grid1KmSq snapshot
         run: |
           python scripts/fetch_spinta_all.py \
-            --url https://get.data.gov.lt/datasets/gov/lsd/grid/Grid1KmSq \
+            --url https://test.data.gov.lt/datasets/gov/lsd/grid/Grid1KmSq \
             --out /tmp/Grid1KmSq-full.csv \
             --meta /tmp/Grid1KmSq-full.meta.json
 
