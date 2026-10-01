@@ -40,3 +40,13 @@ https://data.gov.lt/datasets/2047/data/Grid1KmSq/?select(_id,grid_id,x_centroid,
 Decision rule:
 - use 2025 transaction data if an updated source export can be obtained;
 - otherwise do not silently label 2024 sales prices as 2025. A 2024 transaction baseline may be used only with an explicit period label or after a justified update factor is separately modelled and sensitivity-tested.
+
+
+## Grid1KmSq eksporto patikra
+Vartotojo pateiktame `Grid1KmSq.csv` taip pat aptiktas neužbaigtas `_page.next` cursor.
+Todėl 66 251 eilučių failas negali būti laikomas formaliai pilnu Spinta snapshot, net jei jame matomos visos 60 savivaldybių.
+
+Taisyklė suvienodinta abiem šaltiniams:
+- `ButuPirkimas` ir `Grid1KmSq` turi būti parsisiųsti iki puslapio be `_page.next`;
+- tik tada leidžiamas teritorinis agregavimas;
+- pipeline dabar blokuoja abu nepilnus eksportus.
