@@ -1,24 +1,36 @@
-# ButuPirkimas eksporto QA — svarbi korekcija
+# 2024 faktinių butų sandorių gardelių auditas
 
-Statusas: INVALIDUOTA kaip statistinis apskričių agregatas.
+Statusas: SNAPSHOT UŽBAIGTAS; RINKOS APRĖPTIS DAR NEPATVIRTINTA.
 
-2026-10-01 patikrinus vartotojo pateiktą `ButuPirkimas.csv` paaiškėjo:
-- faile yra 4 630 duomenų eilučių;
-- laukas `_page.next` turi tęsinio žymą;
-- vadinasi tai nėra visas VDA / Registrų centro rinkinys, o tik viena API puslapio dalis;
-- todėl iš šio failo apskaičiuotos apskričių aprėptys, sandorių skaičiai ir €/m² rodikliai NEGALI būti naudojami analizei ar publikavimui.
+Šaltiniai:
+- vartotojo pateiktas VDA / Registrų centro `ButuPirkimas.csv`;
+- vartotojo pateiktas VDA `Grid1KmSq.csv`.
 
-Svarbu:
-- 146/146 šiame faile buvusių 2024 m. gardelių sėkmingai susijungė su `Grid1KmSq.csv`;
-- taigi JOIN logika ir laukų interpretacija techniškai patvirtinta;
-- tačiau statistinis rezultatas yra nepilnas dėl puslapiavimo.
+## Snapshot pilnumas
+`ButuPirkimas.csv` turi 4 630 duomenų eilučių. Paskutinėje eilutėje pateiktas `_page.next` cursor.
+Pakartotinai užklausus tęsinį su `page("cursor")`, serveris grąžino tik CSV antraštę ir 0 duomenų eilučių.
+Todėl šis 4 630 eilučių failas laikomas pilnu to endpointo snapshot.
 
-Anksčiau pastebėta Utenos anomalija (labai mažo įsigyto ploto atvejis) lieka naudinga kaip QA pavyzdys, bet ne kaip apskrities statistikos įrodymas.
+Spinta CSV formatui cursor paskutinėje netuščio puslapio eilutėje yra normalus elgesys; pats cursor nėra nepilnumo įrodymas.
 
-Toliau:
-1. parsisiųsti VISUS `ButuPirkimas` API puslapius pagal `_page.next`;
-2. sujungti juos į vieną pilną snapshot;
-3. patikrinti eilučių skaičių, metų aprėptį ir paskutinį cursor;
-4. tik tada kartoti 2024 / 2022–2024 agregavimą.
+## JOIN patikra
+- ButuPirkimas 2024 m. eilučių: 146.
+- 2024 m. `sq_grid_id._id` susieta su Grid1KmSq: 146/146.
+- 2024 m. aprėpta 33 savivaldybės ir 8 apskritys.
+- Telšių ir Tauragės apskritims 2024 m. eilučių nėra.
+
+## Kritinis aprėpties signalas
+2024 m. snapshot sumos:
+- sandoriai: 516;
+- objektai: 474.
+
+Tai yra per maža apimtis, kad be papildomo paaiškinimo rinkinį laikytume visos Lietuvos butų rinkos reprezentatyviu sluoksniu.
+Todėl A varianto kokybės taisyklė lieka galioti: kainų indeksas nepublikuojamas, kol duomenų teikėjas nepaaiškina rinkinio atrankos / aprėpties.
+
+## 2024 diagnostika
+Pagrindinis techninis pastebėjimas išlieka: `vid_buto_verte` gali būti smarkiai iškraipytas labai mažo įsigyto ploto / dalinio įsigijimo atvejų.
+Utenos apskrityje vienos gardelės anomalija kelia svertą vidurkį iki ~3 085 EUR/m², kai robustesni p50 pagrindo rodikliai yra kelis kartus mažesni.
+
+Todėl galutiniame metode būtina outlier apsauga ir p50 diagnostika.
 
 `main` nekeisti.
