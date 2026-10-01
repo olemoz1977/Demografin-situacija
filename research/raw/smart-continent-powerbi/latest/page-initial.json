@@ -1,0 +1,1646 @@
+{
+  "label": "page-initial",
+  "url": "https://app.powerbi.com/view?r=eyJrIjoiYzhmZGZlMjYtM2UwMi00ODc1LWJiODMtYWZjY2JkYTUxZmE1IiwidCI6ImUwM2ViNjEzLTMyY2ItNDBlZi04MGQ2LTY5YmYwNTBmZDc5OCIsImMiOjl9",
+  "title": "„Microsoft Power BI“",
+  "frames": [
+    {
+      "index": 0,
+      "url": "https://app.powerbi.com/view?r=eyJrIjoiYzhmZGZlMjYtM2UwMi00ODc1LWJiODMtYWZjY2JkYTUxZmE1IiwidCI6ImUwM2ViNjEzLTMyY2ItNDBlZi04MGQ2LTY5YmYwNTBmZDc5OCIsImMiOjl9",
+      "text": "Rodyti sparčiuosius klavišus\nRodyti ekrano skaitytuvo patarimus\nPereiti prie pagrindinio turinio\n„Power BI“ ataskaita\n\nBūsto prieinamumo apžvalga\n\nLaikotarpis\n2024\nRegionas\nVisi\nSavivaldybių grupė\nVisi\nSavivaldybė\nVisi\nBūsto pakankamumas\n\n55,43\n\n▲ 0.20 (0.4%)\nlyginant su 2023 m.\nBūsto įperkamumas\n\n74,87\n\n▲ 4.23 (6.0%)\nlyginant su 2023 m.\nAprūpinimas būstu\n\n53,00\n\n▲ 2.25 (4.4%)\nlyginant su 2023 m.\nBūsto prieinamumo indeksas\n\n63,69\n\n▲ 2.42 (4.0%)\nlyginant su 2023 m.\nBūstų skaičius vienam\nnamų ūkiui, vnt.\n\n0,95\n\n▼ - 0.06 ( -5.7 %)\nlyginant su 2023 m.\nGyvenančiųjų perpildytame\nbūste dalis, %\n\n26,30%\n\n▲ 0.30% (1.2%)\nlyginant su 2023 m.\nBūsto kainos ir pajamų\nsantykis\n\n94,17\n\n▲ 2.10 (2.3%)\nlyginant su 2023 m.\nSavivaldybės būsto\ndalis, %\n\n1,45%\n\n▼ - 0.03% ( -2.3 %)\nlyginant su 2023 m.\nInvesticinių būstų\nsandorių dalis, %\n\n32,30%\n\n▼ - 0.20% ( -0.6 %)\nlyginant su 2023 m.\nSocialinio būsto gavėjų\nir laukiančiųjų dalis, %\n\n1,36%\n\n▼ - 0.08% ( -5.4 %)\nlyginant su 2023 m.\nBūsto išlaidų naštą\npatiriančių NŪ dalis, %\n\n6,20%\n\n▲ 1.00% (19.2%)\nlyginant su 2023 m.\nBūsto išlaikymo išlaidų\ndalis, %\n\n11,80%\n\n▲ 0.90% (8.3%)\nlyginant su 2023 m.\nSavivaldybių grupių palyginimas\n0\n50\n100\nAplinkinėssavivaldybės\nDidžiųjų miestų\nKurortinės irrekreacinės\nMažosios\nPramoninių miestų\nŽiedinėssavivaldybės\n64,42\n54,48\n47,81\n67,33\n65,15\n64,32\n44,58\n32,15\n56,96\n55,84\n75,73\n64,12\n52,29\n81,77\n77,49\n65,41\n49,80\n50,12\n65,14\n53,00\n53,68\n53,03\nBūsto prieinamumo indeksas\nBūsto pakankamumas\nBūsto įperkamumas\nAprūpinimas būstu\nDimensijos pasirinkimas\nSavivaldybių grupė\nLietuvos savivaldybių žemėlapis\nRodiklio pasirinkimas\nBūsto prieinamumo indeksas\nRodiklių dinamika\n60\n80\n2022\n2023\n2024\n62,88\n63,69\n61,27\n53,47\n55,43\n55,23\n75,16\n74,87\n70,64\nBūsto prieinamumo indeksas\nBūsto pakankamumas\nBūsto įperkamumas\nAprūpinimas būstu\n-\n+\n90 %\n„Microsoft Power BI“\n1iš4\nAtaskaita padidinta iki 90 %",
+      "controls": [
+        {
+          "idx": 0,
+          "tag": "EXPLORATION",
+          "text": "Rodyti sparčiuosius klavišus\nRodyti ekrano skaitytuvo patarimus\nPereiti prie pagrindinio turinio\n„Power BI“ ataskaita\n\nBūsto prieinamumo apžvalga\n\nLaikotarpis\n2024\nRegionas\nVisi\nSavivaldybių grupė\nVisi\nSavivaldybė\nVisi\nBūsto pakankamumas\n\n55,43\n\n▲ 0.20 (0.4%)\nlyginant su 2023 m.\nBūsto įperkamumas\n\n7",
+          "aria": "Būsto prieinamumo apžvalga",
+          "title": null,
+          "role": null
+        },
+        {
+          "idx": 1,
+          "tag": "SPAN",
+          "text": "Rodyti sparčiuosius klavišus",
+          "aria": "Rodyti sparčiuosius klavišus",
+          "title": null,
+          "role": "button"
+        },
+        {
+          "idx": 2,
+          "tag": "A",
+          "text": "Rodyti ekrano skaitytuvo patarimus",
+          "aria": "Rodyti ekrano skaitytuvo patarimus (atidaroma naujame skirtuke)",
+          "title": null,
+          "role": null
+        },
+        {
+          "idx": 3,
+          "tag": "SPAN",
+          "text": "Pereiti prie pagrindinio turinio",
+          "aria": "Pereiti prie pagrindinio turinio",
+          "title": null,
+          "role": "button"
+        },
+        {
+          "idx": 4,
+          "tag": "DIV",
+          "text": "„Power BI“ ataskaita\n\nBūsto prieinamumo apžvalga\n\nLaikotarpis\n2024\nRegionas\nVisi\nSavivaldybių grupė\nVisi\nSavivaldybė\nVisi\nBūsto pakankamumas\n\n55,43\n\n▲ 0.20 (0.4%)\nlyginant su 2023 m.\nBūsto įperkamumas\n\n74,87\n\n▲ 4.23 (6.0%)\nlyginant su 2023 m.\nAprūpinimas būstu\n\n53,00\n\n▲ 2.25 (4.4%)\nlyginant su 2023 ",
+          "aria": "„Power BI“ ataskaita",
+          "title": null,
+          "role": "region"
+        },
+        {
+          "idx": 5,
+          "tag": "H2",
+          "text": "„Power BI“ ataskaita",
+          "aria": "„Power BI“ ataskaita",
+          "title": null,
+          "role": null
+        },
+        {
+          "idx": 6,
+          "tag": "DIV",
+          "text": "Norėdami naršyti duomenis, paspauskite Enter",
+          "aria": "Vaizdas",
+          "title": null,
+          "role": "img"
+        },
+        {
+          "idx": 7,
+          "tag": "SPINNER",
+          "text": "",
+          "aria": null,
+          "title": "Įkeliami vaizdiniai elementai...",
+          "role": null
+        },
+        {
+          "idx": 8,
+          "tag": "DIV",
+          "text": "Norėdami naršyti duomenis, paspauskite Enter",
+          "aria": "Vaizdas",
+          "title": null,
+          "role": "img"
+        },
+        {
+          "idx": 9,
+          "tag": "SPINNER",
+          "text": "",
+          "aria": null,
+          "title": "Įkeliami vaizdiniai elementai...",
+          "role": null
+        },
+        {
+          "idx": 10,
+          "tag": "SPINNER",
+          "text": "",
+          "aria": null,
+          "title": "Įkeliami vaizdiniai elementai...",
+          "role": null
+        },
+        {
+          "idx": 11,
+          "tag": "DIV",
+          "text": "Būsto prieinamumo apžvalga",
+          "aria": "Būsto prieinamumo apžvalga",
+          "title": null,
+          "role": "document"
+        },
+        {
+          "idx": 12,
+          "tag": "SPINNER",
+          "text": "",
+          "aria": null,
+          "title": "Įkeliami vaizdiniai elementai...",
+          "role": null
+        },
+        {
+          "idx": 13,
+          "tag": "SPAN",
+          "text": "",
+          "aria": "Valyti pasirinkimą",
+          "title": null,
+          "role": "button"
+        },
+        {
+          "idx": 14,
+          "tag": "H3",
+          "text": "Laikotarpis",
+          "aria": "Laikotarpis",
+          "title": "Laikotarpis",
+          "role": null
+        },
+        {
+          "idx": 15,
+          "tag": "DIV",
+          "text": "2024",
+          "aria": "Metai",
+          "title": null,
+          "role": "combobox"
+        },
+        {
+          "idx": 16,
+          "tag": "SPINNER",
+          "text": "",
+          "aria": null,
+          "title": "Įkeliami vaizdiniai elementai...",
+          "role": null
+        },
+        {
+          "idx": 17,
+          "tag": "SPAN",
+          "text": "",
+          "aria": "Valyti pasirinkimą",
+          "title": null,
+          "role": "button"
+        },
+        {
+          "idx": 18,
+          "tag": "H3",
+          "text": "Regionas",
+          "aria": "Regionas",
+          "title": "Regionas",
+          "role": null
+        },
+        {
+          "idx": 19,
+          "tag": "DIV",
+          "text": "Visi",
+          "aria": "Regionas",
+          "title": null,
+          "role": "combobox"
+        },
+        {
+          "idx": 20,
+          "tag": "SPINNER",
+          "text": "",
+          "aria": null,
+          "title": "Įkeliami vaizdiniai elementai...",
+          "role": null
+        },
+        {
+          "idx": 21,
+          "tag": "SPAN",
+          "text": "",
+          "aria": "Valyti pasirinkimą",
+          "title": null,
+          "role": "button"
+        },
+        {
+          "idx": 22,
+          "tag": "H3",
+          "text": "Savivaldybių grupė",
+          "aria": "Savivaldybių grupė",
+          "title": "Savivaldybių grupė",
+          "role": null
+        },
+        {
+          "idx": 23,
+          "tag": "DIV",
+          "text": "Visi",
+          "aria": "Savivaldybių grupė",
+          "title": null,
+          "role": "combobox"
+        },
+        {
+          "idx": 24,
+          "tag": "SPINNER",
+          "text": "",
+          "aria": null,
+          "title": "Įkeliami vaizdiniai elementai...",
+          "role": null
+        },
+        {
+          "idx": 25,
+          "tag": "SPAN",
+          "text": "",
+          "aria": "Valyti pasirinkimą",
+          "title": null,
+          "role": "button"
+        },
+        {
+          "idx": 26,
+          "tag": "H3",
+          "text": "Savivaldybė",
+          "aria": "Savivaldybė",
+          "title": "Savivaldybė",
+          "role": null
+        },
+        {
+          "idx": 27,
+          "tag": "DIV",
+          "text": "Visi",
+          "aria": "Savivaldybė",
+          "title": null,
+          "role": "combobox"
+        },
+        {
+          "idx": 28,
+          "tag": "DIV",
+          "text": "Norėdami naršyti duomenis, paspauskite Enter",
+          "aria": "Vaizdas",
+          "title": null,
+          "role": "img"
+        },
+        {
+          "idx": 29,
+          "tag": "SPINNER",
+          "text": "",
+          "aria": null,
+          "title": "Įkeliami vaizdiniai elementai...",
+          "role": null
+        },
+        {
+          "idx": 30,
+          "tag": "DIV",
+          "text": "Būsto pakankamumas\n\n55,43\n\n▲ 0.20 (0.4%)\nlyginant su 2023 m.",
+          "aria": "Būsto pakankamumas ",
+          "title": null,
+          "role": "group"
+        },
+        {
+          "idx": 31,
+          "tag": "SPINNER",
+          "text": "",
+          "aria": null,
+          "title": "Įkeliami vaizdiniai elementai...",
+          "role": null
+        },
+        {
+          "idx": 32,
+          "tag": "DIV",
+          "text": "Būsto pakankamumas",
+          "aria": null,
+          "title": "Būsto pakankamumas",
+          "role": null
+        },
+        {
+          "idx": 33,
+          "tag": "DIV",
+          "text": "55,43\n\n▲ 0.20 (0.4%)\nlyginant su 2023 m.",
+          "aria": "Kortelė",
+          "title": null,
+          "role": "region"
+        },
+        {
+          "idx": 34,
+          "tag": "DIV",
+          "text": "55,43\n\n▲ 0.20 (0.4%)\nlyginant su 2023 m.",
+          "aria": "Būsto pakankamumas, 55,43 kortelė",
+          "title": null,
+          "role": "button"
+        },
+        {
+          "idx": 35,
+          "tag": "DIV",
+          "text": "Būsto įperkamumas\n\n74,87\n\n▲ 4.23 (6.0%)\nlyginant su 2023 m.",
+          "aria": "Būsto įperkamumas ",
+          "title": null,
+          "role": "group"
+        },
+        {
+          "idx": 36,
+          "tag": "SPINNER",
+          "text": "",
+          "aria": null,
+          "title": "Įkeliami vaizdiniai elementai...",
+          "role": null
+        },
+        {
+          "idx": 37,
+          "tag": "DIV",
+          "text": "Būsto įperkamumas",
+          "aria": null,
+          "title": "Būsto įperkamumas",
+          "role": null
+        },
+        {
+          "idx": 38,
+          "tag": "DIV",
+          "text": "74,87\n\n▲ 4.23 (6.0%)\nlyginant su 2023 m.",
+          "aria": "Kortelė",
+          "title": null,
+          "role": "region"
+        },
+        {
+          "idx": 39,
+          "tag": "DIV",
+          "text": "74,87\n\n▲ 4.23 (6.0%)\nlyginant su 2023 m.",
+          "aria": "Būsto įperkamumas, 74,87 kortelė",
+          "title": null,
+          "role": "button"
+        },
+        {
+          "idx": 40,
+          "tag": "DIV",
+          "text": "Aprūpinimas būstu\n\n53,00\n\n▲ 2.25 (4.4%)\nlyginant su 2023 m.",
+          "aria": "Aprūpinimas būstu ",
+          "title": null,
+          "role": "group"
+        },
+        {
+          "idx": 41,
+          "tag": "SPINNER",
+          "text": "",
+          "aria": null,
+          "title": "Įkeliami vaizdiniai elementai...",
+          "role": null
+        },
+        {
+          "idx": 42,
+          "tag": "DIV",
+          "text": "Aprūpinimas būstu",
+          "aria": null,
+          "title": "Aprūpinimas būstu",
+          "role": null
+        },
+        {
+          "idx": 43,
+          "tag": "DIV",
+          "text": "53,00\n\n▲ 2.25 (4.4%)\nlyginant su 2023 m.",
+          "aria": "Kortelė",
+          "title": null,
+          "role": "region"
+        },
+        {
+          "idx": 44,
+          "tag": "DIV",
+          "text": "53,00\n\n▲ 2.25 (4.4%)\nlyginant su 2023 m.",
+          "aria": "Aprūpinimas būstu, 53,00 kortelė",
+          "title": null,
+          "role": "button"
+        },
+        {
+          "idx": 45,
+          "tag": "DIV",
+          "text": "Būsto prieinamumo indeksas\n\n63,69\n\n▲ 2.42 (4.0%)\nlyginant su 2023 m.",
+          "aria": "Būsto prieinamumo indeksas ",
+          "title": null,
+          "role": "group"
+        },
+        {
+          "idx": 46,
+          "tag": "SPINNER",
+          "text": "",
+          "aria": null,
+          "title": "Įkeliami vaizdiniai elementai...",
+          "role": null
+        },
+        {
+          "idx": 47,
+          "tag": "DIV",
+          "text": "Būsto prieinamumo indeksas",
+          "aria": null,
+          "title": "Būsto prieinamumo indeksas",
+          "role": null
+        },
+        {
+          "idx": 48,
+          "tag": "DIV",
+          "text": "63,69\n\n▲ 2.42 (4.0%)\nlyginant su 2023 m.",
+          "aria": "Kortelė",
+          "title": null,
+          "role": "region"
+        },
+        {
+          "idx": 49,
+          "tag": "DIV",
+          "text": "63,69\n\n▲ 2.42 (4.0%)\nlyginant su 2023 m.",
+          "aria": "Būsto prieinamumo indeksas, 63,69 kortelė",
+          "title": null,
+          "role": "button"
+        },
+        {
+          "idx": 50,
+          "tag": "DIV",
+          "text": "Norėdami naršyti duomenis, paspauskite Enter",
+          "aria": "Vaizdas",
+          "title": null,
+          "role": "img"
+        },
+        {
+          "idx": 51,
+          "tag": "SPINNER",
+          "text": "",
+          "aria": null,
+          "title": "Įkeliami vaizdiniai elementai...",
+          "role": null
+        },
+        {
+          "idx": 52,
+          "tag": "DIV",
+          "text": "Būstų skaičius vienam\nnamų ūkiui, vnt.\n\n0,95\n\n▼ - 0.06 ( -5.7 %)\nlyginant su 2023 m.",
+          "aria": "Būstų skaičius vienam namų ūkiui, vnt. ",
+          "title": null,
+          "role": "group"
+        },
+        {
+          "idx": 53,
+          "tag": "SPINNER",
+          "text": "",
+          "aria": null,
+          "title": "Įkeliami vaizdiniai elementai...",
+          "role": null
+        },
+        {
+          "idx": 54,
+          "tag": "DIV",
+          "text": "Būstų skaičius vienam\nnamų ūkiui, vnt.",
+          "aria": null,
+          "title": "Būstų skaičius vienam namų ūkiui, vnt.",
+          "role": null
+        },
+        {
+          "idx": 55,
+          "tag": "DIV",
+          "text": "0,95\n\n▼ - 0.06 ( -5.7 %)\nlyginant su 2023 m.",
+          "aria": "Kortelė",
+          "title": null,
+          "role": "region"
+        },
+        {
+          "idx": 56,
+          "tag": "DIV",
+          "text": "0,95\n\n▼ - 0.06 ( -5.7 %)\nlyginant su 2023 m.",
+          "aria": "Būstų skaičius vienam namų ūkiui, vnt., 0,95 kortelė",
+          "title": null,
+          "role": "button"
+        },
+        {
+          "idx": 57,
+          "tag": "DIV",
+          "text": "Gyvenančiųjų perpildytame\nbūste dalis, %\n\n26,30%\n\n▲ 0.30% (1.2%)\nlyginant su 2023 m.",
+          "aria": "Gyvenančiųjų perpildytame būste dalis, % ",
+          "title": null,
+          "role": "group"
+        },
+        {
+          "idx": 58,
+          "tag": "SPINNER",
+          "text": "",
+          "aria": null,
+          "title": "Įkeliami vaizdiniai elementai...",
+          "role": null
+        },
+        {
+          "idx": 59,
+          "tag": "DIV",
+          "text": "Gyvenančiųjų perpildytame\nbūste dalis, %",
+          "aria": null,
+          "title": "Gyvenančiųjų perpildytame būste dalis, %",
+          "role": null
+        },
+        {
+          "idx": 60,
+          "tag": "DIV",
+          "text": "26,30%\n\n▲ 0.30% (1.2%)\nlyginant su 2023 m.",
+          "aria": "Kortelė",
+          "title": null,
+          "role": "region"
+        },
+        {
+          "idx": 61,
+          "tag": "DIV",
+          "text": "26,30%\n\n▲ 0.30% (1.2%)\nlyginant su 2023 m.",
+          "aria": "Gyvenančiųjų perpildytame būste dalis, %, 26,30% kortelė",
+          "title": null,
+          "role": "button"
+        },
+        {
+          "idx": 62,
+          "tag": "DIV",
+          "text": "Būsto kainos ir pajamų\nsantykis\n\n94,17\n\n▲ 2.10 (2.3%)\nlyginant su 2023 m.",
+          "aria": "Būsto kainos ir pajamų santykis ",
+          "title": null,
+          "role": "group"
+        },
+        {
+          "idx": 63,
+          "tag": "SPINNER",
+          "text": "",
+          "aria": null,
+          "title": "Įkeliami vaizdiniai elementai...",
+          "role": null
+        },
+        {
+          "idx": 64,
+          "tag": "DIV",
+          "text": "Būsto kainos ir pajamų\nsantykis",
+          "aria": null,
+          "title": "Būsto kainos ir pajamų santykis",
+          "role": null
+        },
+        {
+          "idx": 65,
+          "tag": "DIV",
+          "text": "94,17\n\n▲ 2.10 (2.3%)\nlyginant su 2023 m.",
+          "aria": "Kortelė",
+          "title": null,
+          "role": "region"
+        },
+        {
+          "idx": 66,
+          "tag": "DIV",
+          "text": "94,17\n\n▲ 2.10 (2.3%)\nlyginant su 2023 m.",
+          "aria": "Būsto kainos ir pajamų santykis, 94,17 kortelė",
+          "title": null,
+          "role": "button"
+        },
+        {
+          "idx": 67,
+          "tag": "DIV",
+          "text": "Savivaldybės būsto\ndalis, %\n\n1,45%\n\n▼ - 0.03% ( -2.3 %)\nlyginant su 2023 m.",
+          "aria": "Savivaldybės būsto dalis, % ",
+          "title": null,
+          "role": "group"
+        },
+        {
+          "idx": 68,
+          "tag": "SPINNER",
+          "text": "",
+          "aria": null,
+          "title": "Įkeliami vaizdiniai elementai...",
+          "role": null
+        },
+        {
+          "idx": 69,
+          "tag": "DIV",
+          "text": "Savivaldybės būsto\ndalis, %",
+          "aria": null,
+          "title": "Savivaldybės būsto dalis, %",
+          "role": null
+        },
+        {
+          "idx": 70,
+          "tag": "DIV",
+          "text": "1,45%\n\n▼ - 0.03% ( -2.3 %)\nlyginant su 2023 m.",
+          "aria": "Kortelė",
+          "title": null,
+          "role": "region"
+        },
+        {
+          "idx": 71,
+          "tag": "DIV",
+          "text": "1,45%\n\n▼ - 0.03% ( -2.3 %)\nlyginant su 2023 m.",
+          "aria": "Savivaldybės būsto dalis, %, 1,45% kortelė",
+          "title": null,
+          "role": "button"
+        },
+        {
+          "idx": 72,
+          "tag": "DIV",
+          "text": "Investicinių būstų\nsandorių dalis, %\n\n32,30%\n\n▼ - 0.20% ( -0.6 %)\nlyginant su 2023 m.",
+          "aria": "Investicinių būstų sandorių dalis, % ",
+          "title": null,
+          "role": "group"
+        },
+        {
+          "idx": 73,
+          "tag": "SPINNER",
+          "text": "",
+          "aria": null,
+          "title": "Įkeliami vaizdiniai elementai...",
+          "role": null
+        },
+        {
+          "idx": 74,
+          "tag": "DIV",
+          "text": "Investicinių būstų\nsandorių dalis, %",
+          "aria": null,
+          "title": "Investicinių būstų sandorių dalis, %",
+          "role": null
+        },
+        {
+          "idx": 75,
+          "tag": "DIV",
+          "text": "32,30%\n\n▼ - 0.20% ( -0.6 %)\nlyginant su 2023 m.",
+          "aria": "Kortelė",
+          "title": null,
+          "role": "region"
+        },
+        {
+          "idx": 76,
+          "tag": "DIV",
+          "text": "32,30%\n\n▼ - 0.20% ( -0.6 %)\nlyginant su 2023 m.",
+          "aria": "Investicinių būstų sandorių dalis, %, 32,30% kortelė",
+          "title": null,
+          "role": "button"
+        },
+        {
+          "idx": 77,
+          "tag": "DIV",
+          "text": "Socialinio būsto gavėjų\nir laukiančiųjų dalis, %\n\n1,36%\n\n▼ - 0.08% ( -5.4 %)\nlyginant su 2023 m.",
+          "aria": "Socialinio būsto gavėjų ir laukiančiųjų dalis, % ",
+          "title": null,
+          "role": "group"
+        },
+        {
+          "idx": 78,
+          "tag": "SPINNER",
+          "text": "",
+          "aria": null,
+          "title": "Įkeliami vaizdiniai elementai...",
+          "role": null
+        },
+        {
+          "idx": 79,
+          "tag": "DIV",
+          "text": "Socialinio būsto gavėjų\nir laukiančiųjų dalis, %",
+          "aria": null,
+          "title": "Socialinio būsto gavėjų ir laukiančiųjų dalis, %",
+          "role": null
+        },
+        {
+          "idx": 80,
+          "tag": "DIV",
+          "text": "1,36%\n\n▼ - 0.08% ( -5.4 %)\nlyginant su 2023 m.",
+          "aria": "Kortelė",
+          "title": null,
+          "role": "region"
+        },
+        {
+          "idx": 81,
+          "tag": "DIV",
+          "text": "1,36%\n\n▼ - 0.08% ( -5.4 %)\nlyginant su 2023 m.",
+          "aria": "Socialinio būsto gavėjų ir laukiančiųjų dalis, %, 1,36% kortelė",
+          "title": null,
+          "role": "button"
+        },
+        {
+          "idx": 82,
+          "tag": "DIV",
+          "text": "Būsto išlaidų naštą\npatiriančių NŪ dalis, %\n\n6,20%\n\n▲ 1.00% (19.2%)\nlyginant su 2023 m.",
+          "aria": "Būsto išlaidų naštą patiriančių NŪ dalis, % ",
+          "title": null,
+          "role": "group"
+        },
+        {
+          "idx": 83,
+          "tag": "SPINNER",
+          "text": "",
+          "aria": null,
+          "title": "Įkeliami vaizdiniai elementai...",
+          "role": null
+        },
+        {
+          "idx": 84,
+          "tag": "DIV",
+          "text": "Būsto išlaidų naštą\npatiriančių NŪ dalis, %",
+          "aria": null,
+          "title": "Būsto išlaidų naštą patiriančių NŪ dalis, %",
+          "role": null
+        },
+        {
+          "idx": 85,
+          "tag": "DIV",
+          "text": "6,20%\n\n▲ 1.00% (19.2%)\nlyginant su 2023 m.",
+          "aria": "Kortelė",
+          "title": null,
+          "role": "region"
+        },
+        {
+          "idx": 86,
+          "tag": "DIV",
+          "text": "6,20%\n\n▲ 1.00% (19.2%)\nlyginant su 2023 m.",
+          "aria": "Būsto išlaidų naštą patiriančių NŪ dalis, %, 6,20% kortelė",
+          "title": null,
+          "role": "button"
+        },
+        {
+          "idx": 87,
+          "tag": "DIV",
+          "text": "Būsto išlaikymo išlaidų\ndalis, %\n\n11,80%\n\n▲ 0.90% (8.3%)\nlyginant su 2023 m.",
+          "aria": "Būsto išlaikymo išlaidų dalis, % ",
+          "title": null,
+          "role": "group"
+        },
+        {
+          "idx": 88,
+          "tag": "SPINNER",
+          "text": "",
+          "aria": null,
+          "title": "Įkeliami vaizdiniai elementai...",
+          "role": null
+        },
+        {
+          "idx": 89,
+          "tag": "DIV",
+          "text": "Būsto išlaikymo išlaidų\ndalis, %",
+          "aria": null,
+          "title": "Būsto išlaikymo išlaidų dalis, %",
+          "role": null
+        },
+        {
+          "idx": 90,
+          "tag": "DIV",
+          "text": "11,80%\n\n▲ 0.90% (8.3%)\nlyginant su 2023 m.",
+          "aria": "Kortelė",
+          "title": null,
+          "role": "region"
+        },
+        {
+          "idx": 91,
+          "tag": "DIV",
+          "text": "11,80%\n\n▲ 0.90% (8.3%)\nlyginant su 2023 m.",
+          "aria": "Būsto išlaikymo išlaidų dalis, %, 11,80% kortelė",
+          "title": null,
+          "role": "button"
+        },
+        {
+          "idx": 92,
+          "tag": "DIV",
+          "text": "Savivaldybių grupių palyginimas\n0\n50\n100\nAplinkinėssavivaldybės\nDidžiųjų miestų\nKurortinės irrekreacinės\nMažosios\nPramoninių miestų\nŽiedinėssavivaldybės\n64,42\n54,48\n47,81\n67,33\n65,15\n64,32\n44,58\n32,15\n56,96\n55,84\n75,73\n64,12\n52,29\n81,77\n77,49\n65,41\n49,80\n50,12\n65,14\n53,00\n53,68\n53,03\nBūsto prieinamu",
+          "aria": "Elementų: 2",
+          "title": null,
+          "role": "group"
+        },
+        {
+          "idx": 93,
+          "tag": "DIV",
+          "text": "Savivaldybių grupių palyginimas\n0\n50\n100\nAplinkinėssavivaldybės\nDidžiųjų miestų\nKurortinės irrekreacinės\nMažosios\nPramoninių miestų\nŽiedinėssavivaldybės\n64,42\n54,48\n47,81\n67,33\n65,15\n64,32\n44,58\n32,15\n56,96\n55,84\n75,73\n64,12\n52,29\n81,77\n77,49\n65,41\n49,80\n50,12\n65,14\n53,00\n53,68\n53,03\nBūsto prieinamu",
+          "aria": "Savivaldybių grupių palyginimas ",
+          "title": null,
+          "role": "group"
+        },
+        {
+          "idx": 94,
+          "tag": "SPINNER",
+          "text": "",
+          "aria": null,
+          "title": "Įkeliami vaizdiniai elementai...",
+          "role": null
+        },
+        {
+          "idx": 95,
+          "tag": "DIV",
+          "text": "Savivaldybių grupių palyginimas",
+          "aria": null,
+          "title": "Savivaldybių grupių palyginimas",
+          "role": null
+        },
+        {
+          "idx": 96,
+          "tag": "text",
+          "text": "00",
+          "aria": "0",
+          "title": null,
+          "role": "listitem"
+        },
+        {
+          "idx": 97,
+          "tag": "text",
+          "text": "5050",
+          "aria": "50",
+          "title": null,
+          "role": "listitem"
+        },
+        {
+          "idx": 98,
+          "tag": "text",
+          "text": "100100",
+          "aria": "100",
+          "title": null,
+          "role": "listitem"
+        },
+        {
+          "idx": 99,
+          "tag": "g",
+          "text": "AplinkinėssavivaldybėsAplinkinės savivaldybėsDidžiųjų miestųDidžiųjų miestųKurortinės irrekreacinėsKurortinės ir rekreacinėsMažosiosMažosiosPramoninių miestųPramoninių miestųŽiedinėssavivaldybėsŽiedinės savivaldybės",
+          "aria": "Savivaldybių grupė",
+          "title": null,
+          "role": "listbox"
+        },
+        {
+          "idx": 100,
+          "tag": "svg",
+          "text": "",
+          "aria": "Diagramos sritis",
+          "title": null,
+          "role": "group"
+        },
+        {
+          "idx": 101,
+          "tag": "g",
+          "text": "",
+          "aria": "Būsto prieinamumo indeksas",
+          "title": null,
+          "role": "listbox"
+        },
+        {
+          "idx": 102,
+          "tag": "rect",
+          "text": "",
+          "aria": "64.4214590269148",
+          "title": null,
+          "role": "option"
+        },
+        {
+          "idx": 103,
+          "tag": "rect",
+          "text": "",
+          "aria": "54.48266228862767",
+          "title": null,
+          "role": "option"
+        },
+        {
+          "idx": 104,
+          "tag": "rect",
+          "text": "",
+          "aria": "47.81073676940406",
+          "title": null,
+          "role": "option"
+        },
+        {
+          "idx": 105,
+          "tag": "rect",
+          "text": "",
+          "aria": "67.33067473413365",
+          "title": null,
+          "role": "option"
+        },
+        {
+          "idx": 106,
+          "tag": "rect",
+          "text": "",
+          "aria": "65.1517199502303",
+          "title": null,
+          "role": "option"
+        },
+        {
+          "idx": 107,
+          "tag": "rect",
+          "text": "",
+          "aria": "64.3241459799308",
+          "title": null,
+          "role": "option"
+        },
+        {
+          "idx": 108,
+          "tag": "g",
+          "text": "",
+          "aria": "Būsto pakankamumas",
+          "title": null,
+          "role": "listbox"
+        },
+        {
+          "idx": 109,
+          "tag": "rect",
+          "text": "",
+          "aria": "58.234923964250186",
+          "title": null,
+          "role": "option"
+        },
+        {
+          "idx": 110,
+          "tag": "rect",
+          "text": "",
+          "aria": "44.58110628796653",
+          "title": null,
+          "role": "option"
+        },
+        {
+          "idx": 111,
+          "tag": "rect",
+          "text": "",
+          "aria": "32.14601480132654",
+          "title": null,
+          "role": "option"
+        },
+        {
+          "idx": 112,
+          "tag": "rect",
+          "text": "",
+          "aria": "56.95958554969746",
+          "title": null,
+          "role": "option"
+        },
+        {
+          "idx": 113,
+          "tag": "rect",
+          "text": "",
+          "aria": "55.84204282402841",
+          "title": null,
+          "role": "option"
+        },
+        {
+          "idx": 114,
+          "tag": "rect",
+          "text": "",
+          "aria": "69.38602925006192",
+          "title": null,
+          "role": "option"
+        },
+        {
+          "idx": 115,
+          "tag": "g",
+          "text": "",
+          "aria": "Būsto įperkamumas",
+          "title": null,
+          "role": "listbox"
+        },
+        {
+          "idx": 116,
+          "tag": "rect",
+          "text": "",
+          "aria": "75.73294073213751",
+          "title": null,
+          "role": "option"
+        },
+        {
+          "idx": 117,
+          "tag": "rect",
+          "text": "",
+          "aria": "64.12245199592284",
+          "title": null,
+          "role": "option"
+        },
+        {
+          "idx": 118,
+          "tag": "rect",
+          "text": "",
+          "aria": "52.29078046156793",
+          "title": null,
+          "role": "option"
+        },
+        {
+          "idx": 119,
+          "tag": "rect",
+          "text": "",
+          "aria": "81.76654226736846",
+          "title": null,
+          "role": "option"
+        },
+        {
+          "idx": 120,
+          "tag": "rect",
+          "text": "",
+          "aria": "77.49315479365549",
+          "title": null,
+          "role": "option"
+        },
+        {
+          "idx": 121,
+          "tag": "rect",
+          "text": "",
+          "aria": "65.40840312366494",
+          "title": null,
+          "role": "option"
+        },
+        {
+          "idx": 122,
+          "tag": "g",
+          "text": "",
+          "aria": "Aprūpinimas būstu",
+          "title": null,
+          "role": "listbox"
+        },
+        {
+          "idx": 123,
+          "tag": "rect",
+          "text": "",
+          "aria": "49.79706154982677",
+          "title": null,
+          "role": "option"
+        },
+        {
+          "idx": 124,
+          "tag": "rect",
+          "text": "",
+          "aria": "50.12085844837056",
+          "title": null,
+          "role": "option"
+        },
+        {
+          "idx": 125,
+          "tag": "rect",
+          "text": "",
+          "aria": "65.14390190617102",
+          "title": null,
+          "role": "option"
+        },
+        {
+          "idx": 126,
+          "tag": "rect",
+          "text": "",
+          "aria": "52.99937885711864",
+          "title": null,
+          "role": "option"
+        },
+        {
+          "idx": 127,
+          "tag": "rect",
+          "text": "",
+          "aria": "53.675426523376935",
+          "title": null,
+          "role": "option"
+        },
+        {
+          "idx": 128,
+          "tag": "rect",
+          "text": "",
+          "aria": "53.026271683799564",
+          "title": null,
+          "role": "option"
+        },
+        {
+          "idx": 129,
+          "tag": "g",
+          "text": "",
+          "aria": "Sekų etiketės",
+          "title": null,
+          "role": "listbox"
+        },
+        {
+          "idx": 130,
+          "tag": "DIV",
+          "text": "Būsto prieinamumo indeksas\nBūsto pakankamumas\nBūsto įperkamumas\nAprūpinimas būstu",
+          "aria": "Legenda",
+          "title": null,
+          "role": "region"
+        },
+        {
+          "idx": 131,
+          "tag": "DIV",
+          "text": "Būsto prieinamumo indeksas\nBūsto pakankamumas\nBūsto įperkamumas\nAprūpinimas būstu",
+          "aria": "Legenda",
+          "title": null,
+          "role": "listbox"
+        },
+        {
+          "idx": 132,
+          "tag": "DIV",
+          "text": "Būsto prieinamumo indeksas",
+          "aria": "Būsto prieinamumo indeksas",
+          "title": null,
+          "role": "option"
+        },
+        {
+          "idx": 133,
+          "tag": "TEXT",
+          "text": "Būsto prieinamumo indeksas",
+          "aria": null,
+          "title": "Būsto prieinamumo indeksas",
+          "role": null
+        },
+        {
+          "idx": 134,
+          "tag": "DIV",
+          "text": "Būsto pakankamumas",
+          "aria": "Būsto pakankamumas",
+          "title": null,
+          "role": "option"
+        },
+        {
+          "idx": 135,
+          "tag": "TEXT",
+          "text": "Būsto pakankamumas",
+          "aria": null,
+          "title": "Būsto pakankamumas",
+          "role": null
+        },
+        {
+          "idx": 136,
+          "tag": "DIV",
+          "text": "Būsto įperkamumas",
+          "aria": "Būsto įperkamumas",
+          "title": null,
+          "role": "option"
+        },
+        {
+          "idx": 137,
+          "tag": "TEXT",
+          "text": "Būsto įperkamumas",
+          "aria": null,
+          "title": "Būsto įperkamumas",
+          "role": null
+        },
+        {
+          "idx": 138,
+          "tag": "DIV",
+          "text": "Aprūpinimas būstu",
+          "aria": "Aprūpinimas būstu",
+          "title": null,
+          "role": "option"
+        },
+        {
+          "idx": 139,
+          "tag": "TEXT",
+          "text": "Aprūpinimas būstu",
+          "aria": null,
+          "title": "Aprūpinimas būstu",
+          "role": null
+        },
+        {
+          "idx": 140,
+          "tag": "SPINNER",
+          "text": "",
+          "aria": null,
+          "title": "Įkeliami vaizdiniai elementai...",
+          "role": null
+        },
+        {
+          "idx": 141,
+          "tag": "SPAN",
+          "text": "",
+          "aria": "Valyti pasirinkimą",
+          "title": null,
+          "role": "button"
+        },
+        {
+          "idx": 142,
+          "tag": "H3",
+          "text": "Dimensijos pasirinkimas",
+          "aria": "Dimensijos pasirinkimas",
+          "title": "Dimensijos pasirinkimas",
+          "role": null
+        },
+        {
+          "idx": 143,
+          "tag": "DIV",
+          "text": "Savivaldybių grupė",
+          "aria": "Param_Dimensija",
+          "title": null,
+          "role": "combobox"
+        },
+        {
+          "idx": 144,
+          "tag": "DIV",
+          "text": "Lietuvos savivaldybių žemėlapis\nRodiklio pasirinkimas\nBūsto prieinamumo indeksas",
+          "aria": "Elementų: 3",
+          "title": null,
+          "role": "group"
+        },
+        {
+          "idx": 145,
+          "tag": "DIV",
+          "text": "Lietuvos savivaldybių žemėlapis",
+          "aria": "Lietuvos savivaldybių žemėlapis ",
+          "title": null,
+          "role": "group"
+        },
+        {
+          "idx": 146,
+          "tag": "SPINNER",
+          "text": "",
+          "aria": null,
+          "title": "Įkeliami vaizdiniai elementai...",
+          "role": null
+        },
+        {
+          "idx": 147,
+          "tag": "DIV",
+          "text": "Lietuvos savivaldybių žemėlapis",
+          "aria": null,
+          "title": "Lietuvos savivaldybių žemėlapis",
+          "role": null
+        },
+        {
+          "idx": 148,
+          "tag": "svg",
+          "text": "",
+          "aria": "Diagramos sritis",
+          "title": null,
+          "role": "listbox"
+        },
+        {
+          "idx": 149,
+          "tag": "SPINNER",
+          "text": "",
+          "aria": null,
+          "title": "Įkeliami vaizdiniai elementai...",
+          "role": null
+        },
+        {
+          "idx": 150,
+          "tag": "SPAN",
+          "text": "",
+          "aria": "Valyti pasirinkimą",
+          "title": null,
+          "role": "button"
+        },
+        {
+          "idx": 151,
+          "tag": "H3",
+          "text": "Rodiklio pasirinkimas",
+          "aria": "Rodiklio pasirinkimas",
+          "title": "Rodiklio pasirinkimas",
+          "role": null
+        },
+        {
+          "idx": 152,
+          "tag": "DIV",
+          "text": "Būsto prieinamumo indeksas",
+          "aria": "Param_BPI",
+          "title": null,
+          "role": "combobox"
+        },
+        {
+          "idx": 153,
+          "tag": "DIV",
+          "text": "Norėdami naršyti duomenis, paspauskite Enter",
+          "aria": "Vaizdas",
+          "title": null,
+          "role": "img"
+        },
+        {
+          "idx": 154,
+          "tag": "SPINNER",
+          "text": "",
+          "aria": null,
+          "title": "Įkeliami vaizdiniai elementai...",
+          "role": null
+        },
+        {
+          "idx": 155,
+          "tag": "DIV",
+          "text": "Rodiklių dinamika\n60\n80\n2022\n2023\n2024\n62,88\n63,69\n61,27\n53,47\n55,43\n55,23\n75,16\n74,87\n70,64\nBūsto prieinamumo indeksas\nBūsto pakankamumas\nBūsto įperkamumas\nAprūpinimas būstu",
+          "aria": "Rodiklių dinamika ",
+          "title": null,
+          "role": "group"
+        },
+        {
+          "idx": 156,
+          "tag": "SPINNER",
+          "text": "",
+          "aria": null,
+          "title": "Įkeliami vaizdiniai elementai...",
+          "role": null
+        },
+        {
+          "idx": 157,
+          "tag": "DIV",
+          "text": "Rodiklių dinamika",
+          "aria": null,
+          "title": "Rodiklių dinamika",
+          "role": null
+        },
+        {
+          "idx": 158,
+          "tag": "text",
+          "text": "6060",
+          "aria": "60",
+          "title": null,
+          "role": "listitem"
+        },
+        {
+          "idx": 159,
+          "tag": "text",
+          "text": "8080",
+          "aria": "80",
+          "title": null,
+          "role": "listitem"
+        },
+        {
+          "idx": 160,
+          "tag": "g",
+          "text": "202220222023202320242024",
+          "aria": "Metai",
+          "title": null,
+          "role": "listbox"
+        },
+        {
+          "idx": 161,
+          "tag": "g",
+          "text": "",
+          "aria": "Prognozės sritis",
+          "title": null,
+          "role": "listbox"
+        },
+        {
+          "idx": 162,
+          "tag": "g",
+          "text": "",
+          "aria": "Diagramos sritis",
+          "title": null,
+          "role": "listbox"
+        },
+        {
+          "idx": 163,
+          "tag": "circle",
+          "text": "",
+          "aria": "Metai 2022. Būsto prieinamumo indeksas 62,88.",
+          "title": null,
+          "role": "option"
+        },
+        {
+          "idx": 164,
+          "tag": "g",
+          "text": "",
+          "aria": "Sekų etiketės",
+          "title": null,
+          "role": "listbox"
+        },
+        {
+          "idx": 165,
+          "tag": "DIV",
+          "text": "Būsto prieinamumo indeksas\nBūsto pakankamumas\nBūsto įperkamumas\nAprūpinimas būstu",
+          "aria": "Legenda",
+          "title": null,
+          "role": "region"
+        },
+        {
+          "idx": 166,
+          "tag": "DIV",
+          "text": "Būsto prieinamumo indeksas\nBūsto pakankamumas\nBūsto įperkamumas\nAprūpinimas būstu",
+          "aria": "Legenda",
+          "title": null,
+          "role": "listbox"
+        },
+        {
+          "idx": 167,
+          "tag": "DIV",
+          "text": "Būsto prieinamumo indeksas",
+          "aria": "Būsto prieinamumo indeksas",
+          "title": null,
+          "role": "option"
+        },
+        {
+          "idx": 168,
+          "tag": "TEXT",
+          "text": "Būsto prieinamumo indeksas",
+          "aria": null,
+          "title": "Būsto prieinamumo indeksas",
+          "role": null
+        },
+        {
+          "idx": 169,
+          "tag": "DIV",
+          "text": "Būsto pakankamumas",
+          "aria": "Būsto pakankamumas",
+          "title": null,
+          "role": "option"
+        },
+        {
+          "idx": 170,
+          "tag": "TEXT",
+          "text": "Būsto pakankamumas",
+          "aria": null,
+          "title": "Būsto pakankamumas",
+          "role": null
+        },
+        {
+          "idx": 171,
+          "tag": "DIV",
+          "text": "Būsto įperkamumas",
+          "aria": "Būsto įperkamumas",
+          "title": null,
+          "role": "option"
+        },
+        {
+          "idx": 172,
+          "tag": "TEXT",
+          "text": "Būsto įperkamumas",
+          "aria": null,
+          "title": "Būsto įperkamumas",
+          "role": null
+        },
+        {
+          "idx": 173,
+          "tag": "DIV",
+          "text": "Aprūpinimas būstu",
+          "aria": "Aprūpinimas būstu",
+          "title": null,
+          "role": "option"
+        },
+        {
+          "idx": 174,
+          "tag": "TEXT",
+          "text": "Aprūpinimas būstu",
+          "aria": null,
+          "title": "Aprūpinimas būstu",
+          "role": null
+        },
+        {
+          "idx": 175,
+          "tag": "BUTTON",
+          "text": "-",
+          "aria": "Tolinti",
+          "title": null,
+          "role": null
+        },
+        {
+          "idx": 176,
+          "tag": "BUTTON",
+          "text": "+",
+          "aria": "Artinti",
+          "title": null,
+          "role": null
+        },
+        {
+          "idx": 177,
+          "tag": "BUTTON",
+          "text": "90 %",
+          "aria": "Mastelio keitimo lygis. Spustelėkite, kad atidarytumėte dialogo langą Mastelio keitimas",
+          "title": null,
+          "role": null
+        },
+        {
+          "idx": 178,
+          "tag": "BUTTON",
+          "text": "",
+          "aria": "Pritaikyti pagal puslapį",
+          "title": null,
+          "role": null
+        },
+        {
+          "idx": 179,
+          "tag": "A",
+          "text": "„Microsoft Power BI“",
+          "aria": "„Microsoft Power BI“ (atidaroma naujame skirtuke)",
+          "title": null,
+          "role": null
+        },
+        {
+          "idx": 180,
+          "tag": "BUTTON",
+          "text": "",
+          "aria": "Ankstesnis puslapis",
+          "title": null,
+          "role": null
+        },
+        {
+          "idx": 181,
+          "tag": "A",
+          "text": "1iš4",
+          "aria": null,
+          "title": null,
+          "role": null
+        },
+        {
+          "idx": 182,
+          "tag": "BUTTON",
+          "text": "",
+          "aria": "Kitas puslapis",
+          "title": null,
+          "role": null
+        },
+        {
+          "idx": 183,
+          "tag": "BUTTON",
+          "text": "Būsto prieinamumo apžvalga",
+          "aria": "Būsto prieinamumo apžvalga",
+          "title": null,
+          "role": null
+        },
+        {
+          "idx": 184,
+          "tag": "BUTTON",
+          "text": "Savivaldybių analizė",
+          "aria": "Savivaldybių analizė",
+          "title": null,
+          "role": null
+        },
+        {
+          "idx": 185,
+          "tag": "BUTTON",
+          "text": "Būsto prieinamumo indekso struktūra",
+          "aria": "Būsto prieinamumo indekso struktūra",
+          "title": null,
+          "role": null
+        },
+        {
+          "idx": 186,
+          "tag": "BUTTON",
+          "text": "Pradiniai duomenys",
+          "aria": "Pradiniai duomenys",
+          "title": null,
+          "role": null
+        },
+        {
+          "idx": 187,
+          "tag": "A",
+          "text": "",
+          "aria": "Bendrinti per „Facebook“",
+          "title": null,
+          "role": null
+        },
+        {
+          "idx": 188,
+          "tag": "A",
+          "text": "",
+          "aria": "Bendrinti per „Twitter“",
+          "title": null,
+          "role": null
+        },
+        {
+          "idx": 189,
+          "tag": "A",
+          "text": "",
+          "aria": "Bendrinti per „LinkedIn“",
+          "title": null,
+          "role": null
+        },
+        {
+          "idx": 190,
+          "tag": "BUTTON",
+          "text": "",
+          "aria": "Bendrinti",
+          "title": null,
+          "role": null
+        },
+        {
+          "idx": 191,
+          "tag": "BUTTON",
+          "text": "",
+          "aria": "Atidaryti viso ekrano režimu",
+          "title": null,
+          "role": null
+        },
+        {
+          "idx": 192,
+          "tag": "SPAN",
+          "text": "",
+          "aria": null,
+          "title": "Ieškoti",
+          "role": null
+        },
+        {
+          "idx": 193,
+          "tag": "INPUT",
+          "text": "",
+          "aria": "Ieškoti",
+          "title": null,
+          "role": null
+        },
+        {
+          "idx": 194,
+          "tag": "SPAN",
+          "text": "",
+          "aria": null,
+          "title": "Ieškoti",
+          "role": null
+        },
+        {
+          "idx": 195,
+          "tag": "INPUT",
+          "text": "",
+          "aria": "Ieškoti",
+          "title": null,
+          "role": null
+        },
+        {
+          "idx": 196,
+          "tag": "SPAN",
+          "text": "",
+          "aria": null,
+          "title": "Ieškoti",
+          "role": null
+        },
+        {
+          "idx": 197,
+          "tag": "INPUT",
+          "text": "",
+          "aria": "Ieškoti",
+          "title": null,
+          "role": null
+        },
+        {
+          "idx": 198,
+          "tag": "SPAN",
+          "text": "",
+          "aria": null,
+          "title": "Ieškoti",
+          "role": null
+        },
+        {
+          "idx": 199,
+          "tag": "INPUT",
+          "text": "",
+          "aria": "Ieškoti",
+          "title": null,
+          "role": null
+        },
+        {
+          "idx": 200,
+          "tag": "SPAN",
+          "text": "",
+          "aria": null,
+          "title": "Ieškoti",
+          "role": null
+        },
+        {
+          "idx": 201,
+          "tag": "INPUT",
+          "text": "",
+          "aria": "Ieškoti",
+          "title": null,
+          "role": null
+        },
+        {
+          "idx": 202,
+          "tag": "SPAN",
+          "text": "",
+          "aria": null,
+          "title": "Ieškoti",
+          "role": null
+        },
+        {
+          "idx": 203,
+          "tag": "INPUT",
+          "text": "",
+          "aria": "Ieškoti",
+          "title": null,
+          "role": null
+        }
+      ]
+    }
+  ]
+}

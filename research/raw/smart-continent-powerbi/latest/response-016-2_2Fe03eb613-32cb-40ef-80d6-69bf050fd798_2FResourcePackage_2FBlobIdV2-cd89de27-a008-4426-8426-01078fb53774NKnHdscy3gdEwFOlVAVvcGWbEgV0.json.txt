@@ -1,0 +1,1 @@
+{"name":"Custom","dataColors":["#C1EBFD","#006DFF","#002767","#C0DCBB","#58AB80","#004100","#21272D","#FFA900"]}
