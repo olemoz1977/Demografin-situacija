@@ -1,0 +1,79 @@
+name: Build housing sale research layer
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - feature/housing-affordability
+    paths:
+      - 'scripts/fetch_spinta_all.py'
+      - 'scripts/build_housing_sale_layer.py'
+      - 'data/municipality-county-map.csv'
+      - '.github/workflows/housing-affordability-research.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout feature branch
+        uses: actions/checkout@v4
+        with:
+          ref: feature/housing-affordability
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install pandas requests
+
+      - name: Fetch complete ButuPirkimas snapshot
+        run: |
+          python scripts/fetch_spinta_all.py \
+            --url https://get.data.gov.lt/datasets/gov/lsd/butu_pirkimai_gardelese/ButuPirkimas \
+            --out /tmp/ButuPirkimas-full.csv \
+            --meta /tmp/ButuPirkimas-full.meta.json
+
+      - name: Fetch complete Grid1KmSq snapshot
+        run: |
+          python scripts/fetch_spinta_all.py \
+            --url https://get.data.gov.lt/datasets/gov/lsd/grid/Grid1KmSq \
+            --out /tmp/Grid1KmSq-full.csv \
+            --meta /tmp/Grid1KmSq-full.meta.json
+
+      - name: Build county and municipality research layers
+        run: |
+          python scripts/build_housing_sale_layer.py \
+            --transactions /tmp/ButuPirkimas-full.csv \
+            --grid /tmp/Grid1KmSq-full.csv \
+            --mapping data/municipality-county-map.csv \
+            --out-dir data
+
+      - name: Preserve source snapshot metadata
+        run: |
+          cp /tmp/ButuPirkimas-full.meta.json data/housing-sale-butupirkimas-snapshot-meta.json
+          cp /tmp/Grid1KmSq-full.meta.json data/housing-sale-grid-snapshot-meta.json
+
+      - name: Commit research outputs if changed
+        shell: bash
+        run: |
+          if [[ -n "$(git status --porcelain data/)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add \
+              data/housing-sale-county-annual.csv \
+              data/housing-sale-county-latest.csv \
+              data/housing-sale-county-rolling3y.csv \
+              data/housing-sale-municipality-annual.csv \
+              data/housing-sale-source-meta.json \
+              data/housing-sale-butupirkimas-snapshot-meta.json \
+              data/housing-sale-grid-snapshot-meta.json
+            git commit -m "Refresh complete VDA housing sale research layer"
+            git push origin HEAD:feature/housing-affordability
+          else
+            echo "No derived housing-sale changes"
+          fi
