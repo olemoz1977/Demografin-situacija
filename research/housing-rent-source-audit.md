@@ -42,9 +42,9 @@ Neįtraukiami:
 ## Dabartinė mėginio aprėptis
 - Marijampolė: N=7, mediana 300 EUR/mėn. — C kokybė.
 - Alytus: N=6, mediana 285 EUR/mėn. — C kokybė.
-- Utena: N=2, mediana 265 EUR/mėn. — nepakankama.
-- Tauragė: N=1, 250 EUR/mėn. — nepakankama.
-- Telšiai: N=2, mediana 240 EUR/mėn. — nepakankama.
+- Utena: N=4, mediana 225 EUR/mėn. — nepakankama.
+- Tauragė: N=2, mediana 300 EUR/mėn. — nepakankama.
+- Telšiai: N=3, mediana 250 EUR/mėn. — nepakankama.
 
 Šie skaičiai dar NEGALI būti naudojami galutiniam 10 apskričių indeksui:
 paieškos indeksas nėra pilna skelbimų duomenų bazė, o trijų miestų imtis per maža.
