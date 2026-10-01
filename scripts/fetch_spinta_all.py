@@ -47,13 +47,14 @@ def split_model_url(base: str) -> tuple[str, str]:
     return namespace, model
 
 
-def build_query(limit: int | None, cursor: str | None) -> str:
-    expr = []
+def build_params(limit: int | None, cursor: str | None) -> dict[str, str]:
+    # Current UDTS/Spinta query syntax uses _limit and _page.
+    params: dict[str, str] = {}
     if limit:
-        expr.append(f"limit({limit})")
+        params["_limit"] = str(limit)
     if cursor:
-        expr.append(f'page("{cursor}")')
-    return ("?" + "&".join(expr)) if expr else ""
+        params["_page"] = cursor
+    return params
 
 
 def flatten_record(row: dict) -> dict:
@@ -113,8 +114,12 @@ def fetch_json(base: str, limit: int | None, sleep_s: float, timeout_s: int):
     seen = set()
     page_no = 0
     while True:
-        url = base + build_query(limit, cursor)
-        r = requests.get(url, headers=HEADERS_JSON, timeout=timeout_s)
+        r = requests.get(
+            base,
+            params=build_params(limit, cursor),
+            headers=HEADERS_JSON,
+            timeout=timeout_s,
+        )
         r.raise_for_status()
         payload = r.json()
         page_rows = payload.get("_data", [])
@@ -139,8 +144,12 @@ def fetch_csv(base: str, sleep_s: float, timeout_s: int):
     seen = set()
     page_no = 0
     while True:
-        url = format_url + build_query(None, cursor)
-        r = requests.get(url, headers=HEADERS_CSV, timeout=timeout_s)
+        r = requests.get(
+            format_url,
+            params=build_params(None, cursor),
+            headers=HEADERS_CSV,
+            timeout=timeout_s,
+        )
         r.raise_for_status()
         frame = pd.read_csv(io.StringIO(r.text), low_memory=False)
         next_cursor = None
