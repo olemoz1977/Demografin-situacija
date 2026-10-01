@@ -30,7 +30,7 @@ function findMainResponse() {
     let obj;
     try { obj = JSON.parse(fs.readFileSync(full, "utf8")); } catch { continue; }
     const data = obj?.results?.[0]?.result?.data;
-    const names = (data?.descriptor?.Select || []).map(x => x.Name);
+    const names = (data?.descriptor?.Select || []).filter(Boolean).map(x => x.Name);
     if (names.includes(targetMunicipality) && names.includes(targetTxn) && names.includes(targetMeasure)) {
       return { file, obj, data };
     }
@@ -67,7 +67,7 @@ for (const row of dm1) {
 }
 
 function descriptorToDsrName(selectName) {
-  const selects = data.descriptor.Select || [];
+  const selects = (data.descriptor.Select || []).filter(Boolean);
   const idx = selects.findIndex(x => x.Name === selectName);
   if (idx < 0) throw new Error("Descriptor field missing: " + selectName);
   // G0 is the municipality group key. Measure n maps to M(2*(n-1)).
