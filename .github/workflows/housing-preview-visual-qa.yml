@@ -70,13 +70,13 @@ jobs:
                   rows: rows.length,
                   hasPrelim: text.includes('PRELIMINARU'),
                   hasPlainQuestion: text.includes('Kiek poros metinių pajamų kainuoja 50 m² būstas?'),
-                  hasTakeaway: text.includes('Pagrindinė išvada'),
+                  hasTakeaway: (section.querySelector('.housing-takeaway-label')?.textContent || '').includes('Pagrindinė išvada'),
                   hasMortgageWarning: text.includes('Tai nėra bankinis paskolos įperkamumo vertinimas.'),
                   hasControlMetric: [...section.querySelectorAll('.housing-simple-table th')].some(th => th.textContent.includes('50 m² kaina / poros metinės neto')),
                   detailsCount: details.length,
                   detailsClosed: details.every(d => !d.open),
                   rootOverflow,
-                  tableScrollable: scroll.scrollWidth > scroll.clientWidth,
+                  mainTableOverflow: scroll.scrollWidth - scroll.clientWidth,
                   sectionWidth: Math.round(section.getBoundingClientRect().width),
                   viewportWidth: window.innerWidth
                 };
@@ -93,7 +93,7 @@ jobs:
               if (!result.hasControlMetric) throw new Error(`${name}: 50m2 control metric missing`);
               if (result.detailsCount !== 2 || !result.detailsClosed) throw new Error(`${name}: technical details should be collapsed by default`);
               if (result.rootOverflow > 2) throw new Error(`${name}: page horizontal overflow ${result.rootOverflow}px`);
-              if (viewport.width <= 430 && !result.tableScrollable) throw new Error(`${name}: main housing table is not independently scrollable`);
+              if (viewport.width <= 430 && result.mainTableOverflow > 2) throw new Error(`${name}: main housing table should become mobile cards, overflow ${result.mainTableOverflow}px`);
 
               await page.close();
             }
