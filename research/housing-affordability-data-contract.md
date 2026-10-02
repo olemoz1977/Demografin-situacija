@@ -230,3 +230,34 @@ PRELIMINARY v0.1 nėra strict vartų apeinimas: jo proxy ir rinkos imties skaič
 
 Readiness blockeriai yra tikėtina tyrimo būsena, todėl generatorius dėl jų negrąžina CI
 klaidos. CI klaida rezervuota sugadintai konfigūracijai / kontrakto pažeidimui.
+
+
+## 2A. Tarpapskritinio palyginamumo vartas — PRIVALOMAS
+
+2026-10-02 po viešo v0.1 peržiūros nustatyta papildoma metodinė problema:
+vienodas 50 m² plotas savaime nereiškia vienodo būsto. Statybos laikotarpis,
+naujos / antrinės rinkos dalis, būklė ir kitas kokybės miksas tarp apskričių gali
+stipriai skirtis.
+
+Dabartinis Smart Continent 2024 sluoksnis šio vartų nepraeina:
+- jo semantika yra `housing_all_types_dashboard_measure`;
+- jis nėra apartment-specific;
+- jis nekontroliuoja statybos laikotarpio ar naujos statybos dalies;
+- kalibravimas į 6 miestų VDA butų vidurkius šios kompozicijos problemos nepašalina.
+
+Todėl 10 apskričių kainos / pajamų palyginimui papildomai PRIVALOMA:
+- property_type = apartment in multifamily building;
+- vienodas tikslinis laikotarpis;
+- kontroliuojamas ploto krepšelis (pirminis kandidatas 45–55 m²);
+- aiški statybos laikotarpio / rinkos segmento taisyklė;
+- nauja statyba ir antrinė rinka negali būti tyliai sumaišytos;
+- kiekvienai publikuojamai teritorijai turi būti pateiktas stebinių N.
+
+Statybos laikotarpis dar NEUŽRAKINTAS. Pirmas duomenų gavimo etapas turi pateikti
+kainą ir N pagal statybos laikotarpio grupes visoms 10 apskričių. Tik po aprėpties
+audito galima pasirinkti bendrą segmentą, kuriame visos apskritys turi pakankamą N.
+
+Kol šis vartas nepraeitas:
+- 50 m² proxy negalima interpretuoti kaip „to paties 50 m² būsto“ kainos;
+- negalima skelbti kraštinių apskričių santykio kaip gryno įperkamumo skirtumo;
+- PRELIMINARY v0.1 tarpapskritinis rezultatas = DIAGNOSTIC ONLY.
