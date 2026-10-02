@@ -1,0 +1,48 @@
+name: Compare 2025 rent portal benchmarks
+
+on:
+  push:
+    branches:
+      - feature/housing-affordability
+    paths:
+      - "scripts/compare_rent_portal_benchmarks_2025.py"
+      - "data/housing-rent-city-sample-2025-summary.csv"
+      - "research/raw/aruodas-rent-benchmark-2025/aruodas-1room-rent-2025-qa.json"
+      - ".github/workflows/compare-rent-portals-2025.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: compare-rent-portals-2025
+  cancel-in-progress: true
+
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/housing-affordability
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pandas
+      - name: Build cross-portal QA
+        run: python scripts/compare_rent_portal_benchmarks_2025.py
+      - name: Commit QA
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/housing-rent-cross-portal-validation-2025.json
+          if git diff --cached --quiet; then
+            echo "No QA changes"
+          else
+            git commit -m "Refresh rent cross-portal validation [skip ci]"
+            git fetch origin feature/housing-affordability
+            git rebase origin/feature/housing-affordability
+            git push origin HEAD:feature/housing-affordability
+          fi
