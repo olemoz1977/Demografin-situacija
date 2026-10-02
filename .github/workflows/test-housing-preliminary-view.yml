@@ -59,11 +59,16 @@ jobs:
           app=Path("app.js").read_text(encoding="utf-8")
           assert "housing-affordability.js" in app
           view=Path("housing-affordability.js").read_text(encoding="utf-8")
-          assert "Tai nėra patikimumo ar galutinis įperkamumo reitingas." in view
+          assert "Kiek poros metinių pajamų kainuoja 50 m² būstas?" in view
+          assert "Pagrindinė išvada" in view
+          assert "Mažesnis skaičius reiškia palankesnį kainos ir pajamų santykį." in view
           assert "Tai nėra bankinis paskolos įperkamumo vertinimas." in view
+          assert "Tai nėra galutinis apskričių įperkamumo reitingas." in view
           assert "preliminary_affordability_rank" not in view
           assert "standard_50m2_price_to_pair_annual_net_years" in view
+          assert "standard_50m2_price_eur" in view
           assert "rent_burden_pct_pair_net_income" in view
-          assert "Tai nėra oficialios apskričių butų kainos." in view
-          print("PASS: preliminary housing view payload, uncertainty labels and routing")
+          assert 'class="housing-simple-table"' in view
+          assert 'class="housing-details"' in view
+          print("PASS: reader-first preliminary housing view, uncertainty labels and routing")
           PY
