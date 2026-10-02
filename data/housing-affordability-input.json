@@ -47,9 +47,20 @@
       ],
       "county_coverage": false,
       "unit": "EUR/m2/year",
+      "indicator_code": "S7R281",
       "source_basis": "NT agentūrų ir internetinių portalų nuomos kainos",
       "periodicity": "annual",
       "since": 2019,
+      "latest_verified_year": 2025,
+      "feature_service": "https://osp-sdg.stat.gov.lt/arcgis/rest/services/EVP_DB_connection/evp32/FeatureServer/0",
+      "values_2025_eur_m2_year": {
+        "Vilniaus m. sav.": 155.09,
+        "Kauno m. sav.": 124.35,
+        "Klaipėdos m. sav.": 113.46,
+        "Šiaulių m. sav.": 95.15,
+        "Panevėžio m. sav.": 91.4
+      },
+      "role": "official_validation_benchmark_only",
       "metadata_url": "https://osp.stat.gov.lt/documents/10180/5118910/But%C5%B3%2Bnuomos%2Bvidutin%C4%97s%2Bmetin%C4%97s%2Bkainos%2B%5BLT%5D%2B163640000.html",
       "gis_url": "https://www.arcgis.com/apps/dashboards/3fba56c8042649aabbb5fc85329b2f70"
     }
@@ -61,8 +72,8 @@
   },
   "required_fields_not_yet_validated": {
     "county_or_city_net_income_25_30_eur_month": null,
-    "rent": "WAITING_PUBLICATION_GRADE_COUNTY_OR_60_MUNICIPALITY_PRIVATE_RENT_LAYER",
-    "sale_price_eur_m2": "WAITING_OFFICIAL_RC_APARTMENT_LAYER"
+    "rent": "WAITING_10_COUNTY_PRIVATE_LONG_TERM_1ROOM_RENT_LAYER",
+    "sale_price_eur_m2": "WAITING_OFFICIAL_RC_2024_APARTMENT_TRANSACTION_LAYER"
   },
   "notes": [
     "Apskričių atlyginimų serija apima visus darbuotojus, ne tik 25–30 m.; nepublikuoti kaip tiesioginio jaunimo pajamų rodiklio.",
@@ -115,12 +126,17 @@
       "status": "blocked_source_validation",
       "main_target": "2025 private long-term 1-room apartment asking-rent layer covering all 10 counties",
       "preferred_source_shape": "direct county aggregates; alternatively complete municipality aggregates/raw listings with documented basket, duplicate handling and aggregation weights",
-      "official_validation": "VDA official rent series covers only 5 largest cities",
+      "official_validation": "VDA S7R281 2025 official rent benchmark verified from ArcGIS FeatureServer for 5 largest cities",
       "secondary_validation": "Aruodas historical offer statistics for Vilnius, Kaunas, Klaipėda",
       "smart_continent_bi3_role": "QA_DIAGNOSTIC_ONLY",
       "smart_continent_bi3_verdict": "FAIL_FOR_MAIN_RENT_LAYER",
       "reason": "60-municipality BI_3 series has unverified municipal estimation/basket/precision and implausibly low reconstructed rents in multiple municipalities.",
-      "portal_request_status": "Aruodas/Skelbiu request sent 2026-10-02; awaiting reply"
+      "portal_request_status": "Aruodas/Skelbiu request sent 2026-10-02; awaiting reply",
+      "official_validation_file": "research/raw/vda-rent-big-cities/vda-rent-big-cities-2025.csv",
+      "validator": "scripts/validate_housing_rent_provider.py",
+      "validator_status": "PASS automated tests",
+      "provider_contract": "research/housing-rent-provider-contract.md",
+      "main_layer_status": "WAITING_10_COUNTY_PRIVATE_RENT_SOURCE"
     }
   },
   "rent_validation_benchmarks_aruodas_2025_12": {
