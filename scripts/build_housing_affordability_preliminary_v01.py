@@ -130,6 +130,13 @@ def main() -> None:
     merged["pair_net_income_months_per_one_m2"] = (
         merged["sale_price_proxy_2025_eur_m2"] / merged["pair_net_income_eur_month"]
     )
+    # Two control metrics that are easier to interpret than the experimental
+    # m²/year-after-rent index. They remain preliminary because the sale/rent
+    # layers feeding them are preliminary.
+    merged["standard_50m2_price_eur"] = merged["sale_price_proxy_2025_eur_m2"] * 50
+    merged["standard_50m2_price_to_pair_annual_net_years"] = (
+        merged["standard_50m2_price_eur"] / merged["pair_net_income_eur_year"]
+    )
 
     # Sensitivity interval, not a statistical confidence interval:
     # conservative side = higher observed rent quartile + highest six-city calibration ratio;
@@ -166,6 +173,7 @@ def main() -> None:
         "m2_per_year_after_rent","m2_after_rent_sensitivity_low","m2_after_rent_sensitivity_high",
         "m2_per_year_without_rent",
         "rent_burden_pct_pair_net_income","pair_net_income_months_per_one_m2",
+        "standard_50m2_price_eur","standard_50m2_price_to_pair_annual_net_years",
         "income_status","sale_status","rent_status","value_status","needs_refinement",
         "localities_n","localities",
     ]
@@ -177,7 +185,8 @@ def main() -> None:
         "sale_price_proxy_2025_eur_m2","m2_per_year_after_rent",
         "m2_after_rent_sensitivity_low","m2_after_rent_sensitivity_high",
         "m2_per_year_without_rent","rent_burden_pct_pair_net_income",
-        "pair_net_income_months_per_one_m2",
+        "pair_net_income_months_per_one_m2","standard_50m2_price_eur",
+        "standard_50m2_price_to_pair_annual_net_years",
     ]:
         out[c] = out[c].astype(float).round(2)
 
@@ -201,6 +210,11 @@ def main() -> None:
         "display_order": "m2_per_year_after_rent_desc_for_visual_comparison_only",
         "target": "10 counties; working 25-30-year-old childless couple",
         "formula": "[(2 × monthly net income × 12) - annual rent] / apartment sale price proxy EUR/m²",
+        "interpretation_warning": "The m²/year metric is a theoretical income-price index, not bank mortgage affordability: it ignores non-rent living costs, down payment, interest, term, debt-service limits and household-specific obligations.",
+        "control_metrics": {
+            "standard_50m2_price_to_pair_annual_net_years": "50 m² sale-price proxy divided by the couple's modelled annual net income; no mortgage assumptions.",
+            "rent_burden_pct_pair_net_income": "monthly rent median divided by the couple's monthly modelled net income.",
+        },
         "sale_proxy": {
             "source_base": "Smart Continent 2024 generic housing actual-transaction price by 60 municipalities",
             "county_aggregation": "transaction-count weighted generic-housing price",
@@ -228,6 +242,7 @@ def main() -> None:
         },
         "rules": [
             "Every v0.1 number is labelled preliminary and needs refinement.",
+            "The m²/year metric must be described as a theoretical income-price index, not mortgage affordability.",
             "Row order is for visual comparison only; do not present it as a final county affordability ranking.",
             "Do not describe sale_price_proxy_2025_eur_m2 as an official county apartment transaction price.",
             "Do not describe Skelbiu rent sample as a complete county market census.",
