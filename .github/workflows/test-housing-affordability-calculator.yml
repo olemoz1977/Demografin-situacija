@@ -1,0 +1,34 @@
+name: Test 10-county affordability calculator
+
+on:
+  push:
+    branches:
+      - feature/housing-affordability
+    paths:
+      - "scripts/build_housing_affordability_county.py"
+      - "tests/test_build_housing_affordability_county.py"
+      - "data/housing-income-county-model-2025-11.csv"
+      - ".github/workflows/test-housing-affordability-calculator.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/housing-affordability
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pandas
+
+      - name: Run calculator tests
+        run: python -m unittest -v tests/test_build_housing_affordability_county.py
