@@ -84,7 +84,8 @@
     "Aruodas 2025-12 benchmark: 1-room offer averages were Vilnius 484 EUR/month, Kaunas 379, Klaipėda 371; use only for rent-method validation, not as county values.",
     "VDA/RC 1 km apartment-purchase grid (dataset 2559) is QA/diagnostic only and must not be used as the main 10-county sale-price layer.",
     "Smart Continent BI_3 reconstructed rent is QA/diagnostic only and must not be used as the main private-rent layer.",
-    "No county-center substitution: city values cannot be relabeled as county values."
+    "No county-center substitution: city values cannot be relabeled as county values.",
+    "All outgoing emails, external requests and forms must be shown to the owner before sending."
   ],
   "sources": [
     {
@@ -112,7 +113,9 @@
       "rc_request_status": "sent 2026-10-01; awaiting reply",
       "validator": "scripts/build_housing_sale_county_from_rc.py",
       "validator_status": "PASS automated tests",
-      "note": "Do not aggregate the 1 km grid into the publication sale layer."
+      "note": "Do not aggregate the 1 km grid into the publication sale layer.",
+      "free_public_path": "NOT_FOUND_AFTER_2026-10-02_AUDIT",
+      "free_public_path_audit": "research/housing-sale-alternative-sources.md"
     },
     "income_layer": {
       "status": "source_locked",
@@ -137,6 +140,19 @@
       "validator_status": "PASS automated tests",
       "provider_contract": "research/housing-rent-provider-contract.md",
       "main_layer_status": "WAITING_10_COUNTY_PRIVATE_RENT_SOURCE"
+    },
+    "calculation_layer": {
+      "status": "architecture_ready_waiting_validated_inputs",
+      "calculator": "scripts/build_housing_affordability_county.py",
+      "validator_status": "PASS automated tests",
+      "strict_default": "requires publication_approved sale and rent layers",
+      "qa_override": "--allow-candidate",
+      "readiness_report": "research/housing-affordability-readiness.json",
+      "current_readiness": "DO_NOT_PUBLISH",
+      "blockers": [
+        "official RC 2024 actual-apartment transaction layer",
+        "2025 private long-term 1-room asking-rent layer covering all 10 counties"
+      ]
     }
   },
   "rent_validation_benchmarks_aruodas_2025_12": {
