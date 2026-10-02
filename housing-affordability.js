@@ -76,10 +76,10 @@
     const simpleRows=rows.map(r=>{
       const pairAnnual=Number(r.model_net_25_30_eur_month)*2*12;
       return `<tr>
-        <td><strong>${r.county}</strong></td>
-        <td class="td-num"><strong>${fmt(r.standard_50m2_price_to_pair_annual_net_years,2)} m.</strong></td>
-        <td class="td-num">${money(r.standard_50m2_price_eur)}</td>
-        <td class="td-num">${money(pairAnnual)}</td>
+        <td data-label="Apskritis"><strong>${r.county}</strong></td>
+        <td class="td-num" data-label="50 m² / metinės neto"><strong>${fmt(r.standard_50m2_price_to_pair_annual_net_years,2)} m.</strong></td>
+        <td class="td-num" data-label="50 m² kainos įvertis">${money(r.standard_50m2_price_eur)}</td>
+        <td class="td-num" data-label="Poros metinės neto">${money(pairAnnual)}</td>
       </tr>`;
     }).join('');
 
