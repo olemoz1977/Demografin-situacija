@@ -1,0 +1,53 @@
+name: Probe Smart Continent BI1 sale signal
+
+on:
+  push:
+    branches:
+      - feature/housing-affordability
+    paths:
+      - "scripts/extract_smart_continent_bi1_sale_probe.mjs"
+      - "scripts/parse_smart_continent_bi1_sale_probe.mjs"
+      - ".github/workflows/smart-continent-bi1-sale-probe.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: smart-continent-bi1-sale-probe-feature
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/housing-affordability
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install Playwright
+        run: |
+          npm init -y >/dev/null 2>&1
+          npm install playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Query BI1 sale signal
+        run: node scripts/extract_smart_continent_bi1_sale_probe.mjs
+      - name: Parse and compare with official VDA apartment benchmark
+        run: node scripts/parse_smart_continent_bi1_sale_probe.mjs
+      - name: Commit diagnostics
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/raw/smart-continent-bi1-sale-probe data/housing-sale-smart-continent-bi1-2024-diagnostic.csv research/smart-continent-bi1-sale-qa-2024.json
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Audit Smart Continent BI1 sale signal [skip ci]"
+            git fetch origin feature/housing-affordability
+            git rebase origin/feature/housing-affordability
+            git push origin HEAD:feature/housing-affordability
+          fi
