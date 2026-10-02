@@ -14,13 +14,13 @@
   const SECTION_VIEWS={
     apzvalga:'overview',researchHome:'overview',tfr:'fertility',regionai:'fertility',amzius:'fertility',
     'lytis-amzius':'population',gyventojai:'migration','migration-sex-section':'migration',uzsienieciai:'migration',
-    santuokos:'family','parama-istorija':'family',infrastruktura:'family',skaitmena:'family','family-hypotheses-section':'family',
+    santuokos:'family','parama-istorija':'family',infrastruktura:'family',skaitmena:'family','family-hypotheses-section':'family',housingAffordability:'housing',
     scenarijai:'future',isvados:'all',metodika:'methods',saltiniai:'methods'
   };
   const HASH_VIEW={
     '#apzvalga':'overview','#tfr':'fertility','#regionai':'fertility','#amzius':'fertility','#lytis-amzius':'population',
     '#gyventojai':'migration','#uzsienieciai':'migration','#santuokos':'family','#parama-istorija':'family',
-    '#infrastruktura':'family','#skaitmena':'family','#familyFormationHypotheses':'family','#housing-affordability':'housing','#scenarijai':'future',
+    '#infrastruktura':'family','#skaitmena':'family','#familyFormationHypotheses':'family','#housing-affordability':'housing','#housingAffordability':'housing','#scenarijai':'future',
     '#metodika':'methods','#saltiniai':'methods','#isvados':'all'
   };
   const qs=new URLSearchParams(location.search);
@@ -37,7 +37,7 @@
     const right=document.querySelector('.masthead-right');
     if(right) right.innerHTML='Atnaujinta 2026-09-15<br>2025* – išankstiniai, kai pažymėta';
     const sub=document.querySelector('.masthead-sub');
-    if(sub) sub.innerHTML='<span>Gimstamumas</span><span>Gyventojų struktūra</span><span>Migracija</span><span>Šeimos aplinka</span><span>Ateitis</span>';
+    if(sub) sub.innerHTML='<span>Gimstamumas</span><span>Gyventojų struktūra</span><span>Migracija</span><span>Šeimos aplinka</span><span>Būstas</span><span>Ateitis</span>';
     document.querySelectorAll('footer').forEach(f=>{f.innerHTML=f.innerHTML.replace(/Atnaujinta\s+2026-09-13/g,'Atnaujinta 2026-09-15');});
   }
 
@@ -61,7 +61,7 @@
     section.id='researchHome'; section.className='research-home';
     section.innerHTML=`<div class="container">
       <div class="section-label">Tyrimo žemėlapis <span class="badge badge-official">ATNAUJINTA 2026-09-15</span></div>
-      <h2>Ne vienas skaičius. Penkios susijusios tyrimo kryptys.</h2>
+      <h2>Ne vienas skaičius. Šešios susijusios tyrimo kryptys.</h2>
       <p class="lead">Pagrindinis puslapis dabar rodo trumpą vaizdą. Toliau galima eiti tiesiai į dominančią temą – nebereikia slinkti per visą tyrimą iki projekcijų ir hipotezių.</p>
       <div class="research-summary">
         <div class="card"><div class="eyebrow">Dabar</div><strong>17 478 gimimai</strong><p>2025* natūrali kaita –19 946, neto migracija +16 165. 2025P TFR nowcast – 1,03; 2024 galutinis TFR – 1,11.</p></div>
