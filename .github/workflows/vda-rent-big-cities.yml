@@ -1,0 +1,50 @@
+name: Extract VDA 2025 big-city rent
+
+on:
+  push:
+    branches:
+      - feature/housing-affordability
+    paths:
+      - "scripts/extract_vda_rent_big_cities.mjs"
+      - ".github/workflows/vda-rent-big-cities.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vda-rent-big-cities-feature
+  cancel-in-progress: true
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/housing-affordability
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Extract official VDA rent benchmark
+        run: |
+          rm -rf research/raw/vda-rent-big-cities
+          node scripts/extract_vda_rent_big_cities.mjs
+
+      - name: Commit benchmark
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/raw/vda-rent-big-cities
+          if git diff --cached --quiet; then
+            echo "No benchmark changes to commit"
+          else
+            git commit -m "Capture VDA 2025 big-city rent benchmark [skip ci]"
+            git fetch origin feature/housing-affordability
+            git rebase origin/feature/housing-affordability
+            git push origin HEAD:feature/housing-affordability
+          fi
