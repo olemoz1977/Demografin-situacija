@@ -67,7 +67,7 @@
         <div class="housing-income-screen" id="housingIncomeScreen">
           <div class="eyebrow">2025 m. pajamų lubų patikra · 2 asmenų šeimos scenarijus</div>
           <h4>Ar modeliuotos jaunos poros pajamos telpa į 2025 m. ribą?</h4>
-          <p class="small">Čia lyginame tik pajamas su oficialia 2026 m. pajamų riba valstybės iš dalies kompensuojamam būsto kreditui. <strong>Tai nėra individualios teisės į paramą nustatymas</strong>: realiai vertinamos konkrečios šeimos už kalendorinius metus deklaruotos grynosios pajamos, turtas ir kiti kriterijai.</p>
+          <p class="small">Čia lyginame tik pajamas su oficialia 2025 m. pajamų riba valstybės iš dalies kompensuojamam būsto kreditui. <strong>Tai nėra individualios teisės į paramą nustatymas</strong>: realiai vertinamos konkrečios šeimos už kalendorinius metus deklaruotos grynosios pajamos, turtas ir kiti kriterijai.</p>
           <div class="housing-support-insight" id="housingSupportInsight">Kraunama…</div>
           <div class="chart-wrap housing-support-chart"><canvas id="housingSupportIncomeChart"></canvas></div>
           <div class="chart-caption">Oficiali 2025 m. dviejų asmenų šeimos pajamų riba – <strong>32 708 € per metus</strong>. Apskričių stulpeliai – mūsų 2025-11 modeliuotos vieno asmens neto pajamos × 2 asmenys × 12 mėn. Tai orientacinis „screening“, o ne teisinis tinkamumo testas.</div>
