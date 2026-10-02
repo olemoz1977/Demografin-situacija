@@ -1,0 +1,137 @@
+{
+  "dashboard_item_id": "bdcbe64adb6941e6a8929d198c4cc1d5",
+  "data_item_id": "9b3d36f484194721beee10fbb6c5df44",
+  "data_item_title": "evp56",
+  "data_item_type": "Feature Service",
+  "service_url": "https://osp-sdg.stat.gov.lt/arcgis/rest/services/EVP_DB_connection/evp56/FeatureServer",
+  "layer_url": "https://osp-sdg.stat.gov.lt/arcgis/rest/services/EVP_DB_connection/evp56/FeatureServer/0",
+  "layer_name": "evp56",
+  "max_record_count": 4000,
+  "field_names": [
+    {
+      "name": "bustotipas_2",
+      "alias": "bustotipas_2",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "name": "bustotipas_2_name",
+      "alias": "bustotipas_2_name",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "name": "bustotipas_2_name_en",
+      "alias": "bustotipas_2_name_en",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "name": "laikotarpis",
+      "alias": "laikotarpis",
+      "type": "esriFieldTypeDate"
+    },
+    {
+      "name": "laikotarpis_name",
+      "alias": "laikotarpis_name",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "name": "laikotarpis_name_en",
+      "alias": "laikotarpis_name_en",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "name": "matvnt",
+      "alias": "matvnt",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "name": "matvnt_name",
+      "alias": "matvnt_name",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "name": "matvnt_name_en",
+      "alias": "matvnt_name_en",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "name": "savivaldybesm2021007",
+      "alias": "savivaldybesm2021007",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "name": "savivaldybesm2021007_name",
+      "alias": "savivaldybesm2021007_name",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "name": "savivaldybesm2021007_name_en",
+      "alias": "savivaldybesm2021007_name_en",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "name": "collection_code",
+      "alias": "collection_code",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "name": "collection_name",
+      "alias": "collection_name",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "name": "collection_name_en",
+      "alias": "collection_name_en",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "name": "indicator_code",
+      "alias": "indicator_code",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "name": "indicator_name",
+      "alias": "indicator_name",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "name": "indicator_name_en",
+      "alias": "indicator_name_en",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "name": "value",
+      "alias": "value",
+      "type": "esriFieldTypeDouble"
+    },
+    {
+      "name": "object_id",
+      "alias": "object_id",
+      "type": "esriFieldTypeOID"
+    }
+  ],
+  "query_2024_url": "https://osp-sdg.stat.gov.lt/arcgis/rest/services/EVP_DB_connection/evp56/FeatureServer/0/query?returnGeometry=false&f=json&where=laikotarpis_name%3D%272024%27&outFields=*&orderByFields=savivaldybesm2021007_name+ASC%2Cbustotipas_2_name+ASC%2Cmatvnt_name+ASC&resultRecordCount=5000",
+  "rows_2024": 28,
+  "municipalities_2024": [
+    "Alytaus m. sav.",
+    "Kauno m. sav.",
+    "Klaipėdos m. sav.",
+    "Lietuvos Respublika",
+    "Panevėžio m. sav.",
+    "Vilniaus m. sav.",
+    "Šiaulių m. sav."
+  ],
+  "housing_types_2024": [
+    "Butas daugiabučiuose namuose",
+    "Vieno ir dviejų būstų pastatai"
+  ],
+  "units_2024": [
+    "EUR",
+    "EUR/m²"
+  ],
+  "indicators_2024": [
+    "Būsto pirkimo-pardavimo vidutinės kainos"
+  ],
+  "collections_2024": [
+    "Būsto tipas | Didieji miestai (2017 - 2025) (Atnaujinta: 2026-07-31)"
+  ]
+}
