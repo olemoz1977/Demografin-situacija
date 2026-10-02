@@ -28,50 +28,12 @@ async function query(params) {
   return { url, json };
 }
 
-const discovery = await query({
-  where: "indicator_name LIKE '%pirkimo-pardavimo%'",
-  outFields: "indicator_code,indicator_name,matvnt_name,collection_name",
-  resultRecordCount: "200",
-});
+const indicatorName = "Būsto pirkimo-pardavimo vidutinės kainos";
 
-const rawCandidates = (discovery.json.features || []).map(function (f) {
-  return f.attributes || {};
-});
-const candidateMap = new Map();
-for (const c of rawCandidates) {
-  const key = [
-    c.indicator_code,
-    c.indicator_name,
-    c.matvnt_name,
-    c.collection_name,
-  ].join("|");
-  candidateMap.set(key, c);
-}
-const candidates = Array.from(candidateMap.values()).sort(function (a, b) {
-  return String(a.indicator_name || "").localeCompare(String(b.indicator_name || ""), "lt");
-});
-fs.writeFileSync(
-  path.join(outDir, "indicator-candidates.json"),
-  JSON.stringify({ query_url: discovery.url, candidates }, null, 2) + "\n"
-);
-
-const matching = candidates.filter(function (x) {
-  return /būsto pirkimo-pardavimo vidutin/i.test(String(x.indicator_name || ""));
-});
-if (matching.length !== 1) {
-  throw new Error(
-    "Expected exactly one purchase-price indicator candidate, got " +
-      matching.length +
-      ": " +
-      JSON.stringify(candidates)
-  );
-}
-
-const indicator = matching[0];
 const data = await query({
   where:
-    "laikotarpis_name='2024' AND indicator_code='" +
-    String(indicator.indicator_code).replaceAll("'", "''") +
+    "laikotarpis_name='2024' AND indicator_name='" +
+    indicatorName.replaceAll("'", "''") +
     "'",
   outFields:
     "laikotarpis_name,matvnt_name,savivaldybesm2020113,savivaldybesm2020113_name,collection_name,indicator_code,indicator_name,value",
@@ -115,7 +77,7 @@ const actual = new Set(rows.map(function (r) { return r.municipality; }));
 const missing = Array.from(expected).filter(function (x) { return !actual.has(x); });
 const extra = Array.from(actual).filter(function (x) { return !expected.has(x); });
 
-console.log(JSON.stringify({ indicator, rawRows, rows }, null, 2));
+console.log(JSON.stringify({ indicatorName, rawRows, rows }, null, 2));
 
 if (rows.length !== 6 || missing.length || extra.length) {
   throw new Error(
@@ -153,12 +115,13 @@ fs.writeFileSync(
   csv
 );
 
+const first = rows[0];
 const qa = {
   year: 2024,
-  indicator_code: indicator.indicator_code,
-  indicator_name: indicator.indicator_name,
-  unit: indicator.matvnt_name,
-  collection: indicator.collection_name,
+  indicator_code: first.indicator_code,
+  indicator_name: first.indicator_name,
+  unit: first.unit,
+  collection: first.collection,
   municipality_count: rows.length,
   municipalities: rows.map(function (r) { return r.municipality; }),
   values_eur_m2: Object.fromEntries(
