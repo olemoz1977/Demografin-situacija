@@ -108,7 +108,8 @@
     "Skelbiu.lt 2025 historical search-index county sample reaches N>=5 in 9/10 counties; Tauragės remains N=2. Route is research/QA only and fails publication gate.",
     "Search-index observations are not a complete portal export even when N>=5; sample thresholds are minimum QA rules, not proof of full market representativeness.",
     "Aruodas 2025 1-room monthly asking-rent benchmark is now complete for Vilnius, Kaunas and Klaipėda (12 months each) via hidden comparison-table values plus direct archived reports.",
-    "Cross-portal QA shows Skelbiu search-index medians below Aruodas annual monthly-average benchmarks by about 25.3% in Vilnius, 8.8% in Kaunas and 7.2% in Klaipėda; do not use these gaps as calibration factors."
+    "Cross-portal QA shows Skelbiu search-index medians below Aruodas annual monthly-average benchmarks by about 25.3% in Vilnius, 8.8% in Kaunas and 7.2% in Klaipėda; do not use these gaps as calibration factors.",
+    "Official data.gov.lt metadata for dataset 2559 explicitly says only single-object apartment purchase transactions are included; multi-object transactions are excluded."
   ],
   "sources": [
     {
@@ -143,7 +144,13 @@
       "smart_continent_bi1_verdict": "FAIL_REDUNDANT_WITH_GENERIC_HOUSING_PRICE",
       "smart_continent_bi1_formula": "BI_1 = generic housing EUR/m² / monthly net VDU exactly for all 60 municipalities",
       "official_vda_validation": "S7R280 2024 apartment EUR/m² verified for 6 city municipalities + Lithuania",
-      "official_vda_validation_file": "research/raw/vda-sale-big-cities/vda-sale-big-cities-2024.csv"
+      "official_vda_validation_file": "research/raw/vda-sale-big-cities/vda-sale-big-cities-2024.csv",
+      "dataset_2559_documented_selection": {
+        "source": "https://data.gov.lt/datasets/2559/",
+        "rule": "Dataset explicitly excludes multi-object purchase transactions and includes only transactions where one object was acquired.",
+        "examples_excluded": "apartment + storage unit; apartment + land parcel",
+        "implication": "By official definition this is a selected subset of the apartment market and cannot be treated as a full-market transaction layer."
+      }
     },
     "income_layer": {
       "status": "source_locked",
