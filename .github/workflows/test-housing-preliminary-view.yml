@@ -85,7 +85,7 @@ jobs:
           assert "8 700 € / 10 875 € / 13 050 €" in view
           assert "13 050 € / 17 400 € / 21 750 € / 26 100 €" in view
           assert "Mūsų analitinė „25–30 m. dirbanti pora“ nėra tas pats" in view
-          assert "Pajamų lubų patikra" in view
+          assert "2025 m. pajamų lubų patikra" in view
           assert "housingSupportIncomeChart" in view
           assert "2025 riba 32 708 €" in view
           assert "Tai nėra individualios teisės į paramą nustatymas" in view
