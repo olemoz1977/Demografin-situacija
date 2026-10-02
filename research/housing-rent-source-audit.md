@@ -211,3 +211,28 @@ rinkos nuomos pakaitalo būtų metodinė klaida.
    ne kaip apskrities pakaitalus.
 4. N ribų nemažinti ir skirtingų portalų pavienių skelbimų nemaišyti.
 5. Smart Continent BI_3 palikti tik QA diagnostikai.
+
+
+## Aruodas paslėptų istorinių reikšmių techninė patikra
+
+2026-10-02 nustatyta, kad mobiliojo `Tendencijos` puslapio matomame `innerText`
+ankstesnių metų 1 kambario kainos gali nebūti rodomos, tačiau jos yra serverio
+sugeneruotame HTML palyginimo lentelės langelyje.
+
+Patvirtintas pavyzdys:
+- Kaunas, 2026-01 ataskaita;
+- palyginimo stulpelis `2025-01`;
+- `1 kamb.` = **361 EUR/mėn.**;
+- reikšmė pateikta tiesiogiai HTML lentelėje, o ne atkurta iš procentinio pokyčio.
+
+Taip pat patvirtinta, kad tame pačiame puslapyje yra struktūrinis `allStats` JSON,
+tačiau jo grafiko masyvai daugiausia aprašo EUR/m² tendencijas. Vieno kambario
+mėnesio EUR suma patikimiausiai imama iš `flatsTable` palyginimo lentelės.
+
+Todėl 2025 m. 12 mėnesių etalonui taikomas metodas:
+- 2025-01…09: tos pačios mėnesio 2026 m. ataskaitos ankstesnių metų paslėptas stulpelis;
+- 2025-10…12: tiesioginis 2025 m. archyvinės ataskaitos dabartinis stulpelis.
+
+Tai lieka tik Vilniaus, Kauno ir Klaipėdos miestų validacijos benchmarku ir
+nepakeičia 10 apskričių nuomos sluoksnio.
+
