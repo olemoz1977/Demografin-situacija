@@ -1,5 +1,5 @@
 {
-  "status": "research_with_preliminary_preview",
+  "status": "research_comparability_gate_open",
   "audit_date": "2026-10-02",
   "period": "2025-Q4 / 2025-11 where noted",
   "county_net_wage_all_workers_eur_month": {
@@ -89,7 +89,8 @@
   "required_fields_not_yet_validated": {
     "county_or_city_net_income_25_30_eur_month": null,
     "rent": "WAITING_PUBLICATION_GRADE_10_COUNTY_PRIVATE_RENT_LAYER; public search-index route closed at 9/10 N>=5",
-    "sale_price_eur_m2": "WAITING_OFFICIAL_RC_2025_APARTMENT_TRANSACTION_LAYER; 2024 fallback acceptable only if 2025 unavailable"
+    "sale_price_eur_m2": "WAITING_OFFICIAL_RC_2025_APARTMENT_TRANSACTION_LAYER; 2024 fallback acceptable only if 2025 unavailable",
+    "sale_comparable_basket": "WAITING_COMPARABLE_2025_APARTMENT_BASKET_WITH_AREA_AND_CONSTRUCTION_PERIOD_CONTROL"
   },
   "notes": [
     "Apskričių atlyginimų serija apima visus darbuotojus, ne tik 25–30 m.; nepublikuoti kaip tiesioginio jaunimo pajamų rodiklio.",
@@ -116,7 +117,9 @@
     "Strategy changed on 2026-10-02: a clearly labelled preliminary v0.1 may be shown before strict final data gates pass; strict v1.0 validation remains unchanged.",
     "Preliminary sale proxy uses Smart Continent 2024 generic-housing transaction prices calibrated to VDA S7R280 2025 apartment prices in six cities; rural transfer remains unvalidated.",
     "Preliminary v0.1 includes a sensitivity band rather than presenting the central estimate as exact.",
-    "Dual-mode policy: STRICT/v1.0 remains validated_publication_ready=false; PRELIMINARY/v0.1 is allowed in feature/preview only with explicit OFFICIAL / MODELLED / PRELIMINARY / TO_BE_REFINED labels. Main/live remains locked."
+    "Dual-mode policy: STRICT/v1.0 remains validated_publication_ready=false; PRELIMINARY/v0.1 is allowed in feature/preview only with explicit OFFICIAL / MODELLED / PRELIMINARY / TO_BE_REFINED labels. Main/live remains locked.",
+    "2026-10-02 comparability correction: standardising to 50 m² does not standardise dwelling quality. Current Smart Continent sale proxy mixes generic housing composition and does not control construction period/new-build share; cross-county affordability conclusions are blocked.",
+    "A future county comparison must use a comparable apartment basket: apartment in multifamily building, controlled area band, explicit construction-period/market-segment rule, and sufficient N in every published territory."
   ],
   "sources": [
     {
@@ -162,7 +165,22 @@
       "fallback_year": 2024,
       "official_vda_2025_lithuania_apartment_eur_m2": 1880.13,
       "official_rc_2025_apartment_transaction_control_approx": 37100,
-      "period_alignment_reason": "2025 sale is preferred because rent is 2025 and income is 2025-11; official VDA S7R280 2025 is already available."
+      "period_alignment_reason": "2025 sale is preferred because rent is 2025 and income is 2025-11; official VDA S7R280 2025 is already available.",
+      "comparability_gate": {
+        "status": "BLOCKED",
+        "reason": "Current Smart Continent proxy is housing_all_types_dashboard_measure and is not apartment-specific; calibration to six-city apartment averages does not remove cross-county composition/quality bias.",
+        "required_for_county_comparison": [
+          "property_type = apartment in multifamily building",
+          "same target year",
+          "comparable floor-area basket",
+          "construction-period / market-segment control",
+          "observation count for every published territory"
+        ],
+        "candidate_area_band_m2": "45-55",
+        "construction_period_policy": "NOT_YET_LOCKED; first obtain counts/prices by construction-period bands and select a band with sufficient 10-county coverage",
+        "new_build_vs_secondary": "must not be silently mixed; segment or exclude based on the locked basket",
+        "current_proxy_role": "DIAGNOSTIC_ONLY_NOT_COMPARABLE"
+      }
     },
     "income_layer": {
       "status": "source_locked",
@@ -303,10 +321,10 @@
   },
   "preliminary_strategy": {
     "version": "v0.1",
-    "mode": "PRELIMINARY_WITH_EXPLICIT_UNCERTAINTY",
-    "preliminary_publication_ready": true,
+    "mode": "DIAGNOSTIC_ONLY_PENDING_COMPARABLE_SALE_BASKET",
+    "preliminary_publication_ready": false,
     "validated_publication_ready": false,
-    "principle": "Show the best currently supportable estimate, label uncertainty and replace provisional layers when better data arrive.",
+    "principle": "Do not compare counties until the sale layer represents a comparable apartment basket across territories.",
     "preliminary_output_csv": "data/housing-affordability-preliminary-v01.csv",
     "preliminary_output_json": "data/housing-affordability-preliminary-v01.json",
     "qa": "research/housing-affordability-preliminary-v01-qa.json",
@@ -324,8 +342,8 @@
       "rule": "Final v1.0 remains blocked until the official/validated 2025 apartment-sale layer and publication-grade 2025 1-room rent layer cover all 10 counties."
     },
     "preliminary_v0_1": {
-      "preliminary_publication_ready": true,
-      "decision": "READY_FOR_FEATURE_PREVIEW_WITH_EXPLICIT_UNCERTAINTY",
+      "preliminary_publication_ready": false,
+      "decision": "BLOCKED_SALE_BASKET_NOT_COMPARABLE",
       "scope": "feature branch / preview only",
       "main_live_allowed": false,
       "required_labels": [
@@ -334,7 +352,7 @@
         "PRELIMINARY",
         "TO_BE_REFINED"
       ],
-      "rule": "Show the best currently supportable estimate, but mark every non-final layer and every composite result as preliminary/to be refined. No proxy may be described as official county apartment price or complete county rent market."
+      "rule": "The v0.1 county comparison is blocked because the sale proxy mixes generic housing composition and does not control apartment age/quality. Diagnostic values may remain in research only."
     }
   }
 }
