@@ -27,7 +27,7 @@ Statusas:
 
 Tikslinis šaltinis:
 - Registrų centras;
-- 2024 m. faktiniai butų pirkimo-pardavimo sandoriai;
+- **2025 m.** faktiniai butų pirkimo-pardavimo sandoriai; 2024 m. tik aiškiai pažymėtas fallback;
 - 60 savivaldybių arba tiesioginis 10 apskričių agregatas;
 - faktinė sandorio kaina EUR/m²;
 - žinomas kainos stebinių N ir agregavimo metodas.
@@ -48,8 +48,10 @@ QA:
 - `valid_price_observation_count <= apartment_transaction_count`;
 - apskrities kaina sveriama tik `valid_price_observation_count`, jei RC patvirtina,
   kad savivaldybės vidurkis apskaičiuotas iš tų pačių stebinių;
-- nacionaliniai 27 330 sandorių ir 1 669 EUR/m² dydžiai naudojami tik kaip kontrolė,
-  ne kaip automatinė tiesa.
+- 2025 m. nacionaliniai kontroliniai dydžiai: apie 37,1 tūkst. butų pardavimų ir
+  oficialus VDA S7R280 Lietuvos vidurkis 1880,13 EUR/m²; jie naudojami tik kaip
+  diagnostinė kontrolė, ne automatinė tiesa;
+- 2024 m. kontrolės paliekamos istoriniam / fallback QA.
 
 Publikavimo metodikos gate:
 - buto atrankos apibrėžimas;
@@ -127,6 +129,16 @@ Naudojimas:
 - NEGALIMA pervadinti 5 miestų į apskritis;
 - tai nėra 1 kambario pjūvis ir nėra pagrindinis 10 apskričių sluoksnis.
 
+## 5A. Aruodas 2025 1 kambario benchmarkas — QA / VALIDACIJA
+
+Aruodas Tendencijos 2025 m. 1 kambario mėnesio pasiūlos benchmarkas atkurtas 12 mėn.
+Vilniui, Kaunui ir Klaipėdai:
+- Vilnius: mėnesinių vidurkių metinis vidurkis 468,75 EUR/mėn.;
+- Kaunas: 383,75;
+- Klaipėda: 371,67.
+
+Tai nėra 10 apskričių sluoksnis. Naudojamas tik nuomos paieškos imčių kryžminei kontrolei.
+
 ## 6. Smart Continent BI_3 — QA TIK
 
 `Vidutinė nuomos įmokų dalis nuo VDU, % (BI_3)`:
@@ -171,6 +183,7 @@ Strict calculator:
 - CI: `.github/workflows/test-housing-affordability-calculator.yml`.
 
 Pagal nutylėjimą priimami tik:
+- **2025 m.** pardavimo ir nuomos sluoksniai; laikotarpių neatitikimas blokuojamas net QA candidate režime;
 - pardavimo sluoksnis su `layer_status=publication_approved`;
 - nuomos sluoksnis su `layer_status=publication_approved`;
 - tiksliai tos pačios 10 apskričių visuose trijuose sluoksniuose;
