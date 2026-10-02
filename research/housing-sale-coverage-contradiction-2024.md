@@ -26,6 +26,19 @@ kad rinkoje nebuvo sandorių.
 
 ## Ką tai reiškia rinkiniui 2559
 
+Oficialus data.gov.lt rinkinio aprašas aiškiai nurodo, kad rinkinys **neapima visų**
+gyvenamosios paskirties butų pirkimo sandorių. Į jį įtraukiami tik sandoriai, kurių
+metu įsigytas **vienas objektas**. Kelių objektų sandoriai, pvz. butas + sandėliukas
+ar butas + žemės sklypas, nepateikiami.
+
+Šaltinis:
+https://data.gov.lt/datasets/2559/
+
+Šis oficialiai dokumentuotas atrankos apribojimas paaiškina bent dalį skirtumo tarp
+gardelių rinkinio ir visos RC rinkos. Tačiau jis pats savaime neįrodo, kad 516
+sandorių dydžio 2024 m. gardelių sluoksnis yra reprezentatyvus visiems 27 330 butų
+pardavimams, ir nepaaiškina 0 eilučių Telšių bei Tauragės apskritims.
+
 Rinkinys 2559 pats nurodo, kad apima ne visus butų pirkimo sandorius, o tik tuos,
 kurių metu įsigytas vienas objektas. Tačiau vien šis aprašymo apribojimas dar nepaaiškina,
 kodėl gardelių sluoksnyje dviem apskritims 2024 m. gaunamas nulis, kai vien Telšių ir
