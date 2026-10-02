@@ -1,6 +1,6 @@
 {
   "status": "research",
-  "audit_date": "2026-10-01",
+  "audit_date": "2026-10-02",
   "period": "2025-Q4 / 2025-11 where noted",
   "county_net_wage_all_workers_eur_month": {
     "Vilniaus": 1680.5,
@@ -61,8 +61,8 @@
   },
   "required_fields_not_yet_validated": {
     "county_or_city_net_income_25_30_eur_month": null,
-    "rent": null,
-    "sale_price_eur_m2": null
+    "rent": "WAITING_PUBLICATION_GRADE_COUNTY_OR_60_MUNICIPALITY_PRIVATE_RENT_LAYER",
+    "sale_price_eur_m2": "WAITING_OFFICIAL_RC_APARTMENT_LAYER"
   },
   "notes": [
     "Apskričių atlyginimų serija apima visus darbuotojus, ne tik 25–30 m.; nepublikuoti kaip tiesioginio jaunimo pajamų rodiklio.",
@@ -70,7 +70,10 @@
     "VDA oficiali nuomos serija apima tik 5 didžiųjų miestų savivaldybes.",
     "Apskrities centro duomenų negalima vadinti apskrities vidurkiu.",
     "Live/main nekeisti, kol nepasirinkta ir neužpildyta pilna geografinė metodika.",
-    "Aruodas 2025-12 benchmark: 1-room offer averages were Vilnius 484 EUR/month, Kaunas 379, Klaipėda 371; use only for rent-method validation, not as county values."
+    "Aruodas 2025-12 benchmark: 1-room offer averages were Vilnius 484 EUR/month, Kaunas 379, Klaipėda 371; use only for rent-method validation, not as county values.",
+    "VDA/RC 1 km apartment-purchase grid (dataset 2559) is QA/diagnostic only and must not be used as the main 10-county sale-price layer.",
+    "Smart Continent BI_3 reconstructed rent is QA/diagnostic only and must not be used as the main private-rent layer.",
+    "No county-center substitution: city values cannot be relabeled as county values."
   ],
   "sources": [
     {
@@ -87,16 +90,18 @@
     }
   ],
   "acquisition_status": {
-    "updated": "2026-10-01",
+    "updated": "2026-10-02",
     "sale_layer": {
-      "status": "source_locked",
-      "source": "VDA / Registrų centras 1x1 km apartment purchase transaction grid",
-      "dataset_url": "https://data.gov.lt/datasets/2559/",
-      "api_endpoint": "https://get.data.gov.lt/datasets/gov/lsd/butu_pirkimai_gardelese/ButuPirkimas",
-      "csv_endpoint": "https://get.data.gov.lt/datasets/gov/lsd/butu_pirkimai_gardelese/ButuPirkimas/:format/csv",
-      "grid_lookup": "https://data.gov.lt/datasets/2047/data/Grid1KmSq/?select(_id,grid_id,x_centroid,y_centroid,sav_pav,sav_kodas,geometrija)",
-      "target_period": 2025,
-      "note": "Current research environment can inspect metadata/API schema but cannot directly download get.data.gov.lt payload; pipeline is ready for the export."
+      "status": "blocked_external_source_waiting",
+      "main_source_target": "Registrų centras official 2024 apartment transaction aggregate/anonymized layer",
+      "geography_requirement": "60 municipalities -> 10 counties, or direct 10-county aggregate with documented method",
+      "current_grid_dataset": "VDA / Registrų centras 1x1 km apartment purchase transaction grid (dataset 2559)",
+      "current_grid_role": "QA_DIAGNOSTIC_ONLY",
+      "reason": "2024 snapshot covers only 33 municipalities / 8 counties and 516 transactions; it is a narrow subset of the full apartment market and cannot support the main 10-county sale-price layer.",
+      "rc_request_status": "sent 2026-10-01; awaiting reply",
+      "validator": "scripts/build_housing_sale_county_from_rc.py",
+      "validator_status": "PASS automated tests",
+      "note": "Do not aggregate the 1 km grid into the publication sale layer."
     },
     "income_layer": {
       "status": "source_locked",
@@ -107,10 +112,15 @@
       "note": "Municipality income data are available in Sodra open-data exports; national 25–30 benchmark already verified."
     },
     "rent_layer": {
-      "status": "partial_validation",
-      "primary_method": "same-window 1-room long-term offer sample by municipality, median after deduplication",
-      "official_validation": "VDA official rent series for 5 largest cities",
-      "secondary_validation": "Aruodas historical/current offer statistics where available"
+      "status": "blocked_source_validation",
+      "main_target": "2025 private long-term 1-room apartment asking-rent layer covering all 10 counties",
+      "preferred_source_shape": "direct county aggregates; alternatively complete municipality aggregates/raw listings with documented basket, duplicate handling and aggregation weights",
+      "official_validation": "VDA official rent series covers only 5 largest cities",
+      "secondary_validation": "Aruodas historical offer statistics for Vilnius, Kaunas, Klaipėda",
+      "smart_continent_bi3_role": "QA_DIAGNOSTIC_ONLY",
+      "smart_continent_bi3_verdict": "FAIL_FOR_MAIN_RENT_LAYER",
+      "reason": "60-municipality BI_3 series has unverified municipal estimation/basket/precision and implausibly low reconstructed rents in multiple municipalities.",
+      "portal_request_status": "Aruodas/Skelbiu request sent 2026-10-02; awaiting reply"
     }
   },
   "rent_validation_benchmarks_aruodas_2025_12": {
@@ -164,6 +174,6 @@
       "Šiauliai": 1242,
       "Panevėžys": 1219
     },
-    "usage": "validation only; final sale layer must use VDA/Registru centras transaction grid"
+    "usage": "validation only; final sale layer must use an official RC actual-apartment-transaction aggregate/anonymized source that passes the 60-municipality/10-county methodology gate. Dataset 2559 grid remains QA only."
   }
 }
