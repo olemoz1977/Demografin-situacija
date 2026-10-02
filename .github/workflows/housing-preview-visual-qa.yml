@@ -66,6 +66,8 @@ jobs:
                 return {
                   hasStop: text.includes('50 m² nėra tas pats būstas.'),
                   hasDemographicFrame: text.includes('pirmas šeimos būstas') && text.includes('šeimos kūrimo aplinkos barjerų') && text.includes('neįrodinėja priežastinio ryšio su gimstamumu'),
+                  hasStateSupport: text.includes('Valstybės pagalba pirmajam būstui') && text.includes('34 484 €') && text.includes('61 046 €') && text.includes('87 000 €'),
+                  hasTwoSupportRoutes: section.querySelectorAll('.housing-support-card').length === 2,
                   hasBlockedConclusion: text.includes('nebelaikomi tinkamu tarpapskritiniu rezultatu'),
                   hasRequiredBasket: text.includes('45–55 m²') && text.includes('statybos laikotarpio / rinkos segmento taisyklė'),
                   hasOldChart: !!section.querySelector('#housingAffordabilityChart'),
@@ -83,6 +85,8 @@ jobs:
 
               if (!result.hasStop) throw new Error(`${name}: comparability STOP missing`);
               if (!result.hasDemographicFrame) throw new Error(`${name}: first-family-home demographic framing missing`);
+              if (!result.hasStateSupport) throw new Error(`${name}: official state-support layer missing`);
+              if (!result.hasTwoSupportRoutes) throw new Error(`${name}: expected two state-support routes`);
               if (!result.hasBlockedConclusion) throw new Error(`${name}: blocked-result explanation missing`);
               if (!result.hasRequiredBasket) throw new Error(`${name}: comparable-basket requirement missing`);
               if (result.hasOldChart || result.hasOldSimpleTable || result.hasOldTechnicalTable) throw new Error(`${name}: old non-comparable visual remains`);
