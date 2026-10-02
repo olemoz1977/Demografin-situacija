@@ -13,6 +13,7 @@
       <div class="section-label">Būstas ir pajamos <span class="badge badge-prelim">2025 · PRELIMINARU</span></div>
       <h2>Kiek poros metinių pajamų kainuoja 50 m² būstas?</h2>
       <p class="lead">Palyginame 25–30 m. dirbančios poros modeliuotas neto pajamas su 50 m² būsto kainos įverčiu kiekvienoje apskrityje. <strong>Mažesnis skaičius reiškia palankesnį kainos ir pajamų santykį.</strong></p>
+      <div class="housing-scope-note"><strong>Svarbu apie nuomą:</strong> pagrindinis 50 m² kainos / pajamų rodiklis <strong>nuomos kainos nenaudoja</strong>. Nuoma naudojama tik papildomame techniniame v0.1 rodiklyje. Ten ji reiškia 2025 m. privataus ilgalaikės nuomos <strong>1 kambario savarankiško buto</strong> skelbimų mėnesio medianą. Imties medianinis buto plotas apskrityse yra apie <strong>30–37,6 m²</strong>; ši nuomos mediana nėra standartizuota į vienodą plotą, todėl techninis nuomos rodiklis lieka preliminarus.</div>
 
       <div class="housing-takeaway" id="housingTakeaway"></div>
       <div class="kpi-row housing-kpis" id="housingKpis"></div>
@@ -112,7 +113,7 @@
     }).join('');
 
     section.querySelector('#housingTechnicalTable').innerHTML=`
-      <p class="small">Šie rodikliai palikti skaidrumui ir metodinei peržiūrai. <strong>m²/metus po nuomos</strong> yra eksperimentinis teorinis indeksas, o ne realiai per metus nuperkamas būsto plotas. Tauragės nuomos imtis šiuo metu ypač maža (N=2).</p>
+      <p class="small">Šie rodikliai palikti skaidrumui ir metodinei peržiūrai. Nuomos stulpelis rodo 2025 m. privataus ilgalaikės nuomos <strong>1 kambario savarankiško buto</strong> skelbimų mėnesio medianą. Imties medianinis plotas skiriasi pagal apskritį (apie 30–37,6 m²), todėl nuomos mėnesio mediana nėra vienodo ploto buto kaina. <strong>m²/metus po nuomos</strong> yra eksperimentinis teorinis indeksas, o ne realiai per metus nuperkamas būsto plotas. Tauragės imtis šiuo metu ypač maža (N=2).</p>
       <p class="small housing-scroll-hint" aria-hidden="true">Telefone lentelę slinkite horizontaliai →</p>
       <div class="housing-table-scroll" tabindex="0" aria-label="Techninė būsto įperkamumo lentelė; telefone slinkite horizontaliai">
         <table class="housing-table">
