@@ -19,7 +19,7 @@ stabdė analizės progresą. Naujas principas:
 
 m²/metus = [(2 × modelinė 25–30 m. neto pajamų reikšmė × 12) − 12 mėn. nuoma] / 2025 buto kainos proxy EUR/m²
 
-Tai santykinis įperkamumo indikatorius, ne realiai sutaupoma suma.
+Tai **teorinis pajamų–kainos indeksas**, o ne bankinis paskolos įperkamumo vertinimas ir ne realiai sutaupoma suma. Jis neįtraukia kitų gyvenimo išlaidų, pradinio įnašo, palūkanų, paskolos termino, DSTI/LTV ribų ar individualių įsipareigojimų.
 
 ## Duomenų sluoksniai
 
@@ -53,18 +53,18 @@ Perkėlimas už šešių miestų ribų lieka nevaliduotas.
 
 ## Preliminarus rezultatas
 
-| Apskritis | Centrinis m²/metus po nuomos | Jautrumo diapazonas |
-|---|---:|---:|
-| Tauragės | 54.8 | 47.4–59.8 |
-| Marijampolės | 46.1 | 39.6–50.7 |
-| Utenos | 44.0 | 38.2–48.3 |
-| Panevėžio | 41.0 | 34.7–44.6 |
-| Telšių | 39.8 | 34.5–43.5 |
-| Šiaulių | 34.1 | 29.6–37.3 |
-| Alytaus | 33.7 | 29.4–36.5 |
-| Kauno | 21.8 | 18.7–23.5 |
-| Klaipėdos | 17.6 | 15.4–19.3 |
-| Vilniaus | 12.2 | 10.6–13.2 |
+| Apskritis | Centrinis m²/metus po nuomos | Scenarijų diapazonas | 50 m² proxy / poros metinės neto, metų | Nuomos našta |
+|---|---:|---:|---:|---:|
+| Tauragės | 54.8 | 47.4–59.8 | 0.80 | 12.39% |
+| Marijampolės | 46.1 | 39.6–50.7 | 0.95 | 12.15% |
+| Utenos | 44.0 | 38.2–48.3 | 1.02 | 9.98% |
+| Panevėžio | 41.0 | 34.7–44.6 | 1.10 | 9.85% |
+| Telšių | 39.8 | 34.5–43.5 | 1.12 | 10.64% |
+| Šiaulių | 34.1 | 29.6–37.3 | 1.32 | 9.97% |
+| Alytaus | 33.7 | 29.4–36.5 | 1.32 | 11.27% |
+| Kauno | 21.8 | 18.7–23.5 | 2.03 | 11.82% |
+| Klaipėdos | 17.6 | 15.4–19.3 | 2.49 | 12.30% |
+| Vilniaus | 12.2 | 10.6–13.2 | 3.66 | 10.54% |
 
 Jautrumo diapazonas nėra statistinis pasikliautinasis intervalas. Jis kombinuoja:
 - mažiausią / didžiausią šešių miestų kalibravimo santykį;
@@ -72,7 +72,7 @@ Jautrumo diapazonas nėra statistinis pasikliautinasis intervalas. Jis kombinuoj
 
 ## Interpretavimo taisyklė
 
-v0.1 skirtas **krypčiai ir mastui**, ne dešimtainių tikslumui.
+v0.1 skirtas **krypčiai ir mastui**, ne dešimtainių tikslumui. Eilučių tvarka yra tik vizualinis palyginimas pagal centrinį v0.1 indeksą — **ne galutinis apskričių įperkamumo reitingas**.
 
 Ypač atsargiai:
 - Tauragė: nuomos N=2;
@@ -95,5 +95,6 @@ Ypač atsargiai:
 - housing-affordability.js
 - .github/workflows/build-housing-affordability-preliminary-v01.yml
 - .github/workflows/test-housing-preliminary-view.yml
+- .github/workflows/housing-preview-visual-qa.yml
 
 Feature branch turi atskirą teminį vaizdą **Būstas**. Main/live kol kas nekeistas.
