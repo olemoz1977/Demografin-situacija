@@ -16,7 +16,7 @@
       <div class="source-line"><strong>Duomenų būsenos:</strong> Oficialu = tiesioginis oficialus etalonas · Modeliuota = oficialių duomenų pagrindu apskaičiuota · Preliminaru = dar ne publication-grade rinkos/proxy sluoksnis · Tikslinama = galutinis kompozitinis skaičius bus perskaičiuotas gavus stipresnius duomenis.</div>
       <div class="kpi-row" id="housingKpis"></div>
       <div class="chart-wrap" style="height:430px"><canvas id="housingAffordabilityChart"></canvas></div>
-      <div class="chart-caption">Centrinis preliminarus įvertis. Plonesnė juosta rodo jautrumo diapazoną, o ne statistinį pasikliautinąjį intervalą.</div>
+      <div class="chart-caption">Centrinis preliminarus įvertis. Plonesnė juosta rodo techninį scenarijų diapazoną, o ne statistinį pasikliautinąjį intervalą. Jis neapima svarbiausios modelio rizikos – pardavimo proxy perkėlimo iš 6 kalibravimo miestų į likusių savivaldybių struktūrą.</div>
       <div id="housingTableWrap"></div>
       <div class="two-col" style="margin-top:1.5rem">
         <div class="card"><div class="eyebrow">Kas jau gana tvirta</div><p><strong>Modeliuota:</strong> pajamų sluoksnis apima 10/10 apskričių ir remiasi oficialiais „Sodros“ duomenimis. <strong>Oficialu:</strong> VDA S7R280 2025 etalonas pateikia faktines daugiabučių butų sandorių kainas Lietuvai ir 6 miestų savivaldybėms.</p></div>
@@ -35,12 +35,11 @@
     if(!rows.length) throw new Error('No preliminary housing rows');
 
     const section=insertShell();
-    const best=rows[0], worst=rows[rows.length-1];
     const kpis=section.querySelector('#housingKpis');
     kpis.innerHTML=`
-      <div class="kpi"><div class="kpi-num amber">${fmt(best.m2_per_year_after_rent)}</div><div class="kpi-label">m²/metus · didžiausias preliminarus įvertis</div><div class="kpi-note">${best.county} · diapazonas ${fmt(best.m2_after_rent_sensitivity_low)}–${fmt(best.m2_after_rent_sensitivity_high)}</div></div>
-      <div class="kpi"><div class="kpi-num">${fmt(worst.m2_per_year_after_rent)}</div><div class="kpi-label">m²/metus · mažiausias preliminarus įvertis</div><div class="kpi-note">${worst.county} · diapazonas ${fmt(worst.m2_after_rent_sensitivity_low)}–${fmt(worst.m2_after_rent_sensitivity_high)}</div></div>
-      <div class="kpi"><div class="kpi-num blue">10/10</div><div class="kpi-label">Apskritys turi v0.1 skaičių</div><div class="kpi-note">Visi pažymėti kaip preliminarūs</div></div>
+      <div class="kpi"><div class="kpi-num red">BLOCKED</div><div class="kpi-label">STRICT v1.0</div><div class="kpi-note">Laukiama patikrinto 2025 pardavimo ir nuomos sluoksnio</div></div>
+      <div class="kpi"><div class="kpi-num amber">v0.1</div><div class="kpi-label">PRELIMINARY preview</div><div class="kpi-note">Rodoma kryptis, ne galutiniai skaičiai</div></div>
+      <div class="kpi"><div class="kpi-num blue">10/10</div><div class="kpi-label">Apskritys turi v0.1 įvertį</div><div class="kpi-note">Visos eilutės pažymėtos „tikslinama“</div></div>
       <div class="kpi"><div class="kpi-num red">1</div><div class="kpi-label">Apskritis su nuomos N&lt;5</div><div class="kpi-note">Tauragės · N=2</div></div>
     `;
 
@@ -61,7 +60,7 @@
       <h3 style="margin-top:1.5rem">Preliminarus 10 apskričių vaizdas</h3>
       <table>
         <thead><tr>
-          <th>Apskritis</th><th class="td-num">m²/metus po nuomos</th><th class="td-num">Jautrumo diapazonas</th>
+          <th>Apskritis</th><th class="td-num">m²/metus po nuomos</th><th class="td-num">Techninis scenarijų diapazonas</th>
           <th class="td-num">Pardavimo proxy €/m²</th><th class="td-num">Nuoma €/mėn.</th><th class="td-num">Nuomos imtis</th><th class="td-num">Neto / asm.</th><th>Būsena</th>
         </tr></thead><tbody>${table}</tbody>
       </table>`;
