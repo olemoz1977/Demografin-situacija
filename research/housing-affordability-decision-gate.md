@@ -1,6 +1,6 @@
 # Būsto įperkamumo duomenų sprendimo vartai — 2026-10-01
 
-Statusas: SPRENDIMAS PRIIMTAS — pasirinktas A variantas.
+Statusas: SPRENDIMAS ATNAUJINTAS — A variantas išlieka STRICT v1.0, papildomai leidžiamas PRELIMINARY v0.1 feature/preview režimas.
 
 ## Kas jau uždaryta
 
@@ -136,3 +136,26 @@ A variantas lieka galioti: **10 apskričių + aukšta kokybės kartelė + nepubl
 
 Kol bent vienas blokatorius neišspręstas, galutinis 10 apskričių `m²/year` rodiklis
 nepublikuojamas.
+
+
+## 2026-10-02 strategijos pakeitimas — viršesnis už ankstesnę „nepublikuoti jokio rezultato“ taisyklę
+
+Nuo šiol yra du lygiagretūs režimai.
+
+### STRICT / v1.0
+- `validated_publication_ready=false`, kol nepraeina pilnas 2025 m. pardavimo ir nuomos sluoksnis;
+- 10 apskričių metodika, faktinių butų sandorių ir publication-grade 1 kambario nuomos reikalavimai nesilpninami;
+- tai vienintelis režimas, kuris gali tapti galutine patikrinta versija;
+- main/live lieka užrakintas ir bet koks publikavimas į jį papildomai reikalauja savininko sprendimo.
+
+### PRELIMINARY / v0.1
+- leidžiamas tik `feature/housing-affordability` / preview;
+- rodomas geriausias šiuo metu pagrįstas 10 apskričių įvertis;
+- privalomos aiškios būsenos: `OFFICIAL`, `MODELLED`, `PRELIMINARY`, `TO_BE_REFINED`;
+- Smart Continent 2024 bendro būsto sluoksnis čia naudojamas tik kaip aiškiai įvardytas pardavimo proxy, kalibruotas į VDA S7R280 2025 šešių miestų butų kainų lygį;
+- Skelbiu 2025 search-index nuoma lieka nepilna rinkos imtis; Tauragė N=2 turi būti išskirtinai pažymėta;
+- centriniai m² skaičiai nėra publication-grade ir negali būti pristatomi kaip oficialios apskričių reikšmės;
+- gavus geresnius duomenis keičiamos įvestys, ne visa analizės architektūra.
+
+Machine-readable būsena: `research/housing-affordability-readiness.json`.
+Joje `ready_for_publication` / `validated_publication_ready` reiškia STRICT v1.0, o `preliminary_v0_1.ready` — tik feature/preview leidimą.
