@@ -166,7 +166,9 @@ Tai santykinis įperkamumo indeksas, ne realios metinės santaupos.
 
 ## 8. Publikavimo vartai
 
-`main` / live nekeisti, kol:
+Yra du atskiri režimai. **STRICT / v1.0** taikomas galutinei patikrintai versijai; **PRELIMINARY / v0.1** leidžiamas tik feature/preview su aiškiomis `OFFICIAL / MODELLED / PRELIMINARY / TO_BE_REFINED` žymomis.
+
+STRICT / v1.0: `main` / live nekeisti, kol:
 - pajamos = 10/10 apskričių ir aiškiai B-modelled;
 - pardavimo kaina = 10/10 apskričių ir praeina RC metodikos gate;
 - nuoma = 10/10 apskričių ir nėra insufficient teritorijų;
@@ -219,7 +221,12 @@ Dabartinė būsena:
 - sale actual apartment transactions — BLOCKED;
 - private 1-room rent 10 counties — BLOCKED;
 - `ready_for_publication=false`;
-- `decision=DO_NOT_PUBLISH`.
+- `decision=DO_NOT_PUBLISH` — tai backward-compatible STRICT v1.0 signalas;
+- `strict_v1_0.ready=false`;
+- `preliminary_v0_1.ready=true` ir `preliminary_v0_1.decision=READY_FOR_FEATURE_PREVIEW`;
+- `preliminary_v0_1.main_live_allowed=false`.
+
+PRELIMINARY v0.1 nėra strict vartų apeinimas: jo proxy ir rinkos imties skaičiai privalo būti pažymėti kaip preliminarūs / tikslinami, o gavus publication-grade 2025 sluoksnius — perskaičiuoti.
 
 Readiness blockeriai yra tikėtina tyrimo būsena, todėl generatorius dėl jų negrąžina CI
 klaidos. CI klaida rezervuota sugadintai konfigūracijai / kontrakto pažeidimui.
