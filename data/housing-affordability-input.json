@@ -112,7 +112,10 @@
     "Official data.gov.lt metadata for dataset 2559 explicitly says only single-object apartment purchase transactions are included; multi-object transactions are excluded.",
     "Final publication target is now period-aligned to 2025 sale + 2025 rent + 2025-11 income where possible; 2024 sale is fallback only.",
     "Official VDA S7R280 2025 apartment benchmark: Lithuania 1880.13 EUR/m², with six city municipalities available; this remains validation only, not a 10-county layer.",
-    "Registrų centro 2025 full-year control is approximately 37.1k apartment sales nationally."
+    "Registrų centro 2025 full-year control is approximately 37.1k apartment sales nationally.",
+    "Strategy changed on 2026-10-02: a clearly labelled preliminary v0.1 may be shown before strict final data gates pass; strict v1.0 validation remains unchanged.",
+    "Preliminary sale proxy uses Smart Continent 2024 generic-housing transaction prices calibrated to VDA S7R280 2025 apartment prices in six cities; rural transfer remains unvalidated.",
+    "Preliminary v0.1 includes a sensitivity band rather than presenting the central estimate as exact."
   ],
   "sources": [
     {
@@ -296,5 +299,18 @@
       "Panevėžys": 1219
     },
     "usage": "validation only; final sale layer must use an official RC actual-apartment-transaction aggregate/anonymized source that passes the 60-municipality/10-county methodology gate. Dataset 2559 grid remains QA only."
+  },
+  "preliminary_strategy": {
+    "version": "v0.1",
+    "mode": "PRELIMINARY_WITH_EXPLICIT_UNCERTAINTY",
+    "preliminary_publication_ready": true,
+    "validated_publication_ready": false,
+    "principle": "Show the best currently supportable estimate, label uncertainty and replace provisional layers when better data arrive.",
+    "preliminary_output_csv": "data/housing-affordability-preliminary-v01.csv",
+    "preliminary_output_json": "data/housing-affordability-preliminary-v01.json",
+    "qa": "research/housing-affordability-preliminary-v01-qa.json",
+    "methodology": "research/housing-affordability-preliminary-v01.md",
+    "view": "housingAffordability",
+    "strict_final_gate_remains": true
   }
 }
