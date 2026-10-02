@@ -1,9 +1,13 @@
-# Jaunos poros būsto įperkamumas pagal apskritis — metodika
+# Pirmo šeimos būsto prieinamumas jaunai porai — metodika
 
 Statusas: research / feature branch, nepublikuota.
 
 ## Tikslinis klausimas
-Kiek būsto kvadratinių metrų per vienerius metus teoriškai atitinka dviejų 25–30 m. visą mėnesį dirbančių žmonių grynosios darbo pajamos, atėmus 12 mėn. 1 kambario buto nuomą?
+Ar 25–30 m. dirbančiai porai pirmo nuosavo šeimos būsto įsigijimas yra finansiškai pasiekiamas ir ar šio barjero mastas skiriasi Lietuvos teritorijose?
+
+Tai demografinio konteksto analizė: tikriname vieną galimą materialų šeimos kūrimo aplinkos barjerą. Ji savaime neįrodo, kad būsto prieinamumas lemia gimstamumą ar sprendimą turėti vaikų.
+
+Vaikų turėjimas nėra atskira modelio sąlyga. Vaikų išlaidos ir vaiko priežiūros laikotarpio pajamų pokyčiai šiame būsto modelyje neskaičiuojami.
 
 Pirminis noras buvo rezultatą pateikti pagal 10 Lietuvos apskričių. 2026-10-01 atliktas šaltinių auditas parodė, kad oficialūs VDA būsto kainų ir nuomos rodikliai tokio geografinio detalumo nepateikia.
 
