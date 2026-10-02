@@ -35,7 +35,23 @@
       "source_basis": "Registrų centro faktinių sandorių duomenys",
       "periodicity": "annual",
       "since": 2017,
-      "metadata_url": "https://osp.stat.gov.lt/documents/10180/5118910/B%C5%ABsto%2Bpirkimo-pardavimo%2Bvidutin%C4%97s%2Bkainos%2B%5BLT%5D%2B155070000.html"
+      "metadata_url": "https://osp.stat.gov.lt/documents/10180/5118910/B%C5%ABsto%2Bpirkimo-pardavimo%2Bvidutin%C4%97s%2Bkainos%2B%5BLT%5D%2B155070000.html",
+      "indicator_code": "S7R280",
+      "housing_type_code": "1123",
+      "housing_type": "Butas daugiabučiuose namuose",
+      "latest_verified_year": 2024,
+      "unit": "EUR/m²",
+      "feature_service": "https://osp-sdg.stat.gov.lt/arcgis/rest/services/EVP_DB_connection/evp56/FeatureServer/0",
+      "values_2024_apartment_eur_m2": {
+        "Alytaus m. sav.": 889.79,
+        "Kauno m. sav.": 1771.62,
+        "Klaipėdos m. sav.": 1559.14,
+        "Panevėžio m. sav.": 1030.03,
+        "Šiaulių m. sav.": 1098.12,
+        "Vilniaus m. sav.": 2639.03,
+        "Lietuvos Respublika": 1684.64
+      },
+      "role": "official_validation_benchmark_only"
     },
     "VDA_rent_prices": {
       "coverage": [
@@ -85,7 +101,10 @@
     "VDA/RC 1 km apartment-purchase grid (dataset 2559) is QA/diagnostic only and must not be used as the main 10-county sale-price layer.",
     "Smart Continent BI_3 reconstructed rent is QA/diagnostic only and must not be used as the main private-rent layer.",
     "No county-center substitution: city values cannot be relabeled as county values.",
-    "All outgoing emails, external requests and forms must be shown to the owner before sending."
+    "All outgoing emails, external requests and forms must be shown to the owner before sending.",
+    "Aruodas/Skelbiu aggregate-data request has NOT been sent; any future portal request must be shown to the owner first and sent only after explicit approval.",
+    "Official VDA S7R280 2024 apartment sale benchmark is available for 6 city municipalities + Lithuania only; it is validation, not a 10-county layer.",
+    "Smart Continent BI_1 is exactly generic housing EUR/m² divided by monthly net VDU; it contains no independent apartment-only price signal."
   ],
   "sources": [
     {
@@ -115,7 +134,12 @@
       "validator_status": "PASS automated tests",
       "note": "Do not aggregate the 1 km grid into the publication sale layer.",
       "free_public_path": "NOT_FOUND_AFTER_2026-10-02_AUDIT",
-      "free_public_path_audit": "research/housing-sale-alternative-sources.md"
+      "free_public_path_audit": "research/housing-sale-alternative-sources.md",
+      "smart_continent_bi1_role": "QA_DIAGNOSTIC_ONLY",
+      "smart_continent_bi1_verdict": "FAIL_REDUNDANT_WITH_GENERIC_HOUSING_PRICE",
+      "smart_continent_bi1_formula": "BI_1 = generic housing EUR/m² / monthly net VDU exactly for all 60 municipalities",
+      "official_vda_validation": "S7R280 2024 apartment EUR/m² verified for 6 city municipalities + Lithuania",
+      "official_vda_validation_file": "research/raw/vda-sale-big-cities/vda-sale-big-cities-2024.csv"
     },
     "income_layer": {
       "status": "source_locked",
@@ -134,12 +158,16 @@
       "smart_continent_bi3_role": "QA_DIAGNOSTIC_ONLY",
       "smart_continent_bi3_verdict": "FAIL_FOR_MAIN_RENT_LAYER",
       "reason": "60-municipality BI_3 series has unverified municipal estimation/basket/precision and implausibly low reconstructed rents in multiple municipalities.",
-      "portal_request_status": "Aruodas/Skelbiu request sent 2026-10-02; awaiting reply",
+      "portal_request_status": "NOT_SENT; draft/request may be prepared only after showing exact text to owner and receiving explicit approval",
       "official_validation_file": "research/raw/vda-rent-big-cities/vda-rent-big-cities-2025.csv",
       "validator": "scripts/validate_housing_rent_provider.py",
       "validator_status": "PASS automated tests",
       "provider_contract": "research/housing-rent-provider-contract.md",
-      "main_layer_status": "WAITING_10_COUNTY_PRIVATE_RENT_SOURCE"
+      "main_layer_status": "WAITING_10_COUNTY_PRIVATE_RENT_SOURCE",
+      "portal_request_recipients_candidate": [
+        "Aruodas",
+        "Skelbiu"
+      ]
     },
     "calculation_layer": {
       "status": "architecture_ready_waiting_validated_inputs",
