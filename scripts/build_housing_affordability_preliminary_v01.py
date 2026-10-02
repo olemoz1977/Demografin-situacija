@@ -157,13 +157,8 @@ def main() -> None:
     merged["value_status"] = "PRELIMINARY_V0.1_TO_BE_REFINED"
     merged["needs_refinement"] = True
 
-    # Rank is descriptive only and explicitly provisional.
-    merged["preliminary_affordability_rank"] = (
-        merged["m2_per_year_after_rent"].rank(method="min", ascending=False).astype(int)
-    )
-
     cols = [
-        "preliminary_affordability_rank","county",
+        "county",
         "model_net_25_30_eur_month","pair_net_income_eur_month",
         "rent_month_median_eur","sample_n","quality",
         "generic_housing_2024_eur_m2_weighted","generic_housing_transactions_2024",
@@ -174,7 +169,7 @@ def main() -> None:
         "income_status","sale_status","rent_status","value_status","needs_refinement",
         "localities_n","localities",
     ]
-    out = merged[cols].sort_values("preliminary_affordability_rank").copy()
+    out = merged[cols].sort_values("m2_per_year_after_rent", ascending=False).copy()
 
     for c in [
         "model_net_25_30_eur_month","pair_net_income_eur_month",
@@ -192,6 +187,7 @@ def main() -> None:
         json.dumps({
             "version": "v0.1-preliminary",
             "status": "PRELIMINARY_V0.1_TO_BE_REFINED",
+            "display_order": "m2_per_year_after_rent_desc_for_visual_comparison_only",
             "rows": out.to_dict("records"),
         }, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
@@ -202,6 +198,7 @@ def main() -> None:
         "publication_mode": "PRELIMINARY_WITH_EXPLICIT_UNCERTAINTY",
         "validated_publication_ready": False,
         "preliminary_publication_ready": True,
+        "display_order": "m2_per_year_after_rent_desc_for_visual_comparison_only",
         "target": "10 counties; working 25-30-year-old childless couple",
         "formula": "[(2 × monthly net income × 12) - annual rent] / apartment sale price proxy EUR/m²",
         "sale_proxy": {
@@ -231,6 +228,7 @@ def main() -> None:
         },
         "rules": [
             "Every v0.1 number is labelled preliminary and needs refinement.",
+            "Row order is for visual comparison only; do not present it as a final county affordability ranking.",
             "Do not describe sale_price_proxy_2025_eur_m2 as an official county apartment transaction price.",
             "Do not describe Skelbiu rent sample as a complete county market census.",
             "Replace the sale proxy when official 2025 60-municipality apartment data arrive.",
