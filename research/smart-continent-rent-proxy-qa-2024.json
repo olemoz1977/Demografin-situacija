@@ -155,6 +155,15 @@
       "comparison_limit": "different year and housing basket; diagnostic only"
     },
     {
+      "city": "Anykščiai",
+      "smart_continent_2024_implied_rent_eur_month": null,
+      "skelbiu_2025_one_room_sample_median_eur": 270,
+      "skelbiu_sample_n": 2,
+      "difference_eur": null,
+      "difference_pct": null,
+      "comparison_limit": "different year and housing basket; diagnostic only"
+    },
+    {
       "city": "Marijampolė",
       "municipality": "Marijampolės sav.",
       "smart_continent_2024_implied_rent_eur_month": 328.64,

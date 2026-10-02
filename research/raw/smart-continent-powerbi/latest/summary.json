@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-02T01:22:12.543Z",
+  "generatedAt": "2026-10-02T02:20:23.555Z",
   "reportUrl": "https://app.powerbi.com/view?r=eyJrIjoiYzhmZGZlMjYtM2UwMi00ODc1LWJiODMtYWZjY2JkYTUxZmE1IiwidCI6ImUwM2ViNjEzLTMyY2ItNDBlZi04MGQ2LTY5YmYwNTBmZDc5OCIsImMiOjl9",
   "fatal": null,
   "requestCount": 71,
   "responseCount": 71,
   "queryDataRequests": 36,
   "queryDataResponses": 36,
-  "capturedBodyBytes": 18565273,
+  "capturedBodyBytes": 18565288,
   "navigation": [
     {
       "action": "direct",
