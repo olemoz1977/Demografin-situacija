@@ -48,6 +48,11 @@ def main() -> None:
         type=Path,
         default=Path("research/housing-affordability-readiness.json"),
     )
+    p.add_argument(
+        "--preliminary-qa",
+        type=Path,
+        default=Path("research/housing-affordability-preliminary-v01-qa.json"),
+    )
     args = p.parse_args()
 
     cfg = json.loads(args.input.read_text(encoding="utf-8"))
@@ -55,10 +60,13 @@ def main() -> None:
     required = cfg.get("required_fields_not_yet_validated")
     acquisition = cfg.get("acquisition_status")
     income_model = cfg.get("income_model_2025_11")
+    publication_modes = cfg.get("publication_modes")
     if not isinstance(required, dict) or not isinstance(acquisition, dict):
         raise ValueError("Missing readiness configuration sections")
     if not isinstance(income_model, dict):
         raise ValueError("Missing income_model_2025_11")
+    if not isinstance(publication_modes, dict):
+        raise ValueError("Missing publication_modes")
 
     county_income = income_model.get("county_model_net_eur_month") or {}
     income_counties = set(county_income)
@@ -151,6 +159,29 @@ def main() -> None:
 
     ready = not blockers
 
+    strict_cfg = publication_modes.get("strict_v1_0") or {}
+    preliminary_cfg = publication_modes.get("preliminary_v0_1") or {}
+    if not isinstance(strict_cfg, dict) or not isinstance(preliminary_cfg, dict):
+        raise ValueError("Invalid publication_modes configuration")
+
+    preliminary_qa = {}
+    if args.preliminary_qa.exists():
+        preliminary_qa = json.loads(args.preliminary_qa.read_text(encoding="utf-8"))
+    preliminary_rows = preliminary_qa.get("rows") or []
+    preliminary_counties = {
+        str(row.get("county"))
+        for row in preliminary_rows
+        if isinstance(row, dict) and row.get("county")
+    }
+    preliminary_ready = (
+        preliminary_cfg.get("preliminary_publication_ready") is True
+        and preliminary_cfg.get("main_live_allowed") is False
+        and preliminary_qa.get("preliminary_publication_ready") is True
+        and preliminary_qa.get("validated_publication_ready") is False
+        and len(preliminary_rows) == 10
+        and preliminary_counties == EXPECTED_COUNTIES
+    )
+
     report = {
         "audit_date": cfg.get("audit_date"),
         "target": "10 Lithuania counties; working 25–30-year-old couple; no children",
@@ -159,7 +190,29 @@ def main() -> None:
             "/ apartment sale price EUR/m²"
         ),
         "ready_for_publication": ready,
+        "validated_publication_ready": ready,
         "decision": "READY" if ready else "DO_NOT_PUBLISH",
+        "strict_v1_0": {
+            "ready": ready,
+            "decision": "READY_FOR_VALIDATED_V1_0" if ready else "BLOCKED",
+            "main_live_data_ready": ready,
+            "main_live_publication_requires_owner_approval": True,
+            "configured_rule": strict_cfg.get("rule"),
+        },
+        "preliminary_v0_1": {
+            "ready": preliminary_ready,
+            "decision": (
+                "READY_FOR_FEATURE_PREVIEW"
+                if preliminary_ready
+                else "BLOCKED"
+            ),
+            "feature_preview_allowed": preliminary_ready,
+            "main_live_allowed": False,
+            "required_labels": preliminary_cfg.get("required_labels", []),
+            "configured_rule": preliminary_cfg.get("rule"),
+            "qa_source": str(args.preliminary_qa),
+            "county_count": len(preliminary_counties),
+        },
         "gates": gates,
         "blockers": blockers,
         "non_publication_sources": {
