@@ -64,6 +64,15 @@
           </div>
         </div>
 
+        <div class="housing-income-screen" id="housingIncomeScreen">
+          <div class="eyebrow">Pajamų lubų patikra · 2 asmenų šeimos scenarijus</div>
+          <h4>Ar modeliuotos jaunos poros pajamos telpa į 2026 m. ribą?</h4>
+          <p class="small">Čia lyginame tik pajamas su oficialia 2026 m. pajamų riba valstybės iš dalies kompensuojamam būsto kreditui. <strong>Tai nėra individualios teisės į paramą nustatymas</strong>: realiai vertinamos konkrečios šeimos už kalendorinius metus deklaruotos grynosios pajamos, turtas ir kiti kriterijai.</p>
+          <div class="housing-support-insight" id="housingSupportInsight">Kraunama…</div>
+          <div class="chart-wrap housing-support-chart"><canvas id="housingSupportIncomeChart"></canvas></div>
+          <div class="chart-caption">Oficiali 2026 m. dviejų asmenų šeimos pajamų riba – <strong>34 484 € per metus</strong>. Apskričių stulpeliai – mūsų 2025-11 modeliuotos vieno asmens neto pajamos × 2 asmenys × 12 mėn. Tai orientacinis „screening“, o ne teisinis tinkamumo testas.</div>
+        </div>
+
         <div class="alert alert-amber">
           <strong>Ką tai reiškia mūsų tyrimui.</strong> Valstybės parama gali reikšmingai sumažinti pradinį pirmo būsto barjerą, bet jos poveikis priklauso nuo šeimos teisinio statuso, pajamų ir turto, vaikų skaičiaus, būsto vietos ir konkretaus kvietimo. Todėl paramą rodome kaip atskirą scenarijų, o ne kaip automatinį visų jaunų porų „nuolaidos“ dydį.
         </div>
@@ -92,5 +101,98 @@
     return section;
   }
 
-  insertShell();
+  function fmt0(v){ return Number(v).toLocaleString('lt-LT',{maximumFractionDigits:0}); }
+  function fmt1(v){ return Number(v).toLocaleString('lt-LT',{minimumFractionDigits:1,maximumFractionDigits:1}); }
+
+  function renderIncomeScreen(data){
+    const section=document.getElementById(SECTION_ID);
+    if(!section) return;
+    const rows=(data.rows||[]).slice().sort((a,b)=>b.model_pair_annual_net_eur-a.model_pair_annual_net_eur);
+    const limit=Number(data.official_threshold?.annual_net_income_limit_eur||34484);
+    const vilnius=rows.find(r=>r.county==='Vilniaus');
+    const kaunas=rows.find(r=>r.county==='Kauno');
+    const klaipeda=rows.find(r=>r.county==='Klaipėdos');
+
+    const pct=r=>((Number(r.model_pair_annual_net_eur)/limit-1)*100);
+    const insight=section.querySelector('#housingSupportInsight');
+    if(insight && vilnius && kaunas && klaipeda){
+      insight.innerHTML=`
+        <div><strong>Vilniaus aps.</strong><span>${fmt0(vilnius.model_pair_annual_net_eur)} € · <b>+${fmt1(pct(vilnius))}% virš ribos</b></span></div>
+        <div><strong>Kauno aps.</strong><span>${fmt0(kaunas.model_pair_annual_net_eur)} € · <b>+${fmt1(pct(kaunas))}% virš ribos</b></span></div>
+        <div><strong>Klaipėdos aps.</strong><span>${fmt0(klaipeda.model_pair_annual_net_eur)} € · <b>${fmt1(pct(klaipeda))}% nuo ribos</b></span></div>
+      `;
+    }
+
+    const canvas=section.querySelector('#housingSupportIncomeChart');
+    if(!canvas || !window.Chart) return;
+
+    const thresholdPlugin={
+      id:'housingIncomeThreshold',
+      afterDraw(chart,args,opts){
+        const x=chart.scales.x.getPixelForValue(opts.value);
+        const {ctx,chartArea}=chart;
+        ctx.save();
+        ctx.beginPath();
+        ctx.moveTo(x,chartArea.top);
+        ctx.lineTo(x,chartArea.bottom);
+        ctx.lineWidth=2;
+        ctx.setLineDash([6,5]);
+        ctx.strokeStyle='#1f4e79';
+        ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.fillStyle='#1f4e79';
+        ctx.font='600 11px DM Sans, sans-serif';
+        ctx.fillText('2026 riba 34 484 €',Math.min(x+7,chartArea.right-115),chartArea.top+13);
+        ctx.restore();
+      }
+    };
+
+    const existing=Chart.getChart(canvas); if(existing) existing.destroy();
+    new Chart(canvas.getContext('2d'),{
+      type:'bar',
+      data:{
+        labels:rows.map(r=>r.county),
+        datasets:[{
+          label:'Modeliuotos poros metinės neto pajamos',
+          data:rows.map(r=>Number(r.model_pair_annual_net_eur)),
+          backgroundColor:rows.map(r=>Number(r.model_pair_annual_net_eur)>limit?'#a44a3f':'#5f8267'),
+          borderWidth:0
+        }]
+      },
+      plugins:[thresholdPlugin],
+      options:{
+        indexAxis:'y',
+        responsive:true,
+        maintainAspectRatio:false,
+        plugins:{
+          legend:{display:false},
+          tooltip:{callbacks:{label:(ctx)=>' '+fmt0(ctx.raw)+' € per metus'}}
+        },
+        scales:{
+          x:{
+            beginAtZero:true,
+            max:43000,
+            ticks:{callback:v=>fmt0(v)+' €'},
+            title:{display:true,text:'Modeliuotos poros metinės neto pajamos'}
+          },
+          y:{ticks:{autoSkip:false}}
+        },
+        housingIncomeThreshold:{value:limit}
+      }
+    });
+  }
+
+  async function init(){
+    insertShell();
+    try{
+      const res=await fetch('data/housing-state-support-income-screen-2026.json?v=20261002a',{cache:'no-store'});
+      if(!res.ok) throw new Error('HTTP '+res.status);
+      renderIncomeScreen(await res.json());
+    }catch(err){
+      const insight=document.querySelector('#housingSupportInsight');
+      if(insight) insight.innerHTML='<span class="small">Pajamų ribos grafiko nepavyko įkelti.</span>';
+    }
+  }
+
+  init();
 })();
