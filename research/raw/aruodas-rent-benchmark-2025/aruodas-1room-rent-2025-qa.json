@@ -1,0 +1,50 @@
+{
+  "year": 2025,
+  "city_count": 3,
+  "row_count": 36,
+  "cities": [
+    "Vilnius",
+    "Kaunas",
+    "Klaipėda"
+  ],
+  "basket": "1-room apartment monthly asking-rent offer average",
+  "method": "Jan-Sep 2025 recovered from hidden previous-year comparison columns in 2026 same-month reports; Oct-Dec from current columns in direct 2025 archived reports.",
+  "site_scope": "Aruodas tendency filtering is available for Vilnius, Kaunas and Klaipėda; this is a city validation benchmark, not a 10-county layer.",
+  "controls": {
+    "Kaunas|2025-01": 361,
+    "Klaipėda|2025-01": 345,
+    "Vilnius|2025-12": 484,
+    "Kaunas|2025-12": 379,
+    "Klaipėda|2025-12": 371
+  },
+  "summary": {
+    "Vilnius": {
+      "months_n": 12,
+      "mean_eur_month": 468.75,
+      "median_eur_month": 467,
+      "min_eur_month": 443,
+      "max_eur_month": 520,
+      "jan_2025_eur_month": 457,
+      "dec_2025_eur_month": 484
+    },
+    "Kaunas": {
+      "months_n": 12,
+      "mean_eur_month": 383.75,
+      "median_eur_month": 382,
+      "min_eur_month": 361,
+      "max_eur_month": 403,
+      "jan_2025_eur_month": 361,
+      "dec_2025_eur_month": 379
+    },
+    "Klaipėda": {
+      "months_n": 12,
+      "mean_eur_month": 371.67,
+      "median_eur_month": 368,
+      "min_eur_month": 343,
+      "max_eur_month": 411,
+      "jan_2025_eur_month": 345,
+      "dec_2025_eur_month": 371
+    }
+  },
+  "role": "PORTAL_VALIDATION_BENCHMARK_ONLY_NOT_COUNTY_LAYER"
+}
