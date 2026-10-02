@@ -144,6 +144,70 @@ Viešame `Power BI` modelyje nėra šaltinio metaduomens, leidžiančio jį pati
 priskirti Registrų centrui, todėl tokio teiginio nedarome be atskiro metodikos
 dokumento / šaltinio patvirtinimo.
 
+## BI_1 bandymas atkurti butų kainą — CLOSED / FAIL
+
+2026-10-02 atlikta atskira tiesioginė viešo Power BI modelio užklausa visoms 60
+savivaldybių, vienu metu ištraukiant:
+
+- `FactBPI.BI_1`;
+- `FactBPI.Vid būsto sandorio  kaina, Eur/kv.m.`;
+- `FactBPI.Vidutinis darbo užmokestis (neto)`.
+
+Rezultatas yra tiksli tapatybė visose 60 savivaldybių:
+
+`BI_1 = bendro būsto sandorio kaina EUR/m² / mėnesio neto VDU`.
+
+Didžiausias absoliutus skirtumas tarp BI_1 ir šio perskaičiavimo = **0**.
+
+Todėl BI_1 nėra nepriklausomas ar paslėptas butų kainos signalas. Jis tik perreiškia
+tą patį bendro būsto kainos lauką.
+
+Kryžminė patikra su oficialiu VDA S7R280 2024 m. daugiabučių butų EUR/m² etalonu
+parodė, kad Smart Continent bendro būsto kaina yra mažesnė visuose šešiuose miestuose:
+
+- Alytus: 592.14 vs 889.79 (-33.5%);
+- Kaunas: 995.01 vs 1771.62 (-43.8%);
+- Klaipėda: 1015.64 vs 1559.14 (-34.9%);
+- Panevėžys: 586.48 vs 1030.03 (-43.1%);
+- Šiauliai: 722.46 vs 1098.12 (-34.2%);
+- Vilnius: 1753.19 vs 2639.03 (-33.6%).
+
+Skirtumas nėra vienodas koeficientas, todėl bendro būsto kainos negalima paprastai
+„kalibruoti“ į butų kainą.
+
+Papildoma pilno `conceptualschema` inventorizacija nerado jokio kito savivaldybių
+lygio butų / daugiabučių butų EUR/m² lauko. `FactNacionaliniai` turi nacionalinių
+butų kiekių informaciją, bet ne savivaldybių butų sandorio kainas.
+
+Failai:
+- `research/smart-continent-bi1-sale-qa-2024.json`;
+- `data/housing-sale-smart-continent-bi1-2024-diagnostic.csv`;
+- `scripts/extract_smart_continent_bi1_sale_probe.mjs`;
+- `scripts/parse_smart_continent_bi1_sale_probe.mjs`.
+
+Bendras verdiktas sustiprintas iki:
+**FAIL pagrindiniam butų kainų sluoksniui; viešame modelyje nėra reprodukuojamo
+60 savivaldybių apartment-only kainų kelio.**
+
+## Oficialus VDA S7R280 kontrolinis sluoksnis
+
+Atskiras oficialus VDA ArcGIS EVP56 sluoksnis patvirtino 2024 m. daugiabučių butų
+(`1123`) kainas EUR/m²:
+
+- Alytaus m. sav. 889.79;
+- Kauno m. sav. 1771.62;
+- Klaipėdos m. sav. 1559.14;
+- Panevėžio m. sav. 1030.03;
+- Šiaulių m. sav. 1098.12;
+- Vilniaus m. sav. 2639.03;
+- Lietuvos Respublika 1684.64.
+
+Tai yra stiprus oficialus būsimo RC sluoksnio QA etalonas, bet ne 10 apskričių
+pagrindinis sluoksnis, nes serija apima tik 6 miestų savivaldybes + Lietuvą.
+
+Failas:
+`research/raw/vda-sale-big-cities/vda-sale-big-cities-2024-qa.json`.
+
 ## Santykis su mūsų metodika
 
 Smart Continent švieslentė išlieka naudinga:
