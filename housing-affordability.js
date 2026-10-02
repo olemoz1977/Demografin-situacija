@@ -61,12 +61,14 @@
     section.querySelector('#housingTableWrap').innerHTML=`
       <h3 style="margin-top:1.5rem">Preliminarus 10 apskričių vaizdas</h3>
       <p class="small">Apskritys surikiuotos pagal centrinį v0.1 m² įvertį tik vizualiniam palyginimui. <strong>Tai nėra patikimumo ar galutinis įperkamumo reitingas.</strong></p>
-      <table>
-        <thead><tr>
-          <th>Apskritis</th><th class="td-num">m²/metus po nuomos</th><th class="td-num">Techninis scenarijų diapazonas</th>
-          <th class="td-num">Pardavimo proxy €/m²</th><th class="td-num">Nuoma €/mėn.</th><th class="td-num">Nuomos imtis</th><th class="td-num">Neto / asm.</th><th class="td-num">50 m² / metinės neto</th><th class="td-num">Nuomos našta</th>
-        </tr></thead><tbody>${table}</tbody>
-      </table>`;
+      <div class="housing-table-scroll" tabindex="0" aria-label="Būsto įperkamumo lentelė; telefone slinkite horizontaliai">
+        <table class="housing-table">
+          <thead><tr>
+            <th>Apskritis</th><th class="td-num">m²/metus po nuomos</th><th class="td-num">Techninis scenarijų diapazonas</th>
+            <th class="td-num">Pardavimo proxy €/m²</th><th class="td-num">Nuoma €/mėn.</th><th class="td-num">Nuomos imtis</th><th class="td-num">Neto / asm.</th><th class="td-num">50 m² / metinės neto</th><th class="td-num">Nuomos našta</th>
+          </tr></thead><tbody>${table}</tbody>
+        </table>
+      </div>`;
 
     const canvas=section.querySelector('#housingAffordabilityChart');
     if(window.Chart && canvas){
