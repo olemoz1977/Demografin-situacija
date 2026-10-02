@@ -46,11 +46,18 @@ jobs:
           counties={r["county"] for r in rows}
           assert len(counties)==10, counties
           assert all(r["value_status"]=="PRELIMINARY_V0.1_TO_BE_REFINED" for r in rows)
+          assert all(r.get("needs_refinement") is True for r in rows)
+          assert all("preliminary_affordability_rank" not in r for r in rows)
           assert all(r["m2_after_rent_sensitivity_low"] <= r["m2_per_year_after_rent"] <= r["m2_after_rent_sensitivity_high"] for r in rows)
+          assert d.get("display_order")=="m2_per_year_after_rent_desc_for_visual_comparison_only"
           nav=Path("research-nav.js").read_text(encoding="utf-8")
           assert "housingAffordability:'housing'" in nav
           assert "label:'Būstas'" in nav
           app=Path("app.js").read_text(encoding="utf-8")
           assert "housing-affordability.js" in app
-          print("PASS: preliminary housing view payload and routing")
+          view=Path("housing-affordability.js").read_text(encoding="utf-8")
+          assert "Tai nėra patikimumo ar galutinis įperkamumo reitingas." in view
+          assert "preliminary_affordability_rank" not in view
+          assert "Tai nėra oficialios apskričių butų kainos." in view
+          print("PASS: preliminary housing view payload, uncertainty labels and routing")
           PY
