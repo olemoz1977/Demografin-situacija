@@ -14,7 +14,7 @@
       "name": "sale_actual_apartment_transactions",
       "status": "BLOCKED",
       "detail": "sale status=blocked_external_source_waiting; required=WAITING_OFFICIAL_RC_2025_APARTMENT_TRANSACTION_LAYER; 2024 fallback acceptable only if 2025 unavailable",
-      "blocker": "Waiting for an official RC 2024 actual-apartment transaction layer covering 60 municipalities / 10 counties with a verified aggregation method."
+      "blocker": "Waiting for an official RC/VDA 2025 actual-apartment transaction layer covering 60 municipalities / 10 counties with a verified aggregation method. 2024 is accepted only as an explicitly labelled fallback."
     },
     {
       "name": "rent_private_1room_10_counties",
@@ -31,7 +31,7 @@
   "blockers": [
     {
       "gate": "sale_actual_apartment_transactions",
-      "reason": "Waiting for an official RC 2024 actual-apartment transaction layer covering 60 municipalities / 10 counties with a verified aggregation method."
+      "reason": "Waiting for an official RC/VDA 2025 actual-apartment transaction layer covering 60 municipalities / 10 counties with a verified aggregation method. 2024 is accepted only as an explicitly labelled fallback."
     },
     {
       "gate": "rent_private_1room_10_counties",
