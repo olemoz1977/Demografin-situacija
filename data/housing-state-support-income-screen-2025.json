@@ -1,0 +1,106 @@
+{
+  "version": "2025-aligned-v1",
+  "status": "MODELLED_SCREENING_ONLY_NOT_ELIGIBILITY_DETERMINATION",
+  "question": "How does the modelled 2025 annual net income of a working 25-30-year-old couple compare with the 2025 income ceiling for a two-person family under the state-partially-compensated housing credit scheme?",
+  "official_threshold": {
+    "year": 2025,
+    "family_size": 2,
+    "annual_net_income_limit_eur": 32708,
+    "equivalent_monthly_net_per_person_if_equal_eur": 1362.83,
+    "asset_limit_eur": 57902,
+    "source": "Lithuanian Ministry of Social Security and Labour — 2025 annual income and asset limits for housing support"
+  },
+  "historical_context": {
+    "year": 2024,
+    "two_person_family_annual_net_income_limit_eur": 26048,
+    "note": "Context only. Do not compare this threshold with the 2025-11 income model; a like-for-like 2024 youth-income layer has not been built."
+  },
+  "model_basis": {
+    "income_period": "2025-11",
+    "formula": "2 × model_net_25_30_eur_month_per_person × 12",
+    "quality": "B-modelled",
+    "warning": "Screening only. It annualises the 2025-11 modelled month and does not equal an individual's declared calendar-year income. It does not test assets, legal family status, first-home history or other eligibility criteria."
+  },
+  "rows": [
+    {
+      "county": "Vilniaus",
+      "model_net_25_30_eur_month_per_person": 1660.7,
+      "model_pair_annual_net_eur": 39856.8,
+      "threshold_delta_eur": 7148.8,
+      "threshold_ratio": 1.2186,
+      "screening_status": "ABOVE_2025_TWO_PERSON_INCOME_LIMIT"
+    },
+    {
+      "county": "Kauno",
+      "model_net_25_30_eur_month_per_person": 1480.8,
+      "model_pair_annual_net_eur": 35539.2,
+      "threshold_delta_eur": 2831.2,
+      "threshold_ratio": 1.0866,
+      "screening_status": "ABOVE_2025_TWO_PERSON_INCOME_LIMIT"
+    },
+    {
+      "county": "Klaipėdos",
+      "model_net_25_30_eur_month_per_person": 1402.5,
+      "model_pair_annual_net_eur": 33660,
+      "threshold_delta_eur": 952,
+      "threshold_ratio": 1.0291,
+      "screening_status": "ABOVE_2025_TWO_PERSON_INCOME_LIMIT"
+    },
+    {
+      "county": "Telšių",
+      "model_net_25_30_eur_month_per_person": 1292.2,
+      "model_pair_annual_net_eur": 31012.8,
+      "threshold_delta_eur": -1695.2,
+      "threshold_ratio": 0.9482,
+      "screening_status": "BELOW_2025_TWO_PERSON_INCOME_LIMIT"
+    },
+    {
+      "county": "Utenos",
+      "model_net_25_30_eur_month_per_person": 1277.4,
+      "model_pair_annual_net_eur": 30657.6,
+      "threshold_delta_eur": -2050.4,
+      "threshold_ratio": 0.9373,
+      "screening_status": "BELOW_2025_TWO_PERSON_INCOME_LIMIT"
+    },
+    {
+      "county": "Panevėžio",
+      "model_net_25_30_eur_month_per_person": 1268.5,
+      "model_pair_annual_net_eur": 30444,
+      "threshold_delta_eur": -2264,
+      "threshold_ratio": 0.9308,
+      "screening_status": "BELOW_2025_TWO_PERSON_INCOME_LIMIT"
+    },
+    {
+      "county": "Alytaus",
+      "model_net_25_30_eur_month_per_person": 1264.1,
+      "model_pair_annual_net_eur": 30338.4,
+      "threshold_delta_eur": -2369.6,
+      "threshold_ratio": 0.9276,
+      "screening_status": "BELOW_2025_TWO_PERSON_INCOME_LIMIT"
+    },
+    {
+      "county": "Šiaulių",
+      "model_net_25_30_eur_month_per_person": 1253.3,
+      "model_pair_annual_net_eur": 30079.2,
+      "threshold_delta_eur": -2628.8,
+      "threshold_ratio": 0.9196,
+      "screening_status": "BELOW_2025_TWO_PERSON_INCOME_LIMIT"
+    },
+    {
+      "county": "Marijampolės",
+      "model_net_25_30_eur_month_per_person": 1234.8,
+      "model_pair_annual_net_eur": 29635.2,
+      "threshold_delta_eur": -3072.8,
+      "threshold_ratio": 0.9061,
+      "screening_status": "BELOW_2025_TWO_PERSON_INCOME_LIMIT"
+    },
+    {
+      "county": "Tauragės",
+      "model_net_25_30_eur_month_per_person": 1210.2,
+      "model_pair_annual_net_eur": 29044.8,
+      "threshold_delta_eur": -3663.2,
+      "threshold_ratio": 0.888,
+      "screening_status": "BELOW_2025_TWO_PERSON_INCOME_LIMIT"
+    }
+  ]
+}
