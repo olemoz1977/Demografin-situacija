@@ -236,3 +236,49 @@ Todėl 2025 m. 12 mėnesių etalonui taikomas metodas:
 Tai lieka tik Vilniaus, Kauno ir Klaipėdos miestų validacijos benchmarku ir
 nepakeičia 10 apskričių nuomos sluoksnio.
 
+
+
+### Pilnas 2025 m. Aruodas 1 kambario benchmarkas — PASS validacijai
+
+Po HTML struktūros audito pilnai atkurti 36 taškai:
+3 miestai × 12 mėnesių.
+
+2025 m. 1 kambario mėnesio pasiūlos kainų suvestinė:
+- Vilnius: 12 mėn. vidurkis **468.75 EUR**, mėnesinių vidurkių mediana **467 EUR**,
+  min 443, max 520;
+- Kaunas: **383.75 EUR**, mediana **382 EUR**, min 361, max 403;
+- Klaipėda: **371.67 EUR**, mediana **368 EUR**, min 343, max 411.
+
+2025-01…09 reikšmės paimtos ne iš procentinio pokyčio perskaičiavimo, o tiesiogiai iš
+serverio HTML paslėptų ankstesnių metų palyginimo lentelės langelių 2026 m. to paties
+mėnesio ataskaitose. 2025-10…12 paimtos iš tiesioginių 2025 m. archyvinių ataskaitų.
+
+Kontrolės:
+- Kaunas 2025-01 = 361 EUR;
+- Klaipėda 2025-01 = 345 EUR;
+- Vilnius 2025-12 = 484 EUR;
+- Kaunas 2025-12 = 379 EUR;
+- Klaipėda 2025-12 = 371 EUR.
+
+Failai:
+- `research/raw/aruodas-rent-benchmark-2025/aruodas-1room-rent-monthly-2025.csv`;
+- `research/raw/aruodas-rent-benchmark-2025/aruodas-1room-rent-2025-qa.json`.
+
+Apribojimas nesikeičia: tai tik trijų miestų portalinis benchmarkas, ne 10 apskričių sluoksnis.
+
+### Aruodas vs Skelbiu search-index — papildomas reprezentatyvumo signalas
+
+Skelbiu istorinės paieškos imties listing-level mediana palyginta su Aruodas 12 mėn.
+mėnesinių pasiūlos vidurkių vidurkiu:
+
+- Vilnius: 350 vs 468.75 EUR → **-25.33%**;
+- Kaunas: 350 vs 383.75 → **-8.79%**;
+- Klaipėda: 345 vs 371.67 → **-7.18%**.
+
+Šie procentai **nėra kalibravimo koeficientai**: portalai, imties sudarymas ir statistika
+skiriasi. Tačiau ypač Vilniaus skirtumas yra stiprus papildomas signalas, kad search-index
+imties negalima laikyti reprezentatyvia pilnos rinkos imtimi vien dėl to, kad N>=10.
+
+Failas:
+`research/housing-rent-cross-portal-validation-2025.json`.
+
