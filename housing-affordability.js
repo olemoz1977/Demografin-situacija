@@ -10,9 +10,10 @@
     section.id=SECTION_ID;
     section.innerHTML=`<div class="container">
       <div class="section-label">Būsto įperkamumas <span class="badge badge-prelim">v0.1 · PRELIMINARU</span></div>
-      <h2>Kiek būsto m² per metus teoriškai atitinka jaunos dirbančios poros pajamos po nuomos?</h2>
-      <p class="lead">Tai preliminarus 10 apskričių modelis. Jis leidžia matyti kryptį dabar, nelaukiant, kol visi duomenų sluoksniai taps galutiniai.</p>
+      <h2>Kaip skiriasi jaunos dirbančios poros pajamų ir būsto kainos santykis tarp apskričių?</h2>
+      <p class="lead">Tai preliminarus 10 apskričių palyginimas. Pagrindinis m²/metus rodiklis yra teorinis pajamų–kainos indeksas, skirtas skirtumų mastui matyti, kol duomenų sluoksniai dar tikslinami.</p>
       <div class="alert alert-amber"><strong>Skaičiai bus tikslinami.</strong> Pajamos yra modeliuotos pagal „Sodros“ 2025-11 duomenis; nuoma – 2025 m. istorinė rinkos skelbimų imtis; pardavimo kaina – 2025 m. butų kainos proxy, kalibruotas pagal oficialų VDA šešių miestų etaloną. Tai nėra oficialios apskričių butų kainos.</div>
+      <div class="alert alert-blue"><strong>Tai nėra bankinis paskolos įperkamumo vertinimas.</strong> m²/metus indeksas teoriškai skiria visą poros neto pajamų likutį po nuomos būstui ir neįtraukia kitų gyvenimo išlaidų, pradinio įnašo, palūkanų, paskolos termino, DSTI/LTV ribų ar individualių įsipareigojimų. Todėl jį naudojame kaip santykinį pajamų–kainos palyginimą.</div>
       <div class="source-line"><strong>Duomenų būsenos:</strong> Oficialu = tiesioginis oficialus etalonas · Modeliuota = oficialių duomenų pagrindu apskaičiuota · Preliminaru = dar ne publication-grade rinkos/proxy sluoksnis · Tikslinama = galutinis kompozitinis skaičius bus perskaičiuotas gavus stipresnius duomenis.</div>
       <div class="kpi-row" id="housingKpis"></div>
       <div class="chart-wrap" style="height:430px"><canvas id="housingAffordabilityChart"></canvas></div>
@@ -53,7 +54,8 @@
         <td class="td-num">${fmt0(r.rent_month_median_eur)} €<br><small>${lowN?'Preliminaru · LOW N':'Preliminaru'}</small></td>
         <td class="td-num ${lowN?'td-red':''}">N=${r.sample_n}</td>
         <td class="td-num">${fmt0(r.model_net_25_30_eur_month)} €<br><small>Modeliuota</small></td>
-        <td><strong>Tikslinama</strong></td>
+        <td class="td-num">${fmt(r.standard_50m2_price_to_pair_annual_net_years,2)} m.<br><small>50 m² proxy / poros metinės neto</small></td>
+        <td class="td-num">${fmt(r.rent_burden_pct_pair_net_income,1)} %<br><small>nuomos mediana / poros neto</small></td>
       </tr>`;
     }).join('');
     section.querySelector('#housingTableWrap').innerHTML=`
@@ -62,7 +64,7 @@
       <table>
         <thead><tr>
           <th>Apskritis</th><th class="td-num">m²/metus po nuomos</th><th class="td-num">Techninis scenarijų diapazonas</th>
-          <th class="td-num">Pardavimo proxy €/m²</th><th class="td-num">Nuoma €/mėn.</th><th class="td-num">Nuomos imtis</th><th class="td-num">Neto / asm.</th><th>Būsena</th>
+          <th class="td-num">Pardavimo proxy €/m²</th><th class="td-num">Nuoma €/mėn.</th><th class="td-num">Nuomos imtis</th><th class="td-num">Neto / asm.</th><th class="td-num">50 m² / metinės neto</th><th class="td-num">Nuomos našta</th>
         </tr></thead><tbody>${table}</tbody>
       </table>`;
 
