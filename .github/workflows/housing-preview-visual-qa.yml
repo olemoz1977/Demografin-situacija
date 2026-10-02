@@ -57,24 +57,26 @@ jobs:
 
               await page.goto('http://127.0.0.1:8765/?view=housing', {waitUntil:'networkidle'});
               await page.waitForSelector('#housingAffordability', {state:'visible'});
-              await page.waitForSelector('#housingAffordability .housing-table tbody tr');
+              await page.waitForSelector('#housingAffordability .housing-simple-table tbody tr');
 
               const result = await page.evaluate(() => {
                 const section = document.querySelector('#housingAffordability');
-                const rows = [...section.querySelectorAll('.housing-table tbody tr')];
+                const rows = [...section.querySelectorAll('.housing-simple-table tbody tr')];
                 const text = section.innerText;
-                const scroll = section.querySelector('.housing-table-scroll');
-                const firstCell = section.querySelector('.housing-table tbody td:first-child');
+                const scroll = section.querySelector('.housing-simple-table-wrap');
                 const rootOverflow = document.documentElement.scrollWidth - window.innerWidth;
+                const details = [...section.querySelectorAll('.housing-details')];
                 return {
                   rows: rows.length,
                   hasPrelim: text.includes('PRELIMINARU'),
+                  hasPlainQuestion: text.includes('Kiek poros metinių pajamų kainuoja 50 m² būstas?'),
+                  hasTakeaway: text.includes('Pagrindinė išvada'),
                   hasMortgageWarning: text.includes('Tai nėra bankinis paskolos įperkamumo vertinimas.'),
-                  hasRankingWarning: text.includes('Tai nėra patikimumo ar galutinis įperkamumo reitingas.'),
-                  hasControlMetric: [...section.querySelectorAll('.housing-table th')].some(th => th.textContent.includes('50 m²')),
+                  hasControlMetric: [...section.querySelectorAll('.housing-simple-table th')].some(th => th.textContent.includes('50 m² kaina / poros metinės neto')),
+                  detailsCount: details.length,
+                  detailsClosed: details.every(d => !d.open),
                   rootOverflow,
                   tableScrollable: scroll.scrollWidth > scroll.clientWidth,
-                  firstCellPosition: getComputedStyle(firstCell).position,
                   sectionWidth: Math.round(section.getBoundingClientRect().width),
                   viewportWidth: window.innerWidth
                 };
@@ -85,12 +87,13 @@ jobs:
 
               if (result.rows !== 10) throw new Error(`${name}: expected 10 rows, got ${result.rows}`);
               if (!result.hasPrelim) throw new Error(`${name}: PRELIMINARU label missing`);
+              if (!result.hasPlainQuestion) throw new Error(`${name}: plain-language question missing`);
+              if (!result.hasTakeaway) throw new Error(`${name}: main takeaway missing`);
               if (!result.hasMortgageWarning) throw new Error(`${name}: mortgage warning missing`);
-              if (!result.hasRankingWarning) throw new Error(`${name}: ranking warning missing`);
-              if (!result.hasControlMetric) throw new Error(`${name}: control metric missing`);
+              if (!result.hasControlMetric) throw new Error(`${name}: 50m2 control metric missing`);
+              if (result.detailsCount !== 2 || !result.detailsClosed) throw new Error(`${name}: technical details should be collapsed by default`);
               if (result.rootOverflow > 2) throw new Error(`${name}: page horizontal overflow ${result.rootOverflow}px`);
-              if (viewport.width <= 430 && !result.tableScrollable) throw new Error(`${name}: housing table is not independently scrollable`);
-              if (result.firstCellPosition !== 'sticky') throw new Error(`${name}: first housing column is not sticky`);
+              if (viewport.width <= 430 && !result.tableScrollable) throw new Error(`${name}: main housing table is not independently scrollable`);
 
               await page.close();
             }
