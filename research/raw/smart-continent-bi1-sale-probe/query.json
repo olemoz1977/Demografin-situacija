@@ -1,0 +1,137 @@
+{
+  "version": "1.0.0",
+  "queries": [
+    {
+      "Query": {
+        "Commands": [
+          {
+            "SemanticQueryDataShapeCommand": {
+              "Query": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "s",
+                    "Entity": "DimSavivaldybė",
+                    "Type": 0
+                  },
+                  {
+                    "Name": "f",
+                    "Entity": "FactBPI",
+                    "Type": 0
+                  }
+                ],
+                "Select": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "s"
+                        }
+                      },
+                      "Property": "Savivaldybė"
+                    },
+                    "Name": "DimSavivaldybė.Savivaldybė",
+                    "NativeReferenceName": "Savivaldybė"
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "f"
+                        }
+                      },
+                      "Property": "BI_1"
+                    },
+                    "Name": "FactBPI.BI_1",
+                    "NativeReferenceName": "BI_1"
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "f"
+                        }
+                      },
+                      "Property": "Vid būsto sandorio  kaina, Eur/kv.m."
+                    },
+                    "Name": "FactBPI.Vid būsto sandorio  kaina, Eur/kv.m.",
+                    "NativeReferenceName": "Vid būsto sandorio  kaina, Eur/kv.m."
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "f"
+                        }
+                      },
+                      "Property": "Vidutinis darbo užmokestis (neto)"
+                    },
+                    "Name": "FactBPI.Vidutinis darbo užmokestis (neto)",
+                    "NativeReferenceName": "Vidutinis darbo užmokestis (neto)"
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "f"
+                                }
+                              },
+                              "Property": "Metai"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "2024L"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                ]
+              },
+              "Binding": {
+                "Primary": {
+                  "Groupings": [
+                    {
+                      "Projections": [
+                        0,
+                        1,
+                        2,
+                        3
+                      ],
+                      "Subtotal": 1
+                    }
+                  ]
+                },
+                "DataReduction": {
+                  "DataVolume": 6,
+                  "Primary": {
+                    "Window": {
+                      "Count": 500
+                    }
+                  }
+                },
+                "Version": 1
+              },
+              "ExecutionMetricsKind": 1
+            }
+          }
+        ]
+      },
+      "CacheKey": ""
+    }
+  ],
+  "cancelQueries": [],
+  "modelId": 5991437
+}

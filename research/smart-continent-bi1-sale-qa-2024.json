@@ -1,0 +1,84 @@
+{
+  "year": 2024,
+  "municipality_count": 60,
+  "county_count": 10,
+  "queried_columns": [
+    "FactBPI.BI_1",
+    "FactBPI.Vid būsto sandorio  kaina, Eur/kv.m.",
+    "FactBPI.Vidutinis darbo užmokestis (neto)"
+  ],
+  "bi1_candidate_identity_tests": [
+    {
+      "name": "generic_price / monthly_net",
+      "max_abs_diff": 0
+    },
+    {
+      "name": "generic_price / annual_net",
+      "max_abs_diff": 3.126845997436993
+    },
+    {
+      "name": "generic_price * 100 / monthly_net",
+      "max_abs_diff": 337.6993677231952
+    }
+  ],
+  "exact_generic_price_identity": "generic_price / monthly_net",
+  "official_vda_apartment_benchmark_comparison": [
+    {
+      "municipality": "Alytaus m. sav.",
+      "official_vda_apartment_eur_m2": 889.79,
+      "smart_continent_generic_housing_eur_m2": 592.1438299,
+      "bi_1": 0.5014768207147697,
+      "net_wage_eur_month": 1180.8,
+      "generic_vs_official_difference_pct": -33.45128289821193
+    },
+    {
+      "municipality": "Kauno m. sav.",
+      "official_vda_apartment_eur_m2": 1771.62,
+      "smart_continent_generic_housing_eur_m2": 995.0087005,
+      "bi_1": 0.6967848042717087,
+      "net_wage_eur_month": 1428,
+      "generic_vs_official_difference_pct": -43.836223315383656
+    },
+    {
+      "municipality": "Klaipėdos m. sav.",
+      "official_vda_apartment_eur_m2": 1559.14,
+      "smart_continent_generic_housing_eur_m2": 1015.636885,
+      "bi_1": 0.7476164041221935,
+      "net_wage_eur_month": 1358.5,
+      "generic_vs_official_difference_pct": -34.859160498736486
+    },
+    {
+      "municipality": "Panevėžio m. sav.",
+      "official_vda_apartment_eur_m2": 1030.03,
+      "smart_continent_generic_housing_eur_m2": 586.478907,
+      "bi_1": 0.4705382758344031,
+      "net_wage_eur_month": 1246.4,
+      "generic_vs_official_difference_pct": -43.06195868081512
+    },
+    {
+      "municipality": "Šiaulių m. sav.",
+      "official_vda_apartment_eur_m2": 1098.12,
+      "smart_continent_generic_housing_eur_m2": 722.4560238,
+      "bi_1": 0.6025990689798982,
+      "net_wage_eur_month": 1198.9,
+      "generic_vs_official_difference_pct": -34.209738116052876
+    },
+    {
+      "municipality": "Vilniaus m. sav.",
+      "official_vda_apartment_eur_m2": 2639.03,
+      "smart_continent_generic_housing_eur_m2": 1753.189188,
+      "bi_1": 1.1337962801526225,
+      "net_wage_eur_month": 1546.3,
+      "generic_vs_official_difference_pct": -33.56690950841787
+    }
+  ],
+  "interpretation": "BI_1 is an exact arithmetic transform of the Smart Continent generic housing price and net wage. It does not reveal an independent apartment-only price series.",
+  "hard_gate": {
+    "municipality_coverage_60_of_60": true,
+    "county_mapping_10_of_10": true,
+    "apartment_only_semantics_verified": false,
+    "independent_apartment_price_signal": false
+  },
+  "verdict": "FAIL_FOR_APARTMENT_SALE_RECONSTRUCTION_REDUNDANT_WITH_GENERIC_PRICE",
+  "publication_status": "DIAGNOSTIC_ONLY"
+}
