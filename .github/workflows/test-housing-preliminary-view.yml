@@ -57,8 +57,8 @@ jobs:
           assert "housingAffordability:'housing'" in nav
           assert "label:'Būstas'" in nav
           index=Path("index.html").read_text(encoding="utf-8")
-          assert 'app.js?v=20261002e' in index
-          assert 'style.css?v=20261002e' in index
+          assert 'app.js?v=20261002f' in index
+          assert 'style.css?v=20261002f' in index
           app=Path("app.js").read_text(encoding="utf-8")
           assert "housing-affordability.js" in app
           view=Path("housing-affordability.js").read_text(encoding="utf-8")
