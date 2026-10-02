@@ -1,0 +1,30 @@
+name: Test county rent provider validator
+
+on:
+  push:
+    branches:
+      - feature/housing-affordability
+    paths:
+      - "scripts/validate_housing_rent_provider.py"
+      - "tests/test_validate_housing_rent_provider.py"
+      - ".github/workflows/test-rent-provider-validator.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/housing-affordability
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install pandas openpyxl
+      - name: Run rent provider validator tests
+        run: python -m unittest -v tests/test_validate_housing_rent_provider.py
