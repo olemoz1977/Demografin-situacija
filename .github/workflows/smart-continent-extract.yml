@@ -8,6 +8,7 @@ on:
       - ".github/workflows/smart-continent-extract.yml"
       - "scripts/extract_smart_continent_powerbi.mjs"
       - "scripts/parse_smart_continent_powerbi_raw.mjs"
+      - "scripts/extract_smart_continent_rent_proxy.mjs"
 
 permissions:
   contents: write
@@ -46,6 +47,11 @@ jobs:
         run: |
           node scripts/parse_smart_continent_powerbi_raw.mjs
 
+      - name: Probe municipality rent-burden source fields
+        run: |
+          rm -rf research/raw/smart-continent-rent-proxy
+          node scripts/extract_smart_continent_rent_proxy.mjs
+
       - name: Remove binary screenshots before commit
         run: |
           rm -f research/raw/smart-continent-powerbi/latest/*.png
@@ -55,6 +61,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add research/raw/smart-continent-powerbi/latest \
+            research/raw/smart-continent-rent-proxy \
             data/housing-sale-smart-continent-housing-2024-diagnostic.csv \
             research/smart-continent-housing-page4-qa-2024.json
           if git diff --cached --quiet; then
