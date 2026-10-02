@@ -37,7 +37,18 @@ class HousingReadinessTest(unittest.TestCase):
 
             data = json.loads(out.read_text(encoding="utf-8"))
             self.assertFalse(data["ready_for_publication"])
+            self.assertFalse(data["validated_publication_ready"])
             self.assertEqual(data["decision"], "DO_NOT_PUBLISH")
+            self.assertFalse(data["strict_v1_0"]["ready"])
+            self.assertEqual(data["strict_v1_0"]["decision"], "BLOCKED")
+            self.assertTrue(data["preliminary_v0_1"]["ready"])
+            self.assertEqual(
+                data["preliminary_v0_1"]["decision"],
+                "READY_FOR_FEATURE_PREVIEW",
+            )
+            self.assertTrue(data["preliminary_v0_1"]["feature_preview_allowed"])
+            self.assertFalse(data["preliminary_v0_1"]["main_live_allowed"])
+            self.assertEqual(data["preliminary_v0_1"]["county_count"], 10)
 
             status = {g["name"]: g["status"] for g in data["gates"]}
             self.assertEqual(status["income_10_counties"], "PASS")
