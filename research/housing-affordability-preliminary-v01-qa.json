@@ -1,8 +1,8 @@
 {
   "version": "v0.1-preliminary",
-  "publication_mode": "PRELIMINARY_WITH_EXPLICIT_UNCERTAINTY",
+  "publication_mode": "DIAGNOSTIC_ONLY_PENDING_COMPARABILITY",
   "validated_publication_ready": false,
-  "preliminary_publication_ready": true,
+  "preliminary_publication_ready": false,
   "display_order": "m2_per_year_after_rent_desc_for_visual_comparison_only",
   "target": "10 counties; working 25-30-year-old childless couple",
   "formula": "[(2 × monthly net income × 12) - annual rent] / apartment sale price proxy EUR/m²",
@@ -21,7 +21,7 @@
     "six_city_ratio_max": 1.997630772477034,
     "six_city_ratio_median": 1.7507390424600127,
     "leave_one_out_mape_pct": 6.028522569079421,
-    "warning": "Calibration is validated only in six city municipalities; transfer to rural municipalities/counties is unvalidated. This is not an official county apartment price.",
+    "warning": "DIAGNOSTIC ONLY. The source base is generic housing rather than apartment-specific and does not control construction-period/new-build/quality composition. Six-city calibration cannot make the county baskets comparable.",
     "sensitivity_interval_note": "Displayed m² sensitivity interval combines the observed min/max six-city calibration ratios with county rent-sample Q25/Q75. It is a scenario band, not a statistical confidence interval.",
     "calibration_rows": [
       {
@@ -88,6 +88,7 @@
     "status": "B-modelled"
   },
   "rules": [
+    "Cross-county result is blocked until the sale basket comparability gate passes; 50 m² standardisation alone is insufficient.",
     "Every v0.1 number is labelled preliminary and needs refinement.",
     "The m²/year metric must be described as a theoretical income-price index, not mortgage affordability.",
     "Row order is for visual comparison only; do not present it as a final county affordability ranking.",
@@ -101,7 +102,7 @@
       "county": "Tauragės",
       "model_net_25_30_eur_month": 1210.2,
       "pair_net_income_eur_month": 2420.4,
-      "rent_month_median_eur": 300.0,
+      "rent_month_median_eur": 300,
       "sample_n": 2,
       "quality": "insufficient",
       "generic_housing_2024_eur_m2_weighted": 265.42,
@@ -127,7 +128,7 @@
       "county": "Marijampolės",
       "model_net_25_30_eur_month": 1234.8,
       "pair_net_income_eur_month": 2469.6,
-      "rent_month_median_eur": 300.0,
+      "rent_month_median_eur": 300,
       "sample_n": 7,
       "quality": "C",
       "generic_housing_2024_eur_m2_weighted": 322.83,
@@ -153,7 +154,7 @@
       "county": "Utenos",
       "model_net_25_30_eur_month": 1277.4,
       "pair_net_income_eur_month": 2554.8,
-      "rent_month_median_eur": 255.0,
+      "rent_month_median_eur": 255,
       "sample_n": 6,
       "quality": "C",
       "generic_housing_2024_eur_m2_weighted": 358.64,
@@ -178,8 +179,8 @@
     {
       "county": "Panevėžio",
       "model_net_25_30_eur_month": 1268.5,
-      "pair_net_income_eur_month": 2537.0,
-      "rent_month_median_eur": 250.0,
+      "pair_net_income_eur_month": 2537,
+      "rent_month_median_eur": 250,
       "sample_n": 5,
       "quality": "C",
       "generic_housing_2024_eur_m2_weighted": 382.1,
@@ -205,7 +206,7 @@
       "county": "Telšių",
       "model_net_25_30_eur_month": 1292.2,
       "pair_net_income_eur_month": 2584.4,
-      "rent_month_median_eur": 275.0,
+      "rent_month_median_eur": 275,
       "sample_n": 8,
       "quality": "C",
       "generic_housing_2024_eur_m2_weighted": 397.36,
@@ -231,7 +232,7 @@
       "county": "Šiaulių",
       "model_net_25_30_eur_month": 1253.3,
       "pair_net_income_eur_month": 2506.6,
-      "rent_month_median_eur": 250.0,
+      "rent_month_median_eur": 250,
       "sample_n": 13,
       "quality": "B",
       "generic_housing_2024_eur_m2_weighted": 453.78,
@@ -257,7 +258,7 @@
       "county": "Alytaus",
       "model_net_25_30_eur_month": 1264.1,
       "pair_net_income_eur_month": 2528.2,
-      "rent_month_median_eur": 285.0,
+      "rent_month_median_eur": 285,
       "sample_n": 6,
       "quality": "C",
       "generic_housing_2024_eur_m2_weighted": 455.76,
@@ -283,7 +284,7 @@
       "county": "Kauno",
       "model_net_25_30_eur_month": 1480.8,
       "pair_net_income_eur_month": 2961.6,
-      "rent_month_median_eur": 350.0,
+      "rent_month_median_eur": 350,
       "sample_n": 13,
       "quality": "B",
       "generic_housing_2024_eur_m2_weighted": 822.82,
@@ -308,8 +309,8 @@
     {
       "county": "Klaipėdos",
       "model_net_25_30_eur_month": 1402.5,
-      "pair_net_income_eur_month": 2805.0,
-      "rent_month_median_eur": 345.0,
+      "pair_net_income_eur_month": 2805,
+      "rent_month_median_eur": 345,
       "sample_n": 6,
       "quality": "C",
       "generic_housing_2024_eur_m2_weighted": 955.64,
@@ -335,7 +336,7 @@
       "county": "Vilniaus",
       "model_net_25_30_eur_month": 1660.7,
       "pair_net_income_eur_month": 3321.4,
-      "rent_month_median_eur": 350.0,
+      "rent_month_median_eur": 350,
       "sample_n": 10,
       "quality": "B",
       "generic_housing_2024_eur_m2_weighted": 1667.72,
@@ -357,5 +358,12 @@
       "localities_n": 1,
       "localities": "Vilnius"
     }
-  ]
+  ],
+  "comparability_gate": {
+    "passed": false,
+    "verdict": "FAIL_CROSS_COUNTY_COMPARABILITY",
+    "issue": "50 m² standardises area only. The current sale proxy is generic housing, not apartment-specific, and does not control construction period, new-build share, condition or other quality composition across counties.",
+    "implication": "Do not interpret county differences as pure affordability/location differences and do not publish a county ranking or endpoint comparison.",
+    "required_next_layer": "2025 apartment-in-multifamily transaction data with a controlled area basket and explicit construction-period/market-segment stratification plus N."
+  }
 }
