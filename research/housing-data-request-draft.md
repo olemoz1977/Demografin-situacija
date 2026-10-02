@@ -1,49 +1,35 @@
-# Oficialaus duomenų eksporto užklausos juodraštis
+# VDA / data.gov.lt užklausos istorija — SUPERSEDED
 
-Tikslas: gauti pilną VDA / Registrų centro rinkinio „Nekilnojamojo turto registro butų pirkimų sandorių informacija gardelėse“ snapshot arba veikiančią pilno eksporto nuorodą.
+Statusas: **superseded / archyvinis dokumentas**.
 
-Rinkinys:
-https://data.gov.lt/datasets/2559/
+Šis failas iš pradžių buvo parengtas darant prielaidą, kad `_page.next` paskutinėje
+Spinta CSV eilutėje automatiškai reiškia nepilną eksportą. Vėlesnė techninė patikra šią
+prielaidą paneigė.
 
-Techninis simptomas:
-- oficialus duomenų puslapis rodo JSON, JSONL ir CSV pateiktis;
-- pilno JSON/JSONL ir CSV maršrutai šiuo metu grąžina HTTP 500 automatizuotose užklausose;
-- vartotojo naršyklėje gauti eksportai turi _page.next, todėl yra tik daliniai API puslapiai;
-- analizėje būtinas pilnas snapshot, nes dalinio puslapio negalima naudoti teritoriniams 10 apskričių agregatams.
+## Kas patikslinta
 
-## Laiškas VDA
+- Vartotojo gautame `ButuPirkimas` eksporte buvo 4630 duomenų eilučių.
+- Paskutinės eilutės `_page.next` cursor buvo patikrintas atskirai.
+- Užklausa nuo to cursor grąžino CSV antraštę ir **0 papildomų duomenų eilučių**.
+- Todėl `_page.next` buvimas paskutinėje eilutėje pats savaime nėra nepilnumo požymis.
 
-Kam: atverimas@stat.gov.lt
+Tikroji problema yra ne eksporto „nukirpimas“, o **rinkinio aprėptis**:
+2024 m. jame yra tik 516 sandorių / 474 objektai, 33 savivaldybės ir 8 apskritys,
+todėl jis yra siauresnis už visą butų sandorių rinką ir netinka pagrindiniam
+10 apskričių kainų sluoksniui.
 
-Tema: Pilnas ButuPirkimas rinkinio eksportas analizei
+Žr.:
+- `research/vda-butupirkimas-user-export-audit-2026-10-01.md`;
+- `research/housing-sale-coverage-contradiction-2024.md`;
+- `research/housing-sale-grid-audit-2024.md`.
 
-Sveiki,
+## Išorinės užklausos būklė
 
-rengiu viešą Lietuvos būsto įperkamumo analizę pagal apskritis ir norėčiau naudoti jūsų skelbiamą rinkinį „Nekilnojamojo turto registro butų pirkimų sandorių informacija gardelėse“:
-https://data.gov.lt/datasets/2559/
+VDA užklausa dėl pilno rinkinio eksporto buvo išsiųsta 2026-10-01 ir užregistruota
+kaip **ADS-1961**. Kol kas gautas tik registracijos patvirtinimas, ne turinio atsakymas.
 
-Man reikalingas pilnas ButuPirkimas duomenų snapshot, pageidautina CSV arba JSONL formatu. Šiuo metu per portalo pateikiamas nuorodas gaunamas tik dalinis puslapis su _page.next, o pilno eksporto endpointai mano automatizuotose užklausose grąžina HTTP 500.
+Registrų centrui atskirai išsiųsta užklausa dėl 2024 m. butų sandorių agregatų pagal
+savivaldybes. Atsakymo kol kas nėra.
 
-Ar galėtumėte nurodyti veikiančią pilno rinkinio atsisiuntimo nuorodą arba pateikti pilną naujausią eksportą?
-
-Analizėje duomenys būtų naudojami agreguotai — faktinei butų sandorių kainai EUR/m² apskaičiuoti pagal 10 Lietuvos apskričių. Šaltinis ir metodika būtų aiškiai nurodyti.
-
-Ačiū.
-
-## Laiškas VSSA
-
-Kam: atviriduomenys@vssa.lt
-
-Tema: data.gov.lt rinkinio 2559 pilno eksporto HTTP 500
-
-Sveiki,
-
-bandant atsisiųsti pilną duomenų rinkinio
-https://data.gov.lt/datasets/2559/
-eksportą, JSON/JSONL ir CSV pilno eksporto maršrutai grąžina HTTP 500.
-
-Problema kartojasi tiek per oficialias portalo pateiktis, tiek automatizuotose GitHub Actions užklausose. Dalinis ButuPirkimas eksportas veikia, tačiau jame lieka _page.next cursor, todėl tai nėra pilnas snapshot.
-
-Prašau patikrinti pilno eksporto veikimą arba nurodyti alternatyvų būdą parsisiųsti visą rinkinį.
-
-Ačiū.
+**Jokių naujų laiškų / užklausų / formų negalima siųsti nepateikus tikslaus teksto
+projekto savininkui ir negavus aiškaus patvirtinimo.**
