@@ -13,7 +13,7 @@
     {
       "name": "sale_actual_apartment_transactions",
       "status": "BLOCKED",
-      "detail": "sale status=blocked_external_source_waiting; required=WAITING_OFFICIAL_RC_2024_APARTMENT_TRANSACTION_LAYER",
+      "detail": "sale status=blocked_external_source_waiting; required=WAITING_OFFICIAL_RC_2025_APARTMENT_TRANSACTION_LAYER; 2024 fallback acceptable only if 2025 unavailable",
       "blocker": "Waiting for an official RC 2024 actual-apartment transaction layer covering 60 municipalities / 10 counties with a verified aggregation method."
     },
     {
@@ -46,7 +46,7 @@
     "city_search_index_rent": "RESEARCH_SAMPLE_ONLY"
   },
   "expected_next_inputs": {
-    "sale": "WAITING_OFFICIAL_RC_2024_APARTMENT_TRANSACTION_LAYER",
+    "sale": "WAITING_OFFICIAL_RC_2025_APARTMENT_TRANSACTION_LAYER; 2024 fallback acceptable only if 2025 unavailable",
     "rent": "WAITING_PUBLICATION_GRADE_10_COUNTY_PRIVATE_RENT_LAYER; public search-index route closed at 9/10 N>=5"
   },
   "source": "data/housing-affordability-input.json"
