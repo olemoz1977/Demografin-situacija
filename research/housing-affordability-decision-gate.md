@@ -159,3 +159,28 @@ Nuo šiol yra du lygiagretūs režimai.
 
 Machine-readable būsena: `research/housing-affordability-readiness.json`.
 Joje `ready_for_publication` / `validated_publication_ready` reiškia STRICT v1.0, o `preliminary_v0_1.ready` — tik feature/preview leidimą.
+
+
+## 2026-10-02 palyginamumo korekcija — v0.1 tarpapskritinis rezultatas atšauktas
+
+Vieša peržiūra atskleidė esminę problemą: 50 m² standartizuoja tik plotą, bet ne būsto
+kokybę / amžių / rinkos segmentą.
+
+Pakartotinis šaltinio auditas patvirtino, kad v0.1 Smart Continent pardavimo bazė yra
+`housing_all_types_dashboard_measure`, o ne apartment-specific sluoksnis. Ji taip pat
+nekontroliuoja statybos laikotarpio ar naujos statybos dalies.
+
+Sprendimas:
+- ankstesnis `preliminary_v0_1.ready=true` yra ATŠAUKTAS;
+- v0.1 skaičiai gali būti laikomi tik diagnostiniais;
+- tarpapskritinis 50 m² kainos / pajamų grafikas negali būti laikomas metodologiškai
+  tinkamu rezultatu, kol nepraeina comparable-sale-basket gate;
+- 45–55 m² paliekamas kaip pradinis ploto kandidatas;
+- statybos laikotarpis pasirenkamas tik gavus 2025 m. apskričių N ir kainos pjūvį pagal
+  statybos amžiaus grupes;
+- nauja statyba ir antrinė rinka negali būti tyliai sumaišytos.
+
+Kitas duomenų poreikis RC / kitam tiekėjui:
+2025 m. butai daugiabučiuose, apskritis, ploto intervalas, statybos laikotarpio grupė,
+sandorių N ir EUR/m² statistika. Joks išorinis prašymas nesiunčiamas be savininkui
+parodyto tikslaus teksto ir aiškaus „siųsk“.
