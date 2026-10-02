@@ -1,0 +1,47 @@
+{
+  "year": 2025,
+  "comparison_scope": "diagnostic cross-portal comparison only",
+  "important_non_equivalence": [
+    "Skelbiu value is the median of a partial historical search-index listing sample.",
+    "Aruodas annual benchmark is summarized from 12 portal monthly active-listing offer averages.",
+    "Different portals, sampling frames and aggregation statistics mean the percentage gaps are not calibration factors."
+  ],
+  "comparisons": [
+    {
+      "city": "Vilnius",
+      "skelbiu_search_index_listing_median_eur_month": 350.0,
+      "skelbiu_sample_n": 10,
+      "aruodas_mean_of_12_monthly_offer_averages_eur_month": 468.75,
+      "aruodas_median_of_12_monthly_offer_averages_eur_month": 467.0,
+      "difference_vs_aruodas_annual_mean_eur": -118.75,
+      "difference_vs_aruodas_annual_mean_pct": -25.33,
+      "difference_vs_aruodas_monthly_average_median_pct": -25.05
+    },
+    {
+      "city": "Kaunas",
+      "skelbiu_search_index_listing_median_eur_month": 350.0,
+      "skelbiu_sample_n": 13,
+      "aruodas_mean_of_12_monthly_offer_averages_eur_month": 383.75,
+      "aruodas_median_of_12_monthly_offer_averages_eur_month": 382.0,
+      "difference_vs_aruodas_annual_mean_eur": -33.75,
+      "difference_vs_aruodas_annual_mean_pct": -8.79,
+      "difference_vs_aruodas_monthly_average_median_pct": -8.38
+    },
+    {
+      "city": "Klaipėda",
+      "skelbiu_search_index_listing_median_eur_month": 345.0,
+      "skelbiu_sample_n": 6,
+      "aruodas_mean_of_12_monthly_offer_averages_eur_month": 371.67,
+      "aruodas_median_of_12_monthly_offer_averages_eur_month": 368.0,
+      "difference_vs_aruodas_annual_mean_eur": -26.67,
+      "difference_vs_aruodas_annual_mean_pct": -7.18,
+      "difference_vs_aruodas_monthly_average_median_pct": -6.25
+    }
+  ],
+  "interpretation": {
+    "vilnius": "Large negative gap is a strong warning that the current Skelbiu search-index sample is not representative enough to estimate the full Vilnius market.",
+    "kaunas_klaipeda": "Smaller gaps are encouraging as cross-checks but still do not establish completeness or representativeness.",
+    "method_rule": "Do not rescale county values using these gaps and do not mix Aruodas city values into county estimates."
+  },
+  "verdict": "SUPPORTS_SEARCH_INDEX_AS_QA_ONLY_NOT_PUBLICATION_LAYER"
+}
