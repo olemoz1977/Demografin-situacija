@@ -28,7 +28,7 @@ Formula:
 `m²/year = [(2 × monthly net income × 12) – annual rent] / apartment sale price EUR/m²`
 
 Interpretation:
-relative affordability index, NOT actual annual savings.
+theoretical income–price comparison index, NOT bank mortgage affordability and NOT actual annual savings. It excludes other living costs, down payment, interest, loan term, DSTI/LTV constraints and household-specific obligations. Row order in v0.1 is display-only and must not be presented as a final county ranking.
 
 ## Current publication status
 
@@ -52,6 +52,7 @@ Readiness generator:
 - `scripts/housing_affordability_readiness.py`
 - tests: `tests/test_housing_affordability_readiness.py`
 - workflow: `.github/workflows/housing-publication-readiness.yml`
+- feature render QA: `.github/workflows/housing-preview-visual-qa.yml` (desktop 1440 px + mobile 390 px; screenshots retained as CI artifact)
 
 ## Income layer — PASS / B-modelled
 
@@ -361,6 +362,7 @@ Outputs:
 - m²/year without rent;
 - rent burden % of pair net income;
 - pair monthly net-income months needed per 1 m²;
+- 50 m² sale-price proxy / pair annual net-income years;
 - source/sample counts;
 - income/sale/rent/overall quality.
 
