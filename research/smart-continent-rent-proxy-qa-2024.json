@@ -178,10 +178,10 @@
       "city": "Telšiai",
       "municipality": "Telšių r. sav.",
       "smart_continent_2024_implied_rent_eur_month": 197.13999999999996,
-      "skelbiu_2025_one_room_sample_median_eur": 250,
-      "skelbiu_sample_n": 3,
-      "difference_eur": -52.86000000000004,
-      "difference_pct": -21.144000000000016,
+      "skelbiu_2025_one_room_sample_median_eur": 275,
+      "skelbiu_sample_n": 4,
+      "difference_eur": -77.86000000000004,
+      "difference_pct": -28.31272727272729,
       "comparison_limit": "different year and housing basket; diagnostic only"
     },
     {
