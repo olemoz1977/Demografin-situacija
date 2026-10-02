@@ -19,7 +19,7 @@
     {
       "name": "rent_private_1room_10_counties",
       "status": "BLOCKED",
-      "detail": "rent status=blocked_source_validation; main_layer_status=WAITING_10_COUNTY_PRIVATE_RENT_SOURCE; required=WAITING_10_COUNTY_PRIVATE_LONG_TERM_1ROOM_RENT_LAYER",
+      "detail": "rent status=blocked_source_validation; main_layer_status=WAITING_10_COUNTY_PRIVATE_RENT_SOURCE; required=WAITING_PUBLICATION_GRADE_10_COUNTY_PRIVATE_RENT_LAYER; public search-index route closed at 9/10 N>=5",
       "blocker": "Waiting for a 2025 private long-term 1-room asking-rent layer covering all 10 counties with an accepted sample/methodology gate."
     },
     {
@@ -47,7 +47,7 @@
   },
   "expected_next_inputs": {
     "sale": "WAITING_OFFICIAL_RC_2024_APARTMENT_TRANSACTION_LAYER",
-    "rent": "WAITING_10_COUNTY_PRIVATE_LONG_TERM_1ROOM_RENT_LAYER"
+    "rent": "WAITING_PUBLICATION_GRADE_10_COUNTY_PRIVATE_RENT_LAYER; public search-index route closed at 9/10 N>=5"
   },
   "source": "data/housing-affordability-input.json"
 }
