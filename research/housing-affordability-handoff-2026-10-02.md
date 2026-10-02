@@ -1,214 +1,305 @@
 # Housing affordability handoff
 
 Date: 2026-10-02
-Branch: feature/housing-affordability
-Main branch: DO NOT MODIFY until dataset/method is complete and explicitly approved.
+Branch: `feature/housing-affordability`
+Main/live: **DO NOT MODIFY** until publication-readiness gates pass.
 
 ## Goal
 
-Add to the public demographic-analysis site:
+Public-analysis target:
 **„Jaunos poros būsto įperkamumas pagal apskritis“**
 
-Core question:
-**„Kiek būsto m² per metus atitinka dviejų jaunų dirbančių žmonių pajamos po nuomos?“**
+Population:
+- working couple;
+- age 25–30;
+- no children.
+
+Geography:
+- all 10 Lithuanian counties.
+
+Strategic choice:
+- **A — keep all 10 counties and high quality threshold.**
+- Do not substitute county centres for counties.
+- Do not publish incomplete / mixed-method ranking.
 
 Formula:
-m²/year = [(2 × monthly net income × 12) – annual rent] / dwelling sale price EUR/m²
+
+`m²/year = [(2 × monthly net income × 12) – annual rent] / apartment sale price EUR/m²`
 
 Interpretation:
-relative housing affordability index, NOT actual annual savings.
-Do not imply that food, transport, utilities, credit terms, taxes, etc. are included.
+relative affordability index, NOT actual annual savings.
 
-Target age: 25–30.
-Geography: all 10 Lithuanian counties.
-Strategic choice already made: **A – retain all 10 counties AND maintain high quality threshold. Do not publish incomplete / mixed-quality ranking.**
+## Current publication status
 
-## Current status
+Machine-readable gate:
+`research/housing-affordability-readiness.json`
 
-### Income layer
+Current decision:
+- `ready_for_publication = false`
+- `DO_NOT_PUBLISH`
 
-Built modeled 2025-11 young-worker county income layer from Sodra.
+PASS:
+- income model 10/10 counties;
+- explicit no-county-centre-substitution rule.
 
-National age 25–30:
-- gross: 2516 EUR/month
-- net: 1535 EUR/month
+BLOCKED:
+1. official RC 2024 actual-apartment transaction layer;
+2. 2025 private long-term 1-room asking-rent layer for 10 counties.
 
-County modeled young net income EUR/month:
-- Vilnius 1660.7
-- Kaunas 1480.8
-- Klaipėda 1402.5
-- Telšiai 1292.2
-- Utena 1277.4
-- Panevėžys 1268.5
-- Alytus 1264.1
-- Šiauliai 1253.3
-- Marijampolė 1234.8
-- Tauragė 1210.2
+Readiness generator:
+- `scripts/housing_affordability_readiness.py`
+- tests: `tests/test_housing_affordability_readiness.py`
+- workflow: `.github/workflows/housing-publication-readiness.yml`
 
-Quality: B-modelled.
-Do not call it official 25–30 county net income.
-Do not fake a 2025 median if unavailable.
+## Income layer — PASS / B-modelled
 
-Relevant repo files:
-- data/sodra-municipality-income-2025-11.csv
-- data/housing-income-county-model-2025-11.csv
-- data/housing-income-municipality-model-2025-11.csv
-- research/housing-income-model-2025-11.md
+National Sodra 2025-11 age 25–30 full-month workers:
+- gross 2516 EUR/month;
+- net 1535 EUR/month.
 
-### Sale-price layer
+County model net EUR/month/person:
+- Vilniaus 1660.7
+- Kauno 1480.8
+- Klaipėdos 1402.5
+- Telšių 1292.2
+- Utenos 1277.4
+- Panevėžio 1268.5
+- Alytaus 1264.1
+- Šiaulių 1253.3
+- Marijampolės 1234.8
+- Tauragės 1210.2
 
-Primary attempted source:
-VDA / Registrų centras dataset 2559:
-https://data.gov.lt/datasets/2559/
+File:
+- `data/housing-income-county-model-2025-11.csv`
 
-User-provided ButuPirkimas snapshot:
-- 4630 rows
-- latest year = 2024
-- continuation via page("cursor") returned header-only CSV
-- therefore snapshot is technically complete for that endpoint
-
-Important correction:
-Presence of _page.next on the last non-empty Spinta CSV row does NOT prove another non-empty page exists.
-Pipeline/fetcher were corrected accordingly.
-
-But the dataset is NOT representative enough for our 10-county market layer:
-- 2024: 146 grid rows
-- 516 transactions
-- 474 objects
-- 33 municipalities
-- only 8 counties
-- no 2024 rows for Telšiai and Tauragė counties
-
-Independent proof that sales DID occur:
-- Tauragė district municipality: 186 apartment sales in 2024
-- Telšiai district municipality: 222 apartment sales in 2024
-- national RC benchmark: 27,330 apartments sold in Lithuania in 2024
-
-Therefore dataset 2559 is a restricted subset, not a full 2024 apartment-market layer.
-Keep it for QA/anomaly work only.
-
-Relevant repo files:
-- research/vda-butupirkimas-user-export-audit-2026-10-01.md
-- research/housing-sale-grid-audit-2024.md
-- research/housing-sale-coverage-contradiction-2024.md
-- research/housing-sale-robustness-2022-2024.md
-- scripts/housing_affordability_pipeline.py
-- scripts/fetch_spinta_all.py
-- scripts/build_housing_sale_layer.py
-
-### Better sale-price candidate discovered
-
-Highest-priority FREE candidate:
-Aplinkos ministerija / Smart Continent
-**Savivaldybių būsto prieinamumo indeksas**
-
-Official page:
-https://am.lrv.lt/lt/veiklos-sritys-1/busto-prieinamumas/savivaldybiu-busto-prieinamumo-indeksas/
-
-Assessment page:
-https://am.lrv.lt/lt/veiklos-sritys-1/busto-prieinamumas/busto-prieinamumo-lietuvoje-didinimo-galimybiu-vertinimas/
-
-Public presentation:
-https://lntpa.lt/wp-content/uploads/2026/04/Tarpiniu-vertinimo-rezultatu-pristatymas.pdf
-
-Known:
-- dashboard uses 2022–2024 data
-- municipality filters exist
-- page 4 reportedly contains source/input data
-- presentation includes municipality maps of average apartment price EUR/m²
-- 2024 Lithuania reference average apartment price = 1669 EUR/m²
-- municipality housing-sale counts are also presented
-
-Still MUST verify before use:
-1. apartment price is actual/clearly defined transaction price, not asking price
-2. same method for all 60 municipalities
-3. exact numeric values can be extracted for all 60 municipalities
-4. aggregation weight is known or defensible
-5. reconstructed Lithuania aggregate approximately matches 1669 EUR/m²
-
-Relevant repo files:
-- research/smart-continent-housing-source-audit.md
-- research/housing-sale-alternative-sources.md
-
-### Registrų centras fallback
-
-A query was sent from user Gmail to:
-rinkos.duomenys@registrucentras.lt
-
-Subject:
-2024 m. butų sandorių duomenys pagal Lietuvos savivaldybes
-
-Asked whether 2024 apartment-sale data for all 60 municipalities can be supplied, price, XLSX/CSV, free/open alternative, and publication restrictions.
-
-This is fallback if the AM / Smart Continent public layer is insufficient.
-
-Also sent earlier to:
-- atverimas@stat.gov.lt
-- CC atviriduomenys@vssa.lt
-
-VDA ticket:
-ADS-1961
-
-Do not wait idly for replies; continue researching in parallel.
-
-### Rent layer
-
-Official VDA rent series covers only 5 large cities, insufficient for 10 counties.
-
-Historical Skelbiu.lt research sample exists:
-- Marijampolė N=7 median 300 EUR
-- Alytus N=6 median 285 EUR
-- Utena N=4 median 225 EUR
-- Tauragė N=2 median 300 EUR
-- Telšiai N=3 median 250 EUR
-
-These are CITY offer samples, NOT county rents.
 Quality:
-- B market median if N>=10
-- C if 5<=N<10
-- N<5 insufficient
+- B-modelled;
+- do NOT call it direct official age×county measurement.
 
-Relevant files:
-- data/housing-rent-city-sample-2025.csv
-- data/housing-rent-city-sample-2025-summary.csv
-- research/housing-rent-source-audit.md
-- scripts/rent_sample_aggregate.py
+## Sale-price layer — BLOCKED EXTERNAL SOURCE
 
-Do not use social/municipal housing rents as private-market substitutes.
+### VDA/RC dataset 2559 — QA ONLY
 
-## Immediate next actions
+2024 full endpoint snapshot:
+- 516 transactions;
+- 474 objects;
+- 33 municipalities;
+- 8 counties;
+- Telšių and Tauragės counties missing.
 
-Continue autonomously until a genuine strategic decision is needed.
+Independent controls show this is only a narrow subset of the full apartment market.
 
-Priority 1:
-Find/export the AM / Smart Continent dashboard page-4 source data or final report appendices.
-Goal: obtain exact 2024 apartment-price EUR/m² values for all 60 municipalities plus sale-count or another defensible aggregation weight.
+Therefore:
+- `ButuPirkimas` 1×1 km grid = QA / anomaly / JOIN diagnostics only;
+- NEVER use it as the main 10-county sale-price layer.
 
-Priority 2:
-Audit the methodology behind those prices.
-Do not accept map colors/ranges as exact values.
+Legacy:
+- `scripts/housing_affordability_pipeline.py`
+- refuses to run unless `--allow-diagnostic-grid`.
 
-Priority 3:
-If PASS, build:
-2024 municipality sale-price layer -> county aggregation -> validation against 1669 EUR/m² national control.
+### Smart Continent — QA ONLY
 
-Priority 4:
-Continue building the rent layer to an acceptable 10-county quality threshold.
-Do not substitute county-centre rent directly for county average unless explicitly labeled/modelled.
+Public Power BI page 4:
+- 60 municipalities;
+- 2024 generic housing transactions = 37,009;
+- generic housing average = 557.007 EUR/m²;
+- national value equals unweighted mean of 60 municipality measures;
+- semantic model has no municipal apartment-only price series.
 
-Priority 5:
-Only after sale + rent + income layers pass QA, calculate the young-couple affordability index and integrate it into the site.
+Verdict:
+**FAIL main apartment sale layer.**
+
+Files:
+- `research/smart-continent-housing-source-audit.md`
+- `research/smart-continent-housing-page4-qa-2024.json`
+- `data/housing-sale-smart-continent-housing-2024-diagnostic.csv`
+
+### Main sale target — Registrų centras
+
+Needed:
+- 2024 actual apartment transactions;
+- all 60 municipalities or direct 10-county aggregate;
+- actual EUR/m²;
+- transaction count;
+- valid price-observation count;
+- documented apartment-selection / multi-object rules;
+- publication rights.
+
+RC request sent 2026-10-01:
+- `rinkos.duomenys@registrucentras.lt`
+- awaiting reply.
+
+VDA request:
+- ADS-1961 registered;
+- awaiting substantive reply.
+
+No further email/request/form may be sent without first showing exact text to the user
+and receiving explicit approval.
+
+### Free public path audit
+
+Verdict:
+**FREE PUBLIC PATH: NOT FOUND.**
+
+RC public contract:
+- search can use municipality/date/unit-price/etc.;
+- paid output gives up to 25 or 50 newest transactions;
+- complex individual query >25 also returns newest transactions.
+
+RC broker:
+- ActionType 197 — transaction search;
+- ActionType 198 — full transaction info by sand_id;
+- not an open full-market export.
+
+A 2026-03-31 open-data demand for actual Vilnius apartment transaction prices remains
+registered on data.gov.lt.
+
+Detailed audit:
+- `research/housing-sale-alternative-sources.md`
+
+### RC validator — PASS
+
+- `scripts/build_housing_sale_county_from_rc.py`
+- `tests/test_build_housing_sale_county_from_rc.py`
+- workflow: `.github/workflows/test-rc-apartment-sale-builder.yml`
+
+Rules:
+- exactly 60 municipalities;
+- exactly 10 counties;
+- positive actual apartment EUR/m²;
+- valid-price N known and <= transactions;
+- county aggregation weighted by valid-price observation count;
+- output always candidate until manual methodology gate passes.
+
+## Rent layer — BLOCKED EXTERNAL SOURCE
+
+Target:
+- 2025;
+- private long-term;
+- 1-room apartment;
+- asking-offer price;
+- all 10 counties;
+- direct county median preferred, calculated from listing-level data.
+
+### Official VDA benchmark — PASS / VALIDATION ONLY
+
+Indicator S7R281, 2025:
+- Vilnius 155.09 EUR/m²/year
+- Kaunas 124.35
+- Klaipėda 113.46
+- Šiauliai 95.15
+- Panevėžys 91.40
+
+Source:
+official VDA ArcGIS FeatureServer.
+
+Files:
+- `research/raw/vda-rent-big-cities/vda-rent-big-cities-2025.csv`
+- `research/raw/vda-rent-big-cities/vda-rent-big-cities-2025-qa.json`
+
+Role:
+- official validation only;
+- 5 cities != 10 counties;
+- not 1-room-specific.
+
+### Smart Continent BI_3 — QA ONLY
+
+60-municipality BI_3 can be reconstructed as `BI_3 × net VDU`, but:
+- municipal estimation method / N / uncertainty unknown;
+- multiple implausibly low values;
+- dashboard Lithuania value is simple mean of 60 municipality BI_3 values.
+
+Verdict:
+**FAIL main rent layer.**
+
+### Historical Skelbiu city sample — RESEARCH ONLY
+
+Current accepted 2025 city sample:
+- Marijampolė N=7, median 300 — C
+- Alytus N=6, median 285 — C
+- Utena N=4, median 225 — insufficient
+- Tauragė N=2, median 300 — insufficient
+- Telšiai N=4, median 275 — insufficient
+
+Latest added Telšiai observation:
+- 2025-08-01;
+- 37 m²;
+- 360 EUR/month;
+- 1 room.
+
+Files:
+- `data/housing-rent-city-sample-2025.csv`
+- `data/housing-rent-city-sample-2025-summary.csv`
+- `research/housing-rent-search-index-audit-2025-10-02.md`
+
+Reproducible summary:
+- `scripts/summarize_housing_rent_city_sample.py`
+- tests PASS;
+- workflow `.github/workflows/test-rent-city-sample.yml`.
+
+Do NOT:
+- lower N threshold;
+- mix current 2026 ads into 2025 sample;
+- average city values and call them county values;
+- mix isolated different-portal listings without calibration.
+
+### Rent provider route
+
+Aruodas/Skelbiu aggregate-data request was already sent 2026-10-02 before the new
+communication rule. Awaiting reply.
+
+Future communication rule:
+**show every outgoing email/request/form to the user first; send only after explicit approval.**
+
+Provider contract:
+- `research/housing-rent-provider-contract.md`
+
+Validator:
+- `scripts/validate_housing_rent_provider.py`
+- tests PASS;
+- workflow `.github/workflows/test-rent-provider-validator.yml`.
+
+Hard gate:
+- 10/10 counties;
+- apartment / 1 room / long term / asking offer;
+- N>=5 every county;
+- deduplication and publication rights confirmed.
+
+## Final calculator architecture
+
+Strict calculator:
+- `scripts/build_housing_affordability_county.py`
+- tests: `tests/test_build_housing_affordability_county.py`
+- workflow: `.github/workflows/test-housing-affordability-calculator.yml`
+
+Default:
+- refuses candidate sale/rent layers;
+- requires `layer_status=publication_approved`.
+
+QA only:
+- `--allow-candidate`
+- produces explicit `candidate_only` quality and `publication_ready=false`.
+
+Outputs:
+- m²/year after rent;
+- m²/year without rent;
+- rent burden % of pair net income;
+- pair monthly net-income months needed per 1 m²;
+- source/sample counts;
+- income/sale/rent/overall quality.
+
+Because income is B-modelled, final composite cannot be A even if sale is official A.
 
 ## Non-negotiable rules
 
-- Lithuanian language.
-- Work autonomously; do not stop for small implementation choices.
-- Do not modify main/live site yet.
-- Work on feature/housing-affordability.
-- Do not publish a 10-county ranking until all 10 have defensible inputs.
-- Do not mix asking prices and transaction prices as if equivalent.
-- Do not call modelled/market values “official statistics”.
-- If a source is incomplete or method unclear, say so.
-- Preserve the user’s high-quality A decision.
+- Lithuanian.
+- Work autonomously; no tactical questions unless strategy/cost/legal approval is needed.
+- Main/live untouched until readiness=READY.
+- 10/10 counties required.
+- Official facts separated from modelled / market measures.
+- Actual transaction sale prices never mixed with asking sale prices as equivalent.
+- City != county.
 - No fake precision.
-- When a real strategic choice is required, stop and ask the user.
+- If source method is unclear, keep it candidate/QA only.
+- No paid purchase / contract without user approval.
+- **Every outgoing email, external request or form text must be shown to the user before sending.**
