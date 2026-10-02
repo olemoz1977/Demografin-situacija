@@ -71,6 +71,8 @@ def main() -> None:
 
     sale_state = acquisition.get("sale_layer", {})
     sale_required = required.get("sale_price_eur_m2")
+    sale_preferred_year = sale_state.get("preferred_year", 2025)
+    sale_fallback_year = sale_state.get("fallback_year")
     sale_pass = (
         sale_required is None
         and sale_state.get("status") in {"ready", "publication_ready", "source_locked"}
@@ -108,8 +110,13 @@ def main() -> None:
                 f"required={sale_required}"
             ),
             (
-                "Waiting for an official RC 2024 actual-apartment transaction layer "
-                "covering 60 municipalities / 10 counties with a verified aggregation method."
+                f"Waiting for an official RC/VDA {sale_preferred_year} actual-apartment "
+                "transaction layer covering 60 municipalities / 10 counties with a "
+                "verified aggregation method."
+                + (
+                    f" {sale_fallback_year} is accepted only as an explicitly labelled fallback."
+                    if sale_fallback_year else ""
+                )
             ),
         ),
         gate(
