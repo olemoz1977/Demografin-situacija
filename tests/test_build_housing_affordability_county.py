@@ -34,7 +34,7 @@ class HousingAffordabilityCountyTest(unittest.TestCase):
             rows.append(
                 {
                     "apskritis": c,
-                    "year": 2024,
+                    "year": 2025,
                     "municipalities_n": 6,
                     "apartment_transaction_count": 1000 + i,
                     "valid_price_observation_count": 900 + i,
@@ -139,6 +139,20 @@ class HousingAffordabilityCountyTest(unittest.TestCase):
             df = pd.read_csv(out).set_index("county")
             self.assertEqual(df.loc["Telšių", "overall_quality"], "C")
             self.assertEqual(df.loc["Kauno", "overall_quality"], "B")
+
+    def test_rejects_period_mismatch_even_in_candidate_mode(self):
+        with tempfile.TemporaryDirectory() as td:
+            td = Path(td)
+            sale, rent, out = td / "sale.csv", td / "rent.csv", td / "out.csv"
+            self.make_sale(sale, "candidate_not_publication_approved")
+            self.make_rent(rent, "candidate_not_publication_approved")
+            sdf = pd.read_csv(sale)
+            sdf["year"] = 2024
+            sdf.to_csv(sale, index=False)
+
+            proc = self.run_builder(sale, rent, out, allow=True)
+            self.assertNotEqual(proc.returncode, 0)
+            self.assertIn("period-aligned to 2025", proc.stderr)
 
 
 if __name__ == "__main__":
