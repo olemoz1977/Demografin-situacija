@@ -2,6 +2,36 @@
 
 Data: 2026-10-02
 
+## CURRENT 2025 period-aligned priority — supersedes older 2024 target wording
+
+The current publication target is **2025 apartment actual-transaction prices** for all
+60 municipalities / 10 counties. 2024 remains historical QA and an explicitly labelled
+fallback only.
+
+Current priority:
+1. official RC/VDA 2025 municipality aggregate or anonymized layer;
+2. official VDA S7R280 2025 benchmark for six city municipalities + Lithuania as QA;
+3. 2024 RC layer only if 2025 is unavailable and the period mismatch is explicitly accepted
+   as fallback;
+4. Smart Continent, dataset 2559, mass valuation and REGIA remain QA / validation only.
+
+Official VDA S7R280 2025 control:
+- Lithuania 1880.13 EUR/m²;
+- Alytus 1038.74;
+- Kaunas 1987.66;
+- Klaipėda 1740.84;
+- Panevėžys 1170.36;
+- Šiauliai 1262.33;
+- Vilnius 2846.01.
+
+The RC 2025 national apartment-sales control is approximately 37.1k transactions.
+
+Active acceptance plan:
+`research/rc-rsi-apartment-sale-plan-2025.md`.
+
+The 2026-10-01 RC email requested 2024 data and remains unanswered. A 2025 follow-up
+has not been sent; any follow-up must first be shown to the owner and explicitly approved.
+
 ## Prioritetų tvarka po 2026-10-02 audito
 
 1. **Registrų centro agreguotas / individualiai parengtas 2024 m. butų sandorių sluoksnis** –
@@ -300,12 +330,13 @@ Visi šie šaltiniai gali padėti QA, bet nepakeičia 2024 m. faktinių butų sa
 
 ### Dabartinis verdiktas
 
-**FREE PUBLIC PATH: NOT FOUND.**
+**FREE PUBLIC 10-COUNTY ACTUAL-TRANSACTION PATH: NOT FOUND.**
 
 Pagrindinis pardavimo blokatorius lieka išorinis:
-1. laukiame RC atsakymo į 2026-10-01 užklausą dėl agreguoto / nuasmeninto 60 savivaldybių failo;
-2. laukiame VDA ADS-1961 atsakymo;
-3. jei RC pasiūlys tik mokamą RSi / individualią sutartį, prieš bet kokį pirkimą reikia
+1. prioritetas — 2025 m. oficialus RC/VDA 60 savivaldybių agregatas; 2024 m. tik fallback;
+2. laukiame RC atsakymo į 2026-10-01 užklausą, nors ji prašė 2024 m.;
+3. laukiame VDA ADS-1961 atsakymo; 2025 m. patikslinimo tekstas parengtas, bet neišsiųstas;
+4. jei RC pasiūlys tik mokamą RSi / individualią sutartį, prieš bet kokį pirkimą reikia
    atskiro savininko sprendimo dėl kainos, naudojimo ir publikavimo teisių.
 
 Iki tol `main` nekeičiamas.
