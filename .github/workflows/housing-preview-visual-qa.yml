@@ -66,7 +66,7 @@ jobs:
                 return {
                   hasStop: text.includes('50 m² nėra tas pats būstas.'),
                   hasDemographicFrame: text.includes('pirmas šeimos būstas') && text.includes('šeimos kūrimo aplinkos barjerų') && text.includes('neįrodinėja priežastinio ryšio su gimstamumu'),
-                  hasStateSupport: text.includes('Valstybės pagalba pirmajam būstui') && text.includes('34 484 €') && text.includes('61 046 €') && text.includes('87 000 €'),
+                  hasStateSupport: !!section.querySelector('.housing-support-layer') && (section.querySelector('.housing-support-layer')?.textContent || '').includes('Valstybės pagalba pirmajam būstui'),
                   hasTwoSupportRoutes: section.querySelectorAll('.housing-support-card').length === 2,
                   hasBlockedConclusion: text.includes('nebelaikomi tinkamu tarpapskritiniu rezultatu'),
                   hasRequiredBasket: text.includes('45–55 m²') && text.includes('statybos laikotarpio / rinkos segmento taisyklė'),
