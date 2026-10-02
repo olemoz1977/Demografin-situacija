@@ -3,7 +3,30 @@
   "target": "10 Lithuania counties; working 25–30-year-old couple; no children",
   "formula": "m²/year = [(2 × monthly net income × 12) – annual rent] / apartment sale price EUR/m²",
   "ready_for_publication": false,
+  "validated_publication_ready": false,
   "decision": "DO_NOT_PUBLISH",
+  "strict_v1_0": {
+    "ready": false,
+    "decision": "BLOCKED",
+    "main_live_data_ready": false,
+    "main_live_publication_requires_owner_approval": true,
+    "configured_rule": "Final v1.0 remains blocked until the official/validated 2025 apartment-sale layer and publication-grade 2025 1-room rent layer cover all 10 counties."
+  },
+  "preliminary_v0_1": {
+    "ready": true,
+    "decision": "READY_FOR_FEATURE_PREVIEW",
+    "feature_preview_allowed": true,
+    "main_live_allowed": false,
+    "required_labels": [
+      "OFFICIAL",
+      "MODELLED",
+      "PRELIMINARY",
+      "TO_BE_REFINED"
+    ],
+    "configured_rule": "Show the best currently supportable estimate, but mark every non-final layer and every composite result as preliminary/to be refined. No proxy may be described as official county apartment price or complete county rent market.",
+    "qa_source": "research/housing-affordability-preliminary-v01-qa.json",
+    "county_count": 10
+  },
   "gates": [
     {
       "name": "income_10_counties",
