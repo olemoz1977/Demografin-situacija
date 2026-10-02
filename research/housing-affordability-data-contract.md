@@ -1,65 +1,163 @@
 # Housing affordability research data contract
 
-## Required source files
+Statusas: 2026-10-02 / feature/housing-affordability / nepublikuota.
 
-### 1. vda_butu_pirkimas.csv
-Source: VDA / Registrų centras apartment purchase transactions in 1 km cells.
-Dataset: https://data.gov.lt/datasets/2559/
-Required fields:
-- sq_grid_id
-- data_nuo
-- objektu_sk
-- vid_buto_verte
-- buto_verte_p50
+## Pagrindinė taisyklė
 
-### 2. vda_grid1kmsq.csv
-Source: VDA 1 km grid lookup.
-Required fields:
-- _id
-- sav_pav
-- sav_kodas
+Galutinis 10 apskričių rodiklis gali būti skaičiuojamas tik iš sluoksnių, kurie
+praeina atskirus pajamų, pardavimo ir nuomos kokybės vartus.
 
-### 3. municipality_county.csv
-Authoritative municipality-to-county lookup.
-Required fields:
-- sav_kodas
-- sav_pav
-- apskritis
+QA / diagnostikos šaltinis nėra automatiškai tinkamas publikavimo sluoksniui.
 
-### 4. sodra_income_municipality.csv
-Derived research table.
-Required fields:
-- sav_kodas
-- apskritis
-- income_net_model_25_30
-- weight_young_workers
+## 1. Pajamų sluoksnis
 
-The modelled 25–30 value must preserve the source value and the correction formula in provenance fields.
+Failas:
+- `data/housing-income-county-model-2025-11.csv`
 
-### 5. rent_1room_municipality.csv
-Research sample of 1-room long-term rental offers.
-Required fields:
-- sav_kodas
-- apskritis
-- rent_1room_month_median
-- rent_sample_n
-- weight_young_workers
+Šaltinis:
+- Sodra 2025-11 savivaldybių pajamos;
+- nacionalinis 25–30 m. visą mėnesį dirbusių orientyras.
 
-Recommended provenance fields:
-- source
-- collected_at
-- window_days
-- dedup_method
-- min_price
-- max_price
-- median_eur_m2
+Statusas:
+- B-modelled;
+- 10/10 apskričių užpildyta;
+- modeliuota, ne tiesioginis amžius × apskritis matavimas.
 
-## QA gates
-- exactly 10 counties in final output;
-- no unmapped transaction cells;
-- report transaction object count by county;
-- rent N < 5 excluded from direct municipality estimate;
-- report rent N and municipality coverage per county;
-- compare transaction weighted mean vs weighted p50 proxy;
-- no publication if any county lacks sale price, income or rent estimate;
-- main branch remains unchanged until QA passes.
+## 2. Pardavimo kainos sluoksnis — PAGRINDINIS
+
+Tikslinis šaltinis:
+- Registrų centras;
+- 2024 m. faktiniai butų pirkimo-pardavimo sandoriai;
+- 60 savivaldybių arba tiesioginis 10 apskričių agregatas;
+- faktinė sandorio kaina EUR/m²;
+- žinomas kainos stebinių N ir agregavimo metodas.
+
+Minimalus savivaldybių agregato kontraktas:
+- municipality;
+- year;
+- apartment_transaction_count;
+- valid_price_observation_count;
+- avg_apartment_transaction_eur_m2.
+
+Validatorius:
+- `scripts/build_housing_sale_county_from_rc.py`
+
+QA:
+- 60/60 savivaldybių;
+- 10/10 apskričių;
+- `valid_price_observation_count <= apartment_transaction_count`;
+- apskrities kaina sveriama tik `valid_price_observation_count`, jei RC patvirtina,
+  kad savivaldybės vidurkis apskaičiuotas iš tų pačių stebinių;
+- nacionaliniai 27 330 sandorių ir 1 669 EUR/m² dydžiai naudojami tik kaip kontrolė,
+  ne kaip automatinė tiesa.
+
+Publikavimo metodikos gate:
+- buto atrankos apibrėžimas;
+- kelių objektų / dalinio įsigijimo traktavimas;
+- EUR/m² skaičiavimo taisyklė;
+- kainos stebinių N;
+- viešo naudojimo / publikavimo sąlygos.
+
+## 3. Pardavimo gardelių sluoksnis — QA TIK
+
+VDA / RC 1×1 km `ButuPirkimas` rinkinys (dataset 2559):
+- techninis snapshot pilnas;
+- 2024 m. turi tik 516 sandorių, 474 objektus, 33 savivaldybes ir 8 apskritis;
+- neatitinka visos 2024 m. butų rinkos aprėpties.
+
+Todėl:
+- NEGALIMA naudoti kaip pagrindinio 10 apskričių pardavimo kainos sluoksnio;
+- galima naudoti tik gardelių, outlier, JOIN ir šaltinių kryžminei QA diagnostikai.
+
+Legacy pipeline:
+- `scripts/housing_affordability_pipeline.py`
+- paleidžiamas tik su `--allow-diagnostic-grid`;
+- jo rezultatai nėra publication-ready.
+
+## 4. Nuomos sluoksnis — PAGRINDINIS
+
+Tikslas:
+- 2025 m.;
+- privati ilgalaikė 1 kambario butų nuoma;
+- pasiūlos, ne faktinių sutarčių kaina;
+- visos 10 apskričių;
+- vienodas krepšelis ir laikotarpis.
+
+Pageidaujamas tiesioginio apskrities agregato kontraktas:
+- county;
+- year;
+- property_type = apartment;
+- rooms = 1;
+- rental_term = long_term;
+- price_basis = asking_offer;
+- unique_listing_count;
+- median_asking_rent_eur_month.
+
+Validatorius:
+- `scripts/validate_housing_rent_provider.py`
+
+Kokybės klasė:
+- N >= 10 → B;
+- 5 <= N < 10 → C;
+- N < 5 → insufficient ir galutiniam teritorijos rodikliui nenaudoti.
+
+Metodikos gate:
+- deduplikavimas;
+- vienodas 10 apskričių langas;
+- trumpalaikės / kambario nuomos atmetimas;
+- mediana iš listing-level mėnesinių kainų;
+- pakartotinai paskelbtų skelbimų traktavimas;
+- išvestinių agregatų publikavimo teisės.
+
+## 5. Oficialus nuomos kontrolinis benchmarkas
+
+VDA rodiklis S7R281 `Butų nuomos vidutinės metinės kainos`, 2025:
+- Vilniaus m. sav.;
+- Kauno m. sav.;
+- Klaipėdos m. sav.;
+- Panevėžio m. sav.;
+- Šiaulių m. sav.
+
+Failai:
+- `research/raw/vda-rent-big-cities/vda-rent-big-cities-2025.csv`;
+- `research/raw/vda-rent-big-cities/vda-rent-big-cities-2025-qa.json`.
+
+Naudojimas:
+- oficiali kryžminė nuomos metodo validacija;
+- NEGALIMA pervadinti 5 miestų į apskritis;
+- tai nėra 1 kambario pjūvis ir nėra pagrindinis 10 apskričių sluoksnis.
+
+## 6. Smart Continent BI_3 — QA TIK
+
+`Vidutinė nuomos įmokų dalis nuo VDU, % (BI_3)`:
+- techniškai yra 60 savivaldybių;
+- rekonstrukcija `BI_3 × neto VDU` galima;
+- tačiau savivaldybių metodas, krepšelis, N ir paklaida nepatvirtinti;
+- keli rekonstruoti dydžiai rinkos prasme neįtikinami;
+- Lietuvos BI_3 sutampa su paprastu 60 savivaldybių vidurkiu.
+
+Verdiktas:
+- `FAIL_FOR_MAIN_RENT_LAYER`;
+- diagnostika / QA tik.
+
+## 7. Galutinio rodiklio formulė
+
+`m²/year = [(2 × monthly_net_income × 12) – annual_rent] / apartment_sale_price_eur_m²`
+
+Papildomi rodikliai:
+- m² be nuomos;
+- nuomos našta;
+- kainos / pajamų santykis;
+- duomenų kokybės klasė.
+
+Tai santykinis įperkamumo indeksas, ne realios metinės santaupos.
+
+## 8. Publikavimo vartai
+
+`main` / live nekeisti, kol:
+- pajamos = 10/10 apskričių ir aiškiai B-modelled;
+- pardavimo kaina = 10/10 apskričių ir praeina RC metodikos gate;
+- nuoma = 10/10 apskričių ir nėra insufficient teritorijų;
+- oficialūs ir modeliuoti rodikliai aiškiai atskirti;
+- laikotarpių skirtumai paaiškinti;
+- nėra apskrities centro duomenų, pervadintų apskrities rodikliu.
