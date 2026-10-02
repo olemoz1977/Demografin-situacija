@@ -4,7 +4,7 @@
   "validated_publication_ready": false,
   "preliminary_publication_ready": false,
   "display_order": "m2_per_year_after_rent_desc_for_visual_comparison_only",
-  "target": "10 counties; working 25-30-year-old childless couple",
+  "target": "10 counties; working 25-30-year-old couple",
   "formula": "[(2 × monthly net income × 12) - annual rent] / apartment sale price proxy EUR/m²",
   "interpretation_warning": "The m²/year metric is a theoretical income-price index, not bank mortgage affordability: it ignores non-rent living costs, down payment, interest, term, debt-service limits and household-specific obligations.",
   "control_metrics": {
