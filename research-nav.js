@@ -1,11 +1,12 @@
 (() => {
-  const VALID_VIEWS=['overview','fertility','population','migration','family','future','methods','all'];
+  const VALID_VIEWS=['overview','fertility','population','migration','family','housing','future','methods','all'];
   const VIEW_META={
     overview:{label:'Apžvalga',title:'60 sekundžių apžvalga',desc:'Svarbiausi naujausi skaičiai ir žemėlapis į visą tyrimą.'},
     fertility:{label:'Gimstamumas',title:'Gimstamumas',desc:'TFR, regioniniai skirtumai ir pirmojo vaiko gimdymo amžius.'},
     population:{label:'Struktūra',title:'Gyventojų struktūra',desc:'Lytis, amžius, reprodukcinio amžiaus santykis ir gimimo kohortų palyginimas.'},
     migration:{label:'Migracija',title:'Migracija',desc:'Bendri srautai, 25–44 m. pjūvis pagal lytį, Lietuvos piliečių grįžimas ir užsienio piliečiai.'},
     family:{label:'Šeimos aplinka',title:'Šeimai palanki aplinka',desc:'Santuokos, šeimos politika, išmokų dosnumas, vaikų infrastruktūra ir socialinės hipotezės.'},
+    housing:{label:'Būstas',title:'Jaunos poros būsto įperkamumas',desc:'Preliminarus 10 apskričių 2025 m. įperkamumo modelis su aiškiai pažymėtais tikslintinais duomenų sluoksniais.'},
     future:{label:'Ateitis',title:'Projekcijos ir scenarijai',desc:'Oficialios EK projekcijos, produktyvumo poreikis, automatizacija ir socialinės sistemos finansavimo hipotezė.'},
     methods:{label:'Metodika',title:'Metodika ir šaltiniai',desc:'Kas yra faktas, kas išankstinis rodiklis, kas projekcija ir kur prasideda hipotezė.'},
     all:{label:'Visas tyrimas',title:'Visas tyrimas',desc:'Visos sekcijos viename ilgame puslapyje.'}
@@ -19,7 +20,7 @@
   const HASH_VIEW={
     '#apzvalga':'overview','#tfr':'fertility','#regionai':'fertility','#amzius':'fertility','#lytis-amzius':'population',
     '#gyventojai':'migration','#uzsienieciai':'migration','#santuokos':'family','#parama-istorija':'family',
-    '#infrastruktura':'family','#skaitmena':'family','#familyFormationHypotheses':'family','#scenarijai':'future',
+    '#infrastruktura':'family','#skaitmena':'family','#familyFormationHypotheses':'family','#housing-affordability':'housing','#scenarijai':'future',
     '#metodika':'methods','#saltiniai':'methods','#isvados':'all'
   };
   const qs=new URLSearchParams(location.search);
@@ -45,7 +46,7 @@
     if(!nav) return;
     nav.classList.add('research-primary');
     nav.innerHTML='';
-    ['overview','fertility','population','migration','family','future','methods','all'].forEach(v=>{
+    ['overview','fertility','population','migration','family','housing','future','methods','all'].forEach(v=>{
       const a=document.createElement('a'); a.href=makeUrl(v); a.textContent=VIEW_META[v].label;
       if(v===view) a.classList.add('active');
       nav.appendChild(a);
@@ -73,8 +74,9 @@
         <a class="topic-card" href="${makeUrl('population')}"><div class="eyebrow">02 · Gyventojų struktūra</div><h3>Kas yra reprodukcinio amžiaus grupėje?</h3><p>Amžiaus ir lyties struktūra, 25–44 / 15–49 santykiai, gimimo kohortos.</p><span class="topic-link">Atverti temą →</span></a>
         <a class="topic-card" href="${makeUrl('migration')}"><div class="eyebrow">03 · Migracija</div><h3>Kas pakeitė gyventojų struktūrą?</h3><p>Bendri srautai, migracija pagal lytį, Lietuvos piliečių grįžimas ir užsienio piliečiai.</p><span class="topic-link">Atverti temą →</span></a>
         <a class="topic-card" href="${makeUrl('family')}"><div class="eyebrow">04 · Šeimos aplinka</div><h3>Ką valstybė ir aplinka gali keisti?</h3><p>Išmokų istorija ir FRE, infrastruktūra, santuokos, skaitmeninis kontekstas ir partnerystės hipotezės.</p><span class="topic-link">Atverti temą →</span></a>
-        <a class="topic-card" href="${makeUrl('future')}"><div class="eyebrow">05 · Ateitis</div><h3>Kas nutiks, jei darbuotojų mažės?</h3><p>EK projekcijos, automatizacija, produktyvumas ir socialinės sistemos finansavimo scenarijai.</p><span class="topic-link">Atverti temą →</span></a>
-        <a class="topic-card" href="${makeUrl('methods')}"><div class="eyebrow">06 · Metodika</div><h3>Kur baigiasi faktai ir prasideda hipotezės?</h3><p>Duomenų statusai, metodinės ribos ir visi pirminiai šaltiniai.</p><span class="topic-link">Atverti metodiką →</span></a>
+        <a class="topic-card" href="${makeUrl('housing')}"><div class="eyebrow">05 · Būstas</div><h3>Ar jauna pora gali įpirkti būstą?</h3><p>Preliminarus 10 apskričių modelis: pajamos, nuoma, butų kainos proxy ir aiškiai pažymėtas neapibrėžtumas.</p><span class="topic-link">Atverti temą →</span></a>
+        <a class="topic-card" href="${makeUrl('future')}"><div class="eyebrow">06 · Ateitis</div><h3>Kas nutiks, jei darbuotojų mažės?</h3><p>EK projekcijos, automatizacija, produktyvumas ir socialinės sistemos finansavimo scenarijai.</p><span class="topic-link">Atverti temą →</span></a>
+        <a class="topic-card" href="${makeUrl('methods')}"><div class="eyebrow">07 · Metodika</div><h3>Kur baigiasi faktai ir prasideda hipotezės?</h3><p>Duomenų statusai, metodinės ribos ir visi pirminiai šaltiniai.</p><span class="topic-link">Atverti metodiką →</span></a>
       </div>
     </div>`;
     overview.insertAdjacentElement('afterend',section);
@@ -119,7 +121,7 @@
 
   function addNextLink(){
     document.querySelectorAll('.research-next').forEach(n=>n.remove());
-    const order=['fertility','population','migration','family','future','methods'];
+    const order=['fertility','population','migration','family','housing','future','methods'];
     if(!order.includes(view)) return;
     const next=order[order.indexOf(view)+1]; if(!next) return;
     const visible=[...document.querySelectorAll('body > section')].filter(s=>!s.classList.contains('research-hidden')&&s.id!=='researchTopicIntro');
@@ -145,7 +147,7 @@
   updateHeader(); buildNav(); ensureHome(); applyVisibility();
 
   let timer=null;
-  const watched='#lytis-amzius,#migrationSexBlock,#parama-istorija,#infrastruktura,#scenarijai,#familyFormationHypotheses';
+  const watched='#lytis-amzius,#migrationSexBlock,#parama-istorija,#infrastruktura,#scenarijai,#familyFormationHypotheses,#housingAffordability';
   const observer=new MutationObserver(mutations=>{
     const relevant=mutations.some(m=>[...m.addedNodes].some(node=>node.nodeType===1&&(node.matches?.(watched)||node.querySelector?.(watched))));
     if(!relevant) return;
