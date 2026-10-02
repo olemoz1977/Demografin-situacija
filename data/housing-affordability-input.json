@@ -89,7 +89,7 @@
   "required_fields_not_yet_validated": {
     "county_or_city_net_income_25_30_eur_month": null,
     "rent": "WAITING_PUBLICATION_GRADE_10_COUNTY_PRIVATE_RENT_LAYER; public search-index route closed at 9/10 N>=5",
-    "sale_price_eur_m2": "WAITING_OFFICIAL_RC_2024_APARTMENT_TRANSACTION_LAYER"
+    "sale_price_eur_m2": "WAITING_OFFICIAL_RC_2025_APARTMENT_TRANSACTION_LAYER; 2024 fallback acceptable only if 2025 unavailable"
   },
   "notes": [
     "Apskričių atlyginimų serija apima visus darbuotojus, ne tik 25–30 m.; nepublikuoti kaip tiesioginio jaunimo pajamų rodiklio.",
@@ -109,7 +109,10 @@
     "Search-index observations are not a complete portal export even when N>=5; sample thresholds are minimum QA rules, not proof of full market representativeness.",
     "Aruodas 2025 1-room monthly asking-rent benchmark is now complete for Vilnius, Kaunas and Klaipėda (12 months each) via hidden comparison-table values plus direct archived reports.",
     "Cross-portal QA shows Skelbiu search-index medians below Aruodas annual monthly-average benchmarks by about 25.3% in Vilnius, 8.8% in Kaunas and 7.2% in Klaipėda; do not use these gaps as calibration factors.",
-    "Official data.gov.lt metadata for dataset 2559 explicitly says only single-object apartment purchase transactions are included; multi-object transactions are excluded."
+    "Official data.gov.lt metadata for dataset 2559 explicitly says only single-object apartment purchase transactions are included; multi-object transactions are excluded.",
+    "Final publication target is now period-aligned to 2025 sale + 2025 rent + 2025-11 income where possible; 2024 sale is fallback only.",
+    "Official VDA S7R280 2025 apartment benchmark: Lithuania 1880.13 EUR/m², with six city municipalities available; this remains validation only, not a 10-county layer.",
+    "Registrų centro 2025 full-year control is approximately 37.1k apartment sales nationally."
   ],
   "sources": [
     {
@@ -129,12 +132,12 @@
     "updated": "2026-10-02",
     "sale_layer": {
       "status": "blocked_external_source_waiting",
-      "main_source_target": "Registrų centras official 2024 apartment transaction aggregate/anonymized layer",
+      "main_source_target": "Registrų centras official 2025 apartment transaction aggregate/anonymized layer; 2024 only as explicitly labelled fallback",
       "geography_requirement": "60 municipalities -> 10 counties, or direct 10-county aggregate with documented method",
       "current_grid_dataset": "VDA / Registrų centras 1x1 km apartment purchase transaction grid (dataset 2559)",
       "current_grid_role": "QA_DIAGNOSTIC_ONLY",
       "reason": "2024 snapshot covers only 33 municipalities / 8 counties and 516 transactions; it is a narrow subset of the full apartment market and cannot support the main 10-county sale-price layer.",
-      "rc_request_status": "sent 2026-10-01; awaiting reply",
+      "rc_request_status": "2024 request sent 2026-10-01; awaiting reply. 2025 follow-up NOT SENT and requires owner approval.",
       "validator": "scripts/build_housing_sale_county_from_rc.py",
       "validator_status": "PASS automated tests",
       "note": "Do not aggregate the 1 km grid into the publication sale layer.",
@@ -143,14 +146,19 @@
       "smart_continent_bi1_role": "QA_DIAGNOSTIC_ONLY",
       "smart_continent_bi1_verdict": "FAIL_REDUNDANT_WITH_GENERIC_HOUSING_PRICE",
       "smart_continent_bi1_formula": "BI_1 = generic housing EUR/m² / monthly net VDU exactly for all 60 municipalities",
-      "official_vda_validation": "S7R280 2024 apartment EUR/m² verified for 6 city municipalities + Lithuania",
-      "official_vda_validation_file": "research/raw/vda-sale-big-cities/vda-sale-big-cities-2024.csv",
+      "official_vda_validation": "S7R280 2025 apartment EUR/m² verified for 6 city municipalities + Lithuania",
+      "official_vda_validation_file": "research/raw/vda-sale-big-cities/vda-sale-big-cities-2025.csv",
       "dataset_2559_documented_selection": {
         "source": "https://data.gov.lt/datasets/2559/",
         "rule": "Dataset explicitly excludes multi-object purchase transactions and includes only transactions where one object was acquired.",
         "examples_excluded": "apartment + storage unit; apartment + land parcel",
         "implication": "By official definition this is a selected subset of the apartment market and cannot be treated as a full-market transaction layer."
-      }
+      },
+      "preferred_year": 2025,
+      "fallback_year": 2024,
+      "official_vda_2025_lithuania_apartment_eur_m2": 1880.13,
+      "official_rc_2025_apartment_transaction_control_approx": 37100,
+      "period_alignment_reason": "2025 sale is preferred because rent is 2025 and income is 2025-11; official VDA S7R280 2025 is already available."
     },
     "income_layer": {
       "status": "source_locked",
@@ -231,7 +239,7 @@
       "readiness_report": "research/housing-affordability-readiness.json",
       "current_readiness": "DO_NOT_PUBLISH",
       "blockers": [
-        "official RC 2024 actual-apartment transaction layer",
+        "official RC/VDA 2025 actual-apartment transaction layer covering 60 municipalities / 10 counties (2024 only fallback)",
         "2025 private long-term 1-room asking-rent layer covering all 10 counties"
       ]
     }
