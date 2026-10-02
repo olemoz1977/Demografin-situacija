@@ -33,7 +33,7 @@ function extractTargetMonth(text,targetMonth,reportMonth){
   }
   const targetIndex=months.indexOf(targetMonth);
   if(targetIndex<0){
-    throw new Error(`target month ${targetMonth} absent; months=${JSON.stringify(months)}`);
+    throw new Error("target month "+targetMonth+" absent; months="+JSON.stringify(months)+"; context="+lines.slice(Math.max(0,heading-8),Math.min(lines.length,one+18)).join(" | ").slice(0,2500));
   }
 
   const values=[];
