@@ -1,0 +1,40 @@
+name: Validate 2025 rent city sample
+
+on:
+  push:
+    branches:
+      - feature/housing-affordability
+    paths:
+      - "data/housing-rent-city-sample-2025.csv"
+      - "data/housing-rent-city-sample-2025-summary.csv"
+      - "scripts/summarize_housing_rent_city_sample.py"
+      - "tests/test_summarize_housing_rent_city_sample.py"
+      - ".github/workflows/test-rent-city-sample.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/housing-affordability
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pandas
+
+      - name: Run tests
+        run: python -m unittest -v tests/test_summarize_housing_rent_city_sample.py
+
+      - name: Rebuild summary and verify committed file
+        run: |
+          python scripts/summarize_housing_rent_city_sample.py             --input data/housing-rent-city-sample-2025.csv             --out /tmp/housing-rent-city-sample-2025-summary.csv
+          diff -u data/housing-rent-city-sample-2025-summary.csv             /tmp/housing-rent-city-sample-2025-summary.csv
