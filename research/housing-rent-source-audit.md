@@ -9,6 +9,46 @@ Todėl privataus būsto nuomos sluoksniui reikia rinkos pasiūlos šaltinio.
 Socialinio / savivaldybių būsto nuomos duomenys šiam tikslui NETINKA:
 jie aprašo kitą rinkos segmentą ir negali būti naudojami kaip privataus 1 kambario buto nuomos pakaitalas.
 
+## Smart Continent BI_3 patikra — FAIL pagrindiniam nuomos sluoksniui
+
+2026-10-02 papildomai patikrintas Aplinkos ministerijos / Smart Continent viešos
+Būsto prieinamumo indekso švieslentės rodiklis BI_3:
+`Vidutinė nuomos įmokų dalis nuo VDU, %`.
+
+Techniniu požiūriu sluoksnis atrodo patraukliai:
+- Power BI modelis grąžina BI_3 ir neto VDU visoms 60 savivaldybių;
+- todėl galima tiksliai rekonstruoti vidinį dydį
+  `implied_rent = BI_3 × Smart Continent neto VDU`;
+- visos 60 savivaldybių susiejamos su 10 apskričių.
+
+Tačiau jis NETINKA kaip pagrindinė privataus rinkos nuomos bazė:
+
+1. Tarpinių vertinimo rezultatų pristatyme nacionalinis rodiklis
+   `Pajamų dalis skiriama nuomai` = 16,6 % aiškiai nurodytas kaip 2024 m.
+   Pajamų ir gyvenimo sąlygų tyrimo (PGS) NŪ klausimyno duomuo.
+2. VDA PGS metodikoje imtis sluoksniuojama ne pagal 60 savivaldybių, o į 25 sluoksnius:
+   5 didžiuosius miestus ir kiekvienos apskrities kitus miestus bei kaimo vietoves.
+   Todėl 60 savivaldybių BI_3 tikslumas / reprezentatyvumas nėra savaime įrodytas.
+3. Viešame Power BI modelyje nėra savivaldybės nuomos stebinių skaičiaus,
+   paklaidos, nuomos būsto krepšelio ar aiškaus pirminio savivaldybių nuomos šaltinio.
+4. Rekonstruoti dydžiai turi ryškių rinkos prasme neįtikinamų reikšmių,
+   pvz. apie 25 EUR/mėn. Kalvarijoje, 30 EUR Skuode, 46 EUR Biržuose.
+5. Švieslentės `Lietuva` BI_3 reikšmė 17,2164 % sutampa su PAPRASTU 60 savivaldybių
+   BI_3 aritmetiniu vidurkiu, o ne su pristatyme nurodytu nacionaliniu PGS 16,6 % dydžiu.
+   Tai yra papildomas signalas, kad švieslentės agregatas nėra tinkamas rinkos nuomos
+   nacionalinis kontrolinis rodiklis.
+
+Verdiktas: **FAIL pagrindiniam nuomos sluoksniui / QA ir diagnostikai tik.**
+
+Failai:
+- `data/housing-rent-smart-continent-proxy-2024-diagnostic.csv`;
+- `research/smart-continent-rent-proxy-qa-2024.json`;
+- `scripts/extract_smart_continent_rent_proxy.mjs`;
+- `scripts/parse_smart_continent_rent_proxy.mjs`.
+
+BI_3 gali būti naudojamas tik kaip papildoma kryžminė diagnostika. Jo negalima traktuoti
+kaip privataus 1 kambario buto rinkos nuomos kainos ar automatiškai agreguoti į apskritis.
+
 ## Didžiųjų miestų etalonas
 Aruodas.lt istorinių tendencijų puslapiai pateikia aktyvių skelbimų pasiūlos kainų vidurkius
 Vilniui, Kaunui ir Klaipėdai. 2025-12 1 kambario etalonai:
@@ -55,8 +95,11 @@ paieškos indeksas nėra pilna skelbimų duomenų bazė, o trijų miestų imtis 
 - N < 5: insufficient — galutinei teritorijos reikšmei nenaudoti.
 
 ## Tolimesnis darbas
-1. Plėsti Utenos, Tauragės ir Telšių 2025 m. istorinę imtį.
-2. Rinkti tokį patį to paties portalo kontrolinį mėginį didiesiems miestams ir
-   palyginti jo medianą su VDA/Aruodas etalonu.
-3. Jei paieškos indeksu nepavyks pasiekti N>=5 visiems mažiesiems miestams,
-   reikės pasirinkti kitą nuomos geografinę metodiką — tai jau bus strateginis sprendimas.
+1. Pirmenybė — rasti 2024/2025 m. vienodo krepšelio privataus nuomos šaltinį,
+   kuris leidžia pagrįstai aprėpti visas savivaldybes arba bent visas 10 apskričių.
+2. Jei tokio šaltinio nėra, plėsti vienodo portalo istorinę 1 kambario butų imtį
+   visoms reikalingoms teritorijoms, o ne naudoti apskrities centrą kaip apskritį.
+3. Utenos, Tauragės ir Telšių mėginį būtina didinti; N<5 lieka `insufficient`.
+4. Didžiųjų miestų mėginį naudoti kaip kontrolę prieš Aruodas/VDA, ne kaip
+   automatinį apskrities pakaitalą.
+5. Smart Continent BI_3 paliekamas tik QA diagnostikai.
