@@ -5,7 +5,7 @@ const outDir = "research/raw/vda-sale-big-cities";
 fs.mkdirSync(outDir, { recursive: true });
 
 const layerUrl =
-  "https://osp-sdg.stat.gov.lt/arcgis/rest/services/EVP_DB_connection/evp32/FeatureServer/0";
+  "https://osp-sdg.stat.gov.lt/arcgis/rest/services/EVP_DB_connection/evp56/FeatureServer/0";
 
 async function query(params) {
   const qs = new URLSearchParams({
@@ -28,41 +28,46 @@ async function query(params) {
   return { url, json };
 }
 
-const indicatorName = "Būsto pirkimo-pardavimo vidutinės kainos";
+const where = [
+  "laikotarpis_name='2024'",
+  "indicator_code='S7R280'",
+  "bustotipas_2='1123'",
+  "matvnt='eur_1_m2'",
+].join(" AND ");
 
 const data = await query({
-  where:
-    "laikotarpis_name='2024' AND indicator_name='" +
-    indicatorName.replaceAll("'", "''") +
-    "'",
+  where,
   outFields:
-    "laikotarpis_name,matvnt_name,savivaldybesm2020113,savivaldybesm2020113_name,collection_name,indicator_code,indicator_name,value",
-  orderByFields: "savivaldybesm2020113_name ASC",
+    "bustotipas_2,bustotipas_2_name,laikotarpis_name,matvnt,matvnt_name," +
+    "savivaldybesm2021007,savivaldybesm2021007_name,collection_name," +
+    "indicator_code,indicator_name,value",
+  orderByFields: "savivaldybesm2021007_name ASC",
+  resultRecordCount: "100",
 });
 
-const rawRows = (data.json.features || []).map(function (f) {
-  return f.attributes || {};
-});
+const rawRows = (data.json.features || []).map(f => f.attributes || {});
+const national = rawRows.find(
+  a => a.savivaldybesm2021007_name === "Lietuvos Respublika"
+);
+const cityRaw = rawRows.filter(
+  a => a.savivaldybesm2021007_name !== "Lietuvos Respublika"
+);
 
-const rows = rawRows
-  .filter(function (a) {
-    return a.savivaldybesm2020113_name !== "Lietuvos Respublika";
-  })
-  .map(function (a) {
-    return {
-      municipality_code: a.savivaldybesm2020113,
-      municipality: a.savivaldybesm2020113_name,
-      year: Number(a.laikotarpis_name),
-      indicator_code: a.indicator_code,
-      indicator_name: a.indicator_name,
-      price_eur_m2: Number(a.value),
-      unit: a.matvnt_name,
-      collection: a.collection_name,
-      source: "Valstybės duomenų agentūra / ArcGIS EVP32",
-      source_url: layerUrl,
-      role: "official_sale_validation_benchmark_only",
-    };
-  });
+const rows = cityRaw.map(a => ({
+  municipality_code: a.savivaldybesm2021007,
+  municipality: a.savivaldybesm2021007_name,
+  year: Number(a.laikotarpis_name),
+  housing_type_code: a.bustotipas_2,
+  housing_type: a.bustotipas_2_name,
+  indicator_code: a.indicator_code,
+  indicator_name: a.indicator_name,
+  price_eur_m2: Number(a.value),
+  unit: a.matvnt_name,
+  collection: a.collection_name,
+  source: "Valstybės duomenų agentūra / ArcGIS EVP56",
+  source_url: layerUrl,
+  role: "official_sale_validation_benchmark_only",
+}));
 
 const expected = new Set([
   "Vilniaus m. sav.",
@@ -73,25 +78,24 @@ const expected = new Set([
   "Alytaus m. sav.",
 ]);
 
-const actual = new Set(rows.map(function (r) { return r.municipality; }));
-const missing = Array.from(expected).filter(function (x) { return !actual.has(x); });
-const extra = Array.from(actual).filter(function (x) { return !expected.has(x); });
+const actual = new Set(rows.map(r => r.municipality));
+const missing = [...expected].filter(x => !actual.has(x));
+const extra = [...actual].filter(x => !expected.has(x));
 
-console.log(JSON.stringify({ indicatorName, rawRows, rows }, null, 2));
-
-if (rows.length !== 6 || missing.length || extra.length) {
+if (rawRows.length !== 7 || rows.length !== 6 || missing.length || extra.length) {
   throw new Error(
-    "Expected six-city 2024 sale benchmark; rows=" +
-      rows.length +
-      " missing=" +
-      JSON.stringify(missing) +
-      " extra=" +
-      JSON.stringify(extra)
+    "Expected 6 city rows + Lithuania for 2024 apartment EUR/m² benchmark; " +
+    `raw=${rawRows.length} city=${rows.length} missing=${JSON.stringify(missing)} extra=${JSON.stringify(extra)}`
   );
 }
-
-if (rows.some(function (r) { return !(r.price_eur_m2 > 0); })) {
-  throw new Error("Non-positive 2024 sale-price value found");
+if (!national || !(Number(national.value) > 0)) {
+  throw new Error("Missing positive Lithuania 2024 apartment EUR/m² benchmark");
+}
+if (rows.some(r => !(r.price_eur_m2 > 0))) {
+  throw new Error("Non-positive 2024 city sale-price value found");
+}
+if (rows.some(r => r.housing_type !== "Butas daugiabučiuose namuose")) {
+  throw new Error("Unexpected housing type in apartment benchmark");
 }
 
 function esc(v) {
@@ -102,32 +106,32 @@ function esc(v) {
 const headers = Object.keys(rows[0]);
 const csv =
   [headers.join(",")]
-    .concat(
-      rows.map(function (r) {
-        return headers.map(function (h) { return esc(r[h]); }).join(",");
-      })
-    )
-    .join("\n") +
-  "\n";
+    .concat(rows.map(r => headers.map(h => esc(r[h])).join(",")))
+    .join("\n") + "\n";
 
 fs.writeFileSync(
   path.join(outDir, "vda-sale-big-cities-2024.csv"),
   csv
 );
 
-const first = rows[0];
 const qa = {
   year: 2024,
-  indicator_code: first.indicator_code,
-  indicator_name: first.indicator_name,
-  unit: first.unit,
-  collection: first.collection,
+  indicator_code: "S7R280",
+  indicator_name: "Būsto pirkimo-pardavimo vidutinės kainos",
+  housing_type_code: "1123",
+  housing_type: "Butas daugiabučiuose namuose",
+  unit: "EUR/m²",
+  collection: rows[0].collection,
   municipality_count: rows.length,
-  municipalities: rows.map(function (r) { return r.municipality; }),
+  municipalities: rows.map(r => r.municipality),
   values_eur_m2: Object.fromEntries(
-    rows.map(function (r) { return [r.municipality, r.price_eur_m2]; })
+    rows.map(r => [r.municipality, r.price_eur_m2])
   ),
+  lithuania_apartment_eur_m2: Number(national.value),
+  source_layer: layerUrl,
   role: "OFFICIAL_VALIDATION_ONLY_NOT_10_COUNTY_SALE_LAYER",
+  coverage_limit:
+    "Official VDA series covers Lithuania plus six city municipalities; it cannot be relabelled as 10 counties.",
   query_url: data.url,
 };
 
