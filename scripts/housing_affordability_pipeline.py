@@ -3,14 +3,20 @@
 OMESG360 / Demografinė situacija
 Housing affordability research pipeline.
 
-Purpose:
-- aggregate VDA/RC 1 km apartment transaction cells to municipalities/counties;
-- merge municipal income data;
-- merge municipal 1-room rent samples;
-- calculate county affordability indicators and QA fields.
+LEGACY DIAGNOSTIC PIPELINE — NOT PUBLICATION READY.
 
+Purpose:
+- reproduce the earlier VDA/RC 1 km grid + municipal rent-sample experiment;
+- support QA and method comparison only.
+
+Do NOT use its sale or rent outputs as the main 10-county housing-affordability layer.
+Current source gates are:
+- sale: official RC actual-apartment-transaction layer, 60 municipalities / 10 counties;
+- rent: publication-grade private long-term 1-room layer covering all 10 counties.
+
+The VDA/RC 1 km transaction grid (dataset 2559) and Smart Continent BI_3 are QA-only.
 This script does not scrape websites. It consumes source exports saved locally.
-Expected source files are documented in research/housing-affordability-methodology.md.
+Expected current source decisions are documented under research/.
 """
 
 from __future__ import annotations
@@ -226,7 +232,19 @@ def main():
     p.add_argument("--start-year", type=int, default=None)
     p.add_argument("--end-year", type=int, default=None)
     p.add_argument("--out", required=True, type=Path)
+    p.add_argument(
+        "--allow-diagnostic-grid",
+        action="store_true",
+        help="Acknowledge that this legacy pipeline uses QA-only sale/rent inputs and is not publication-ready.",
+    )
     args = p.parse_args()
+
+    if not args.allow_diagnostic_grid:
+        raise SystemExit(
+            "REFUSED: housing_affordability_pipeline.py is a legacy QA pipeline. "
+            "Use --allow-diagnostic-grid only for diagnostic reproduction; "
+            "do not use its outputs for publication."
+        )
 
     grid = load_grid(args.grid)
     tx = load_transactions(args.transactions, year=args.year, start_year=args.start_year, end_year=args.end_year)
