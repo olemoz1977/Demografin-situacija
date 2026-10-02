@@ -21,11 +21,17 @@ nepateikiami.
 Todėl mano klausimas dabar yra ne dėl techninio pilno eksporto, o dėl platesnio
 agreguoto duomenų sluoksnio.
 
-Ar VDA / Valstybės duomenų valdysenos sistemoje būtų galima gauti 2024 m. visų
+Ar VDA / Valstybės duomenų valdysenos sistemoje būtų galima gauti **2025 m.** visų
 registruotų daugiabučių butų pirkimo-pardavimo sandorių agregatus pagal visas
 60 Lietuvos savivaldybių, pageidautina su šiais laukais:
 
+2025 m. būtų prioritetas, nes oficialus VDA S7R280 jau skelbia 2025 m. daugiabučių
+butų EUR/m² reikšmes Lietuvai ir 6 didžiųjų miestų savivaldybėms, o analizės pajamų
+ir nuomos sluoksniai taip pat yra 2025 m. Jei 2025 m. savivaldybių agregato pateikti
+negalima, tiktų analogiškas 2024 m. pjūvis kaip aiškiai pažymėtas fallback.
+
 - savivaldybė;
+- metai;
 - butų sandorių skaičius;
 - sandorių, kuriems apskaičiuojama EUR/m² kaina, skaičius;
 - vidutinė faktinė buto sandorio kaina EUR/m²;
