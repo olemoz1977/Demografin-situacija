@@ -1,22 +1,22 @@
 [
   {
-    "at": "2026-10-02T01:18:35.731Z",
-    "status": 200,
-    "url": "https://content.powerapps.com/resource/powerbiwfe/styles/reportembed.external.bundle.min.06d6bcf1a13008ac786f.css",
-    "contentType": "text/css",
-    "bodyFile": "response-001-reportembed.external.bundle.min.06d6bcf1a13008ac786f.css.txt",
-    "bodyBytes": 454950
-  },
-  {
-    "at": "2026-10-02T01:18:35.732Z",
+    "at": "2026-10-02T01:21:13.077Z",
     "status": 200,
     "url": "https://content.powerapps.com/resource/powerbiwfe/styles/reportembed.bundle.min.f6805bbe16fa1040f533.css",
     "contentType": "text/css",
-    "bodyFile": "response-002-reportembed.bundle.min.f6805bbe16fa1040f533.css.txt",
+    "bodyFile": "response-001-reportembed.bundle.min.f6805bbe16fa1040f533.css.txt",
     "bodyBytes": 261294
   },
   {
-    "at": "2026-10-02T01:18:35.840Z",
+    "at": "2026-10-02T01:21:13.075Z",
+    "status": 200,
+    "url": "https://content.powerapps.com/resource/powerbiwfe/styles/reportembed.external.bundle.min.06d6bcf1a13008ac786f.css",
+    "contentType": "text/css",
+    "bodyFile": "response-002-reportembed.external.bundle.min.06d6bcf1a13008ac786f.css.txt",
+    "bodyBytes": 454950
+  },
+  {
+    "at": "2026-10-02T01:21:13.257Z",
     "status": 200,
     "url": "https://content.powerapps.com/resource/powerbiwfe/scripts/reportembed.externals.bundle.min.f6535441189503d1d8b7.js",
     "contentType": "application/x-javascript",
@@ -24,7 +24,7 @@
     "bodyBytes": 653882
   },
   {
-    "at": "2026-10-02T01:18:35.915Z",
+    "at": "2026-10-02T01:21:13.391Z",
     "status": 200,
     "url": "https://content.powerapps.com/resource/powerbiwfe/scripts/reportEmbed.vendors.min.d8208683d553f3d26e32.js",
     "contentType": "application/x-javascript",
@@ -32,7 +32,7 @@
     "bodyBytes": 6358497
   },
   {
-    "at": "2026-10-02T01:18:36.046Z",
+    "at": "2026-10-02T01:21:13.571Z",
     "status": 200,
     "url": "https://content.powerapps.com/resource/powerbiwfe/scripts/reportEmbed.min.2945fe1f31cd86d25c3a.js",
     "contentType": "application/x-javascript",
@@ -40,7 +40,7 @@
     "bodyBytes": 13105016
   },
   {
-    "at": "2026-10-02T01:18:37.174Z",
+    "at": "2026-10-02T01:21:15.345Z",
     "status": 200,
     "url": "https://content.powerapps.com/resource/powerbiwfe/scripts/reportEmbed.app-insights.min.05fbea90a84a57aba3bc.js",
     "contentType": "application/x-javascript",
@@ -48,7 +48,7 @@
     "bodyBytes": 155718
   },
   {
-    "at": "2026-10-02T01:18:37.232Z",
+    "at": "2026-10-02T01:21:15.393Z",
     "status": 200,
     "url": "https://content.powerapps.com/resource/powerbiwfe/scripts/reportEmbed.fluent-no-header-teal.json.min.75e2a8070ae3f3023d6a.js",
     "contentType": "application/x-javascript",
@@ -56,7 +56,7 @@
     "bodyBytes": 36383
   },
   {
-    "at": "2026-10-02T01:18:37.232Z",
+    "at": "2026-10-02T01:21:15.430Z",
     "status": 200,
     "url": "https://content.powerapps.com/resource/powerbiwfe/scripts/reportEmbed.reportEmbed.fabricUXVendors.min.c86f107a76f5eab77d1c.js",
     "contentType": "application/x-javascript",
@@ -64,7 +64,7 @@
     "bodyBytes": 795495
   },
   {
-    "at": "2026-10-02T01:18:37.420Z",
+    "at": "2026-10-02T01:21:15.618Z",
     "status": 200,
     "url": "https://content.powerapps.com/resource/powerbiwfe/scripts/reportEmbed.json-contracts.min.2ddc1ec2f64703126226.js",
     "contentType": "application/x-javascript",
@@ -72,7 +72,7 @@
     "bodyBytes": 40324
   },
   {
-    "at": "2026-10-02T01:18:37.952Z",
+    "at": "2026-10-02T01:21:16.068Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/c8fdfe26-3e02-4875-bb83-afccbda51fa5/modelsAndExploration?preferReadOnlySession=true",
     "contentType": "application/json; charset=utf-8",
@@ -80,7 +80,7 @@
     "bodyBytes": 497424
   },
   {
-    "at": "2026-10-02T01:18:38.261Z",
+    "at": "2026-10-02T01:21:16.304Z",
     "status": 200,
     "url": "https://content.powerapps.com/resource/powerbiwfe/scripts/reportEmbed.schema-validator.min.2835f5a719ddef60b130.js",
     "contentType": "application/x-javascript",
@@ -88,7 +88,7 @@
     "bodyBytes": 19297
   },
   {
-    "at": "2026-10-02T01:18:38.420Z",
+    "at": "2026-10-02T01:21:16.545Z",
     "status": 200,
     "url": "https://content.powerapps.com/resource/powerbiwfe/scripts/reportEmbed.reportEmbed.visuals.min.b5244b19987caebe7303.js",
     "contentType": "application/x-javascript",
@@ -96,7 +96,7 @@
     "bodyBytes": 325937
   },
   {
-    "at": "2026-10-02T01:18:38.420Z",
+    "at": "2026-10-02T01:21:16.545Z",
     "status": 200,
     "url": "https://content.powerapps.com/resource/powerbiwfe/scripts/reportEmbed.insightsui-internal.min.cff6ffcef706539b15a7.js",
     "contentType": "application/x-javascript",
@@ -104,7 +104,7 @@
     "bodyBytes": 736635
   },
   {
-    "at": "2026-10-02T01:18:38.457Z",
+    "at": "2026-10-02T01:21:16.607Z",
     "status": 200,
     "url": "https://content.powerapps.com/resource/powerbiwfe/scripts/reportEmbed.ExplorationPersistentState.min.28b6c124f5da61c0e521.js",
     "contentType": "application/x-javascript",
@@ -112,7 +112,7 @@
     "bodyBytes": 21392
   },
   {
-    "at": "2026-10-02T01:18:38.481Z",
+    "at": "2026-10-02T01:21:16.648Z",
     "status": 200,
     "url": "https://content.powerapps.com/resource/powerbiwfe/scripts/reportEmbed.visual-container-skittles.min.afa67c917ea47d3ad072.js",
     "contentType": "application/x-javascript",
@@ -120,23 +120,23 @@
     "bodyBytes": 18027
   },
   {
-    "at": "2026-10-02T01:18:38.806Z",
-    "status": 200,
-    "url": "https://content.powerapps.com/resource/powerbiwfe/scripts/reportEmbed.CopyVisualImage.min.8f2cec0d542989c3882d.js",
-    "contentType": "application/x-javascript",
-    "bodyFile": "response-016-reportEmbed.CopyVisualImage.min.8f2cec0d542989c3882d.js.txt",
-    "bodyBytes": 808
-  },
-  {
-    "at": "2026-10-02T01:18:38.715Z",
+    "at": "2026-10-02T01:21:16.813Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/resourcePackage/27276766/2%2Fe03eb613-32cb-40ef-80d6-69bf050fd798%2FResourcePackage%2FBlobIdV2-cd89de27-a008-4426-8426-01078fb53774NKnHdscy3gdEwFOlVAVvcGWbEgV0.json",
     "contentType": "application/octet-stream",
-    "bodyFile": "response-017-2_2Fe03eb613-32cb-40ef-80d6-69bf050fd798_2FResourcePackage_2FBlobIdV2-cd89de27-a008-4426-8426-01078fb53774NKnHdscy3gdEwFOlVAVvcGWbEgV0.json.txt",
+    "bodyFile": "response-016-2_2Fe03eb613-32cb-40ef-80d6-69bf050fd798_2FResourcePackage_2FBlobIdV2-cd89de27-a008-4426-8426-01078fb53774NKnHdscy3gdEwFOlVAVvcGWbEgV0.json.txt",
     "bodyBytes": 112
   },
   {
-    "at": "2026-10-02T01:18:39.279Z",
+    "at": "2026-10-02T01:21:16.958Z",
+    "status": 200,
+    "url": "https://content.powerapps.com/resource/powerbiwfe/scripts/reportEmbed.CopyVisualImage.min.8f2cec0d542989c3882d.js",
+    "contentType": "application/x-javascript",
+    "bodyFile": "response-017-reportEmbed.CopyVisualImage.min.8f2cec0d542989c3882d.js.txt",
+    "bodyBytes": 808
+  },
+  {
+    "at": "2026-10-02T01:21:17.394Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/resourcePackage/27276766/2%2Fe03eb613-32cb-40ef-80d6-69bf050fd798%2FResourcePackage%2FBlobIdV2-2c95c719-5136-4a6a-8a20-4d03ccf9938aOVi3-6GDLBQWOOmDyRSJKPeX2CS-rb5i2drJybNHGHU%3D.png",
     "contentType": "image/png",
@@ -144,15 +144,7 @@
     "bodyBytes": null
   },
   {
-    "at": "2026-10-02T01:18:39.278Z",
-    "status": 200,
-    "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/conceptualschema",
-    "contentType": "application/json; charset=utf-8",
-    "bodyFile": "response-019-conceptualschema.json",
-    "bodyBytes": 107802
-  },
-  {
-    "at": "2026-10-02T01:18:39.307Z",
+    "at": "2026-10-02T01:21:17.394Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/resourcePackage/27276766/2%2Fe03eb613-32cb-40ef-80d6-69bf050fd798%2FResourcePackage%2FBlobIdV2-fb9806c8-be22-4353-a3d6-fdabeeb08a5cqiJTuabsvXAZRT9l59e74tuo2.QNGvo6UhvDTa21.png",
     "contentType": "image/png",
@@ -160,7 +152,15 @@
     "bodyBytes": null
   },
   {
-    "at": "2026-10-02T01:18:39.725Z",
+    "at": "2026-10-02T01:21:17.390Z",
+    "status": 200,
+    "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/conceptualschema",
+    "contentType": "application/json; charset=utf-8",
+    "bodyFile": "response-020-conceptualschema.json",
+    "bodyBytes": 107802
+  },
+  {
+    "at": "2026-10-02T01:21:17.423Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/resourcePackage/27276766/2%2Fe03eb613-32cb-40ef-80d6-69bf050fd798%2FResourcePackage%2FBlobIdV2-3713806d-7f97-4725-8b23-b53e3e94a7e4ESfzvWeozRfg.8bA94CFE.json",
     "contentType": "application/octet-stream",
@@ -168,15 +168,15 @@
     "bodyBytes": 114274
   },
   {
-    "at": "2026-10-02T01:18:39.758Z",
+    "at": "2026-10-02T01:21:17.542Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
     "contentType": "text/plain; charset=utf-8",
     "bodyFile": "response-022-querydata.txt",
-    "bodyBytes": 1989
+    "bodyBytes": 2420
   },
   {
-    "at": "2026-10-02T01:18:39.762Z",
+    "at": "2026-10-02T01:21:17.562Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
     "contentType": "text/plain; charset=utf-8",
@@ -184,111 +184,111 @@
     "bodyBytes": 2053
   },
   {
-    "at": "2026-10-02T01:18:39.767Z",
+    "at": "2026-10-02T01:21:17.570Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
     "contentType": "text/plain; charset=utf-8",
     "bodyFile": "response-024-querydata.txt",
-    "bodyBytes": 1949
+    "bodyBytes": 2027
   },
   {
-    "at": "2026-10-02T01:18:39.814Z",
+    "at": "2026-10-02T01:21:17.577Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
     "contentType": "text/plain; charset=utf-8",
     "bodyFile": "response-025-querydata.txt",
-    "bodyBytes": 1911
+    "bodyBytes": 5283
   },
   {
-    "at": "2026-10-02T01:18:39.831Z",
+    "at": "2026-10-02T01:21:17.603Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
     "contentType": "text/plain; charset=utf-8",
     "bodyFile": "response-026-querydata.txt",
-    "bodyBytes": 1844
+    "bodyBytes": 1971
   },
   {
-    "at": "2026-10-02T01:18:39.845Z",
+    "at": "2026-10-02T01:21:17.619Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
     "contentType": "text/plain; charset=utf-8",
     "bodyFile": "response-027-querydata.txt",
-    "bodyBytes": 2420
+    "bodyBytes": 1948
   },
   {
-    "at": "2026-10-02T01:18:39.857Z",
+    "at": "2026-10-02T01:21:17.625Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
     "contentType": "text/plain; charset=utf-8",
     "bodyFile": "response-028-querydata.txt",
-    "bodyBytes": 2027
+    "bodyBytes": 1959
   },
   {
-    "at": "2026-10-02T01:18:39.863Z",
+    "at": "2026-10-02T01:21:17.632Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
     "contentType": "text/plain; charset=utf-8",
     "bodyFile": "response-029-querydata.txt",
-    "bodyBytes": 1871
+    "bodyBytes": 1870
   },
   {
-    "at": "2026-10-02T01:18:39.872Z",
+    "at": "2026-10-02T01:21:17.644Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
     "contentType": "text/plain; charset=utf-8",
     "bodyFile": "response-030-querydata.txt",
-    "bodyBytes": 5283
+    "bodyBytes": 1987
   },
   {
-    "at": "2026-10-02T01:18:39.926Z",
+    "at": "2026-10-02T01:21:17.701Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
     "contentType": "text/plain; charset=utf-8",
     "bodyFile": "response-031-querydata.txt",
-    "bodyBytes": 1971
+    "bodyBytes": 1949
   },
   {
-    "at": "2026-10-02T01:18:39.945Z",
+    "at": "2026-10-02T01:21:17.708Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
     "contentType": "text/plain; charset=utf-8",
     "bodyFile": "response-032-querydata.txt",
-    "bodyBytes": 1948
+    "bodyBytes": 1866
   },
   {
-    "at": "2026-10-02T01:18:40.166Z",
+    "at": "2026-10-02T01:21:18.047Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
     "contentType": "text/plain; charset=utf-8",
     "bodyFile": "response-033-querydata.txt",
-    "bodyBytes": 1959
+    "bodyBytes": 1911
   },
   {
-    "at": "2026-10-02T01:18:40.169Z",
+    "at": "2026-10-02T01:21:18.059Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
     "contentType": "text/plain; charset=utf-8",
     "bodyFile": "response-034-querydata.txt",
-    "bodyBytes": 1987
+    "bodyBytes": 1844
   },
   {
-    "at": "2026-10-02T01:18:40.171Z",
+    "at": "2026-10-02T01:21:18.065Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
     "contentType": "text/plain; charset=utf-8",
     "bodyFile": "response-035-querydata.txt",
-    "bodyBytes": 1870
+    "bodyBytes": 1989
   },
   {
-    "at": "2026-10-02T01:18:40.174Z",
+    "at": "2026-10-02T01:21:18.067Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
     "contentType": "text/plain; charset=utf-8",
     "bodyFile": "response-036-querydata.txt",
-    "bodyBytes": 1866
+    "bodyBytes": 1871
   },
   {
-    "at": "2026-10-02T01:18:40.177Z",
+    "at": "2026-10-02T01:21:18.070Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
     "contentType": "text/plain; charset=utf-8",
@@ -296,7 +296,7 @@
     "bodyBytes": 3270
   },
   {
-    "at": "2026-10-02T01:18:40.178Z",
+    "at": "2026-10-02T01:21:18.075Z",
     "status": 200,
     "url": "https://content.powerapps.com/resource/powerbiwfe/scripts/reportEmbed.ImageVisual.min.c4111a999f3b86f6b8c9.js",
     "contentType": "application/x-javascript",
@@ -304,7 +304,7 @@
     "bodyBytes": 8792
   },
   {
-    "at": "2026-10-02T01:18:40.178Z",
+    "at": "2026-10-02T01:21:18.076Z",
     "status": 200,
     "url": "https://content.powerapps.com/resource/powerbiwfe/scripts/reportEmbed.ShapeVisual.min.f56880e0cb1376d522e2.js",
     "contentType": "application/x-javascript",
@@ -312,7 +312,7 @@
     "bodyBytes": 159452
   },
   {
-    "at": "2026-10-02T01:18:40.178Z",
+    "at": "2026-10-02T01:21:18.076Z",
     "status": 200,
     "url": "https://content.powerapps.com/resource/powerbiwfe/scripts/reportEmbed.SlicerVisual.min.7ee5fb25cae2a102c9f0.js",
     "contentType": "application/x-javascript",
@@ -320,7 +320,7 @@
     "bodyBytes": 252680
   },
   {
-    "at": "2026-10-02T01:18:40.178Z",
+    "at": "2026-10-02T01:21:18.077Z",
     "status": 200,
     "url": "https://content.powerapps.com/resource/powerbiwfe/scripts/reportEmbed.TextboxVisual.min.195cd969f2362edeb07e.js",
     "contentType": "application/x-javascript",
@@ -328,7 +328,7 @@
     "bodyBytes": 290390
   },
   {
-    "at": "2026-10-02T01:18:40.313Z",
+    "at": "2026-10-02T01:21:18.077Z",
     "status": 200,
     "url": "https://content.powerapps.com/resource/powerbiwfe/scripts/reportEmbed.ShapeMapVisual.min.21abe98168a7a01f3474.js",
     "contentType": "application/x-javascript",
@@ -336,39 +336,23 @@
     "bodyBytes": 76172
   },
   {
-    "at": "2026-10-02T01:18:40.319Z",
-    "status": 200,
-    "url": "https://content.powerapps.com/resource/powerbiwfe/scripts/reportEmbed.CardVisual.min.1f2e0be7a5ec244276bf.js",
-    "contentType": "application/x-javascript",
-    "bodyFile": "response-043-reportEmbed.CardVisual.min.1f2e0be7a5ec244276bf.js.txt",
-    "bodyBytes": 3114107
-  },
-  {
-    "at": "2026-10-02T01:18:40.322Z",
+    "at": "2026-10-02T01:21:18.295Z",
     "status": 200,
     "url": "https://content.powerapps.com/resource/powerbiwfe/scripts/reportEmbed.CartesianVisuals.min.affa750a8c7dd47f8c62.js",
     "contentType": "application/x-javascript",
-    "bodyFile": "response-044-reportEmbed.CartesianVisuals.min.affa750a8c7dd47f8c62.js.txt",
+    "bodyFile": "response-043-reportEmbed.CartesianVisuals.min.affa750a8c7dd47f8c62.js.txt",
     "bodyBytes": 3285542
   },
   {
-    "at": "2026-10-02T01:18:57.900Z",
+    "at": "2026-10-02T01:21:18.295Z",
     "status": 200,
-    "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
-    "contentType": "text/plain; charset=utf-8",
-    "bodyFile": "response-045-querydata.txt",
-    "bodyBytes": 1998
-  },
-  {
-    "at": "2026-10-02T01:18:57.906Z",
-    "status": 200,
-    "url": "https://content.powerapps.com/resource/powerbiwfe/scripts/reportEmbed.PivotTableVisuals.min.0405a01522cb3609749f.js",
+    "url": "https://content.powerapps.com/resource/powerbiwfe/scripts/reportEmbed.CardVisual.min.1f2e0be7a5ec244276bf.js",
     "contentType": "application/x-javascript",
-    "bodyFile": "response-046-reportEmbed.PivotTableVisuals.min.0405a01522cb3609749f.js.txt",
-    "bodyBytes": 588437
+    "bodyFile": "response-044-reportEmbed.CardVisual.min.1f2e0be7a5ec244276bf.js.txt",
+    "bodyBytes": 3114107
   },
   {
-    "at": "2026-10-02T01:18:57.947Z",
+    "at": "2026-10-02T01:21:36.592Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/resourcePackage/27276766/2%2Fe03eb613-32cb-40ef-80d6-69bf050fd798%2FResourcePackage%2FBlobIdV2-792d87cb-dc26-48e1-8f84-fde781b82a11QW47Ix4a7G9pp0kChhFldE8DZ91kWekdZ-cGjsbalBA%3D.png",
     "contentType": "image/png",
@@ -376,47 +360,63 @@
     "bodyBytes": null
   },
   {
-    "at": "2026-10-02T01:18:57.970Z",
+    "at": "2026-10-02T01:21:36.591Z",
+    "status": 200,
+    "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
+    "contentType": "text/plain; charset=utf-8",
+    "bodyFile": "response-046-querydata.txt",
+    "bodyBytes": 1998
+  },
+  {
+    "at": "2026-10-02T01:21:36.601Z",
+    "status": 200,
+    "url": "https://content.powerapps.com/resource/powerbiwfe/scripts/reportEmbed.PivotTableVisuals.min.0405a01522cb3609749f.js",
+    "contentType": "application/x-javascript",
+    "bodyFile": "response-047-reportEmbed.PivotTableVisuals.min.0405a01522cb3609749f.js.txt",
+    "bodyBytes": 588437
+  },
+  {
+    "at": "2026-10-02T01:21:36.654Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
     "contentType": "text/plain; charset=utf-8",
     "bodyFile": "response-048-querydata.txt",
-    "bodyBytes": 2263
+    "bodyBytes": 2045
   },
   {
-    "at": "2026-10-02T01:18:57.960Z",
+    "at": "2026-10-02T01:21:36.662Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
     "contentType": "text/plain; charset=utf-8",
     "bodyFile": "response-049-querydata.txt",
-    "bodyBytes": 2005
+    "bodyBytes": 2050
   },
   {
-    "at": "2026-10-02T01:18:57.986Z",
+    "at": "2026-10-02T01:21:36.668Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
     "contentType": "text/plain; charset=utf-8",
     "bodyFile": "response-050-querydata.txt",
-    "bodyBytes": 2045
+    "bodyBytes": 2272
   },
   {
-    "at": "2026-10-02T01:18:58.065Z",
+    "at": "2026-10-02T01:21:36.677Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
     "contentType": "text/plain; charset=utf-8",
     "bodyFile": "response-051-querydata.txt",
-    "bodyBytes": 2272
+    "bodyBytes": 2263
   },
   {
-    "at": "2026-10-02T01:18:58.069Z",
+    "at": "2026-10-02T01:21:36.685Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
     "contentType": "text/plain; charset=utf-8",
     "bodyFile": "response-052-querydata.txt",
-    "bodyBytes": 2050
+    "bodyBytes": 2005
   },
   {
-    "at": "2026-10-02T01:18:58.121Z",
+    "at": "2026-10-02T01:21:36.786Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
     "contentType": "text/plain; charset=utf-8",
@@ -424,7 +424,7 @@
     "bodyBytes": 5281
   },
   {
-    "at": "2026-10-02T01:18:58.126Z",
+    "at": "2026-10-02T01:21:36.794Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
     "contentType": "text/plain; charset=utf-8",
@@ -432,23 +432,23 @@
     "bodyBytes": 2045
   },
   {
-    "at": "2026-10-02T01:18:58.131Z",
+    "at": "2026-10-02T01:21:36.805Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
     "contentType": "text/plain; charset=utf-8",
     "bodyFile": "response-055-querydata.txt",
-    "bodyBytes": 2997
+    "bodyBytes": 4535
   },
   {
-    "at": "2026-10-02T01:18:58.140Z",
+    "at": "2026-10-02T01:21:36.813Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
     "contentType": "text/plain; charset=utf-8",
     "bodyFile": "response-056-querydata.txt",
-    "bodyBytes": 4535
+    "bodyBytes": 2997
   },
   {
-    "at": "2026-10-02T01:18:58.144Z",
+    "at": "2026-10-02T01:21:36.894Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
     "contentType": "text/plain; charset=utf-8",
@@ -456,7 +456,7 @@
     "bodyBytes": 4062
   },
   {
-    "at": "2026-10-02T01:18:58.203Z",
+    "at": "2026-10-02T01:21:36.918Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
     "contentType": "text/plain; charset=utf-8",
@@ -464,23 +464,7 @@
     "bodyBytes": 1999
   },
   {
-    "at": "2026-10-02T01:19:03.081Z",
-    "status": 200,
-    "url": "https://content.powerapps.com/resource/powerbiwfe/scripts/reportEmbed.DonutChartVisuals.min.083baa6aa9a9cdb3f979.js",
-    "contentType": "application/x-javascript",
-    "bodyFile": "response-059-reportEmbed.DonutChartVisuals.min.083baa6aa9a9cdb3f979.js.txt",
-    "bodyBytes": 94549
-  },
-  {
-    "at": "2026-10-02T01:19:03.134Z",
-    "status": 200,
-    "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/resourcePackage/27276766/2%2Fe03eb613-32cb-40ef-80d6-69bf050fd798%2FResourcePackage%2FBlobIdV2-55346a7e-49da-4922-9178-13d4544b16f5bDGrUJOJrV-yq5oB5Wowy7nxQLDVL2-H6A3bO1ZC6fo%3D.png",
-    "contentType": "image/png",
-    "bodyFile": null,
-    "bodyBytes": null
-  },
-  {
-    "at": "2026-10-02T01:19:03.151Z",
+    "at": "2026-10-02T01:21:42.297Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/resourcePackage/27276766/2%2Fe03eb613-32cb-40ef-80d6-69bf050fd798%2FResourcePackage%2FBlobIdV2-504ebdb1-6ec3-4ec0-aa5e-e7d5bb2900301OrXAAradjUKHtwKxspu-MbD28jBdwUUr9H4JAhXXfE%3D.png",
     "contentType": "image/png",
@@ -488,15 +472,7 @@
     "bodyBytes": null
   },
   {
-    "at": "2026-10-02T01:19:03.151Z",
-    "status": 200,
-    "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/resourcePackage/27276766/2%2Fe03eb613-32cb-40ef-80d6-69bf050fd798%2FResourcePackage%2FBlobIdV2-c71161cf-c163-4687-bb38-551dc3e33f5eBJvsPxTY1dWe8cjqkTvnkEQidms2.png",
-    "contentType": "image/png",
-    "bodyFile": null,
-    "bodyBytes": null
-  },
-  {
-    "at": "2026-10-02T01:19:03.151Z",
+    "at": "2026-10-02T01:21:42.297Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/resourcePackage/27276766/2%2Fe03eb613-32cb-40ef-80d6-69bf050fd798%2FResourcePackage%2FBlobIdV2-94d624cc-a2e1-4d22-9b17-40459e3c2c84y0IjzXeHqBRKxKqRt-esVdhmQI4BDqjmu9d.png",
     "contentType": "image/png",
@@ -504,31 +480,55 @@
     "bodyBytes": null
   },
   {
-    "at": "2026-10-02T01:19:03.213Z",
+    "at": "2026-10-02T01:21:42.298Z",
+    "status": 200,
+    "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/resourcePackage/27276766/2%2Fe03eb613-32cb-40ef-80d6-69bf050fd798%2FResourcePackage%2FBlobIdV2-55346a7e-49da-4922-9178-13d4544b16f5bDGrUJOJrV-yq5oB5Wowy7nxQLDVL2-H6A3bO1ZC6fo%3D.png",
+    "contentType": "image/png",
+    "bodyFile": null,
+    "bodyBytes": null
+  },
+  {
+    "at": "2026-10-02T01:21:42.299Z",
+    "status": 200,
+    "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/resourcePackage/27276766/2%2Fe03eb613-32cb-40ef-80d6-69bf050fd798%2FResourcePackage%2FBlobIdV2-c71161cf-c163-4687-bb38-551dc3e33f5eBJvsPxTY1dWe8cjqkTvnkEQidms2.png",
+    "contentType": "image/png",
+    "bodyFile": null,
+    "bodyBytes": null
+  },
+  {
+    "at": "2026-10-02T01:21:42.280Z",
+    "status": 200,
+    "url": "https://content.powerapps.com/resource/powerbiwfe/scripts/reportEmbed.DonutChartVisuals.min.083baa6aa9a9cdb3f979.js",
+    "contentType": "application/x-javascript",
+    "bodyFile": "response-063-reportEmbed.DonutChartVisuals.min.083baa6aa9a9cdb3f979.js.txt",
+    "bodyBytes": 94549
+  },
+  {
+    "at": "2026-10-02T01:21:42.408Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
     "contentType": "text/plain; charset=utf-8",
     "bodyFile": "response-064-querydata.txt",
-    "bodyBytes": 2462
+    "bodyBytes": 1846
   },
   {
-    "at": "2026-10-02T01:19:03.230Z",
+    "at": "2026-10-02T01:21:42.418Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
     "contentType": "text/plain; charset=utf-8",
     "bodyFile": "response-065-querydata.txt",
-    "bodyBytes": 2113
+    "bodyBytes": 2650
   },
   {
-    "at": "2026-10-02T01:19:03.235Z",
+    "at": "2026-10-02T01:21:42.425Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
     "contentType": "text/plain; charset=utf-8",
     "bodyFile": "response-066-querydata.txt",
-    "bodyBytes": 1846
+    "bodyBytes": 2113
   },
   {
-    "at": "2026-10-02T01:19:03.267Z",
+    "at": "2026-10-02T01:21:42.430Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
     "contentType": "text/plain; charset=utf-8",
@@ -536,7 +536,7 @@
     "bodyBytes": 2642
   },
   {
-    "at": "2026-10-02T01:19:03.286Z",
+    "at": "2026-10-02T01:21:42.439Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
     "contentType": "text/plain; charset=utf-8",
@@ -544,15 +544,15 @@
     "bodyBytes": 2382
   },
   {
-    "at": "2026-10-02T01:19:03.290Z",
+    "at": "2026-10-02T01:21:42.442Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
     "contentType": "text/plain; charset=utf-8",
     "bodyFile": "response-069-querydata.txt",
-    "bodyBytes": 2650
+    "bodyBytes": 2462
   },
   {
-    "at": "2026-10-02T01:19:08.132Z",
+    "at": "2026-10-02T01:21:47.329Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
     "contentType": "text/plain; charset=utf-8",
@@ -560,7 +560,7 @@
     "bodyBytes": 1993
   },
   {
-    "at": "2026-10-02T01:19:08.266Z",
+    "at": "2026-10-02T01:21:47.442Z",
     "status": 200,
     "url": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
     "contentType": "text/plain; charset=utf-8",
