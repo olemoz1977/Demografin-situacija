@@ -1,0 +1,31 @@
+{
+  "year": 2025,
+  "indicator_code": "S7R280",
+  "indicator_name": "Būsto pirkimo-pardavimo vidutinės kainos",
+  "housing_type_code": "1123",
+  "housing_type": "Butas daugiabučiuose namuose",
+  "unit": "EUR/m²",
+  "collection": "Būsto tipas | Didieji miestai (2017 - 2025) (Atnaujinta: 2026-07-31)",
+  "municipality_count": 6,
+  "municipalities": [
+    "Alytaus m. sav.",
+    "Kauno m. sav.",
+    "Klaipėdos m. sav.",
+    "Panevėžio m. sav.",
+    "Šiaulių m. sav.",
+    "Vilniaus m. sav."
+  ],
+  "values_eur_m2": {
+    "Alytaus m. sav.": 1038.74,
+    "Kauno m. sav.": 1987.66,
+    "Klaipėdos m. sav.": 1740.84,
+    "Panevėžio m. sav.": 1170.36,
+    "Šiaulių m. sav.": 1262.33,
+    "Vilniaus m. sav.": 2846.01
+  },
+  "lithuania_apartment_eur_m2": 1880.13,
+  "source_layer": "https://osp-sdg.stat.gov.lt/arcgis/rest/services/EVP_DB_connection/evp56/FeatureServer/0",
+  "role": "OFFICIAL_VALIDATION_ONLY_NOT_10_COUNTY_SALE_LAYER",
+  "coverage_limit": "Official VDA series covers Lithuania plus six city municipalities; it cannot be relabelled as 10 counties.",
+  "query_url": "https://osp-sdg.stat.gov.lt/arcgis/rest/services/EVP_DB_connection/evp56/FeatureServer/0/query?returnGeometry=false&f=json&where=laikotarpis_name%3D%272025%27+AND+indicator_code%3D%27S7R280%27+AND+bustotipas_2%3D%271123%27+AND+matvnt%3D%27eur_1_m2%27&outFields=bustotipas_2%2Cbustotipas_2_name%2Claikotarpis_name%2Cmatvnt%2Cmatvnt_name%2Csavivaldybesm2021007%2Csavivaldybesm2021007_name%2Ccollection_name%2Cindicator_code%2Cindicator_name%2Cvalue&orderByFields=savivaldybesm2021007_name+ASC&resultRecordCount=100"
+}
