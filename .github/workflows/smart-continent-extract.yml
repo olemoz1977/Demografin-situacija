@@ -9,6 +9,9 @@ on:
       - "scripts/extract_smart_continent_powerbi.mjs"
       - "scripts/parse_smart_continent_powerbi_raw.mjs"
       - "scripts/extract_smart_continent_rent_proxy.mjs"
+      - "scripts/parse_smart_continent_rent_proxy.mjs"
+      - "data/municipality-county-map.csv"
+      - "data/housing-rent-city-sample-2025-summary.csv"
 
 permissions:
   contents: write
@@ -52,6 +55,10 @@ jobs:
           rm -rf research/raw/smart-continent-rent-proxy
           node scripts/extract_smart_continent_rent_proxy.mjs
 
+      - name: Parse rent proxy and run QA
+        run: |
+          node scripts/parse_smart_continent_rent_proxy.mjs
+
       - name: Remove binary screenshots before commit
         run: |
           rm -f research/raw/smart-continent-powerbi/latest/*.png
@@ -63,7 +70,9 @@ jobs:
           git add research/raw/smart-continent-powerbi/latest \
             research/raw/smart-continent-rent-proxy \
             data/housing-sale-smart-continent-housing-2024-diagnostic.csv \
-            research/smart-continent-housing-page4-qa-2024.json
+            research/smart-continent-housing-page4-qa-2024.json \
+            data/housing-rent-smart-continent-proxy-2024-diagnostic.csv \
+            research/smart-continent-rent-proxy-qa-2024.json
           if git diff --cached --quiet; then
             echo "No extraction changes to commit"
           else
