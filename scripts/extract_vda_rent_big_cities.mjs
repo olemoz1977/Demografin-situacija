@@ -30,7 +30,8 @@ if (!res.ok) {
 const json = JSON.parse(text);
 if (json.error) throw new Error(JSON.stringify(json.error));
 
-const rows = (json.features || []).map(function (f) {
+const rows = (json.features || [])
+  .map(function (f) {
   const a = f.attributes || {};
   return {
     municipality_code: a.savivaldybesm2020113,
@@ -46,7 +47,10 @@ const rows = (json.features || []).map(function (f) {
     source_url: layerUrl,
     role: "official_validation_benchmark_only",
   };
-});
+  })
+  .filter(function (r) {
+    return r.municipality !== "Lietuvos Respublika";
+  });
 
 console.log(JSON.stringify({ discovered_rows: rows }, null, 2));
 if (rows.length !== 5) {
