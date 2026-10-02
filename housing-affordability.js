@@ -13,12 +13,13 @@
       <h2>Kiek būsto m² per metus teoriškai atitinka jaunos dirbančios poros pajamos po nuomos?</h2>
       <p class="lead">Tai preliminarus 10 apskričių modelis. Jis leidžia matyti kryptį dabar, nelaukiant, kol visi duomenų sluoksniai taps galutiniai.</p>
       <div class="alert alert-amber"><strong>Skaičiai bus tikslinami.</strong> Pajamos yra modeliuotos pagal „Sodros“ 2025-11 duomenis; nuoma – 2025 m. istorinė rinkos skelbimų imtis; pardavimo kaina – 2025 m. butų kainos proxy, kalibruotas pagal oficialų VDA šešių miestų etaloną. Tai nėra oficialios apskričių butų kainos.</div>
+      <div class="source-line"><strong>Duomenų būsenos:</strong> Oficialu = tiesioginis oficialus etalonas · Modeliuota = oficialių duomenų pagrindu apskaičiuota · Preliminaru = dar ne publication-grade rinkos/proxy sluoksnis · Tikslinama = galutinis kompozitinis skaičius bus perskaičiuotas gavus stipresnius duomenis.</div>
       <div class="kpi-row" id="housingKpis"></div>
       <div class="chart-wrap" style="height:430px"><canvas id="housingAffordabilityChart"></canvas></div>
       <div class="chart-caption">Centrinis preliminarus įvertis. Plonesnė juosta rodo jautrumo diapazoną, o ne statistinį pasikliautinąjį intervalą.</div>
       <div id="housingTableWrap"></div>
       <div class="two-col" style="margin-top:1.5rem">
-        <div class="card"><div class="eyebrow">Kas jau gana tvirta</div><p><strong>Pajamų sluoksnis:</strong> 10/10 apskričių, modeliuotas pagal oficialius „Sodros“ duomenis. <strong>2025 VDA etalonas:</strong> tikros daugiabučių butų sandorių kainos Lietuvai ir 6 miestų savivaldybėms.</p></div>
+        <div class="card"><div class="eyebrow">Kas jau gana tvirta</div><p><strong>Modeliuota:</strong> pajamų sluoksnis apima 10/10 apskričių ir remiasi oficialiais „Sodros“ duomenimis. <strong>Oficialu:</strong> VDA S7R280 2025 etalonas pateikia faktines daugiabučių butų sandorių kainas Lietuvai ir 6 miestų savivaldybėms.</p></div>
         <div class="card"><div class="eyebrow">Kas bus tikslinama</div><p><strong>Pardavimo kaina:</strong> pakeisime, kai gausime 2025 m. 60 savivaldybių faktinius butų sandorius. <strong>Nuoma:</strong> pakeisime arba validuosime gavę pilnesnį 10 apskričių rinkos sluoksnį.</p></div>
       </div>
       <div class="alert alert-blue"><strong>Kaip skaityti:</strong> svarbiau ne vienas dešimtainis skaičius, o skirtumų mastas tarp apskričių. Tauragės nuomos imtis ypač silpna (N=2), todėl jos poziciją laikykite tik orientacine.</div>
@@ -49,10 +50,11 @@
         <td><strong>${r.county}</strong></td>
         <td class="td-num">${fmt(r.m2_per_year_after_rent)}</td>
         <td class="td-num">${fmt(r.m2_after_rent_sensitivity_low)}–${fmt(r.m2_after_rent_sensitivity_high)}</td>
-        <td class="td-num">${fmt0(r.sale_price_proxy_2025_eur_m2)} €</td>
-        <td class="td-num">${fmt0(r.rent_month_median_eur)} €</td>
+        <td class="td-num">${fmt0(r.sale_price_proxy_2025_eur_m2)} €<br><small>Preliminaru · tikslinama</small></td>
+        <td class="td-num">${fmt0(r.rent_month_median_eur)} €<br><small>${lowN?'Preliminaru · LOW N':'Preliminaru'}</small></td>
         <td class="td-num ${lowN?'td-red':''}">N=${r.sample_n}</td>
-        <td class="td-num">${fmt0(r.model_net_25_30_eur_month)} €</td>
+        <td class="td-num">${fmt0(r.model_net_25_30_eur_month)} €<br><small>Modeliuota</small></td>
+        <td><strong>Tikslinama</strong></td>
       </tr>`;
     }).join('');
     section.querySelector('#housingTableWrap').innerHTML=`
@@ -60,7 +62,7 @@
       <table>
         <thead><tr>
           <th>Apskritis</th><th class="td-num">m²/metus po nuomos</th><th class="td-num">Jautrumo diapazonas</th>
-          <th class="td-num">Pardavimo proxy €/m²</th><th class="td-num">Nuoma €/mėn.</th><th class="td-num">Nuomos imtis</th><th class="td-num">Neto / asm.</th>
+          <th class="td-num">Pardavimo proxy €/m²</th><th class="td-num">Nuoma €/mėn.</th><th class="td-num">Nuomos imtis</th><th class="td-num">Neto / asm.</th><th>Būsena</th>
         </tr></thead><tbody>${table}</tbody>
       </table>`;
 
