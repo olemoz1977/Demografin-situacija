@@ -12,7 +12,7 @@ Public-analysis target:
 Population:
 - working couple;
 - age 25–30;
-- no children.
+- no assumption about children; the current income model only represents a couple where both people are working. Child-related costs and parental-leave income replacement are not modelled.
 
 Geography:
 - all 10 Lithuanian counties.
