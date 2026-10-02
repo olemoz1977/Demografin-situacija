@@ -1,6 +1,11 @@
 county,sample_n,localities_n,localities,rent_month_median_eur,rent_month_mean_eur,area_median_m2,rent_eur_m2_median,price_q25,price_q75,first_observation,last_observation,quality,source_scope,publication_status
 Alytaus,6,1,Alytus,285.0,275.0,34.0,8.24,280.0,297.5,2025-07-29,2025-10-17,C,Skelbiu.lt search-index historical sample; direct listing-level county pool,research_sample_not_publication_approved
+Kauno,13,1,Kaunas,350.0,363.077,32.0,12.0,350.0,400.0,2025-02-10,2025-11-10,B,Skelbiu.lt search-index historical sample; direct listing-level county pool,research_sample_not_publication_approved
+Klaipėdos,6,1,Klaipėda,345.0,336.667,35.5,9.75,310.0,350.0,2025-08-17,2025-12-11,C,Skelbiu.lt search-index historical sample; direct listing-level county pool,research_sample_not_publication_approved
 Marijampolės,7,1,Marijampolė,300.0,290.0,33.0,8.33,255.0,340.0,2025-02-15,2025-12-22,C,Skelbiu.lt search-index historical sample; direct listing-level county pool,research_sample_not_publication_approved
+Panevėžio,5,1,Panevėžys,250.0,272.0,36.0,6.94,230.0,330.0,2025-09-07,2025-11-18,C,Skelbiu.lt search-index historical sample; direct listing-level county pool,research_sample_not_publication_approved
 Tauragės,2,1,Tauragė,300.0,300.0,37.6,8.095,275.0,325.0,2025-05-07,2025-12-19,insufficient,Skelbiu.lt search-index historical sample; direct listing-level county pool,research_sample_not_publication_approved
-Telšių,4,1,Telšiai,275.0,285.0,36.5,8.71,245.0,315.0,2025-02-17,2025-12-03,insufficient,Skelbiu.lt search-index historical sample; direct listing-level county pool,research_sample_not_publication_approved
+Telšių,8,3,Mažeikiai | Plungė | Telšiai,275.0,278.75,36.0,8.095,247.5,300.0,2025-02-17,2025-12-09,C,Skelbiu.lt search-index historical sample; direct listing-level county pool,research_sample_not_publication_approved
 Utenos,6,2,Anykščiai | Utena,255.0,245.0,35.5,6.865,212.5,275.0,2025-03-09,2025-12-17,C,Skelbiu.lt search-index historical sample; direct listing-level county pool,research_sample_not_publication_approved
+Vilniaus,1,1,Vilnius,400.0,400.0,25.0,16.0,400.0,400.0,2025-02-07,2025-02-07,insufficient,Skelbiu.lt search-index historical sample; direct listing-level county pool,research_sample_not_publication_approved
+Šiaulių,2,1,Šiauliai,225.0,225.0,30.0,7.5,212.5,237.5,2025-09-01,2025-12-21,insufficient,Skelbiu.lt search-index historical sample; direct listing-level county pool,research_sample_not_publication_approved
