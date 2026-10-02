@@ -164,6 +164,15 @@
       "comparison_limit": "different year and housing basket; diagnostic only"
     },
     {
+      "city": "Klaipėda",
+      "smart_continent_2024_implied_rent_eur_month": null,
+      "skelbiu_2025_one_room_sample_median_eur": 345,
+      "skelbiu_sample_n": 6,
+      "difference_eur": null,
+      "difference_pct": null,
+      "comparison_limit": "different year and housing basket; diagnostic only"
+    },
+    {
       "city": "Marijampolė",
       "municipality": "Marijampolės sav.",
       "smart_continent_2024_implied_rent_eur_month": 328.64,
@@ -171,6 +180,33 @@
       "skelbiu_sample_n": 7,
       "difference_eur": 28.639999999999986,
       "difference_pct": 9.546666666666662,
+      "comparison_limit": "different year and housing basket; diagnostic only"
+    },
+    {
+      "city": "Mažeikiai",
+      "smart_continent_2024_implied_rent_eur_month": null,
+      "skelbiu_2025_one_room_sample_median_eur": 275,
+      "skelbiu_sample_n": 2,
+      "difference_eur": null,
+      "difference_pct": null,
+      "comparison_limit": "different year and housing basket; diagnostic only"
+    },
+    {
+      "city": "Plungė",
+      "smart_continent_2024_implied_rent_eur_month": null,
+      "skelbiu_2025_one_room_sample_median_eur": 270,
+      "skelbiu_sample_n": 2,
+      "difference_eur": null,
+      "difference_pct": null,
+      "comparison_limit": "different year and housing basket; diagnostic only"
+    },
+    {
+      "city": "Šiauliai",
+      "smart_continent_2024_implied_rent_eur_month": null,
+      "skelbiu_2025_one_room_sample_median_eur": 225,
+      "skelbiu_sample_n": 2,
+      "difference_eur": null,
+      "difference_pct": null,
       "comparison_limit": "different year and housing basket; diagnostic only"
     },
     {
@@ -201,6 +237,15 @@
       "skelbiu_sample_n": 4,
       "difference_eur": 97.08999999999997,
       "difference_pct": 43.1511111111111,
+      "comparison_limit": "different year and housing basket; diagnostic only"
+    },
+    {
+      "city": "Vilnius",
+      "smart_continent_2024_implied_rent_eur_month": null,
+      "skelbiu_2025_one_room_sample_median_eur": 400,
+      "skelbiu_sample_n": 1,
+      "difference_eur": null,
+      "difference_pct": null,
       "comparison_limit": "different year and housing basket; diagnostic only"
     }
   ],
