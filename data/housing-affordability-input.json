@@ -106,7 +106,9 @@
     "Official VDA S7R280 2024 apartment sale benchmark is available for 6 city municipalities + Lithuania only; it is validation, not a 10-county layer.",
     "Smart Continent BI_1 is exactly generic housing EUR/m² divided by monthly net VDU; it contains no independent apartment-only price signal.",
     "Skelbiu.lt 2025 historical search-index county sample reaches N>=5 in 9/10 counties; Tauragės remains N=2. Route is research/QA only and fails publication gate.",
-    "Search-index observations are not a complete portal export even when N>=5; sample thresholds are minimum QA rules, not proof of full market representativeness."
+    "Search-index observations are not a complete portal export even when N>=5; sample thresholds are minimum QA rules, not proof of full market representativeness.",
+    "Aruodas 2025 1-room monthly asking-rent benchmark is now complete for Vilnius, Kaunas and Klaipėda (12 months each) via hidden comparison-table values plus direct archived reports.",
+    "Cross-portal QA shows Skelbiu search-index medians below Aruodas annual monthly-average benchmarks by about 25.3% in Vilnius, 8.8% in Kaunas and 7.2% in Klaipėda; do not use these gaps as calibration factors."
   ],
   "sources": [
     {
@@ -179,6 +181,38 @@
         "county_blocker": "Tauragės",
         "taurage_sample_n": 2,
         "note": "Direct listing-level county pooling avoids city=county substitution, but search-index is not a complete portal export and Tauragė remains N<5."
+      },
+      "aruodas_2025_validation": {
+        "status": "PASS_VALIDATION_ONLY",
+        "file": "research/raw/aruodas-rent-benchmark-2025/aruodas-1room-rent-2025-qa.json",
+        "city_count": 3,
+        "months_per_city": 12,
+        "annual_summary_eur_month": {
+          "Vilnius": {
+            "mean_of_monthly_averages": 468.75,
+            "median_of_monthly_averages": 467
+          },
+          "Kaunas": {
+            "mean_of_monthly_averages": 383.75,
+            "median_of_monthly_averages": 382
+          },
+          "Klaipėda": {
+            "mean_of_monthly_averages": 371.67,
+            "median_of_monthly_averages": 368
+          }
+        },
+        "method": "2025-01..09 from hidden prior-year comparison columns in 2026 same-month reports; 2025-10..12 direct archived reports",
+        "role": "CITY_VALIDATION_ONLY_NOT_COUNTY_LAYER"
+      },
+      "cross_portal_validation": {
+        "file": "research/housing-rent-cross-portal-validation-2025.json",
+        "verdict": "SUPPORTS_SEARCH_INDEX_AS_QA_ONLY_NOT_PUBLICATION_LAYER",
+        "skelbiu_vs_aruodas_annual_mean_gap_pct": {
+          "Vilnius": -25.33,
+          "Kaunas": -8.79,
+          "Klaipėda": -7.18
+        },
+        "note": "Different portals and aggregation statistics; gaps are diagnostic only and must not be used as calibration factors."
       }
     },
     "calculation_layer": {
