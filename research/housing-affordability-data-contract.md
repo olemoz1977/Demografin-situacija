@@ -161,3 +161,52 @@ Tai santykinis įperkamumo indeksas, ne realios metinės santaupos.
 - oficialūs ir modeliuoti rodikliai aiškiai atskirti;
 - laikotarpių skirtumai paaiškinti;
 - nėra apskrities centro duomenų, pervadintų apskrities rodikliu.
+
+
+## 9. Galutinio skaičiavimo kontraktas
+
+Strict calculator:
+- `scripts/build_housing_affordability_county.py`;
+- testai: `tests/test_build_housing_affordability_county.py`;
+- CI: `.github/workflows/test-housing-affordability-calculator.yml`.
+
+Pagal nutylėjimą priimami tik:
+- pardavimo sluoksnis su `layer_status=publication_approved`;
+- nuomos sluoksnis su `layer_status=publication_approved`;
+- tiksliai tos pačios 10 apskričių visuose trijuose sluoksniuose;
+- nuomos kokybė tik B arba C, be `insufficient`.
+
+`--allow-candidate` leidžiamas tik QA / jautrumo skaičiavimams. Tokiu režimu:
+- `publication_ready=false`;
+- `overall_quality=candidate_only`;
+- rezultatas negali būti naudojamas live / main.
+
+Kalkuliatorius pateikia:
+- `m2_per_year_after_rent`;
+- `m2_per_year_without_rent`;
+- `rent_burden_pct_pair_net_income`;
+- `pair_net_income_months_per_one_m2`;
+- bazinius pajamų, pardavimo, nuomos dydžius ir imčių N;
+- sluoksnių bei bendrą kokybę.
+
+Kadangi pajamų sluoksnis yra B-modelled, bendras rezultatas negali būti A net tada,
+kai RC pardavimo sluoksnis yra oficialus faktinių sandorių A lygio šaltinis.
+
+## 10. Machine-readable publication readiness
+
+Failas:
+- `research/housing-affordability-readiness.json`
+
+Generatorius:
+- `scripts/housing_affordability_readiness.py`
+
+Dabartinė būsena:
+- income 10/10 — PASS;
+- no county-centre substitution — PASS;
+- sale actual apartment transactions — BLOCKED;
+- private 1-room rent 10 counties — BLOCKED;
+- `ready_for_publication=false`;
+- `decision=DO_NOT_PUBLISH`.
+
+Readiness blockeriai yra tikėtina tyrimo būsena, todėl generatorius dėl jų negrąžina CI
+klaidos. CI klaida rezervuota sugadintai konfigūracijai / kontrakto pažeidimui.
