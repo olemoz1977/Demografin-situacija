@@ -1,0 +1,47 @@
+name: Build preliminary housing affordability v0.1
+
+on:
+  push:
+    branches:
+      - feature/housing-affordability
+    paths:
+      - "scripts/build_housing_affordability_preliminary_v01.py"
+      - "data/housing-sale-smart-continent-housing-2024-diagnostic.csv"
+      - "data/municipality-county-map.csv"
+      - "data/housing-income-county-model-2025-11.csv"
+      - "data/housing-rent-county-search-index-sample-2025.csv"
+      - "research/raw/vda-sale-big-cities/vda-sale-big-cities-2025.csv"
+      - ".github/workflows/build-housing-affordability-preliminary-v01.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/housing-affordability
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pandas numpy
+      - name: Build v0.1 preliminary table
+        run: python scripts/build_housing_affordability_preliminary_v01.py
+      - name: Commit outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/housing-affordability-preliminary-v01.csv research/housing-affordability-preliminary-v01-qa.json
+          if git diff --cached --quiet; then
+            echo "No output changes"
+          else
+            git commit -m "Build preliminary housing affordability v0.1 [skip ci]"
+            git fetch origin feature/housing-affordability
+            git rebase origin/feature/housing-affordability
+            git push origin HEAD:feature/housing-affordability
+          fi
