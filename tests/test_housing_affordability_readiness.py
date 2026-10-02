@@ -49,6 +49,15 @@ class HousingReadinessTest(unittest.TestCase):
             self.assertIn("sale_actual_apartment_transactions", blockers)
             self.assertIn("rent_private_1room_10_counties", blockers)
 
+            sale_blocker = next(
+                b["reason"]
+                for b in data["blockers"]
+                if b["gate"] == "sale_actual_apartment_transactions"
+            )
+            self.assertIn("2025", sale_blocker)
+            self.assertIn("2024", sale_blocker)
+            self.assertIn("fallback", sale_blocker)
+
     def test_corrupt_config_fails(self):
         with tempfile.TemporaryDirectory() as td:
             td = Path(td)
