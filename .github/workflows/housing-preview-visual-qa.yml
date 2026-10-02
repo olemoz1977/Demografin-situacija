@@ -52,7 +52,7 @@ jobs:
             const errors = [];
 
             async function check(name, viewport, screenshot) {
-              const page = await browser.newPage({ viewportSize: viewport });
+              const page = await browser.newPage({ viewport });
               page.on('pageerror', err => errors.push(`${name}: pageerror: ${err.message}`));
 
               await page.goto('http://127.0.0.1:8765/?view=housing', {waitUntil:'networkidle'});
