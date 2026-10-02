@@ -61,6 +61,7 @@
     section.querySelector('#housingTableWrap').innerHTML=`
       <h3 style="margin-top:1.5rem">Preliminarus 10 apskričių vaizdas</h3>
       <p class="small">Apskritys surikiuotos pagal centrinį v0.1 m² įvertį tik vizualiniam palyginimui. <strong>Tai nėra patikimumo ar galutinis įperkamumo reitingas.</strong></p>
+      <p class="small housing-scroll-hint" aria-hidden="true">Telefone lentelę slinkite horizontaliai →</p>
       <div class="housing-table-scroll" tabindex="0" aria-label="Būsto įperkamumo lentelė; telefone slinkite horizontaliai">
         <table class="housing-table">
           <thead><tr>
