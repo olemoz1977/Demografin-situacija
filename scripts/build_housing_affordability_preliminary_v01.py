@@ -103,7 +103,7 @@ def main() -> None:
         .merge(
             rent[[
                 "county","sample_n","localities_n","localities",
-                "rent_month_median_eur","quality"
+                "rent_month_median_eur","price_q25","price_q75","quality"
             ]],
             on="county",
             validate="one_to_one",
@@ -131,6 +131,24 @@ def main() -> None:
         merged["sale_price_proxy_2025_eur_m2"] / merged["pair_net_income_eur_month"]
     )
 
+    # Sensitivity interval, not a statistical confidence interval:
+    # conservative side = higher observed rent quartile + highest six-city calibration ratio;
+    # optimistic side = lower rent quartile + lowest calibration ratio.
+    merged["sale_proxy_low_eur_m2"] = (
+        merged["generic_housing_2024_eur_m2_weighted"] * float(ratios.min())
+    )
+    merged["sale_proxy_high_eur_m2"] = (
+        merged["generic_housing_2024_eur_m2_weighted"] * float(ratios.max())
+    )
+    merged["m2_after_rent_sensitivity_low"] = (
+        (merged["pair_net_income_eur_year"] - merged["price_q75"] * 12)
+        / merged["sale_proxy_high_eur_m2"]
+    )
+    merged["m2_after_rent_sensitivity_high"] = (
+        (merged["pair_net_income_eur_year"] - merged["price_q25"] * 12)
+        / merged["sale_proxy_low_eur_m2"]
+    )
+
     merged["income_status"] = "MODELLED_B"
     merged["sale_status"] = "PRELIMINARY_MODELLED_PROXY"
     merged["rent_status"] = merged["quality"].map(
@@ -150,7 +168,8 @@ def main() -> None:
         "rent_month_median_eur","sample_n","quality",
         "generic_housing_2024_eur_m2_weighted","generic_housing_transactions_2024",
         "sale_price_proxy_2025_eur_m2",
-        "m2_per_year_after_rent","m2_per_year_without_rent",
+        "m2_per_year_after_rent","m2_after_rent_sensitivity_low","m2_after_rent_sensitivity_high",
+        "m2_per_year_without_rent",
         "rent_burden_pct_pair_net_income","pair_net_income_months_per_one_m2",
         "income_status","sale_status","rent_status","value_status","needs_refinement",
         "localities_n","localities",
@@ -161,6 +180,7 @@ def main() -> None:
         "model_net_25_30_eur_month","pair_net_income_eur_month",
         "rent_month_median_eur","generic_housing_2024_eur_m2_weighted",
         "sale_price_proxy_2025_eur_m2","m2_per_year_after_rent",
+        "m2_after_rent_sensitivity_low","m2_after_rent_sensitivity_high",
         "m2_per_year_without_rent","rent_burden_pct_pair_net_income",
         "pair_net_income_months_per_one_m2",
     ]:
@@ -195,6 +215,7 @@ def main() -> None:
             "six_city_ratio_median": factor,
             "leave_one_out_mape_pct": loo_mape,
             "warning": "Calibration is validated only in six city municipalities; transfer to rural municipalities/counties is unvalidated. This is not an official county apartment price.",
+            "sensitivity_interval_note": "Displayed m² sensitivity interval combines the observed min/max six-city calibration ratios with county rent-sample Q25/Q75. It is a scenario band, not a statistical confidence interval.",
             "calibration_rows": cal.round(4).to_dict("records"),
         },
         "rent_proxy": {
