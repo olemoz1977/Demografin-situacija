@@ -2,7 +2,7 @@
 
 Date: 2026-10-02
 Branch: `feature/housing-affordability`
-Main/live: **DO NOT MODIFY** until publication-readiness gates pass.
+Main/live: **DO NOT MODIFY**. STRICT v1.0 data gates are not passed; PRELIMINARY v0.1 is allowed only in feature/preview.
 
 ## Goal
 
@@ -18,9 +18,10 @@ Geography:
 - all 10 Lithuanian counties.
 
 Strategic choice:
-- **A — keep all 10 counties and high quality threshold.**
+- **STRICT / v1.0:** keep all 10 counties and the high quality threshold; final validated version remains blocked.
+- **PRELIMINARY / v0.1:** show the best currently supportable 10-county estimate in feature/preview with explicit uncertainty and refinement labels.
 - Do not substitute county centres for counties.
-- Do not publish incomplete / mixed-method ranking.
+- Do not present proxy/modelled layers as official county statistics.
 
 Formula:
 
@@ -34,9 +35,10 @@ relative affordability index, NOT actual annual savings.
 Machine-readable gate:
 `research/housing-affordability-readiness.json`
 
-Current decision:
-- `ready_for_publication = false`
-- `DO_NOT_PUBLISH`
+Current dual decision:
+- `ready_for_publication = false` / `validated_publication_ready = false` — STRICT v1.0 blocked;
+- `preliminary_v0_1.ready = true` — feature/preview allowed with explicit uncertainty;
+- main/live remains locked.
 
 PASS:
 - income model 10/10 counties;
