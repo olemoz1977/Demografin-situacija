@@ -1,0 +1,31 @@
+name: Test RC apartment sale builder
+
+on:
+  push:
+    branches:
+      - feature/housing-affordability
+    paths:
+      - "scripts/build_housing_sale_county_from_rc.py"
+      - "tests/test_build_housing_sale_county_from_rc.py"
+      - "data/municipality-county-map.csv"
+      - ".github/workflows/test-rc-apartment-sale-builder.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/housing-affordability
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install pandas openpyxl
+      - name: Run RC builder tests
+        run: python -m unittest -v tests/test_build_housing_sale_county_from_rc.py
