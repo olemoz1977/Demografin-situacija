@@ -1,0 +1,48 @@
+{
+  "year": 2024,
+  "layerUrl": "https://osp-sdg.stat.gov.lt/arcgis/rest/services/EVP_DB_connection/evp32/FeatureServer/0",
+  "row_count": 6,
+  "indicator_group_count": 1,
+  "sale_like_count": 1,
+  "sale_like": [
+    {
+      "indicator_code": "S7R281",
+      "indicator_name": "Butų nuomos vidutinės metinės kainos",
+      "indicator_name_en": "Average annual rent price for flat",
+      "collection_code": "M9070366",
+      "collection_name": "Didieji miestai (2019 - 2025) (Atnaujinta: 2026-07-31)",
+      "matvnt": "eur_1_m2_per_metus",
+      "matvnt_name": "EUR/m² per metus",
+      "municipalities": [
+        "Kauno m. sav.",
+        "Klaipėdos m. sav.",
+        "Lietuvos Respublika",
+        "Panevėžio m. sav.",
+        "Vilniaus m. sav.",
+        "Šiaulių m. sav."
+      ],
+      "municipality_count": 6
+    }
+  ],
+  "all_indicators": [
+    {
+      "indicator_code": "S7R281",
+      "indicator_name": "Butų nuomos vidutinės metinės kainos",
+      "indicator_name_en": "Average annual rent price for flat",
+      "collection_code": "M9070366",
+      "collection_name": "Didieji miestai (2019 - 2025) (Atnaujinta: 2026-07-31)",
+      "matvnt": "eur_1_m2_per_metus",
+      "matvnt_name": "EUR/m² per metus",
+      "municipalities": [
+        "Kauno m. sav.",
+        "Klaipėdos m. sav.",
+        "Lietuvos Respublika",
+        "Panevėžio m. sav.",
+        "Vilniaus m. sav.",
+        "Šiaulių m. sav."
+      ],
+      "municipality_count": 6
+    }
+  ],
+  "query_url": "https://osp-sdg.stat.gov.lt/arcgis/rest/services/EVP_DB_connection/evp32/FeatureServer/0/query?returnGeometry=false&f=json&where=laikotarpis_name%3D%272024%27&outFields=indicator_code%2Cindicator_name%2Cindicator_name_en%2Ccollection_code%2Ccollection_name%2Cmatvnt%2Cmatvnt_name%2Csavivaldybesm2020113_name&orderByFields=indicator_name+ASC%2C+savivaldybesm2020113_name+ASC&resultRecordCount=5000"
+}
