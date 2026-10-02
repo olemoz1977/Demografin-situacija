@@ -128,6 +128,47 @@ Suvestinė dabar generuojama automatiškai ir tikrinama CI:
 Šie miesto skaičiai NEGALI būti naudojami galutiniam 10 apskričių indeksui:
 paieškos indeksas nėra pilna skelbimų duomenų bazė, o miestas nėra apskritis.
 
+
+## 10 apskričių Skelbiu.lt search-index bandymas — CLOSED / FAIL publikacijai
+
+2026-10-02 miesto lygmens istorinė imtis buvo išplėsta į tiesioginę apskrities
+listing-level imtį. Tai reiškia, kad apskrities mediana skaičiuojama iš visų priimtų
+tos apskrities 2025 m. vieno kambario skelbimų, o ne vidurkinant miestų medianas.
+
+Dabartinė aprėptis:
+
+- Alytaus: N=6, mediana 285 EUR/mėn. — C;
+- Kauno: N=13, mediana 350 — B;
+- Klaipėdos: N=6, mediana 345 — C;
+- Marijampolės: N=7, mediana 300 — C;
+- Panevėžio: N=5, mediana 250 — C;
+- Šiaulių: N=13, mediana 250 — B;
+- Telšių: N=8, mediana 275 — C;
+- Utenos: N=6, mediana 255 — C;
+- Vilniaus: N=10, mediana 350 — B;
+- Tauragės: N=2, mediana 300 — **insufficient**.
+
+Taigi minimalų N>=5 slenkstį pasiekia **9 iš 10 apskričių**.
+
+Tauragės apskričiai papildomai tikrinti Tauragės, Jurbarko, Šilalės ir Pagėgių
+istoriniai paieškos rezultatai. Nebuvo rasti trys papildomi unikalūs ir saugiai 2025 m.
+datuojami ilgalaikės 1 kambario nuomos objektai. Dabartiniai 2026 m. skelbimai nebuvo
+atgal datuojami pagal pardavėjo registracijos metus; trumpalaikė nuoma atmesta; to paties
+fizinio objekto perpublikavimai nedubliuoti.
+
+Svarbu: net jei Tauragė pasiektų N=5, paieškos indeksas vis tiek nėra įrodytas pilnas
+Skelbiu.lt 2025 m. eksportas. Todėl N ribos yra tik minimalus mėginio QA kriterijus,
+o ne reprezentatyvumo ar pilnos rinkos aprėpties įrodymas.
+
+Verdiktas:
+**FAIL pagrindiniam 10 apskričių nuomos sluoksniui; research / cross-validation only.**
+
+Failai:
+- `data/housing-rent-county-search-index-sample-2025.csv`;
+- `research/housing-rent-county-search-index-qa-2025.json`;
+- `scripts/summarize_housing_rent_county_sample.py`;
+- `tests/test_summarize_housing_rent_county_sample.py`.
+
 ## Rinka.lt kaip alternatyvus vieno portalo archyvas — nepakankamas
 
 2026-10-02 patikrintas Rinka.lt kaip galimas antras vienodo šaltinio 2025 m. archyvas.
