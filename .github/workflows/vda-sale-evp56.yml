@@ -1,0 +1,47 @@
+name: Extract VDA sale EVP56 source
+
+on:
+  push:
+    branches:
+      - feature/housing-affordability
+    paths:
+      - "scripts/extract_vda_sale_evp56.mjs"
+      - ".github/workflows/vda-sale-evp56.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vda-sale-evp56-feature
+  cancel-in-progress: true
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/housing-affordability
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Extract EVP56 source
+        run: |
+          rm -rf research/raw/vda-sale-evp56
+          node scripts/extract_vda_sale_evp56.mjs
+      - name: Commit source diagnostics
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/raw/vda-sale-evp56
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Capture official VDA EVP56 sale source [skip ci]"
+            git fetch origin feature/housing-affordability
+            git rebase origin/feature/housing-affordability
+            git push origin HEAD:feature/housing-affordability
+          fi
