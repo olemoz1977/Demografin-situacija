@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "status": 200,
+  "modelId": 5991437,
+  "queryEndpoint": "https://wabi-west-europe-d-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true",
+  "headerNames": [
+    "content-type",
+    "x-powerbi-resourcekey",
+    "activityid",
+    "requestid",
+    "referer"
+  ],
+  "responseBytes": 5739
+}
