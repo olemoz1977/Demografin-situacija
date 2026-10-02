@@ -1,0 +1,341 @@
+{
+  "queried_at": "2026-10-02T02:08:30.196Z",
+  "queries": [
+    "owner:LT_open_data AND (title:būsto OR title:busto OR title:butų OR title:butu)",
+    "owner:LT_open_data AND (title:pirkimo OR title:pardavimo OR title:kainos)",
+    "owner:LT_open_data AND (tags:būsto OR tags:busto OR tags:butų OR tags:butu)",
+    "owner:LT_open_data AND (description:pirkimo OR description:pardavimo)"
+  ],
+  "unique_items": 28,
+  "relevant_items": 28,
+  "relevant": [
+    {
+      "id": "4b83ddb0f80d4d3493ce22cb1dc7a724",
+      "title": "10.5.1j. Lietuvos nominaliųjų būsto kainų metinis augimas (LT)",
+      "type": "Feature Service",
+      "url": "https://osp-sdg.stat.gov.lt/arcgis/rest/services/goal10_indicators_vw/FeatureServer/16",
+      "owner": "LT_open_data",
+      "tags": [
+        "SDG",
+        "SDG10",
+        "DVR",
+        "DVR10",
+        "rodiklis 10.5.1j.",
+        "indicator 10.5.1.",
+        "indicator 10.5.1j.",
+        "rodiklis 10.5.1.",
+        "target 10.5.",
+        "uždavinys 10.5.",
+        "goal 10",
+        "tikslas 10",
+        "10.5.1j.",
+        "10.5.1.",
+        "10.5.",
+        "10",
+        "LT",
+        "LT10",
+        "Fl",
+        "Fl10"
+      ],
+      "modified": 1751627124000
+    },
+    {
+      "id": "3d2484cc65cb44b3aa8929ea01839cca",
+      "title": "busto_problemos_gyv",
+      "type": "Feature Service",
+      "url": "https://services-eu1.arcgis.com/rHAjZpbf6qHK8UCL/arcgis/rest/services/busto_problemos_gyv/FeatureServer",
+      "owner": "LT_open_data",
+      "tags": [],
+      "modified": 1736414218000
+    },
+    {
+      "id": "18af8ac709e1438e9da7ab38c725d536",
+      "title": "Asmenų, gyvenančių namų ūkiuose, susiduriančiuose su išvardytomis būsto problemomis, dalis 2020 m. ",
+      "type": "Dashboard",
+      "url": null,
+      "owner": "LT_open_data",
+      "tags": [],
+      "modified": 1730998952000
+    },
+    {
+      "id": "c2e951bf832243dfb8b3637c19235d5b",
+      "title": "XVI KAINOS busto kainu pokyciai (EVP33) 4 EN",
+      "type": "Dashboard",
+      "url": null,
+      "owner": "LT_open_data",
+      "tags": [
+        "EVP"
+      ],
+      "modified": 1730998946000
+    },
+    {
+      "id": "3562544b5887430fa5cdd6f6fbbf7c16",
+      "title": "XVI KAINOS Būsto pirkimo-pardavimo vidutinės kainos (EVP56) 10 EN",
+      "type": "Dashboard",
+      "url": null,
+      "owner": "LT_open_data",
+      "tags": [
+        "EVP"
+      ],
+      "modified": 1730998946000
+    },
+    {
+      "id": "bdcbe64adb6941e6a8929d198c4cc1d5",
+      "title": "XVI KAINOS Būsto pirkimo-pardavimo vidutinės kainos (EVP56) 10",
+      "type": "Dashboard",
+      "url": null,
+      "owner": "LT_open_data",
+      "tags": [
+        "EVP"
+      ],
+      "modified": 1730998854000
+    },
+    {
+      "id": "98b31210ff4640079aaf29c8630222b9",
+      "title": "XVI KAINOS busto kainu pokyciai (EVP33) 4",
+      "type": "Dashboard",
+      "url": null,
+      "owner": "LT_open_data",
+      "tags": [
+        "EVP"
+      ],
+      "modified": 1730998536000
+    },
+    {
+      "id": "4e7be7542bd44d51b801358dbb7bd9d0",
+      "title": "maitinimas_mokyklos_kainos",
+      "type": "Feature Service",
+      "url": "https://services-eu1.arcgis.com/rHAjZpbf6qHK8UCL/arcgis/rest/services/maitinimas_mokyklos_kainos/FeatureServer",
+      "owner": "LT_open_data",
+      "tags": [
+        ""
+      ],
+      "modified": 1769515563000
+    },
+    {
+      "id": "84f9670882204f9e9f24ba39aaff2ba3",
+      "title": "XVI KAINOS Vartotoju kainu indeksai (EVP27) 1  EN",
+      "type": "Dashboard",
+      "url": null,
+      "owner": "LT_open_data",
+      "tags": [
+        "EVP"
+      ],
+      "modified": 1736089584000
+    },
+    {
+      "id": "67204679c53e472c8d822926905d1dc3",
+      "title": "XVI KAINOS Vartotoju kainu indeksai (EVP27) 1 ",
+      "type": "Dashboard",
+      "url": null,
+      "owner": "LT_open_data",
+      "tags": [
+        "EVP"
+      ],
+      "modified": 1736088802000
+    },
+    {
+      "id": "3fba56c8042649aabbb5fc85329b2f70",
+      "title": "XVI KAINOS  nuomos kainos (EVP32) 3",
+      "type": "Dashboard",
+      "url": null,
+      "owner": "LT_open_data",
+      "tags": [
+        "EVP"
+      ],
+      "modified": 1736088678000
+    },
+    {
+      "id": "35bd9f0944ad40e09eaa4b3fd53ce711",
+      "title": "XVI KAINOS Gamtinių dujų kainos vartotojams (EVP43) 8",
+      "type": "Dashboard",
+      "url": null,
+      "owner": "LT_open_data",
+      "tags": [
+        "EVP"
+      ],
+      "modified": 1730999038000
+    },
+    {
+      "id": "d36a9af5c42e46adb1c7aaf530d090a0",
+      "title": "XVI KAINOS Maisto produktų ir nealkoholinių gėrimų kainų pokyčiai (EVP36) 5",
+      "type": "Dashboard",
+      "url": null,
+      "owner": "LT_open_data",
+      "tags": [
+        "EVP"
+      ],
+      "modified": 1730999038000
+    },
+    {
+      "id": "1050970b8b9b4f9a93f2596e42edd557",
+      "title": "XVI KAINOS Valdžios sektoriaus deficitas ir skola (EVP50) 9",
+      "type": "Dashboard",
+      "url": null,
+      "owner": "LT_open_data",
+      "tags": [
+        "EVP"
+      ],
+      "modified": 1730999032000
+    },
+    {
+      "id": "d58721080c2a4ae7b01ec6a0e1f4d822",
+      "title": "I PREKYBA (6) Kainos 71 R (EVP21) EN",
+      "type": "Dashboard",
+      "url": null,
+      "owner": "LT_open_data",
+      "tags": [
+        "EVP"
+      ],
+      "modified": 1730998850000
+    },
+    {
+      "id": "75889f8625e54525a110f981ff7672fa",
+      "title": "XVI KAINOS Populiariausių produktų vidutinės mažmeninės mėnesinės kainos (EVP37) 6",
+      "type": "Dashboard",
+      "url": null,
+      "owner": "LT_open_data",
+      "tags": [
+        "EVP"
+      ],
+      "modified": 1730998848000
+    },
+    {
+      "id": "b878185de74d4ae99d87197abeeb4bfe",
+      "title": "I PREKYBA (6) Kainos 71 R (EVP21)",
+      "type": "Dashboard",
+      "url": null,
+      "owner": "LT_open_data",
+      "tags": [
+        "EVP"
+      ],
+      "modified": 1730998833000
+    },
+    {
+      "id": "ae137366c4414948bfa06ee40ce8c6d5",
+      "title": "XVI KAINOS Importuotu prekiu kainu pokyciai (EVP28) 2 EN",
+      "type": "Dashboard",
+      "url": null,
+      "owner": "LT_open_data",
+      "tags": [
+        "EVP"
+      ],
+      "modified": 1730998723000
+    },
+    {
+      "id": "c970dfc082a6493b9e5c77c22d9bcd95",
+      "title": "XVI KAINOS Maisto produktų ir nealkoholinių gėrimų kainų pokyčiai (EVP36) 5 EN",
+      "type": "Dashboard",
+      "url": null,
+      "owner": "LT_open_data",
+      "tags": [
+        "EVP"
+      ],
+      "modified": 1730998657000
+    },
+    {
+      "id": "ff71d6f26410447e9cf424c2fb10a046",
+      "title": "XVI KAINOS Elektros energijos kainos ne namų ūkių vartotojams (EVP39) 7 EN",
+      "type": "Dashboard",
+      "url": null,
+      "owner": "LT_open_data",
+      "tags": [
+        "EVP"
+      ],
+      "modified": 1730998656000
+    },
+    {
+      "id": "5f5921eadd6040b2b5da545813f3de27",
+      "title": "XVI KAINOS Populiariausių produktų vidutinės mažmeninės mėnesinės kainos (EVP37) 6 EN",
+      "type": "Dashboard",
+      "url": null,
+      "owner": "LT_open_data",
+      "tags": [
+        "EVP"
+      ],
+      "modified": 1730998633000
+    },
+    {
+      "id": "fbd625a9003140bcbf751fd69a383903",
+      "title": "XVI KAINOS BVP, to meto kainomis (EVP47) 8 EN",
+      "type": "Dashboard",
+      "url": null,
+      "owner": "LT_open_data",
+      "tags": [
+        "EVP"
+      ],
+      "modified": 1730998557000
+    },
+    {
+      "id": "dfffb70b6a5b438281445c0666088082",
+      "title": "XVI KAINOS Importuotu prekiu kainu pokyciai (EVP28) 2",
+      "type": "Dashboard",
+      "url": null,
+      "owner": "LT_open_data",
+      "tags": [
+        "EVP"
+      ],
+      "modified": 1730998557000
+    },
+    {
+      "id": "812d22f78f45487c93f5c292c0907f3c",
+      "title": "XVI KAINOS BVP, to meto kainomis (EVP47) 8",
+      "type": "Dashboard",
+      "url": null,
+      "owner": "LT_open_data",
+      "tags": [
+        "EVP"
+      ],
+      "modified": 1730998540000
+    },
+    {
+      "id": "147bf29fde8544c895b03a12c7c4762b",
+      "title": "XVI KAINOS Gamtinių dujų kainos vartotojams (EVP43) 8EN",
+      "type": "Dashboard",
+      "url": null,
+      "owner": "LT_open_data",
+      "tags": [
+        "EVP"
+      ],
+      "modified": 1730998527000
+    },
+    {
+      "id": "23921e26466d43eba9c379508665d069",
+      "title": "XVI KAINOS Valdžios sektoriaus deficitas ir skola (EVP50) 9 EN",
+      "type": "Dashboard",
+      "url": null,
+      "owner": "LT_open_data",
+      "tags": [
+        "EVP"
+      ],
+      "modified": 1730998520000
+    },
+    {
+      "id": "483c736045a14726a7b8733ed962d4c1",
+      "title": "XVI KAINOS Elektros energijos kainos ne namų ūkių vartotojams (EVP39) 7",
+      "type": "Dashboard",
+      "url": null,
+      "owner": "LT_open_data",
+      "tags": [
+        "EVP"
+      ],
+      "modified": 1730998519000
+    },
+    {
+      "id": "65a5c856741c4a569d676fce7db77cb3",
+      "title": "XVI KAINOS  nuomos kainos (EVP32) 3 EN",
+      "type": "Dashboard",
+      "url": null,
+      "owner": "LT_open_data",
+      "tags": [
+        "EVP"
+      ],
+      "modified": 1730998502000
+    }
+  ],
+  "discovered_services": [
+    "https://osp-sdg.stat.gov.lt/arcgis/rest/services/goal10_indicators_vw/FeatureServer/16",
+    "https://services-eu1.arcgis.com/rHAjZpbf6qHK8UCL/arcgis/rest/services/busto_problemos_gyv/FeatureServer",
+    "https://services-eu1.arcgis.com/rHAjZpbf6qHK8UCL/arcgis/rest/services/maitinimas_mokyklos_kainos/FeatureServer"
+  ]
+}
