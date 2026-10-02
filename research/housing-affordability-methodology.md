@@ -202,3 +202,63 @@ Dabartinė nuomos architektūra:
 „Esminis radinys: faktinių butų sandorių sluoksnį galime sukurti visai Lietuvai“.
 
 `main` / live nekeisti, kol RC pardavimo ir 10 apskričių nuomos vartai nepraeiti.
+
+
+## 2026-10-02 vėlyva korekcija — 2025 period-aligned architektūra
+
+Ši skiltis yra viršesnė už ankstesnę to paties dokumento 2024 pardavimo target
+formuluotę.
+
+### Galutinis tikslinis laikotarpis
+
+Publikaciniam modeliui siekiame:
+- pardavimo kainos — **2025 m.**;
+- nuomos — **2025 m.**;
+- pajamų — **2025-11**.
+
+2024 m. pardavimo sluoksnis paliekamas tik kaip aiškiai pažymėtas fallback ir
+istorinis QA, jei 2025 m. pilno 60 savivaldybių sluoksnio gauti nepavyktų.
+
+### Kodėl pakeista
+
+Oficialus VDA S7R280 ArcGIS sluoksnis jau pateikia 2025 m. daugiabučių butų
+faktinių sandorių kainos etaloną:
+- Lietuva 1880,13 EUR/m²;
+- Alytaus m. sav. 1038,74;
+- Kauno m. sav. 1987,66;
+- Klaipėdos m. sav. 1740,84;
+- Panevėžio m. sav. 1170,36;
+- Šiaulių m. sav. 1262,33;
+- Vilniaus m. sav. 2846,01.
+
+Tai leidžia 2025 m. RC/VDA agregatą tikrinti stipresne, periodiškai suderinta kontrole.
+
+### Pardavimo sluoksnio dabartinė architektūra
+
+1. Prioritetas — oficialus RC/VDA 2025 m. daugiabučių butų faktinių sandorių sluoksnis
+   visoms 60 savivaldybių arba tiesioginis 10 apskričių agregatas.
+2. Validatorius `scripts/build_housing_sale_county_from_rc.py` pagal nutylėjimą tikrina 2025 m.
+3. Savivaldybių vidurkiai į apskritį sveriami tik validžių kainos stebinių N,
+   jei jų semantika patvirtinta.
+4. 2024 m. režimas išlaikytas tik fallback / QA atkūrimui.
+5. Dataset 2559 lieka QA-only: jis baigiasi 2024 m., yra geografiškai nepilnas ir
+   pagal oficialų aprašą apima tik vieno objekto įsigijimo sandorius.
+
+### Nuomos sluoksnio dabartinė būsena
+
+- Skelbiu.lt 2025 search-index listing-level pool pasiekia N>=5 9 iš 10 apskričių;
+  Tauragės apskritis lieka N=2.
+- Search-index nėra pilnas portalo eksportas, todėl šis sluoksnis nėra publication-grade.
+- Aruodas 2025 1 kambario 12 mėn. benchmarkas pilnai atkurtas Vilniui, Kaunui ir Klaipėdai.
+  Metiniai mėnesinių vidurkių vidurkiai: 468,75 / 383,75 / 371,67 EUR.
+- Kryžminis Aruodas vs Skelbiu skirtumas naudojamas tik reprezentatyvumo QA,
+  ne perskaičiavimo koeficientui.
+
+### Periodo techninis gate
+
+`scripts/build_housing_affordability_county.py` dabar reikalauja, kad pardavimo ir
+nuomos sluoksniai būtų 2025 m. Periodo neatitikimas blokuojamas net QA candidate režime.
+
+Todėl 2024 pardavimas + 2025 nuoma negali tyliai patekti į galutinę lentelę.
+
+`main` / live nekeisti, kol 2025 pardavimo ir 2025 nuomos publikavimo vartai nepraeiti.
