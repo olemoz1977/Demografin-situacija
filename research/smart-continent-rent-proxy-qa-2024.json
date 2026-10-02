@@ -9,11 +9,97 @@
       "BI_3",
       "Vidutinis darbo užmokestis (neto)"
     ],
-    "interpretation": "The arithmetic reconstruction is exact by indicator naming, but upstream rent-data source, housing basket, treatment of missing observations, and aggregation methodology remain unverified."
+    "interim_presentation_national_fact": {
+      "value": 0.166,
+      "label": "Pajamų dalis skiriama nuomai",
+      "source": "2024 Pajamų ir gyvenimo sąlygų tyrimas (PGS), household questionnaire",
+      "note": "Presentation gives a national 16.6% fact; it does not establish that 60 municipality BI_3 estimates are publication-grade municipal PGS estimates."
+    },
+    "interpretation": "The arithmetic reconstruction is exact by indicator naming, but upstream municipal estimation method, housing basket, treatment of missing observations, and precision remain unverified."
+  },
+  "aggregation_diagnostic": {
+    "simple_mean_of_60_municipality_bi_3": 0.1721639169837846,
+    "captured_dashboard_lithuania_bi_3": 0.17216391698378458,
+    "absolute_difference": 2.7755575615628914e-17,
+    "matches_unweighted_municipality_mean": true,
+    "implication": "The dashboard Lithuania BI_3 value is the unweighted arithmetic mean of 60 municipal BI_3 values, not the 16.6% national PGS fact shown in the interim presentation."
   },
   "implied_rent_range_eur_month": {
     "min": 24.96,
     "max": 613.14
+  },
+  "low_implied_rent_diagnostic": {
+    "threshold_eur_month": 100,
+    "threshold_is_not_a_quality_rule": true,
+    "municipality_count": 13,
+    "rows": [
+      {
+        "municipality": "Akmenės r. sav.",
+        "implied_rent_eur_month": 76.51,
+        "bi_3": 0.06350958744915747
+      },
+      {
+        "municipality": "Biržų r. sav.",
+        "implied_rent_eur_month": 45.88,
+        "bi_3": 0.04184604159066034
+      },
+      {
+        "municipality": "Joniškio r. sav.",
+        "implied_rent_eur_month": 33.18,
+        "bi_3": 0.028356550722160503
+      },
+      {
+        "municipality": "Kalvarijos sav.",
+        "implied_rent_eur_month": 24.96,
+        "bi_3": 0.022730170294144435
+      },
+      {
+        "municipality": "Kazlų Rūdos sav.",
+        "implied_rent_eur_month": 56.2,
+        "bi_3": 0.04905726256983241
+      },
+      {
+        "municipality": "Kelmės r. sav.",
+        "implied_rent_eur_month": 88.71,
+        "bi_3": 0.07867151472153246
+      },
+      {
+        "municipality": "Kupiškio r. sav.",
+        "implied_rent_eur_month": 36.79,
+        "bi_3": 0.03304293156098437
+      },
+      {
+        "municipality": "Lazdijų r. sav.",
+        "implied_rent_eur_month": 90.57,
+        "bi_3": 0.08550793051359516
+      },
+      {
+        "municipality": "Pagėgių sav.",
+        "implied_rent_eur_month": 41.8,
+        "bi_3": 0.03469743504606956
+      },
+      {
+        "municipality": "Prienų r. sav.",
+        "implied_rent_eur_month": 95.13,
+        "bi_3": 0.08363076923076923
+      },
+      {
+        "municipality": "Rietavo sav.",
+        "implied_rent_eur_month": 45.38,
+        "bi_3": 0.03924247665167762
+      },
+      {
+        "municipality": "Skuodo r. sav.",
+        "implied_rent_eur_month": 29.74,
+        "bi_3": 0.02676145055340592
+      },
+      {
+        "municipality": "Visagino sav.",
+        "implied_rent_eur_month": 89.35,
+        "bi_3": 0.0742479641017118
+      }
+    ],
+    "interpretation": "Descriptive warning only: multiple reconstructed values are implausibly low for a private market rent measure, so BI_3 must not be treated as a municipal market-rent series without methodology evidence."
   },
   "anchors": {
     "Vilniaus m. sav.": {
@@ -112,11 +198,12 @@
   "hard_gate": {
     "municipality_coverage_60_of_60": true,
     "county_mapping_10_of_10": true,
-    "upstream_rent_source_verified": false,
+    "upstream_municipal_rent_estimation_verified": false,
     "housing_basket_verified": false,
     "municipality_observation_counts_known": false,
+    "municipality_precision_or_uncertainty_known": false,
     "county_aggregation_weight_available": false
   },
-  "verdict": "DIAGNOSTIC_ONLY_METHOD_GATE_OPEN",
-  "publication_status": "FAIL_UNTIL_UPSTREAM_RENT_METHOD_AND_BASKET_ARE_VERIFIED"
+  "verdict": "FAIL_FOR_MAIN_RENT_LAYER_DIAGNOSTIC_ONLY",
+  "publication_status": "FAIL_UNTIL_MUNICIPAL_METHOD_BASKET_AND_PRECISION_ARE_VERIFIED"
 }
