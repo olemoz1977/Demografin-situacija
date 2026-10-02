@@ -299,3 +299,25 @@ v0.1 eilučių tvarka pagal centrinį m² indeksą naudojama tik vizualiniam pal
 
 main/live ši strategija automatiškai neatveria. Publikavimas į main/live yra atskiras
 savininko sprendimas po strict vartų patikros.
+
+
+## 2026-10-02 papildoma korekcija — vienodas plotas ≠ vienodas būstas
+
+50 m² standartizacija pašalina tik vieną skirtumą — plotą. Ji nepašalina:
+- statybos metų;
+- naujos / antrinės rinkos dalies;
+- pastato ir buto būklės;
+- energetinės klasės;
+- kitų kokybės ir lokacijos mikso skirtumų.
+
+Dabartinė Smart Continent v0.1 bazė yra generic housing, ne apartment-specific, todėl
+jos kalibravimas pagal 6 miestų butų vidurkius negali būti laikomas kokybės
+standartizavimu.
+
+Naujas reikalavimas: bet koks tarpapskritinis kainos / pajamų palyginimas turi naudoti
+vienodą butų daugiabučiuose krepšelį su kontroliuojamu plotu ir statybos laikotarpiu /
+rinkos segmentu. Pirminis ploto kandidatas — 45–55 m². Statybos laikotarpis bus
+parinktas tik pagal 2025 m. faktinių sandorių aprėptį visose 10 apskričių.
+
+Iki tol v0.1 tarpapskritiniai rezultatai yra diagnostiniai ir neturi būti interpretuojami
+kaip grynas „kur jaunai porai įperkamiau“ atsakymas.
