@@ -1,0 +1,90 @@
+{
+  "year": 2025,
+  "source": "Skelbiu.lt historical search-index observations",
+  "basket": "private long-term 1-room self-contained apartment asking rent",
+  "aggregation": "direct listing-level pooling within county; city medians are not averaged",
+  "quality_rule": {
+    "B": "N>=10",
+    "C": "5<=N<10",
+    "insufficient": "N<5"
+  },
+  "counties": {
+    "Alytaus": {
+      "n": 6,
+      "median_eur_month": 285,
+      "quality": "C"
+    },
+    "Kauno": {
+      "n": 13,
+      "median_eur_month": 350,
+      "quality": "B"
+    },
+    "Klaipėdos": {
+      "n": 6,
+      "median_eur_month": 345,
+      "quality": "C"
+    },
+    "Marijampolės": {
+      "n": 7,
+      "median_eur_month": 300,
+      "quality": "C"
+    },
+    "Panevėžio": {
+      "n": 5,
+      "median_eur_month": 250,
+      "quality": "C"
+    },
+    "Tauragės": {
+      "n": 2,
+      "median_eur_month": 300,
+      "quality": "insufficient"
+    },
+    "Telšių": {
+      "n": 8,
+      "median_eur_month": 275,
+      "quality": "C"
+    },
+    "Utenos": {
+      "n": 6,
+      "median_eur_month": 255,
+      "quality": "C"
+    },
+    "Vilniaus": {
+      "n": 10,
+      "median_eur_month": 350,
+      "quality": "B"
+    },
+    "Šiaulių": {
+      "n": 13,
+      "median_eur_month": 250,
+      "quality": "B"
+    }
+  },
+  "gates": {
+    "counties_present_10_of_10": true,
+    "counties_with_n_ge_5": 9,
+    "all_counties_n_ge_5": false,
+    "single_portal": true,
+    "same_year": true,
+    "one_room_only": true,
+    "search_index_is_complete_portal_export": false,
+    "publication_grade": false
+  },
+  "taurage_deep_audit": {
+    "accepted_n": 2,
+    "accepted_values_eur_month": [
+      250,
+      350
+    ],
+    "rejected_examples": [
+      "current 2026 listing at Gedimino g. 33 duplicates the same physical apartment already represented by the accepted 2025-12-19 observation",
+      "current Jurbarkas listings without an explicit 2025 observation date were not backdated",
+      "short-term Tauragė/Jurbarkas listings were excluded",
+      "Šilalė structured metadata false-positive with description/title indicating a 2-room dwelling was excluded",
+      "seller registration year was never treated as listing observation year"
+    ],
+    "conclusion": "No three additional unique, safely dated 2025 long-term 1-room Skelbiu.lt observations were found after targeted Tauragė/Jurbarkas/Šilalė/Pagėgiai audit."
+  },
+  "verdict": "FAIL_FOR_PUBLICATION_9_OF_10_COUNTIES_MEET_SAMPLE_N_GATE",
+  "role": "research_and_cross_validation_only"
+}
