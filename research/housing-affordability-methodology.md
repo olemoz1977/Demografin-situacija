@@ -262,3 +262,38 @@ nuomos sluoksniai būtų 2025 m. Periodo neatitikimas blokuojamas net QA candida
 Todėl 2024 pardavimas + 2025 nuoma negali tyliai patekti į galutinę lentelę.
 
 `main` / live nekeisti, kol 2025 pardavimo ir 2025 nuomos publikavimo vartai nepraeiti.
+
+
+## 2026-10-02 strategijos pakeitimas — STRICT v1.0 + PRELIMINARY v0.1
+
+Ši skiltis yra viršesnė už ankstesnes formuluotes, kurios galėjo būti suprastos kaip
+„kol strict vartai nepraeiti, nerodyti jokio 10 apskričių rezultato“.
+
+### STRICT / v1.0
+
+Galutinei patikrintai versijai lieka visi ankstesni kokybės reikalavimai:
+- 2025 m. faktinių daugiabučių butų sandorių sluoksnis visoms 10 apskričių;
+- 2025 m. privataus ilgalaikio 1 kambario nuomos publication-grade sluoksnis visoms 10 apskričių;
+- oficialūs, modeliuoti ir rinkos sluoksniai atskirti;
+- `validated_publication_ready=false`, kol bent vienas vartas nepraeitas.
+
+### PRELIMINARY / v0.1
+
+Feature/preview versijoje leidžiama rodyti geriausią šiuo metu pagrįstą įvertį,
+jeigu tenkinamos visos žymėjimo taisyklės:
+- `OFFICIAL` — tiesioginis oficialus etalonas ar faktas;
+- `MODELLED` — oficialių duomenų pagrindu modeliuota reikšmė;
+- `PRELIMINARY` — dar ne publication-grade rinkos/proxy sluoksnis;
+- `TO_BE_REFINED` — galutinis kompozitinis skaičius bus perskaičiuotas gavus stipresnę įvestį.
+
+v0.1 pardavimo sluoksnis yra Smart Continent 2024 bendro būsto faktinių sandorių
+apskrities proxy, kalibruotas į VDA S7R280 2025 daugiabučių butų kainų lygį pagal
+šešias miestų savivaldybes. Perkėlimas į kaimiškas savivaldybes nėra validuotas,
+todėl tai negali būti vadinama oficialia apskrities butų kaina.
+
+v0.1 nuomos sluoksnis yra 2025 m. Skelbiu.lt istorinio search-index listing-level
+apskrities mediana. Tai nėra pilnas portalo eksportas; Tauragės N=2. Todėl visa
+v0.1 eilutė lieka `PRELIMINARY / TO_BE_REFINED`, net jei kitų apskričių N>=5.
+
+main/live ši strategija automatiškai neatveria. Publikavimas į main/live yra atskiras
+savininko sprendimas po strict vartų patikros.
