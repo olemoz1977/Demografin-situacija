@@ -1,0 +1,56 @@
+name: Test preliminary housing view
+
+on:
+  push:
+    branches:
+      - feature/housing-affordability
+    paths:
+      - "app.js"
+      - "research-nav.js"
+      - "housing-affordability.js"
+      - "data/housing-affordability-preliminary-v01.json"
+      - ".github/workflows/test-housing-preliminary-view.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/housing-affordability
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check JavaScript syntax
+        run: |
+          node --check app.js
+          node --check research-nav.js
+          node --check housing-affordability.js
+      - name: Validate v0.1 payload
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("data/housing-affordability-preliminary-v01.json")
+          d=json.loads(p.read_text(encoding="utf-8"))
+          rows=d["rows"]
+          assert len(rows)==10, len(rows)
+          counties={r["county"] for r in rows}
+          assert len(counties)==10, counties
+          assert all(r["value_status"]=="PRELIMINARY_V0.1_TO_BE_REFINED" for r in rows)
+          assert all(r["m2_after_rent_sensitivity_low"] <= r["m2_per_year_after_rent"] <= r["m2_after_rent_sensitivity_high"] for r in rows)
+          nav=Path("research-nav.js").read_text(encoding="utf-8")
+          assert "housingAffordability:'housing'" in nav
+          assert "label:'Būstas'" in nav
+          app=Path("app.js").read_text(encoding="utf-8")
+          assert "housing-affordability.js" in app
+          print("PASS: preliminary housing view payload and routing")
+          PY
