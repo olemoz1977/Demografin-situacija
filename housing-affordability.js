@@ -31,7 +31,7 @@
   }
 
   function render(data){
-    const rows=(data.rows||[]).slice().sort((a,b)=>a.preliminary_affordability_rank-b.preliminary_affordability_rank);
+    const rows=(data.rows||[]).slice().sort((a,b)=>Number(b.m2_per_year_after_rent)-Number(a.m2_per_year_after_rent));
     if(!rows.length) throw new Error('No preliminary housing rows');
 
     const section=insertShell();
@@ -58,6 +58,7 @@
     }).join('');
     section.querySelector('#housingTableWrap').innerHTML=`
       <h3 style="margin-top:1.5rem">Preliminarus 10 apskričių vaizdas</h3>
+      <p class="small">Apskritys surikiuotos pagal centrinį v0.1 m² įvertį tik vizualiniam palyginimui. <strong>Tai nėra patikimumo ar galutinis įperkamumo reitingas.</strong></p>
       <table>
         <thead><tr>
           <th>Apskritis</th><th class="td-num">m²/metus po nuomos</th><th class="td-num">Techninis scenarijų diapazonas</th>
