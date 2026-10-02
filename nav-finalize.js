@@ -1,7 +1,7 @@
 (() => {
-  const labels={overview:'Apžvalga',fertility:'Gimstamumas',population:'Struktūra',migration:'Migracija',family:'Šeimos aplinka',future:'Ateitis',methods:'Metodika',all:'Visas tyrimas'};
+  const labels={overview:'Apžvalga',fertility:'Gimstamumas',population:'Struktūra',migration:'Migracija',family:'Šeimos aplinka',housing:'Būstas',future:'Ateitis',methods:'Metodika',all:'Visas tyrimas'};
   const valid=Object.keys(labels);
-  const hashMap={'#apzvalga':'overview','#tfr':'fertility','#regionai':'fertility','#amzius':'fertility','#lytis-amzius':'population','#gyventojai':'migration','#uzsienieciai':'migration','#santuokos':'family','#parama-istorija':'family','#infrastruktura':'family','#skaitmena':'family','#familyFormationHypotheses':'family','#scenarijai':'future','#metodika':'methods','#saltiniai':'methods','#isvados':'all'};
+  const hashMap={'#apzvalga':'overview','#tfr':'fertility','#regionai':'fertility','#amzius':'fertility','#lytis-amzius':'population','#gyventojai':'migration','#uzsienieciai':'migration','#santuokos':'family','#parama-istorija':'family','#infrastruktura':'family','#skaitmena':'family','#familyFormationHypotheses':'family','#housing-affordability':'housing','#housingAffordability':'housing','#scenarijai':'future','#metodika':'methods','#saltiniai':'methods','#isvados':'all'};
   const params=new URLSearchParams(location.search);
   let view=params.get('view');
   if(!valid.includes(view)) view=hashMap[location.hash]||'overview';
