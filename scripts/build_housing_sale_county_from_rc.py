@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate a 2024 RC municipality apartment-sale aggregate and build county candidates.
+"""Validate an RC municipality apartment-sale aggregate and build county candidates.
 
 This tool is intentionally conservative:
 - it accepts only a municipality-level apartment transaction price layer;
@@ -35,11 +35,30 @@ EXPECTED_COUNTIES = {
     "Vilniaus",
 }
 
-APARTMENT_TX_CONTROL_2024 = 27_330
-APARTMENT_PRICE_CONTROL_2024 = 1_669.0
-MUNICIPAL_TX_CONTROLS = {
-    "Tauragės r. sav.": 186,
-    "Telšių r. sav.": 222,
+APARTMENT_TX_CONTROLS = {
+    2024: 27_330,
+    2025: 37_100,
+}
+APARTMENT_PRICE_CONTROLS = {
+    2024: 1684.64,
+    2025: 1880.13,
+}
+CONTROL_SOURCES = {
+    2024: {
+        "transaction_count": "Registrų centras / 2025 mass-valuation report",
+        "price": "VDA S7R280 / ArcGIS EVP56",
+    },
+    2025: {
+        "transaction_count": "Registrų centras 2025 full-year market review (approx. 37.1k)",
+        "price": "VDA S7R280 / ArcGIS EVP56",
+    },
+}
+MUNICIPAL_TX_CONTROLS_BY_YEAR = {
+    2024: {
+        "Tauragės r. sav.": 186,
+        "Telšių r. sav.": 222,
+    },
+    2025: {},
 }
 
 
@@ -104,7 +123,7 @@ def main() -> None:
     p.add_argument("--mapping", required=True, type=Path)
     p.add_argument("--out-dir", required=True, type=Path)
     p.add_argument("--sheet", default=None)
-    p.add_argument("--year", type=int, default=2024)
+    p.add_argument("--year", type=int, default=2025)
 
     p.add_argument("--municipality-col", default="municipality")
     p.add_argument("--year-col", default="year")
@@ -275,7 +294,7 @@ def main() -> None:
 
     municipal_controls = {}
     by_name = df.set_index("municipality_norm")
-    for name, control in MUNICIPAL_TX_CONTROLS.items():
+    for name, control in MUNICIPAL_TX_CONTROLS_BY_YEAR.get(args.year, {}).items():
         key = norm_text(name)
         actual = int(by_name.loc[key, "apartment_transaction_count"])
         municipal_controls[name] = {
@@ -303,17 +322,32 @@ def main() -> None:
         },
         "national_diagnostics": {
             "input_apartment_transaction_count": national_transactions,
-            "external_transaction_control_2024_approx": APARTMENT_TX_CONTROL_2024,
-            "transaction_difference": national_transactions - APARTMENT_TX_CONTROL_2024,
-            "transaction_difference_pct": pct_diff(
-                float(national_transactions), float(APARTMENT_TX_CONTROL_2024)
+            "external_transaction_control": APARTMENT_TX_CONTROLS.get(args.year),
+            "transaction_difference": (
+                national_transactions - APARTMENT_TX_CONTROLS[args.year]
+                if args.year in APARTMENT_TX_CONTROLS else None
+            ),
+            "transaction_difference_pct": (
+                pct_diff(
+                    float(national_transactions),
+                    float(APARTMENT_TX_CONTROLS[args.year]),
+                )
+                if args.year in APARTMENT_TX_CONTROLS else None
             ),
             "input_weighted_apartment_price_eur_m2": national_price,
-            "external_price_control_2024": APARTMENT_PRICE_CONTROL_2024,
-            "price_difference_eur_m2": national_price - APARTMENT_PRICE_CONTROL_2024,
-            "price_difference_pct": pct_diff(
-                national_price, APARTMENT_PRICE_CONTROL_2024
+            "external_price_control": APARTMENT_PRICE_CONTROLS.get(args.year),
+            "price_difference_eur_m2": (
+                national_price - APARTMENT_PRICE_CONTROLS[args.year]
+                if args.year in APARTMENT_PRICE_CONTROLS else None
             ),
+            "price_difference_pct": (
+                pct_diff(
+                    national_price,
+                    APARTMENT_PRICE_CONTROLS[args.year],
+                )
+                if args.year in APARTMENT_PRICE_CONTROLS else None
+            ),
+            "control_sources": CONTROL_SOURCES.get(args.year),
             "control_interpretation": (
                 "diagnostic_only; differences must be explained by source selection "
                 "before publication"
@@ -347,12 +381,12 @@ def main() -> None:
         ]
     ].rename(columns={"sav_pav": "municipality"})
     muni_out.to_csv(
-        args.out_dir / "housing-sale-municipality-2024-rc-candidate.csv", index=False
+        args.out_dir / f"housing-sale-municipality-{args.year}-rc-candidate.csv", index=False
     )
     county.to_csv(
-        args.out_dir / "housing-sale-county-2024-rc-candidate.csv", index=False
+        args.out_dir / f"housing-sale-county-{args.year}-rc-candidate.csv", index=False
     )
-    (args.out_dir / "housing-sale-rc-qa-2024.json").write_text(
+    (args.out_dir / f"housing-sale-rc-qa-{args.year}.json").write_text(
         json.dumps(qa, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
