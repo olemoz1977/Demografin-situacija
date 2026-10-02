@@ -41,14 +41,19 @@ class HousingReadinessTest(unittest.TestCase):
             self.assertEqual(data["decision"], "DO_NOT_PUBLISH")
             self.assertFalse(data["strict_v1_0"]["ready"])
             self.assertEqual(data["strict_v1_0"]["decision"], "BLOCKED")
-            self.assertTrue(data["preliminary_v0_1"]["ready"])
+            self.assertFalse(data["preliminary_v0_1"]["ready"])
             self.assertEqual(
                 data["preliminary_v0_1"]["decision"],
-                "READY_FOR_FEATURE_PREVIEW",
+                "BLOCKED",
             )
-            self.assertTrue(data["preliminary_v0_1"]["feature_preview_allowed"])
+            self.assertFalse(data["preliminary_v0_1"]["feature_preview_allowed"])
             self.assertFalse(data["preliminary_v0_1"]["main_live_allowed"])
             self.assertEqual(data["preliminary_v0_1"]["county_count"], 10)
+            self.assertFalse(data["preliminary_v0_1"]["comparability_gate_passed"])
+            self.assertEqual(
+                data["preliminary_v0_1"]["comparability_verdict"],
+                "FAIL_CROSS_COUNTY_COMPARABILITY",
+            )
 
             status = {g["name"]: g["status"] for g in data["gates"]}
             self.assertEqual(status["income_10_counties"], "PASS")
