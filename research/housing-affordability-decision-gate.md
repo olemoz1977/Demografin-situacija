@@ -85,37 +85,54 @@ ButuPirkimas snapshot techninis pilnumas patvirtintas tuščiu sekančiu puslapi
 
 ## 2026-10-02 būsenos atnaujinimas
 
-A variantas lieka galioti: 10 apskričių + aukšta kokybės kartelė + nepublikuoti nepilno sluoksnio.
+A variantas lieka galioti: **10 apskričių + aukšta kokybės kartelė + nepublikuoti nepilno sluoksnio.**
 
 ### Pardavimo kaina
-- VDA/RC dataset 2559 gardelės galutinai perkeltos į QA-only.
-- Pagrindinis tikslinis šaltinis — oficialus RC 2024 butų sandorių agregatas / anonimizuotas sluoksnis.
-- Parengtas `scripts/build_housing_sale_county_from_rc.py`.
-- Automatiniai testai PASS.
-- RC užklausa išsiųsta 2026-10-01; atsakymo dar nėra.
-- VDA ADS-1961 užregistruota; atsakymo dar nėra.
+- VDA/RC dataset 2559 galutinai perkeltas į QA-only.
+- Oficialus dataset aprašas papildomai patvirtina, kad jis apima tik vieno objekto įsigijimo
+  sandorius ir neapima visų butų pirkimų.
+- Pagrindinis tikslinis laikotarpis dabar **2025 m.**, nes nuoma yra 2025 m., o pajamos 2025-11.
+- 2024 m. paliktas tik aiškiai pažymėtas fallback / istorinis QA.
+- Oficialus VDA S7R280 2025 benchmarkas PASS: Lietuva 1880,13 EUR/m², taip pat 6 miestų savivaldybės.
+- Registrų centro 2025 nacionalinė kontrolė — apie 37,1 tūkst. butų pardavimų.
+- `scripts/build_housing_sale_county_from_rc.py` default dabar 2025, bet 2024 replay išlaikytas ir testuojamas.
+- RC užklausa, išsiųsta 2026-10-01, prašė 2024 m. duomenų; atsakymo dar nėra.
+- VDA ADS-1961 užregistruota; turinio atsakymo dar nėra.
+- 2025 m. VDA patikslinimo juodraštis parengtas, bet **NEIŠSIŲSTAS**.
 
 ### Nuoma
-- Smart Continent BI_3 patikrintas visoms 60 savivaldybių, bet FAIL pagrindiniam sluoksniui.
-- 13 savivaldybių rekonstrukcija `BI_3 × VDU` davė <100 EUR/mėn. dydžius;
-  savivaldybių metodo, N ir paklaidos viešame modelyje nėra.
-- Parengtas `scripts/validate_housing_rent_provider.py`.
-- Automatiniai testai PASS.
-- Oficialus VDA 2025 kontrolinis sluoksnis tiesiogiai ištrauktas iš ArcGIS FeatureServer:
-  Vilnius 155,09; Kaunas 124,35; Klaipėda 113,46; Šiauliai 95,15; Panevėžys 91,40
-  EUR/m² per metus.
-- Šis VDA sluoksnis lieka tik 5 miestų benchmarkas, ne apskričių pakaitalas.
-- Aruodas / Skelbiu istorinių agregatų užklausa išsiųsta 2026-10-02; atsakymo dar nėra.
-- Netikslus Aruodas 36 mėn. automatizavimo eksperimentas pašalintas iš repo.
+- Smart Continent BI_3 — FAIL pagrindiniam sluoksniui, QA tik.
+- Skelbiu.lt 2025 istorinis search-index mėginys išplėstas iki tiesioginio listing-level
+  apskrities pool:
+  - 9/10 apskričių pasiekia N>=5;
+  - Tauragės apskritis lieka N=2;
+  - search-index nėra pilnas portalo eksportas, todėl net N>=5 savaime nesuteikia publication-grade statuso.
+- Pilnas Aruodas 2025 1 kambario benchmarkas atkurtas 3 miestams × 12 mėn.:
+  - Vilnius 468,75 EUR/mėn. metų mėnesinių vidurkių vidurkis;
+  - Kaunas 383,75;
+  - Klaipėda 371,67.
+- Kryžminė patikra parodė, kad Skelbiu search-index mediana nuo Aruodas benchmarko skiriasi:
+  Vilnius -25,33%, Kaunas -8,79%, Klaipėda -7,18%. Tai nėra kalibravimo koeficientai,
+  bet stiprina QA-only sprendimą.
+- Aruodas / Skelbiu laiškas **NEBUVO išsiųstas**. Parengtas vienas konsoliduotas
+  UAB „Diginet LTU“ juodraštis; siuntimas galimas tik parodžius tikslų tekstą savininkui
+  ir gavus aiškų patvirtinimą.
+
+### Periodo apsauga
+- Galutinis skaičiuotuvas dabar reikalauja 2025 m. pardavimo ir 2025 m. nuomos sluoksnių.
+- 2024 pardavimas + 2025 nuoma negali tyliai praslysti net `--allow-candidate` režime.
+- CI testas šiai apsaugai PASS.
 
 ### Repo apsaugos
-- `housing_affordability_pipeline.py` pagal nutylėjimą atsisako veikti; diagnostiniam grid
-  atkūrimui reikia aiškaus `--allow-diagnostic-grid`.
+- `housing_affordability_pipeline.py` pagal nutylėjimą atsisako veikti; grid diagnostikai reikia
+  `--allow-diagnostic-grid`.
 - `main` / live nepakeistas.
+- Machine-readable readiness išlieka `DO_NOT_PUBLISH`.
 
 ### Dabartiniai išoriniai blokatoriai
-1. RC 2024 pilnas butų sandorių sluoksnis / metodikos patvirtinimas.
-2. 2025 privataus 1 kambario nuomos sluoksnis visoms 10 apskričių.
+1. 2025 m. faktinių butų sandorių sluoksnis 60 savivaldybių / 10 apskričių
+   (2024 m. tik fallback).
+2. 2025 m. privataus ilgalaikio 1 kambario nuomos publication-grade sluoksnis visoms 10 apskričių.
 
-Kol bent vienas iš šių blokatorių neišspręstas, galutinis `m²/year` 10 apskričių rodiklis
-neskaičiuojamas publikavimui.
+Kol bent vienas blokatorius neišspręstas, galutinis 10 apskričių `m²/year` rodiklis
+nepublikuojamas.
