@@ -1,0 +1,112 @@
+name: Housing preview visual QA
+
+on:
+  push:
+    branches:
+      - feature/housing-affordability
+    paths:
+      - "index.html"
+      - "style.css"
+      - "app.js"
+      - "app-base.js"
+      - "research-nav.js"
+      - "research-nav.css"
+      - "housing-affordability.js"
+      - "data/housing-affordability-preliminary-v01.json"
+      - ".github/workflows/housing-preview-visual-qa.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  visual-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/housing-affordability
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Start local preview
+        run: |
+          python -m http.server 8765 > /tmp/housing-preview-http.log 2>&1 &
+          echo $! > /tmp/housing-preview-http.pid
+      - name: Verify desktop and mobile render
+        run: |
+          mkdir -p artifacts
+          node <<'NODE'
+          const { chromium } = require('playwright');
+
+          (async () => {
+            const browser = await chromium.launch({headless:true});
+            const errors = [];
+
+            async function check(name, viewport, screenshot) {
+              const page = await browser.newPage({ viewportSize: viewport });
+              page.on('pageerror', err => errors.push(`${name}: pageerror: ${err.message}`));
+
+              await page.goto('http://127.0.0.1:8765/?view=housing', {waitUntil:'networkidle'});
+              await page.waitForSelector('#housingAffordability', {state:'visible'});
+              await page.waitForSelector('#housingAffordability .housing-table tbody tr');
+
+              const result = await page.evaluate(() => {
+                const section = document.querySelector('#housingAffordability');
+                const rows = [...section.querySelectorAll('.housing-table tbody tr')];
+                const text = section.innerText;
+                const scroll = section.querySelector('.housing-table-scroll');
+                const firstCell = section.querySelector('.housing-table tbody td:first-child');
+                const rootOverflow = document.documentElement.scrollWidth - window.innerWidth;
+                return {
+                  rows: rows.length,
+                  hasPrelim: text.includes('PRELIMINARU'),
+                  hasMortgageWarning: text.includes('Tai nėra bankinis paskolos įperkamumo vertinimas.'),
+                  hasRankingWarning: text.includes('Tai nėra patikimumo ar galutinis įperkamumo reitingas.'),
+                  hasControlMetric: text.includes('50 m² / metinės neto'),
+                  rootOverflow,
+                  tableScrollable: scroll.scrollWidth > scroll.clientWidth,
+                  firstCellPosition: getComputedStyle(firstCell).position,
+                  sectionWidth: Math.round(section.getBoundingClientRect().width),
+                  viewportWidth: window.innerWidth
+                };
+              });
+
+              if (result.rows !== 10) throw new Error(`${name}: expected 10 rows, got ${result.rows}`);
+              if (!result.hasPrelim) throw new Error(`${name}: PRELIMINARU label missing`);
+              if (!result.hasMortgageWarning) throw new Error(`${name}: mortgage warning missing`);
+              if (!result.hasRankingWarning) throw new Error(`${name}: ranking warning missing`);
+              if (!result.hasControlMetric) throw new Error(`${name}: control metric missing`);
+              if (result.rootOverflow > 2) throw new Error(`${name}: page horizontal overflow ${result.rootOverflow}px`);
+              if (viewport.width <= 430 && !result.tableScrollable) throw new Error(`${name}: housing table is not independently scrollable`);
+              if (result.firstCellPosition !== 'sticky') throw new Error(`${name}: first housing column is not sticky`);
+
+              await page.locator('#housingAffordability').screenshot({path:screenshot});
+              console.log(name, JSON.stringify(result));
+              await page.close();
+            }
+
+            await check('desktop', {width:1440,height:1000}, 'artifacts/housing-desktop.png');
+            await check('mobile', {width:390,height:844}, 'artifacts/housing-mobile.png');
+
+            await browser.close();
+            if (errors.length) throw new Error(errors.join('\n'));
+            console.log('PASS: housing preview desktop/mobile visual QA');
+          })().catch(err => { console.error(err); process.exit(1); });
+          NODE
+      - name: Upload QA screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: housing-preview-visual-qa
+          path: artifacts/
+          if-no-files-found: warn
+          retention-days: 14
