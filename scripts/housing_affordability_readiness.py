@@ -187,7 +187,7 @@ def main() -> None:
 
     report = {
         "audit_date": cfg.get("audit_date"),
-        "target": "10 Lithuania counties; working 25–30-year-old couple; no children",
+        "target": "10 Lithuania counties; working 25–30-year-old couple",
         "formula": (
             "m²/year = [(2 × monthly net income × 12) – annual rent] "
             "/ apartment sale price EUR/m²"
