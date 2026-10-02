@@ -1,0 +1,56 @@
+{
+  "search_status": 403,
+  "search_final_url": "https://m.aruodas.lt/butu-nuoma/",
+  "search_bytes": 5926,
+  "target_contexts": {
+    "Vilnius": [],
+    "Kaunas": [],
+    "Klaipėda": [],
+    "Šiauliai": [],
+    "Panevėžys": [],
+    "Alytus": [],
+    "Marijampolė": [],
+    "Utena": [],
+    "Telšiai": [],
+    "Tauragė": []
+  },
+  "id_candidates": {
+    "Vilnius": [],
+    "Kaunas": [],
+    "Klaipėda": [],
+    "Šiauliai": [],
+    "Panevėžys": [],
+    "Alytus": [],
+    "Marijampolė": [],
+    "Utena": [],
+    "Telšiai": [],
+    "Tauragė": []
+  },
+  "label_pairs": [],
+  "probes": [
+    {
+      "id": 1,
+      "status": 200,
+      "final_url": "https://m.aruodas.lt/tendencijos/?district_id=1&month=2026-01&tab_type=nuoma",
+      "active_city": "Vilnius",
+      "one_room_values": [],
+      "bytes": 72016
+    },
+    {
+      "id": 6,
+      "status": 200,
+      "final_url": "https://m.aruodas.lt/tendencijos/?district_id=6&month=2026-01&tab_type=nuoma",
+      "active_city": "Kaunas",
+      "one_room_values": [],
+      "bytes": 70044
+    },
+    {
+      "id": 7,
+      "status": 200,
+      "final_url": "https://m.aruodas.lt/tendencijos/?district_id=7&month=2026-01&tab_type=nuoma",
+      "active_city": "Klaipėda",
+      "one_room_values": [],
+      "bytes": 69823
+    }
+  ]
+}
