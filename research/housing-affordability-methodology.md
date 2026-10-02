@@ -10,7 +10,7 @@ Pirminis noras buvo rezultatą pateikti pagal 10 Lietuvos apskričių. 2026-10-0
 ## Pagrindinė formulė
 m²_per_year = ((2 × monthly_net_income_25_30 × 12) − annual_rent) / sale_price_eur_m2
 
-Rodiklis yra santykinis būsto įperkamumo indeksas, o ne realiai per metus sutaupoma suma. Maistas, transportas, komunaliniai mokesčiai, kredito sąlygos ir kitos išlaidos neįtraukiamos.
+Rodiklis yra teorinis pajamų–kainos palyginimo indeksas, o ne bankinis paskolos įperkamumo vertinimas ir ne realiai per metus sutaupoma suma. Maistas, transportas, komunaliniai mokesčiai, pradinis įnašas, palūkanos, paskolos terminas, DSTI/LTV ribos, kiti kreditai ir kitos išlaidos neįtraukiamos.
 
 ## Pajamų sluoksnis
 Patikrintas nacionalinis orientyras:
@@ -294,6 +294,8 @@ todėl tai negali būti vadinama oficialia apskrities butų kaina.
 v0.1 nuomos sluoksnis yra 2025 m. Skelbiu.lt istorinio search-index listing-level
 apskrities mediana. Tai nėra pilnas portalo eksportas; Tauragės N=2. Todėl visa
 v0.1 eilutė lieka `PRELIMINARY / TO_BE_REFINED`, net jei kitų apskričių N>=5.
+
+v0.1 eilučių tvarka pagal centrinį m² indeksą naudojama tik vizualiniam palyginimui ir nėra galutinis apskričių įperkamumo reitingas. Kontroliniai rodikliai: 50 m² pardavimo proxy / poros metinės neto pajamos ir nuomos našta poros neto pajamoms.
 
 main/live ši strategija automatiškai neatveria. Publikavimas į main/live yra atskiras
 savininko sprendimas po strict vartų patikros.
