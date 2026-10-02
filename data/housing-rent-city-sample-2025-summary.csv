@@ -2,6 +2,7 @@ city,county,sample_n,rent_month_median_eur,rent_month_mean_eur,area_median_m2,re
 Alytus,Alytaus,6,285.0,275.0,34.0,8.24,280.0,297.5,2025-07-29,2025-10-17,C
 Anykščiai,Utenos,2,270.0,270.0,32.0,8.485,265.0,275.0,2025-09-16,2025-11-24,insufficient
 Marijampolė,Marijampolės,7,300.0,290.0,33.0,8.33,255.0,340.0,2025-02-15,2025-12-22,C
+Plungė,Telšių,2,270.0,270.0,32.5,8.285,255.0,285.0,2025-09-08,2025-12-09,insufficient
 Tauragė,Tauragės,2,300.0,300.0,37.6,8.095,275.0,325.0,2025-05-07,2025-12-19,insufficient
 Telšiai,Telšių,4,275.0,285.0,36.5,8.71,245.0,315.0,2025-02-17,2025-12-03,insufficient
 Utena,Utenos,4,225.0,232.5,39.0,5.83,200.0,257.5,2025-03-09,2025-12-17,insufficient
