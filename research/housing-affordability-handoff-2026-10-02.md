@@ -43,7 +43,7 @@ PASS:
 - explicit no-county-centre-substitution rule.
 
 BLOCKED:
-1. official RC 2024 actual-apartment transaction layer;
+1. official RC/VDA 2025 actual-apartment transaction layer for 60 municipalities / 10 counties (2024 only fallback);
 2. 2025 private long-term 1-room asking-rent layer for 10 counties.
 
 Readiness generator:
@@ -124,25 +124,30 @@ Files:
 
 ### Official VDA S7R280 sale benchmark — PASS / VALIDATION ONLY
 
-Official ArcGIS EVP56, 2024, housing type `1123 = Butas daugiabučiuose namuose`, EUR/m²:
-- Alytaus m. sav. 889.79
-- Kauno m. sav. 1771.62
-- Klaipėdos m. sav. 1559.14
-- Panevėžio m. sav. 1030.03
-- Šiaulių m. sav. 1098.12
-- Vilniaus m. sav. 2639.03
-- Lietuvos Respublika 1684.64
+Preferred target is now **2025** to align sale + rent + income periods.
 
-This is a strong official control for any future RC layer, but it covers only six city municipalities plus Lithuania, not 10 counties.
+Official ArcGIS EVP56, 2025, housing type `1123 = Butas daugiabučiuose namuose`, EUR/m²:
+- Alytaus m. sav. 1038.74
+- Kauno m. sav. 1987.66
+- Klaipėdos m. sav. 1740.84
+- Panevėžio m. sav. 1170.36
+- Šiaulių m. sav. 1262.33
+- Vilniaus m. sav. 2846.01
+- Lietuvos Respublika 1880.13
+
+2024 benchmark remains available for historical/fallback QA.
+
+This is a strong official control for any future RC/VDA 60-municipality layer, but it covers only six city municipalities plus Lithuania, not 10 counties.
 
 Files:
-- `research/raw/vda-sale-big-cities/vda-sale-big-cities-2024.csv`
-- `research/raw/vda-sale-big-cities/vda-sale-big-cities-2024-qa.json`
+- `research/raw/vda-sale-big-cities/vda-sale-big-cities-2025.csv`
+- `research/raw/vda-sale-big-cities/vda-sale-big-cities-2025-qa.json`
+- `research/raw/vda-sale-big-cities/vda-sale-big-cities-2024-2025-comparison.json`
 
-### Main sale target — Registrų centras
+### Main sale target — Registrų centras / VDA 2025 aggregate
 
 Needed:
-- 2024 actual apartment transactions;
+- **2025 actual apartment transactions**; 2024 accepted only as explicitly labelled fallback;
 - all 60 municipalities or direct 10-county aggregate;
 - actual EUR/m²;
 - transaction count;
@@ -183,6 +188,8 @@ Detailed audit:
 - `research/housing-sale-alternative-sources.md`
 
 ### RC validator — PASS
+
+Default target year is 2025; explicit 2024 replay remains tested for fallback QA.
 
 - `scripts/build_housing_sale_county_from_rc.py`
 - `tests/test_build_housing_sale_county_from_rc.py`
@@ -273,18 +280,19 @@ observations. 9/10 counties reach N>=5; Tauragės remains N=2. This route is CLO
 publication because the search index is not a complete portal export and one county
 still fails the minimum N gate.
 
-Current accepted 2025 city sample:
-- Marijampolė N=7, median 300 — C
-- Alytus N=6, median 285 — C
-- Utena N=4, median 225 — insufficient
-- Tauragė N=2, median 300 — insufficient
-- Telšiai N=4, median 275 — insufficient
+Current county-level direct listing pool:
+- Alytaus N=6, median 285 — C
+- Kauno N=13, median 350 — B
+- Klaipėdos N=6, median 345 — C
+- Marijampolės N=7, median 300 — C
+- Panevėžio N=5, median 250 — C
+- Šiaulių N=13, median 250 — B
+- Telšių N=8, median 275 — C
+- Utenos N=6, median 255 — C
+- Vilniaus N=10, median 350 — B
+- Tauragės N=2, median 300 — insufficient
 
-Latest added Telšiai observation:
-- 2025-08-01;
-- 37 m²;
-- 360 EUR/month;
-- 1 room.
+This is research / cross-validation only, not a complete portal export.
 
 Files:
 - `data/housing-rent-city-sample-2025.csv`
@@ -325,6 +333,11 @@ Hard gate:
 - apartment / 1 room / long term / asking offer;
 - N>=5 every county;
 - deduplication and publication rights confirmed.
+
+### Period alignment gate — PASS
+
+The final calculator now requires sale.year = 2025 and rent.year = 2025.
+A 2024 sale layer cannot silently mix with 2025 rent even in `--allow-candidate` mode.
 
 ## Final calculator architecture
 
