@@ -97,22 +97,47 @@ Legacy:
 - `scripts/housing_affordability_pipeline.py`
 - refuses to run unless `--allow-diagnostic-grid`.
 
-### Smart Continent — QA ONLY
+### Smart Continent — QA ONLY / apartment reconstruction CLOSED FAIL
 
 Public Power BI page 4:
 - 60 municipalities;
 - 2024 generic housing transactions = 37,009;
 - generic housing average = 557.007 EUR/m²;
 - national value equals unweighted mean of 60 municipality measures;
-- semantic model has no municipal apartment-only price series.
+- full semantic model has no municipal apartment-only price series.
+
+Additional BI_1 audit:
+- queried raw `FactBPI.BI_1`, generic housing EUR/m² and net VDU for all 60 municipalities;
+- exact identity across all 60: `BI_1 = generic housing EUR/m² / monthly net VDU`;
+- therefore BI_1 is redundant with the same generic-housing price and contains no independent apartment-only signal;
+- against official VDA apartment EUR/m², Smart Continent generic price is ~33–44% lower in all six benchmark cities.
 
 Verdict:
-**FAIL main apartment sale layer.**
+**FAIL main apartment sale layer; no hidden BI_1 reconstruction path.**
 
 Files:
 - `research/smart-continent-housing-source-audit.md`
 - `research/smart-continent-housing-page4-qa-2024.json`
+- `research/smart-continent-bi1-sale-qa-2024.json`
 - `data/housing-sale-smart-continent-housing-2024-diagnostic.csv`
+- `data/housing-sale-smart-continent-bi1-2024-diagnostic.csv`
+
+### Official VDA S7R280 sale benchmark — PASS / VALIDATION ONLY
+
+Official ArcGIS EVP56, 2024, housing type `1123 = Butas daugiabučiuose namuose`, EUR/m²:
+- Alytaus m. sav. 889.79
+- Kauno m. sav. 1771.62
+- Klaipėdos m. sav. 1559.14
+- Panevėžio m. sav. 1030.03
+- Šiaulių m. sav. 1098.12
+- Vilniaus m. sav. 2639.03
+- Lietuvos Respublika 1684.64
+
+This is a strong official control for any future RC layer, but it covers only six city municipalities plus Lithuania, not 10 counties.
+
+Files:
+- `research/raw/vda-sale-big-cities/vda-sale-big-cities-2024.csv`
+- `research/raw/vda-sale-big-cities/vda-sale-big-cities-2024-qa.json`
 
 ### Main sale target — Registrų centras
 
@@ -245,10 +270,12 @@ Do NOT:
 
 ### Rent provider route
 
-Aruodas/Skelbiu aggregate-data request was already sent 2026-10-02 before the new
-communication rule. Awaiting reply.
+Important correction after Gmail verification:
+- **no Aruodas/Skelbiu aggregate-data request has been sent**;
+- Gmail `Sent` contains only the RC request and the VDA request;
+- any portal request remains optional and may be sent only after the exact text is shown to the owner and explicit approval is received.
 
-Future communication rule:
+Communication rule:
 **show every outgoing email/request/form to the user first; send only after explicit approval.**
 
 Provider contract:
