@@ -31,7 +31,7 @@
       </div>
 
       <section class="housing-support-layer" aria-labelledby="housingSupportTitle">
-        <div class="section-label">Valstybės pagalba pirmajam būstui <span class="badge badge-official">OFICIALIOS 2026 M. SĄLYGOS</span></div>
+        <div class="section-label">Valstybės pagalba pirmajam būstui <span class="badge badge-official">OFICIALIOS 2025 M. SĄLYGOS</span></div>
         <h3 id="housingSupportTitle">Valstybė pirmo būsto barjerą mažina dviem skirtingais keliais</h3>
         <p class="lead housing-support-lead">Šis sluoksnis svarbus demografiniam kontekstui, tačiau parama nėra universali. Mūsų analitinė „25–30 m. dirbanti pora“ nėra tas pats, kas teisės aktuose apibrėžta „jauna šeima“.</p>
 
@@ -52,7 +52,7 @@
           <div class="card housing-support-card">
             <div class="eyebrow">2 · Valstybės iš dalies kompensuojamas būsto kreditas</div>
             <h4>Galimas visoje Lietuvoje, bet taikomos pajamų ir turto ribos</h4>
-            <p><strong>2026 m. dviejų asmenų šeimai:</strong> metinės vertinamos pajamos turi neviršyti 34 484 €, turtas – 61 046 €. Tai yra individualios teisės kriterijai, todėl jų automatiškai netaikome mūsų apskričių pajamų vidurkiams.</p>
+            <p><strong>2025 m. dviejų asmenų šeimai:</strong> metinės vertinamos pajamos turėjo neviršyti 32 708 €, turtas – 57 902 €. Tai yra individualios teisės kriterijai, todėl jų automatiškai netaikome mūsų apskričių pajamų vidurkiams.</p>
             <p><strong>Kredito suma šeimai:</strong> iki 87 000 €.</p>
             <div class="housing-support-rate-grid four">
               <div><strong>15 %</strong><span>0 vaikų</span></div>
@@ -65,19 +65,20 @@
         </div>
 
         <div class="housing-income-screen" id="housingIncomeScreen">
-          <div class="eyebrow">Pajamų lubų patikra · 2 asmenų šeimos scenarijus</div>
-          <h4>Ar modeliuotos jaunos poros pajamos telpa į 2026 m. ribą?</h4>
+          <div class="eyebrow">2025 m. pajamų lubų patikra · 2 asmenų šeimos scenarijus</div>
+          <h4>Ar modeliuotos jaunos poros pajamos telpa į 2025 m. ribą?</h4>
           <p class="small">Čia lyginame tik pajamas su oficialia 2026 m. pajamų riba valstybės iš dalies kompensuojamam būsto kreditui. <strong>Tai nėra individualios teisės į paramą nustatymas</strong>: realiai vertinamos konkrečios šeimos už kalendorinius metus deklaruotos grynosios pajamos, turtas ir kiti kriterijai.</p>
           <div class="housing-support-insight" id="housingSupportInsight">Kraunama…</div>
           <div class="chart-wrap housing-support-chart"><canvas id="housingSupportIncomeChart"></canvas></div>
-          <div class="chart-caption">Oficiali 2026 m. dviejų asmenų šeimos pajamų riba – <strong>34 484 € per metus</strong>. Apskričių stulpeliai – mūsų 2025-11 modeliuotos vieno asmens neto pajamos × 2 asmenys × 12 mėn. Tai orientacinis „screening“, o ne teisinis tinkamumo testas.</div>
+          <div class="chart-caption">Oficiali 2025 m. dviejų asmenų šeimos pajamų riba – <strong>32 708 € per metus</strong>. Apskričių stulpeliai – mūsų 2025-11 modeliuotos vieno asmens neto pajamos × 2 asmenys × 12 mėn. Tai orientacinis „screening“, o ne teisinis tinkamumo testas.</div>
+          <p class="small"><strong>Laiko kontekstas:</strong> 2024 m. tokia pati dviejų asmenų šeimos pajamų riba buvo 26 048 €. Jos tiesiogiai nelyginame su 2025-11 pajamų modeliu, nes dar neturime lygiaverčio 2024 m. 25–30 m. pajamų sluoksnio.</p>
         </div>
 
         <div class="alert alert-amber">
           <strong>Ką tai reiškia mūsų tyrimui.</strong> Valstybės parama gali reikšmingai sumažinti pradinį pirmo būsto barjerą, bet jos poveikis priklauso nuo šeimos teisinio statuso, pajamų ir turto, vaikų skaičiaus, būsto vietos ir konkretaus kvietimo. Todėl paramą rodome kaip atskirą scenarijų, o ne kaip automatinį visų jaunų porų „nuolaidos“ dydį.
         </div>
 
-        <p class="source-line">Oficialios sąlygos tikrintos 2026-10-02 pagal Socialinės apsaugos ir darbo ministerijos informaciją apie finansinę paskatą pirmąjį būstą įsigyjančioms jaunoms šeimoms ir paramą būstui įsigyti ar išsinuomoti.</p>
+        <p class="source-line">2025 m. sąlygos tikrintos 2026-10-02 pagal Socialinės apsaugos ir darbo ministerijos 2025 m. informaciją apie finansinę paskatą pirmąjį būstą įsigyjančioms jaunoms šeimoms ir paramą būstui įsigyti ar išsinuomoti.</p>
       </section>
 
       <div class="alert alert-blue">
@@ -108,7 +109,7 @@
     const section=document.getElementById(SECTION_ID);
     if(!section) return;
     const rows=(data.rows||[]).slice().sort((a,b)=>b.model_pair_annual_net_eur-a.model_pair_annual_net_eur);
-    const limit=Number(data.official_threshold?.annual_net_income_limit_eur||34484);
+    const limit=Number(data.official_threshold?.annual_net_income_limit_eur||32708);
     const vilnius=rows.find(r=>r.county==='Vilniaus');
     const kaunas=rows.find(r=>r.county==='Kauno');
     const klaipeda=rows.find(r=>r.county==='Klaipėdos');
@@ -142,7 +143,7 @@
         ctx.setLineDash([]);
         ctx.fillStyle='#1f4e79';
         ctx.font='600 11px DM Sans, sans-serif';
-        ctx.fillText('2026 riba 34 484 €',Math.min(x+7,chartArea.right-115),chartArea.top+13);
+        ctx.fillText('2025 riba 32 708 €',Math.min(x+7,chartArea.right-115),chartArea.top+13);
         ctx.restore();
       }
     };
@@ -185,7 +186,7 @@
   async function init(){
     insertShell();
     try{
-      const res=await fetch('data/housing-state-support-income-screen-2026.json?v=20261002a',{cache:'no-store'});
+      const res=await fetch('data/housing-state-support-income-screen-2025.json?v=20261002a',{cache:'no-store'});
       if(!res.ok) throw new Error('HTTP '+res.status);
       renderIncomeScreen(await res.json());
     }catch(err){
