@@ -1,0 +1,37 @@
+{
+  "year": 2025,
+  "indicator_code": "S7R281",
+  "indicator_name": "Butų nuomos vidutinės metinės kainos",
+  "unit": "EUR/m² per metus",
+  "municipality_count": 5,
+  "municipalities": [
+    "Kauno m. sav.",
+    "Klaipėdos m. sav.",
+    "Panevėžio m. sav.",
+    "Šiaulių m. sav.",
+    "Vilniaus m. sav."
+  ],
+  "values": {
+    "Kauno m. sav.": {
+      "annual_rent_eur_m2": 124.35,
+      "monthly_equivalent_eur_m2": 10.362499999999999
+    },
+    "Klaipėdos m. sav.": {
+      "annual_rent_eur_m2": 113.46,
+      "monthly_equivalent_eur_m2": 9.455
+    },
+    "Panevėžio m. sav.": {
+      "annual_rent_eur_m2": 91.4,
+      "monthly_equivalent_eur_m2": 7.616666666666667
+    },
+    "Šiaulių m. sav.": {
+      "annual_rent_eur_m2": 95.15,
+      "monthly_equivalent_eur_m2": 7.929166666666667
+    },
+    "Vilniaus m. sav.": {
+      "annual_rent_eur_m2": 155.09,
+      "monthly_equivalent_eur_m2": 12.924166666666666
+    }
+  },
+  "role": "OFFICIAL_VALIDATION_ONLY_NOT_10_COUNTY_RENT_LAYER"
+}
