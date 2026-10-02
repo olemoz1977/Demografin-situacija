@@ -1,0 +1,56 @@
+name: Housing publication readiness
+
+on:
+  push:
+    branches:
+      - feature/housing-affordability
+    paths:
+      - "data/housing-affordability-input.json"
+      - "scripts/housing_affordability_readiness.py"
+      - "tests/test_housing_affordability_readiness.py"
+      - ".github/workflows/housing-publication-readiness.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: housing-publication-readiness-feature
+  cancel-in-progress: true
+
+jobs:
+  readiness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/housing-affordability
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run readiness tests
+        run: python -m unittest -v tests/test_housing_affordability_readiness.py
+
+      - name: Generate readiness report
+        run: |
+          python scripts/housing_affordability_readiness.py \
+            --input data/housing-affordability-input.json \
+            --out research/housing-affordability-readiness.json
+
+      - name: Commit readiness report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/housing-affordability-readiness.json
+          if git diff --cached --quiet; then
+            echo "Readiness report unchanged"
+          else
+            git commit -m "Refresh housing publication readiness [skip ci]"
+            git fetch origin feature/housing-affordability
+            git rebase origin/feature/housing-affordability
+            git push origin HEAD:feature/housing-affordability
+          fi
