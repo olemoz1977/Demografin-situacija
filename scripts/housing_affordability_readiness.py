@@ -173,11 +173,14 @@ def main() -> None:
         for row in preliminary_rows
         if isinstance(row, dict) and row.get("county")
     }
+    comparability = preliminary_qa.get("comparability_gate") or {}
+    comparability_pass = comparability.get("passed") is True
     preliminary_ready = (
         preliminary_cfg.get("preliminary_publication_ready") is True
         and preliminary_cfg.get("main_live_allowed") is False
         and preliminary_qa.get("preliminary_publication_ready") is True
         and preliminary_qa.get("validated_publication_ready") is False
+        and comparability_pass
         and len(preliminary_rows) == 10
         and preliminary_counties == EXPECTED_COUNTIES
     )
@@ -212,6 +215,8 @@ def main() -> None:
             "configured_rule": preliminary_cfg.get("rule"),
             "qa_source": str(args.preliminary_qa),
             "county_count": len(preliminary_counties),
+            "comparability_gate_passed": comparability_pass,
+            "comparability_verdict": comparability.get("verdict"),
         },
         "gates": gates,
         "blockers": blockers,
