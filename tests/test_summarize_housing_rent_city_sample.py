@@ -14,6 +14,14 @@ SCRIPT = ROOT / "scripts" / "summarize_housing_rent_city_sample.py"
 INPUT = ROOT / "data" / "housing-rent-city-sample-2025.csv"
 
 
+def quality(n: int) -> str:
+    if n >= 10:
+        return "B"
+    if n >= 5:
+        return "C"
+    return "insufficient"
+
+
 class RentCitySummaryTest(unittest.TestCase):
     def run_summary(self, src: Path, out: Path):
         return subprocess.run(
@@ -30,24 +38,29 @@ class RentCitySummaryTest(unittest.TestCase):
             capture_output=True,
         )
 
-    def test_current_sample_expected_quality_and_counts(self):
+    def test_current_sample_matches_listing_level_source(self):
         with tempfile.TemporaryDirectory() as td:
             out = Path(td) / "summary.csv"
             proc = self.run_summary(INPUT, out)
             self.assertEqual(proc.returncode, 0, proc.stderr)
-            df = pd.read_csv(out).set_index("city")
 
-            self.assertEqual(int(df.loc["Alytus", "sample_n"]), 6)
-            self.assertEqual(df.loc["Alytus", "quality"], "C")
-            self.assertEqual(int(df.loc["Marijampolė", "sample_n"]), 7)
-            self.assertEqual(df.loc["Marijampolė", "quality"], "C")
-            self.assertEqual(int(df.loc["Utena", "sample_n"]), 4)
-            self.assertEqual(df.loc["Utena", "quality"], "insufficient")
-            self.assertEqual(int(df.loc["Tauragė", "sample_n"]), 2)
-            self.assertEqual(df.loc["Tauragė", "quality"], "insufficient")
-            self.assertEqual(int(df.loc["Telšiai", "sample_n"]), 4)
-            self.assertEqual(df.loc["Telšiai", "quality"], "insufficient")
-            self.assertAlmostEqual(float(df.loc["Telšiai", "rent_month_median_eur"]), 275.0)
+            src = pd.read_csv(INPUT)
+            got = pd.read_csv(out).set_index("city")
+
+            self.assertEqual(set(got.index), set(src["city"].unique()))
+            for city_name, g in src.groupby("city"):
+                self.assertEqual(int(got.loc[city_name, "sample_n"]), len(g))
+                self.assertEqual(got.loc[city_name, "quality"], quality(len(g)))
+                self.assertAlmostEqual(
+                    float(got.loc[city_name, "rent_month_median_eur"]),
+                    float(g["monthly_rent_eur"].median()),
+                    places=3,
+                )
+                self.assertAlmostEqual(
+                    float(got.loc[city_name, "rent_eur_m2_median"]),
+                    float(g["eur_m2"].median()),
+                    places=3,
+                )
 
     def test_rejects_duplicate_source_url(self):
         with tempfile.TemporaryDirectory() as td:
