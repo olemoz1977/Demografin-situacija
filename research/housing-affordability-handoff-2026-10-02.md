@@ -158,9 +158,20 @@ Needed:
 - documented apartment-selection / multi-object rules;
 - publication rights.
 
-RC request sent 2026-10-01:
-- `rinkos.duomenys@registrucentras.lt`
-- awaiting reply.
+RC request sent 2026-10-01.
+
+RC reply received 2026-10-02:
+- individual-purpose transaction data are paid;
+- RC can prepare aggregated XLSX data under agreed selection conditions;
+- preliminary programming/preparation price starts at ~60 EUR + VAT;
+- final price only after a formal request and scope alignment;
+- service term up to 20 working days;
+- formal request must state purpose, legal basis and requested data scope;
+- no order/request follow-up has been submitted;
+- current project target is 2025, while the original email asked about 2024, so a paid-order specification would need to be rewritten for 2025 and re-approved by the owner.
+
+Detailed note:
+- `research/rc-market-data-response-2026-10-02.md`
 
 VDA request:
 - ADS-1961 registered;
