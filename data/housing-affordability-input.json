@@ -88,7 +88,7 @@
   },
   "required_fields_not_yet_validated": {
     "county_or_city_net_income_25_30_eur_month": null,
-    "rent": "WAITING_10_COUNTY_PRIVATE_LONG_TERM_1ROOM_RENT_LAYER",
+    "rent": "WAITING_PUBLICATION_GRADE_10_COUNTY_PRIVATE_RENT_LAYER; public search-index route closed at 9/10 N>=5",
     "sale_price_eur_m2": "WAITING_OFFICIAL_RC_2024_APARTMENT_TRANSACTION_LAYER"
   },
   "notes": [
@@ -104,7 +104,9 @@
     "All outgoing emails, external requests and forms must be shown to the owner before sending.",
     "Aruodas/Skelbiu aggregate-data request has NOT been sent; any future portal request must be shown to the owner first and sent only after explicit approval.",
     "Official VDA S7R280 2024 apartment sale benchmark is available for 6 city municipalities + Lithuania only; it is validation, not a 10-county layer.",
-    "Smart Continent BI_1 is exactly generic housing EUR/m² divided by monthly net VDU; it contains no independent apartment-only price signal."
+    "Smart Continent BI_1 is exactly generic housing EUR/m² divided by monthly net VDU; it contains no independent apartment-only price signal.",
+    "Skelbiu.lt 2025 historical search-index county sample reaches N>=5 in 9/10 counties; Tauragės remains N=2. Route is research/QA only and fails publication gate.",
+    "Search-index observations are not a complete portal export even when N>=5; sample thresholds are minimum QA rules, not proof of full market representativeness."
   ],
   "sources": [
     {
@@ -167,7 +169,17 @@
       "portal_request_recipients_candidate": [
         "Aruodas",
         "Skelbiu"
-      ]
+      ],
+      "search_index_county_sample": {
+        "status": "FAIL_FOR_PUBLICATION_9_OF_10_COUNTIES_MEET_N_GATE",
+        "source": "Skelbiu.lt historical search-index observations",
+        "county_summary": "data/housing-rent-county-search-index-sample-2025.csv",
+        "qa": "research/housing-rent-county-search-index-qa-2025.json",
+        "counties_n_ge_5": 9,
+        "county_blocker": "Tauragės",
+        "taurage_sample_n": 2,
+        "note": "Direct listing-level county pooling avoids city=county substitution, but search-index is not a complete portal export and Tauragė remains N<5."
+      }
     },
     "calculation_layer": {
       "status": "architecture_ready_waiting_validated_inputs",
