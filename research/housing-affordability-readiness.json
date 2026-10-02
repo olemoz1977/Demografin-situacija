@@ -1,0 +1,53 @@
+{
+  "audit_date": "2026-10-02",
+  "target": "10 Lithuania counties; working 25–30-year-old couple; no children",
+  "formula": "m²/year = [(2 × monthly net income × 12) – annual rent] / apartment sale price EUR/m²",
+  "ready_for_publication": false,
+  "decision": "DO_NOT_PUBLISH",
+  "gates": [
+    {
+      "name": "income_10_counties",
+      "status": "PASS",
+      "detail": "Income model covers 10/10 counties; quality=B-modelled"
+    },
+    {
+      "name": "sale_actual_apartment_transactions",
+      "status": "BLOCKED",
+      "detail": "sale status=blocked_external_source_waiting; required=WAITING_OFFICIAL_RC_2024_APARTMENT_TRANSACTION_LAYER",
+      "blocker": "Waiting for an official RC 2024 actual-apartment transaction layer covering 60 municipalities / 10 counties with a verified aggregation method."
+    },
+    {
+      "name": "rent_private_1room_10_counties",
+      "status": "BLOCKED",
+      "detail": "rent status=blocked_source_validation; main_layer_status=WAITING_10_COUNTY_PRIVATE_RENT_SOURCE; required=WAITING_10_COUNTY_PRIVATE_LONG_TERM_1ROOM_RENT_LAYER",
+      "blocker": "Waiting for a 2025 private long-term 1-room asking-rent layer covering all 10 counties with an accepted sample/methodology gate."
+    },
+    {
+      "name": "no_county_center_substitution",
+      "status": "PASS",
+      "detail": "Repository notes explicitly prohibit relabelling city values as county values."
+    }
+  ],
+  "blockers": [
+    {
+      "gate": "sale_actual_apartment_transactions",
+      "reason": "Waiting for an official RC 2024 actual-apartment transaction layer covering 60 municipalities / 10 counties with a verified aggregation method."
+    },
+    {
+      "gate": "rent_private_1room_10_counties",
+      "reason": "Waiting for a 2025 private long-term 1-room asking-rent layer covering all 10 counties with an accepted sample/methodology gate."
+    }
+  ],
+  "non_publication_sources": {
+    "sale_grid_2559": "QA_DIAGNOSTIC_ONLY",
+    "smart_continent_sale": "QA_DIAGNOSTIC_ONLY",
+    "smart_continent_bi3_rent": "QA_DIAGNOSTIC_ONLY",
+    "vda_5_city_rent": "OFFICIAL_VALIDATION_ONLY",
+    "city_search_index_rent": "RESEARCH_SAMPLE_ONLY"
+  },
+  "expected_next_inputs": {
+    "sale": "WAITING_OFFICIAL_RC_2024_APARTMENT_TRANSACTION_LAYER",
+    "rent": "WAITING_10_COUNTY_PRIVATE_LONG_TERM_1ROOM_RENT_LAYER"
+  },
+  "source": "data/housing-affordability-input.json"
+}
