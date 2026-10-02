@@ -1,0 +1,122 @@
+{
+  "year": 2024,
+  "municipality_count": 60,
+  "county_count": 10,
+  "formula": "implied_rent_eur_month = BI_3 × Smart Continent net VDU",
+  "semantic_evidence": {
+    "bi_3_label": "Vidutinė nuomos įmokų dalis nuo VDU, % (BI_3)",
+    "fact_table_columns": [
+      "BI_3",
+      "Vidutinis darbo užmokestis (neto)"
+    ],
+    "interpretation": "The arithmetic reconstruction is exact by indicator naming, but upstream rent-data source, housing basket, treatment of missing observations, and aggregation methodology remain unverified."
+  },
+  "implied_rent_range_eur_month": {
+    "min": 24.96,
+    "max": 613.14
+  },
+  "anchors": {
+    "Vilniaus m. sav.": {
+      "bi_3": 0.3965207268964625,
+      "net_wage_eur_month": 1546.3,
+      "implied_rent_eur_month": 613.14
+    },
+    "Kauno m. sav.": {
+      "bi_3": 0.30993697478991594,
+      "net_wage_eur_month": 1428,
+      "implied_rent_eur_month": 442.59
+    },
+    "Klaipėdos m. sav.": {
+      "bi_3": 0.3386234817813765,
+      "net_wage_eur_month": 1358.5,
+      "implied_rent_eur_month": 460.02
+    },
+    "Alytaus m. sav.": {
+      "bi_3": 0.24792513550135503,
+      "net_wage_eur_month": 1180.8,
+      "implied_rent_eur_month": 292.75
+    },
+    "Marijampolės sav.": {
+      "bi_3": 0.27789616100118386,
+      "net_wage_eur_month": 1182.6,
+      "implied_rent_eur_month": 328.64
+    },
+    "Utenos r. sav.": {
+      "bi_3": 0.2712108454024924,
+      "net_wage_eur_month": 1187.6,
+      "implied_rent_eur_month": 322.09
+    },
+    "Tauragės r. sav.": {
+      "bi_3": 0.19724770642201836,
+      "net_wage_eur_month": 1242.6,
+      "implied_rent_eur_month": 245.1
+    },
+    "Telšių r. sav.": {
+      "bi_3": 0.16548308570469233,
+      "net_wage_eur_month": 1191.3,
+      "implied_rent_eur_month": 197.13999999999996
+    }
+  },
+  "external_market_sample_comparison": [
+    {
+      "city": "Alytus",
+      "municipality": "Alytaus m. sav.",
+      "smart_continent_2024_implied_rent_eur_month": 292.75,
+      "skelbiu_2025_one_room_sample_median_eur": 285,
+      "skelbiu_sample_n": 6,
+      "difference_eur": 7.75,
+      "difference_pct": 2.719298245614035,
+      "comparison_limit": "different year and housing basket; diagnostic only"
+    },
+    {
+      "city": "Marijampolė",
+      "municipality": "Marijampolės sav.",
+      "smart_continent_2024_implied_rent_eur_month": 328.64,
+      "skelbiu_2025_one_room_sample_median_eur": 300,
+      "skelbiu_sample_n": 7,
+      "difference_eur": 28.639999999999986,
+      "difference_pct": 9.546666666666662,
+      "comparison_limit": "different year and housing basket; diagnostic only"
+    },
+    {
+      "city": "Tauragė",
+      "municipality": "Tauragės r. sav.",
+      "smart_continent_2024_implied_rent_eur_month": 245.1,
+      "skelbiu_2025_one_room_sample_median_eur": 300,
+      "skelbiu_sample_n": 2,
+      "difference_eur": -54.900000000000006,
+      "difference_pct": -18.3,
+      "comparison_limit": "different year and housing basket; diagnostic only"
+    },
+    {
+      "city": "Telšiai",
+      "municipality": "Telšių r. sav.",
+      "smart_continent_2024_implied_rent_eur_month": 197.13999999999996,
+      "skelbiu_2025_one_room_sample_median_eur": 250,
+      "skelbiu_sample_n": 3,
+      "difference_eur": -52.86000000000004,
+      "difference_pct": -21.144000000000016,
+      "comparison_limit": "different year and housing basket; diagnostic only"
+    },
+    {
+      "city": "Utena",
+      "municipality": "Utenos r. sav.",
+      "smart_continent_2024_implied_rent_eur_month": 322.09,
+      "skelbiu_2025_one_room_sample_median_eur": 225,
+      "skelbiu_sample_n": 4,
+      "difference_eur": 97.08999999999997,
+      "difference_pct": 43.1511111111111,
+      "comparison_limit": "different year and housing basket; diagnostic only"
+    }
+  ],
+  "hard_gate": {
+    "municipality_coverage_60_of_60": true,
+    "county_mapping_10_of_10": true,
+    "upstream_rent_source_verified": false,
+    "housing_basket_verified": false,
+    "municipality_observation_counts_known": false,
+    "county_aggregation_weight_available": false
+  },
+  "verdict": "DIAGNOSTIC_ONLY_METHOD_GATE_OPEN",
+  "publication_status": "FAIL_UNTIL_UPSTREAM_RENT_METHOD_AND_BASKET_ARE_VERIFIED"
+}

@@ -1,0 +1,61 @@
+municipality,county,year,bi_3_rent_share_of_net_wage,smart_continent_net_wage_eur_month,implied_rent_eur_month,reconstruction_formula,status
+Akmenės r. sav.,Šiaulių,2024,0.06350958744915747,1204.7,76.51,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Alytaus m. sav.,Alytaus,2024,0.24792513550135503,1180.8,292.75,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Alytaus r. sav.,Alytaus,2024,0.24576567138117686,1145.4,281.5,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Anykščių r. sav.,Utenos,2024,0.12777332977493105,1124.1,143.63,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Birštono sav.,Kauno,2024,0.12601517179830432,1120.5,141.2,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Biržų r. sav.,Panevėžio,2024,0.04184604159066034,1096.4,45.88,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Druskininkų sav.,Alytaus,2024,0.20350705851016604,1126.3,229.21,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Elektrėnų sav.,Vilniaus,2024,0.13632330402516737,1239.7,169,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Ignalinos r. sav.,Utenos,2024,0.14427213145019846,1083.3,156.29,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Jonavos r. sav.,Kauno,2024,0.23186726570505242,1268.7,294.17,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Joniškio r. sav.,Šiaulių,2024,0.028356550722160503,1170.1,33.18,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Jurbarko r. sav.,Tauragės,2024,0.1681333100069979,1143.2,192.21,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Kaišiadorių r. sav.,Kauno,2024,0.2025358228397742,1151.5,233.22,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Kalvarijos sav.,Marijampolės,2024,0.022730170294144435,1098.1,24.96,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Kauno m. sav.,Kauno,2024,0.30993697478991594,1428,442.59,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Kauno r. sav.,Kauno,2024,0.2354201711402033,1367.3,321.89,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Kazlų Rūdos sav.,Marijampolės,2024,0.04905726256983241,1145.6,56.2,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Kėdainių r. sav.,Kauno,2024,0.1651033074082803,1272.9,210.16000000000003,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Kelmės r. sav.,Šiaulių,2024,0.07867151472153246,1127.6,88.71,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Klaipėdos m. sav.,Klaipėdos,2024,0.3386234817813765,1358.5,460.02,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Klaipėdos r. sav.,Klaipėdos,2024,0.28510349236793736,1251.3,356.75,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Kretingos r. sav.,Klaipėdos,2024,0.20434624807186283,1102.1,225.21,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Kupiškio r. sav.,Panevėžio,2024,0.03304293156098437,1113.4,36.79,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Lazdijų r. sav.,Alytaus,2024,0.08550793051359516,1059.2,90.57,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Marijampolės sav.,Marijampolės,2024,0.27789616100118386,1182.6,328.64,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Mažeikių r. sav.,Telšių,2024,0.1262351739847616,1273.1,160.71,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Molėtų r. sav.,Utenos,2024,0.22292464282379304,1070.9,238.73,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Neringos sav.,Klaipėdos,2024,0.3303203759077317,1170.5,386.64,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Pagėgių sav.,Tauragės,2024,0.03469743504606956,1204.7,41.8,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Pakruojo r. sav.,Šiaulių,2024,0.11047476759628154,1204.8,133.1,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Palangos m. sav.,Klaipėdos,2024,0.32670995285955706,1124.3,367.32,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Panevėžio m. sav.,Panevėžio,2024,0.25873716302952504,1246.4,322.49,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Panevėžio r. sav.,Panevėžio,2024,0.12977139819245084,1128.6,146.46,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Pasvalio r. sav.,Panevėžio,2024,0.10441597993550697,1116.4,116.57,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Plungės r. sav.,Telšių,2024,0.10188416482346195,1220.7,124.37,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Prienų r. sav.,Kauno,2024,0.08363076923076923,1137.5,95.13,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Radviliškio r. sav.,Šiaulių,2024,0.22647216753177016,1117.4,253.06,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Raseinių r. sav.,Kauno,2024,0.1001060820367751,1131.2,113.24,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Rietavo sav.,Telšių,2024,0.03924247665167762,1156.4,45.38,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Rokiškio r. sav.,Panevėžio,2024,0.11105222000173777,1150.9,127.81,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Šakių r. sav.,Marijampolės,2024,0.11283256473926925,1127.6,127.23,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Šalčininkų r. sav.,Vilniaus,2024,0.21980859516070786,1107.6,243.46,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Šiaulių m. sav.,Šiaulių,2024,0.3381015931270331,1198.9,405.35,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Šiaulių r. sav.,Šiaulių,2024,0.1659230290640832,1125.1,186.68,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Šilalės r. sav.,Tauragės,2024,0.16106856473556175,1109.9,178.77,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Šilutės r. sav.,Klaipėdos,2024,0.2502115021150212,1111.1,278.01000000000005,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Širvintų r. sav.,Vilniaus,2024,0.1597222222222222,1159.2,185.15,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Skuodo r. sav.,Klaipėdos,2024,0.02676145055340592,1111.3,29.74,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Švenčionių r. sav.,Vilniaus,2024,0.2790868249747868,1090.7,304.4,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Tauragės r. sav.,Tauragės,2024,0.19724770642201836,1242.6,245.1,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Telšių r. sav.,Telšių,2024,0.16548308570469233,1191.3,197.13999999999996,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Trakų r. sav.,Vilniaus,2024,0.22018145776151268,1311.6,288.79,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Ukmergės r. sav.,Vilniaus,2024,0.19041036341505824,1150.2,219.01,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Utenos r. sav.,Utenos,2024,0.2712108454024924,1187.6,322.09,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Varėnos r. sav.,Alytaus,2024,0.20220220220220217,1098.9,222.2,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Vilkaviškio r. sav.,Marijampolės,2024,0.15513899049012436,1093.6,169.66,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Vilniaus m. sav.,Vilniaus,2024,0.3965207268964625,1546.3,613.14,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Vilniaus r. sav.,Vilniaus,2024,0.23193204267088108,1265.5,293.51,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Visagino sav.,Utenos,2024,0.0742479641017118,1203.4,89.35,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
+Zarasų r. sav.,Utenos,2024,0.15179849064000783,1020.3,154.88,BI_3 × Smart Continent net VDU,diagnostic_proxy_not_publication_approved
