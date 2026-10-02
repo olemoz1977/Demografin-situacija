@@ -325,3 +325,36 @@ parinktas tik pagal 2025 m. faktinių sandorių aprėptį visose 10 apskričių.
 
 Iki tol v0.1 tarpapskritiniai rezultatai yra diagnostiniai ir neturi būti interpretuojami
 kaip grynas „kur jaunai porai įperkamiau“ atsakymas.
+
+
+## 2026-10-02 valstybės pagalbos pirmajam būstui sluoksnis
+
+Pirmo šeimos būsto prieinamumo analizė negali ignoruoti valstybės paramos, tačiau ši
+parama nėra universali ir negali būti automatiškai atimama iš būsto kainos visoms
+25–30 m. poroms.
+
+Skiriamos dvi 2026 m. schemos:
+
+1. **Finansinė paskata pirmąjį būstą įsigyjančioms jaunoms šeimoms**
+   - teisinė „jaunos šeimos“ sąvoka nėra lygi analitinei „jaunai porai“;
+   - taikomi šeimos statuso, pirmo būsto, būsto vertės ir teritorijos kriterijai;
+   - būsto vertė iki 120 000 EUR;
+   - subsidija 10 / 12,5 / 15 proc. priklausomai nuo vaikų skaičiaus;
+   - subsidijos bazė iki 87 000 EUR kredito.
+
+2. **Valstybės iš dalies kompensuojamas būsto kreditas**
+   - taikomos pajamų ir turto ribos;
+   - 2026 m. dviejų asmenų šeimai: pajamos iki 34 484 EUR per metus, turtas iki 61 046 EUR;
+   - būstas gali būti įsigyjamas bet kur Lietuvoje;
+   - kredito suma šeimai iki 87 000 EUR;
+   - jaunoms šeimoms subsidija 15 / 20 / 25 / 30 proc. pagal vaikų skaičių.
+
+Tyrimo taisyklė:
+- valstybės paramos sluoksnis pateikiamas atskirai nuo bazinio įperkamumo rodiklio;
+- individuali teisė į paramą iš modeliuotų apskrities pajamų automatiškai nenustatoma;
+- teritorinis „būsto kainos po subsidijos“ scenarijus galimas tik tada, kai turėsime
+  palyginamą būsto krepšelį ir teisės į paramą taisykles galėsime taikyti be
+  klaidinančių prielaidų.
+
+Detalus šaltinių auditas:
+- `research/housing-state-support-2026.md`.
