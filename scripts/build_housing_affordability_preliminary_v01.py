@@ -15,6 +15,7 @@ VDA_2025 = ROOT / "research" / "raw" / "vda-sale-big-cities" / "vda-sale-big-cit
 INCOME = ROOT / "data" / "housing-income-county-model-2025-11.csv"
 RENT = ROOT / "data" / "housing-rent-county-search-index-sample-2025.csv"
 OUT = ROOT / "data" / "housing-affordability-preliminary-v01.csv"
+OUT_JSON = ROOT / "data" / "housing-affordability-preliminary-v01.json"
 QA = ROOT / "research" / "housing-affordability-preliminary-v01-qa.json"
 
 EXPECTED_COUNTIES = {
@@ -167,6 +168,14 @@ def main() -> None:
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(out.to_csv(index=False), encoding="utf-8")
+    OUT_JSON.write_text(
+        json.dumps({
+            "version": "v0.1-preliminary",
+            "status": "PRELIMINARY_V0.1_TO_BE_REFINED",
+            "rows": out.to_dict("records"),
+        }, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
 
     qa = {
         "version": "v0.1-preliminary",
