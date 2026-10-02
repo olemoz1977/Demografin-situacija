@@ -48,6 +48,7 @@ const rows = (json.features || []).map(function (f) {
   };
 });
 
+console.log(JSON.stringify({ discovered_rows: rows }, null, 2));
 if (rows.length !== 5) {
   throw new Error("Expected 5 major-city rows for 2025, got " + rows.length);
 }
