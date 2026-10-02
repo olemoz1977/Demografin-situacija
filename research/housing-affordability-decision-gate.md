@@ -81,3 +81,41 @@ Kitas išorinis blokatorius: `get.data.gov.lt` pilno rinkinio endpointai šiuo m
 
 ### 2026-10-01 vakaro korekcija
 ButuPirkimas snapshot techninis pilnumas patvirtintas tuščiu sekančiu puslapiu. Naujas blokatorius yra ne pagination, o aprėptis: 2024 m. faile tik 516 sandorių / 474 objektai, 33 savivaldybės ir 8 apskritys. Pasirinktas A variantas reiškia, kad prieš publikaciją reikia oficialaus paaiškinimo, kokia atranka lemia tokią apimtį.
+
+
+## 2026-10-02 būsenos atnaujinimas
+
+A variantas lieka galioti: 10 apskričių + aukšta kokybės kartelė + nepublikuoti nepilno sluoksnio.
+
+### Pardavimo kaina
+- VDA/RC dataset 2559 gardelės galutinai perkeltos į QA-only.
+- Pagrindinis tikslinis šaltinis — oficialus RC 2024 butų sandorių agregatas / anonimizuotas sluoksnis.
+- Parengtas `scripts/build_housing_sale_county_from_rc.py`.
+- Automatiniai testai PASS.
+- RC užklausa išsiųsta 2026-10-01; atsakymo dar nėra.
+- VDA ADS-1961 užregistruota; atsakymo dar nėra.
+
+### Nuoma
+- Smart Continent BI_3 patikrintas visoms 60 savivaldybių, bet FAIL pagrindiniam sluoksniui.
+- 13 savivaldybių rekonstrukcija `BI_3 × VDU` davė <100 EUR/mėn. dydžius;
+  savivaldybių metodo, N ir paklaidos viešame modelyje nėra.
+- Parengtas `scripts/validate_housing_rent_provider.py`.
+- Automatiniai testai PASS.
+- Oficialus VDA 2025 kontrolinis sluoksnis tiesiogiai ištrauktas iš ArcGIS FeatureServer:
+  Vilnius 155,09; Kaunas 124,35; Klaipėda 113,46; Šiauliai 95,15; Panevėžys 91,40
+  EUR/m² per metus.
+- Šis VDA sluoksnis lieka tik 5 miestų benchmarkas, ne apskričių pakaitalas.
+- Aruodas / Skelbiu istorinių agregatų užklausa išsiųsta 2026-10-02; atsakymo dar nėra.
+- Netikslus Aruodas 36 mėn. automatizavimo eksperimentas pašalintas iš repo.
+
+### Repo apsaugos
+- `housing_affordability_pipeline.py` pagal nutylėjimą atsisako veikti; diagnostiniam grid
+  atkūrimui reikia aiškaus `--allow-diagnostic-grid`.
+- `main` / live nepakeistas.
+
+### Dabartiniai išoriniai blokatoriai
+1. RC 2024 pilnas butų sandorių sluoksnis / metodikos patvirtinimas.
+2. 2025 privataus 1 kambario nuomos sluoksnis visoms 10 apskričių.
+
+Kol bent vienas iš šių blokatorių neišspręstas, galutinis `m²/year` 10 apskričių rodiklis
+neskaičiuojamas publikavimui.
