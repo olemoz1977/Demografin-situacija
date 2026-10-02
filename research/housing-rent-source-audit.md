@@ -49,7 +49,28 @@ Failai:
 BI_3 gali būti naudojamas tik kaip papildoma kryžminė diagnostika. Jo negalima traktuoti
 kaip privataus 1 kambario buto rinkos nuomos kainos ar automatiškai agreguoti į apskritis.
 
-## Didžiųjų miestų etalonas
+## Didžiųjų miestų oficialus VDA etalonas
+
+2026-10-02 iš VDA ArcGIS EVP32 FeatureServer tiesiogiai ištrauktas 2025 m. oficialus
+rodiklis S7R281 `Butų nuomos vidutinės metinės kainos`.
+
+2025 m. reikšmės:
+- Vilniaus m. sav.: 155,09 EUR/m² per metus = 12,924 EUR/m²/mėn.;
+- Kauno m. sav.: 124,35 = 10,363 EUR/m²/mėn.;
+- Klaipėdos m. sav.: 113,46 = 9,455 EUR/m²/mėn.;
+- Šiaulių m. sav.: 95,15 = 7,929 EUR/m²/mėn.;
+- Panevėžio m. sav.: 91,40 = 7,617 EUR/m²/mėn.
+
+Šis sluoksnis yra **oficialus kontrolinis benchmarkas**, bet ne 10 apskričių nuomos sluoksnis:
+jis apima tik 5 didžiųjų miestų savivaldybes ir nėra 1 kambario butų pjūvis.
+
+Failai:
+- `research/raw/vda-rent-big-cities/vda-rent-big-cities-2025.csv`;
+- `research/raw/vda-rent-big-cities/vda-rent-big-cities-2025-qa.json`;
+- `scripts/extract_vda_rent_big_cities.mjs`.
+
+## Aruodas 1 kambario etalonas
+
 Aruodas.lt istorinių tendencijų puslapiai pateikia aktyvių skelbimų pasiūlos kainų vidurkius
 Vilniui, Kaunui ir Klaipėdai. 2025-12 1 kambario etalonai:
 - Vilnius: 484 EUR/mėn.;
@@ -58,6 +79,11 @@ Vilniui, Kaunui ir Klaipėdai. 2025-12 1 kambario etalonai:
 
 Aruodas aiškiai nurodo, kad tai yra pasiūlos, o ne sudarytų nuomos sutarčių kainos.
 Šie dydžiai naudojami metodo validacijai, o ne kaip faktinių nuomos sandorių statistika.
+
+Bandymas automatizuoti visą 2025 m. istorinių Aruodas ataskaitų ciklą atmestas:
+senesni tiesioginiai `month=YYYY-MM` URL gyvame puslapyje ne visada atkuria istorinį
+nuomos bloką taip, kaip jį rodo paieškos indeksas. Todėl nepatikimi automatiniai rezultatai
+nenaudojami ir neturi likti kaip duomenų sluoksnis.
 
 ## Mažesni miestai — istorinių skelbimų mėginys
 Paieškos indeksuose pavyko patikrinti 2025 m. istorinius Skelbiu.lt 1 kambario butų
