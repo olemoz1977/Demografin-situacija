@@ -18,6 +18,8 @@ from pathlib import Path
 
 import pandas as pd
 
+TARGET_YEAR = 2025
+
 EXPECTED_COUNTIES = {
     "Alytaus",
     "Kauno",
@@ -50,6 +52,21 @@ def require_counties(df: pd.DataFrame, col: str, label: str) -> None:
             f"{label}: county coverage mismatch: "
             f"missing={sorted(EXPECTED_COUNTIES - actual)}, "
             f"extra={sorted(actual - EXPECTED_COUNTIES)}"
+        )
+
+
+
+def require_target_year(df: pd.DataFrame, label: str) -> None:
+    if "year" not in df.columns:
+        raise ValueError(f"{label}: missing year column")
+    years = pd.to_numeric(df["year"], errors="coerce")
+    if years.isna().any():
+        raise ValueError(f"{label}: invalid year values")
+    unique = sorted(set(years.astype(int)))
+    if unique != [TARGET_YEAR]:
+        raise ValueError(
+            f"{label}: publication architecture is period-aligned to {TARGET_YEAR}; "
+            f"got years={unique}"
         )
 
 
@@ -117,6 +134,9 @@ def main() -> None:
     require_counties(sale, "apskritis", "sale")
     require_counties(rent, "county", "rent")
 
+    require_target_year(sale, "sale")
+    require_target_year(rent, "rent")
+
     require_status(sale, "sale", args.allow_candidate)
     require_status(rent, "rent", args.allow_candidate)
 
@@ -143,6 +163,7 @@ def main() -> None:
     sale2 = sale[
         [
             "apskritis",
+            "year",
             "avg_apartment_transaction_eur_m2_weighted",
             "apartment_transaction_count",
             "valid_price_observation_count",
@@ -152,6 +173,7 @@ def main() -> None:
         columns={
             "apskritis": "county",
             "avg_apartment_transaction_eur_m2_weighted": "sale_price_eur_m2",
+            "year": "sale_year",
             "layer_status": "sale_layer_status",
         }
     )
@@ -159,6 +181,7 @@ def main() -> None:
     rent2 = rent[
         [
             "county",
+            "year",
             "median_asking_rent_eur_month",
             "unique_listing_count",
             "quality",
@@ -166,6 +189,7 @@ def main() -> None:
         ]
     ].rename(
         columns={
+            "year": "rent_year",
             "median_asking_rent_eur_month": "rent_eur_month",
             "unique_listing_count": "rent_listing_n",
             "quality": "rent_quality",
