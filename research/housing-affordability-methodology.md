@@ -160,3 +160,45 @@ N < 5 — neskaičiuoti atskiro teritorijos rodiklio.
 Galutiniame puslapyje NEGALIMA rašyti, kad visas rodiklis yra „oficiali statistika“. Teisinga formuluotė: „Autoriaus apskaičiuotas būsto įperkamumo rodiklis, sudarytas iš oficialių pajamų ir faktinių NT sandorių duomenų bei rinkos nuomos pasiūlos duomenų.“
 
 main nekeisti, kol 2025 m. faktinių sandorių agregatas apskritims nesuskaičiuotas, savivaldybių pajamų sluoksnis nesukomplektuotas, nuomos imtis nesurinkta ir nevaliduota, nepaskaičiuotos kokybės klasės ir jautrumo analizė.
+
+
+## 2026-10-02 metodikos korekcija — supersedes 2026-10-01 grid architecture
+
+2026-10-01 prielaida, kad VDA / RC 1×1 km `ButuPirkimas` gardelių rinkinys gali būti
+pagrindinis 10 apskričių faktinių butų kainų sluoksnis, **atšaukta** po aprėpties audito.
+
+Patvirtinta:
+- 2024 m. pilname šio endpointo snapshot yra tik 516 sandorių / 474 objektai;
+- aprėptis — 33 savivaldybės ir 8 apskritys;
+- Tauragės ir Telšių apskritys nepatenka;
+- nepriklausomi oficialūs RC kontroliniai dydžiai rodo, kad 2024 m. butų rinkos apimtis buvo
+  daug didesnė;
+- todėl dataset 2559 yra siauras rinkos poaibis ir galutinei 10 apskričių kainai netinka.
+
+Dabartinė pardavimo architektūra:
+1. pagrindinis šaltinis — oficialus RC 2024 butų sandorių 60 savivaldybių
+   agregatas arba anonimizuotas micro-layer;
+2. `scripts/build_housing_sale_county_from_rc.py` tikrina 60/60 → 10/10 struktūrą;
+3. gardelės paliekamos tik QA / outlier / JOIN diagnostikai;
+4. legacy grid pipeline pagal nutylėjimą užblokuotas.
+
+Dabartinė nuomos architektūra:
+1. pagrindinis tikslas — 2025 m. privataus ilgalaikio 1 kambario buto pasiūlos mediana
+   visoms 10 apskričių;
+2. pageidaujamas tiesioginis apskrities agregatas iš vienodo listing-level krepšelio;
+3. validatorius `scripts/validate_housing_rent_provider.py`;
+4. N>=10 → B; 5–9 → C; N<5 → insufficient;
+5. VDA 2025 oficialus 5 didžiųjų miestų rodiklis S7R281 naudojamas kaip kontrolė;
+6. Smart Continent BI_3 — QA tik, pagrindiniam nuomos sluoksniui FAIL.
+
+2025 m. VDA kontrolinės nuomos reikšmės:
+- Vilnius: 155,09 EUR/m²/metus;
+- Kaunas: 124,35;
+- Klaipėda: 113,46;
+- Šiauliai: 95,15;
+- Panevėžys: 91,40.
+
+Ši korekcija yra viršesnė už ankstesnę to paties dokumento skiltį
+„Esminis radinys: faktinių butų sandorių sluoksnį galime sukurti visai Lietuvai“.
+
+`main` / live nekeisti, kol RC pardavimo ir 10 apskričių nuomos vartai nepraeiti.
