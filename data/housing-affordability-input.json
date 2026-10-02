@@ -1,5 +1,5 @@
 {
-  "status": "research",
+  "status": "research_with_preliminary_preview",
   "audit_date": "2026-10-02",
   "period": "2025-Q4 / 2025-11 where noted",
   "county_net_wage_all_workers_eur_month": {
@@ -115,7 +115,8 @@
     "Registrų centro 2025 full-year control is approximately 37.1k apartment sales nationally.",
     "Strategy changed on 2026-10-02: a clearly labelled preliminary v0.1 may be shown before strict final data gates pass; strict v1.0 validation remains unchanged.",
     "Preliminary sale proxy uses Smart Continent 2024 generic-housing transaction prices calibrated to VDA S7R280 2025 apartment prices in six cities; rural transfer remains unvalidated.",
-    "Preliminary v0.1 includes a sensitivity band rather than presenting the central estimate as exact."
+    "Preliminary v0.1 includes a sensitivity band rather than presenting the central estimate as exact.",
+    "Dual-mode policy: STRICT/v1.0 remains validated_publication_ready=false; PRELIMINARY/v0.1 is allowed in feature/preview only with explicit OFFICIAL / MODELLED / PRELIMINARY / TO_BE_REFINED labels. Main/live remains locked."
   ],
   "sources": [
     {
@@ -312,5 +313,28 @@
     "methodology": "research/housing-affordability-preliminary-v01.md",
     "view": "housingAffordability",
     "strict_final_gate_remains": true
+  },
+  "publication_modes": {
+    "strict_v1_0": {
+      "validated_publication_ready": false,
+      "decision": "BLOCKED_WAITING_VALIDATED_2025_SALE_AND_RENT",
+      "scope": "final validated version",
+      "target": "2025 sale + 2025 rent + 2025-11 income; 10 counties",
+      "main_live_allowed": false,
+      "rule": "Final v1.0 remains blocked until the official/validated 2025 apartment-sale layer and publication-grade 2025 1-room rent layer cover all 10 counties."
+    },
+    "preliminary_v0_1": {
+      "preliminary_publication_ready": true,
+      "decision": "READY_FOR_FEATURE_PREVIEW_WITH_EXPLICIT_UNCERTAINTY",
+      "scope": "feature branch / preview only",
+      "main_live_allowed": false,
+      "required_labels": [
+        "OFFICIAL",
+        "MODELLED",
+        "PRELIMINARY",
+        "TO_BE_REFINED"
+      ],
+      "rule": "Show the best currently supportable estimate, but mark every non-final layer and every composite result as preliminary/to be refined. No proxy may be described as official county apartment price or complete county rent market."
+    }
   }
 }
