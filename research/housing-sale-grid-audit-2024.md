@@ -19,6 +19,19 @@ Spinta CSV formatui cursor paskutinėje netuščio puslapio eilutėje yra normal
 - 2024 m. aprėpta 33 savivaldybės ir 8 apskritys.
 - Telšių ir Tauragės apskritims 2024 m. eilučių nėra.
 
+## Oficialiai dokumentuota atranka
+
+Data.gov.lt rinkinio 2559 aprašas nurodo, kad duomenys neapima visų butų pirkimo
+sandorių: pateikiami tik sandoriai, kurių metu įsigytas vienas objektas. Kelių objektų
+sandoriai (pvz. butas + sandėliukas arba butas + žemės sklypas) nepateikiami.
+
+Šaltinis:
+https://data.gov.lt/datasets/2559/
+
+Todėl `ButuPirkimas` pagal savo oficialią apibrėžtį yra **atrinktas visos rinkos
+poaibis**, o ne pilnas apartment-transaction registras. Šis faktas sustiprina sprendimą
+naudoti jį tik QA / gardelių diagnostikai.
+
 ## Kritinis aprėpties signalas
 2024 m. snapshot sumos:
 - sandoriai: 516;
