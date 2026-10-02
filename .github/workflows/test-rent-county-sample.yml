@@ -1,0 +1,49 @@
+name: Validate 2025 rent county research sample
+
+on:
+  push:
+    branches:
+      - feature/housing-affordability
+    paths:
+      - "data/housing-rent-city-sample-2025.csv"
+      - "scripts/summarize_housing_rent_county_sample.py"
+      - "tests/test_summarize_housing_rent_county_sample.py"
+      - ".github/workflows/test-rent-county-sample.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/housing-affordability
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pandas
+      - name: Run county sample tests
+        run: python -m unittest -v tests/test_summarize_housing_rent_county_sample.py
+      - name: Build county research summary
+        run: |
+          python scripts/summarize_housing_rent_county_sample.py \
+            --input data/housing-rent-city-sample-2025.csv \
+            --out data/housing-rent-county-search-index-sample-2025.csv
+      - name: Commit summary
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/housing-rent-county-search-index-sample-2025.csv
+          if git diff --cached --quiet; then
+            echo "No summary changes"
+          else
+            git commit -m "Refresh county rent search-index sample [skip ci]"
+            git fetch origin feature/housing-affordability
+            git rebase origin/feature/housing-affordability
+            git push origin HEAD:feature/housing-affordability
+          fi
