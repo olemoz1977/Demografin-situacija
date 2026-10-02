@@ -1,9 +1,9 @@
 {
   "version": "v0.1-preliminary",
   "status": "PRELIMINARY_V0.1_TO_BE_REFINED",
+  "display_order": "m2_per_year_after_rent_desc_for_visual_comparison_only",
   "rows": [
     {
-      "preliminary_affordability_rank": 1,
       "county": "Tauragės",
       "model_net_25_30_eur_month": 1210.2,
       "pair_net_income_eur_month": 2420.4,
@@ -28,7 +28,6 @@
       "localities": "Tauragė"
     },
     {
-      "preliminary_affordability_rank": 2,
       "county": "Marijampolės",
       "model_net_25_30_eur_month": 1234.8,
       "pair_net_income_eur_month": 2469.6,
@@ -53,7 +52,6 @@
       "localities": "Marijampolė"
     },
     {
-      "preliminary_affordability_rank": 3,
       "county": "Utenos",
       "model_net_25_30_eur_month": 1277.4,
       "pair_net_income_eur_month": 2554.8,
@@ -78,7 +76,6 @@
       "localities": "Anykščiai | Utena"
     },
     {
-      "preliminary_affordability_rank": 4,
       "county": "Panevėžio",
       "model_net_25_30_eur_month": 1268.5,
       "pair_net_income_eur_month": 2537.0,
@@ -103,7 +100,6 @@
       "localities": "Panevėžys"
     },
     {
-      "preliminary_affordability_rank": 5,
       "county": "Telšių",
       "model_net_25_30_eur_month": 1292.2,
       "pair_net_income_eur_month": 2584.4,
@@ -128,7 +124,6 @@
       "localities": "Mažeikiai | Plungė | Telšiai"
     },
     {
-      "preliminary_affordability_rank": 6,
       "county": "Šiaulių",
       "model_net_25_30_eur_month": 1253.3,
       "pair_net_income_eur_month": 2506.6,
@@ -153,7 +148,6 @@
       "localities": "Šiauliai"
     },
     {
-      "preliminary_affordability_rank": 7,
       "county": "Alytaus",
       "model_net_25_30_eur_month": 1264.1,
       "pair_net_income_eur_month": 2528.2,
@@ -178,7 +172,6 @@
       "localities": "Alytus"
     },
     {
-      "preliminary_affordability_rank": 8,
       "county": "Kauno",
       "model_net_25_30_eur_month": 1480.8,
       "pair_net_income_eur_month": 2961.6,
@@ -203,7 +196,6 @@
       "localities": "Kaunas"
     },
     {
-      "preliminary_affordability_rank": 9,
       "county": "Klaipėdos",
       "model_net_25_30_eur_month": 1402.5,
       "pair_net_income_eur_month": 2805.0,
@@ -228,7 +220,6 @@
       "localities": "Klaipėda"
     },
     {
-      "preliminary_affordability_rank": 10,
       "county": "Vilniaus",
       "model_net_25_30_eur_month": 1660.7,
       "pair_net_income_eur_month": 3321.4,
