@@ -85,14 +85,14 @@ senesni tiesioginiai `month=YYYY-MM` URL gyvame puslapyje ne visada atkuria isto
 nuomos bloką taip, kaip jį rodo paieškos indeksas. Todėl nepatikimi automatiniai rezultatai
 nenaudojami ir neturi likti kaip duomenų sluoksnis.
 
-## Mažesni miestai — istorinių skelbimų mėginys
+## Mažesni miestai — istorinių Skelbiu.lt skelbimų mėginys
 Paieškos indeksuose pavyko patikrinti 2025 m. istorinius Skelbiu.lt 1 kambario butų
 skelbimus Marijampolėje, Alytuje, Utenoje, Tauragėje ir Telšiuose.
 
 Įtraukiami tik:
 - 1 kambario butai;
 - savarankiški butai, ne kambario nuoma;
-- ilgalaikė nuoma arba skelbimas, kuriame ilgalaikė nuoma aiškiai leidžiama;
+- ilgalaikė nuoma arba skelbimas, kuriame nėra tik trumpalaikės nuomos signalo;
 - nurodyta mėnesio kaina ir plotas;
 - atnaujinimo data patenka į 2025 m.
 
@@ -101,19 +101,61 @@ Neįtraukiami:
 - trumpalaikė nuoma, jei ilgalaikė nesiūloma;
 - ieškančių išsinuomoti skelbimai;
 - 2026 m. skelbimai;
+- dabartiniai skelbimai be įrodomos 2025 m. stebinio datos;
 - dubliuoti skelbimai.
 
-Žr. `data/housing-rent-city-sample-2025.csv`.
+Žr.:
+- `data/housing-rent-city-sample-2025.csv`;
+- `research/housing-rent-search-index-audit-2025-10-02.md`;
+- `scripts/summarize_housing_rent_city_sample.py`.
 
 ## Dabartinė mėginio aprėptis
 - Marijampolė: N=7, mediana 300 EUR/mėn. — C kokybė.
 - Alytus: N=6, mediana 285 EUR/mėn. — C kokybė.
-- Utena: N=4, mediana 225 EUR/mėn. — nepakankama.
-- Tauragė: N=2, mediana 300 EUR/mėn. — nepakankama.
-- Telšiai: N=3, mediana 250 EUR/mėn. — nepakankama.
+- Utena: N=4, mediana 225 EUR/mėn. — insufficient.
+- Tauragė: N=2, mediana 300 EUR/mėn. — insufficient.
+- Telšiai: N=4, mediana 275 EUR/mėn. — insufficient.
 
-Šie skaičiai dar NEGALI būti naudojami galutiniam 10 apskričių indeksui:
-paieškos indeksas nėra pilna skelbimų duomenų bazė, o trijų miestų imtis per maža.
+2026-10-02 papildoma istorinė paieška rado vieną naują tinkamą Telšių stebinį:
+2025-08-01, Žemaitės g., 37 m², 1 kamb., 360 EUR/mėn. Tačiau N pakilo tik iki 4,
+todėl kokybės klasė nepasikeitė.
+
+Suvestinė dabar generuojama automatiškai ir tikrinama CI:
+- `scripts/summarize_housing_rent_city_sample.py`;
+- `tests/test_summarize_housing_rent_city_sample.py`;
+- `.github/workflows/test-rent-city-sample.yml`.
+
+Šie miesto skaičiai NEGALI būti naudojami galutiniam 10 apskričių indeksui:
+paieškos indeksas nėra pilna skelbimų duomenų bazė, o miestas nėra apskritis.
+
+## Rinka.lt kaip alternatyvus vieno portalo archyvas — nepakankamas
+
+2026-10-02 patikrintas Rinka.lt kaip galimas antras vienodo šaltinio 2025 m. archyvas.
+
+Pliusai:
+- paieškos puslapiuose išlaikoma skelbimo `Įkelta: YYYY MM DD` data;
+- randama istorinių 2025 m. 1 kambario nuomos skelbimų;
+- galima filtruoti miestą / rajoną.
+
+Tačiau:
+- aiškiai gausesni 2025 m. 1 kambario nuomos rezultatai rasti Šiauliuose;
+- Utenos, Tauragės ir Telšių paieškose vienodo krepšelio istorinių rezultatų aprėptis
+  išlieka reta ir nevienoda;
+- todėl iš viešo indekso neįrodoma 10 apskričių / 60 savivaldybių pakankama aprėptis;
+- Rinka.lt pavienių skelbimų negalima maišyti su Skelbiu.lt mediana be atskiro
+  tarp-portalų kalibravimo ir deduplikavimo.
+
+Verdiktas: **ne pagrindinis šaltinis; papildomam source-discovery tik.**
+
+## Kiti vieši rinkos šaltiniai
+
+Ober-Haus 2025 mėnesinės kainų lentelės pateikia 1 kambario nuomos intervalus keliems
+didiesiems miestams (Vilnius, Kaunas, Klaipėda, Šiauliai, Panevėžys, taip pat Druskininkai),
+bet ne visoms 10 apskričių. Todėl jos gali būti papildoma kontrolė, ne pagrindinis sluoksnis.
+
+Socialinio / savivaldybių būsto atviri duomenys turi daug platesnę savivaldybių aprėptį
+ir net nuomos kvantilius, tačiau aprašo kitą rinkos segmentą. Jų naudojimas kaip privataus
+rinkos nuomos pakaitalo būtų metodinė klaida.
 
 ## Kokybės taisyklė
 - N >= 10: B rinkos mėginys;
@@ -121,11 +163,10 @@ paieškos indeksas nėra pilna skelbimų duomenų bazė, o trijų miestų imtis 
 - N < 5: insufficient — galutinei teritorijos reikšmei nenaudoti.
 
 ## Tolimesnis darbas
-1. Pirmenybė — rasti 2024/2025 m. vienodo krepšelio privataus nuomos šaltinį,
-   kuris leidžia pagrįstai aprėpti visas savivaldybes arba bent visas 10 apskričių.
-2. Jei tokio šaltinio nėra, plėsti vienodo portalo istorinę 1 kambario butų imtį
-   visoms reikalingoms teritorijoms, o ne naudoti apskrities centrą kaip apskritį.
-3. Utenos, Tauragės ir Telšių mėginį būtina didinti; N<5 lieka `insufficient`.
-4. Didžiųjų miestų mėginį naudoti kaip kontrolę prieš Aruodas/VDA, ne kaip
-   automatinį apskrities pakaitalą.
-5. Smart Continent BI_3 paliekamas tik QA diagnostikai.
+1. Pagrindinis kelias — gauti vienodo tiekėjo 2025 m. privataus ilgalaikio 1 kambario
+   nuomos tiesioginį 10 apskričių agregatą arba listing-level eksportą.
+2. Gautą failą leisti per `scripts/validate_housing_rent_provider.py`.
+3. VDA S7R281, Aruodas, Ober-Haus ir miesto search-index imtis naudoti kryžminei QA,
+   ne kaip apskrities pakaitalus.
+4. N ribų nemažinti ir skirtingų portalų pavienių skelbimų nemaišyti.
+5. Smart Continent BI_3 palikti tik QA diagnostikai.
