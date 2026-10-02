@@ -30,6 +30,47 @@
         </div>
       </div>
 
+      <section class="housing-support-layer" aria-labelledby="housingSupportTitle">
+        <div class="section-label">Valstybės pagalba pirmajam būstui <span class="badge badge-official">OFICIALIOS 2026 M. SĄLYGOS</span></div>
+        <h3 id="housingSupportTitle">Valstybė pirmo būsto barjerą mažina dviem skirtingais keliais</h3>
+        <p class="lead housing-support-lead">Šis sluoksnis svarbus demografiniam kontekstui, tačiau parama nėra universali. Mūsų analitinė „25–30 m. dirbanti pora“ nėra tas pats, kas teisės aktuose apibrėžta „jauna šeima“.</p>
+
+        <div class="two-col housing-support-grid">
+          <div class="card housing-support-card">
+            <div class="eyebrow">1 · Finansinė paskata jaunoms šeimoms</div>
+            <h4>Pirmas būstas tik finansuojamose teritorijose</h4>
+            <p><strong>Kas laikoma jauna šeima:</strong> sutuoktiniai, registruoti partneriai arba vienas vaiką auginantis tėvas / mama, kurių amžius iki 36 metų.</p>
+            <p><strong>Būsto vertė:</strong> iki 120 000 €. Taikomi teritoriniai ribojimai: schema neapima dalies didžiųjų miestų, jų brangesnių žiedinių savivaldybių ir kurortų.</p>
+            <div class="housing-support-rate-grid">
+              <div><strong>10 %</strong><span>0 arba 1 vaikas</span></div>
+              <div><strong>12,5 %</strong><span>2 vaikai</span></div>
+              <div><strong>15 %</strong><span>3+ vaikų</span></div>
+            </div>
+            <p class="small">Subsidija skaičiuojama nuo ne didesnės kaip 87 000 € kredito sumos. Teorinė maksimali subsidija atitinkamai: <strong>8 700 € / 10 875 € / 13 050 €</strong>.</p>
+          </div>
+
+          <div class="card housing-support-card">
+            <div class="eyebrow">2 · Valstybės iš dalies kompensuojamas būsto kreditas</div>
+            <h4>Galimas visoje Lietuvoje, bet taikomos pajamų ir turto ribos</h4>
+            <p><strong>2026 m. dviejų asmenų šeimai:</strong> metinės vertinamos pajamos turi neviršyti 34 484 €, turtas – 61 046 €. Tai yra individualios teisės kriterijai, todėl jų automatiškai netaikome mūsų apskričių pajamų vidurkiams.</p>
+            <p><strong>Kredito suma šeimai:</strong> iki 87 000 €.</p>
+            <div class="housing-support-rate-grid four">
+              <div><strong>15 %</strong><span>0 vaikų</span></div>
+              <div><strong>20 %</strong><span>1 vaikas</span></div>
+              <div><strong>25 %</strong><span>2 vaikai</span></div>
+              <div><strong>30 %</strong><span>3+ vaikų</span></div>
+            </div>
+            <p class="small">Jei kreditas siektų visą 87 000 € ribą, subsidijos dydis būtų iki <strong>13 050 € / 17 400 € / 21 750 € / 26 100 €</strong>.</p>
+          </div>
+        </div>
+
+        <div class="alert alert-amber">
+          <strong>Ką tai reiškia mūsų tyrimui.</strong> Valstybės parama gali reikšmingai sumažinti pradinį pirmo būsto barjerą, bet jos poveikis priklauso nuo šeimos teisinio statuso, pajamų ir turto, vaikų skaičiaus, būsto vietos ir konkretaus kvietimo. Todėl paramą rodome kaip atskirą scenarijų, o ne kaip automatinį visų jaunų porų „nuolaidos“ dydį.
+        </div>
+
+        <p class="source-line">Oficialios sąlygos tikrintos 2026-10-02 pagal Socialinės apsaugos ir darbo ministerijos informaciją apie finansinę paskatą pirmąjį būstą įsigyjančioms jaunoms šeimoms ir paramą būstui įsigyti ar išsinuomoti.</p>
+      </section>
+
       <div class="alert alert-blue">
         <strong>Projekto taisyklė.</strong> Jei rodiklis matuoja nepalyginamus objektus arba jo interpretacija gali klaidinti, jis nepatenka į pagrindinę išvadą. Jei paliekamas diagnostikai, turi būti aiškiai pažymėtas kaip nepalyginamas / diagnostinis.
       </div>
