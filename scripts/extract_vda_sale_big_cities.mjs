@@ -19,6 +19,7 @@ async function query(params) {
       accept: "application/json",
       "user-agent": "Demografin-situacija-research/1.0",
     },
+    signal: AbortSignal.timeout(30000),
   });
   const text = await res.text();
   if (!res.ok) throw new Error("HTTP " + res.status + ": " + text.slice(0, 500));
@@ -30,12 +31,24 @@ async function query(params) {
 const discovery = await query({
   where: "indicator_name LIKE '%pirkimo-pardavimo%'",
   outFields: "indicator_code,indicator_name,matvnt_name,collection_name",
-  returnDistinctValues: "true",
-  orderByFields: "indicator_name ASC",
+  resultRecordCount: "200",
 });
 
-const candidates = (discovery.json.features || []).map(function (f) {
+const rawCandidates = (discovery.json.features || []).map(function (f) {
   return f.attributes || {};
+});
+const candidateMap = new Map();
+for (const c of rawCandidates) {
+  const key = [
+    c.indicator_code,
+    c.indicator_name,
+    c.matvnt_name,
+    c.collection_name,
+  ].join("|");
+  candidateMap.set(key, c);
+}
+const candidates = Array.from(candidateMap.values()).sort(function (a, b) {
+  return String(a.indicator_name || "").localeCompare(String(b.indicator_name || ""), "lt");
 });
 fs.writeFileSync(
   path.join(outDir, "indicator-candidates.json"),
