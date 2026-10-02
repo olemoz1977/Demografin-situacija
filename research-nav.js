@@ -35,7 +35,7 @@
 
   function updateHeader(){
     const right=document.querySelector('.masthead-right');
-    if(right) right.innerHTML='Atnaujinta 2026-09-15<br>2025* – išankstiniai, kai pažymėta';
+    if(right) right.innerHTML='Atnaujinta 2026-10-02<br>2025* – išankstiniai, kai pažymėta';
     const sub=document.querySelector('.masthead-sub');
     if(sub) sub.innerHTML='<span>Gimstamumas</span><span>Gyventojų struktūra</span><span>Migracija</span><span>Šeimos aplinka</span><span>Būstas</span><span>Ateitis</span>';
     document.querySelectorAll('footer').forEach(f=>{f.innerHTML=f.innerHTML.replace(/Atnaujinta\s+2026-09-13/g,'Atnaujinta 2026-09-15');});
@@ -60,7 +60,7 @@
     const section=document.createElement('section');
     section.id='researchHome'; section.className='research-home';
     section.innerHTML=`<div class="container">
-      <div class="section-label">Tyrimo žemėlapis <span class="badge badge-official">ATNAUJINTA 2026-09-15</span></div>
+      <div class="section-label">Tyrimo žemėlapis <span class="badge badge-official">ATNAUJINTA 2026-10-02</span></div>
       <h2>Ne vienas skaičius. Šešios susijusios tyrimo kryptys.</h2>
       <p class="lead">Pagrindinis puslapis dabar rodo trumpą vaizdą. Toliau galima eiti tiesiai į dominančią temą – nebereikia slinkti per visą tyrimą iki projekcijų ir hipotezių.</p>
       <div class="research-summary">
