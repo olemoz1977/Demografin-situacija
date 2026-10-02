@@ -49,6 +49,9 @@ jobs:
           assert all(r.get("needs_refinement") is True for r in rows)
           assert all("preliminary_affordability_rank" not in r for r in rows)
           assert all(r["m2_after_rent_sensitivity_low"] <= r["m2_per_year_after_rent"] <= r["m2_after_rent_sensitivity_high"] for r in rows)
+          assert all(r["standard_50m2_price_eur"] > 0 for r in rows)
+          assert all(r["standard_50m2_price_to_pair_annual_net_years"] > 0 for r in rows)
+          assert all(0 < r["rent_burden_pct_pair_net_income"] < 100 for r in rows)
           assert d.get("display_order")=="m2_per_year_after_rent_desc_for_visual_comparison_only"
           nav=Path("research-nav.js").read_text(encoding="utf-8")
           assert "housingAffordability:'housing'" in nav
@@ -57,7 +60,10 @@ jobs:
           assert "housing-affordability.js" in app
           view=Path("housing-affordability.js").read_text(encoding="utf-8")
           assert "Tai nėra patikimumo ar galutinis įperkamumo reitingas." in view
+          assert "Tai nėra bankinis paskolos įperkamumo vertinimas." in view
           assert "preliminary_affordability_rank" not in view
+          assert "standard_50m2_price_to_pair_annual_net_years" in view
+          assert "rent_burden_pct_pair_net_income" in view
           assert "Tai nėra oficialios apskričių butų kainos." in view
           print("PASS: preliminary housing view payload, uncertainty labels and routing")
           PY
