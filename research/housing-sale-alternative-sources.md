@@ -190,3 +190,86 @@ Statusas: VALIDACIJOS LEAD, ne pagrindinis 2024 m. šaltinis, nes:
   specifikacija;
 - trečiosios šalies puslapis naudojamas tik kaip nuoroda į galimą RC sluoksnį, ne kaip
   mūsų galutinis duomenų šaltinis.
+
+
+## 2026-10-02 galutinis nemokamo pardavimo sluoksnio auditas
+
+Papildomai patikrinti Registrų centro vieši techniniai ir sutartiniai kanalai.
+
+### RC broker paslaugos egzistuoja, bet tai nėra atviras pilnos rinkos eksportas
+
+Viešame Registrų centro broker paslaugų kataloge:
+- ActionType 197 — `[NTR] NT SANDORIAI paieska`;
+- ActionType 198 — `[NTR] NT SANDORIAI pilna sandorių informacija pagal sand_id`.
+
+Šios paslaugos patvirtina, kad RC sistemoje techniškai egzistuoja sandorių paieškos ir
+pilnos informacijos gavimo funkcijos, tačiau pats viešas paslaugų katalogas nėra mūsų
+2024 m. visos rinkos atvirų duomenų eksportas ir nesuteikia anoniminės pilnos imties
+be sutarties / prieigos konteksto.
+
+Techninės nuorodos:
+- https://ws.registrucentras.lt/broker/info.php?ActionType=197
+- https://ws.registrucentras.lt/broker/info.php?ActionType=198
+
+### Viešos RC sandorių paslaugos apimties riba
+
+Aktuali RC `Rinkos sandorių duomenų teikimo sutartis` leidžia paiešką pagal:
+savivaldybę, datą, sandorio sumą, vieneto kainą, sandorio tipą, kainos tipą,
+turto paskirtį, statybos metus, baigtumą ir kitus kriterijus.
+
+Sutarties 1 priede nurodyta:
+- paieškos tarpinis atsakymas parodo kriterijus atitinkančių sandorių kiekį;
+- galima mokamai pateikti iki 25 arba iki 50 naujausių sandorių;
+- jei atitikmenų daugiau, pateikiami naujausi sandoriai;
+- rezultatai gali būti gaunami ir XLSX.
+
+Sutarties 2 priede individualiai / sudėtingai užklausai nurodyta:
+- jei kriterijus atitinka daugiau nei 25 sandoriai, pateikiami naujausi sandoriai,
+  atsižvelgiant į datos intervalą arba užklausoje nurodytą prioritetą.
+
+Šaltinis:
+https://www.registrucentras.lt/bylos/dokumentai/Rinkos%20sandoriu%20duomenu%20teikimas%20su%20asmens%20duomenimisFA.pdf
+
+Todėl RC savitarna / standartinė rinkos duomenų sutartis **nėra vieno žingsnio pilnas
+~27 tūkst. 2024 m. butų sandorių eksportas**. Teoriškai rinką būtų galima skaidyti į daug
+siaurų užklausų, tačiau tai:
+- būtų mokama;
+- didintų atrankos / deduplikavimo riziką;
+- prieš darbą reikėtų aiškiai žinoti kainą ir publikavimo sąlygas;
+- nėra racionalus pirmas kelias, kol laukiame RC individualiai parengto agreguoto failo.
+
+### Atvirų duomenų poreikis 2026 m. vis dar registruojamas
+
+2026-03-31 Lietuvos atvirų duomenų portale užregistruotas poreikis
+`Vilniaus butų sandorių kainos (Registrų centras)`, kuriame prašoma 2020–2025 m.
+faktinių butų sandorių kainų, ploto ir kitų požymių.
+
+Šaltinis:
+https://data.gov.lt/requests/submitted/?date_from=2026-01-01&date_to=2026-12-31&selected_facets=organization_exact%3A9
+
+Tai nėra formalus įrodymas, kad joks kitas prieigos būdas neegzistuoja, tačiau kartu su
+RC sutarties 25/50 įrašų režimu tai stipriai patvirtina dabartinę praktinę išvadą:
+**viešai nemokamo, publication-grade, pilno 2024 m. Lietuvos butų faktinių sandorių
+sluoksnio pagal 60 savivaldybių neradome.**
+
+### Ko nelaikome pakaitalu
+
+- masinio vertinimo / vidutinės rinkos vertės modelių;
+- REGIA slenkančių 12 mėn. dabartinių verčių;
+- Smart Continent bendro būsto kainos;
+- VDA/RC 1 km gardelių dataset 2559 siauro poaibio;
+- pasiūlos / skelbimų pardavimo kainų.
+
+Visi šie šaltiniai gali padėti QA, bet nepakeičia 2024 m. faktinių butų sandorių sluoksnio.
+
+### Dabartinis verdiktas
+
+**FREE PUBLIC PATH: NOT FOUND.**
+
+Pagrindinis pardavimo blokatorius lieka išorinis:
+1. laukiame RC atsakymo į 2026-10-01 užklausą dėl agreguoto / nuasmeninto 60 savivaldybių failo;
+2. laukiame VDA ADS-1961 atsakymo;
+3. jei RC pasiūlys tik mokamą RSi / individualią sutartį, prieš bet kokį pirkimą reikia
+   atskiro savininko sprendimo dėl kainos, naudojimo ir publikavimo teisių.
+
+Iki tol `main` nekeičiamas.
