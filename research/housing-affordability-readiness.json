@@ -13,9 +13,9 @@
     "configured_rule": "Final v1.0 remains blocked until the official/validated 2025 apartment-sale layer and publication-grade 2025 1-room rent layer cover all 10 counties."
   },
   "preliminary_v0_1": {
-    "ready": true,
-    "decision": "READY_FOR_FEATURE_PREVIEW",
-    "feature_preview_allowed": true,
+    "ready": false,
+    "decision": "BLOCKED",
+    "feature_preview_allowed": false,
     "main_live_allowed": false,
     "required_labels": [
       "OFFICIAL",
@@ -23,9 +23,11 @@
       "PRELIMINARY",
       "TO_BE_REFINED"
     ],
-    "configured_rule": "Show the best currently supportable estimate, but mark every non-final layer and every composite result as preliminary/to be refined. No proxy may be described as official county apartment price or complete county rent market.",
+    "configured_rule": "The v0.1 county comparison is blocked because the sale proxy mixes generic housing composition and does not control apartment age/quality. Diagnostic values may remain in research only.",
     "qa_source": "research/housing-affordability-preliminary-v01-qa.json",
-    "county_count": 10
+    "county_count": 10,
+    "comparability_gate_passed": false,
+    "comparability_verdict": "FAIL_CROSS_COUNTY_COMPARABILITY"
   },
   "gates": [
     {
