@@ -1,0 +1,228 @@
+{
+  "root_item": {
+    "id": "3fba56c8042649aabbb5fc85329b2f70",
+    "title": "XVI KAINOS  nuomos kainos (EVP32) 3",
+    "type": "Dashboard",
+    "owner": "LT_open_data",
+    "modified": 1736088678000
+  },
+  "referenced_items": [
+    {
+      "id": "702db756ff4e4a909fbc85e3437647fc",
+      "title": "evp32",
+      "type": "Feature Service",
+      "url": "https://osp-sdg.stat.gov.lt/arcgis/rest/services/EVP_DB_connection/evp32/FeatureServer",
+      "owner": "LT_open_data",
+      "modified": 1730318863000
+    }
+  ],
+  "discovered_service_urls": [
+    "https://osp-sdg.stat.gov.lt/arcgis/rest/services/EVP_DB_connection/evp32/FeatureServer"
+  ],
+  "services": [
+    {
+      "serviceUrl": "https://osp-sdg.stat.gov.lt/arcgis/rest/services/EVP_DB_connection/evp32/FeatureServer",
+      "layers": [
+        {
+          "id": 0,
+          "name": "evp32",
+          "fields": [
+            {
+              "name": "laikotarpis",
+              "alias": "laikotarpis",
+              "type": "esriFieldTypeDate"
+            },
+            {
+              "name": "laikotarpis_name",
+              "alias": "laikotarpis_name",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "name": "laikotarpis_name_en",
+              "alias": "laikotarpis_name_en",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "name": "matvnt",
+              "alias": "matvnt",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "name": "matvnt_name",
+              "alias": "matvnt_name",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "name": "matvnt_name_en",
+              "alias": "matvnt_name_en",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "name": "savivaldybesm2020113",
+              "alias": "savivaldybesm2020113",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "name": "savivaldybesm2020113_name",
+              "alias": "savivaldybesm2020113_name",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "name": "savivaldybesm2020113_name_en",
+              "alias": "savivaldybesm2020113_name_en",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "name": "collection_code",
+              "alias": "collection_code",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "name": "collection_name",
+              "alias": "collection_name",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "name": "collection_name_en",
+              "alias": "collection_name_en",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "name": "indicator_code",
+              "alias": "indicator_code",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "name": "indicator_name",
+              "alias": "indicator_name",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "name": "indicator_name_en",
+              "alias": "indicator_name_en",
+              "type": "esriFieldTypeString"
+            },
+            {
+              "name": "value",
+              "alias": "value",
+              "type": "esriFieldTypeDouble"
+            },
+            {
+              "name": "object_id",
+              "alias": "object_id",
+              "type": "esriFieldTypeOID"
+            }
+          ],
+          "sample": [
+            {
+              "attributes": {
+                "laikotarpis": 1704067200000,
+                "laikotarpis_name": "2024",
+                "laikotarpis_name_en": "2024",
+                "matvnt": "eur_1_m2_per_metus",
+                "matvnt_name": "EUR/m² per metus",
+                "matvnt_name_en": "EUR/m² per year",
+                "savivaldybesm2020113": "29",
+                "savivaldybesm2020113_name": "Šiaulių m. sav.",
+                "savivaldybesm2020113_name_en": "Šiauliai c. mun.",
+                "collection_code": "M9070366",
+                "collection_name": "Didieji miestai (2019 - 2025) (Atnaujinta: 2026-07-31)",
+                "collection_name_en": "Major cities (2019 - 2025) (Was renewed: 2026-07-31)",
+                "indicator_code": "S7R281",
+                "indicator_name": "Butų nuomos vidutinės metinės kainos",
+                "indicator_name_en": "Average annual rent price for flat",
+                "value": 76.17,
+                "object_id": 1
+              }
+            },
+            {
+              "attributes": {
+                "laikotarpis": 1735689600000,
+                "laikotarpis_name": "2025",
+                "laikotarpis_name_en": "2025",
+                "matvnt": "eur_1_m2_per_metus",
+                "matvnt_name": "EUR/m² per metus",
+                "matvnt_name_en": "EUR/m² per year",
+                "savivaldybesm2020113": "29",
+                "savivaldybesm2020113_name": "Šiaulių m. sav.",
+                "savivaldybesm2020113_name_en": "Šiauliai c. mun.",
+                "collection_code": "M9070366",
+                "collection_name": "Didieji miestai (2019 - 2025) (Atnaujinta: 2026-07-31)",
+                "collection_name_en": "Major cities (2019 - 2025) (Was renewed: 2026-07-31)",
+                "indicator_code": "S7R281",
+                "indicator_name": "Butų nuomos vidutinės metinės kainos",
+                "indicator_name_en": "Average annual rent price for flat",
+                "value": 95.15,
+                "object_id": 2
+              }
+            },
+            {
+              "attributes": {
+                "laikotarpis": 1640995200000,
+                "laikotarpis_name": "2022",
+                "laikotarpis_name_en": "2022",
+                "matvnt": "eur_1_m2_per_metus",
+                "matvnt_name": "EUR/m² per metus",
+                "matvnt_name_en": "EUR/m² per year",
+                "savivaldybesm2020113": "21",
+                "savivaldybesm2020113_name": "Klaipėdos m. sav.",
+                "savivaldybesm2020113_name_en": "Klaipėda c. mun.",
+                "collection_code": "M9070366",
+                "collection_name": "Didieji miestai (2019 - 2025) (Atnaujinta: 2026-07-31)",
+                "collection_name_en": "Major cities (2019 - 2025) (Was renewed: 2026-07-31)",
+                "indicator_code": "S7R281",
+                "indicator_name": "Butų nuomos vidutinės metinės kainos",
+                "indicator_name_en": "Average annual rent price for flat",
+                "value": 88.52,
+                "object_id": 3
+              }
+            },
+            {
+              "attributes": {
+                "laikotarpis": 1672531200000,
+                "laikotarpis_name": "2023",
+                "laikotarpis_name_en": "2023",
+                "matvnt": "eur_1_m2_per_metus",
+                "matvnt_name": "EUR/m² per metus",
+                "matvnt_name_en": "EUR/m² per year",
+                "savivaldybesm2020113": "21",
+                "savivaldybesm2020113_name": "Klaipėdos m. sav.",
+                "savivaldybesm2020113_name_en": "Klaipėda c. mun.",
+                "collection_code": "M9070366",
+                "collection_name": "Didieji miestai (2019 - 2025) (Atnaujinta: 2026-07-31)",
+                "collection_name_en": "Major cities (2019 - 2025) (Was renewed: 2026-07-31)",
+                "indicator_code": "S7R281",
+                "indicator_name": "Butų nuomos vidutinės metinės kainos",
+                "indicator_name_en": "Average annual rent price for flat",
+                "value": 94.53,
+                "object_id": 4
+              }
+            },
+            {
+              "attributes": {
+                "laikotarpis": 1735689600000,
+                "laikotarpis_name": "2025",
+                "laikotarpis_name_en": "2025",
+                "matvnt": "eur_1_m2_per_metus",
+                "matvnt_name": "EUR/m² per metus",
+                "matvnt_name_en": "EUR/m² per year",
+                "savivaldybesm2020113": "21",
+                "savivaldybesm2020113_name": "Klaipėdos m. sav.",
+                "savivaldybesm2020113_name_en": "Klaipėda c. mun.",
+                "collection_code": "M9070366",
+                "collection_name": "Didieji miestai (2019 - 2025) (Atnaujinta: 2026-07-31)",
+                "collection_name_en": "Major cities (2019 - 2025) (Was renewed: 2026-07-31)",
+                "indicator_code": "S7R281",
+                "indicator_name": "Butų nuomos vidutinės metinės kainos",
+                "indicator_name_en": "Average annual rent price for flat",
+                "value": 113.46,
+                "object_id": 5
+              }
+            }
+          ]
+        }
+      ],
+      "description": ""
+    }
+  ]
+}

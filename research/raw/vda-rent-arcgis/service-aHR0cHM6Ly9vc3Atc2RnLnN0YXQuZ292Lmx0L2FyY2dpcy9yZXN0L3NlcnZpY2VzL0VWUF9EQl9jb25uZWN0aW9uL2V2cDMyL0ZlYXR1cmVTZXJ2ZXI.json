@@ -1,0 +1,157 @@
+{
+  "currentVersion": 11.5,
+  "cimVersion": "3.5.0",
+  "serviceDescription": "",
+  "hasVersionedData": false,
+  "hasArchivedData": false,
+  "hasBranchVersionedData": false,
+  "supportsDisconnectedEditing": false,
+  "supportsDatumTransformation": true,
+  "supportsReturnServiceEditsOption": true,
+  "returnServiceEditsHaveSR": true,
+  "supportsQueryDataElements": true,
+  "datesInUnknownTimezone": false,
+  "supportsRelationshipsResource": true,
+  "syncEnabled": false,
+  "syncCapabilities": {
+    "supportsRegisterReplicaForServer": true,
+    "supportsSyncDirectionControl": true,
+    "supportsPerLayerSync": true,
+    "supportsPerReplicaSync": true,
+    "supportsAttachmentsSyncDirection": true,
+    "supportsSyncModelNone": true,
+    "supportsDurableUrlForSyncModelNone": false
+  },
+  "supportedExportFormats": "sqlite,filegdb,shapefile,csv,geojson",
+  "extractChangesCapabilities": {
+    "supportsReturnIdsOnly": false,
+    "supportsReturnExtentOnly": false,
+    "supportsReturnAttachments": false,
+    "supportsLayerQueries": false,
+    "supportsGeometry": false,
+    "supportsFeatureReturn": false,
+    "supportsReturnHasGeometryUpdates": false,
+    "supportsFieldsToCompare": false,
+    "supportsServerGens": false
+  },
+  "supportedQueryFormats": "JSON",
+  "maxRecordCount": 4000,
+  "maxRecordCountFactor": 1,
+  "capabilities": "Query,Create,Editing",
+  "description": "",
+  "copyrightText": "",
+  "advancedEditingCapabilities": {
+    "supportsSplit": false,
+    "supportsReturnServiceEditsInSourceSR": true,
+    "supportsAsyncApplyEdits": true,
+    "supportsApplyEditsbyUploadID": true,
+    "supportedApplyEditsUploadIDFormats": "JSON,PBF",
+    "supportsMultipatchOptionForServiceEdits": true,
+    "supportedApplyEditsOptions": {
+      "supportedEditingOptions": 0
+    }
+  },
+  "spatialReference": {
+    "wkid": 2600,
+    "latestWkid": 3346,
+    "xyTolerance": 0.001,
+    "zTolerance": 0.001,
+    "mTolerance": 0.001,
+    "falseX": -5122000,
+    "falseY": -10000100,
+    "xyUnits": 450355459.1824577,
+    "falseZ": -100000,
+    "zUnits": 10000,
+    "falseM": -100000,
+    "mUnits": 10000
+  },
+  "initialExtent": {
+    "xmin": 430050.99994999997,
+    "ymin": 6243487.99995,
+    "xmax": 430051.0010500002,
+    "ymax": 6243488.00105,
+    "spatialReference": {
+      "wkid": 2600,
+      "latestWkid": 3346,
+      "xyTolerance": 0.001,
+      "zTolerance": 0.001,
+      "mTolerance": 0.001,
+      "falseX": -5122000,
+      "falseY": -10000100,
+      "xyUnits": 450355459.1824577,
+      "falseZ": -100000,
+      "zUnits": 10000,
+      "falseM": -100000,
+      "mUnits": 10000
+    }
+  },
+  "fullExtent": {
+    "xmin": 430051,
+    "ymin": 6243488,
+    "xmax": 430051.00100000016,
+    "ymax": 6243488.001,
+    "spatialReference": {
+      "wkid": 2600,
+      "latestWkid": 3346,
+      "xyTolerance": 0.001,
+      "zTolerance": 0.001,
+      "mTolerance": 0.001,
+      "falseX": -5122000,
+      "falseY": -10000100,
+      "xyUnits": 450355459.1824577,
+      "falseZ": -100000,
+      "zUnits": 10000,
+      "falseM": -100000,
+      "mUnits": 10000
+    }
+  },
+  "allowGeometryUpdates": true,
+  "allowTrueCurvesUpdates": false,
+  "onlyAllowTrueCurveUpdatesByTrueCurveClients": true,
+  "supportsApplyEditsWithGlobalIds": false,
+  "supportsTrueCurve": true,
+  "supportedCurveTypes": [
+    "esriGeometryCircularArc",
+    "esriGeometryEllipticArc",
+    "esriGeometryBezier3Curve"
+  ],
+  "units": "esriMeters",
+  "documentInfo": {
+    "Title": "C:\\arcgisserver\\directories\\arcgisjobs\\system\\publishingtoolsex_gpserver\\jd69b2b9a5985452bb44ba56fc34dbb30\\scratch\\AEE0086BC-EB87-4F69-8C09-2E7957FFB07F.mxd",
+    "Author": "",
+    "Comments": "",
+    "Subject": "",
+    "Category": "",
+    "Keywords": ""
+  },
+  "supportsQueryDomains": true,
+  "supportsQueryContingentValues": true,
+  "layers": [
+    {
+      "id": 0,
+      "name": "evp32",
+      "parentLayerId": -1,
+      "defaultVisibility": true,
+      "subLayerIds": null,
+      "minScale": 0,
+      "maxScale": 0,
+      "type": "Feature Layer",
+      "geometryType": "esriGeometryPoint"
+    }
+  ],
+  "tables": [],
+  "relationships": [],
+  "enableZDefaults": false,
+  "allowUpdateWithoutMValues": false,
+  "supportsVCSProjection": true,
+  "referenceScale": 0,
+  "hasSharedTemplates": true,
+  "supportsSharedTemplates": true,
+  "infoInEstimates": [
+    "extent",
+    "count"
+  ],
+  "supportsAppend": true,
+  "supportedAppendFormats": "FILEGDB,PBF",
+  "serviceItemId": "be4ba4f4a4804e2d8ad2ef84e33db0a8"
+}
