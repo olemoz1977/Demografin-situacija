@@ -62,20 +62,14 @@ jobs:
           app=Path("app.js").read_text(encoding="utf-8")
           assert "housing-affordability.js" in app
           view=Path("housing-affordability.js").read_text(encoding="utf-8")
-          assert "Kiek poros metinių pajamų kainuoja 50 m² būstas?" in view
-          assert "Pagrindinė išvada" in view
-          assert "pagrindinis 50 m² kainos / pajamų rodiklis" in view
-          assert "nuomos kainos nenaudoja" in view
-          assert "1 kambario savarankiško buto" in view
-          assert "30–37,6 m²" in view
-          assert "Mažesnis skaičius reiškia palankesnį kainos ir pajamų santykį." in view
-          assert "Tai nėra bankinis paskolos įperkamumo vertinimas." in view
-          assert "Tai nėra galutinis apskričių įperkamumo reitingas." in view
-          assert "preliminary_affordability_rank" not in view
-          assert "standard_50m2_price_to_pair_annual_net_years" in view
-          assert "standard_50m2_price_eur" in view
-          assert "rent_burden_pct_pair_net_income" in view
-          assert 'class="housing-simple-table"' in view
-          assert 'class="housing-details"' in view
-          print("PASS: reader-first preliminary housing view, uncertainty labels and routing")
+          assert "Ar galima sąžiningai palyginti būsto įperkamumą tarp apskričių?" in view
+          assert "50 m² nėra tas pats būstas." in view
+          assert "nebelaikomi tinkamu tarpapskritiniu rezultatu" in view
+          assert "45–55 m²" in view
+          assert "statybos laikotarpio / rinkos segmento taisyklė" in view
+          assert "housingAffordabilityChart" not in view
+          assert "housingSimpleTable" not in view
+          assert "m2_per_year_after_rent" not in view
+          assert "standard_50m2_price_to_pair_annual_net_years" not in view
+          print("PASS: public housing view blocks non-comparable county results")
           PY
