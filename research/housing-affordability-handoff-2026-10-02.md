@@ -237,7 +237,41 @@ Role:
 Verdict:
 **FAIL main rent layer.**
 
+
+### Aruodas 2025 full city benchmark — PASS / VALIDATION ONLY
+
+A robust extractor now recovers a full 12-month 2025 1-room asking-rent benchmark
+for the three cities supported by Aruodas Tendencies.
+
+Method:
+- 2025-01…09: hidden previous-year comparison cells in the same-month 2026 report HTML;
+- 2025-10…12: current cells in direct 2025 archived reports.
+
+2025 summaries:
+- Vilnius: mean of monthly averages 468.75 EUR/month; median 467;
+- Kaunas: 383.75; median 382;
+- Klaipėda: 371.67; median 368.
+
+Cross-portal diagnostic comparison against the partial Skelbiu search-index listing medians:
+- Vilnius: 350 vs 468.75 (-25.33%);
+- Kaunas: 350 vs 383.75 (-8.79%);
+- Klaipėda: 345 vs 371.67 (-7.18%).
+
+These are not calibration factors because portals, sampling frames and aggregation
+statistics differ. The Vilnius gap is a strong additional warning against treating
+the Skelbiu search-index sample as a publication-grade market estimate.
+
+Files:
+- `research/raw/aruodas-rent-benchmark-2025/aruodas-1room-rent-monthly-2025.csv`;
+- `research/raw/aruodas-rent-benchmark-2025/aruodas-1room-rent-2025-qa.json`;
+- `research/housing-rent-cross-portal-validation-2025.json`.
+
 ### Historical Skelbiu city sample — RESEARCH ONLY
+
+The sample is now also aggregated directly at county level from accepted listing-level
+observations. 9/10 counties reach N>=5; Tauragės remains N=2. This route is CLOSED for
+publication because the search index is not a complete portal export and one county
+still fails the minimum N gate.
 
 Current accepted 2025 city sample:
 - Marijampolė N=7, median 300 — C
