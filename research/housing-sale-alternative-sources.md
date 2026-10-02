@@ -56,6 +56,42 @@ https://data.gov.lt/requests/14511/
 Statusas: **FAIL pagrindiniam butų kainų sluoksniui; QA ONLY.**
 Detalus auditas: `research/smart-continent-housing-source-audit.md`.
 
+## 1A. Oficialus VDA S7R280 butų kainų etalonas
+
+2026-10-02 rastas ir tiesiogiai išgautas oficialus VDA ArcGIS EVP56 sluoksnis:
+`S7R280 Būsto pirkimo-pardavimo vidutinės kainos`.
+
+2024 m., būsto tipas `1123 = Butas daugiabučiuose namuose`, EUR/m²:
+- Alytaus m. sav. 889.79;
+- Kauno m. sav. 1771.62;
+- Klaipėdos m. sav. 1559.14;
+- Panevėžio m. sav. 1030.03;
+- Šiaulių m. sav. 1098.12;
+- Vilniaus m. sav. 2639.03;
+- Lietuvos Respublika 1684.64.
+
+Feature Service:
+`https://osp-sdg.stat.gov.lt/arcgis/rest/services/EVP_DB_connection/evp56/FeatureServer/0`
+
+Tai oficialus actual-sale kontrolinis benchmarkas, bet **ne 10 apskričių sluoksnis**:
+geografinė aprėptis yra tik 6 miestų savivaldybės + Lietuva.
+
+Failai:
+- `research/raw/vda-sale-big-cities/vda-sale-big-cities-2024.csv`;
+- `research/raw/vda-sale-big-cities/vda-sale-big-cities-2024-qa.json`.
+
+### Smart Continent BI_1 papildomas uždarymas
+
+Tiesioginė visų 60 savivaldybių užklausa parodė tikslią tapatybę:
+`BI_1 = Smart Continent bendro būsto EUR/m² / mėnesio neto VDU`.
+
+BI_1 todėl nėra nepriklausomas apartment-only kainos signalas. Lyginant Smart Continent
+bendro būsto kainą su oficialiu VDA butų etalonu šešiuose miestuose, skirtumas svyruoja
+nuo maždaug -33% iki -44%, todėl nėra ir vieno universalaus kalibravimo koeficiento.
+
+Failas:
+`research/smart-continent-bi1-sale-qa-2024.json`.
+
 ## 2. Registrų centro Rinkos sandorių duomenų teikimas (RSi)
 
 Registrų centro dokumentuose nurodyta, kad galima:
