@@ -10,6 +10,7 @@ on:
       - "housing-affordability.js"
       - "data/housing-affordability-preliminary-v01.json"
       - "data/housing-state-support-income-screen-2025.json"
+      - "data/housing-state-support-outcomes-2025.json"
       - ".github/workflows/test-housing-preliminary-view.yml"
   workflow_dispatch:
 
@@ -58,10 +59,21 @@ jobs:
           assert "housingAffordability:'housing'" in nav
           assert "label:'Būstas'" in nav
           index=Path("index.html").read_text(encoding="utf-8")
-          assert 'app.js?v=20261002i' in index
-          assert 'style.css?v=20261002h' in index
+          assert 'app.js?v=20261005a' in index
+          assert 'style.css?v=20261005a' in index
           app=Path("app.js").read_text(encoding="utf-8")
           assert "housing-affordability.js" in app
+          outcomes=json.loads(Path("data/housing-state-support-outcomes-2025.json").read_text(encoding="utf-8"))
+          assert outcomes["status"]=="OFFICIAL_SADM_2025"
+          schemes={s["key"]:s for s in outcomes["schemes"]}
+          assert schemes["young_family_first_home"]["recipients_2025"]==515
+          assert schemes["young_family_first_home"]["recipients_2024"]==342
+          assert schemes["young_family_first_home"]["funds_m_eur_2025"]==8.2
+          assert schemes["partially_compensated_housing_credit"]["recipients_2025"]==556
+          assert schemes["partially_compensated_housing_credit"]["recipients_2024"]==688
+          assert schemes["partially_compensated_housing_credit"]["funds_m_eur_2025"]==10.3
+          assert schemes["partially_compensated_housing_credit"]["average_subsidy_eur_2025"]==19304
+          assert schemes["partially_compensated_housing_credit"]["share_30pct_subsidies_2025_pct"]==55
           support=json.loads(Path("data/housing-state-support-income-screen-2025.json").read_text(encoding="utf-8"))
           assert support["status"]=="MODELLED_SCREENING_ONLY_NOT_ELIGIBILITY_DETERMINATION"
           assert support["official_threshold"]["annual_net_income_limit_eur"]==32708
@@ -74,30 +86,28 @@ jobs:
           assert srows["Klaipėdos"]["screening_status"].startswith("ABOVE")
           view=Path("housing-affordability.js").read_text(encoding="utf-8")
           assert "Ar jaunai dirbančiai porai prieinamas pirmas šeimos būstas?" in view
-          assert "50 m² nėra tas pats būstas." in view
+          assert "2025 FAKTAI + MODELIUOTA" in view
+          assert "515 jaunų šeimų" in view
+          assert "556 asmenis arba šeimas" in view
+          assert "8,2 mln. €" in view
+          assert "10,3 mln. €" in view
+          assert "housingSupportRecipientsChart" in view
+          assert "Nesumuojame į vieną „jaunų porų“ skaičių" in view
           assert "materialių šeimos kūrimo aplinkos barjerų" in view
           assert "neįrodinėja priežastinio ryšio su gimstamumu" in view
-          assert "Vaikų turėjimas čia nėra atskira sąlyga" in view
-          assert "Valstybės pagalba pirmajam būstui" in view
-          assert "OFICIALIOS 2025 M. SĄLYGOS" in view
           assert "32 708 €" in view
           assert "57 902 €" in view
-          assert "8 700 € / 10 875 € / 13 050 €" in view
-          assert "13 050 € / 17 400 € / 21 750 € / 26 100 €" in view
-          assert "Mūsų analitinė „25–30 m. dirbanti pora“ nėra tas pats" in view
           assert "2025 m. pajamų lubų patikra" in view
           assert "housingSupportIncomeChart" in view
           assert "2025 riba 32 708 €" in view
           assert "Tai nėra individualios teisės į paramą nustatymas" in view
-          assert "2024 m. tokia pati dviejų asmenų šeimos pajamų riba buvo 26 048 €" in view
+          assert "45–55 m²" in view
+          assert "Būsto kainų palyginimo dar nerodome" in view
           assert "OFICIALIOS 2026 M. SĄLYGOS" not in view
           assert "34 484 €" not in view
-          assert "nebelaikomi tinkamu tarpapskritiniu rezultatu" in view
-          assert "45–55 m²" in view
-          assert "statybos laikotarpio / rinkos segmento taisyklė" in view
           assert "housingAffordabilityChart" not in view
           assert "housingSimpleTable" not in view
           assert "m2_per_year_after_rent" not in view
           assert "standard_50m2_price_to_pair_annual_net_years" not in view
-          print("PASS: public housing view blocks non-comparable county results")
+          print("PASS: public housing view shows official 2025 support outcomes and keeps sale comparison blocked")
           PY
