@@ -14,6 +14,7 @@ on:
       - "housing-affordability.js"
       - "data/housing-affordability-preliminary-v01.json"
       - "data/housing-state-support-income-screen-2025.json"
+      - "data/housing-state-support-outcomes-2025.json"
       - ".github/workflows/housing-preview-visual-qa.yml"
   workflow_dispatch:
 
@@ -58,21 +59,22 @@ jobs:
 
               await page.goto('http://127.0.0.1:8765/?view=housing', {waitUntil:'networkidle'});
               await page.waitForSelector('#housingAffordability', {state:'visible'});
-              await page.waitForSelector('#housingAffordability .housing-comparability-stop');
+              await page.waitForSelector('#housingAffordability .housing-support-layer');
+              await page.waitForSelector('#housingSupportRecipientsChart');
 
               const result = await page.evaluate(() => {
                 const section = document.querySelector('#housingAffordability');
                 const text = section.innerText;
                 const rootOverflow = document.documentElement.scrollWidth - window.innerWidth;
                 return {
-                  hasStop: text.includes('50 m² nėra tas pats būstas.'),
                   hasDemographicFrame: text.includes('pirmas šeimos būstas') && text.includes('šeimos kūrimo aplinkos barjerų') && text.includes('neįrodinėja priežastinio ryšio su gimstamumu'),
-                  hasStateSupport: !!section.querySelector('.housing-support-layer') && (section.querySelector('.housing-support-layer')?.textContent || '').includes('Valstybės pagalba pirmajam būstui'),
+                  hasOfficialOutcome: text.includes('515') && text.includes('556') && text.includes('8,2 mln. €') && text.includes('10,3 mln. €'),
+                  hasRecipientsChart: !!section.querySelector('#housingSupportRecipientsChart'),
+                  hasStateSupport: !!section.querySelector('.housing-support-layer') && text.includes('Valstybės pagalba pirmajam būstui'),
                   hasTwoSupportRoutes: section.querySelectorAll('.housing-support-card').length === 2,
                   hasIncomeScreen: !!section.querySelector('#housingSupportIncomeChart') && text.includes('2025 m. pajamų lubų patikra') && text.includes('Vilniaus aps.') && text.includes('32 708 €'),
                   hasNo2026SupportRule: !text.includes('OFICIALIOS 2026 M. SĄLYGOS') && !text.includes('34 484 €'),
-                  hasBlockedConclusion: text.includes('nebelaikomi tinkamu tarpapskritiniu rezultatu'),
-                  hasRequiredBasket: text.includes('45–55 m²') && text.includes('statybos laikotarpio / rinkos segmento taisyklė'),
+                  hasComparableBasketWarning: text.includes('Būsto kainų palyginimo dar nerodome') && text.includes('45–55 m²'),
                   hasOldChart: !!section.querySelector('#housingAffordabilityChart'),
                   hasOldSimpleTable: !!section.querySelector('.housing-simple-table'),
                   hasOldTechnicalTable: !!section.querySelector('.housing-table'),
@@ -86,14 +88,14 @@ jobs:
               await page.locator('#housingAffordability').screenshot({path:screenshot});
               console.log(name, JSON.stringify(result));
 
-              if (!result.hasStop) throw new Error(`${name}: comparability STOP missing`);
               if (!result.hasDemographicFrame) throw new Error(`${name}: first-family-home demographic framing missing`);
+              if (!result.hasOfficialOutcome) throw new Error(`${name}: official 2025 support outcome missing`);
+              if (!result.hasRecipientsChart) throw new Error(`${name}: 2024-2025 recipients chart missing`);
               if (!result.hasStateSupport) throw new Error(`${name}: official state-support layer missing`);
               if (!result.hasTwoSupportRoutes) throw new Error(`${name}: expected two state-support routes`);
               if (!result.hasIncomeScreen) throw new Error(`${name}: 2025 support income-threshold screen missing`);
               if (!result.hasNo2026SupportRule) throw new Error(`${name}: 2026 support rule leaked into 2024-2025 analysis`);
-              if (!result.hasBlockedConclusion) throw new Error(`${name}: blocked-result explanation missing`);
-              if (!result.hasRequiredBasket) throw new Error(`${name}: comparable-basket requirement missing`);
+              if (!result.hasComparableBasketWarning) throw new Error(`${name}: comparable-basket warning missing`);
               if (result.hasOldChart || result.hasOldSimpleTable || result.hasOldTechnicalTable) throw new Error(`${name}: old non-comparable visual remains`);
               if (result.hasOldNumbers) throw new Error(`${name}: old non-comparable result numbers remain`);
               if (result.rootOverflow > 2) throw new Error(`${name}: page horizontal overflow ${result.rootOverflow}px`);
