@@ -1,0 +1,37 @@
+{
+  "version": "2025-final-outcomes-v1",
+  "status": "OFFICIAL_SADM_2025",
+  "source": {
+    "name": "Lietuvos Respublikos socialinės apsaugos ir darbo ministerija — 2025 metų veiklos ataskaita",
+    "url": "https://socmin.lrv.lt/public/canonical/1773646445/6523/2026%2003%2006_SADM_Veiklos%20ataskaita%202025-03-10.pdf"
+  },
+  "schemes": [
+    {
+      "key": "young_family_first_home",
+      "label": "Finansinė paskata pirmajam būstui regionuose",
+      "population": "jaunos šeimos",
+      "recipients_2024": 342,
+      "recipients_2025": 515,
+      "funds_m_eur_2024": 7.2,
+      "funds_m_eur_2025": 8.2,
+      "note": "SADM 32 pav.; gavėjai yra jaunos šeimos pagal specialią pirmo būsto paskatos priemonę."
+    },
+    {
+      "key": "partially_compensated_housing_credit",
+      "label": "Valstybės iš dalies kompensuojamo būsto kredito subsidija",
+      "population": "asmenys arba šeimos, atitinkančios platesnius paramos kriterijus",
+      "recipients_2024": 688,
+      "recipients_2025": 556,
+      "funds_m_eur_2024": 12.2,
+      "funds_m_eur_2025": 10.3,
+      "additional_subsidy_recipients_2025": 32,
+      "average_subsidy_eur_2025": 19304,
+      "share_30pct_subsidies_2025_pct": 55,
+      "note": "SADM 33 pav. ir tekstas; 556 nėra vien jaunos poros. Į 556 įeina 32 gavėjai, kuriems išmokėta papildoma subsidija."
+    }
+  ],
+  "interpretation": {
+    "do_not_sum_as_young_families": true,
+    "reason": "Antroji schema apima platesnes gavėjų grupes nei analitinė 25–30 m. dirbanti pora ar teisinė jauna šeima."
+  }
+}
