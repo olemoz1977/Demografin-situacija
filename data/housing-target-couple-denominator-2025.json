@@ -1,0 +1,65 @@
+{
+  "version": "2025-model-v1",
+  "status": "MODELLED_RANGE_NOT_OFFICIAL_COUNT",
+  "target_definition": "Couple where both partners are approximately 25-30 years old and both work",
+  "population_anchor": {
+    "source_year": 2021,
+    "census_age_20_24": 143062,
+    "census_age_25_29": 169202,
+    "cohort_shift_formula": "2025 ages 25-28 ≈ 4/5 of 2021 ages 20-24; 2025 ages 29-30 ≈ 2/5 of 2021 ages 25-29",
+    "estimated_2025_age_25_30_population": 182130,
+    "quality": "C-modelled",
+    "note": "Equal distribution within five-year age bands; ignores exact cohort migration and mortality. Rounded result should be presented as about 180 thousand persons."
+  },
+  "partnership_model": {
+    "range_share_of_male_age_25_30_with_partner_also_25_30": [
+      0.25,
+      0.35
+    ],
+    "central": 0.3,
+    "anchors": {
+      "first_marriage_cumulative_men_age25_pct": 11.2,
+      "first_marriage_cumulative_men_age30_pct": 42.9,
+      "first_marriage_cumulative_women_age25_pct": 26.2,
+      "first_marriage_cumulative_women_age30_pct": 61.5,
+      "household_population_cohabitants_2021_pct": 5.2
+    },
+    "estimated_couples_range": [
+      22766,
+      31873
+    ],
+    "central_couples": 27320,
+    "quality": "C-modelled",
+    "note": "Marriage and cohabitation anchors do not directly measure couples where both partners are in exactly the 25-30 band; the range explicitly absorbs this uncertainty."
+  },
+  "employment_model": {
+    "youth_employment_rate_20_29_2025": 0.714,
+    "independence_both_working_floor": 0.509796,
+    "all_adults_working_household_benchmark_2025": 0.707,
+    "central": 0.608398,
+    "quality": "B/C-modelled",
+    "note": "Lower benchmark is 0.714^2. Upper benchmark is Lithuania household share where all adults work: 64.9% all full-time + 5.8% at least one part-time and all others full-time."
+  },
+  "result": {
+    "both_working_age_25_30_couples_low": 11606,
+    "both_working_age_25_30_couples_central": 16621,
+    "both_working_age_25_30_couples_high": 22534,
+    "publication_rounding": "about 12-23 thousand; central scenario about 17 thousand",
+    "quality": "C-modelled"
+  },
+  "support_scale_context": {
+    "first_home_young_family_recipients_2025": 515,
+    "arithmetic_ratio_to_modelled_target_low_denominator_pct": 4.44,
+    "arithmetic_ratio_to_modelled_target_central_pct": 3.1,
+    "arithmetic_ratio_to_modelled_target_high_denominator_pct": 2.29,
+    "use_status": "SCALE_ONLY_NOT_TAKE_UP_RATE",
+    "warning": "Do not publish these percentages as support coverage. The 515 legal young-family recipients are not the same population: scheme age reaches under 36 and includes other legal family configurations and territorial/eligibility filters."
+  },
+  "sources": [
+    "Lithuania 2021 Population and Housing Census age structure",
+    "Lithuania 2021 Census households and families / first-marriage cumulative rates",
+    "Eurostat tesem070 youth employment rate 20-29, Lithuania 2025 = 71.4%",
+    "Eurostat household working status 2025: Lithuania 64.9% all adults full-time + 5.8% at least one part-time, all others full-time",
+    "SADM 2025 annual report: 515 young families received first-home financial incentive"
+  ]
+}
