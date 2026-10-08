@@ -15,6 +15,7 @@ on:
       - "data/housing-affordability-preliminary-v01.json"
       - "data/housing-state-support-income-screen-2025.json"
       - "data/housing-state-support-outcomes-2025.json"
+      - "research/housing-target-couples-model-2025.json"
       - ".github/workflows/housing-preview-visual-qa.yml"
   workflow_dispatch:
 
@@ -69,6 +70,7 @@ jobs:
                 return {
                   hasDemographicFrame: text.includes('pirmas šeimos būstas') && text.includes('šeimos kūrimo aplinkos barjerų') && text.includes('neįrodinėja priežastinio ryšio su gimstamumu'),
                   hasOfficialOutcome: text.includes('515') && text.includes('556') && text.includes('8,2 mln. €') && text.includes('10,3 mln. €'),
+                  hasTargetRange: text.includes('Tikslinės grupės mastelis') && text.includes('~20–40 tūkst.') && text.includes('apie 30 tūkst. porų') && text.includes('515 paramą gavusių jaunų šeimų negalima dalinti'),
                   hasRecipientsChart: !!section.querySelector('#housingSupportRecipientsChart'),
                   hasStateSupport: !!section.querySelector('.housing-support-layer'),
                   hasTwoSupportRoutes: section.querySelectorAll('.housing-support-card').length === 2,
@@ -90,6 +92,7 @@ jobs:
 
               if (!result.hasDemographicFrame) throw new Error(`${name}: first-family-home demographic framing missing`);
               if (!result.hasOfficialOutcome) throw new Error(`${name}: official 2025 support outcome missing`);
+              if (!result.hasTargetRange) throw new Error(`${name}: modelled target-couple range missing`);
               if (!result.hasRecipientsChart) throw new Error(`${name}: 2024-2025 recipients chart missing`);
               if (!result.hasStateSupport) throw new Error(`${name}: official state-support layer missing`);
               if (!result.hasTwoSupportRoutes) throw new Error(`${name}: expected two state-support routes`);
