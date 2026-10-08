@@ -14,6 +14,22 @@
         <strong>2025 m. faktas.</strong> Finansinę paskatą pirmajam būstui regionuose gavo <strong>515 jaunų šeimų</strong>. Kita – valstybės iš dalies kompensuojamo būsto kredito – subsidijų schema pasiekė <strong>556 asmenis arba šeimas</strong>, tačiau tai platesnė gavėjų grupė, todėl šių dviejų skaičių nesumuojame kaip „jaunų porų“.
       </div>
 
+      <div class="housing-target-size">
+        <div class="section-label">Tikslinės grupės mastelis <span class="badge badge-prelim">MODELIUOTA</span></div>
+        <div class="two-col">
+          <div class="card">
+            <div class="eyebrow">25–30 m. · abu partneriai dirba</div>
+            <div class="kpi-num blue">~20–40 tūkst.</div>
+            <p><strong>Modeliuotas 2025 m. porų intervalas Lietuvoje.</strong> Centrinis orientyras – apie 30 tūkst. porų. Tai nėra tiesioginė oficiali statistika, nes viešai nėra vieno pjūvio „pora × abiejų amžius × abiejų užimtumas“.</p>
+          </div>
+          <div class="card">
+            <div class="eyebrow">Svarbi interpretavimo riba</div>
+            <p><strong>515 paramą gavusių jaunų šeimų negalima dalinti iš šio intervalo ir vadinti paramos aprėptimi.</strong> 515 gavėjų apibrėžimas remiasi teisine „jaunos šeimos“ kategorija iki 36 m., o čia modeliuojame siauresnę grupę – abu partneriai 25–30 m. ir abu dirba.</p>
+            <p class="small">Intervalas sudarytas iš 25–30 m. gyventojų masto, gyvenimo poroje ir abiejų partnerių užimtumo prielaidų. Viešai naudojamas tik apvalintas diapazonas, kad nebūtų tariamo tikslumo.</p>
+          </div>
+        </div>
+      </div>
+
       <section class="housing-support-layer" aria-labelledby="housingSupportTitle">
         <div class="section-label">Valstybės pagalba pirmajam būstui <span class="badge badge-official">SADM · 2025</span></div>
         <h3 id="housingSupportTitle">Kiek paramos realiai suteikta 2025 m.?</h3>
@@ -71,7 +87,7 @@
           <p><strong>Būsto kainų palyginimo dar nerodome.</strong> Vienodas 50 m² plotas nepadaro būstų palyginamų: apskrityse skiriasi statybos laikotarpis, naujos / antrinės rinkos dalis ir būklė. Ankstesnis pardavimo proxy buvo bendro būsto rodiklis, ne grynai daugiabučių butų sluoksnis.</p>
           <p><strong>Ko reikia:</strong> 2025 m. daugiabučių butų duomenų pagal apskritį, panašų plotą (pirminis kandidatas 45–55 m²), statybos laikotarpio grupę ir sandorių N.</p>
           <p><strong>Nuoma:</strong> bus pridedama vėliau kaip atskiras sluoksnis, kai turėsime vienodą ir pakankamai pilną 2025 m. krepšelį visoms 10 apskričių.</p>
-          <p><strong>Kiek Lietuvoje iš viso yra tokių 25–30 m. dirbančių porų:</strong> tiesioginio oficialaus „pora × abu dirba × amžius“ pjūvio šiuo metu neturime, todėl procentinės paramos aprėpties kol kas neskaičiuojame.</p>
+          <p><strong>Kiek Lietuvoje iš viso yra tokių 25–30 m. dirbančių porų:</strong> modeliuojame apie 20–40 tūkst. porų (centrinis orientyras ~30 tūkst.), tačiau tai nėra oficialus tiesioginis matavimas. Procentinės paramos aprėpties iš 515 gavėjų neskaičiuojame, nes gavėjų teisinė amžiaus ir šeimos apibrėžtis platesnė.</p>
         </div>
       </details>
 
