@@ -1,0 +1,50 @@
+{
+  "version": "2025-working-couple-range-v1",
+  "status": "MODELLED_RANGE_NOT_OFFICIAL_COUNT",
+  "target_definition": "couple in which both partners are age 25-30 and both are working",
+  "population_anchor": {
+    "year": 2025,
+    "age_25_29_population": 178321,
+    "age_30_proxy": 41133,
+    "age_25_30_population_proxy": 219454,
+    "source_role": "scale anchor only",
+    "source_note": "UN WPP 2024 medium-variant 2025 five-year age groups; age 30 approximated as one fifth of the 30-34 group. Not a direct official VDA 25-30 count."
+  },
+  "partnership_assumption": {
+    "same_age_couple_member_share_low": 0.3,
+    "same_age_couple_member_share_mid": 0.375,
+    "same_age_couple_member_share_high": 0.45,
+    "rationale": "2021 Census first-marriage cumulative rates rise steeply between ages 25 and 30; cohabitation adds partnerships, while age gaps and dissolved unions reduce the share in which both partners are simultaneously 25-30. The 30-45% bracket is deliberately broad."
+  },
+  "both_working_assumption": {
+    "low": 0.7,
+    "mid": 0.75,
+    "high": 0.8,
+    "rationale": "Conservative joint-employment range around Lithuania's high employment rates in prime-age cohorts; not a directly observed couple-level employment probability."
+  },
+  "scenarios": [
+    {
+      "name": "low",
+      "same_age_couple_member_share": 0.3,
+      "both_working_probability": 0.7,
+      "estimated_couples": 23043
+    },
+    {
+      "name": "central",
+      "same_age_couple_member_share": 0.375,
+      "both_working_probability": 0.75,
+      "estimated_couples": 30861
+    },
+    {
+      "name": "high",
+      "same_age_couple_member_share": 0.45,
+      "both_working_probability": 0.8,
+      "estimated_couples": 39502
+    }
+  ],
+  "publication_guidance": {
+    "recommended_public_wording": "2025 m. Lietuvoje galėjo būti maždaug 23–40 tūkst. porų, kuriose abu partneriai yra 25–30 m. ir abu dirba; centrinis modelio taškas apie 31 tūkst. Tai modeliuotas dydis, ne oficialus porų skaičius.",
+    "do_not_compute_515_coverage_rate": true,
+    "reason": "515 SADM recipients are legally defined young families under a broader age/family definition and are not a subset measured with the same target definition."
+  }
+}
