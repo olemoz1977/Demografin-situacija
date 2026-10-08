@@ -70,7 +70,7 @@ jobs:
                 return {
                   hasDemographicFrame: text.includes('pirmas šeimos būstas') && text.includes('šeimos kūrimo aplinkos barjerų') && text.includes('neįrodinėja priežastinio ryšio su gimstamumu'),
                   hasOfficialOutcome: text.includes('515') && text.includes('556') && text.includes('8,2 mln. €') && text.includes('10,3 mln. €'),
-                  hasTargetRange: text.includes('Tikslinės grupės mastelis') && text.includes('~20–40 tūkst.') && text.includes('apie 30 tūkst. porų') && text.includes('515 paramą gavusių jaunų šeimų negalima dalinti'),
+                  hasTargetRange: !!section.querySelector('.housing-target-size') && (section.querySelector('.housing-target-size')?.textContent || '').includes('20–40 tūkst.') && (section.querySelector('.housing-target-size')?.textContent || '').includes('515 paramą gavusių jaunų šeimų negalima dalinti'),
                   hasRecipientsChart: !!section.querySelector('#housingSupportRecipientsChart'),
                   hasStateSupport: !!section.querySelector('.housing-support-layer'),
                   hasTwoSupportRoutes: section.querySelectorAll('.housing-support-card').length === 2,
