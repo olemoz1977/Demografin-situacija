@@ -1,0 +1,62 @@
+{
+  "version": "2025-target-couple-denominator-v1",
+  "status": "MODELLED_RANGE_NOT_OFFICIAL_STATISTIC",
+  "target": "Lithuania, couple where both adults are age 25-30 and both work",
+  "reference_period": "2024-2025 aligned model",
+  "estimate": {
+    "central_couples": 30000,
+    "low_couples": 20000,
+    "high_couples": 40000,
+    "publication_rounding": "20-40 tūkst.; centrinis orientyras ~30 tūkst."
+  },
+  "construction": {
+    "population_25_30_persons_range": [
+      220000,
+      235000
+    ],
+    "partnered_person_share_range": [
+      0.38,
+      0.48
+    ],
+    "partner_also_25_30_share_range": [
+      0.7,
+      0.85
+    ],
+    "both_working_couple_share_range": [
+      0.7,
+      0.85
+    ],
+    "formula": "persons_25_30 × partnered_person_share × partner_also_25_30_share / 2 × both_working_couple_share",
+    "implied_raw_range_before_rounding": [
+      20482,
+      40749
+    ]
+  },
+  "evidence": [
+    {
+      "fact": "OECD EU-SILC 2024 living-arrangement data show Lithuania's 20-29 population split among parental home, living alone, partnered and other household types; partnership share rises materially with age within this band.",
+      "source": "OECD Affordable Housing Database HM1.4, updated 2025-10-02",
+      "url": "https://webfs.oecd.org/Els-com/Affordable_Housing_Database/HM1-4-Living-arrangements-age-groups.pdf"
+    },
+    {
+      "fact": "Eurostat 2024 housing-conditions chart shows only about one quarter of Lithuania's 25-29-year-olds still linked to the parental household, much lower than for 20-24.",
+      "source": "Eurostat, Young people - housing conditions, ilc_lvps08",
+      "url": "https://ec.europa.eu/eurostat/statistics-explained/SEPDF/cache/46039.pdf",
+      "quality": "visual_read_approximate"
+    },
+    {
+      "fact": "Lithuanian first-marriage ages are around the late twenties / early thirties, supporting a materially higher partnership share for 25-30 than for 20-24.",
+      "source": "Official Statistics Portal / VDA marriage statistics"
+    },
+    {
+      "fact": "Eurostat EU-LFS 2024 Lithuania age profile shows high employment by ages 25-30, but no direct public cross-tab 'both partners work × both age 25-30'.",
+      "source": "Eurostat ad hoc EU-LFS extraction, Participation of young people in education and the labour market"
+    }
+  ],
+  "safeguards": [
+    "Do not call this an official count.",
+    "Do not use 515 / denominator as programme take-up: numerator covers legally defined young families up to age 36, denominator is 25-30 working couples.",
+    "Use rounded range publicly; avoid fake precision.",
+    "Replace with direct official microdata/cross-tab if later available."
+  ]
+}
