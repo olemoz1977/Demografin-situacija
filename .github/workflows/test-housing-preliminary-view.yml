@@ -11,6 +11,7 @@ on:
       - "data/housing-affordability-preliminary-v01.json"
       - "data/housing-state-support-income-screen-2025.json"
       - "data/housing-state-support-outcomes-2025.json"
+      - "research/housing-target-couples-model-2025.json"
       - ".github/workflows/test-housing-preliminary-view.yml"
   workflow_dispatch:
 
@@ -59,7 +60,7 @@ jobs:
           assert "housingAffordability:'housing'" in nav
           assert "label:'Būstas'" in nav
           index=Path("index.html").read_text(encoding="utf-8")
-          assert 'app.js?v=20261005a' in index
+          assert 'app.js?v=20261008a' in index
           assert 'style.css?v=20261005a' in index
           app=Path("app.js").read_text(encoding="utf-8")
           assert "housing-affordability.js" in app
@@ -84,9 +85,19 @@ jobs:
           assert srows["Vilniaus"]["screening_status"].startswith("ABOVE")
           assert srows["Kauno"]["screening_status"].startswith("ABOVE")
           assert srows["Klaipėdos"]["screening_status"].startswith("ABOVE")
+          target=json.loads(Path("research/housing-target-couples-model-2025.json").read_text(encoding="utf-8"))
+          assert target["status"]=="MODELLED_RANGE_NOT_OFFICIAL_STATISTIC"
+          assert target["estimate"]["low_couples"]==20000
+          assert target["estimate"]["high_couples"]==40000
+          assert target["estimate"]["central_couples"]==30000
+          assert target["safeguards"][1].startswith("Do not use 515")
           view=Path("housing-affordability.js").read_text(encoding="utf-8")
           assert "Ar jaunai dirbančiai porai prieinamas pirmas šeimos būstas?" in view
           assert "2025 FAKTAI + MODELIUOTA" in view
+          assert "Tikslinės grupės mastelis" in view
+          assert "~20–40 tūkst." in view
+          assert "Centrinis orientyras – apie 30 tūkst. porų" in view
+          assert "515 paramą gavusių jaunų šeimų negalima dalinti" in view
           assert "515 jaunų šeimų" in view
           assert "556 asmenis arba šeimas" in view
           assert "8,2 mln. €" in view
