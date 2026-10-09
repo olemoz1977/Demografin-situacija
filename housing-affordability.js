@@ -52,7 +52,7 @@
           <strong>Paramos aprėptis tarp visų jaunų šeimų – oficialiai neskelbiama.</strong> Turime gavėjų skaičių, bet ne patikimą visų teisiškai apibrėžtų jaunų šeimų ar teisę į paskatą turinčių šeimų skaičių 2025 m. Neskaičiuojame tariamai tikslaus procento. Pajamų modelis iš 2025 m. lapkričio paliktas tik atskirai diagnostikai, o ne paramos tinkamumui spręsti.
         </div>
 
-        <p class="source-line">Šaltinis: <a href="https://socmin.lrv.lt/public/canonical/1773646445/6523/2026%2003%2006_SADM_Veiklos%20ataskaita%202025-03-10.pdf" target="_blank" rel="noopener">SADM · 2025 metų veiklos ataskaita</a>. Detalioji terminų metodika: tyrimo dokumente „population-terminology-standard-2024-2025“.</p>
+        <p class="source-line">Šaltinis: <a href="https://socmin.lrv.lt/public/canonical/1773646445/6523/2026%2003%2006_SADM_Veiklos%20ataskaita%202025-03-10.pdf" target="_blank" rel="noopener">SADM · 2025 metų veiklos ataskaita</a>. Sąvokų paaiškinimas: šioje temoje „jauna šeima“ – teisinė paramos gavėjų kategorija; namų ūkis – atskiras statistinis analizės vienetas.</p>
       </section>
 
       <details class="housing-details">
