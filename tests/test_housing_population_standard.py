@@ -59,6 +59,11 @@ class HousingPopulationStandardTest(unittest.TestCase):
         self.assertIn("2024–2025", self.housing)
         self.assertIn("2024–2025", self.nav)
 
+    def test_households_are_explicitly_not_owned_homes(self):
+        self.assertIn("Ką reiškia „namų ūkis“?", self.housing)
+        self.assertIn("Namų ūkis ≠ nuosavas būstas.", self.housing)
+        self.assertIn("Viename būste gali būti keli atskiri namų ūkiai.", self.housing)
+
     def test_county_comparability_block_remains(self):
         self.assertIn("50 m²", self.housing)
         self.assertIn("N.", self.housing)
