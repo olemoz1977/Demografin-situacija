@@ -55,7 +55,7 @@ class HousingPopulationStandardTest(unittest.TestCase):
 
     def test_navigation_uses_current_candidate_files(self):
         self.assertIn("research-nav.js?v=20261009fertility", self.app)
-        self.assertIn("housing-affordability.js?v=20261009homeexit", self.app)
+        self.assertIn("housing-affordability.js?v=20261009reuse", self.app)
         self.assertIn("2024–2025", self.housing)
         self.assertIn("2024–2025", self.nav)
 
@@ -77,6 +77,19 @@ class HousingPopulationStandardTest(unittest.TestCase):
         self.assertIn("2024 m. – 22,4", self.housing)
         self.assertIn("Tai išsikėlimas iš tėvų namų, o ne pirmojo nuosavo būsto įsigijimas.", self.housing)
         self.assertNotIn("22,7 metų – pirmasis nuosavas būstas", self.housing)
+
+    def test_city_benchmarks_not_mislabelled_as_young_family_county_rankings(self):
+        self.assertIn("Butų kainų orientyrai šešiuose miestuose", self.housing)
+        self.assertIn("Miestas nėra apskritis", self.housing)
+        self.assertIn("housing-verified-city-benchmarks-2024-2025.json", self.housing)
+        city = json.loads((ROOT / "data/housing-verified-city-benchmarks-2024-2025.json").read_text(encoding="utf-8"))
+        self.assertEqual(6, len(city["sale"]["places"]))
+        self.assertEqual(5, len(city["rent"]["places"]))
+        self.assertTrue(city["use_rules"]["no_geography_swap"])
+        self.assertTrue(city["use_rules"]["no_first_home_claim"])
+        self.assertTrue(city["sale"]["no_quality_or_floor_area_control"])
+        self.assertTrue(city["rent"]["not_one_room_basket"])
+        self.assertEqual(2846.01, next(x["eur_m2_2025"] for x in city["sale"]["places"] if x["name"] == "Vilnius"))
 
     def test_households_are_explicitly_not_owned_homes(self):
         self.assertIn("Ką reiškia „namų ūkis“?", self.housing)
