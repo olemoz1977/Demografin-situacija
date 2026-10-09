@@ -44,7 +44,7 @@ control=read_json(prefix+control_table+"/query",{"select":"apskritys,s3r640","fi
 src["documented_working_example"]={"table":control_table,"http_error":control.get("error"),"count":control.get("total"),"returned":len(control.get("data",[]))}
 for year in (2024,2025):
     out=read_json(prefix+table+"/query",{"filter":f"laikotarpis._co={year}","limit":1200,"offset":0})
-    src[str(year)]={"http_error":out.get("error"),"count":out.get("total"),"returned":len(out.get("data",[])),"aggregate_candidate_rows":summarise_rows(out.get("data",[]))[:20]}
+    src[str(year)]={"http_error":out.get("error"),"count":out.get("total"),"returned":len(out.get("data",[])),"categories":sorted({str(r.get("pajamu_saltinis","")).strip() for r in out.get("data",[]) if isinstance(r,dict)})[:70],"units":sorted({str(r.get("matavimo_vienetai","")).strip() for r in out.get("data",[]) if isinstance(r,dict)}),"aggregate_candidate_rows":summarise_rows(out.get("data",[]))[:20]}
 result["sources"]["ldp_county_household_income"]=src
 
 # These are anonymised EU-SILC survey records. Probe field names & year availability ONLY.
