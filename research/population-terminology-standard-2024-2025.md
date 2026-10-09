@@ -10,6 +10,18 @@
 4. **„Jauna pora“ – nebe projekto populiacijos sąvoka.** Nebepublikuoti jos kaip oficialaus demografinio rodiklio. „25–30 m. dviejų dirbančių asmenų namų ūkio scenarijus“ gali būti **diagnostinis modelis**, o ne oficiali teisinė ar statistinė populiacija.
 5. Projekto 2024–2025 faktai aiškinami pagal atitinkamų metų taisykles; 2026 m. pakeitimai – tik atskiras vėlesnių pokyčių kontekstas.
 
+## Duomenų kilmės ir galutinumo taisyklė
+
+**Oficialu** nusako pirminę statistikos rengėją ir paskelbimo būdą; **faktinio tyrimo rezultatas** nusako, kad jis įvertintas iš realių stebėjimų / apklausos, o **galutinumas** nusako, ar reikšmė gali būti patikslinta. Šie trys požymiai nėra vienas laukas.
+
+- **OFFICIAL + FINAL (be `p` žymos konkrečiam įrašui)** – oficiali paskelbta reikšmė, nepažymėta kaip preliminari. Nepriskirti šio statuso vien todėl, kad atėjo kiti kalendoriniai metai.
+- **OFFICIAL + PROVISIONAL (`p`)** – oficialiai paskelbtas konkrečių metų faktinių stebėjimų rodiklis, bet institucijos žyma rodo, kad rezultatas dar gali būti tikslinamas. Tinkama vieša žyma: **„Oficialus faktinio tyrimo rodiklis, preliminarus (Eurostat p)“**.
+- **OFFICIAL + FORECAST (`f`)** – prognozė; negalima vadinti faktiniu tyrimo rezultatu.
+- **MODELLED** – autoriaus modelis iš oficialių ar kitų duomenų: nenaudoti oficialios institucijos fakto žymos visam skaičiavimui.
+- **PRELIMINARY** kaip vienintelė projekto žyma yra nepakankama, jei skaitytojui neaišku, ar kalbama apie institucijos preliminarų faktą, ar autoriaus dar neužbaigtą scenarijų. Privalomas atskiras `source_type`, `official_quality_flag`, `official_release_status`, `data_nature`.
+
+**Atvejis 2026-10-09:** Eurostat `ilc_lvph02` Lietuvai, `A1` (vienas suaugęs asmuo), **2024 m. 50,5 % (p)** ir **2025 m. 55,7 % (p)**. Abu yra **oficialiai paskelbti faktinių metų statistinio tyrimo įverčiai**, o ne prognozės; tačiau abiem žyma `p` tebegalioja po 2026-09-17 rinkinio atnaujinimo. Nuoroda: https://ec.europa.eu/eurostat/databrowser/view/ilc_lvph02/default/table.
+
 ## Viešos kalbos standartas: žmonės ≠ būstas ≠ būsto nuosavybė
 
 **Aptikta skaitytojų painiava:** terminas „namų ūkis“ kartais suprantamas kaip nuosavas namas arba butas. Oficialios sąvokos nekeičiame, bet pirmą kartą ją vartojant viešoje temoje **privalomas paaiškinimas paprasta kalba**.
