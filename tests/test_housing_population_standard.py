@@ -199,6 +199,23 @@ class HousingPopulationStandardTest(unittest.TestCase):
                         and x["deposit_share_ASSUMED"] == 0.15 and x["years_target"] == 3)
         self.assertAlmostEqual(2008.33, vilnius3["max_nonrent_outgoings_eur_month"], delta=0.01)
 
+    def test_unmatched_apartment_quality_blocks_city_affordability_comparison(self):
+        first = json.loads(
+            (ROOT / "data/housing-first-home-saving-scenarios-city3-2025.json").read_text(encoding="utf-8")
+        )
+        reverse = json.loads(
+            (ROOT / "data/housing-first-home-reverse-budget-2025.json").read_text(encoding="utf-8")
+        )
+        self.assertTrue(first["quality_comparability_gate"].startswith("FAIL_"))
+        self.assertTrue(reverse["quality_comparability_gate"].startswith("FAIL_"))
+        self.assertFalse(first["between_city_affordability_comparison_allowed"])
+        self.assertFalse(reverse["between_city_affordability_comparison_allowed"])
+        self.assertFalse(first["site_publication_allowed"])
+        self.assertFalse(reverse["site_publication_allowed"])
+        self.assertTrue(reverse["area_assumption_not_quality_control"])
+        self.assertIn("construction_period_groups", first["next_price_basket_required"])
+        self.assertIn("transactions_N", first["next_price_basket_required"]["metrics"])
+
     def test_households_are_explicitly_not_owned_homes(self):
         self.assertIn("Ką reiškia „namų ūkis“?", self.housing)
         self.assertIn("Namų ūkis ≠ nuosavas būstas.", self.housing)
