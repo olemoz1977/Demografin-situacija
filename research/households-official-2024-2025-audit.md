@@ -1,6 +1,6 @@
 # Namų ūkių struktūra Lietuvoje: oficialių 2024–2025 m. pjūvių atranka
 
-**Parengta:** 2026-10-09. **Statusas:** `RESEARCH_ONLY_NOT_PUBLIC`. **Paskirtis:** pereiti nuo nesuderinamos „jaunos poros“ kategorijos prie oficialių namų ūkio statistinių vienetų. Tai **nėra** jaunų šeimų paramos gavėjų aprėpties vardiklis.
+**Parengta:** 2026-10-09. **Statusas:** `RESEARCH_ONLY_NOT_PUBLIC`. **Paskirtis:** apibrėžti oficialius namų ūkius kaip **pagalbinį** pirmojo būsto prieinamumo jaunoms šeimoms ir jo ryšio su gimstamumu tyrimo sluoksnį; nekurti nesuderinamos „jaunos poros“ populiacijos. Tai **nėra** jaunų šeimų paramos gavėjų aprėpties vardiklis, pirmojo būsto įperkamumo matas ar gimstamumo priežasties įrodymas.
 
 ## Kaip šį terminą pristatome skaitytojui?
 
@@ -75,4 +75,4 @@ Eurostat `ilc_lvph02` Lietuvai:
 - EU-SILC namų ūkio tipai, gyventojų dalis: https://ec.europa.eu/eurostat/databrowser/view/tesov190/default/table
 - Lietuvos EU-SILC metodika: https://ec.europa.eu/eurostat/cache/metadata/EN/ilc_simsilc_lt.htm
 
-**Sprendimas:** „Namų ūkių struktūra“ yra atskira oficialios statistikos tyrimo kryptis, tačiau iš jos negalima automatiškai skaičiuoti visų jaunų šeimų, pirmojo būsto paramos aprėpties ar pirmojo būsto perkamumo.
+**Sprendimas:** „Namų ūkių struktūra“ yra tik pagalbinė oficialios statistikos tyrimo kryptis. Pagrindinis projekto tyrimas – **pirmojo būsto prieinamumas jaunoms šeimoms ir galimas ryšys su gimstamumu**. Iš namų ūkių sudėties negalima automatiškai skaičiuoti visų jaunų šeimų, paramos aprėpties, pirmojo būsto įperkamumo ar priežastinio poveikio gimstamumui. Žr. [`pagrindinio būsto / gimstamumo klausimo dokumentą`](housing-first-home-fertility-question-2024-2025.md).
