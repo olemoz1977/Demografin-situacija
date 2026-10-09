@@ -32,6 +32,14 @@ Konkurentiniai paaiškinimai: užimtumas, darbo pajamos, paskolų palūkanos ir 
 4. Gimstamumo indikatorių sieti pagal suderintą teritoriją ir laikotarpį; analizuoti pirmojo vaiko gimimus ir amžių. Gimimų skaičius savaime labai priklauso nuo moterų skaičiaus reprodukciniame amžiuje, todėl absoliučius gimimų skaičius aiškinti kartu su struktūra / amžiaus specifiniais rodikliais.
 5. Jei norime kalbėti apie **poveikį** (priežastingumą), reikia aiškaus tyrimo dizaino: individualių ilgalaikių duomenų, tinkamo natūralaus eksperimento ar pagrįsto priežastinio vertinimo, įskaitant kitus veiksnius. Kol to nėra – naudoti **„ryšys“, „hipotezė“, „galimas mechanizmas“**.
 
+## 2024–2025 m. jau turimos rinkos ir gimstamumo sąsajos ribos
+
+Iš anksčiau VDA surinktų 2024 ir 2025 m. `S7R280` duomenų **šešiuose miestuose** apskaičiuotas vidutinių daugiabučių butų pardavimo kainų pokytis: **Vilnius +7,8 %, Kaunas +12,2 %, Klaipėda +11,7 %, Šiauliai +15,0 %, Panevėžys +13,6 %, Alytus +16,7 %**. Tai **vidurkių** pokyčiai, nesukoreguoti pagal butų sudėtį, **ne** standartinio 45–55 m² pirmojo būsto kainų indeksas. Atskirai VDA `S7R281` suteikia 2025 m. metinius nuomos €/m² orientyrus penkiuose miestuose, kuriuos galima paversti į mėnesio atitikmenis dalijant iš 12; šių eilučių negalima laikyti 1 kambario nuomos kainomis.
+
+VDA leidinys *Lietuva skaičiais 2025* skelbia **2024 m. vidutinį pirmąjį vaiką gimdančių moterų amžių – 28,7 m.** (2023 m. – 28,4 m.). Tai nacionalinė 2024 m. gimstamumo laiko atrama, **ne 2025 m. reikšmė** ir ne būsto kainų priežastinio poveikio patvirtinimas. Skirtingų populiacijų 2024 m. 22,4 m. išsikėlimo iš tėvų būsto bei 28,7 m. pirmo gimdymo vidurkiai **nesudaro vienos šeimos gyvenimo įvykių sekos**.
+
+Išsamus skaičiavimo atsekamumas, rodiklių vardikliai ir blokatoriai: [`research/housing-market-first-birth-bridge-2024-2025.md`](housing-market-first-birth-bridge-2024-2025.md). Šių rodiklių **negalima** sujungti į jaunų šeimų būsto įperkamumo ar gimstamumo poveikio skaičių, kol neturime atitinkamų pajamų, būsto kokybės, palūkanų / įnašo ir amžiaus bei teritorijos duomenų.
+
 ## Jaunų žmonių savarankiškas gyvenimas prieš pirmąjį būstą
 
 ### 2024–2025 m. pirmas patvirtintas rodiklis
