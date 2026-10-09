@@ -12,6 +12,8 @@
       <p class="small"><strong>Analizės ribos:</strong> paramos dalyje „jauna šeima“ yra teisinė kategorija; kituose pjūviuose taikome tiksliai apibrėžtus statistinius vienetus. Visų teisiškai apibrėžtų jaunų šeimų patikimo skaičiaus neturime, todėl paramos aprėpties procento neskaičiuojame. Galimas ryšys su gimstamumu – tyrimo hipotezė, o ne įrodytas priežastinis poveikis.</p>
       <p class="small"><strong>Ką reiškia „namų ūkis“?</strong> Tai žmonės, o ne nekilnojamasis turtas: vienas žmogus arba kartu gyvenantys ir bendras pajamas ar išlaidas turintys asmenys. Jie gali nuomotis būstą arba gyventi nuosavame. <strong>Namų ūkis ≠ nuosavas būstas.</strong> Viename būste gali būti keli atskiri namų ūkiai.</p>
 
+      <p class="small"><strong>Platesnis gyvenimo sąlygų kontekstas:</strong> 2025 m. Lietuvoje <strong>55,7 % privačių namų ūkių sudarė vienas suaugęs asmuo be išlaikomų vaikų</strong> (ES – 35,7 %). Tai <strong>namų ūkių, ne gyventojų ar būsto savininkų, procentas</strong>; į jį patenka įvairaus amžiaus žmonės, todėl jis <strong>neįrodo jaunų šeimų būsto neprieinamumo ar poveikio gimstamumui</strong>. Oficialus faktinės apklausos rodiklis, Eurostat žyma <strong>p – gali būti tikslinamas</strong>. <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_lvph02/default/table" target="_blank" rel="noopener">Šaltinis: Eurostat, ilc_lvph02</a>.</p>
+
       <div class="alert alert-blue">
         <strong>2025 m. faktas.</strong> Finansinę paskatą pirmajam būstui regionuose gavo <strong>515 jaunų šeimų</strong>. Kita – valstybės iš dalies kompensuojamo būsto kredito – subsidijų schema pasiekė <strong>556 asmenis arba šeimas</strong>, tačiau tai platesnė gavėjų grupė, todėl šių dviejų skaičių nesumuojame kaip jaunų šeimų.
       </div>
