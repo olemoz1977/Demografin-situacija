@@ -63,6 +63,8 @@
         <p class="source-line">Šaltinis: <a href="https://socmin.lrv.lt/public/canonical/1773646445/6523/2026%2003%2006_SADM_Veiklos%20ataskaita%202025-03-10.pdf" target="_blank" rel="noopener">SADM · 2025 metų veiklos ataskaita</a>. Sąvokų paaiškinimas: šioje temoje „jauna šeima“ – teisinė paramos gavėjų kategorija; namų ūkis – atskiras statistinis analizės vienetas.</p>
       </section>
 
+      <p class="small"><strong>Gimstamumo kontekstas:</strong> VDA duomenimis, 2024 m. Lietuvoje vidutinis <strong>pirmąjį vaiką gimdančių moterų amžius buvo 28,7 metų</strong> (2023 m. – 28,4 m.). Tai <strong>visos Lietuvos demografinis faktas</strong>, o ne būsto kainų sukeltas poveikis. Jo negalima tiesiogiai atimti iš 2024 m. 22,4 m. tėvų namų palikimo rodiklio: tai skirtingos populiacijos, tyrimai ir asmenys. <a href="https://publikacijos.stat.gov.lt/lietuva-skaiciais-2025/lt/categories/3" target="_blank" rel="noopener">VDA · Lietuva skaičiais (2024 m. duomenys)</a>.</p>
+
       <section class="housing-support-layer" aria-labelledby="housingCityContextTitle">
         <div class="section-label">Jau turimi oficialūs rinkos faktai <span class="badge badge-official">VDA · 2024–2025</span></div>
         <h3 id="housingCityContextTitle">Butų kainų orientyrai šešiuose miestuose</h3>
@@ -129,15 +131,18 @@
     if(!target || !data?.sale?.places || !data?.rent?.places) return;
     const rent=new Map(data.rent.places.map(v=>[v.municipality,v.annual_eur_m2]));
     const money=v=>Number(v).toLocaleString('lt-LT',{maximumFractionDigits:0});
+    const decimal=v=>Number(v).toLocaleString('lt-LT',{minimumFractionDigits:1,maximumFractionDigits:1});
     const rows=data.sale.places.map(city=>{
       const annualRent=rent.get(city.municipality);
-      return `<tr><th scope="row">${city.name}</th><td>${money(city.eur_m2_2024)}</td><td>${money(city.eur_m2_2025)}</td><td>${annualRent===undefined?'–':money(annualRent)}</td></tr>`;
+      const growth=(city.eur_m2_2025/city.eur_m2_2024-1)*100;
+      // Official VDA yearly city means; the change and monthly rental equivalence are calculated context, not official first-home affordability.
+      return `<tr><th scope="row">${city.name}</th><td>${money(city.eur_m2_2024)}</td><td>${money(city.eur_m2_2025)}</td><td>+${decimal(growth)} %</td><td>${annualRent===undefined?'–':decimal(annualRent/12)}</td></tr>`;
     }).join('');
     target.innerHTML=`<div class="housing-table-scroll"><table class="housing-table">
-      <thead><tr><th scope="col">Miestas</th><th scope="col">Butų pardavimas 2024, €/m²</th><th scope="col">Butų pardavimas 2025, €/m²</th><th scope="col">Butų nuoma 2025, €/m² per metus</th></tr></thead>
+      <thead><tr><th scope="col">Miestas</th><th scope="col">Butų pardavimas 2024, €/m²</th><th scope="col">Butų pardavimas 2025, €/m²</th><th scope="col">Pardavimo kainų pokytis 2024–2025, %</th><th scope="col">Nuomos 2025 m. mėnesio atitikmuo, €/m²/mėn.</th></tr></thead>
       <tbody>${rows}</tbody>
       </table></div>
-      <p class="chart-caption">Oficialūs vidutiniai VDA rodikliai, suapvalinti iki euro. Alytaus miesto nuomos reikšmė šiame penkių miestų šaltinyje neskelbiama (–). Tai ne 1 kambario nuoma ir ne atitinkamo būsto pirkimo bei nuomos krepšelis.</p>`;
+      <p class="chart-caption">VDA oficialūs miestų vidutiniai rodikliai, o procentinis kainų pokytis ir mėnesio nuomos atitikmuo – mūsų aritmetiniai perskaičiavimai. Nuomos pirminis šaltinis skelbia €/m² per metus; mėnesio atitikmuo = metinė reikšmė / 12. Alytaus nuomos reikšmė neturima (–). Parduotų būstų sudėtis metais skiriasi; tai nėra tų pačių butų kainų indeksas, 1 kambario nuoma ar jaunų šeimų įperkamumas.</p>`;
   }
 
   async function loadJson(url){
