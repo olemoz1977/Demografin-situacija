@@ -238,6 +238,19 @@ class HousingPopulationStandardTest(unittest.TestCase):
             self.assertAlmostEqual(row["model_annual_savings_eur"] / p["price_min_eur_m2"],
                 row["m2_price_equivalent_upper_at_low_price"], delta=0.01)
 
+    def test_civic_housing_research_is_zero_eur_with_paid_route_closed(self):
+        readiness = json.loads(
+            (ROOT / "research/housing-affordability-readiness.json").read_text(encoding="utf-8")
+        )
+        budget = readiness["funding_rule"]
+        self.assertEqual(0, budget["total_budget_eur"])
+        self.assertFalse(budget["paid_data_or_subscriptions_allowed"])
+        self.assertEqual("CLOSED_NO_BUDGET", budget["RC_custom_aggregate_status"])
+        self.assertEqual("CLOSED_DO_NOT_SEND", budget["RC_quote_request_status"])
+        archived = (ROOT / "research/rc-2025-comparable-two-room-quote-request-UNSENT.md").read_text(encoding="utf-8")
+        self.assertIn("NEBUS SIUNČIAMA", archived)
+        self.assertIn("Biudžetas 0 EUR", archived)
+
     def test_households_are_explicitly_not_owned_homes(self):
         self.assertIn("Ką reiškia „namų ūkis“?", self.housing)
         self.assertIn("Namų ūkis ≠ nuosavas būstas.", self.housing)
