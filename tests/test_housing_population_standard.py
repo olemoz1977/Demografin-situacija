@@ -55,7 +55,7 @@ class HousingPopulationStandardTest(unittest.TestCase):
 
     def test_navigation_uses_current_candidate_files(self):
         self.assertIn("research-nav.js?v=20261009fertility", self.app)
-        self.assertIn("housing-affordability.js?v=20261009reuse", self.app)
+        self.assertIn("housing-affordability.js?v=20261009growth", self.app)
         self.assertIn("2024–2025", self.housing)
         self.assertIn("2024–2025", self.nav)
 
@@ -90,6 +90,39 @@ class HousingPopulationStandardTest(unittest.TestCase):
         self.assertTrue(city["sale"]["no_quality_or_floor_area_control"])
         self.assertTrue(city["rent"]["not_one_room_basket"])
         self.assertEqual(2846.01, next(x["eur_m2_2025"] for x in city["sale"]["places"] if x["name"] == "Vilnius"))
+
+    def test_city_change_and_rent_monthly_conversion_have_lineage(self):
+        raw = json.loads((ROOT / "data/housing-verified-city-benchmarks-2024-2025.json").read_text(encoding="utf-8"))
+        derived = json.loads((ROOT / "data/housing-city-market-changes-derived-2024-2025.json").read_text(encoding="utf-8"))
+        self.assertEqual(6, len(derived["rows"]))
+        self.assertTrue(derived["guards"]["reject_first_home_affordability_claim"])
+        self.assertTrue(derived["guards"]["not_identical_properties_year_to_year"])
+        self.assertTrue(derived["guards"]["Alytus_2025_rent_null"])
+        rent = {p["municipality"]: p["annual_eur_m2"] for p in raw["rent"]["places"]}
+        sale = {p["municipality"]: p for p in raw["sale"]["places"]}
+        for row in derived["rows"]:
+            key = row["city_municipality"]
+            orig = sale[key]
+            self.assertEqual(orig["eur_m2_2024"], row["sale_2024_eur_m2"])
+            self.assertEqual(orig["eur_m2_2025"], row["sale_2025_eur_m2"])
+            growth = round((orig["eur_m2_2025"] / orig["eur_m2_2024"] - 1) * 100, 1)
+            self.assertAlmostEqual(growth, row["sale_2024_2025_change_pct"])
+            if key in rent:
+                self.assertEqual(rent[key], row["rent_2025_eur_m2_year"])
+                self.assertAlmostEqual(round(rent[key] / 12, 1),
+                                       row["rent_2025_eur_m2_month_equivalent"])
+            else:
+                self.assertIsNone(row["rent_2025_eur_m2_month_equivalent"])
+        self.assertIn("Pardavimo kainų pokytis 2024–2025, %", self.housing)
+        self.assertIn("metinė reikšmė / 12", self.housing)
+        self.assertIn("tai nėra tų pačių butų kainų indeksas", self.housing.lower())
+
+    def test_first_birth_age_is_official_2024_context_not_inferred_2025(self):
+        self.assertIn("2024 m. Lietuvoje vidutinis", self.housing)
+        self.assertIn("28,7 metų", self.housing)
+        self.assertIn("2023 m. – 28,4 m.", self.housing)
+        self.assertIn("skirtingos populiacijos, tyrimai ir asmenys", self.housing)
+        self.assertIn("publikacijos.stat.gov.lt/lietuva-skaiciais-2025", self.housing)
 
     def test_households_are_explicitly_not_owned_homes(self):
         self.assertIn("Ką reiškia „namų ūkis“?", self.housing)
