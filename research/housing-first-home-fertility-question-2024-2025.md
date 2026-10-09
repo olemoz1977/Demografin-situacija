@@ -21,6 +21,12 @@
 
 **Prioritetų tvarka:** pirminis m²/metus klausimas → pradinio įnašo sukaupimas → paskolos aptarnavimo našta → valstybės paramos poveikis šiems scenarijams → ryšys su gimstamumo sprendimais, kai yra tam tinkamų tiesioginių įrodymų. Vienų metų pirmagimių skaičiaus pjūvis nėra šių skaičiavimų sąlyga.
 
+## Neišspręsta esminė butų kainos palyginamumo problema
+
+**2026-10-10 patvirtintas FAIL:** 2025 m. VDA `S7R280` šešių miestų vidutinė parduoto daugiabučio buto €/m² kaina yra **mišrus sandorių krepšelis**. Jis nesunormintas pagal dydį, statybos laikotarpį, būklę, įrengimą ir mikrovietovę. **50 m² prielaida to neišsprendžia.** 3 miestų m²/metus ir pradinio įnašo skaičiai yra skirtingų formulių įvesties **diagnostika**, ne validus geografinis palyginimas. Draudžiama iš jų sudaryti apskričių / miestų įperkamumo reitingą ar teigti, kad kuriame mieste jauna šeima „gali daugiau“.
+
+**Minimalus taisymas, tikrinant 2025 m. sandorių duomenis:** palyginti tik **tame pačiame statybos laikotarpio × ploto × buto tipo** segmente esančius butus, žinant sandorių N, medianą ir kiekvienos teritorijos aprėptį. Net ir tada statybos laikotarpis **nėra buto būklės garantija**: renovacija, įrengimas, mikrovieta ir energinis naudingumas gali skirtis, todėl išvadų ribos privalomos. Jeigu N per mažas arba segmento nėra, žymėti **„nepalyginama / nėra duomenų“**, nepakeisti apskrities miesto vidurkiu. Istorinis detalus auditas: `feature/housing-affordability:research/housing-comparable-sale-basket-audit-2026-10-05.md` (nemokamas VDA/RC gardelių kelias neleidžia patikimai prijungti statybos metų).
+
 ## Esminis klausimas
 
 **Ar ir kiek pirmojo nuosavo būsto įsigijimas prieinamas jaunoms šeimoms Lietuvoje, kaip skiriasi prieinamumas pagal teritoriją ir šeimos situaciją, ir ar būsto kliūtys susijusios su pirmojo vaiko susilaukimu bei gimimų laiku?**
