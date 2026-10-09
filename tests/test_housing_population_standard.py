@@ -55,7 +55,7 @@ class HousingPopulationStandardTest(unittest.TestCase):
 
     def test_navigation_uses_current_candidate_files(self):
         self.assertIn("research-nav.js?v=20261009fertility", self.app)
-        self.assertIn("housing-affordability.js?v=20261009growth", self.app)
+        self.assertIn("housing-affordability.js?v=20261010crosslink", self.app)
         self.assertIn("2024–2025", self.housing)
         self.assertIn("2024–2025", self.nav)
 
@@ -117,12 +117,11 @@ class HousingPopulationStandardTest(unittest.TestCase):
         self.assertIn("metinė reikšmė / 12", self.housing)
         self.assertIn("tai nėra tų pačių butų kainų indeksas", self.housing.lower())
 
-    def test_first_birth_age_is_official_2024_context_not_inferred_2025(self):
-        self.assertIn("2024 m. Lietuvoje vidutinis", self.housing)
-        self.assertIn("28,7 metų", self.housing)
-        self.assertIn("2023 m. – 28,4 m.", self.housing)
-        self.assertIn("skirtingos populiacijos, tyrimai ir asmenys", self.housing)
-        self.assertIn("publikacijos.stat.gov.lt/lietuva-skaiciais-2025", self.housing)
+    def test_existing_first_birth_age_chart_is_linked_not_duplicated(self):
+        self.assertIn('href="?view=fertility#amzius"', self.housing)
+        self.assertIn("jau pateikti", self.housing)
+        self.assertNotIn("28,7 metų", self.housing)
+        self.assertIn("neįrodo būsto kainų įtakos gimstamumui", self.housing)
 
     def test_households_are_explicitly_not_owned_homes(self):
         self.assertIn("Ką reiškia „namų ūkis“?", self.housing)
