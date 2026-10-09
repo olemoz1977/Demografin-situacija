@@ -26,7 +26,7 @@ class HousingPopulationStandardTest(unittest.TestCase):
         for view in (self.housing, self.nav):
             for phrase in ("jaunai dirbančiai porai", "jaunai porai", "jaunos poros pajamos"):
                 self.assertNotIn(phrase, view.lower())
-        self.assertIn("pirmojo būsto paramos faktai", self.nav.lower())
+        self.assertIn("ar pirmasis būstas prieinamas jaunoms šeimoms?", self.nav.lower())
 
     def test_annualized_monthly_income_is_not_presented_as_eligibility(self):
         for token in ("housingIncomeScreen", "housingSupportIncomeChart", "renderIncomeScreen"):
@@ -54,10 +54,16 @@ class HousingPopulationStandardTest(unittest.TestCase):
         self.assertIsNone(interpretation["coverage_percentage_2025"])
 
     def test_navigation_uses_current_candidate_files(self):
-        self.assertIn("research-nav.js?v=20261009standard", self.app)
-        self.assertIn("housing-affordability.js?v=20261009household", self.app)
+        self.assertIn("research-nav.js?v=20261009fertility", self.app)
+        self.assertIn("housing-affordability.js?v=20261009fertility", self.app)
         self.assertIn("2024–2025", self.housing)
         self.assertIn("2024–2025", self.nav)
+
+    def test_first_home_affordability_and_fertility_remain_main_question(self):
+        self.assertIn("Ar pirmasis būstas prieinamas jaunoms šeimoms?", self.housing)
+        self.assertIn("gimstamumu", self.housing)
+        self.assertIn("tyrimo hipotezė, o ne įrodytas priežastinis poveikis", self.housing)
+        self.assertIn("įperkamumo ar poveikio gimstamumui nustatyti negalima", self.nav)
 
     def test_households_are_explicitly_not_owned_homes(self):
         self.assertIn("Ką reiškia „namų ūkis“?", self.housing)
