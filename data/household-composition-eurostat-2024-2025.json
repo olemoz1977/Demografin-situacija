@@ -161,5 +161,32 @@
     "measurement_stage": "OBSERVED_SURVEY_ESTIMATE_NOT_FORECAST",
     "note": "Eurostat p flag remains on both LT one-adult household observations in Sep 17, 2026 dataset. Results already officially published: measured survey observations ≠ forecast; provisional ≠ fabricated/modelled."
   },
-  "label_lt": "Oficialūs 2024–2025 m. faktinio EU-SILC tyrimo rodikliai, Eurostat žyma p (preliminaru)"
+  "label_lt": "Oficialūs 2024–2025 m. faktinio EU-SILC tyrimo rodikliai, Eurostat žyma p (preliminaru)",
+  "comparator_eu_2025": {
+    "territory": "Europos Sąjunga (ES-27)",
+    "territory_code": "EU27_2020",
+    "population": "EU-SILC privatūs namų ūkiai",
+    "population_definition_id": "EUROSTAT_EU_SILC_ILC_LVPH02_HOUSEHOLD_COMPOSITION",
+    "period": "2025",
+    "measure": "share_of_private_households_one_adult_without_dependent_children",
+    "value": 35.7,
+    "unit": "percent_of_households",
+    "data_nature": "OBSERVED_SURVEY_ESTIMATE",
+    "source_type": "OFFICIAL_EUROSTAT",
+    "source": "https://ec.europa.eu/eurostat/documents/15216629/24279737/KS-01-26-036-EN-N.pdf",
+    "page": 34,
+    "source_quality_flag_verified": false,
+    "note": "2026 Eurostat Key figures page 34 (printed page) publishes 35.7% for EU in 2025; individual EU27_2020 observation flag not separately checked."
+  },
+  "migration_membership_definition": {
+    "primary_unit": "Private households with usual residence in Lithuania, not Lithuanian citizens worldwide",
+    "permanent_emigrant_abroad": "OUT_OF_LT_SILC_HOUSEHOLD_AS_USUAL_RESIDENT",
+    "temporary_worker_student_abroad": "MAY_STILL_BE_LITHUANIAN_HOUSEHOLD_MEMBER_SUBJECT_TO_EU_SILC_CONDITIONS",
+    "immigrant_usual_residence_LT": "IN_SCOPE_IRRESPECTIVE_OF_CITIZENSHIP",
+    "impact_on_remaining_household": "Long-term departure of one member can change composition of remaining LT household; mechanism only, no causality established.",
+    "source": "https://ec.europa.eu/eurostat/documents/203647/22127502/Methodological%2Bguidelines%2B2024%2Boperation_v7.pdf",
+    "reference_page": 39,
+    "readers_note_lt": "Emigravęs žmogus, nuolat gyvenantis užsienyje, paprastai nėra Lietuvos namų ūkio narys. Tam tikri laikinai svetur dirbantys ar studijuojantys gali likti namų ūkio nariais. Lietuvoje nuolat gyvenantys imigrantai įtraukiami nepriklausomai nuo pilietybės."
+  },
+  "public_context_scope": "55.7% LT (p) / 35.7% EU (official publication) may be cited as general population background in housing/family sections, not as 25–35 age group or legal young-family numerator."
 }
