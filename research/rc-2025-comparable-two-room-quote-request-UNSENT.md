@@ -33,12 +33,9 @@ Ačiū.
 
 ---
 
-## Prieš siunčiant – privalomas vartas
+## Archyvinis juodraštis – siuntimo kelias uždarytas
 
-1. Rodyti savininkui visą tekstą ir gavėjo adresą, ne tik santrauką.
-2. Laukti aiškaus **„Siųsk“**.
-3. Gautas kainos pasiūlymas **nėra leidimas užsakyti ar apmokėti**; reikalingas atskiras sprendimas dėl sąnaudų.
-4. Užklausa skirta **tik tinkamo butų segmento kainų įvertinimo galimybėms**; net jei duomenis gausime, be reprezentatyvios vieno kambario nuomos ir tinkamų jaunų šeimų pajamų / išlaidų 10 apskričių galutinė metinio m² įperkamumo išvada negalios.
+**Biudžetas 0 EUR ir jokio mokamo duomenų įsigijimo.** Šio užklausos teksto nebesiųsti ir nesiūlyti siųsti. Jei ateityje atsiras viešai ir nemokamai prieinama palyginamų sandorių statistika, ją vertinti nepriklausomai nuo šio uždaryto laiško. 10 apskričių įperkamumo palyginimas be patikrinto pardavimo bei nuomos sluoksnio išlieka nepublikuojamas.
 
 ## Kodėl tokia minimali apimtis?
 
