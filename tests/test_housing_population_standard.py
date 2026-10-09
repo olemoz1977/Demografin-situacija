@@ -55,7 +55,7 @@ class HousingPopulationStandardTest(unittest.TestCase):
 
     def test_navigation_uses_current_candidate_files(self):
         self.assertIn("research-nav.js?v=20261009fertility", self.app)
-        self.assertIn("housing-affordability.js?v=20261009fertility", self.app)
+        self.assertIn("housing-affordability.js?v=20261009households55", self.app)
         self.assertIn("2024–2025", self.housing)
         self.assertIn("2024–2025", self.nav)
 
@@ -64,6 +64,12 @@ class HousingPopulationStandardTest(unittest.TestCase):
         self.assertIn("gimstamumu", self.housing)
         self.assertIn("tyrimo hipotezė, o ne įrodytas priežastinis poveikis", self.housing)
         self.assertIn("įperkamumo ar poveikio gimstamumui nustatyti negalima", self.nav)
+
+    def test_household_context_is_not_misread_as_young_families(self):
+        self.assertIn("55,7 % privačių namų ūkių", self.housing)
+        self.assertIn("įvairaus amžiaus žmonės", self.housing)
+        self.assertIn("neįrodo jaunų šeimų būsto neprieinamumo", self.housing)
+        self.assertIn("namų ūkių, ne gyventojų", self.housing)
 
     def test_households_are_explicitly_not_owned_homes(self):
         self.assertIn("Ką reiškia „namų ūkis“?", self.housing)
