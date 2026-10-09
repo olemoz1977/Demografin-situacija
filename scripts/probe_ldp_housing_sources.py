@@ -26,7 +26,7 @@ def summarise_rows(rows):
         src=str(r.get("pajamu_saltinis","")).strip()
         unit=str(r.get("matavimo_vienetai","")).strip()
         # Only aggregated values of total income where clear, never individual records.
-        if (("viso" in src.lower() or "bendr" in src.lower()) and "namų ūkiui" in unit.lower()):
+        if src=="Piniginės disponuojamosios pajamos" and unit=="vienam namų ūkiui, EUR" and str(r.get("apskritys","")).strip().endswith("apskritis"):
             result.append({"period":r.get("laikotarpis"),"county":r.get("apskritys"),"category":src,"unit":unit,"value":r.get("s3r908"),"symbol":r.get("sutartinis_simbolis")})
     return result
 
