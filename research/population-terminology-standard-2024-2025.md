@@ -2,6 +2,12 @@
 
 **Statusas:** metodinis sprendimas 2026-10-09. **Taikymo laikotarpis:** 2024–2025 m. faktams. **Šaka:** `audit/population-standard-2024-2025` (main nepakeistas).
 
+## Pagrindinio tyrimo tikslo apsauga
+
+**Pagrindinis tyrimo klausimas yra ne „kiek yra vienišų namų ūkių“ ir ne „kiek išmokėta subsidijų“.** Nagrinėjame **pirmojo būsto prieinamumą jaunoms šeimoms ir galimą jo ryšį su vaikų susilaukimo laiku bei gimstamumu Lietuvoje**. Oficialios paramos gavėjų kategorijos yra viena pagalbinė šio tyrimo dalis; namų ūkių statistika – kontekstas ir, tinkamai apibrėžus, pajamų matavimo pagrindas. Vieno koreliacinio palyginimo nepakanka teigti priežastinei įtakai.
+
+Atskiras tyrimo klausimų, matų, hipotezių, duomenų spragų ir publikavimo ribų dokumentas: [`research/housing-first-home-fertility-question-2024-2025.md`](housing-first-home-fertility-question-2024-2025.md).
+
 ## Sprendimas B
 
 1. Bendrasis **statistinis analizės vienetas – namų ūkis** (VDA / Eurostat), bet **tik su konkretaus duomenų rinkinio definicijos ID**: surašymo `household-dwelling` ir EU-SILC pajamų / vartojimo namų ūkio apibrėžimai nekeičiami vienas kitu.
@@ -80,7 +86,7 @@
 
 ## Būsto dalies viešos redakcijos sprendimas
 
-- Pagrindinė išvada – **tik SADM 2024–2025 faktai** ir aiškus `vardiklis nežinomas` apribojimas.
+- **Pagrindinis tyrimo klausimas – pirmojo būsto prieinamumas jaunoms šeimoms ir galimas ryšys su gimstamumu.** Dabartinės viešai patvirtintos faktinės išvados šioje temoje apsiriboja **SADM 2024–2025 paramos faktais**, aiškiai nurodant `vardiklis nežinomas` ir tai, kad paramos gavėjų skaičius neišsprendžia būsto įperkamumo ar poveikio gimstamumui klausimų.
 - Dabartinį viešą 2025-11 pajamų ribos grafiką **šalinti** iš pagrindinės viešos temos. Jis 2025-11 vieno asmens modelį paverčia kalendoriniais šeimos metais (×2×12), nors neskaičiuoja dviejų konkrečios šeimos narių deklaruotų pajamų ir nematuoja teisinės „jaunos šeimos“ populiacijos. Gali klaidinti dėl 2025 m. paramos tinkamumo.
 - `data/housing-state-support-income-screen-2025.json`, `research/housing-income-model-2025-11.md` ir atitinkami CSV išlieka **MODELLED / DIAGNOSTIC ONLY**, ne oficialaus vardiklio ar apskričių reitingo pagrindas.
 - **50 m² ne vienodas būstas** – 10 apskričių įperkamumo reitingas lieka užblokuotas, kol nėra vienodo 2025 m. butų tipo / ploto / statybos segmento ir pakankamo sandorių N.
