@@ -1,0 +1,55 @@
+{
+  "version": "2025-working-couples-sensitivity-v1",
+  "status": "C_MODELLED_SENSITIVITY_NOT_OFFICIAL_COUNT",
+  "target_definition": "Lietuvoje gyvenanti pora, kurioje abu partneriai maždaug 25–30 m. ir abu dirba",
+  "purpose": "Sukurti masto vardiklį pirmo šeimos būsto analizei; nenaudoti kaip oficialaus gavėjų aprėpties procento.",
+  "population_base": {
+    "estimate_persons_age_25_30_2025": 219454,
+    "derivation": "~178321 asmenų 25–29 m. + ~1/5 205664 asmenų 30–34 m. grupės kaip 30 m. aproksimacija",
+    "quality": "B/C approximate age-band reconstruction",
+    "note": "25–29 ir 30–34 grupių dydžiai naudojami tik masto modeliavimui; 30 m. dalis aproksimuota kaip 1/5 penkerių metų grupės."
+  },
+  "anchors": [
+    {
+      "fact": "2021 m. surašyme 41,3 % namų ūkių gyventojų buvo sutuoktiniai ir 5,2 % sugyventiniai.",
+      "role": "bendras šeiminės padėties orientyras, ne 25–30 m. tiesioginis rodiklis"
+    },
+    {
+      "fact": "1995 m. gimusiųjų kohortoje iki 25 m. buvo vedę 11,2 % vyrų ir ištekėjusios 26,2 % moterų; 1990 m. kohortoje iki 30 m. – 42,9 % vyrų ir 61,5 % moterų.",
+      "role": "25–30 m. partnerystės intervalo orientyras; santuoka neapima sugyventinių"
+    },
+    {
+      "fact": "2022 m. 30,3 % Lietuvos 25–29 m. jaunuolių gyveno su tėvais.",
+      "role": "nepriklausomo gyvenimo kontekstas; negalima tapatinti su gyvenimu poroje"
+    },
+    {
+      "fact": "2024 m. Eurostat LFS grafikas rodo, kad 25–30 m. amžiuje didžioji dauguma jau yra užimtume; pagal grafiko struktūrą abiejų partnerių darbo tikimybei taikomas 65–75 % poros scenarijus.",
+      "role": "darbo scenarijaus jautrumo intervalas, ne tiesioginis porų matavimas"
+    }
+  ],
+  "assumptions": {
+    "share_of_25_30_persons_living_as_couple_low": 0.35,
+    "share_of_25_30_persons_living_as_couple_central": 0.4,
+    "share_of_25_30_persons_living_as_couple_high": 0.45,
+    "share_of_couples_both_working_low": 0.65,
+    "share_of_couples_both_working_central": 0.7,
+    "share_of_couples_both_working_high": 0.75
+  },
+  "results": {
+    "couples_25_30_low": 38404,
+    "couples_25_30_central": 43891,
+    "couples_25_30_high": 49377,
+    "both_working_couples_low": 24963,
+    "both_working_couples_central": 30724,
+    "both_working_couples_high": 37033,
+    "recommended_public_rounding": "apie 25–37 tūkst.; centrinis scenarijus ~31 tūkst."
+  },
+  "support_scale_comparison": {
+    "young_family_first_home_recipients_2025": 515,
+    "equivalent_share_of_modelled_working_couples_low_pct": 1.39,
+    "equivalent_share_of_modelled_working_couples_central_pct": 1.68,
+    "equivalent_share_of_modelled_working_couples_high_pct": 2.06,
+    "warning": "Tai NĖRA paramos aprėpties procentas. 515 gavėjų teisinė grupė yra iki 36 m. jaunos šeimos ir gali apimti vieną vaiką auginantį tėvą / motiną; vardiklis modeliuoja siauresnę 25–30 m. porą, kur abu dirba."
+  },
+  "publication_rule": "Jei rodoma viešai, būtina rašyti 'modeliuotas intervalas', rodyti intervalą, ne vieną taškinį skaičių, ir 515 santykį vadinti tik masto palyginimu."
+}
