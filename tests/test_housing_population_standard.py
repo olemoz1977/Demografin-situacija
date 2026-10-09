@@ -156,6 +156,22 @@ class HousingPopulationStandardTest(unittest.TestCase):
                 prices[city] * 50 * 0.15, row["deposit_50m2_15percent_eur_MODEL"], delta=0.01
             )
 
+    def test_ldp_2024_household_county_income_is_not_young_family_2025_income(self):
+        data = json.loads(
+            (ROOT / "data/ldp-household-disposable-income-county-2024.json").read_text(encoding="utf-8")
+        )
+        self.assertEqual("2024", data["period"])
+        self.assertEqual("EUR_PER_HOUSEHOLD_PER_MONTH", data["unit"])
+        self.assertEqual(10, len(data["rows"]))
+        self.assertTrue(data["not_first_home_income_proxy"])
+        self.assertTrue(data["cannot_replace_2025_income"])
+        self.assertEqual(0, data["actual_2025_rows_in_source"])
+        amounts = {r["county"]: r["monthly_disposable_cash_income_eur_per_household"] for r in data["rows"]}
+        self.assertEqual(2115, amounts["Vilniaus apskritis"])
+        self.assertEqual(1242, amounts["Tauragės apskritis"])
+        self.assertEqual(1241, amounts["Telšių apskritis"])
+        self.assertEqual(10, len(set(amounts)))
+
     def test_households_are_explicitly_not_owned_homes(self):
         self.assertIn("Ką reiškia „namų ūkis“?", self.housing)
         self.assertIn("Namų ūkis ≠ nuosavas būstas.", self.housing)
