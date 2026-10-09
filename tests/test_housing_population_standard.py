@@ -216,6 +216,28 @@ class HousingPopulationStandardTest(unittest.TestCase):
         self.assertIn("construction_period_groups", first["next_price_basket_required"])
         self.assertIn("transactions_N", first["next_price_basket_required"]["metrics"])
 
+    def test_two_room_partial_finish_market_range_keeps_uncertainty(self):
+        original = json.loads((ROOT / "data/housing-oberhaus-2025-two-room-new-partial-city-ranges.json").read_text(encoding="utf-8"))
+        derived = json.loads((ROOT / "data/housing-first-home-quality-segment-sensitivity-2025.json").read_text(encoding="utf-8"))
+        self.assertEqual(12, len(original["rows"]))
+        self.assertEqual(6, len({r["city"] for r in original["rows"]}))
+        self.assertEqual({"2025-01", "2025-12"}, {r["month"] for r in original["rows"]})
+        self.assertEqual({2}, {r["rooms"] for r in original["rows"]})
+        self.assertEqual({"dalinė apdaila"}, {r["finish"] for r in original["rows"]})
+        self.assertTrue(original["no_finish_cost_included"])
+        self.assertTrue(original["do_not_relabel_as_10_counties"])
+        self.assertTrue(derived["do_not_rank_cities"])
+        self.assertEqual(3, len(derived["rows"]))
+        prices = {r["city"]: r for r in original["rows"] if r["month"] == "2025-12"}
+        for row in derived["rows"]:
+            p = prices[row["city"]]
+            self.assertEqual("BLOCKED", row["rankability"])
+            self.assertFalse(row["first_home_cost_complete"])
+            self.assertAlmostEqual(row["model_annual_savings_eur"] / p["price_max_eur_m2"],
+                row["m2_price_equivalent_lower_at_high_price"], delta=0.01)
+            self.assertAlmostEqual(row["model_annual_savings_eur"] / p["price_min_eur_m2"],
+                row["m2_price_equivalent_upper_at_low_price"], delta=0.01)
+
     def test_households_are_explicitly_not_owned_homes(self):
         self.assertIn("Ką reiškia „namų ūkis“?", self.housing)
         self.assertIn("Namų ūkis ≠ nuosavas būstas.", self.housing)
