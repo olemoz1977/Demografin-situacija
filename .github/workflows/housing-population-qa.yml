@@ -61,7 +61,7 @@ jobs:
                 await page.waitForSelector('#housingAffordability', {state:'visible',timeout:30000});
                 const result = await page.evaluate(() => {
                   const section = document.querySelector('#housingAffordability');
-                  const text = section.innerText;
+                  const text = section.textContent; // include closed <details> methodological notice
                   const canvas = section.querySelector('#housingSupportRecipientsChart');
                   return {
                     visible: !!section && getComputedStyle(section).display !== 'none',
