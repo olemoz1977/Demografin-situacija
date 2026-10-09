@@ -63,6 +63,14 @@
         <p class="source-line">Šaltinis: <a href="https://socmin.lrv.lt/public/canonical/1773646445/6523/2026%2003%2006_SADM_Veiklos%20ataskaita%202025-03-10.pdf" target="_blank" rel="noopener">SADM · 2025 metų veiklos ataskaita</a>. Sąvokų paaiškinimas: šioje temoje „jauna šeima“ – teisinė paramos gavėjų kategorija; namų ūkis – atskiras statistinis analizės vienetas.</p>
       </section>
 
+      <section class="housing-support-layer" aria-labelledby="housingCityContextTitle">
+        <div class="section-label">Jau turimi oficialūs rinkos faktai <span class="badge badge-official">VDA · 2024–2025</span></div>
+        <h3 id="housingCityContextTitle">Butų kainų orientyrai šešiuose miestuose</h3>
+        <p>Valstybės duomenų agentūra pateikia oficialias daugiabučių butų pardavimo vidutines kainas 2024 ir 2025 m. šešiose miestų savivaldybėse, o 2025 m. butų nuomos kainas – penkiose. <strong>Miestas nėra apskritis; tai nėra konkretaus 45–55 m² pirmojo būsto ar jaunų šeimų įperkamumo reitingas.</strong> Skirtingus nuomos ir pirkimo rodiklius pateikiame kaip atskirus rinkos faktus.</p>
+        <div id="housingCityBenchmarkTable"><p class="small">Rengiama 2024–2025 m. oficialių miestų duomenų lentelė.</p></div>
+        <p class="source-line">Šaltiniai: VDA <a href="https://osp-sdg.stat.gov.lt/arcgis/rest/services/EVP_DB_connection/evp56/FeatureServer/0" target="_blank" rel="noopener">S7R280 · daugiabučių butų pardavimas</a>; <a href="https://osp-sdg.stat.gov.lt/arcgis/rest/services/EVP_DB_connection/evp32/FeatureServer/0" target="_blank" rel="noopener">S7R281 · butų nuoma</a>. Rodikliai skelbiami be nuoseklaus 45–55 m² ir statybos laikotarpio krepšelio.</p>
+      </section>
+
       <details class="housing-details">
         <summary>Kas dar neatsakyta ir kodėl?</summary>
         <div class="housing-details-body">
@@ -116,6 +124,22 @@
     });
   }
 
+  function renderCityBenchmarks(data){
+    const target=document.getElementById('housingCityBenchmarkTable');
+    if(!target || !data?.sale?.places || !data?.rent?.places) return;
+    const rent=new Map(data.rent.places.map(v=>[v.municipality,v.annual_eur_m2]));
+    const money=v=>Number(v).toLocaleString('lt-LT',{maximumFractionDigits:0});
+    const rows=data.sale.places.map(city=>{
+      const annualRent=rent.get(city.municipality);
+      return `<tr><th scope="row">${city.name}</th><td>${money(city.eur_m2_2024)}</td><td>${money(city.eur_m2_2025)}</td><td>${annualRent===undefined?'–':money(annualRent)}</td></tr>`;
+    }).join('');
+    target.innerHTML=`<div class="housing-table-scroll"><table class="housing-table">
+      <thead><tr><th scope="col">Miestas</th><th scope="col">Butų pardavimas 2024, €/m²</th><th scope="col">Butų pardavimas 2025, €/m²</th><th scope="col">Butų nuoma 2025, €/m² per metus</th></tr></thead>
+      <tbody>${rows}</tbody>
+      </table></div>
+      <p class="chart-caption">Oficialūs vidutiniai VDA rodikliai, suapvalinti iki euro. Alytaus miesto nuomos reikšmė šiame penkių miestų šaltinyje neskelbiama (–). Tai ne 1 kambario nuoma ir ne atitinkamo būsto pirkimo bei nuomos krepšelis.</p>`;
+  }
+
   async function loadJson(url){
     const res=await fetch(url,{cache:'no-store'});
     if(!res.ok) throw new Error('HTTP '+res.status);
@@ -130,6 +154,13 @@
     } catch (error) {
       const layer=document.querySelector('#housingSupportTitle');
       if(layer) layer.insertAdjacentHTML('afterend','<p class="small">Paramos gavėjų grafiko duomenų įkelti nepavyko. Rodomos pirminio SADM šaltinio pagrindu patikrintos reikšmės.</p>');
+    }
+    try {
+      const benchmarks=await loadJson('data/housing-verified-city-benchmarks-2024-2025.json?v=20261009reuse');
+      renderCityBenchmarks(benchmarks);
+    } catch (error) {
+      const target=document.getElementById('housingCityBenchmarkTable');
+      if(target) target.textContent='Oficialios miestų kainų lentelės įkelti nepavyko. Šaltinių nuorodos pateiktos žemiau.';
     }
   }
 
