@@ -1,6 +1,6 @@
 # LDP / VDA – pirminio būsto šeimos pajamų ir išlaidų naujų šaltinių patikra
 
-**Patikra:** 2026-10-10. **Prioritetas:** pirminis jaunos šeimos m² kainos ekvivalentas per metus ir laikas pradiniam įnašui, ne pirmagimių statistika. **Statusas:** SOURCES_IDENTIFIED_ACCESS_BLOCKED. **Jokių išorinių prašymų, laiškų ar mokamų užsakymų nebuvo.**
+**Patikra:** 2026-10-10. **Prioritetas:** pirminis jaunos šeimos m² kainos ekvivalentas per metus ir laikas pradiniam įnašui, ne pirmagimių statistika. **Statusas:** COUNTY_2024_OFFICIAL_VERIFIED / YOUNG_FAMILY_2025_NOT_AVAILABLE. **Jokių išorinių prašymų, laiškų ar mokamų užsakymų nebuvo.**
 
 ## Atrasta nauja VDA prieigos kryptis
 
@@ -9,9 +9,9 @@ VDA nukreipia į naują **Lietuvos duomenų portalą (LDP)**: https://dataportal
 **1. Apskričių namų ūkių disponuojamųjų pajamų oficiali lentelė:**
 - https://dataportal.gov.lt/lt/datasets/sd003622
 - Dataset `S3R908_M3080109_lt`, VDA 188600177. Skelbia **mėnesinių piniginių disponuojamųjų pajamų sudėtį pagal apskritį, pajamų šaltinį ir laikotarpį**, `eur / vienam namų ūkiui` arba `eur / vienam namų ūkio nariui` ir `%` (tik **tiksliai atrinkus vienetus ir pajamų šaltinį**).
-- Portale matomi 2024 m. apskričių įrašų pavyzdžiai; **2025 m. eilutės kol kas nepatvirtintos**, šaltinis atnaujintas 2026-04-23.
+- **2024 m. faktiniai įrašai PATVIRTINTI API:** 624 eilučių, atrinktos 10 apskričių **„Piniginės disponuojamosios pajamos“** eilutės **„vienam namų ūkiui, EUR“** (mėnesiniai piniginių disponuojamųjų pajamų vidurkiai). 2025 m. duomenų **0 eilučių** šiame API duomenų rinkinyje patikros metu. Šaltinio metaduomenys atnaujinti 2026-04-23.
 - Šis šaltinis gali būti **tikro namų ūkio pajamų kontekstas**, tačiau **neturi tiesioginio „dviejų dirbančių sutuoktinių iki 30 m.“ pogrupio**. Bendro apskrities vidurkio **negalima** paversti visų jaunų šeimų pajamomis. Vienetas ir pajamų šaltinio suma turi būti griežtai validuoti.
-- Oficialus LDP API `https://api.dataportal.gov.lt/namespaces/188600177/tables/S3R908_M3080109_lt/query` (užklausa POST, skaitymo operacija). Schemos `/schema` GET patikra **200 / OK**. Duomenų užklausos `filter=laikotarpis=2024` ir `2025` – **HTTP 502**, negrąžinta eilučių; todėl **jokios 2024/25 apskričių pajamų reikšmės šio audito metu nepatvirtinome**. Negalima 502 laikyti įrodymu, kad nėra duomenų – tik neprieinama šios patikros metu.
+- Oficialus API `https://api.dataportal.gov.lt/namespaces/188600177/tables/S3R908_M3080109_lt/query` (POST tik skaitymui). Pirminis neteisingas `laikotarpis=2024` filtras davė HTTP 502, tačiau **pagal LDP dokumentaciją** pataisytas `laikotarpis._co=2024` grąžino **624 eilučių**; `laikotarpis._co=2025` grąžino **0 eilučių** (HTTP 200). Taigi šaltinis pasiekiamas, **2024 m. skaičiai jau ištraukti**, 2025 m. **šiame rinkinyje dar nerasti**. GET `/schema` – OK. Patvirtintos reikšmės atskirai įrašytos `data/ldp-household-disposable-income-county-2024.json`. Patikros CI: https://github.com/olemoz1977/Demografin-situacija/actions/runs/37996995548 .
 
 **2. Individualūs gyvenimo sąlygų tyrimo duomenys – teoriškai labai naudingi, bet prieiga nepatvirtinta:**
 - https://data.gov.lt/datasets/799/
@@ -26,6 +26,28 @@ VDA nukreipia į naują **Lietuvos duomenų portalą (LDP)**: https://dataportal
 - https://dataportal.gov.lt/lt/datasets/sd005413 – būsto kainų indeksai pagal būsto tipą ir teritorinį lygmenį. Naudingi kainų **kitimo** fonui, tačiau ne faktinė pirmojo 45–55 m² buto €/m² kaina.
 - Oficialus LDP API dokumentacijos pavyzdys yra viešas ir **nereikalauja API rakto**, tačiau šio tyrimo užklausos į faktines eilutes neužsikrovė.
 
+
+## Pirmą kartą iš LDP patvirtintas 2024 m. 10 apskričių oficialus faktas
+
+VDA `S3R908` / `S3R908_M3080109_lt`: **vidutinės mėnesinės piniginės disponuojamosios pajamos VIENAM privačiam namų ūkiui, 2024 m.**, ne vienam žmogui, ne jaunai šeimai, ne 2025 m. prognozė.
+
+| Apskritis | 2024 m. €/namų ūkiui per mėn. |
+|---|---:|
+| Vilniaus | 2 115 |
+| Klaipėdos | 1 823 |
+| Kauno | 1 660 |
+| Marijampolės | 1 420 |
+| Utenos | 1 345 |
+| Alytaus | 1 328 |
+| Panevėžio | 1 326 |
+| Šiaulių | 1 286 |
+| Tauragės | 1 242 |
+| Telšių | 1 241 |
+
+**Svarbu:** skaičiai priklauso nuo visų namų ūkių sudėties, amžiaus, užimtumo ir dydžio; **dviem dirbantiesiems priskirti jų negalima**. Nepasvertas šių apskričių vidurkis nebūtų Lietuvos pajamų vidurkis. Neatidarinėti „2025 jaunos šeimos“ pagal 2024 m. visų namų ūkių seriją.
+
+Atrankos sąlygos: laikotarpis `2024`; pajamų šaltinis **„Piniginės disponuojamosios pajamos“**; matavimo vienetas **„vienam namų ūkiui, EUR“**; 10 apskričių; rodiklių simbolis neskelbtas (`null`). Pirminis LDP duomenų rinkinys: https://dataportal.gov.lt/lt/datasets/sd003622 . Struktūrizuotas išsaugotas pjūvis: `data/ldp-household-disposable-income-county-2024.json`.
+
 ## Palyginimas su ankstesniais šaltiniais
 
 | Reikalinga pradinei analizei | Patvirtinta dabar | Trūkumas |
@@ -38,8 +60,8 @@ VDA nukreipia į naują **Lietuvos duomenų portalą (LDP)**: https://dataportal
 
 ### Sprendimas dėl eigos
 
-1. **Nepakartoti** to, ką jau žinome iš „Sodros“, VDA, „Aruodas“ ir RC; naujas atradimas yra LDP **tiesioginis faktinio namų ūkio pajamų ir nuomos duomenų maršrutas**, kuris būtų arčiau originalaus tyrimo vieneto.
-2. **Kol API grąžina 502 / 500 – skaitinių duomenų nefabrikuoti**; vieną kartą pakartotinai tikrinti paprastą užklausą, nes klaida gali būti laikina, bet nesukurti beverčio nuolat besisukančio crawlerio.
+1. **Turime pirmą tikrą VDA 2024 m. mėnesinių namų ūkio piniginių disponuojamųjų pajamų 10 apskričių pjūvį**. Jis matuoja **VISUS namų ūkius**, ne dviejų dirbančių iki 30 metų jaunas šeimas, todėl **NEKEIČIA** pastarųjų pajamų modelio ir nenaudojamas kaip 2025 m. pirmojo būsto įperkamumo skaitiklis. Tačiau išsaugomas oficialiam teritoriniam pajamų kontekstui ir LDP matavimo patikrai.
+2. LDP **agregatinė 2024 m. duomenų API veikia**, bet individualių `Asmens` / `NamuUkis` modelių prieiga vis dar grąžina HTTP 500. Nauji 2025 m. agregatai **nepridedami spėjimu**; kadangi šiame 2025 m. pjūvyje eilučių nėra, daugiau tuščių užklausų nekartoti. Jokio individualių įrašų eksporto.
 3. Jei prieigos nepavyks atkurti, pradinio rodiklio rezultatai lieka **aiškiai pažymėtais scenarijais** tik trim miestams, o 10 apskričių faktinio įperkamumo palyginimas **BLOCKED** dėl trūkstamų kainos ir nuomos įvesčių. Nepainioti miestų su apskritimis.
 
 **Techninė patikra:** https://github.com/olemoz1977/Demografin-situacija/actions/runs/37996496019 (schema 200, faktinių eilučių užklausos 502, individualios apklausos 500). Darbo kodas `scripts/probe_ldp_housing_sources.py`.
