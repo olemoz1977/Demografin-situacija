@@ -1,0 +1,100 @@
+{
+  "version": "2026-10-09-v1",
+  "status": "OFFICIAL_CITY_FACTS_WITH_EXPLICIT_DERIVED_COLUMNS",
+  "title_lt": "2024–2025 m. šešių miestų daugiabučių butų vidutinių pardavimo kainų kaita; 2025 m. nuomos kontekstas",
+  "geography": "city_municipality_NOT_COUNTY",
+  "population": "all apartments in official VDA sales/rent collection, NOT young family first purchases",
+  "sale_data_source": "VDA S7R280, housing type 1123",
+  "sale_original_repo_path": "research/raw/vda-sale-big-cities/vda-sale-big-cities-2024-2025-comparison.json",
+  "sale_source": "https://osp-sdg.stat.gov.lt/arcgis/rest/services/EVP_DB_connection/evp56/FeatureServer/0",
+  "rent_data_source": "VDA S7R281, average annual apartment rent",
+  "rent_original_repo_path": "research/raw/vda-rent-big-cities/vda-rent-big-cities-2025-qa.json",
+  "rent_source": "https://osp-sdg.stat.gov.lt/arcgis/rest/services/EVP_DB_connection/evp32/FeatureServer/0",
+  "observed_years": [
+    2024,
+    2025
+  ],
+  "calculations": {
+    "sale_change_pct": "round_to_one_decimal(((sale_2025_eur_m2 / sale_2024_eur_m2) - 1) * 100)",
+    "rent_month_equivalent_eur_m2": "round_to_one_decimal(rent_2025_eur_m2_year / 12)"
+  },
+  "guards": {
+    "reject_ten_county_ranking": true,
+    "reject_first_home_affordability_claim": true,
+    "not_identical_properties_year_to_year": true,
+    "no_apartment_size_or_build_period_controls": true,
+    "no_actual_young_family_income": true,
+    "do_not_multiply_hypothetical_50m2_home_as_official_transaction": true,
+    "rental_mean_does_not_measure_1room_or_identical_sale_basket": true,
+    "not_fertility_causation": true,
+    "Alytus_2025_rent_null": true
+  },
+  "rows": [
+    {
+      "city": "Alytus",
+      "city_municipality": "Alytaus m. sav.",
+      "sale_2024_eur_m2": 889.79,
+      "sale_2025_eur_m2": 1038.74,
+      "sale_2024_2025_change_pct": 16.7,
+      "sale_change_type": "DERIVED_YEARLY_CHANGE_OF_OFFICIAL_CITY_MEANS",
+      "rent_2025_eur_m2_year": null,
+      "rent_2025_eur_m2_month_equivalent": null,
+      "rent_monthly_equivalent_type": "NOT_AVAILABLE"
+    },
+    {
+      "city": "Kaunas",
+      "city_municipality": "Kauno m. sav.",
+      "sale_2024_eur_m2": 1771.62,
+      "sale_2025_eur_m2": 1987.66,
+      "sale_2024_2025_change_pct": 12.2,
+      "sale_change_type": "DERIVED_YEARLY_CHANGE_OF_OFFICIAL_CITY_MEANS",
+      "rent_2025_eur_m2_year": 124.35,
+      "rent_2025_eur_m2_month_equivalent": 10.4,
+      "rent_monthly_equivalent_type": "CALCULATED_ANNUAL_AVERAGE_DIVIDED_BY_12"
+    },
+    {
+      "city": "Klaipėda",
+      "city_municipality": "Klaipėdos m. sav.",
+      "sale_2024_eur_m2": 1559.14,
+      "sale_2025_eur_m2": 1740.84,
+      "sale_2024_2025_change_pct": 11.7,
+      "sale_change_type": "DERIVED_YEARLY_CHANGE_OF_OFFICIAL_CITY_MEANS",
+      "rent_2025_eur_m2_year": 113.46,
+      "rent_2025_eur_m2_month_equivalent": 9.5,
+      "rent_monthly_equivalent_type": "CALCULATED_ANNUAL_AVERAGE_DIVIDED_BY_12"
+    },
+    {
+      "city": "Panevėžys",
+      "city_municipality": "Panevėžio m. sav.",
+      "sale_2024_eur_m2": 1030.03,
+      "sale_2025_eur_m2": 1170.36,
+      "sale_2024_2025_change_pct": 13.6,
+      "sale_change_type": "DERIVED_YEARLY_CHANGE_OF_OFFICIAL_CITY_MEANS",
+      "rent_2025_eur_m2_year": 91.4,
+      "rent_2025_eur_m2_month_equivalent": 7.6,
+      "rent_monthly_equivalent_type": "CALCULATED_ANNUAL_AVERAGE_DIVIDED_BY_12"
+    },
+    {
+      "city": "Šiauliai",
+      "city_municipality": "Šiaulių m. sav.",
+      "sale_2024_eur_m2": 1098.12,
+      "sale_2025_eur_m2": 1262.33,
+      "sale_2024_2025_change_pct": 15,
+      "sale_change_type": "DERIVED_YEARLY_CHANGE_OF_OFFICIAL_CITY_MEANS",
+      "rent_2025_eur_m2_year": 95.15,
+      "rent_2025_eur_m2_month_equivalent": 7.9,
+      "rent_monthly_equivalent_type": "CALCULATED_ANNUAL_AVERAGE_DIVIDED_BY_12"
+    },
+    {
+      "city": "Vilnius",
+      "city_municipality": "Vilniaus m. sav.",
+      "sale_2024_eur_m2": 2639.03,
+      "sale_2025_eur_m2": 2846.01,
+      "sale_2024_2025_change_pct": 7.8,
+      "sale_change_type": "DERIVED_YEARLY_CHANGE_OF_OFFICIAL_CITY_MEANS",
+      "rent_2025_eur_m2_year": 155.09,
+      "rent_2025_eur_m2_month_equivalent": 12.9,
+      "rent_monthly_equivalent_type": "CALCULATED_ANNUAL_AVERAGE_DIVIDED_BY_12"
+    }
+  ]
+}
