@@ -1,0 +1,141 @@
+{
+  "version": "2026-10-10 diagnostic-v1",
+  "publication_status": "RESEARCH_ONLY_DO_NOT_USE_FOR_COUNTY_RANKING",
+  "research_question": "Kiek buto m2 pirkimo kainos ekvivalento šeima gali sutaupyti per metus nuomodamasi 1 kambario butą ir dirbant abiem šeimos nariams?",
+  "population": "MODEL: du dirbantys sutuoktiniai / registruoti partneriai abu iki 30 m. Ne visos jaunos šeimos.",
+  "geography": "three city municipalities, NOT 10 counties",
+  "sources": {
+    "income": "Sodra 2025-11 full-month national 25-30 net income 1535 EUR per person, reused as 12 monthly hypothesis",
+    "sale": "VDA 2025 S7R280 all apartment sale city means €/m2",
+    "rent": "Aruodas reconstructed 2025 12-month 1room asking rent offer averages",
+    "other_expenses": "Unobserved MODEL assumption"
+  },
+  "assumptions": {
+    "both_workers": 2,
+    "each_net_eur_month": 1535,
+    "months": 12,
+    "nonrent_expenses_eur_month": [
+      1300,
+      1700,
+      2100
+    ],
+    "already_saved": 0,
+    "price_reference_area_m2": 50,
+    "assumed_downpayment_fraction": 0.15,
+    "fees_not_included": true
+  },
+  "formulas": {
+    "savings_year_eur": "12 * max(0, 2 * net income - 1room asking rent - nonrent expenses)",
+    "m2_equivalent": "savings_year_eur / VDA city apartment sale mean EUR per m2",
+    "years_to_deposit": "(50 m2 * VDA price per m2 * 15%) / annual saving, null when no saving"
+  },
+  "guards": {
+    "do_not_call_first_home_ownership": true,
+    "do_not_call_official_young_family_mean": true,
+    "do_not_call_10_county_ranking": true,
+    "do_not_call_actual_annual_earnings": true,
+    "do_not_call_observed_savings": true,
+    "do_not_call_matched_property": true
+  },
+  "rows": [
+    {
+      "city": "Vilnius",
+      "monthly_other_expenses_eur_ASSUMED": 1300,
+      "monthly_two_net_eur_MODEL": 3070,
+      "monthly_asking_rent_eur_MODEL": 468.75,
+      "city_apartment_sale_average_2025_eur_m2": 2846.01,
+      "annual_saving_eur_MODEL": 15615,
+      "m2_price_equivalent_year_MODEL": 5.49,
+      "deposit_50m2_15percent_eur_MODEL": 21345.08,
+      "years_to_deposit_MODEL": 1.37
+    },
+    {
+      "city": "Vilnius",
+      "monthly_other_expenses_eur_ASSUMED": 1700,
+      "monthly_two_net_eur_MODEL": 3070,
+      "monthly_asking_rent_eur_MODEL": 468.75,
+      "city_apartment_sale_average_2025_eur_m2": 2846.01,
+      "annual_saving_eur_MODEL": 10815,
+      "m2_price_equivalent_year_MODEL": 3.8,
+      "deposit_50m2_15percent_eur_MODEL": 21345.08,
+      "years_to_deposit_MODEL": 1.97
+    },
+    {
+      "city": "Vilnius",
+      "monthly_other_expenses_eur_ASSUMED": 2100,
+      "monthly_two_net_eur_MODEL": 3070,
+      "monthly_asking_rent_eur_MODEL": 468.75,
+      "city_apartment_sale_average_2025_eur_m2": 2846.01,
+      "annual_saving_eur_MODEL": 6015,
+      "m2_price_equivalent_year_MODEL": 2.11,
+      "deposit_50m2_15percent_eur_MODEL": 21345.08,
+      "years_to_deposit_MODEL": 3.55
+    },
+    {
+      "city": "Kaunas",
+      "monthly_other_expenses_eur_ASSUMED": 1300,
+      "monthly_two_net_eur_MODEL": 3070,
+      "monthly_asking_rent_eur_MODEL": 383.75,
+      "city_apartment_sale_average_2025_eur_m2": 1987.66,
+      "annual_saving_eur_MODEL": 16635,
+      "m2_price_equivalent_year_MODEL": 8.37,
+      "deposit_50m2_15percent_eur_MODEL": 14907.45,
+      "years_to_deposit_MODEL": 0.9
+    },
+    {
+      "city": "Kaunas",
+      "monthly_other_expenses_eur_ASSUMED": 1700,
+      "monthly_two_net_eur_MODEL": 3070,
+      "monthly_asking_rent_eur_MODEL": 383.75,
+      "city_apartment_sale_average_2025_eur_m2": 1987.66,
+      "annual_saving_eur_MODEL": 11835,
+      "m2_price_equivalent_year_MODEL": 5.95,
+      "deposit_50m2_15percent_eur_MODEL": 14907.45,
+      "years_to_deposit_MODEL": 1.26
+    },
+    {
+      "city": "Kaunas",
+      "monthly_other_expenses_eur_ASSUMED": 2100,
+      "monthly_two_net_eur_MODEL": 3070,
+      "monthly_asking_rent_eur_MODEL": 383.75,
+      "city_apartment_sale_average_2025_eur_m2": 1987.66,
+      "annual_saving_eur_MODEL": 7035,
+      "m2_price_equivalent_year_MODEL": 3.54,
+      "deposit_50m2_15percent_eur_MODEL": 14907.45,
+      "years_to_deposit_MODEL": 2.12
+    },
+    {
+      "city": "Klaipėda",
+      "monthly_other_expenses_eur_ASSUMED": 1300,
+      "monthly_two_net_eur_MODEL": 3070,
+      "monthly_asking_rent_eur_MODEL": 371.67,
+      "city_apartment_sale_average_2025_eur_m2": 1740.84,
+      "annual_saving_eur_MODEL": 16779.96,
+      "m2_price_equivalent_year_MODEL": 9.64,
+      "deposit_50m2_15percent_eur_MODEL": 13056.3,
+      "years_to_deposit_MODEL": 0.78
+    },
+    {
+      "city": "Klaipėda",
+      "monthly_other_expenses_eur_ASSUMED": 1700,
+      "monthly_two_net_eur_MODEL": 3070,
+      "monthly_asking_rent_eur_MODEL": 371.67,
+      "city_apartment_sale_average_2025_eur_m2": 1740.84,
+      "annual_saving_eur_MODEL": 11979.96,
+      "m2_price_equivalent_year_MODEL": 6.88,
+      "deposit_50m2_15percent_eur_MODEL": 13056.3,
+      "years_to_deposit_MODEL": 1.09
+    },
+    {
+      "city": "Klaipėda",
+      "monthly_other_expenses_eur_ASSUMED": 2100,
+      "monthly_two_net_eur_MODEL": 3070,
+      "monthly_asking_rent_eur_MODEL": 371.67,
+      "city_apartment_sale_average_2025_eur_m2": 1740.84,
+      "annual_saving_eur_MODEL": 7179.96,
+      "m2_price_equivalent_year_MODEL": 4.12,
+      "deposit_50m2_15percent_eur_MODEL": 13056.3,
+      "years_to_deposit_MODEL": 1.82
+    }
+  ]
+}
