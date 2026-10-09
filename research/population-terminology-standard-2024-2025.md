@@ -8,6 +8,14 @@
 
 Atskiras tyrimo klausimų, matų, hipotezių, duomenų spragų ir publikavimo ribų dokumentas: [`research/housing-first-home-fertility-question-2024-2025.md`](housing-first-home-fertility-question-2024-2025.md).
 
+## Būsto klausimo galutinė sąvoka: „jauna šeima“
+
+**Visose naujose pagrindinio tyrimo antraštėse ir išvadose vietoje „jauna pora“ vartoti „jauna šeima“.** Tai nepakeičia metodikos savaime: kiekvieno rodiklio vardiklis turi tiksliai atitikti žmones, kuriuos jis skaičiuoja.
+
+**Pirminis m² per metus scenarijus:** jauna šeima, kurioje **du dirbantys sutuoktiniai ar registruoti partneriai, kiekvienas jaunesnis nei 30 m.**, nuomojasi vieno kambario butą. Tai tik **vienas** teisinių jaunų šeimų pogrupis. SADM teisinė apibrėžtis apima iki 36 m. sutuoktinius / registruotus partnerius ir vienus vaikus auginančius tėvus ar globėjus pagal įstatymo kriterijus. Todėl **negalima šio scenarijaus duomenų ar rezultatų apibendrinti visoms jaunoms šeimoms**. Esant duomenims atskirti kitus modelius (vienas dirbantis, vienas vaiką auginantis asmuo, turintys vaikų), o nesant – aiškiai pažymėti, kad ši analizė jų dar neįvertina.
+
+**Principas:** vienas oficialus skyriaus terminas, tačiau kelios aiškiai apibrėžtos šeimos situacijos. Vengtinas mechaninis senųjų dokumentų „jauna pora“ pakeitimas, jeigu taip būtų pakeista duomenų kilmės ar modelio reikšmė.
+
 ## Sprendimas B
 
 1. Bendrasis **statistinis analizės vienetas – namų ūkis** (VDA / Eurostat), bet **tik su konkretaus duomenų rinkinio definicijos ID**: surašymo `household-dwelling` ir EU-SILC pajamų / vartojimo namų ūkio apibrėžimai nekeičiami vienas kitu.
