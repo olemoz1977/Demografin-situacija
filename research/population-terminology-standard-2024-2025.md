@@ -16,6 +16,14 @@ Atskiras tyrimo klausimų, matų, hipotezių, duomenų spragų ir publikavimo ri
 4. **„Jauna pora“ – nebe projekto populiacijos sąvoka.** Nebepublikuoti jos kaip oficialaus demografinio rodiklio. „25–30 m. dviejų dirbančių asmenų namų ūkio scenarijus“ gali būti **diagnostinis modelis**, o ne oficiali teisinė ar statistinė populiacija.
 5. Projekto 2024–2025 faktai aiškinami pagal atitinkamų metų taisykles; 2026 m. pakeitimai – tik atskiras vėlesnių pokyčių kontekstas.
 
+## Pakartotinio atradimo prevencija: faktas ≠ naujas tyrimo rezultatas
+
+Prieš įtraukiant bet kurį skaičių į naują temą, **pirmiausia patikrinti, ar jis jau pateiktas projekto viešame puslapyje** (skyrius, grafikas, metai, šaltinis), ir anksčiau surinktus tyrimo dokumentus / JSON. Jei jau pateiktas, **nevadinti nauju atradimu**; kitame skyriuje naudoti trumpą kontekstą ir nuorodą į esamą analizę arba nurodyti naują pjūvį, kurio anksčiau nebuvo.
+
+**Patikrintas pavyzdys 2026-10-10:** 2024 m. pirmąjį vaiką gimdančių moterų vidutinis amžius **28,7 m.** ir **2021–2024** grafikas jau yra `?view=fertility#amzius`. „Būstas“ puslapyje **nedubliuoti** grafiko / KPI, rodyti **kryžminę nuorodą** ir tirti tik iki šiol neatsakytą 2025 m. reikšmę bei tikrą būsto prieinamumo / gimstamumo ryšį.
+
+**Etiketės:** `EXISTING_PUBLIC_FACT`, `REUSED_CONTEXT`, `NEW_VERIFIED_OBSERVATION`, `DERIVED_FROM_EXISTING`, `RESEARCH_GAP`. Pakartotinis perskaičiavimas ar perkėlimas iš vieno skyriaus į kitą savaime nėra `NEW_VERIFIED_OBSERVATION`.
+
 ## Duomenų kilmės ir galutinumo taisyklė
 
 **Oficialu** nusako pirminę statistikos rengėją ir paskelbimo būdą; **faktinio tyrimo rezultatas** nusako, kad jis įvertintas iš realių stebėjimų / apklausos, o **galutinumas** nusako, ar reikšmė gali būti patikslinta. Šie trys požymiai nėra vienas laukas.
