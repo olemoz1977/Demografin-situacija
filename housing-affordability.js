@@ -6,9 +6,10 @@
     const section=document.createElement('section');
     section.id=SECTION_ID;
     section.innerHTML=`<div class="container">
-      <div class="section-label">Pirmas būstas ir valstybės parama <span class="badge badge-official">2024–2025 · SADM FAKTAI</span></div>
-      <h2>Ką žinome apie valstybės paramą pirmajam būstui?</h2>
-      <p class="lead">Analizuojame <strong>2024–2025 m. faktinius paramos gavėjus</strong>, atskirdami teisinę „jauną šeimą“ nuo platesnės asmenų ir šeimų grupės. <strong>Visų Lietuvoje gyvenančių teisiškai apibrėžtų jaunų šeimų patikimo skaičiaus neturime</strong>, todėl paramos aprėpties procento neskaičiuojame. Tai nėra būsto įperkamumo reitingas ar įrodymas apie poveikį gimstamumui.</p>
+      <div class="section-label">Pirmojo būsto prieinamumas ir šeimos kūrimas <span class="badge badge-official">2024–2025 · PATVIRTINTI PARAMOS FAKTAI</span></div>
+      <h2>Ar pirmasis būstas prieinamas jaunoms šeimoms?</h2>
+      <p class="lead"><strong>Tyrimo klausimas:</strong> ar jaunoms šeimoms realiai prieinamas pirmasis nuosavas būstas ir ar būsto įsigijimo kliūtys gali būti susijusios su vaikų susilaukimo atidėjimu bei gimstamumu? Šiandien turime <strong>2024–2025 m. oficialius valstybės paramos faktus</strong>, tačiau jie savaime neatsako nei į viso būsto prieinamumo, nei į jo poveikio gimstamumui klausimą. Palyginamų būsto kainų, šeimų pajamų ir gimstamumo ryšio analizė dar tikrinama.</p>
+      <p class="small"><strong>Analizės ribos:</strong> paramos dalyje „jauna šeima“ yra teisinė kategorija; kituose pjūviuose taikome tiksliai apibrėžtus statistinius vienetus. Visų teisiškai apibrėžtų jaunų šeimų patikimo skaičiaus neturime, todėl paramos aprėpties procento neskaičiuojame. Galimas ryšys su gimstamumu – tyrimo hipotezė, o ne įrodytas priežastinis poveikis.</p>
       <p class="small"><strong>Ką reiškia „namų ūkis“?</strong> Tai žmonės, o ne nekilnojamasis turtas: vienas žmogus arba kartu gyvenantys ir bendras pajamas ar išlaidas turintys asmenys. Jie gali nuomotis būstą arba gyventi nuosavame. <strong>Namų ūkis ≠ nuosavas būstas.</strong> Viename būste gali būti keli atskiri namų ūkiai.</p>
 
       <div class="alert alert-blue">
