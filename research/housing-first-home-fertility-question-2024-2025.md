@@ -32,6 +32,36 @@ Konkurentiniai paaiškinimai: užimtumas, darbo pajamos, paskolų palūkanos ir 
 4. Gimstamumo indikatorių sieti pagal suderintą teritoriją ir laikotarpį; analizuoti pirmojo vaiko gimimus ir amžių. Gimimų skaičius savaime labai priklauso nuo moterų skaičiaus reprodukciniame amžiuje, todėl absoliučius gimimų skaičius aiškinti kartu su struktūra / amžiaus specifiniais rodikliais.
 5. Jei norime kalbėti apie **poveikį** (priežastingumą), reikia aiškaus tyrimo dizaino: individualių ilgalaikių duomenų, tinkamo natūralaus eksperimento ar pagrįsto priežastinio vertinimo, įskaitant kitus veiksnius. Kol to nėra – naudoti **„ryšys“, „hipotezė“, „galimas mechanizmas“**.
 
+## Jaunų žmonių savarankiškas gyvenimas prieš pirmąjį būstą
+
+### 2024–2025 m. pirmas patvirtintas rodiklis
+
+Eurostat EU-LFS `yth_demo_030`: **įvertintas amžius, kai 50 % žmonių nebegyvena su tėvais**, o ne vidutinis faktinis pirmojo nuosavo būsto pirkimo amžius.
+
+| Teritorija | 2024 | 2025 | Matavimo vienetas ir statusas |
+|---|---:|---:|---|
+| Lietuva | **22,4 m.** | **22,7 m.** | OFFICIAL; EU-LFS iš namų ūkio sudėties įvertintas slenkstinis amžius |
+| ES-27 | **26,2 m.** | **26,3 m.** | OFFICIAL; tas pats metodas |
+
+Eurostat **2026-09-15** pranešime Lietuva ir Estija (po 22,7 m.) įvardytos kaip vienos anksčiausiai iš tėvų namų išeinančių ES valstybių. `yth_demo_030` duomenų atnaujinimas **2026-04-16**; 2024 ir 2025 reikšmės pateikiamos be `p` (preliminary) žymos šiose duomenų naršyklės lentelės eilutėse. Vien tai neįrodo jauniems žmonėms prieinamo **nuosavo** būsto, kaip ir 2024→2025 +0,3 m. nereiškia patvirtinto struktūrinio įsigijimo atidėjimo.
+
+Šaltiniai:
+- https://ec.europa.eu/eurostat/databrowser/view/yth_demo_030/default/table
+- https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260915-1
+
+### Ką dar galime patikrinti 2024–2025 m.?
+
+| Duomenų šaltinis | Pasiekiama oficiali amžiaus grupė | Matuojama | Apribojimas |
+|---|---|---|---|
+| `ilc_lvps08` (EU-SILC) | 18–34, skaidoma pagal amžių; ypatingai **25–29** | Su tėvais gyvenančių ar jų namų ūkio pajamomis besinaudojančių jaunuolių dalis | 2025 LT grafike pažymėta **provisional**, tikslus Lietuvos grupių reikšmes dar išsitraukti iš lentelės; nepriimti iš grafiko atspėto skaičiaus |
+| `ilc_lvps05` (EU-SILC) | **25–34**, ne 25–35 | Jaunų žmonių gyvenamo būsto naudojimo / nuosavybės statusas | **Esminis skirtumas:** 25–34 m. žmogus, gyvenantis tėvų nuosavame būste, įeina į „gyvena nuosavame būste“ kategoriją, nors pats buto / namo **neturi**. Todėl **tai nėra pirmojo būsto savininkų skaičius**. |
+| `ilc_lvho05a` (EU-SILC) | 15–19, 20–24, 25–29 ir kitos | Žmonių dalis, gyvenanti perpildytuose būstuose | Asmenų, ne butų ir ne konkrečių jaunų šeimų matas |
+| `ilc_lvho07a` (EU-SILC) | 15–19, 20–24, 25–29 ir kitos | Žmonių dalis, gyvenanti namų ūkiuose, kurių būsto išlaidos viršija 40 % disponuojamų pajamų | Asmenų, ne namų ūkių procentas ir ne hipotetinis banko kreditingumas |
+
+**Ko vis dar neturime:** vienos suderintos 2024–2025 m. lentelės, kurioje vienu metu būtų **Lietuvos 25–34 m. asmenų poros / šeimos sudėtis + pirmojo būsto asmeninė nuosavybė + tikros namų ūkio pajamos + vaikų skaičius**. Iš Eurostat lentelių negalima sukurti tokios jungtinės statistikos sudedant atskirus procentus. Jeigu mikrolygmens jungtis neprieinama, gyventojų būsto būklės pjūvius rodome kaip **atskirus kontekstinius faktus**, o įperkamumo modelį tik su aiškiai nurodytomis prielaidomis.
+
+**Pagrindinė interpretacija:** Lietuvoje jauni žmonės santykinai anksti **pradeda gyventi ne su tėvais**; klausimas, ar jie **išsikelia į nuomą ar savą būstą**, kiek kainuoja savarankiškumas, ir ar tai turi poveikį porų kūrimo / vaikų susilaukimo laikui, lieka atviras.
+
 ## Konteksto rodiklis: 55,7 % vieno suaugusiojo namų ūkių
 
 Eurostat `ilc_lvph02`: Lietuva 2025 m. **55,7 %** (oficialus faktinių metų EU-SILC tyrimo įvertis su **p** žyma), ES 2025 m. – **35,7 %** privačių namų ūkių, kuriuos sudaro vienas suaugęs asmuo be išlaikomų vaikų. Rodyti kaip **bendrą demografinį ir gyvenimo sąlygų kontekstą** „Būstas“ ir šeimos formavimosi hipotezių temose, o ne pagrindinį pirmojo būsto prieinamumo rodiklį.
