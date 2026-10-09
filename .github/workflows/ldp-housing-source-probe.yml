@@ -1,0 +1,23 @@
+name: LDP Housing Source Probe
+on:
+  push:
+    branches: [audit/population-standard-2024-2025]
+    paths:
+      - "scripts/probe_ldp_housing_sources.py"
+      - ".github/workflows/ldp-housing-source-probe.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Probe VDA LDP aggregated dataset and anonymized survey availability
+        run: python scripts/probe_ldp_housing_sources.py
