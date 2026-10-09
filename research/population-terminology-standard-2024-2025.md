@@ -8,6 +8,10 @@
 
 Atskiras tyrimo klausimų, matų, hipotezių, duomenų spragų ir publikavimo ribų dokumentas: [`research/housing-first-home-fertility-question-2024-2025.md`](housing-first-home-fertility-question-2024-2025.md).
 
+## Projekto išteklių taisyklė – 0 EUR (2026-10-10)
+
+**Neatlygintinas visuomeninis tyrimas; piniginis biudžetas – 0 EUR.** Griežtai draudžiama užsakyti, pirkti ar siūlyti pirkti RC / kitų tiekėjų duomenis, prenumeratas, išrašus ar kitus mokamus išteklius. **Ankstesnis RC pasiūlymo juodraštis archyvuotas, siuntimo kelias uždarytas; nelaukti „Siųsk“.** Prioritetas tik nemokami, teisėtai prieinami VDA / LDP / kitų viešų šaltinių duomenys. Jie privalo praeiti tuos pačius laikotarpio, segmento, būsto kokybės, imties bei teritorijos palyginamumo vartus. Jei pilno 10 apskričių palyginimo nemokami duomenys neužtikrina, pateikti ribotą faktų aprėptį ir aiškiai pažymėti „duomenų nėra“ / „nepalyginama“, neimituoti rinkos reitingo.
+
 ## Būsto klausimo galutinė sąvoka: „jauna šeima“
 
 **Visose naujose pagrindinio tyrimo antraštėse ir išvadose vietoje „jauna pora“ vartoti „jauna šeima“.** Tai nepakeičia metodikos savaime: kiekvieno rodiklio vardiklis turi tiksliai atitikti žmones, kuriuos jis skaičiuoja.
