@@ -26,7 +26,17 @@
 | **Sodra 2025-11** | Apdraustųjų darbo pajamos; asmenų, ne šeimų matas | 2025-11 | Nenaudoti kaip abiejų vieno namų ūkio narių tiesioginės pajamų statistikos. |
 | **SPIS / SADM paramos gavėjai** | Teisiniai paramos gavėjai | 2024, 2025 | Nėra visų Lietuvos namų ūkių ar jaunų šeimų registro. |
 
-## B. Preliminarūs, bet oficialūs EU-SILC pjūvio faktai
+## B. Oficialūs faktinių EU-SILC apklausų rezultatai, bet Eurostat (p)
+
+**Pakartotinė patikra 2026-10-09:** Eurostat `ilc_lvph02` (Lietuva / `LT`, namų ūkio sudėtis `A1 = One adult`, metai 2024 ir 2025) duomenų rinkinyje, atnaujintame **2026-09-17**, rodo **2024 m. 50,5 (p)** ir **2025 m. 55,7 (p)** (% namų ūkių).
+
+**Svarbiausia statuso semantika:** `p` reiškia **provisional – dar ne galutinai patvirtinta / gali būti tikslinama**, tačiau **ne prognozė**, ne hipotetinis autoriaus modelis ir ne „trūksta faktinių metų duomenų“. Tai oficialiai publikuotas 2024 ir 2025 m. faktinių EU-SILC apklausų rezultatas. Eurostat atskirai naudoja `f` prognozei ir `e` apskaičiuotam įverčiui. Todėl projekto viešas užrašas turi būti **„Oficialus faktinio tyrimo rodiklis, preliminarus (Eurostat p)“**, o duomenų kontrakte atskiriami `source_type = OFFICIAL_EUROSTAT` ir `official_release_status = OFFICIAL_PROVISIONAL`.
+
+**VDA galutinis statusas:** per šią pakartotinę patikrą nerasta atskiro VDA viešo patvirtinimo, kad **būtent Eurostat `ilc_lvph02` 2024 ir 2025 LT reikšmių statusas** jau galutinis. Tai **nereiškia**, kad VDA nėra išleidusi kitų galutinių 2024–2025 m. namų ūkių rodiklių: kito apibrėžimo, vardiklio ar tyrimo „galutinis“ rodiklis savaime nepanaikina šios Eurostat eilutės `p` žymos.
+
+**Galimos viešos interpretacijos ribos:** 2024 → 2025 +5,2 proc. punkto yra oficialiai matomas to paties paskelbto rodiklio pokytis. Kol nėra patikrinto imties tikslumo, palyginamumo, korekcijų ir Lietuvos nacionalinės metodikos paaiškinimo, **negalima skelbti**, kad „per metus 5,2 procentinio punkto daugiau Lietuvos žmonių tapo vieniši“. Rodiklio vardiklis – **namų ūkiai, ne gyventojai**, o kategorija „vienas suaugęs“, ne santykių ar santuokinės padėties matas.
+
+**Eurostat pirminis šaltinis:** https://ec.europa.eu/eurostat/databrowser/view/ilc_lvph02/default/table (paskutinis duomenų rinkinio atnaujinimas 2026-09-17). Kokybės žymos: https://ec.europa.eu/eurostat/cache/metadata/en/ilc_sieusilc.htm
 
 Eurostat `ilc_lvph02` Lietuvai:
 
@@ -47,7 +57,7 @@ Eurostat `ilc_lvph02` Lietuvai:
 
 1. Duomenis saugoti atskirame `data/household-composition-eurostat-2024-2025.json` – ne būsto paramos parametruose.
 2. Prie viešo rodiklio pateikti **populiaciją + definicijos ID + teritoriją + metus + matą + būseną + šaltinį**.
-3. Eurostat `p` rodyti kaip „išankstinis / preliminarus“ net jeigu pirminis šaltinis oficialus.
+3. Eurostat `p` rodikliai yra **oficialūs paskelbti faktinių metų tyrimo rezultatai**; visuomet rodyti ir **„preliminarus (p)“**. `p` nėra prognozės `f` žyma, bet nepatvirtina galutinio statuso.
 4. **Nekurti 2024–2025 „namų ūkių skaičiaus“ iš procentų**, kol neturimas to paties tyrimo, teritorijos ir metų oficialus absoliutus namų ūkių vardiklis.
 5. Atskirti rezultatą **% namų ūkių** nuo **% gyventojų**, ypač naudojant būsto nuosavybės statistiką.
 6. Šį sluoksnį siūloma įterpti prie **„Gyventojų struktūra“ / „Šeimos aplinka“**, o **„Būstas“** gali rodyti nuorodą tik tada, kai sukuriamas turinio ryšys ir patikrinama metodika. Nesumaišyti su paramos aprėptimi.
