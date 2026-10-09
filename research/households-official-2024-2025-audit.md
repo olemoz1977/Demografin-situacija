@@ -2,6 +2,18 @@
 
 **Parengta:** 2026-10-09. **Statusas:** `RESEARCH_ONLY_NOT_PUBLIC`. **Paskirtis:** pereiti nuo nesuderinamos „jaunos poros“ kategorijos prie oficialių namų ūkio statistinių vienetų. Tai **nėra** jaunų šeimų paramos gavėjų aprėpties vardiklis.
 
+## Kaip šį terminą pristatome skaitytojui?
+
+**Viešas skyriaus pavadinimas:** „Kaip gyvena Lietuvos žmonės?“
+
+**Statistinio pjūvio pavadinimas:** „Namų ūkių sudėtis (ne būsto nuosavybė)“.
+
+**Pirmo paminėjimo paaiškinimas:** „Namų ūkis – vienas gyvenantis žmogus arba žmonės, kurie kartu gyvena ir dalijasi bendromis būtinomis gyvenimo išlaidomis. Namų ūkis gali gyventi nuomojamame arba nuosavame būste. Vienas būstas gali talpinti kelis atskirus namų ūkius.“
+
+**Nerekomenduojama:** naudoti „namų ūkis“ be paaiškinimo, pavadinti namų ūkius „namais“, aprašyti namų ūkių procentą kaip būstų arba gyventojų procentą. Viename būste gyvenančių asmenų skaičius savaime nenustato namų ūkių skaičiaus.
+
+**Apibrėžties šaltinis:** Eurostat EU-SILC https://ec.europa.eu/eurostat/web/income-and-living-conditions/methodology
+
 ## A. Kokie tikri oficialūs duomenys egzistuoja?
 
 | Šaltinis / rodiklio kodas | Populiacija ir matas | Galimi metai | Kas matuojama / apribojimas |
