@@ -10,6 +10,21 @@
 4. **„Jauna pora“ – nebe projekto populiacijos sąvoka.** Nebepublikuoti jos kaip oficialaus demografinio rodiklio. „25–30 m. dviejų dirbančių asmenų namų ūkio scenarijus“ gali būti **diagnostinis modelis**, o ne oficiali teisinė ar statistinė populiacija.
 5. Projekto 2024–2025 faktai aiškinami pagal atitinkamų metų taisykles; 2026 m. pakeitimai – tik atskiras vėlesnių pokyčių kontekstas.
 
+## Viešos kalbos standartas: žmonės ≠ būstas ≠ būsto nuosavybė
+
+**Aptikta skaitytojų painiava:** terminas „namų ūkis“ kartais suprantamas kaip nuosavas namas arba butas. Oficialios sąvokos nekeičiame, bet pirmą kartą ją vartojant viešoje temoje **privalomas paaiškinimas paprasta kalba**.
+
+- **Namų ūkis** – statistinis žmonių vienetas: vienas žmogus arba kartu gyvenantys ir pajamas ar būtinas išlaidas dalijantys asmenys. Nesvarbu, ar jie nuomojasi, ar gyvena savo būste.
+- **Būstas** – gyvenamoji vieta / būsto vienetas; žmonių skaičius ir būstų skaičius nėra tas pats.
+- **Būsto nuosavybė / naudojimo pagrindas** – ar gyvenamas būstas yra nuosavas, nuomojamas ar naudojamas kitu pagrindu; tai atskiras kintamasis.
+- **Vienas būstas nebūtinai = vienas namų ūkis**: kartu gyvenantys, bet nesidalijantys išlaidomis žmonės pagal EU-SILC gali sudaryti atskirus namų ūkius. Taip pat keli giminaičiai viename būste gali sudaryti vieną namų ūkį.
+
+**Rekomenduojama pirmoji vieša formuluotė:** „Namų ūkiai – vieni gyvenantys arba kartu bendrą ūkį tvarkantys žmonės, nepriklausomai nuo to, kam priklauso būstas.“
+
+**Rekomenduojami skyriaus pavadinimai:** „Kaip gyvena Lietuvos žmonės“ (skaitytojui), „Namų ūkių sudėtis“ (oficialus statistinis pavadinimas / grafiko paantraštė). Nerašyti „Namų savininkų skaičius“, kai rodiklis yra namų ūkių dalis. Pateikiant procentus nurodyti ar tai **% namų ūkių**, **% gyventojų**, ar **% būstų**. Tai trys atskiri vardikliai.
+
+**Oficiali definicija:** Eurostat EU-SILC „private household membership“: https://ec.europa.eu/eurostat/web/income-and-living-conditions/methodology
+
 ## Oficialių sąvokų auditas
 
 | Sąvoka | Oficiali reikšmė / apibrėžimas | Institucija / šaltinis | 2024 | 2025 | Tinkamumas |
