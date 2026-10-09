@@ -15,6 +15,10 @@
       <p class="small"><strong>Platesnis gyvenimo sąlygų kontekstas:</strong> 2025 m. Lietuvoje <strong>55,7 % privačių namų ūkių sudarė vienas suaugęs asmuo be išlaikomų vaikų</strong> (ES – 35,7 %). Tai <strong>namų ūkių, ne gyventojų ar būsto savininkų, procentas</strong>; į jį patenka įvairaus amžiaus žmonės, todėl jis <strong>neįrodo jaunų šeimų būsto neprieinamumo ar poveikio gimstamumui</strong>. Oficialus faktinės apklausos rodiklis, Eurostat žyma <strong>p – gali būti tikslinamas</strong>. <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_lvph02/default/table" target="_blank" rel="noopener">Šaltinis: Eurostat, ilc_lvph02</a>.</p>
 
       <div class="alert alert-blue">
+        <strong>Kada prasideda gyvenimas savarankiškai?</strong> Eurostat vertinimu, 2025 m. Lietuvoje amžius, kai pusė jaunų žmonių nebegyvena su tėvais, buvo <strong>22,7 metų</strong> (2024 m. – 22,4), o ES – <strong>26,3 metų</strong> (2024 m. – 26,2). <strong>Tai išsikėlimas iš tėvų namų, o ne pirmojo nuosavo būsto įsigijimas.</strong> Nežinome, kiek šių jaunų žmonių nuomojasi, kiek gyvena partnerio ar tėvų nuosavybėje ir kiek yra asmeniniai pirmojo būsto savininkai. <a href="https://ec.europa.eu/eurostat/databrowser/view/yth_demo_030/default/table" target="_blank" rel="noopener">Eurostat · yth_demo_030, EU-LFS</a>.
+      </div>
+
+      <div class="alert alert-blue">
         <strong>2025 m. faktas.</strong> Finansinę paskatą pirmajam būstui regionuose gavo <strong>515 jaunų šeimų</strong>. Kita – valstybės iš dalies kompensuojamo būsto kredito – subsidijų schema pasiekė <strong>556 asmenis arba šeimas</strong>, tačiau tai platesnė gavėjų grupė, todėl šių dviejų skaičių nesumuojame kaip jaunų šeimų.
       </div>
 
