@@ -45,7 +45,9 @@
 | Finansinė paskata pirmam būstui regionuose | Teisinės **jaunos šeimos**, kurios gavo paskatą | Finansavimo teritorijos | 342 | 515 | apie **8,24 mln. €** | OFFICIAL / SADM |
 | Subsidija valstybės iš dalies kompensuojamo kredito daliai | Platesnės kategorijos **asmenys / šeimos** | Lietuva | 688 | 556 | apie **10,32 mln. €** | OFFICIAL / SADM |
 
-556 apima **32 papildomos subsidijos** gavėjus (2024 m. – 48). Todėl 515 + 556 **nėra** jaunų šeimų skaičius, naujų paramos gavėjų skaičius ar savaime unikalaus asmenų / šeimų skaičiaus įvertis. SADM veiklos ataskaitos **1 039** 2025 m. bendrą rodiklį būtina aiškinti atskirai pagal jo metodiką, ne mechaniškai sudėti 515 + 556.
+556 apima **32 papildomos subsidijos** gavėjus (2024 m. – 48). Todėl 515 + 556 **nėra** jaunų šeimų skaičius, naujų paramos gavėjų skaičius ar savaime unikalaus asmenų / šeimų skaičiaus įvertis.
+
+**SADM suvestinės apskaitos patikra:** SADM įvardija **1 039** 2025 m. paramos / finansinės paskatos gavėjus ir **982** 2024 m. gavėjus. Šie dydžiai aritmetiškai sutampa su **515 + (556 − 32) = 1 039** ir **342 + (688 − 48) = 982**, jei antrosios schemos papildomos subsidijos gavėjai nelaikomi naujais. SADM taip pat atskirai skelbia **76 papildomos subsidijos** gavėjus 2025 m.: **44** regioninės paskatos ir **32** kompensuojamo kredito schemoje. Ši suvestinė **nėra** teisinės „jaunos šeimos“ nacionalinis vardiklis ar 2025 m. naujai susidariusių jaunų šeimų matas; apie unikalumą skirtingose schemose neteigiame daugiau nei teigia SADM.
 
 2025 m. sausio 1 d. keitėsi finansinės paskatos teikimo tvarka, teritorinės ir subsidijų taisyklės, buvo nagrinėjami ankstesnėje eilėje buvę pareiškėjai. Todėl 342 → 515 yra **gavėjų faktinis pokytis (+50,6 %)**, o ne įrodytas geresnis paramos prieinamumas ar didesnė tinkamos populiacijos dalis.
 
