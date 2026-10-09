@@ -27,6 +27,12 @@
 
 **Minimalus taisymas, tikrinant 2025 m. sandorių duomenis:** palyginti tik **tame pačiame statybos laikotarpio × ploto × buto tipo** segmente esančius butus, žinant sandorių N, medianą ir kiekvienos teritorijos aprėptį. Net ir tada statybos laikotarpis **nėra buto būklės garantija**: renovacija, įrengimas, mikrovieta ir energinis naudingumas gali skirtis, todėl išvadų ribos privalomos. Jeigu N per mažas arba segmento nėra, žymėti **„nepalyginama / nėra duomenų“**, nepakeisti apskrities miesto vidurkiu. Istorinis detalus auditas: `feature/housing-affordability:research/housing-comparable-sale-basket-audit-2026-10-05.md` (nemokamas VDA/RC gardelių kelias neleidžia patikimai prijungti statybos metų).
 
+## Papildoma 2025 m. segmentuota rinkos kainų kontrolė
+
+2026-10-10 patikrinta UAB „OBER-HAUS“ 2025 m. sausio ir gruodžio **2 kambarių naujos statybos dalinės apdailos butų gyvenamuosiuose rajonuose** rinkos €/m² **nuo–iki** lentelė 6 miestuose (įskaitant Druskininkus). Tai pirmasis šiame tyrime išsaugotas šaltinis, kuriame **atskiriama statybos / apdailos kategorija ir kambarių skaičius** – jis yra gerokai tikslesnis už VDA visų parduotų butų mišrų vidurkį kaip kokybės sudėties diagnostika. **Vis dėlto tai nėra faktinė 2025 m. apskričių sandorių mediana, nėra pilno įrengto būsto kaina, nėra N ir nesuteikia teisės sudaryti teritorijų reitingo.** Ribų aritmetikos testas tik 3 miestams `data/housing-first-home-quality-segment-sensitivity-2025.json`, su `rankability=BLOCKED`. Detalus auditas: `research/housing-oberhaus-quality-segment-crosscheck-2025.md`.
+
+Kad būtų įmanoma apskaičiuoti **10 apskričių** palyginamą įperkamumą, parengtas minimalus **NEIŠSIŲSTAS** RC 2025 m. butų 2 kamb. ploto / statybos laikotarpio × apskrities N ir €/m² medianų galimybių bei kainos pasiteiravimas: `research/rc-2025-comparable-two-room-quote-request-UNSENT.md`. Mokamas užsakymas ir pati užklausa – **tik gavus savininko „Siųsk“**.
+
 ## Esminis klausimas
 
 **Ar ir kiek pirmojo nuosavo būsto įsigijimas prieinamas jaunoms šeimoms Lietuvoje, kaip skiriasi prieinamumas pagal teritoriją ir šeimos situaciją, ir ar būsto kliūtys susijusios su pirmojo vaiko susilaukimu bei gimimų laiku?**
