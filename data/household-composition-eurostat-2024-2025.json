@@ -4,7 +4,7 @@
   "status": "RESEARCH_ONLY_NOT_PUBLIC",
   "source_update_date": "2026-09-17",
   "flag_legend": {
-    "p": "Eurostat provisional (p); do not present as final without revision check"
+    "p": "Oficialios Eurostat faktinio tyrimo reikšmės su preliminaraus statuso (p) žyma; ne prognozės, ne galutinai patvirtintos."
   },
   "classification_note": "EU-SILC 'dependent children' includes children aged under 18 plus economically inactive persons aged 18–24 living with at least one parent. This differs from LFS child under 18 classification.",
   "not_young_family_denominator": true,
@@ -23,7 +23,12 @@
       "unit": "percent_of_households",
       "status": "PRELIMINARY",
       "source_type": "OFFICIAL_EUROSTAT",
-      "dataset_code": "ilc_lvph02"
+      "dataset_code": "ilc_lvph02",
+      "data_nature": "OBSERVED_SURVEY_ESTIMATE",
+      "is_forecast": false,
+      "official_source_quality_flag": "p",
+      "official_release_status": "OFFICIAL_PROVISIONAL",
+      "flag_verified_in_primary_dataset": true
     },
     {
       "period": "2025",
@@ -38,7 +43,12 @@
       "unit": "percent_of_households",
       "status": "PRELIMINARY",
       "source_type": "OFFICIAL_EUROSTAT",
-      "dataset_code": "ilc_lvph02"
+      "dataset_code": "ilc_lvph02",
+      "data_nature": "OBSERVED_SURVEY_ESTIMATE",
+      "is_forecast": false,
+      "official_source_quality_flag": "p",
+      "official_release_status": "OFFICIAL_PROVISIONAL",
+      "flag_verified_in_primary_dataset": true
     },
     {
       "period": "2024",
@@ -53,7 +63,12 @@
       "unit": "percent_of_households",
       "status": "PRELIMINARY",
       "source_type": "OFFICIAL_EUROSTAT",
-      "dataset_code": "ilc_lvph02"
+      "dataset_code": "ilc_lvph02",
+      "data_nature": "OBSERVED_SURVEY_ESTIMATE",
+      "is_forecast": false,
+      "official_source_quality_flag": "p",
+      "official_release_status": "OFFICIAL_PROVISIONAL",
+      "flag_verified_in_primary_dataset": false
     },
     {
       "period": "2025",
@@ -68,7 +83,12 @@
       "unit": "percent_of_households",
       "status": "PRELIMINARY",
       "source_type": "OFFICIAL_EUROSTAT",
-      "dataset_code": "ilc_lvph02"
+      "dataset_code": "ilc_lvph02",
+      "data_nature": "OBSERVED_SURVEY_ESTIMATE",
+      "is_forecast": false,
+      "official_source_quality_flag": "p",
+      "official_release_status": "OFFICIAL_PROVISIONAL",
+      "flag_verified_in_primary_dataset": false
     },
     {
       "period": "2025",
@@ -83,7 +103,12 @@
       "unit": "percent_of_households",
       "status": "PRELIMINARY",
       "source_type": "OFFICIAL_EUROSTAT",
-      "dataset_code": "ilc_lvph02"
+      "dataset_code": "ilc_lvph02",
+      "data_nature": "OBSERVED_SURVEY_ESTIMATE",
+      "is_forecast": false,
+      "official_source_quality_flag": "p",
+      "official_release_status": "OFFICIAL_PROVISIONAL",
+      "flag_verified_in_primary_dataset": false
     },
     {
       "period": "2025",
@@ -98,7 +123,12 @@
       "unit": "percent_of_households",
       "status": "PRELIMINARY",
       "source_type": "OFFICIAL_EUROSTAT",
-      "dataset_code": "ilc_lvph02"
+      "dataset_code": "ilc_lvph02",
+      "data_nature": "OBSERVED_SURVEY_ESTIMATE",
+      "is_forecast": false,
+      "official_source_quality_flag": "p",
+      "official_release_status": "OFFICIAL_PROVISIONAL",
+      "flag_verified_in_primary_dataset": false
     }
   ],
   "independent_lfs_reference": {
@@ -114,5 +144,22 @@
     "source": "https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20260513-2",
     "dataset_code": "lfst_hhnhtych",
     "must_not_compare_directly_with_eu_silc_child_categories": true
-  }
+  },
+  "verification": {
+    "checked_on": "2026-10-09",
+    "dataset_last_updated": "2026-09-17",
+    "primary_dataset": "https://ec.europa.eu/eurostat/databrowser/view/ilc_lvph02/default/table",
+    "verified_series": {
+      "geo": "LT",
+      "freq": "A",
+      "unit": "PC",
+      "hhcomp": "A1"
+    },
+    "observation_2024": "50.5 (p)",
+    "observation_2025": "55.7 (p)",
+    "quality_flag_meaning": "p = provisional / dar ne galutinė reikšmė; gali būti tikslinama",
+    "measurement_stage": "OBSERVED_SURVEY_ESTIMATE_NOT_FORECAST",
+    "note": "Eurostat p flag remains on both LT one-adult household observations in Sep 17, 2026 dataset. Results already officially published: measured survey observations ≠ forecast; provisional ≠ fabricated/modelled."
+  },
+  "label_lt": "Oficialūs 2024–2025 m. faktinio EU-SILC tyrimo rodikliai, Eurostat žyma p (preliminaru)"
 }
