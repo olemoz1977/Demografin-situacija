@@ -53,6 +53,25 @@ Eurostat `ilc_lvph02` Lietuvai:
 
 **Svarbi riba:** teisinės „jaunos šeimos“ programa neskaičiuoja visų vieno suaugusio namų ūkių, o Eurostat namų ūkiai netikrina sutuoktinių / partnerystės teisinių dokumentų ar teisės į subsidiją.
 
+## Ką reiškia emigracija, kai skaičiuojame Lietuvos namų ūkius?
+
+Eurostat EU-SILC tiriamasis vienetas – **Lietuvoje įprastai gyvenantys privatūs namų ūkiai**, ne visi Lietuvos piliečiai pasaulyje. Pilietybė nėra lemiama. Pagal Eurostat 2024 m. tyrimo metodines rekomendacijas (39 p.):
+
+| Situacija | Ar įtraukiamas į Lietuvos namų ūkį? |
+|---|---|
+| Lietuvos pilietis, **persikėlęs nuolat gyventi į užsienį** ir ten sudaręs namų ūkį | **Paprastai ne**; nėra įprastinis Lietuvos namų ūkio narys |
+| Asmuo, **laikinai užsienyje dirbantis**, reikšmingai prisidedantis prie Lietuvos šeimos ūkio ir nebūnantis įprastiniu kito privataus ūkio nariu | **Gali būti** įskaitomas Lietuvoje; būtina tikrinti specifines ES-SPGS sąlygas |
+| Studentas svetur, išlaikomas Lietuvos namų ūkio ir neturintis įprastinės gyvenamosios vietos kitame privačiame namų ūkyje | **Gali būti** įskaitomas Lietuvoje |
+| Lietuvoje įprastai gyvenantis **imigrantas**, neturintis Lietuvos pilietybės | **Taip**, patenka į tikslinę privataus namų ūkio populiaciją, jei atitinka apklausos kriterijus |
+| Lietuvoje likęs asmuo, kurio šeimos narys išvyko nuolat gyventi svetur | Jis **gali** tapti vieno asmens namų ūkiu; **negalima** vien iš 55,7 % nustatyti emigracijos įtakos dydžio |
+
+**Interpretacijos esmė:** 2025 m. Eurostat **55,7 %** (p) sudaro **vieno suaugusiojo be išlaikomų vaikų namų ūkiai**, o ne 55,7 % Lietuvos gyventojų. Eurostat 2026 m. leidinyje ES vidurkis – **35,7 %**. Savo pobūdžiu tai visų amžiaus grupių sudėties faktinis tyrimo įvertis; jis **neparodo**, kokia dalis jaunų žmonių neturi partnerio, kiek jaunų šeimų nuomojasi, kam priklauso būstas ar kiek gimimų buvo atidėta.
+
+**Šaltiniai:**
+- Eurostat EU-SILC metodinės gairės (2024 m. operacija, **39 p.**): https://ec.europa.eu/eurostat/documents/203647/22127502/Methodological%2Bguidelines%2B2024%2Boperation_v7.pdf
+- VDA pajamų ir gyvenimo sąlygų tyrimo aprašymas (Lietuvoje atliekamas **imčių** metodu): https://vda.lrv.lt/lt/veiklos-sritys/duomenu-rinkimas/duomenu-rinkimas-is-gyventoju/aprasymai/
+- Eurostat 2026 m. leidinys (**34–35 p.**, ES 35,7 %, LT 55,7 %): https://ec.europa.eu/eurostat/documents/15216629/24279737/KS-01-26-036-EN-N.pdf
+
 ## C. Kaip integruosime į projektą
 
 1. Duomenis saugoti atskirame `data/household-composition-eurostat-2024-2025.json` – ne būsto paramos parametruose.
