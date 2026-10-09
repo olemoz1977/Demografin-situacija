@@ -30,7 +30,7 @@ VDA `S7R281`: oficialus **2025 m. vidutinės metinės** nuomos kainos rodiklis *
 
 **NE NAUJAS RODIKLIS:** 2021–2024 m. pirmojo vaiko gimdymo amžiaus grafikas, kartu su 2024 m. **28,7 m.** reikšme ir VDA / Eurostat šaltiniais, **jau pateiktas mūsų svetainės „Gimstamumas“ skyriuje** (`?view=fertility#amzius`; `app-base.js`, `#amzius`). Vartotojas tai patvirtino 2026-10-10 mobilios svetainės ekrano kopija. **Nebeskaičiuoti šio rodiklio kaip naujo tyrimo rezultato, nekurti dubliuojančio grafiko ar KPI „Būstas“ skyriuje**; ten palikti nuorodą į egzistuojančią analizę.
 
-Tolimesnė pridėtinė vertė: **2025 m. pirmojo vaiko gimdymo amžius**, pirmagimių gimimai pagal motinos amžių ir teritoriją, suderintas 2024–2025 m. būsto prieinamumo bei migracijos kontekstas. Nedubliuoti 2021–2024 jau paskelbtų reikšmių.
+Būsto tyrimo pridėtinė vertė: jaunų šeimų disponuojamųjų pajamų, palyginamų butų kainų, nuomos, pradinio įnašo ir paskolos įmokų duomenų susiejimas. Pirmųjų gimimų pagal amžių pjūviai nėra būsto įperkamumo apskaičiavimo sąlyga.
 
 Valstybės duomenų agentūra leidinyje **„Lietuva skaičiais 2025“** (faktiniai 2024 m. duomenys) nurodo:
 
@@ -52,10 +52,10 @@ Valstybės duomenų agentūra leidinyje **„Lietuva skaičiais 2025“** (fakti
 
 ## D. Kitas tiesioginės vertės darbas
 
-1. Atlikti **2025 m. VDA pirmojo vaiko gimimo amžiaus** ir pirmagimių gimimų pagal motinos amžių patikrą, pirmiausia nacionaliniu, paskui teritoriniu lygiu – be spėjimų.
-2. Jei VDA turi tikrą **jaunų namų ūkių pajamų** amžiaus × sudėties × teritorijos pjūvį, naudoti jį vietoje vieno žmogaus atlyginimo modeliavimo. Net jei nėra, turime sąžiningą rinkos kontekstą.
+1. Tikrinti realių 2024–2025 m. jaunų šeimų disponuojamųjų pajamų duomenų prieinamumą; nenaudoti vieno darbuotojo atlyginimo kaip šeimos faktinių pajamų.
+2. Vertinti nuomos ir pradinio įnašo naštą bei būsto paskolos mėnesio įmoką. Jei nėra faktinių šeimos išlaidų, rezultatus pateikti tik kaip aiškius scenarijus.
 3. Pirmojo būsto 45–55 m², statybos laikotarpio × apskrities × N duomenų reikia iš anksčiau parengto RC mokamo agregato pasiūlymo, **užklausų / užsakymų nesiųsti be patvirtinimo**.
-4. Šeimos kūrimo ryšį analizuoti atskirai nuo **priežastingumo**; reikalingi laikotarpiai, kohortos ir kontroliniai veiksniai.
+4. Gimstamumo hipotezę tirti atskirai, pirmenybę teikiant tiesioginiams būsto sunkumų ir šeimos planų atidėjimo tyrimams; pirmųjų gimimų pjūviai nėra šio būsto tyrimo blokatorius.
 
 **Rezultato etiketės:**
 - `OFFICIAL` – originali VDA publikuota €/m² ar gimdymo amžiaus reikšmė;
