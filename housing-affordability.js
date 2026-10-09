@@ -36,7 +36,7 @@
           <div class="card housing-support-card">
             <div class="eyebrow">1 · Finansinė paskata jaunoms šeimoms</div>
             <h4>Pirmas būstas finansuojamose teritorijose</h4>
-            <p><strong>2025 m. taisyklės:</strong> būsto vertė iki 120 000 €, subsidija 10–15 % pagal vaikų skaičių, subsidijos bazė – iki 87 000 € kredito.</p>
+            <p><strong>Naujų 2025 m. prašymų sąlygos:</strong> būsto vertė iki 120 000 €, subsidija 10–15 % pagal vaikų skaičių, subsidijos bazė – iki 87 000 € kredito.</p><p class="small"><strong>Pereinamoji išimtis:</strong> dalis 2025 m. suteiktos paskatos buvo susijusi su iki 2024-12-31 pateiktais prašymais, nagrinėtais pagal ankstesnes nuostatas. Todėl 515 gavėjų nebūtinai visiems taikytas tas pats subsidijos tarifas.</p>
             <p class="small">Įstatyme apibrėžta jauna šeima apima tinkamo amžiaus sutuoktinius, registruotus partnerius ir vieną vaiką auginantį asmenį; tai nėra visų kartu gyvenančių jaunų namų ūkių statistika.</p>
           </div>
 
