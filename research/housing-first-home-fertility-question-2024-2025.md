@@ -4,6 +4,21 @@
 
 **Tyrimo laikotarpis:** oficialūs 2024–2025 m. faktai; ankstesnės serijos, jei reikalingos laiko tendencijoms. **Būsena:** RESEARCH, ne priežastinio poveikio išvada. **Nauji 2026 m. skaičiai** tik kontekstui, ne pakaitalas 2025 m. faktams.
 
+## Pirminė autoriaus užduotis – išsaugoti kaip analizės atskaitos tašką
+
+**Originalus klausimas projekto „Būstas“ pradžioje:** kiek būsto **m² kainos ekvivalento per vienus metus** galėtų sukaupti **du dirbantys žmonės iki 30 m.**, kol jie **nuomojasi vieno kambario butą**, palyginus Lietuvos apskritis? Tai **konkretus, aiškiai apibrėžtas ekonominis scenarijus**, ne oficialus visų Lietuvos teisinių „jaunų šeimų“ statistinis rodiklis.
+
+**Pagrindinis analitinis rezultatas (jei duomenys pakankami):** `m² kainos ekvivalentas per metus = metinis galimas sutaupymas / palyginamo būsto pardavimo €/m²`.
+
+- **Metinis galimas sutaupymas** = dvi grynosios darbo pajamos per metus **−** vieno kambario nuomos metinės išlaidos **−** būtinos gyvenimo išlaidos ir kiti reikšmingi finansiniai įsipareigojimai. Jei naudojamos prielaidos – **MODELLED SCENARIO**, ne faktinis taupymo statistinis vidurkis.
+- **Būsto €/m²** – vienodos paskirties, panašaus ploto ir statybos laikotarpio butų palyginamų sandorių sluoksnis. Negalima miestų vidurkio pateikti kaip apskrities.
+- **Tai nėra „faktiškai nupirkti m²“** ir nėra automatiškai teisė į banko paskolą. Matome tik kiek bendros būsto kainos ekvivalento teoriškai atitiktų sutaupytos lėšos.
+- **Antrasis praktinis rodiklis** – **laikas pradiniam įnašui sukaupti** pagal aiškiai apibrėžtą kainą, įnašo procentą, jau turimas santaupas ir taupymo pajėgumą. Kredito įmoka, palūkanos ir pajamų pasikeitimas gimus vaikui – atskiri scenarijų patikrinimai.
+- **Ne kartoti naivios pirminės formulės** `[(2 × vidutinė asmens mėnesio neto alga × 12) − metinė nuoma] / €/m²` kaip realaus įperkamumo: ji ignoruoja visas pragyvenimo išlaidas, daro prielaidą, kad abu gauna statistinį vidurkį, ir neturi suderinto būsto krepšelio.
+- Jei trūksta patikimų pajamų, išlaidų arba 10 apskričių duomenų, pateikti **duomenų parengties lentelę** ir vieną ar kelis aiškiai pažymėtus scenarijus **tik validuotai geografijai**, o ne dirbtinai tikslų visos Lietuvos reitingą.
+
+**Prioritetų tvarka:** pirminis m²/metus klausimas → pradinio įnašo sukaupimas → paskolos aptarnavimo našta → valstybės paramos poveikis šiems scenarijams → ryšys su gimstamumo sprendimais, kai yra tam tinkamų tiesioginių įrodymų. Vienų metų pirmagimių skaičiaus pjūvis nėra šių skaičiavimų sąlyga.
+
 ## Esminis klausimas
 
 **Ar ir kiek pirmojo nuosavo būsto įsigijimas prieinamas jaunoms šeimoms Lietuvoje, kaip skiriasi prieinamumas pagal teritoriją ir šeimos situaciją, ir ar būsto kliūtys susijusios su pirmojo vaiko susilaukimu bei gimimų laiku?**
