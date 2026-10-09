@@ -33,6 +33,14 @@
 
 **NEKEIČIAMA FINANSAVIMO SĄLYGA (2026-10-10): biudžetas 0 EUR, tyrimas neatlygintinas, visuomeninis.** Registrų centro mokamas 2025 m. butų agregatas ir bet kokie kiti mokami duomenys **ATSISAKYTI / CLOSED**, nebelaukiame „Siųsk“ dėl jų, neinicijuojame kainos pasiūlymo, neformuojame užsakymo. Anksčiau parengtas `research/rc-2025-comparable-two-room-quote-request-UNSENT.md` paliekamas **tik istorijai, uždarytas, nesiųsti**. Toliau analizuojame tik **nemokamai viešai prieinamus** VDA/LDP ir kitų šaltinių duomenis, laikydamiesi kokybės vartų; jei patikimo 10 apskričių vienodo segmento sluoksnio nėra, jo reitingo nepublikuojame.
 
+## 2025-12 nemokamas šaltinis: tiksliau suderinta 1 kambario nuoma ir 2 kambarių pirkimas
+
+**Duomenų pažanga, ne pilnas įperkamumo rezultatas.** Viename nemokamame UAB „OBER-HAUS“ 2025 m. gruodžio PDF (1 ir 2 psl.) radome **to paties mėnesio** ir trijų miestų **tokios pat „Gyvenamųjų rajonų“ klasės** nuomos intervalus **1 kambario butui** bei kainų €/m² intervalus **2 kambarių butams**. Pirkimo dalyje atskirai užfiksuota **nauja statyba / dalinė apdaila** ir tiksliai pagal miestą įvardyti **senos statybos** butai; šių kategorijų kokybės nelyginti, įrengimo / remonto kainos nežinomos. Nuomos duomenys aprėpia dar Šiaulius ir Panevėžį, tačiau ten **nuomos „Kiti rajonai“ nesutampa su pardavimo „Gyvenamieji rajonai“** – nesujungti jų be papildomos validacijos.
+
+Pirminio `m²/metus` scenarijaus daliklis yra **atskiro aiškiai nurodyto 2 kambarių segmento €/m² kainų intervalas**, todėl **nereikia savavališko 50 m² ploto** metinės kainos ekvivalentui. Plotas būtinas tik **konkretaus būsto įnašo** modeliui, kuriame nepriimtina manyti, kad „2 kambariai = 50 m²“. Pirmojo įnašo rezultatai ankstesniame 50 m² eksperimente lieka tik vienam hipotetiniam butui, o ne standartinio pirmojo būsto dydžiui.
+
+**Dėl 0 EUR biudžeto ir kokybės:** darbas `research/housing-2025-12-zero-eur-matched-market-snapshot.md`; mašininiu būdu atkuriamos ribos `data/housing-first-home-2025-12-consistent-market-snapshot-scenarios.json`. Jose `do_not_publish=true` – kainos yra eksperto intervalo, ne faktinių sandorių medianos, o šeimos pajamos, gyvenimo išlaidos bei vienų metų kaupimas modeliuoti. **Neturime nei 10 apskričių duomenų, nei palyginamo faktinio visų šeimų įperkamumo.**
+
 ## Esminis klausimas
 
 **Ar ir kiek pirmojo nuosavo būsto įsigijimas prieinamas jaunoms šeimoms Lietuvoje, kaip skiriasi prieinamumas pagal teritoriją ir šeimos situaciją, ir ar būsto kliūtys susijusios su pirmojo vaiko susilaukimu bei gimimų laiku?**
