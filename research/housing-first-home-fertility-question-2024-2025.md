@@ -6,7 +6,9 @@
 
 ## Pirminė autoriaus užduotis – išsaugoti kaip analizės atskaitos tašką
 
-**Originalus klausimas projekto „Būstas“ pradžioje:** kiek būsto **m² kainos ekvivalento per vienus metus** galėtų sukaupti **du dirbantys žmonės iki 30 m.**, kol jie **nuomojasi vieno kambario butą**, palyginus Lietuvos apskritis? Tai **konkretus, aiškiai apibrėžtas ekonominis scenarijus**, ne oficialus visų Lietuvos teisinių „jaunų šeimų“ statistinis rodiklis.
+**Pirminis klausimas, su standartizuota sąvoka:** kiek būsto **m² kainos ekvivalento per vienus metus** galėtų sukaupti **jauna šeima**, kai **abu sutuoktiniai ar registruoti partneriai dirba ir yra jaunesni nei 30 metų**, o šeima **nuomojasi vieno kambario butą**, palyginus Lietuvos apskritis? Tai **konkretus dviejų dirbančių suaugusiųjų jaunos šeimos ekonominis scenarijus**, o ne oficialus **visų** teisinių jaunų šeimų pajamų ar įperkamumo rodiklis. **„Jauna pora“** lieka tik istorinio klausimo formuluotė, ne naujo tyrimo matavimo kategorija.
+
+**Teisinė ir analitinė riba:** pagal SADM / taikomus įstatymus „jauna šeima“ yra iki 36 m. sutuoktiniai ar registruoti partneriai, taip pat vienas vaiką (-us) auginantis iki 36 m. tėvas, motina ar pagal įstatymą globėjas (rūpintojas). **Siauresnis dviejų dirbančių suaugusiųjų iki 30 m. scenarijus neapima visų jaunų šeimų**, ypač vienišų tėvų ar šeimų, kuriose dirba vienas suaugęs. Jiems, jei duomenys leidžia, skaičiuoti **atskirus scenarijus**; niekada nepateikti dviejų dirbančių modelio kaip visų jaunų šeimų vidurkio. Oficialūs 2024 ir 2025 m. teisiniai paramos kriterijai tikrinami atskirai; vien buvimas jauna šeima nereiškia subsidijos tinkamumo. Šaltinis: https://socmin.lrv.lt/lt/veiklos-sritys/seima-ir-vaikai/finansine-paskata-pirmaji-busta-isigyjancioms-jaunoms-seimoms/ .
 
 **Pagrindinis analitinis rezultatas (jei duomenys pakankami):** `m² kainos ekvivalentas per metus = metinis galimas sutaupymas / palyginamo būsto pardavimo €/m²`.
 
