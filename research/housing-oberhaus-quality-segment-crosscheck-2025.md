@@ -68,6 +68,6 @@ Norint **faktinės 10 apskričių palyginamos rinkos kainos**, RC agregatas (jei
 4. Pagal **10 apskričių**, o ne po vieną jų centrą: **sandorių N / validžių €/m² N / €/m² mediana**; jei dalis trūksta, palikti „nepalyginama“. Privatumo rizikai mažinti prašyti tik agreguoto `XLSX`.
 5. Jei RC registras neturi buto **būklės / įrengimo kokybės** atributų, aiškiai pripažinti, kad statybos metų grupei atskyrus lieka kokybės neišmatuotų skirtumų, ir **nevadinti rezultato idealiai standartizuotu**.
 
-Didesnės imties pavojus: 10 apskričių × 3 ploto juostos × 4 statybos grupės = iki 120 gardelių; prieš užsakant pakanka įsitikinti, ar teikėjas gali įvertinti aprėptį bei mažų N slopinimą. Kitas tikslus darbas – parengti minimalų RC kainos pasiūlymo **juodraštį peržiūrai**, **nesiųsti** be projekto savininko „Siųsk“. Kitų ilgesnių viešų automatiškai generuojamų skelbimų sąrašų nekurti.
+**Sprendimas 2026-10-10: 0 EUR biudžetas.** RC individualaus mokamo agregato kelias **uždarytas**; nei kainos pasiūlymo, nei užsakymo nesiųsti ir nebesiūlyti. Teorinis 10 apskričių × 3 ploto juostos × 4 statybos grupės (iki 120 segmentų) RC agregatas aprašo tik duomenų spragą, **ne finansuojamą darbo planą**. Dirbti tik su nemokamai skelbiamais duomenimis, tikrinant šaltinio metodiką, segmentų sudėtį ir aprėptį. Jei standartai ar teritorijos nepalyginami, žymėti **NEPALYGINAMA**. Nesukurti 10 apskričių reitingo pakeičiant apskritis miestais.
 
 **Išorinių užklausų:** NE. **Publikacija į main:** NE.
