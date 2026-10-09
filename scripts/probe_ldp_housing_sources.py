@@ -43,7 +43,7 @@ control_table="S3R640_M3060807_1_lt"
 control=read_json(prefix+control_table+"/query",{"select":"apskritys,s3r640","filter":"laikotarpis._co=2024","sort":"-s3r640","limit":3})
 src["documented_working_example"]={"table":control_table,"http_error":control.get("error"),"count":control.get("total"),"returned":len(control.get("data",[]))}
 for year in (2024,2025):
-    out=read_json(prefix+table+"/query",{"filter":f"laikotarpis={year}","limit":4000,"offset":0})
+    out=read_json(prefix+table+"/query",{"filter":f"laikotarpis._co={year}","limit":1200,"offset":0})
     src[str(year)]={"http_error":out.get("error"),"count":out.get("total"),"returned":len(out.get("data",[])),"aggregate_candidate_rows":summarise_rows(out.get("data",[]))[:20]}
 result["sources"]["ldp_county_household_income"]=src
 
