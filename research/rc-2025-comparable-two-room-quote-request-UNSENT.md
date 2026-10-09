@@ -1,6 +1,6 @@
 # RC 2025 m. palyginamų 2 kambarių butų sandorių pasiūlymo / įgyvendinamumo užklausa – JUODRAŠTIS
 
-**Būsena: NEIŠSIŲSTA. Reikalingas tikslus savininko patvirtinimas „Siųsk“. Tai nėra užsakymas ir nesuteikia teisės apmokėti paslaugos.** Parengta 2026-10-10 remiantis jau gautu RC 2026-10-02 atsakymu: individualūs XLSX agregatai mokami, preliminariai nuo maždaug 60 € + PVM, galutinė suma priklauso nuo apimties.
+**Būsena: UŽDARYTA / CLOSED 2026-10-10 – NEIŠSIŲSTA IR NEBUS SIUNČIAMA. Biudžetas 0 EUR; visuomeninis neatlygintinas tyrimas. Šis tekstas saugomas tik kaip istorinis juodraštis, o mokamas RC kelias nutrauktas. NEPRAŠYTI „Siųsk“ dėl šio juodraščio.** Parengta 2026-10-10 remiantis jau gautu RC 2026-10-02 atsakymu: individualūs XLSX agregatai mokami, preliminariai nuo maždaug 60 € + PVM, galutinė suma priklauso nuo apimties.
 
 **Kam:** rinkos.duomenys@registrucentras.lt (ankstesnio RC susirašinėjimo kontaktas)  
 **Tema:** Dėl 2025 m. butų sandorių statistikos 10 apskričių – palyginamo segmento galimybės ir preliminari kaina
