@@ -16,7 +16,7 @@ Būsto finansavimas ir parama – **priemonės ir prieinamumo veiksniai**, bet n
 |---|---|---|---|
 | 1. Prieinamumas | Ar ekonomiškai įmanoma įsigyti palyginamą pirmąjį būstą? | Panašaus tipo / ploto / būklės būsto **sandorių kaina**; reikalingų pajamų, įnašo ir išlaidų santykis | 2024–25 apskričių reitingas **BLOCKED**, nes nepakanka palyginamo segmentavimo |
 | 2. Paramos pasiekimas | Kiek jaunų teisinių šeimų gavo paramą, kiek buvo tinkamų ir kaip skiriasi regionai? | SADM/SPIS gavėjai, sąlygos, teritorija, tik jei tinkamas vardiklis – aprėpties % | SADM gavėjų skaičiai **OFFICIAL**; tinkamos populiacijos vardiklio nėra |
-| 3. Gimstamumo ryšys | Ar su būsto prieinamumu siejasi vaikų susilaukimas / atidėjimas? | Pirmojo vaiko gimimai, amžius susilaukiant pirmojo vaiko, atitinkamos amžiaus grupės gimstamumo rodikliai; laiko / teritoriniai pjūviai | **Tiriama hipotezė**, ne patvirtintas priežastinis poveikis |
+| 3. Gimstamumo ryšys | Ar būsto neapibrėžtumas ir finansinės kliūtys veikia šeimos planus? | Tiesioginiai apklausų atsakymai apie būstą ir atidėtus vaikus; jeigu prieinamas – patikimas laiko eilučių arba individualių duomenų tyrimas | **Antrinis tyrimo klausimas**; iš agreguoto pirmagimių skaičiaus priežasties nenustatome |
 
 ### Pagrindinė hipotezė H1
 
@@ -29,8 +29,21 @@ Konkurentiniai paaiškinimai: užimtumas, darbo pajamos, paskolų palūkanos ir 
 1. Palyginamas pirmojo būsto krepšelis: 2024 ir 2025 m. **tik daugiabučių butai**, aiški ploto juosta (pradinė: **45–55 m²**, ne savaime standartinis pirmasis būstas), statybos laikotarpis / būklė, teritorija; imties `N` ir medianos bei sklaida. Jeigu mažas `N` – lyginimo nevykdyti; nėra kokybės korekcijos – pažymėti nepalyginamumą.
 2. Pajamos: vieno asmens darbo užmokestis **nėra** dviejų kartu gyvenančių žmonių bendros pajamos. Būsto paskolos įperkamumą modeliuoti tik kaip aiškiai pažymėtą **SCENARIJŲ** su įnašu, palūkanomis, terminu, mokesčiais, nuoma ir namų ūkio sudėtimi; nevadinti banko sprendimu ar VDA realiai išmatuotu jaunų šeimų pajamų rodikliu.
 3. Valstybės paskata: 2024 ir 2025 m. taisykles laikyti atskirai, nes 2025-01-01 sąlygos keitėsi. Turimi **515** 2025 m. gavėjų ir **342** 2024 m. gavėjų (regioninė jaunų šeimų schema) rodo **gavėjų skaičių**, ne būsto prieinamumą ir ne šeimų, kurioms būsto reikia, kiekį. Kita **556** gavėjų schema apima ir kitus asmenis / šeimas, **nesumuoti** į jaunų šeimų populiaciją.
-4. Gimstamumo indikatorių sieti pagal suderintą teritoriją ir laikotarpį; analizuoti pirmojo vaiko gimimus ir amžių. Gimimų skaičius savaime labai priklauso nuo moterų skaičiaus reprodukciniame amžiuje, todėl absoliučius gimimų skaičius aiškinti kartu su struktūra / amžiaus specifiniais rodikliais.
+4. Gimstamumo ryšio **nenustatinėti vien iš pirmagimių skaičiaus ar jų motinų amžiaus teritorinių pjūvių**: jie menkai atskiria būsto poveikį nuo amžiaus struktūros, migracijos, partnerystės ar pajamų. Pirmiausia ieškoti tyrimų apie **būsto sąlygų įtaką ketinimams susilaukti vaikų**, šeimos planų atidėjimą ir paskolos / nuomos naštą; jei tokių duomenų nėra, palikti aiškią hipotezę be poveikio įverčio.
 5. Jei norime kalbėti apie **poveikį** (priežastingumą), reikia aiškaus tyrimo dizaino: individualių ilgalaikių duomenų, tinkamo natūralaus eksperimento ar pagrįsto priežastinio vertinimo, įskaitant kitus veiksnius. Kol to nėra – naudoti **„ryšys“, „hipotezė“, „galimas mechanizmas“**.
+
+## Tyrimo prioritetų sprendimas (2026-10-10)
+
+**Pirmųjų gimimų detalizavimas pagal motinos amžių ir apskritį – ŽEMAS PRIORITETAS būsto temai.** Tai jau esančios „Gimstamumo“ temos tęsinys, o ne iš esmės naujas atsakymas apie pirmojo būsto prieinamumą. Šis pjūvis nesusieja konkrečios šeimos būsto padėties su jos reprodukciniais sprendimais. Tuo remiantis **neinvestuoti papildomo darbo** į teritorinius pirmųjų gimimų skaičių / amžiaus pjūvius vien būsto temos labui.
+
+**Aukštos vertės būsto analizės klausimai** (pirmenybės tvarka):
+
+1. **Koks realus pirmojo būsto kainos ir jaunų šeimų disponuojamųjų pajamų santykis?** Būsto rūšis, vieta, plotas ir būklė turi būti palyginami; nevadinti vieno darbuotojo „Sodros“ atlyginimo šeimos pajamomis.
+2. **Ar įmanoma sukaupti pradinį įnašą gyvenant nuomojamame būste?** Analizei būtina atskirai turėti kainos, pradinio įnašo, nuomos ir tikrų šeimos mėnesio išlaidų informaciją; tik tada skaičiuoti metus iki pradinio įnašo. Jei išlaidos modeliuotos, rezultatas **SCENARIJUS**, ne faktinis šeimos taupymo laikas.
+3. **Kokia būsto paskolos našta po įnašo?** Pajamos, palūkanos, kredito laikotarpis, paskolos aptarnavimas, vaikų skaičius, motinystės / tėvystės atostogų pajamų pasikeitimas; scenarijai atskiri nuo banko kreditingumo vertinimo.
+4. **Kam faktiškai prieinama valstybės paskata?** 2024 ir 2025 m. teisinės ribos, teritorinė aprėptis, subsidijos dydžio reikšmė įnašui, paramos gavėjai / atmetimo kliūtys; procentinė aprėptis tik su tinkamu teisinės jaunos šeimos vardikliu.
+
+**Ryšys su gimstamumu išlieka tyrimo motyvas**, tačiau rodiklių rinkimas apie pirmagimių skaičių nėra šio etapo blokatorius. Jei atsiras tiesioginiai apklausų duomenys apie būsto problemas ir sprendimą atidėti vaiką, vertiname juos atskirai; kol kas **nedarome priežastinės išvados**.
 
 ## 2024–2025 m. jau turimos rinkos ir gimstamumo sąsajos ribos
 
