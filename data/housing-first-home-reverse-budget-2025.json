@@ -247,5 +247,10 @@
       "max_nonrent_outgoings_eur_month": 2408.19,
       "result_status": "REVERSE_BUDGET_MODEL_ONLY"
     }
-  ]
+  ],
+  "quality_comparability_gate": "FAIL_VDA_CITY_MEANS_NOT_SAME_APARTMENT_QUALITY_OR_SIZE",
+  "between_city_affordability_comparison_allowed": false,
+  "site_publication_allowed": false,
+  "area_assumption_not_quality_control": true,
+  "reason": "Same assumed 50 m2 area only changes hypothetical deposit. VDA 2025 sale EUR/m2 values represent different baskets across cities: building age, condition, apartment size, geography and sales mix not standardized. No quality-matched cross-city interpretation is valid."
 }
