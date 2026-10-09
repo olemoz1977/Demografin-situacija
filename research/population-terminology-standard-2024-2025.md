@@ -14,7 +14,7 @@
 
 **Oficialu** nusako pirminę statistikos rengėją ir paskelbimo būdą; **faktinio tyrimo rezultatas** nusako, kad jis įvertintas iš realių stebėjimų / apklausos, o **galutinumas** nusako, ar reikšmė gali būti patikslinta. Šie trys požymiai nėra vienas laukas.
 
-- **OFFICIAL + FINAL (be `p` žymos konkrečiam įrašui)** – oficiali paskelbta reikšmė, nepažymėta kaip preliminari. Nepriskirti šio statuso vien todėl, kad atėjo kiti kalendoriniai metai.
+- **OFFICIAL + FINAL** – oficiali paskelbta reikšmė, kurios galutinis statusas patikrintas pagal konkretaus šaltinio žymas ir metodiką. Vien tai, kad nėra `p` žymos ar praėjo kalendoriniai metai, savaime nepakanka patvirtinti galutinumą.
 - **OFFICIAL + PROVISIONAL (`p`)** – oficialiai paskelbtas konkrečių metų faktinių stebėjimų rodiklis, bet institucijos žyma rodo, kad rezultatas dar gali būti tikslinamas. Tinkama vieša žyma: **„Oficialus faktinio tyrimo rodiklis, preliminarus (Eurostat p)“**.
 - **OFFICIAL + FORECAST (`f`)** – prognozė; negalima vadinti faktiniu tyrimo rezultatu.
 - **MODELLED** – autoriaus modelis iš oficialių ar kitų duomenų: nenaudoti oficialios institucijos fakto žymos visam skaičiavimui.
