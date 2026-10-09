@@ -32,6 +32,16 @@ Konkurentiniai paaiškinimai: užimtumas, darbo pajamos, paskolų palūkanos ir 
 4. Gimstamumo indikatorių sieti pagal suderintą teritoriją ir laikotarpį; analizuoti pirmojo vaiko gimimus ir amžių. Gimimų skaičius savaime labai priklauso nuo moterų skaičiaus reprodukciniame amžiuje, todėl absoliučius gimimų skaičius aiškinti kartu su struktūra / amžiaus specifiniais rodikliais.
 5. Jei norime kalbėti apie **poveikį** (priežastingumą), reikia aiškaus tyrimo dizaino: individualių ilgalaikių duomenų, tinkamo natūralaus eksperimento ar pagrįsto priežastinio vertinimo, įskaitant kitus veiksnius. Kol to nėra – naudoti **„ryšys“, „hipotezė“, „galimas mechanizmas“**.
 
+## Konteksto rodiklis: 55,7 % vieno suaugusiojo namų ūkių
+
+Eurostat `ilc_lvph02`: Lietuva 2025 m. **55,7 %** (oficialus faktinių metų EU-SILC tyrimo įvertis su **p** žyma), ES 2025 m. – **35,7 %** privačių namų ūkių, kuriuos sudaro vienas suaugęs asmuo be išlaikomų vaikų. Rodyti kaip **bendrą demografinį ir gyvenimo sąlygų kontekstą** „Būstas“ ir šeimos formavimosi hipotezių temose, o ne pagrindinį pirmojo būsto prieinamumo rodiklį.
+
+**Kas įtraukiama migracijos požiūriu?** Statistika skaičiuoja įprastai Lietuvoje gyvenančius privačius namų ūkius, todėl nuolat užsienyje gyvenantys emigrantai paprastai neįskaičiuojami. Tam tikri laikinai dirbantys / studijuojantys užsienyje gali likti Lietuvos namų ūkio nariais, o Lietuvoje įprastai gyvenantys imigrantai įtraukiami nepaisant pilietybės. Išvykus vienam šeimos nariui, Lietuvoje likęs asmuo gali sudaryti vieno asmens namų ūkį, tačiau **55,7 % savaime nematuoja emigracijos pasekmių**.
+
+Šis **% namų ūkių** nėra **% žmonių**, **% būsto savininkų**, **% 25–35 m. žmonių** ar **% be partnerio**; vieno suaugusiojo namų ūkiuose gali būti vyresnio amžiaus asmenys, taip pat sutuoktinio ar partnerio statusas nėra tiesiogiai atskleidžiamas. 2024 m. 50,5 % → 2025 m. 55,7 % pokytis kol kas neinterpretuojamas kaip įrodytas jauno amžiaus vienišų asmenų daugėjimas.
+
+Šaltiniai: https://ec.europa.eu/eurostat/databrowser/view/ilc_lvph02/default/table ; https://ec.europa.eu/eurostat/documents/203647/22127502/Methodological%2Bguidelines%2B2024%2Boperation_v7.pdf
+
 ## Sąvokų sprendimas
 
 - **„Jauna šeima“** – tikslus **teisinis paramos** populiacijos terminas. Nuo 2024/2025 taisyklių redakcijų priklauso tinkamumas paramai.
