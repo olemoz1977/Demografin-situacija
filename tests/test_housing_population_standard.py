@@ -172,6 +172,33 @@ class HousingPopulationStandardTest(unittest.TestCase):
         self.assertEqual(1241, amounts["Telšių apskritis"])
         self.assertEqual(10, len(set(amounts)))
 
+    def test_reverse_budget_reproduces_source_and_preserves_2025_deposit_rule(self):
+        model = json.loads(
+            (ROOT / "data/housing-first-home-reverse-budget-2025.json").read_text(encoding="utf-8")
+        )
+        source = json.loads(
+            (ROOT / "data/housing-first-home-saving-scenarios-city3-2025.json").read_text(encoding="utf-8")
+        )
+        self.assertEqual(18, len(model["rows"]))
+        self.assertTrue(model["not_county_rankings"])
+        self.assertTrue(model["not_young_family_income_statistic"])
+        self.assertTrue(model["not_bank_approval"])
+        self.assertIn("2026-08-01", model["regulator_2026_comparability_warning"] +
+                      model["baseline_rules"])
+        self.assertEqual({0.15, 0.2}, {x["deposit_share_ASSUMED"] for x in model["rows"]})
+        base = {x["city"]: x for x in source["rows"] if x["monthly_other_expenses_eur_ASSUMED"] == 1700}
+        for row in model["rows"]:
+            start = base[row["city"]]
+            dp = start["city_apartment_sale_average_2025_eur_m2"] * 50 * row["deposit_share_ASSUMED"]
+            need = dp / 12 / row["years_target"]
+            max_other = start["monthly_two_net_eur_MODEL"] - start["monthly_asking_rent_eur_MODEL"] - need
+            self.assertAlmostEqual(dp, row["deposit_eur"], delta=0.01)
+            self.assertAlmostEqual(need, row["required_saving_eur_month"], delta=0.01)
+            self.assertAlmostEqual(max_other, row["max_nonrent_outgoings_eur_month"], delta=0.01)
+        vilnius3 = next(x for x in model["rows"] if x["city"] == "Vilnius"
+                        and x["deposit_share_ASSUMED"] == 0.15 and x["years_target"] == 3)
+        self.assertAlmostEqual(2008.33, vilnius3["max_nonrent_outgoings_eur_month"], delta=0.01)
+
     def test_households_are_explicitly_not_owned_homes(self):
         self.assertIn("Ką reiškia „namų ūkis“?", self.housing)
         self.assertIn("Namų ūkis ≠ nuosavas būstas.", self.housing)
