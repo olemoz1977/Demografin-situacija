@@ -123,6 +123,39 @@ class HousingPopulationStandardTest(unittest.TestCase):
         self.assertNotIn("28,7 metų", self.housing)
         self.assertIn("neįrodo būsto kainų įtakos gimstamumui", self.housing)
 
+    def test_three_city_sensitivity_model_is_not_a_county_or_family_average(self):
+        scenario = json.loads(
+            (ROOT / "data/housing-first-home-saving-scenarios-city3-2025.json").read_text(encoding="utf-8")
+        )
+        housing = json.loads(
+            (ROOT / "data/housing-verified-city-benchmarks-2024-2025.json").read_text(encoding="utf-8")
+        )
+        rental = json.loads(
+            (ROOT / "research/raw/aruodas-rent-benchmark-2025/aruodas-1room-rent-2025-qa.json").read_text(encoding="utf-8")
+        )
+        original_income = json.loads(
+            (ROOT / "data/housing-affordability-input.json").read_text(encoding="utf-8")
+        )
+        self.assertEqual("RESEARCH_ONLY_DO_NOT_USE_FOR_COUNTY_RANKING", scenario["publication_status"])
+        self.assertTrue(scenario["guards"]["do_not_call_official_young_family_mean"])
+        self.assertTrue(scenario["guards"]["do_not_call_10_county_ranking"])
+        self.assertEqual(9, len(scenario["rows"]))
+        inc = original_income["national_youth_25_30"]["net_eur_month"]
+        prices = {r["name"]:r["eur_m2_2025"] for r in housing["sale"]["places"]}
+        for row in scenario["rows"]:
+            city = row["city"]
+            annual = max(0, 12 * (
+                2 * inc - rental["summary"][city]["mean_eur_month"] -
+                row["monthly_other_expenses_eur_ASSUMED"]
+            ))
+            self.assertAlmostEqual(annual, row["annual_saving_eur_MODEL"], delta=0.01)
+            self.assertAlmostEqual(
+                annual / prices[city], row["m2_price_equivalent_year_MODEL"], delta=0.01
+            )
+            self.assertAlmostEqual(
+                prices[city] * 50 * 0.15, row["deposit_50m2_15percent_eur_MODEL"], delta=0.01
+            )
+
     def test_households_are_explicitly_not_owned_homes(self):
         self.assertIn("Ką reiškia „namų ūkis“?", self.housing)
         self.assertIn("Namų ūkis ≠ nuosavas būstas.", self.housing)
