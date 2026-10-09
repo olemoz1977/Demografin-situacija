@@ -82,7 +82,7 @@ jobs:
                     cityRentalAlytusBlank: section.querySelector('#housingCityBenchmarkTable .housing-table tbody tr:first-child td:last-child')?.textContent === '–',
                     cityAlytusGrowth: section.querySelector('#housingCityBenchmarkTable .housing-table tbody tr:first-child td:nth-child(4)')?.textContent === '+16,7 %',
                     cityVilniusGrowth: section.querySelector('#housingCityBenchmarkTable .housing-table tbody tr:last-child td:nth-child(4)')?.textContent === '+7,8 %',
-                    firstBirth2024: text.includes('pirmąjį vaiką gimdančių moterų amžius buvo 28,7 metų'),
+                    existingFertilityLink: !!section.querySelector('a[href="?view=fertility#amzius"]'),
                     hasMarketCaveat: text.includes('tai nėra tų pačių butų kainų indeksas'),
                     overflow: document.documentElement.scrollWidth - window.innerWidth,
                     heading: section.querySelector('h2')?.innerText || ''
@@ -95,8 +95,12 @@ jobs:
                   if (!result[field]) throw Error(name+' '+field+' FAIL');
                 }
                 if (result.cityTableRows !== 6 || !result.cityRentalAlytusBlank) throw Error(name+' official city table count/NA FAIL');
-                if (!result.cityAlytusGrowth || !result.cityVilniusGrowth || !result.firstBirth2024 || !result.hasMarketCaveat) throw Error(name+' derived city growth/2024 birth/methodology FAIL');
+                if (!result.cityAlytusGrowth || !result.cityVilniusGrowth || !result.existingFertilityLink || !result.hasMarketCaveat) throw Error(name+' derived city growth/2024 birth/methodology FAIL');
                 if (result.overflow > 2) throw Error(name+' horizontal overflow='+result.overflow);
+                await page.locator('#housingAffordability a[href="?view=fertility#amzius"]').click();
+                await page.waitForURL(/view=fertility#amzius/, {timeout:30000});
+                await page.waitForSelector('#amzius', {state:'visible',timeout:30000});
+                console.log('PASS: '+name+' housing-to-existing-fertility navigation');
                 await page.close();
               }
             } finally { /* close after all route checks */ }
