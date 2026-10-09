@@ -63,7 +63,7 @@
         <p class="source-line">Šaltinis: <a href="https://socmin.lrv.lt/public/canonical/1773646445/6523/2026%2003%2006_SADM_Veiklos%20ataskaita%202025-03-10.pdf" target="_blank" rel="noopener">SADM · 2025 metų veiklos ataskaita</a>. Sąvokų paaiškinimas: šioje temoje „jauna šeima“ – teisinė paramos gavėjų kategorija; namų ūkis – atskiras statistinis analizės vienetas.</p>
       </section>
 
-      <p class="small"><strong>Gimstamumo kontekstas:</strong> VDA duomenimis, 2024 m. Lietuvoje vidutinis <strong>pirmąjį vaiką gimdančių moterų amžius buvo 28,7 metų</strong> (2023 m. – 28,4 m.). Tai <strong>visos Lietuvos demografinis faktas</strong>, o ne būsto kainų sukeltas poveikis. Jo negalima tiesiogiai atimti iš 2024 m. 22,4 m. tėvų namų palikimo rodiklio: tai skirtingos populiacijos, tyrimai ir asmenys. <a href="https://publikacijos.stat.gov.lt/lietuva-skaiciais-2025/lt/categories/3" target="_blank" rel="noopener">VDA · Lietuva skaičiais (2024 m. duomenys)</a>.</p>
+      <p class="small"><strong>Ryšys su jau esančia gimstamumo analize:</strong> pirmojo vaiko gimdymo amžiaus 2021–2024 m. grafikas ir VDA / Eurostat šaltiniai <strong>jau pateikti</strong> <a href="?view=fertility#amzius">„Gimstamumo“ skyriuje</a>. Čia jų nekartojame. Nei išsikėlimo iš tėvų namų, nei pirmojo vaiko gimimo amžiaus rodikliai nenusako tos pačios poros įvykių sekos ir neįrodo būsto kainų įtakos gimstamumui.</p>
 
       <section class="housing-support-layer" aria-labelledby="housingCityContextTitle">
         <div class="section-label">Jau turimi oficialūs rinkos faktai <span class="badge badge-official">VDA · 2024–2025</span></div>
