@@ -41,6 +41,14 @@ Pirminio `m²/metus` scenarijaus daliklis yra **atskiro aiškiai nurodyto 2 kamb
 
 **Dėl 0 EUR biudžeto ir kokybės:** darbas `research/housing-2025-12-zero-eur-matched-market-snapshot.md`; mašininiu būdu atkuriamos ribos `data/housing-first-home-2025-12-consistent-market-snapshot-scenarios.json`. Jose `do_not_publish=true` – kainos yra eksperto intervalo, ne faktinių sandorių medianos, o šeimos pajamos, gyvenimo išlaidos bei vienų metų kaupimas modeliuoti. **Neturime nei 10 apskričių duomenų, nei palyginamo faktinio visų šeimų įperkamumo.**
 
+## 2025-12 paskolos aptarnavimo kaina vienam perkamam m²
+
+Nemokamai patvirtinta **Lietuvos banko 2025 m. gruodžio vidutinė naujo būsto kredito susitarimo palūkanų norma 3,69 %**. Atskirai nuo pradinių santaupų apskaičiuota **teorinė mėnesio paskolos įmoka už perkamą m²** naudojant 2025 m. 15 % pradinio įnašo ir iki 30 m. termino sąlygas, papildomai patikrintas **5 % palūkanų** 2025 m. streso režimas (nesumaišyti su nuo 2026-08-01 įsigaliojusiomis naujomis taisyklėmis).
+
+Šio rodiklio **nereikia skaičiuoti iš savavališkai nustatyto 50 m² buto**: paskolos mėnesio €/m² vėliau dauginama iš **faktinio konkretaus būsto ploto**, jei jis patvirtinamas. Sulygintos nuomos ir pardavimo kategorijos tik 3 miestų **gyvenamuosiuose rajonuose**, naujos statybos / dalinės apdailos kainų ekspertiniais intervalais, todėl **neįtrauktos įrengimo išlaidos**, tikrosios šeimos pajamos ir paskolos tinkamumo vertinimas. **Ne reitingas.**
+
+2025 m. paskolos €/m² ribų modelis: `data/housing-first-home-2025-12-per-m2-mortgage-burden.json`; aiškinimas ir oficialūs šaltiniai: `research/housing-first-home-2025-mortgage-servicing-per-m2.md`.
+
 ## Esminis klausimas
 
 **Ar ir kiek pirmojo nuosavo būsto įsigijimas prieinamas jaunoms šeimoms Lietuvoje, kaip skiriasi prieinamumas pagal teritoriją ir šeimos situaciją, ir ar būsto kliūtys susijusios su pirmojo vaiko susilaukimu bei gimimų laiku?**
