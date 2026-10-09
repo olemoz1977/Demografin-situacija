@@ -290,6 +290,39 @@ class HousingPopulationStandardTest(unittest.TestCase):
             self.assertAlmostEqual(min_cash / src[key_high], row["m2_price_equivalent_low"], delta=0.01)
             self.assertAlmostEqual(max_cash / src[key_low], row["m2_price_equivalent_high"], delta=0.01)
 
+    def test_mortgage_per_m2_uses_2025_rate_without_50sqm_guess(self):
+        model = json.loads(
+            (ROOT / "data/housing-first-home-2025-12-per-m2-mortgage-burden.json").read_text(encoding="utf-8")
+        )
+        prices = json.loads(
+            (ROOT / "data/housing-oberhaus-2025-12-two-room-new-vs-old-city-ranges.json").read_text(encoding="utf-8")
+        )
+        self.assertEqual("2025-12", model["period"])
+        self.assertEqual(3.69, model["loan_rate_2025_dec_pct"])
+        self.assertEqual(5, model["rules_2025"]["stress_interest_pct"])
+        self.assertEqual(360, model["loan_term_months"])
+        self.assertEqual(0.15, model["rules_2025"]["initial_deposit"])
+        self.assertTrue(model["big_guardrails"]["no_apartment_area_assumed"])
+        self.assertTrue(model["big_guardrails"]["not_a_territorial_ranking"])
+        self.assertTrue(model["big_guardrails"]["paid_inputs_used"] is False)
+        self.assertEqual(6, len(model["rows"]))
+        by_city = {r["city"]: r for r in prices["rows"]}
+        for row in model["rows"]:
+            original = by_city[row["city"]]
+            part = row["sale_quality_segment"]
+            field = "new_build_partial_finish" if part == "new_build_partial_finish" else "old_build"
+            for edge in ("low", "high"):
+                price = original[field + "_eur_m2_" + edge]
+                self.assertEqual(price, row["source_asking_or_expert_price_eur_m2_" + edge])
+                self.assertAlmostEqual(price * 0.15, row["deposit_15pct_eur_per_m2_" + edge], delta=0.01)
+                for annual, field_name in ((3.69, "monthly_loan_payment_eur_per_m2_"),
+                                           (5, "monthly_5pct_stress_eur_per_m2_")):
+                    rate = annual / 1200
+                    monthly = price * 0.85 * rate / (1 - (1+rate)**(-360))
+                    self.assertAlmostEqual(monthly, row[field_name + edge], delta=0.01)
+            self.assertFalse(row["construction_completion_cost_known"])
+            self.assertFalse(row["between_city_comparable"])
+
     def test_households_are_explicitly_not_owned_homes(self):
         self.assertIn("Ką reiškia „namų ūkis“?", self.housing)
         self.assertIn("Namų ūkis ≠ nuosavas būstas.", self.housing)
