@@ -137,5 +137,34 @@
       "deposit_50m2_15percent_eur_MODEL": 13056.3,
       "years_to_deposit_MODEL": 1.82
     }
-  ]
+  ],
+  "quality_comparability_gate": "FAIL_MIXED_HOUSING_SIZE_AGE_CONDITION_MARKET_AND_CITY_LOCATION",
+  "between_city_affordability_comparison_allowed": false,
+  "site_publication_allowed": false,
+  "market_price_limitation": "VDA S7R280 includes sold apartments of unknown composition by construction period, finish/repair condition, floor area, micro-location and transaction type; 50 m2 assumption is NOT quality standardisation. The 3 cities CANNOT be ranked.",
+  "next_price_basket_required": {
+    "year": 2025,
+    "object": "daugiabučio butas",
+    "area_stratum": "e.g. 45–55 m², after coverage audit",
+    "construction_period_groups": [
+      "iki 1960",
+      "1961–1990",
+      "1991–2010",
+      "2011–2025"
+    ],
+    "territory": "all 10 counties if counts sufficient",
+    "metrics": [
+      "transactions_N",
+      "observations_N",
+      "median_EUR_m2",
+      "mean_EUR_m2"
+    ],
+    "still_uncontrolled": [
+      "renovation_state",
+      "finish",
+      "energy_class",
+      "micro_location",
+      "accessibility"
+    ]
+  }
 }
