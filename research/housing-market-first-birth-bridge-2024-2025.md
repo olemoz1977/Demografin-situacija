@@ -26,7 +26,11 @@ VDA `S7R281`: oficialus **2025 m. vidutinės metinės** nuomos kainos rodiklis *
 - Pirminis pardavimo šaltinis: https://osp-sdg.stat.gov.lt/arcgis/rest/services/EVP_DB_connection/evp56/FeatureServer/0
 - Pirminis nuomos šaltinis: https://osp-sdg.stat.gov.lt/arcgis/rest/services/EVP_DB_connection/evp32/FeatureServer/0
 
-## B. Oficiali gimstamumo grandis – laikyti atskirai nuo kainų!
+## B. Anksčiau publikuota gimstamumo grandis – naudoti kryžminę nuorodą
+
+**NE NAUJAS RODIKLIS:** 2021–2024 m. pirmojo vaiko gimdymo amžiaus grafikas, kartu su 2024 m. **28,7 m.** reikšme ir VDA / Eurostat šaltiniais, **jau pateiktas mūsų svetainės „Gimstamumas“ skyriuje** (`?view=fertility#amzius`; `app-base.js`, `#amzius`). Vartotojas tai patvirtino 2026-10-10 mobilios svetainės ekrano kopija. **Nebeskaičiuoti šio rodiklio kaip naujo tyrimo rezultato, nekurti dubliuojančio grafiko ar KPI „Būstas“ skyriuje**; ten palikti nuorodą į egzistuojančią analizę.
+
+Tolimesnė pridėtinė vertė: **2025 m. pirmojo vaiko gimdymo amžius**, pirmagimių gimimai pagal motinos amžių ir teritoriją, suderintas 2024–2025 m. būsto prieinamumo bei migracijos kontekstas. Nedubliuoti 2021–2024 jau paskelbtų reikšmių.
 
 Valstybės duomenų agentūra leidinyje **„Lietuva skaičiais 2025“** (faktiniai 2024 m. duomenys) nurodo:
 
