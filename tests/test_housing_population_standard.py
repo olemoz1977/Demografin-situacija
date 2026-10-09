@@ -55,7 +55,7 @@ class HousingPopulationStandardTest(unittest.TestCase):
 
     def test_navigation_uses_current_candidate_files(self):
         self.assertIn("research-nav.js?v=20261009standard", self.app)
-        self.assertIn("housing-affordability.js?v=20261009population", self.app)
+        self.assertIn("housing-affordability.js?v=20261009household", self.app)
         self.assertIn("2024–2025", self.housing)
         self.assertIn("2024–2025", self.nav)
 
