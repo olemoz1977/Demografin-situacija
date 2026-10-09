@@ -1,5 +1,7 @@
 # Kiek išlaidų gali sau leisti jauna šeima, kad sukauptų pradinį įnašą per 3 metus? (2025 m. diagnostika)
 
+> **SVARBUS 2026-10-10 AUDITO VERDIKTAS: TARPMIESTINIS PALYGINIMAS NEVALIDUS.** 2025 m. VDA miesto vidutinė parduoto buto €/m² kaina apjungia nežinomos sudėties skirtingo ploto, statybos metų, remonto ir lokacijos būstus. **Vienodai pritaikytas 50 m² plotas yra tik daugybos koeficientas, NE to paties standarto būsto įrodymas.** Žemiau esantys trijų miestų skaičiai nėra tinkami santykinei miestų įperkamumo tvarkai ar būsto įsigijimo galimybių palyginimui. Jie rodo tik, kaip veikia formulė kiekviename atskirame scenarijuje. Įperkamumo tarpteritorinis rezultatų vartas: **FAIL / NEPUBLIKUOTI**.
+
 **Statusas: modeliuotas skaičiavimo testas, ne faktinė jaunų šeimų įperkamumo statistika.** 2025 m. palyginimas tik **3 miestų savivaldybėms**, ne 10 apskričių. Naudota mūsų jau patikrinta 2025 m. VDA butų pardavimų vidutinė €/m² kaina, „Aruodas“ vieno kambario 2025 m. nuomos pasiūlos kainų istorija ir **hipotetinės** dviejų dirbančių asmenų mėnesio neto pajamos (po 1 535 €, tai „Sodros“ nacionalinis 2025-11 25–30 m. darbuotojo orientyras).
 
 ## Atvirkštinis klausimas vietoj išgalvotų „faktinių gyvenimo išlaidų“
