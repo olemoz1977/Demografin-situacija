@@ -8,6 +8,8 @@ on:
       - "app.js"
       - "research-nav.js"
       - "housing-affordability.js"
+      - "family-hypothesis.js"
+      - "migration-sex.js"
       - "data/housing-state-support-outcomes-2025.json"
       - "tests/test_housing_population_standard.py"
       - ".github/workflows/housing-population-qa.yml"
@@ -34,6 +36,8 @@ jobs:
           node --check app.js
           node --check research-nav.js
           node --check housing-affordability.js
+          node --check family-hypothesis.js
+          node --check migration-sex.js
       - name: Install browser QA dependencies
         run: |
           npm install --no-save playwright@1.55.0
@@ -85,8 +89,26 @@ jobs:
                 if (result.overflow > 2) throw Error(name+' horizontal overflow='+result.overflow);
                 await page.close();
               }
-            } finally { await browser.close(); }
+            } finally { /* close after all route checks */ }
             console.log('PASS: housing population desktop/mobile browser QA');
+            const sections = [
+              ['future','#familyFormationHypotheses','55,7 % privačių namų ūkių'],
+              ['population','#migrationSexBlock','Kaip migracija susijusi su namų ūkių statistika?']
+            ];
+            const verify = await browser.newPage({viewport:{width:1280,height:820}});
+            for (const [view, selector, expected] of sections) {
+              const pageErrors = [];
+              verify.removeAllListeners('pageerror');
+              verify.on('pageerror', e => pageErrors.push(e.message));
+              await verify.goto('http://127.0.0.1:8765/?view='+view,{waitUntil:'networkidle',timeout:60000});
+              await verify.waitForSelector(selector,{state:'attached',timeout:30000});
+              const text=await verify.locator(selector).textContent();
+              if(!text.includes(expected)) throw Error(view+' household context missing');
+              if(pageErrors.length) throw Error(view+' JS errors: '+pageErrors.join('; '));
+              console.log('PASS: '+view+' contextual interpretation');
+            }
+            await verify.close();
+            await browser.close();
           })().catch(error => { console.error(error); process.exit(1); });
           NODE
       - name: Save QA screenshots
