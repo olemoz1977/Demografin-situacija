@@ -251,6 +251,45 @@ class HousingPopulationStandardTest(unittest.TestCase):
         self.assertIn("NEBUS SIUNČIAMA", archived)
         self.assertIn("Biudžetas 0 EUR", archived)
 
+    def test_free_december_rent_and_two_room_sale_are_same_source_time_and_area(self):
+        base = ROOT / "data"
+        rent = json.loads((base / "housing-oberhaus-2025-12-one-room-rent-city-ranges.json").read_text(encoding="utf-8"))
+        price = json.loads((base / "housing-oberhaus-2025-12-two-room-new-vs-old-city-ranges.json").read_text(encoding="utf-8"))
+        model = json.loads((base / "housing-first-home-2025-12-consistent-market-snapshot-scenarios.json").read_text(encoding="utf-8"))
+        self.assertEqual("2025-12", rent["date"])
+        self.assertEqual(rent["date"], price["date"])
+        self.assertTrue(model["same_source_and_month"])
+        self.assertTrue(model["matching_city_district_label"])
+        self.assertTrue(model["do_not_rank_cities"])
+        self.assertTrue(model["do_not_publish"])
+        self.assertTrue(model["does_not_adjust_for_fitout_costs"])
+        self.assertEqual(5, len(rent["rows"]))
+        self.assertEqual(6, len(price["rows"]))
+        self.assertEqual(6, len(model["rows"]))
+        matched = {r["city"]: r for r in rent["rows"]
+                   if r["city_old_new_sales_geography_alignment"] == "EXACT_DISTRICT_CLASS_LABEL"}
+        self.assertEqual({"Vilnius", "Kaunas", "Klaipėda"}, set(matched))
+        market = {r["city"]: r for r in price["rows"]}
+        for row in model["rows"]:
+            self.assertIn(row["city"], matched)
+            self.assertFalse(row["publication_allowed"])
+            self.assertFalse(row["housing_completion_costs_known"])
+            self.assertEqual("BLOCKED", row["rankability"])
+            self.assertEqual(matched[row["city"]]["low_eur_month"], row["monthly_2025_12_rent_low_eur"])
+            self.assertEqual(matched[row["city"]]["high_eur_month"], row["monthly_2025_12_rent_high_eur"])
+            src = market[row["city"]]
+            key_low = "new_build_partial_finish_eur_m2_low" if row["sale_segment"] == "new_partial_finish" else "old_build_eur_m2_low"
+            key_high = "new_build_partial_finish_eur_m2_high" if row["sale_segment"] == "new_partial_finish" else "old_build_eur_m2_high"
+            self.assertEqual(src[key_low], row["price_2025_12_low_eur_m2"])
+            self.assertEqual(src[key_high], row["price_2025_12_high_eur_m2"])
+            cash = model["income_net_month_model_eur"] - model["other_nonrent_monthly_outgoings_assumption_eur"]
+            min_cash = max(0, 12 * (cash - row["monthly_2025_12_rent_high_eur"]))
+            max_cash = max(0, 12 * (cash - row["monthly_2025_12_rent_low_eur"]))
+            self.assertEqual(min_cash, row["annualized_hypothetical_savings_eur_low"])
+            self.assertEqual(max_cash, row["annualized_hypothetical_savings_eur_high"])
+            self.assertAlmostEqual(min_cash / src[key_high], row["m2_price_equivalent_low"], delta=0.01)
+            self.assertAlmostEqual(max_cash / src[key_low], row["m2_price_equivalent_high"], delta=0.01)
+
     def test_households_are_explicitly_not_owned_homes(self):
         self.assertIn("Ką reiškia „namų ūkis“?", self.housing)
         self.assertIn("Namų ūkis ≠ nuosavas būstas.", self.housing)
