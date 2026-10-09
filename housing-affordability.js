@@ -9,6 +9,7 @@
       <div class="section-label">Pirmas būstas ir valstybės parama <span class="badge badge-official">2024–2025 · SADM FAKTAI</span></div>
       <h2>Ką žinome apie valstybės paramą pirmajam būstui?</h2>
       <p class="lead">Analizuojame <strong>2024–2025 m. faktinius paramos gavėjus</strong>, atskirdami teisinę „jauną šeimą“ nuo platesnės asmenų ir šeimų grupės. <strong>Visų Lietuvoje gyvenančių teisiškai apibrėžtų jaunų šeimų patikimo skaičiaus neturime</strong>, todėl paramos aprėpties procento neskaičiuojame. Tai nėra būsto įperkamumo reitingas ar įrodymas apie poveikį gimstamumui.</p>
+      <p class="small"><strong>Ką reiškia „namų ūkis“?</strong> Tai žmonės, o ne nekilnojamasis turtas: vienas žmogus arba kartu gyvenantys ir bendras pajamas ar išlaidas turintys asmenys. Jie gali nuomotis būstą arba gyventi nuosavame. <strong>Namų ūkis ≠ nuosavas būstas.</strong> Viename būste gali būti keli atskiri namų ūkiai.</p>
 
       <div class="alert alert-blue">
         <strong>2025 m. faktas.</strong> Finansinę paskatą pirmajam būstui regionuose gavo <strong>515 jaunų šeimų</strong>. Kita – valstybės iš dalies kompensuojamo būsto kredito – subsidijų schema pasiekė <strong>556 asmenis arba šeimas</strong>, tačiau tai platesnė gavėjų grupė, todėl šių dviejų skaičių nesumuojame kaip jaunų šeimų.
