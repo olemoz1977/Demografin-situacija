@@ -1,0 +1,49 @@
+{
+  "date": "2025-12",
+  "provider": "UAB OBER-HAUS nekilnojamasis turtas",
+  "source_pdf": "https://www.ober-haus.lt/wp-content/uploads/NT-kainos-2025-gruodis.pdf",
+  "source_page_one_based": 2,
+  "source_section": "Individualių namų ir butų nuomos kainos (Eur/mėn.)",
+  "population": "one-room apartment rental expert reported monthly ranges",
+  "not_actual_contracts": true,
+  "not_annual_mean": true,
+  "not_county_data": true,
+  "no_listing_count": true,
+  "rows": [
+    {
+      "city": "Vilnius",
+      "district_label": "Gyvenamieji rajonai",
+      "low_eur_month": 320,
+      "high_eur_month": 520,
+      "city_old_new_sales_geography_alignment": "EXACT_DISTRICT_CLASS_LABEL"
+    },
+    {
+      "city": "Kaunas",
+      "district_label": "Gyvenamieji rajonai",
+      "low_eur_month": 280,
+      "high_eur_month": 420,
+      "city_old_new_sales_geography_alignment": "EXACT_DISTRICT_CLASS_LABEL"
+    },
+    {
+      "city": "Klaipėda",
+      "district_label": "Gyvenamieji rajonai",
+      "low_eur_month": 270,
+      "high_eur_month": 400,
+      "city_old_new_sales_geography_alignment": "EXACT_DISTRICT_CLASS_LABEL"
+    },
+    {
+      "city": "Šiauliai",
+      "district_label": "Kiti rajonai",
+      "low_eur_month": 230,
+      "high_eur_month": 310,
+      "city_old_new_sales_geography_alignment": "UNMATCHED_WITH_SALES_GYVENAMIEJI"
+    },
+    {
+      "city": "Panevėžys",
+      "district_label": "Kiti rajonai",
+      "low_eur_month": 230,
+      "high_eur_month": 310,
+      "city_old_new_sales_geography_alignment": "UNMATCHED_WITH_SALES_GYVENAMIEJI"
+    }
+  ]
+}
