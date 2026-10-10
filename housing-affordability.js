@@ -33,12 +33,14 @@
           <div class="kpi"><div class="kpi-num amber">10,3 mln. €</div><div class="kpi-label">Panaudota kompensuojamo būsto kredito subsidijoms · 2025</div><div class="kpi-note">2024: 12,2 mln. €</div></div>
         </div>
 
+        <h4>Kaip keitėsi jaunų šeimų regioninės paskatos mastas 2019–2025 m.?</h4>
         <div class="chart-wrap housing-support-outcomes-chart"><canvas id="housingSupportRecipientsChart"></canvas></div>
-        <div class="chart-caption">Oficialus SADM 2024–2025 m. gavėjų skaičius. Schemos turi skirtingas tikslines grupes, o nuo 2025-01-01 regioninės paskatos taisyklės keitėsi; tai gavėjų skaičiaus, ne paramos prieinamumo pokyčio grafikas.</div>
+        <div class="chart-caption">Oficialus SADM regioninę paskatą pirmajam būstui <strong>gavusių jaunų šeimų skaičius per kalendorinius metus</strong>. Tai <strong>viena konkreti paramos programa</strong>, o ne abiejų schemų suma. 2022 m. – 1 595, 2025 m. – 515 šeimų. 2025 m. keitėsi programos sąlygos ir buvo nagrinėjama ankstesnių metų eilė; grafikas rodo išmokėtas subsidijas, <strong>ne paramos poreikio, tinkamų pareiškėjų ar prieinamumo procentą</strong>. Šaltinis: <a href="https://socmin.lrv.lt/public/canonical/1773646445/6523/2026%2003%2006_SADM_Veiklos%20ataskaita%202025-03-10.pdf" target="_blank" rel="noopener">SADM 2025 m. veiklos ataskaita, 32 pav.</a></div>
 
         <div class="alert alert-blue housing-support-demand-context">
           <strong>515 šeimų – tai išmokų skaičius, ne paramos aprėpties procentas.</strong>
           <p class="small"><strong>2025 m. paklausos kontekstas:</strong> SADM duomenimis, 2025-01-01 apie <strong>1 700 jaunų šeimų</strong> laukė eilėje pagal ankstesnius (nuo 2023 m.) prašymus. 2025-09-17 ministerija paskelbė, kad eilė panaikinta ir išnagrinėta apie 1 700 prašymų. <strong>1 700 nagrinėtų prašymų nėra 1 700 išmokėtų subsidijų.</strong> <a href="https://socmin.lrv.lt/lt/naujienos/proverzis-paramos-jaunoms-seimoms-isigyjancioms-pirmaji-busta-sistemoje-C1v/" target="_blank" rel="noopener">SADM · 2025-09-17</a>.</p>
+          <p class="small"><strong>Vienas svarbus 2025 m. dokumentuotas paradoksas:</strong> iš maždaug 1 700 eilėje laukusių šeimų <strong>mažiau nei 100</strong> pavasarį pateikė prašymą pereiti prie naujų, nuo 2025-01-01 galiojančių paskatos taisyklių. Vėliau pradėta nagrinėti eilėje buvusių šeimų prašymus pagal senąsias sąlygas. <strong>Šis skaičius nėra naujų visos šalies prašymų ar atmestų šeimų skaičius.</strong> <a href="https://socmin.lrv.lt/public/canonical/1773646445/6523/2026%2003%2006_SADM_Veiklos%20ataskaita%202025-03-10.pdf" target="_blank" rel="noopener">SADM 2025 m. veiklos ataskaita</a>.</p>
           <p class="small"><strong>Atskiras 2026 m. kontekstas – kita programa.</strong> 2026-05-19 platesnės <em>valstybės iš dalies kompensuojamo būsto kredito ir (ar) subsidijos</em> programos kvietimas sustabdytas po <strong>10 minučių</strong>, gavus beveik <strong>1 000 prašymų</strong>. Iš pradžių planuota 5,6 mln. €, kitą dieną skirta papildomai 5 mln. €. <strong>Tai NE 2025 m. 515 jaunų šeimų regioninės programos kvietimas.</strong> <a href="https://socmin.lrv.lt/lt/naujienos-1/baigtas-paraisku-priemimas-valstybes-paramai-bustui-isigyti-gIR/" target="_blank" rel="noopener">SADM · 2026-05-19</a>; <a href="https://socmin.lrv.lt/lt/naujienos/j-zailskiene-paramai-bustui-isigyti-papildomai-skiriami-5-mln-euru-9TZ/" target="_blank" rel="noopener">2026-05-20</a>.</p>
           <p class="small"><strong>2026 m. rugsėjį</strong> pagal būtent <em>regioninę jaunų šeimų</em> programą pateikta beveik <strong>800 prašymų</strong>. SADM pranešė, kad lėšų turėtų pakakti visiems reikalavimus atitinkantiems prašymams – tai dar <strong>nėra 800 išmokėtų subsidijų</strong>. <a href="https://socmin.lrv.lt/lt/naujienos-1/visos-prasymus-pateikusios-ir-reikalavimus-atitinkancios-jaunos-seimos-gaus-valstybes-subsidija-pirmajam-bustui-regionuose-isigyti-i1j/" target="_blank" rel="noopener">SADM · 2026-09-29</a>.</p>
           <p class="small"><strong>Metodinė išvada:</strong> 515 / 1 700 būtų <strong>neteisingas procentas</strong>: vienas skaičius matuoja 2025 m. išmokas, kitas – ankstesnių metų prašymų eilės likutį. Taip pat nežinome, kiek iš viso 2025 m. jaunų šeimų turėjo teisę į paskatą, todėl <strong>realios paramos aprėpties procento neteikiame</strong>.</p>
@@ -107,28 +109,36 @@
   function renderSupportOutcomes(data){
     const section=document.getElementById(SECTION_ID);
     const canvas=section?.querySelector('#housingSupportRecipientsChart');
-    if(!canvas || !window.Chart || !data?.schemes?.length) return;
-    const s1=data.schemes[0], s2=data.schemes[1];
+    if(!canvas || !window.Chart || !data?.rows?.length) return;
+    if(data.status!=='OFFICIAL_SADM_2025_REPORT_FIG_32' || data.no_coverage_denominator!==true) return;
+    const years=data.rows.map(r=>String(r.year));
+    const families=data.rows.map(r=>r.young_families_main_subsidy_paid_n);
     const existing=Chart.getChart(canvas); if(existing) existing.destroy();
     new Chart(canvas.getContext('2d'),{
-      type:'bar',
+      type:'line',
       data:{
-        labels:['Paskata jaunoms šeimoms','Kompensuojamo kredito subsidija'],
-        datasets:[
-          {label:'2024',data:[s1.recipients_2024,s2.recipients_2024],backgroundColor:'#a9a39a'},
-          {label:'2025',data:[s1.recipients_2025,s2.recipients_2025],backgroundColor:'#1d4f7d'}
-        ]
+        labels:years,
+        datasets:[{
+          label:'Paramą gavusios jaunos šeimos',
+          data:families,
+          borderColor:'#1d4f7d',
+          backgroundColor:'#1d4f7d',
+          pointRadius:4,
+          pointHoverRadius:6,
+          tension:0.15,
+          fill:false
+        }]
       },
       options:{
         responsive:true,
         maintainAspectRatio:false,
         plugins:{
-          legend:{position:'bottom'},
-          tooltip:{callbacks:{label:(ctx)=>` ${ctx.dataset.label}: ${fmt0(ctx.raw)} gavėjų`}}
+          legend:{display:false},
+          tooltip:{callbacks:{label:(ctx)=>` ${ctx.formattedValue} šeimų gavo subsidiją`}}
         },
         scales:{
-          y:{beginAtZero:true,title:{display:true,text:'Gavėjų skaičius'}},
-          x:{ticks:{maxRotation:0,minRotation:0}}
+          y:{beginAtZero:true,title:{display:true,text:'Subsidiją gavusių jaunų šeimų skaičius'}},
+          x:{title:{display:true,text:'Metai'}}
         }
       }
     });
@@ -162,8 +172,8 @@
   async function init(){
     insertShell();
     try {
-      const outcomes=await loadJson('data/housing-state-support-outcomes-2025.json?v=20261009population');
-      renderSupportOutcomes(outcomes);
+      const series=await loadJson('data/housing-support-young-family-series-2019-2025.json?v=20261010series');
+      renderSupportOutcomes(series);
     } catch (error) {
       const layer=document.querySelector('#housingSupportTitle');
       if(layer) layer.insertAdjacentHTML('afterend','<p class="small">Paramos gavėjų grafiko duomenų įkelti nepavyko. Rodomos pirminio SADM šaltinio pagrindu patikrintos reikšmės.</p>');
