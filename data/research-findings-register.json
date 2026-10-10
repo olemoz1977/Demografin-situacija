@@ -943,11 +943,11 @@
       ],
       "publication": {
         "module": "methods",
-        "file": "overview-nowcast.js",
-        "marker": "2025P TFR = 1,03"
+        "file": "index.html",
+        "marker": "2025P = Eurostat projekcinis TFR"
       },
       "blocker": null,
-      "next_action": "Saugoti jau paskelbtą išvadą ir nedubliuoti; prieš kitą leidimą tikrinti modulio aprėptį."
+      "next_action": "Metodikos skyriuje atskirtas VDA 2025* preliminarus faktinis statusas, EUROPOP2025 2025P projekcinis TFR ir EU-SILC (p) preliminarus rodiklis; prieš leidimą patikrinti naršyklės tekstą."
     },
     {
       "id": "METHODS-DENOMINATORS-01",
