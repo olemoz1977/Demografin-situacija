@@ -28,7 +28,7 @@
   if(!VALID_VIEWS.includes(view)) view=HASH_VIEW[location.hash]||'overview';
 
   const css=document.createElement('link');
-  css.rel='stylesheet'; css.href='research-nav.css?v=20261010summary2';
+  css.rel='stylesheet'; css.href='research-nav.css?v=20261010routefix';
   document.head.appendChild(css);
   document.body.classList.add('research-routed');
   const makeUrl=v=>`${location.pathname}?view=${encodeURIComponent(v)}`;
@@ -138,9 +138,14 @@
       if(section.id==='researchTopicIntro') return;
       const show=view==='all'||SECTION_VIEWS[section.id]===view;
       section.classList.toggle('research-hidden',!show);
+      section.classList.toggle('research-visible',show);
     });
     const intro=document.getElementById('researchTopicIntro');
-    if(intro) intro.classList.toggle('research-hidden',view==='overview'||view==='all');
+    if(intro){
+      const showIntro=view!=='overview'&&view!=='all';
+      intro.classList.toggle('research-hidden',!showIntro);
+      intro.classList.toggle('research-visible',showIntro);
+    }
     renumberVisible(); addNextLink();
     document.title=`Lietuva · Demografinė situacija · ${VIEW_META[view].title}`;
   }
