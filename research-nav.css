@@ -1,3 +1,5 @@
+/* Dynamic sections are hidden until the router explicitly assigns their view. */
+body.research-routed > section:not(.research-visible){display:none!important}
 body.research-routed .research-hidden{display:none!important}
 nav.research-primary{gap:0;scrollbar-width:none}
 nav.research-primary::-webkit-scrollbar{display:none}
