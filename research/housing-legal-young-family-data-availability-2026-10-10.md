@@ -15,10 +15,10 @@ Būsto paramos analizei „jauna šeima“ – sutuoktinių ar registruotų part
 3. **SADM / SPIS** kaupia administracinius paramos ir paraiškų duomenis, įskaitant finansinę paskatą pirmajam būstui. Tai nėra visų Lietuvoje gyvenančių jaunų šeimų pajamų statistika ir savaime negaunamas tinkamas subsidijos aprėpties vardiklis. https://socmin.lrv.lt/lt/asmens-duomenu-apsauga/asmens-duomenu-tvarkymas/ ; https://socmin.lrv.lt/lt/veiklos-sritys/seima-ir-vaikai/finansine-paskata-pirmaji-busta-isigyjancioms-jaunoms-seimoms/
 4. **Būsto kainos ir nuomos segmentai egzistuoja** – VDA S7R280, Ober-Haus; 2025 m. šeši miestai nėra dešimt apskričių, o skirtingų būstų ir laikotarpių krepšeliai nėra tarpusavyje palyginami.
 
-## Papildomai patvirtintas konkretus atviras rinkinys ir duomenų gavimo kelias
+## Patvirtintas nemokamai prieinamas oficialus rinkinys
 
 - **VDA S3R908 (SD003622): „Mėnesinių piniginių disponuojamųjų pajamų sudėtis | Apskritys | Pajamų šaltinis“.** Kasmet atnaujinamas **viešas** rinkinys su **CSV / JSON / Parquet** prieiga, apima 2024 m. ir visas apskritis. Tai didelis žingsnis – teritorinių namų ūkių pajamų skaičiai **tikrai egzistuoja**, bet rinkinys nėra teisinės jaunos šeimos pajamų lentelė. https://dataportal.gov.lt/lt/datasets/sd003622
-- **VDA individualių užklausų paslauga** teikiama fiziniams / juridiniams asmenims, ir gali teikti parengtą agreguotą statistinę informaciją. Paskelbta kainodaros būsena **„nemokama / mokama“**: jau viešai paskelbta oficialioji statistika nemokama, o individualiai paruošti duomenys gali būti mokami. **Prieš užsakant nepatvirtintas 0 EUR rezultatas; iš pradžių klausti apie jau egzistuojančią nemokamą suvestinę, paslaugos įkainį bei duomenų kokybę.** https://osp.stat.gov.lt/duomenu-teikimas ; https://www.epaslaugos.lt/portal/providerServices/34820
+
 
 ## Ko šiame audite viešai nepatvirtinome
 
@@ -29,13 +29,13 @@ Būsto paramos analizei „jauna šeima“ – sutuoktinių ar registruotų part
 
 **Negalima teigti, kad tų duomenų „nėra Lietuvoje“.** Galima teigti tik tai, kad iki šio patikrinimo **nerasta patvirtinta vieša pakankamai smulki jungtinė 10 apskričių lentelė**. VDA gali turėti detalesnius konfidencialius duomenis ar galimybę parengti agregatą; galimybė, reprezentatyvumas, pateikimo teisė ir galimas mokestis **dar nepatikrinti**.
 
-## Prasminga tolesnė patikra, prieš rašant, kad „nėra duomenų“
+## Sprendimas: 0 EUR ir užklausų nevykdyti
 
-1. Patikrinti VDA OSP 2024/2025 m. aktualius rodiklius *namų ūkio tipas × amžius × apskritis*, nurodant tikslų kodą ir imties / konfidencialumo apribojimus.
-2. Pasiteirauti VDA, ar per turimus EU-SILC/HBS ar saugią valstybės duomenų prieigą **galima gauti tik agreguotus anoniminius** teisinės jaunos šeimos, amžiaus, vaikų skaičiaus, pajamų, būsto išlaidų pagal teritoriją rodiklius, ir ar pakanka imties. Viešų ataskaitų nebuvimas nėra mikrolygmens duomenų nebuvimo įrodymas.
-3. SADM klausti **apibendrintų** SPIS paraiškų ir gavėjų pagal apskritis bei šeimos sudėtį, atskiriant paraiškų tinkamumą nuo visų jaunų šeimų populiacijos.
-4. Būsto sandorių / nuomos krepšelio palyginamumo auditą atlikti nepriklausomai nuo šeimų pajamų. Jei teritorinė imtis nepakankama, sąžiningai pateikti 2–3 regionus su ribomis, ne 10 apskričių tariamai tikslų reitingą.
+**STOP individualioms duomenų užklausoms ir užsakymams.** Projekto biudžetas – **0 EUR**. Pagal tyrimo autoriaus 2026-10-10 sprendimą **nerengti VDA ar SADM individualių užklausų, netikrinti mokamų paslaugų kainodaros ir nepradėti mokamų duomenų užsakymo procedūrų**. Šioje temoje pakanka viešų faktų riboms paaiškinti.
+
+Jeigu kada nors bus tęsiama analizė, iš anksto vertinami tik **jau laisvai paskelbti, nemokami ir metodologiškai suderinami** duomenų rinkiniai. Vien tik visų namų ūkių 10 apskričių pajamos nėra teisinės jaunos šeimos pajamų pjūvis; tuo pagrindu **negalima paskelbti jaunų šeimų įperkamumo reitingo**. Nevaliduoto 25–30 m. poros modelio neatgaivinti.
+
 
 **T0:** senojo 25–30 m. dviejų dirbančių asmenų modelio `HOUSING-SAVINGS-10-COUNTIES-01` ir susijusių ID archyvas neįrodo, kad duomenų nėra, ir negali būti naudojamas vietoj naujo teisines sąvokas atitinkančio tyrimo.
 
-**Išorinių užklausų statusas:** nieko neišsiųsta; laiškų / užklausų tekstus prieš siuntimą būtina parodyti vartotojui.
+**Išorinių užklausų statusas:** niekas nesiųsta, naujų užklausų nerengiame; mokami duomenys neperkamos.
