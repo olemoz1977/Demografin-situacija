@@ -11,6 +11,16 @@
 - **Apžvalgos teksto redakcija:** šešios analizės kryptys ir Metodika išlaikomos; įvadinis pasakojimas praplėstas be naujo priežastinio teiginio.
 - **Visos nepublikuotos išvados:** lieka registre ir atitinkamose tyrimo šakose, be publikavimo ir skaičių pervadinimo.
 
+## Bandomosios naršyklės auditas · 2026-10-10
+
+**PASS 27/27 kompiuteryje ir PASS 27/27 telefone.** Testas `tests/publication-visibility-qa.cjs` realiai atveria 8 teminius puslapius ir kiekvieno registruoto `PUBLISHED_*` ID atitinkamame modulyje tikrina DOM matomumą bei naudotojui skaitomą teiginį, ne tik failo žymeklį. Papildomai patikrinama navigacija, `?view=all` archyvas, horizontalus perpildymas ir netinkamai matomi svetimų temų skyriai.
+
+- GitHub Actions naršyklės QA (vietinis PR peržiūros serveris, Chromium desktop/mobile): https://github.com/olemoz1977/Demografin-situacija/actions/runs/38024928386
+- Tyrimo registro tęstinumo kontrolė: https://github.com/olemoz1977/Demografin-situacija/actions/runs/38024928432
+- Audito metu pataisytos reikšmingos neatitiktys: `METHODS-STATUSES-2025-01` metodikos paaiškinimas, dinamiškai kuriamų svetimų temų rodymo momentas ir trijų registruotų išvadų nuorodos į tikrąjį rodomą turinį (`POPULATION-REPRO-SEX-2025-01`, `FAMILY-LEAVE-POLICY-2007-2012-01`, `FAMILY-DIGITAL-HYPOTHESES-01`).
+
+**Riba:** tai patvirtina PR #7 bandomosios versijos matomumą, tačiau `main` nėra pakeistas, todėl toliau esančios **gyvos svetainės QA** žymos teisingai lieka `PENDING`. Matomumo patikra taip pat nėra naujas nepriklausomas kiekvieno pirminio statistinio šaltinio metodologinis auditas.
+
 ## Dabartinio juodraščio `PUBLISHED_*` matrica
 
 | ID | Registruotas modulis | Būsena | Kodo failas | Tikrinamas žymeklis | Gyvas naršyklės QA |
