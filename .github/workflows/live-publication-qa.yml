@@ -1,0 +1,40 @@
+name: Live Pages research visibility QA
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/live-publication-qa.yml"
+  workflow_run:
+    workflows: ["pages build and deployment"]
+    types: [completed]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-live:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout published research registry and QA script
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Audit the actual public GitHub Pages website on desktop and mobile
+        run: |
+          node - <<'NODE'
+          const fs=require("node:fs");
+          const path="tests/publication-visibility-qa.cjs";
+          const src=fs.readFileSync(path,"utf8");
+          const local="http://127.0.0.1:8765";
+          const live="https://olemoz1977.github.io/Demografin-situacija";
+          if((src.match(/http:\/\/127\.0\.0\.1:8765/g)||[]).length!==2)
+            throw Error("STOP: expected two local QA URLs; cannot safely verify live deployment");
+          fs.writeFileSync("tests/publication-visibility-live.cjs",src.replaceAll(local,live));
+          console.log("LIVE QA URL:",live);
+          NODE
+          node tests/publication-visibility-live.cjs
