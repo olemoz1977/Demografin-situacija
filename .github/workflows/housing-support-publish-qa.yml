@@ -106,17 +106,29 @@ jobs:
               console.log('QA',screen,JSON.stringify(ok));
               if(Object.entries(ok).some(([k,v])=>k==='rootOverflow'?v>3:!v)) throw Error(screen+' failed content/scroll QA');
               const housingOneAdult=await page.locator('#housingSingleAdultHouseholds').innerText();
-              if(!housingOneAdult.includes('55,7 %')||!housingOneAdult.includes('35,7 %')||
-                 !housingOneAdult.includes('namų ūkius')) throw Error(screen+' housing household definition missing');
+              if(!housingOneAdult.includes('55,7 %')||!housingOneAdult.includes('ne būsto įperkamumo')) throw Error(screen+' housing context missing');
+              const housingLink=page.locator('#housingSingleAdultHouseholds a');
+              if(await housingLink.getAttribute('href')!=='?view=population#populationHouseholdStructure') throw Error(screen+' housing link wrong');
+              await housingLink.click();
+              await page.waitForURL('**/?view=population#populationHouseholdStructure');
+              await page.waitForSelector('#populationHouseholdStructure',{state:'visible'});
+              const structure=await page.locator('#populationHouseholdStructure').innerText();
+              const primaryLink=await page.locator('#populationHouseholdStructure a[href*="ilc_lvph02"]').count();
+              if(!structure.includes('55,7 %')||!structure.includes('35,7 %')||!structure.includes('50,5 %')||
+                 !structure.includes('namų ūkių, ne Lietuvos gyventojų procentas')||!primaryLink) throw Error(screen+' primary Eurostat explanation incomplete');
+              const structureOverflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
+              if(structureOverflow>3) throw Error(screen+' population horizontal overflow '+structureOverflow);
               await page.goto('http://127.0.0.1:8765/?view=family',{waitUntil:'networkidle'});
               await page.waitForSelector('#familySingleAdultHouseholds',{state:'visible'});
               const familyOneAdult=await page.locator('#familySingleAdultHouseholds').innerText();
-              if(!familyOneAdult.includes('55,7 %')||!familyOneAdult.includes('35,7 %')) throw Error(screen+' family context missing');
+              if(!familyOneAdult.includes('55,7 %')||
+                 await page.locator('#familySingleAdultHouseholds a').getAttribute('href')!=='?view=population#populationHouseholdStructure') throw Error(screen+' family context link missing');
               await page.goto('http://127.0.0.1:8765/?view=migration',{waitUntil:'networkidle'});
               await page.waitForSelector('#migrationHouseholdContext',{state:'visible'});
               const migrationOneAdult=await page.locator('#migrationHouseholdContext').innerText();
-              if(!migrationOneAdult.includes('55,7 %')||!migrationOneAdult.includes('35,7 %')) throw Error(screen+' migration context missing');
-              console.log('PASS:',screen,'Eurostat 2025 one-adult household fact visible in housing/family/migration');
+              if(!migrationOneAdult.includes('55,7 %')||
+                 await page.locator('#migrationHouseholdContext a').getAttribute('href')!=='?view=population#populationHouseholdStructure') throw Error(screen+' migration context link missing');
+              console.log('PASS:',screen,'Eurostat primary explanation in population and three working context links');
               if(errors.length) throw Error(screen+' page errors: '+errors.join('; '));
               await page.close();
             }
