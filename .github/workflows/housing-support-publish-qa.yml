@@ -91,11 +91,13 @@ jobs:
               await page.locator('#overviewThreeFindings').waitFor({state:'visible'});
               const findings=page.locator('#researchHome .research-summary > .card');
               if(await findings.count()!==3) throw Error(screen+' overview must have exactly 3 takeaways');
+              if(await page.locator('#researchHome .research-summary a[href*="oecd.org"]').count()!==1) throw Error(screen+' international evidence source missing');
               const summary=await page.locator('#researchHome .research-summary').innerText();
               if(!summary.includes('−19 946')||!summary.includes('+16 165')||
                  !summary.includes('884 moterys / 1 000 vyrų')||
                  !summary.includes('55,7 % Lietuvos privačių namų ūkių')||
-                 !summary.includes('poveikis dar neišmatuotas')) throw Error(screen+' three reader conclusions incomplete');
+                 !summary.includes('Tyrimai rodo sąsajas. Jų mastą Lietuvoje dar vertiname')||
+                 !summary.includes('Mūsų analizėje dar nenustatytas šių sąsajų dydis Lietuvoje')) throw Error(screen+' three reader conclusions incomplete');
               await card.click();
               await page.waitForURL('**/?view=housing');
               await page.waitForSelector('#housingAffordability',{state:'visible'});
