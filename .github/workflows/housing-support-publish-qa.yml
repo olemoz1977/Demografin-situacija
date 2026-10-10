@@ -6,6 +6,9 @@ on:
       - "data/housing-support-young-family-series-2019-2025.json"
       - "data/housing-support-2025-national-reconciliation-and-maxima.json"
       - "housing-affordability.js"
+      - "family-hypothesis.js"
+      - "migration-sex.js"
+      - "data/eurostat-household-composition-2024-2025.json"
       - "research-nav.js"
       - "app.js"
       - "index.html"
@@ -15,6 +18,9 @@ on:
     branches: [main]
     paths:
       - "housing-affordability.js"
+      - "family-hypothesis.js"
+      - "migration-sex.js"
+      - "data/eurostat-household-composition-2024-2025.json"
       - "research-nav.js"
       - "index.html"
       - "app.js"
@@ -41,6 +47,8 @@ jobs:
       - name: Check JS syntax
         run: |
           node --check housing-affordability.js
+          node --check family-hypothesis.js
+          node --check migration-sex.js
           node --check research-nav.js
           node --check app.js
       - name: Check official support contract
@@ -97,6 +105,18 @@ jobs:
               });
               console.log('QA',screen,JSON.stringify(ok));
               if(Object.entries(ok).some(([k,v])=>k==='rootOverflow'?v>3:!v)) throw Error(screen+' failed content/scroll QA');
+              const housingOneAdult=await page.locator('#housingSingleAdultHouseholds').innerText();
+              if(!housingOneAdult.includes('55,7 %')||!housingOneAdult.includes('35,7 %')||
+                 !housingOneAdult.includes('namų ūkius')) throw Error(screen+' housing household definition missing');
+              await page.goto('http://127.0.0.1:8765/?view=family',{waitUntil:'networkidle'});
+              await page.waitForSelector('#familySingleAdultHouseholds',{state:'visible'});
+              const familyOneAdult=await page.locator('#familySingleAdultHouseholds').innerText();
+              if(!familyOneAdult.includes('55,7 %')||!familyOneAdult.includes('35,7 %')) throw Error(screen+' family context missing');
+              await page.goto('http://127.0.0.1:8765/?view=migration',{waitUntil:'networkidle'});
+              await page.waitForSelector('#migrationHouseholdContext',{state:'visible'});
+              const migrationOneAdult=await page.locator('#migrationHouseholdContext').innerText();
+              if(!migrationOneAdult.includes('55,7 %')||!migrationOneAdult.includes('35,7 %')) throw Error(screen+' migration context missing');
+              console.log('PASS:',screen,'Eurostat 2025 one-adult household fact visible in housing/family/migration');
               if(errors.length) throw Error(screen+' page errors: '+errors.join('; '));
               await page.close();
             }
