@@ -22,6 +22,14 @@ Dar viena svarbi aplinkybė: **2025-01-01 pasikeitė regioninės paskatos taisyk
 
 **SVARBU:** ataskaitos „1 039 gavėjai“ yra bendras **programų apskaitos rodiklis**, bet be papildomo asmenų deduplikavimo pagrindo jo nevadiname įrodytais unikaliais naujais nuosavo būsto pirkėjais. **556 nėra 556 jaunos šeimos**. Taip pat **negalima sumuoti 515 + 556 = 1 071 „pirmai paramai“**, nes B 556 **apima 32 papildomas** subsidijas, o A 44 papildomos į 515 pagrindinių išmokų skaičių neįtrauktos.
 
+## Papildomos subsidijos po vaikų gimimo – didelis pokytis, bet ne gimstamumo statistika
+
+SADM metinė ataskaita atskirai nurodo, kad **regioninės (A) programos papildoma subsidija, pasikeitus šeimoje auginamų vaikų skaičiui, 2024 m. buvo išmokėta 560 šeimų, o 2025 m. – 44 šeimoms**. Tuo metu pagrindinės regioninės paskatos gavėjų skaičius padidėjo **342 → 515**.
+
+Tai svarbu, nes **pagrindinė paskata ≠ vėlesnė papildoma subsidija**. Taip pat **nėra pagrindo teigti**, kad papildomų subsidijų skaičiaus kritimas reiškia panašaus masto vaikų gimimų sumažėjimą. 2025 m. keitėsi maksimalus subsidijos procentas (naujoje tvarkoje 15 %), papildomos paskatos kriterijai, senų prašymų apskaita ir išmokų laikas. SADM DUK nurodo, kad iki 2025 m. jau gavusieji 15 % ar didesnę subsidiją, pagal dabartines taisykles nebegali pretenduoti į papildomą. Šie faktai leidžia suformuluoti teisės aktų ir biudžeto poveikio tikrinimo klausimą, **ne priežastinę demografijos išvadą**.
+
+Šaltiniai: SADM 2025 m. veiklos ataskaita, 32 pav. aiškinamasis tekstas; SADM DUK https://socmin.lrv.lt/lt/duk/ .
+
 ## Kokia galėjo būti 2025 m. regioninės paskatos suma konkrečiai šeimai?
 
 Naujoms nuo **2025-01-01** galiojančioms sąlygoms:
