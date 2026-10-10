@@ -58,6 +58,21 @@ class ResearchContinuityTest(unittest.TestCase):
         self.assertTrue(self.households["do_not_call_marital_status_or_loneliness"])
         self.assertEqual("PENDING", item["publication_audit"]["current_browser_test"])
 
+    def test_eurostat_publication_states_are_consistent_across_t0_data_and_registry(self):
+        item = self.findings["EU-HH-2025-01"]
+        source = self.households
+        rule = (ROOT / "research/RESEARCH-CONTINUITY-RULE.md").read_text(encoding="utf-8")
+        self.assertEqual(item["status"], source["public_site_status"])
+        self.assertEqual(item["publication"]["module"], source["public_site_module"])
+        self.assertEqual("population", source["planned_primary_module"])
+        self.assertEqual("PENDING", source["publication_evidence"]["independent_live_browser_qa"])
+        self.assertTrue(source["publication_evidence"]["source_in_main"])
+        self.assertTrue(source["publication_evidence"]["github_pages_deployment_success"])
+        self.assertIn("PUBLISHED_CONTEXT", rule)
+        self.assertIn("PR #4", rule)
+        self.assertIn("INVENTORIED_WITH_GAPS", rule)
+        self.assertNotIn("Šio fakto iki šiol nėra svetainėje", rule)
+
     def test_housing_is_not_reduced_to_subsidies(self):
         for ident in (
             "HOUSING-CITY-SALES-2025-01", "HOUSING-RENT-SALE-2025-12-01",
