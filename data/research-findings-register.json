@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "created_on": "2026-10-10",
+  "canonical_rule": "EVERY_VERIFIED_FINDING_IS_RECORDED_BEFORE_CHANGING_SITE_AND_NEVER_SILENTLY_DROPPED",
+  "budget_eur": 0,
+  "governance": {
+    "publication_requires_complete_scope_check": true,
+    "remove_existing_finding_from_registry_forbidden": true,
+    "correct_or_supersede_with_trace_allowed": true,
+    "do_not_publish_unvalidated_research_as_fact": true,
+    "do_not_invent_county_rank": true,
+    "external_paid_data_forbidden": true,
+    "scope": "Initial register; other modules pending full backward audit."
+  },
+  "module_inventory": [
+    {
+      "module": "overview",
+      "audit": "PENDING",
+      "published": true
+    },
+    {
+      "module": "fertility",
+      "audit": "PENDING",
+      "published": true
+    },
+    {
+      "module": "population",
+      "audit": "PENDING",
+      "published": true
+    },
+    {
+      "module": "migration",
+      "audit": "PENDING",
+      "published": true
+    },
+    {
+      "module": "family",
+      "audit": "PENDING",
+      "published": true
+    },
+    {
+      "module": "housing",
+      "audit": "PARTIAL",
+      "published": true
+    },
+    {
+      "module": "future",
+      "audit": "PENDING",
+      "published": true
+    },
+    {
+      "module": "methods",
+      "audit": "PENDING",
+      "published": true
+    }
+  ],
+  "findings": [
+    {
+      "id": "EU-HH-2025-01",
+      "area": "housing",
+      "title": "Lietuvoje didžiausia ES vieno suaugusiojo be išlaikomų vaikų namų ūkių dalis",
+      "period": "2024–2025",
+      "status": "VERIFIED_UNPUBLISHED",
+      "statement": "Eurostat ilc_lvph02: Lietuva 2024 m. 50,5 % (p), 2025 m. 55,7 % (p). 2025 m. didžiausia dalis ES; tai visų amžių privačių namų ūkių, ne vienišų žmonių ar jaunų šeimų dalis.",
+      "source_urls": [
+        "https://ec.europa.eu/eurostat/databrowser/view/ilc_lvph02/default/table",
+        "https://ec.europa.eu/eurostat/documents/15216629/24279737/KS-01-26-036-EN-N.pdf"
+      ],
+      "evidence_files": [
+        "data/households-single-adult-eurostat-2024-2025.json"
+      ],
+      "publication": {
+        "module": "housing",
+        "secondary_modules": [
+          "family",
+          "population"
+        ],
+        "file": null,
+        "marker": null
+      },
+      "blocker": "Neskelbta svetainėje; dėl visos visuomenės rodiklio negalima interpretuoti kaip jaunų šeimų, jaunimo ar būsto nuosavybės procento.",
+      "next_action": "Parengti aiškiai pažymėtą namų ūkių struktūros kontekstą ir susieti su Būsto bei Šeimos aplinkos moduliais."
+    },
+    {
+      "id": "HOUSING-CITY-SALES-2025-01",
+      "area": "housing",
+      "title": "VDA oficialūs šešių miestų daugiabučių butų pardavimo vidurkiai",
+      "period": "2024–2025",
+      "status": "PUBLISHED_CONTEXT",
+      "statement": "VDA S7R280: šešių miestų daugiabučių butų pardavimo vidutiniai €/m² be vienodo ploto/standarto kontrolės.",
+      "source_urls": [
+        "https://osp-sdg.stat.gov.lt/arcgis/rest/services/EVP_DB_connection/evp56/FeatureServer/0"
+      ],
+      "evidence_files": [
+        "data/housing-verified-city-benchmarks-2024-2025.json"
+      ],
+      "publication": {
+        "module": "housing",
+        "file": "housing-affordability.js",
+        "marker": "VDA: daugiabučių butų pardavimo kainos šešiuose miestuose"
+      },
+      "blocker": null,
+      "next_action": "Nenaudoti kaip 10 apskričių vienodų būstų palyginimo."
+    },
+    {
+      "id": "HOUSING-RENT-SALE-2025-12-01",
+      "area": "housing",
+      "title": "2025 gruodžio būsto nuomos ir pardavimo intervalai panašesniame segmente",
+      "period": "2025-12",
+      "status": "PUBLISHED_CONTEXT",
+      "statement": "Ober-Haus 1 kambario nuomos ir 2 kambarių pardavimo orientyrai Vilniaus, Kauno ir Klaipėdos gyvenamuosiuose rajonuose; parduodamų naujų butų apdaila dalinė.",
+      "source_urls": [
+        "https://www.ober-haus.lt/wp-content/uploads/NT-kainos-2025-gruodis.pdf"
+      ],
+      "evidence_files": [
+        "data/housing-oberhaus-2025-12-one-room-rent-city-ranges.json",
+        "data/housing-oberhaus-2025-12-two-room-new-vs-old-city-ranges.json"
+      ],
+      "publication": {
+        "module": "housing",
+        "file": "housing-affordability.js",
+        "marker": "2025 m. gruodžio nuomos ir pirkimo segmentai"
+      },
+      "blocker": null,
+      "next_action": "Nepaversti ekspertinių ribų faktiškai mokėta kaina ar visų apskričių dydžiu."
+    },
+    {
+      "id": "HOUSING-LOAN-2025-01",
+      "area": "housing",
+      "title": "Pradinio įnašo ir paskolos naštos metodika pagal 2025 m. sąlygas",
+      "period": "2025",
+      "status": "PUBLISHED_METHOD_ONLY",
+      "statement": "Istorinės 2025 m. 15 % pradinio įnašo ir 2025-12 vidutinių būsto paskolų palūkanų 3,69 % sąlygos; negalima naudoti naujo 2026 m. režimo 2025 m. rekonstrukcijai.",
+      "source_urls": [
+        "https://www.lb.lt/lt/paskolu-palukanu-normos"
+      ],
+      "evidence_files": [
+        "housing-affordability.js"
+      ],
+      "external_research_paths": [
+        "https://github.com/olemoz1977/Demografin-situacija/blob/audit/population-standard-2024-2025/research/housing-first-home-2025-mortgage-servicing-per-m2.md"
+      ],
+      "publication": {
+        "module": "housing",
+        "file": "housing-affordability.js",
+        "marker": "2025 m. istoriniame scenarijuje taikomas įprastas"
+      },
+      "blocker": null,
+      "next_action": "Nedaryti konkrečios šeimos finansinio pajėgumo vertinimo be faktinių pajamų ir visų būsto sąnaudų."
+    },
+    {
+      "id": "HOUSING-SUBSIDY-2019-2025-01",
+      "area": "housing",
+      "title": "2019–2025 m. jaunų šeimų regioninės paskatos gavėjų istorija",
+      "period": "2019–2025",
+      "status": "PUBLISHED_FACT",
+      "statement": "Vienos SADM programos subsidijų gavėjų seka: 820, 1202, 1580, 1595, 609, 342, 515; išmokų skaičius ≠ teisę turinčių / prašymus teikusių šeimų dalis.",
+      "source_urls": [
+        "https://socmin.lrv.lt/public/canonical/1773646445/6523/2026%2003%2006_SADM_Veiklos%20ataskaita%202025-03-10.pdf"
+      ],
+      "evidence_files": [
+        "data/housing-support-young-family-series-2019-2025.json"
+      ],
+      "publication": {
+        "module": "housing",
+        "file": "housing-affordability.js",
+        "marker": "Kaip keitėsi jaunų šeimų regioninės paskatos mastas"
+      },
+      "blocker": null,
+      "next_action": "Netaikyti 2025 m. vienos programos išmokų visoms Lietuvos jaunoms šeimoms."
+    },
+    {
+      "id": "HOUSING-QUEUE-2025-01",
+      "area": "housing",
+      "title": "2025 metų pradžioje regioninės paramos laukė apie 1700 jaunų šeimų",
+      "period": "2025-01",
+      "status": "PUBLISHED_FACT",
+      "statement": "SADM 2025-01 pranešė apie ~1700 ankstesnių metų eiliškumo prašymų. Jų 515 2025 m. išmokomis dalinti negalima.",
+      "source_urls": [
+        "https://socmin.lrv.lt/lt/naujienos/proverzis-paramos-jaunoms-seimoms-isigyjancioms-pirmaji-busta-sistemoje-C1v/"
+      ],
+      "evidence_files": [
+        "data/housing-support-2025-national-reconciliation-and-maxima.json",
+        "housing-affordability.js"
+      ],
+      "publication": {
+        "module": "housing",
+        "file": "housing-affordability.js",
+        "marker": "1 700 ankstesnių metų prašymų"
+      },
+      "blocker": null,
+      "next_action": "Ieškoti nemokamos tos pačios paraiškų kohortos galutinių sprendimų statistikos."
+    },
+    {
+      "id": "HOUSING-SUBSIDY-SCHEMES-2025-01",
+      "area": "housing",
+      "title": "Dvi skirtingos būsto paramos schemos ir 2025 m. maksimumai",
+      "period": "2025",
+      "status": "PUBLISHED_FACT",
+      "statement": "SADM A jaunos šeimos / B platesnė gavėjų grupė; SADM 1039 pagrindinės paramos apskaitinis skaičius; 76 papildomos išmokos, ne papildomi nauji pirmojo būsto pirkėjai.",
+      "source_urls": [
+        "https://socmin.lrv.lt/public/canonical/1773646445/6523/2026%2003%2006_SADM_Veiklos%20ataskaita%202025-03-10.pdf"
+      ],
+      "evidence_files": [
+        "data/housing-support-2025-national-reconciliation-and-maxima.json"
+      ],
+      "publication": {
+        "module": "housing",
+        "file": "housing-affordability.js",
+        "marker": "1 039 pagrindinės paramos gavėjai"
+      },
+      "blocker": null,
+      "next_action": "Neapjungti jaunų šeimų su platesnės programos asmenų statistika."
+    },
+    {
+      "id": "HOUSING-SAVINGS-10-COUNTIES-01",
+      "area": "housing",
+      "title": "Du dirbantys jaunesni nei 30 m., nuomojantys 1 k. butą: m²/metus pagal apskritis",
+      "period": "2024–2025",
+      "status": "RESEARCH_BLOCKED",
+      "statement": "Pagrindinis neužbaigtas įperkamumo klausimas. Trūksta vienodų 10 apskričių butų sandorių, 1 kamb. nuomos, jaunų šeimų pajamų ir realių būtinų išlaidų; hipotetinės metinio taupymo išvestinės nepublikuotinos kaip oficialūs faktai.",
+      "source_urls": [
+        "https://osp-sdg.stat.gov.lt/arcgis/rest/services/EVP_DB_connection/evp56/FeatureServer/0",
+        "https://www.ober-haus.lt/wp-content/uploads/NT-kainos-2025-gruodis.pdf"
+      ],
+      "evidence_files": [
+        "research/housing-affordability-methodology.md",
+        "research/housing-affordability-readiness.json"
+      ],
+      "external_research_paths": [
+        "https://github.com/olemoz1977/Demografin-situacija/blob/audit/population-standard-2024-2025/research/housing-2025-12-zero-eur-matched-market-snapshot.md"
+      ],
+      "publication": {
+        "module": "housing",
+        "file": null,
+        "marker": null
+      },
+      "blocker": "Nevaliduotas standartizuotas 10 apskričių pardavimo / nuomos / pajamų / išlaidų sluoksnis; rankability blocked.",
+      "next_action": "Tęsti nemokamų šaltinių analizę (biudžetas 0 EUR), išlaikant duomenų kokybės vartus."
+    }
+  ]
+}

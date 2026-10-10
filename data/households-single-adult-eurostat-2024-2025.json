@@ -1,0 +1,30 @@
+{
+  "id": "hh_lt_one_adult_no_dependent_children_eurostat_2024_2025",
+  "metric_code": "ilc_lvph02",
+  "statistical_unit": "share_of_private_households",
+  "household_composition": "one adult without dependent children",
+  "source": "Eurostat",
+  "source_uri": "https://ec.europa.eu/eurostat/databrowser/view/ilc_lvph02/default/table",
+  "source_verification": "Eurostat Key figures on European living conditions, 2025 and 2026 editions",
+  "eurostat_2025_pub_url": "https://ec.europa.eu/eurostat/documents/15216629/24279737/KS-01-26-036-EN-N.pdf",
+  "eurostat_2024_pub_url": "https://ec.europa.eu/eurostat/documents/15216629/22200086/KS-01-25-032-EN-N.pdf/23e00520-169f-fd9d-6543-2a5371d1642d",
+  "latest_eurostat_dataset_update": "2026-09-17",
+  "figure_pct": {
+    "LT_2024": 50.5,
+    "LT_2025": 55.7,
+    "EU27_2025_rounded": 36
+  },
+  "figure_status": {
+    "LT_2024": "p_provisional",
+    "LT_2025": "p_provisional"
+  },
+  "eu_comparison": "In 2025 Lithuania has the highest share among EU countries of one adult without dependent children households",
+  "do_not_call_people_percent": true,
+  "do_not_call_young_adults_or_families": true,
+  "do_not_call_2024_to_2025_change_causal": true,
+  "do_not_call_marital_status_or_loneliness": true,
+  "meaning": "One-person household alone without dependent children; household does not equal dwelling ownership; includes adults of all ages",
+  "integration_suggestion": "Separate society-wide household structure context, cross-link from Housing and family context. Do not merge with 25–30 two-income young household model",
+  "public_site_status": "VERIFIED_NOT_PUBLISHED",
+  "zero_eur_source": true
+}
