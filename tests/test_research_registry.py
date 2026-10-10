@@ -95,7 +95,7 @@ class ResearchContinuityTest(unittest.TestCase):
         self.assertIn("housing-affordability.js?v=", (ROOT / "app.js").read_text(encoding="utf-8"))
         self.assertRegex(
             (ROOT / "index.html").read_text(encoding="utf-8"),
-            r'app\\.js\\?v=20261010[A-Za-z0-9_-]+',
+            r'app\.js\?v=20261010[A-Za-z0-9_-]+',
         )
 
     def test_housing_is_not_reduced_to_subsidies(self):
