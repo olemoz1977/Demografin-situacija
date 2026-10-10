@@ -2,6 +2,33 @@
 
 **2026-10-10 · patikrinimas iš nemokamų oficialių SADM šaltinių.** Tyrimas visuomeninis, biudžetas 0 EUR. **Tikslas – patikrinti, ką iš tiesų reiškia 515 jaunų šeimų 2025 m., o ne sukurti „juokingai mažo %“ skaičių be vardiklio.**
 
+## Esminis naujas kontekstas: 2019–2025 metų paramos gavėjų seka
+
+**Ta pati viena regioninė jaunų šeimų pirmojo būsto subsidijų schema** (SADM 2025 m. veiklos ataskaita, 32 pav.):
+
+| Metai | Išmoką gavusios jaunos šeimos | Panaudotos lėšos regioninei paskatai, mln. € |
+|---|---:|---:|
+| 2019 | **820** | 8,1 |
+| 2020 | **1 202** | 13,8 |
+| 2021 | **1 580** | 20,9 |
+| 2022 | **1 595** | 23,6 |
+| 2023 | **609** | 11,4 |
+| 2024 | **342** | 7,2 |
+| 2025 | **515** | 8,2 |
+
+**515 yra neįprastai mažas mastas, palyginti su 2021–2022 m.:** 2025 m. išmokų gavusių jaunų šeimų skaičius tesudarė maždaug **trečdalį 2022 m. skaičiaus**. Vien 2024→2025 augimas **+50,6 %** be ilgesnės retrospektyvos gali sudaryti pernelyg optimistinį įspūdį. **Bet iš šios laiko eilutės negalime apskaičiuoti**, kokia visų paramos pageidavusių ir reikalavimus atitikusių jaunų šeimų dalis buvo paremta: galutinio vienodos programos prašymų, reikalavimus atitikusių pareiškėjų ir išmokų per tą patį laiką srauto skaičiaus nėra. 2025 m. keitėsi taisyklės; metų rezultatus veikia ir ankstesnės eilės nagrinėjimas bei laikas iki kredito suteikimo.
+
+**Dar viena 2025 m. metinės ataskaitos detalė:** po 2025-03-17 pavasarinio kvietimo **mažiau kaip 100** iš anksčiau eilėje buvusių jaunų šeimų pasirinko kreiptis pagal **naująsias 2025 m. finansinės paskatos sąlygas**. Tada ministerija pradėjo formuoti pažymas pagal ankstesnius prašymus ir ankstesnes taisykles. **Tai nereiškia, kad regioninės paskatos poreikis sumažėjo iki 100 šeimų**: naujos tvarkos pasirinkimas neapima visos paklausos. SADM 2025 m. veiklos ataskaita, p. 48 ir skyriaus aiškinamasis tekstas.
+
+**Skaitytojo apsauga nuo skirtingų skaičių painiavos:** 2025 m. minimos **44 papildomos subsidijos** regione yra esamų paramos gavėjų papildomos išmokos, o **515** yra pagrindinę paskatą gavusių jaunų šeimų skaičius; nei 44, nei 2026 m. pateikti kitų schemų prašymai **nėra papildomos 2025 m. naujos šeimos**. Taip pat **2025 m. panaudoti 8,2 mln. €** ne tas pats, kas metais pažymoms rezervuotas / paskirtas finansavimas (ministerija skelbė apie **~12,5 mln. €**). Vengti tariamo „lėšos / 515 = tipinė subsidija“ vertinimo: skirtų ir išmokėtų lėšų bei papildomų išmokų apskaita skiriasi.
+
+Oficialūs šaltiniai:
+- SADM, *2025 m. veiklos ataskaita*, **32 pav. ir komentarai**: https://socmin.lrv.lt/public/canonical/1773646445/6523/2026%2003%2006_SADM_Veiklos%20ataskaita%202025-03-10.pdf .
+- SADM, **2025-03-17** kvietimo sąlygos senosios eilės šeimoms: https://socmin.lrv.lt/lt/naujienos-1/skelbiamas-kvietimas-jaunoms-seimoms-teikti-prasymus-del-finansines-paskatos-bustui/ .
+- SADM, **2025-09-17** finansavimo ir senųjų prašymų apdorojimo statusas: https://socmin.lrv.lt/lt/naujienos/proverzis-paramos-jaunoms-seimoms-isigyjancioms-pirmaji-busta-sistemoje-C1v/ .
+
+Mašininiu būdu atsekamas **7 metų oficialus duomenų rinkinys**: `data/housing-support-young-family-series-2019-2025.json`. Jis yra **tik vienos programos**, jo negalima agreguoti su platesnės subsidijos gavėjų eilute ar prilyginti 10 apskričių populiacijai. Metodinis vartas: `no_coverage_denominator=true`.
+
 ## Ką žinome oficialiai
 
 | Laikotarpis | Programa | Oficialus rodiklis | Matavimo rūšis |
