@@ -63,10 +63,11 @@
       <div class="section-label">Tyrimo žemėlapis <span class="badge badge-official">ATNAUJINTA 2026-10-10</span></div>
       <h2>Mažas gimstamumas – tik dalis Lietuvos demografinio paveikslo.</h2>
       <p class="lead">Neigiama natūrali gyventojų kaita, migracijos srautai, amžiaus ir lyčių struktūra, namų ūkių sandara bei šeimos ir būsto aplinka sudaro platesnį vaizdą. Atskirai nagrinėjame, kaip visuomenė galėtų prisitaikyti prie demografinių pokyčių. Tai susijusios temos, bet ne įrodytas vienas priežastinis modelis.</p>
+      <h3 id="overviewThreeFindings">Trys svarbiausios išvados</h3>
       <div class="research-summary">
-        <div class="card"><div class="eyebrow">Dabar</div><strong>17 478 gimimai</strong><p>2025* natūrali kaita –19 946, neto migracija +16 165. 2025P TFR nowcast – 1,03; 2024 galutinis TFR – 1,11.</p></div>
-        <div class="card"><div class="eyebrow">Naujas struktūros signalas</div><strong>884 moterys / 1 000 vyrų</strong><p>2025 m. 25–44 m. grupėje. Gimimų santykis vienas to nepaaiškina; migracijos pjūvis rodo stiprų papildomą mechanizmą.</p></div>
-        <div class="card"><div class="eyebrow">Ateities klausimas</div><strong>1,424 → 1,034 mln.</strong><p>EK bazinėje projekcijoje tiek mažėja užimtųjų skaičius 2022→2050. Klausimas – ar produktyvumas ir finansavimo bazė prisitaikys.</p></div>
+        <div class="card"><div class="eyebrow">01 · Oficialūs 2025* duomenys</div><strong>Natūralus mažėjimas viršijo migracijos prieaugį</strong><p>2025 m. išankstiniais VDA duomenimis, gimė <strong>17 478</strong> vaikai, natūrali kaita buvo <strong>−19 946</strong>, o neto tarptautinė migracija – <strong>+16 165</strong>. Teigiamos migracijos nepakako natūraliam mažėjimui kompensuoti.</p></div>
+        <div class="card"><div class="eyebrow">02 · Gyventojų ir namų ūkių struktūra</div><strong>Vien gimstamumo rodiklis neparodo viso vaizdo</strong><p>2025 m. 25–44 m. grupėje buvo <strong>884 moterys / 1 000 vyrų</strong>. Be to, <strong>55,7 % Lietuvos privačių namų ūkių</strong> 2025 m. sudarė vienas suaugęs be išlaikomų vaikų (Eurostat, preliminaru). Tai skirtingi rodikliai – ne gimstamumo priežasčių įrodymas.</p></div>
+        <div class="card"><div class="eyebrow">03 · Ko dar nežinome</div><strong>Šeimos ir būsto aplinkos poveikis dar neišmatuotas</strong><p>Turime būsto kainų, paramos ir šeimos aplinkos duomenų, tačiau jų poveikio Lietuvos gimstamumui šis tyrimas neįrodė. Palyginamo pirmojo būsto įperkamumo reitingo visose 10 apskričių dar nėra. Ateities scenarijai nėra faktinės prognozės.</p></div>
       </div>
       <div class="alert alert-blue"><strong>Kaip skaityti tyrimą.</strong> Faktus, išankstinius rodiklius, oficialias projekcijas ir autoriaus hipotezes laikome atskirai. Viena kreivė savaime nėra priežasties įrodymas.</div>
       <div class="topic-grid">
