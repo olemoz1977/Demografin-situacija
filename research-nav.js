@@ -6,7 +6,7 @@
     population:{label:'Struktūra',title:'Gyventojų struktūra',desc:'Lytis, amžius, reprodukcinio amžiaus santykis ir gimimo kohortų palyginimas.'},
     migration:{label:'Migracija',title:'Migracija',desc:'Bendri srautai, 25–44 m. pjūvis pagal lytį, Lietuvos piliečių grįžimas ir užsienio piliečiai.'},
     family:{label:'Šeimos aplinka',title:'Šeimai palanki aplinka',desc:'Santuokos, šeimos politika, išmokų dosnumas, vaikų infrastruktūra ir socialinės hipotezės.'},
-    housing:{label:'Būstas',title:'Pirmasis būstas jaunoms šeimoms',desc:'Valstybės parama pirmajam būstui: oficialūs 2019–2025 m. faktai, laukusių šeimų eilės ir subsidijų sąlygos. Įperkamumas pagal apskritis dar tiriamas.'},
+    housing:{label:'Būstas',title:'Pirmojo būsto įperkamumas ir parama',desc:'Oficialūs VDA 2024–2025 m. butų kainų faktai, „Ober-Haus“ 2025 m. gruodžio nuomos bei pardavimo segmentai, paskolos metodika ir 2019–2025 m. valstybės paramos istorija. Visų 10 apskričių reitingas dar nepatvirtintas.'},
     future:{label:'Ateitis',title:'Projekcijos ir scenarijai',desc:'Oficialios EK projekcijos, produktyvumo poreikis, automatizacija ir socialinės sistemos finansavimo hipotezė.'},
     methods:{label:'Metodika',title:'Metodika ir šaltiniai',desc:'Kas yra faktas, kas išankstinis rodiklis, kas projekcija ir kur prasideda hipotezė.'},
     all:{label:'Visas tyrimas',title:'Visas tyrimas',desc:'Visos sekcijos viename ilgame puslapyje.'}
@@ -35,7 +35,7 @@
 
   function updateHeader(){
     const right=document.querySelector('.masthead-right');
-    if(right) right.innerHTML='Atnaujinta 2026-10-02<br>2025* – išankstiniai, kai pažymėta';
+    if(right) right.innerHTML='Atnaujinta 2026-10-10<br>2025* – išankstiniai, kai pažymėta';
     const sub=document.querySelector('.masthead-sub');
     if(sub) sub.innerHTML='<span>Gimstamumas</span><span>Gyventojų struktūra</span><span>Migracija</span><span>Šeimos aplinka</span><span>Būstas</span><span>Ateitis</span>';
     document.querySelectorAll('footer').forEach(f=>{f.innerHTML=f.innerHTML.replace(/Atnaujinta\s+2026-09-13/g,'Atnaujinta 2026-09-15');});
@@ -60,7 +60,7 @@
     const section=document.createElement('section');
     section.id='researchHome'; section.className='research-home';
     section.innerHTML=`<div class="container">
-      <div class="section-label">Tyrimo žemėlapis <span class="badge badge-official">ATNAUJINTA 2026-10-02</span></div>
+      <div class="section-label">Tyrimo žemėlapis <span class="badge badge-official">ATNAUJINTA 2026-10-10</span></div>
       <h2>Ne vienas skaičius. Šešios susijusios tyrimo kryptys.</h2>
       <p class="lead">Pagrindinis puslapis dabar rodo trumpą vaizdą. Toliau galima eiti tiesiai į dominančią temą – nebereikia slinkti per visą tyrimą iki projekcijų ir hipotezių.</p>
       <div class="research-summary">
@@ -74,7 +74,7 @@
         <a class="topic-card" href="${makeUrl('population')}"><div class="eyebrow">02 · Gyventojų struktūra</div><h3>Kas yra reprodukcinio amžiaus grupėje?</h3><p>Amžiaus ir lyties struktūra, 25–44 / 15–49 santykiai, gimimo kohortos.</p><span class="topic-link">Atverti temą →</span></a>
         <a class="topic-card" href="${makeUrl('migration')}"><div class="eyebrow">03 · Migracija</div><h3>Kas pakeitė gyventojų struktūrą?</h3><p>Bendri srautai, migracija pagal lytį, Lietuvos piliečių grįžimas ir užsienio piliečiai.</p><span class="topic-link">Atverti temą →</span></a>
         <a class="topic-card" href="${makeUrl('family')}"><div class="eyebrow">04 · Šeimos aplinka</div><h3>Ką valstybė ir aplinka gali keisti?</h3><p>Išmokų istorija ir FRE, infrastruktūra, santuokos, skaitmeninis kontekstas ir partnerystės hipotezės.</p><span class="topic-link">Atverti temą →</span></a>
-        <a class="topic-card" href="${makeUrl('housing')}"><div class="eyebrow">05 · Būstas</div><h3>Ar jaunai porai prieinamas pirmas šeimos būstas?</h3><p>Demografinio konteksto pjūvis: pirmo nuosavo būsto pasiekiamumas kaip galimas šeimos kūrimo aplinkos barjeras. Palyginimas tikslinamas.</p><span class="topic-link">Atverti temą →</span></a>
+        <a class="topic-card" href="${makeUrl('housing')}"><div class="eyebrow">05 · Būstas · NAUJA ANALIZĖ</div><h3>Ar pirmasis būstas prieinamas jaunoms šeimoms?</h3><p><strong>Jau paskelbta:</strong> 2019–2025 m. paramos analizė, VDA šešių miestų būsto kainų faktai, 2025 m. gruodžio nuomos ir pirkimo intervalai, paskolos metodika. <strong>Dar tiriama:</strong> palyginamas įperkamumas visose 10 apskričių.</p><span class="topic-link">Atverti Būsto analizę →</span></a>
         <a class="topic-card" href="${makeUrl('future')}"><div class="eyebrow">06 · Ateitis</div><h3>Kas nutiks, jei darbuotojų mažės?</h3><p>EK projekcijos, automatizacija, produktyvumas ir socialinės sistemos finansavimo scenarijai.</p><span class="topic-link">Atverti temą →</span></a>
         <a class="topic-card" href="${makeUrl('methods')}"><div class="eyebrow">07 · Metodika</div><h3>Kur baigiasi faktai ir prasideda hipotezės?</h3><p>Duomenų statusai, metodinės ribos ir visi pirminiai šaltiniai.</p><span class="topic-link">Atverti metodiką →</span></a>
       </div>

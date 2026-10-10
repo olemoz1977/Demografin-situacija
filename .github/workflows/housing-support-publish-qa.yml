@@ -1,7 +1,7 @@
 name: Housing support publication QA
 on:
   push:
-    branches: [publish/housing-support-2025-20261010, main]
+    branches: [main]
     paths:
       - "data/housing-support-young-family-series-2019-2025.json"
       - "data/housing-support-2025-national-reconciliation-and-maxima.json"
@@ -15,7 +15,13 @@ on:
     branches: [main]
     paths:
       - "housing-affordability.js"
+      - "research-nav.js"
+      - "index.html"
+      - "app.js"
       - "data/housing-support-young-family-series-2019-2025.json"
+      - "data/housing-verified-city-benchmarks-2024-2025.json"
+      - "data/housing-oberhaus-2025-12-two-room-new-vs-old-city-ranges.json"
+      - "data/housing-oberhaus-2025-12-one-room-rent-city-ranges.json"
       - "tests/test_housing_support_published.py"
   workflow_dispatch:
 permissions:
@@ -57,14 +63,31 @@ jobs:
               const page=await browser.newPage({viewport});
               const errors=[];
               page.on('pageerror',e=>errors.push(e.message));
-              await page.goto('http://127.0.0.1:8765/?view=housing',{waitUntil:'networkidle'});
+              await page.goto('http://127.0.0.1:8765/?view=overview',{waitUntil:'networkidle'});
+              const card=page.locator('.topic-card[href*="view=housing"]');
+              await card.waitFor({state:'visible'});
+              const cardText=await card.innerText();
+              if(!cardText.includes('Ar pirmasis būstas prieinamas jaunoms šeimoms?')||
+                 !cardText.includes('VDA šešių miestų')||
+                 cardText.includes('Ar jaunai porai')) throw Error(screen+' overview stale card');
+              await card.click();
+              await page.waitForURL('**/?view=housing');
               await page.waitForSelector('#housingAffordability',{state:'visible'});
               const ok=await page.evaluate(()=>{
                 const el=document.querySelector('#housingAffordability');
                 const c=document.querySelector('#housingSupportRecipientsChart');
                 const chart=window.Chart?.getChart(c);
                 const t=el.innerText;
+                const norm=t.replace(/[\u00a0\u202f\s]+/g,' ');
+                const tables=el.querySelectorAll('#housingMarketResearch .housing-table');
                 return {heading:t.includes('Ar pirmasis būstas prieinamas jaunoms šeimoms?'),
+                  research:!!el.querySelector('#housingMarketResearch'),
+                  vdaRows:tables[0]?.querySelectorAll('tbody tr').length===6,
+                  marketRows:tables[1]?.querySelectorAll('tbody tr').length===3,
+                  marketTables:tables.length===2,
+                  prices:/2\s*846/.test(norm)&&/1\s*988/.test(norm),
+                  marketBounds:/2\s*500\s*–\s*3\s*300/.test(norm)&&norm.includes('320–520'),
+                  sourceLimits:norm.includes('nepublikuojami')&&norm.toLowerCase().includes('rinkos ekspertiniai'),
                   series:chart?.data?.labels?.length===7,
                   chart2019:chart?.data?.datasets?.[0]?.data?.[0]===820,
                   chart2025:chart?.data?.datasets?.[0]?.data?.[6]===515,

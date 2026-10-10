@@ -58,11 +58,34 @@ class HousingSupportPublication(unittest.TestCase):
         self.assertIn("data.rows.length!==7",js)
         self.assertNotIn('2026%20003%20006',js)
 
+    def test_housing_research_is_visible_and_source_bounded(self):
+        city = json.loads(read('data/housing-verified-city-benchmarks-2024-2025.json'))
+        sale = json.loads(read('data/housing-oberhaus-2025-12-two-room-new-vs-old-city-ranges.json'))
+        rent = json.loads(read('data/housing-oberhaus-2025-12-one-room-rent-city-ranges.json'))
+        self.assertEqual('OFFICIAL_CONTEXT_ONLY_NOT_AFFORDABILITY_RANKING',city['publication_state'])
+        self.assertEqual(6,len(city['sale']['places']))
+        self.assertEqual('2025-12',sale['date'])
+        self.assertEqual('2025-12',rent['date'])
+        self.assertEqual(3,sum(r['city_old_new_sales_geography_alignment']=='EXACT_DISTRICT_CLASS_LABEL'
+                               for r in rent['rows']))
+        self.assertTrue(sale['no_county_rank'])
+        self.assertTrue(city['use_rules']['no_geography_swap'])
+        for text in ('id="housingMarketResearch"','VDA S7R280','„Ober-Haus“',
+                     '3,69 %','15 % pradinis įnašas',
+                     '10 apskričių įperkamumo reitingas ir metinio taupymo m² rodiklis nepublikuojami',
+                     '2025 m. gruodžio kainų apžvalga'):
+            self.assertIn(text,self.js)
+        self.assertIn('Ar pirmasis būstas prieinamas jaunoms šeimoms?',self.nav)
+        self.assertIn('Atverti Būsto analizę',self.nav)
+        self.assertNotIn('Ar jaunai porai prieinamas',self.nav)
+        for price in (2846,1988,1741):
+            self.assertTrue(any(round(r['eur_m2_2025'])==price for r in city['sale']['places']))
+
     def test_active_live_routing_and_cache(self):
-        self.assertIn('app.js?v=20261010support',self.html)
-        self.assertIn('housing-affordability.js?v=20261010support',self.app)
-        self.assertIn('research-nav.js?v=20261010support',self.app)
-        self.assertIn('Įperkamumas pagal apskritis dar tiriamas',self.nav)
+        self.assertIn('app.js?v=20261010housingfull',self.html)
+        self.assertIn('housing-affordability.js?v=20261010housingfull',self.app)
+        self.assertIn('research-nav.js?v=20261010housingfull',self.app)
+        self.assertIn('Visų 10 apskričių reitingas dar nepatvirtintas',self.nav)
         self.assertIn("housingAffordability:'housing'",self.nav)
         self.assertNotIn('jaunai dirbančiai porai',self.nav.lower())
 
