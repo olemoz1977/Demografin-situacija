@@ -61,6 +61,7 @@ jobs:
           node --check app-base.js
           node --check editorial-copy.js
           node --check app.js
+          node --check tests/publication-visibility-qa.cjs
       - name: Check official support contract
         run: python -m unittest -v tests/test_housing_support_published.py
       - name: Install headless browser
