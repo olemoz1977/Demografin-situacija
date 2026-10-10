@@ -1,0 +1,83 @@
+name: Housing support publication QA
+on:
+  push:
+    branches: [publish/housing-support-2025-20261010, main]
+    paths:
+      - "data/housing-support-young-family-series-2019-2025.json"
+      - "data/housing-support-2025-national-reconciliation-and-maxima.json"
+      - "housing-affordability.js"
+      - "research-nav.js"
+      - "app.js"
+      - "index.html"
+      - "tests/test_housing_support_published.py"
+      - ".github/workflows/housing-support-publish-qa.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "housing-affordability.js"
+      - "data/housing-support-young-family-series-2019-2025.json"
+      - "tests/test_housing_support_published.py"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  publish-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check JS syntax
+        run: |
+          node --check housing-affordability.js
+          node --check research-nav.js
+          node --check app.js
+      - name: Check official support contract
+        run: python -m unittest -v tests/test_housing_support_published.py
+      - name: Install headless browser
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Start local preview
+        run: |
+          python -m http.server 8765 > /tmp/housing-support-preview.log 2>&1 &
+          echo $! > /tmp/housing-support-preview.pid
+      - name: Verify published section on desktop and phone
+        run: |
+          node <<'NODE'
+          const { chromium }=require('playwright');
+          (async()=>{
+            const browser=await chromium.launch({headless:true});
+            for(const [screen,viewport] of [['desktop',{width:1365,height:800}],['mobile',{width:390,height:844}]]){
+              const page=await browser.newPage({viewport});
+              const errors=[];
+              page.on('pageerror',e=>errors.push(e.message));
+              await page.goto('http://127.0.0.1:8765/?view=housing',{waitUntil:'networkidle'});
+              await page.waitForSelector('#housingAffordability',{state:'visible'});
+              const ok=await page.evaluate(()=>{
+                const el=document.querySelector('#housingAffordability');
+                const c=document.querySelector('#housingSupportRecipientsChart');
+                const chart=window.Chart?.getChart(c);
+                const t=el.innerText;
+                return {heading:t.includes('Ar pirmasis būstas prieinamas jaunoms šeimoms?'),
+                  series:chart?.data?.labels?.length===7,
+                  chart2019:chart?.data?.datasets?.[0]?.data?.[0]===820,
+                  chart2025:chart?.data?.datasets?.[0]?.data?.[6]===515,
+                  queue:t.includes('1 700'), distinction:t.includes('10 minučių'),
+                  thresholds:t.includes('13 050 €'), noIncome:!el.querySelector('#housingIncomeScreen'),
+                  rootOverflow:document.documentElement.scrollWidth-innerWidth};
+              });
+              console.log('QA',screen,JSON.stringify(ok));
+              if(Object.entries(ok).some(([k,v])=>k==='rootOverflow'?v>3:!v)) throw Error(screen+' failed content/scroll QA');
+              if(errors.length) throw Error(screen+' page errors: '+errors.join('; '));
+              await page.close();
+            }
+            await browser.close();
+            console.log('PASS: public housing-support desktop/mobile browser QA');
+          })().catch(e=>{console.error(e);process.exit(1)});
+          NODE
