@@ -10,48 +10,84 @@
     "do_not_publish_unvalidated_research_as_fact": true,
     "do_not_invent_county_rank": true,
     "external_paid_data_forbidden": true,
-    "scope": "Initial register; other modules pending full backward audit."
+    "scope": "Back inventory of main, audit/population-standard-2024-2025, feature/housing-affordability, PR #1–#5 and eight website modules; browser QA and unattached historical chats not exhaustively verified.",
+    "inventory_document": "research/historical-research-inventory-2026-10-10.md",
+    "direct_live_browser_qa_pending": true,
+    "publish_scope_matrix_required": true,
+    "last_successful_pages_build": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/38019270232"
   },
   "module_inventory": [
     {
       "module": "overview",
-      "audit": "PENDING",
-      "published": true
+      "audit": "INVENTORIED_WITH_GAPS",
+      "published": true,
+      "audit_snapshot": "2026-10-10",
+      "inventory_document": "research/historical-research-inventory-2026-10-10.md",
+      "direct_live_browser_checked": false,
+      "unregistered_historical_conversation_facts_possible": true
     },
     {
       "module": "fertility",
-      "audit": "PENDING",
-      "published": true
+      "audit": "INVENTORIED_WITH_GAPS",
+      "published": true,
+      "audit_snapshot": "2026-10-10",
+      "inventory_document": "research/historical-research-inventory-2026-10-10.md",
+      "direct_live_browser_checked": false,
+      "unregistered_historical_conversation_facts_possible": true
     },
     {
       "module": "population",
-      "audit": "PENDING",
-      "published": true
+      "audit": "INVENTORIED_WITH_GAPS",
+      "published": true,
+      "audit_snapshot": "2026-10-10",
+      "inventory_document": "research/historical-research-inventory-2026-10-10.md",
+      "direct_live_browser_checked": false,
+      "unregistered_historical_conversation_facts_possible": true
     },
     {
       "module": "migration",
-      "audit": "PENDING",
-      "published": true
+      "audit": "INVENTORIED_WITH_GAPS",
+      "published": true,
+      "audit_snapshot": "2026-10-10",
+      "inventory_document": "research/historical-research-inventory-2026-10-10.md",
+      "direct_live_browser_checked": false,
+      "unregistered_historical_conversation_facts_possible": true
     },
     {
       "module": "family",
-      "audit": "PENDING",
-      "published": true
+      "audit": "INVENTORIED_WITH_GAPS",
+      "published": true,
+      "audit_snapshot": "2026-10-10",
+      "inventory_document": "research/historical-research-inventory-2026-10-10.md",
+      "direct_live_browser_checked": false,
+      "unregistered_historical_conversation_facts_possible": true
     },
     {
       "module": "housing",
-      "audit": "PARTIAL",
-      "published": true
+      "audit": "INVENTORIED_WITH_GAPS",
+      "published": true,
+      "audit_snapshot": "2026-10-10",
+      "inventory_document": "research/historical-research-inventory-2026-10-10.md",
+      "direct_live_browser_checked": false,
+      "unregistered_historical_conversation_facts_possible": true
     },
     {
       "module": "future",
-      "audit": "PENDING",
-      "published": true
+      "audit": "INVENTORIED_WITH_GAPS",
+      "published": true,
+      "audit_snapshot": "2026-10-10",
+      "inventory_document": "research/historical-research-inventory-2026-10-10.md",
+      "direct_live_browser_checked": false,
+      "unregistered_historical_conversation_facts_possible": true
     },
     {
       "module": "methods",
-      "audit": "PENDING",
-      "published": true
+      "audit": "INVENTORIED_WITH_GAPS",
+      "published": true,
+      "audit_snapshot": "2026-10-10",
+      "inventory_document": "research/historical-research-inventory-2026-10-10.md",
+      "direct_live_browser_checked": false,
+      "unregistered_historical_conversation_facts_possible": true
     }
   ],
   "findings": [
@@ -60,11 +96,12 @@
       "area": "housing",
       "title": "Lietuvoje didžiausia ES vieno suaugusiojo be išlaikomų vaikų namų ūkių dalis",
       "period": "2024–2025",
-      "status": "VERIFIED_UNPUBLISHED",
-      "statement": "Eurostat ilc_lvph02: Lietuva 2024 m. 50,5 % (p), 2025 m. 55,7 % (p). 2025 m. didžiausia dalis ES; tai visų amžių privačių namų ūkių, ne vienišų žmonių ar jaunų šeimų dalis.",
+      "status": "PUBLISHED_CONTEXT",
+      "statement": "Eurostat ilc_lvph02: 2024 m. LT 50,5 % (p), 2025 m. LT 55,7 % (p), 2025 m. ES 35,7 %. Tai vieno suaugusiojo be išlaikomų vaikų PRIVAČIŲ NAMŲ ŪKIŲ dalis (abiejais metais didžiausia ES). Ne žmonių, vienatvės, nesusituokusių ar būsto savininkų procentas. 5,2 p. p. dviejų preliminarių įverčių skirtumas neįrodo struktūrinės priežasties.",
       "source_urls": [
         "https://ec.europa.eu/eurostat/databrowser/view/ilc_lvph02/default/table",
-        "https://ec.europa.eu/eurostat/documents/15216629/24279737/KS-01-26-036-EN-N.pdf"
+        "https://ec.europa.eu/eurostat/documents/15216629/24279737/KS-01-26-036-EN-N.pdf",
+        "https://ec.europa.eu/eurostat/documents/15216629/22200086/KS-01-25-032-EN-N.pdf/23e00520-169f-fd9d-6543-2a5371d1642d"
       ],
       "evidence_files": [
         "data/households-single-adult-eurostat-2024-2025.json"
@@ -73,13 +110,19 @@
         "module": "housing",
         "secondary_modules": [
           "family",
+          "migration",
           "population"
         ],
-        "file": null,
-        "marker": null
+        "file": "housing-affordability.js",
+        "marker": "55,7 % Lietuvos"
       },
-      "blocker": "Neskelbta svetainėje; dėl visos visuomenės rodiklio negalima interpretuoti kaip jaunų šeimų, jaunimo ar būsto nuosavybės procento.",
-      "next_action": "Parengti aiškiai pažymėtą namų ūkių struktūros kontekstą ir susieti su Būsto bei Šeimos aplinkos moduliais."
+      "blocker": null,
+      "next_action": "PR #4 ir vėlesnio main Pages deploy PASS. Pirminį aiškinimą perkelti į population, kituose moduliuose palikti kontekstines nuorodas. Prieš naują UI leidimą atlikti tikrą browser QA.",
+      "publication_audit": {
+        "merged_pr": "https://github.com/olemoz1977/Demografin-situacija/pull/4",
+        "source_and_pages_deployed": true,
+        "current_browser_test": "PENDING"
+      }
     },
     {
       "id": "HOUSING-CITY-SALES-2025-01",
@@ -237,6 +280,696 @@
       },
       "blocker": "Nevaliduotas standartizuotas 10 apskričių pardavimo / nuomos / pajamų / išlaidų sluoksnis; rankability blocked.",
       "next_action": "Tęsti nemokamų šaltinių analizę (biudžetas 0 EUR), išlaikant duomenų kokybės vartus."
+    },
+    {
+      "id": "OVERVIEW-LATEST-2025-01",
+      "area": "overview",
+      "title": "VDA išankstinė 2025 m. apskaita: 17 478 gimimų, −19 946 natūrali kaita ir +16 165 neto migracija.",
+      "period": "2024–2025*",
+      "status": "PUBLISHED_CONTEXT",
+      "statement": "VDA išankstinė 2025 m. apskaita: 17 478 gimimų, −19 946 natūrali kaita ir +16 165 neto migracija. 2024 m. gimė 19 086.",
+      "source_urls": [
+        "https://vda.lrv.lt/lt/naujienos/metine-spaudos-konferencija-2025-m-pagrindiniai-salies-ekonominiai-ir-socialiniai-rodikliai-xho/"
+      ],
+      "evidence_files": [
+        "index.html"
+      ],
+      "publication": {
+        "module": "overview",
+        "file": "index.html",
+        "marker": "17 478"
+      },
+      "blocker": null,
+      "next_action": "Saugoti jau paskelbtą išvadą ir nedubliuoti; prieš kitą leidimą tikrinti modulio aprėptį."
+    },
+    {
+      "id": "OVERVIEW-TFR-NOWCAST-2025-01",
+      "area": "overview",
+      "title": "EUROPOP2025 bazinio scenarijaus TFR 1,03 – projekcinis nowcast, o ne faktinis 2025 m.",
+      "period": "2025P",
+      "status": "PUBLISHED_CONTEXT",
+      "statement": "EUROPOP2025 bazinio scenarijaus TFR 1,03 – projekcinis nowcast, o ne faktinis 2025 m. TFR.",
+      "source_urls": [
+        "https://ec.europa.eu/eurostat/databrowser/view/proj_25naasfr/default/table?lang=en"
+      ],
+      "evidence_files": [
+        "overview-nowcast.js",
+        "data/tfr-nowcast-2025.json"
+      ],
+      "publication": {
+        "module": "overview",
+        "file": "overview-nowcast.js",
+        "marker": "2025P TFR = 1,03"
+      },
+      "blocker": null,
+      "next_action": "Saugoti jau paskelbtą išvadą ir nedubliuoti; prieš kitą leidimą tikrinti modulio aprėptį."
+    },
+    {
+      "id": "FERTILITY-TFR-EU-2024-01",
+      "area": "fertility",
+      "title": "Lietuvos TFR 1,11 (trečias mažiausias ES), ES 1,34. TFR nelygu gimimų",
+      "period": "2024",
+      "status": "PUBLISHED_FACT",
+      "statement": "Lietuvos TFR 1,11 (trečias mažiausias ES), ES 1,34. TFR nelygu gimimų skaičius.",
+      "source_urls": [
+        "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table?lang=en"
+      ],
+      "evidence_files": [
+        "index.html"
+      ],
+      "publication": {
+        "module": "fertility",
+        "file": "index.html",
+        "marker": "trečias žemiausias Europos Sąjungoje"
+      },
+      "blocker": null,
+      "next_action": "Saugoti jau paskelbtą išvadą ir nedubliuoti; prieš kitą leidimą tikrinti modulio aprėptį."
+    },
+    {
+      "id": "FERTILITY-COUNTIES-2024-01",
+      "area": "fertility",
+      "title": "Visų 10 Lietuvos apskričių TFR <1,30: Tauragės 1,21, Alytaus ir Utenos po",
+      "period": "2024",
+      "status": "PUBLISHED_FACT",
+      "statement": "Visų 10 Lietuvos apskričių TFR <1,30: Tauragės 1,21, Alytaus ir Utenos po 0,96.",
+      "source_urls": [
+        "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3/default/table?lang=en"
+      ],
+      "evidence_files": [
+        "index.html"
+      ],
+      "publication": {
+        "module": "fertility",
+        "file": "index.html",
+        "marker": "2024 m. visose 10 Lietuvos apskričių TFR"
+      },
+      "blocker": null,
+      "next_action": "Saugoti jau paskelbtą išvadą ir nedubliuoti; prieš kitą leidimą tikrinti modulio aprėptį."
+    },
+    {
+      "id": "FERTILITY-FIRST-BIRTH-AGE-2024-01",
+      "area": "fertility",
+      "title": "2024 m. vidutinis pirmąjį vaiką gimdžiusių moterų amžius – 28,7 m.; 2023 m. – 28,4 m., ES 2024 m. –",
+      "period": "2021–2024",
+      "status": "PUBLISHED_FACT",
+      "statement": "2024 m. vidutinis pirmąjį vaiką gimdžiusių moterų amžius – 28,7 m.; 2023 m. – 28,4 m., ES 2024 m. – 29,9 m. Tai jau paskelbtas faktas, ne nauja Būsto analizė.",
+      "source_urls": [
+        "https://publikacijos.stat.gov.lt/lietuva-skaiciais-2025/lt/categories/3"
+      ],
+      "evidence_files": [
+        "index.html"
+      ],
+      "publication": {
+        "module": "fertility",
+        "file": "index.html",
+        "marker": "pirmąjį vaiką gimdžiusių moterų vidutinis amžius Lietuvoje – 28,7"
+      },
+      "blocker": null,
+      "next_action": "Saugoti jau paskelbtą išvadą ir nedubliuoti; prieš kitą leidimą tikrinti modulio aprėptį."
+    },
+    {
+      "id": "POPULATION-SEX-AGE-2025-01",
+      "area": "population",
+      "title": "VDA: 1 517,0 tūkst. moterų, 1 373,7 tūkst. vyrų, 65+ dalis 20,9 %, amžiaus piramidės",
+      "period": "2025-01-01",
+      "status": "PUBLISHED_FACT",
+      "statement": "VDA: 1 517,0 tūkst. moterų, 1 373,7 tūkst. vyrų, 65+ dalis 20,9 %, amžiaus piramidės pjūvis.",
+      "source_urls": [
+        "https://publikacijos.stat.gov.lt/lietuva-skaiciais-2025/lt/categories/3"
+      ],
+      "evidence_files": [
+        "app-base.js"
+      ],
+      "publication": {
+        "module": "population",
+        "file": "app-base.js",
+        "marker": "20,9 %"
+      },
+      "blocker": null,
+      "next_action": "Saugoti jau paskelbtą išvadą ir nedubliuoti; prieš kitą leidimą tikrinti modulio aprėptį."
+    },
+    {
+      "id": "POPULATION-REPRO-SEX-2025-01",
+      "area": "population",
+      "title": "Eurostat demo_pjan 2025 m. 25–44 m. grupėje – 884 moterys/1000 vyrų; papildomas pjūvis, o",
+      "period": "2015–2025",
+      "status": "PUBLISHED_CONTEXT",
+      "statement": "Eurostat demo_pjan 2025 m. 25–44 m. grupėje – 884 moterys/1000 vyrų; papildomas pjūvis, o standartinis vaisingumo amžius 15–49 m.",
+      "source_urls": [
+        "https://ec.europa.eu/eurostat/databrowser/view/demo_pjan/default/table?lang=en"
+      ],
+      "evidence_files": [
+        "research-nav.js",
+        "data/sex-ratio-history.json"
+      ],
+      "publication": {
+        "module": "population",
+        "file": "research-nav.js",
+        "marker": "884 moterys / 1 000 vyrų"
+      },
+      "blocker": null,
+      "next_action": "Saugoti jau paskelbtą išvadą ir nedubliuoti; prieš kitą leidimą tikrinti modulio aprėptį."
+    },
+    {
+      "id": "POPULATION-BIRTH-COHORTS-2025-01",
+      "area": "population",
+      "title": "1985–1999 m. gimė apie 942–950 mergaičių/1000 berniukų. Dabartinis 25–39 m. lyčių santykis nėra",
+      "period": "1985–1999 gimimai, 2025 gyventojai",
+      "status": "PUBLISHED_CONTEXT",
+      "statement": "1985–1999 m. gimė apie 942–950 mergaičių/1000 berniukų. Dabartinis 25–39 m. lyčių santykis nėra uždaras tų pačių individų sekimas.",
+      "source_urls": [
+        "https://unstats.un.org/unsd/demographic/products/dyb/DYBNat/NatStatTab01.pdf"
+      ],
+      "evidence_files": [
+        "sex-history.js",
+        "data/birth-sex-history.json"
+      ],
+      "publication": {
+        "module": "population",
+        "file": "sex-history.js",
+        "marker": "942–950 mergaičių 1 000 berniukų"
+      },
+      "blocker": null,
+      "next_action": "Saugoti jau paskelbtą išvadą ir nedubliuoti; prieš kitą leidimą tikrinti modulio aprėptį."
+    },
+    {
+      "id": "MIGRATION-FLOW-2025-01",
+      "area": "migration",
+      "title": "VDA 2025*: atvyko 44 705, išvyko 28 540; neto +16 165; LR piliečių +8 486 ir užsienio piliečių +7",
+      "period": "2024–2025*",
+      "status": "PUBLISHED_FACT",
+      "statement": "VDA 2025*: atvyko 44 705, išvyko 28 540; neto +16 165; LR piliečių +8 486 ir užsienio piliečių +7 679.",
+      "source_urls": [
+        "https://vda.lrv.lt/lt/naujienos/metine-spaudos-konferencija-2025-m-pagrindiniai-salies-ekonominiai-ir-socialiniai-rodikliai-xho/"
+      ],
+      "evidence_files": [
+        "index.html"
+      ],
+      "publication": {
+        "module": "migration",
+        "file": "index.html",
+        "marker": "44 705"
+      },
+      "blocker": null,
+      "next_action": "Saugoti jau paskelbtą išvadą ir nedubliuoti; prieš kitą leidimą tikrinti modulio aprėptį."
+    },
+    {
+      "id": "MIGRATION-FOREIGN-CITIZENS-2025-01",
+      "area": "migration",
+      "title": "Migracijos departamentas: 217 067 užsienio piliečiai, 7,5 % gyventojų; gyventojų likutis nėra",
+      "period": "2025-12-31",
+      "status": "PUBLISHED_FACT",
+      "statement": "Migracijos departamentas: 217 067 užsienio piliečiai, 7,5 % gyventojų; gyventojų likutis nėra metinis atvykimas.",
+      "source_urls": [
+        "https://migracija.lrv.lt/en/statistics/migration-yearbooks/"
+      ],
+      "evidence_files": [
+        "index.html"
+      ],
+      "publication": {
+        "module": "migration",
+        "file": "index.html",
+        "marker": "217 067 užsienio piliečiai"
+      },
+      "blocker": null,
+      "next_action": "Saugoti jau paskelbtą išvadą ir nedubliuoti; prieš kitą leidimą tikrinti modulio aprėptį."
+    },
+    {
+      "id": "MIGRATION-SEX-AGE-01",
+      "area": "migration",
+      "title": "Eurostat migr_imm8/migr_emi2 imigracijos, emigracijos ir neto balanso pagal lytį bei 25–44 m. amžių",
+      "period": "2015–2024 (patikrinti failo tikslų intervalą)",
+      "status": "PUBLISHED_CONTEXT",
+      "statement": "Eurostat migr_imm8/migr_emi2 imigracijos, emigracijos ir neto balanso pagal lytį bei 25–44 m. amžių analizė. Lietuvos piliečių grįžimo srautai neseka individualaus asmens kelio.",
+      "source_urls": [
+        "https://ec.europa.eu/eurostat/databrowser/view/migr_imm8/default/table"
+      ],
+      "evidence_files": [
+        "migration-sex.js",
+        "data/migration-sex-history.json"
+      ],
+      "publication": {
+        "module": "migration",
+        "file": "migration-sex.js",
+        "marker": "25–44 m. neto tarptautinė migracija pagal lytį"
+      },
+      "blocker": null,
+      "next_action": "Saugoti jau paskelbtą išvadą ir nedubliuoti; prieš kitą leidimą tikrinti modulio aprėptį."
+    },
+    {
+      "id": "FAMILY-MARRIAGES-2024-01",
+      "area": "family",
+      "title": "2024 m. 12 890 santuokų ir 7 127 ištuokos; santykis tais pačiais metais nereiškia santuokos iširimo",
+      "period": "2024",
+      "status": "PUBLISHED_FACT",
+      "statement": "2024 m. 12 890 santuokų ir 7 127 ištuokos; santykis tais pačiais metais nereiškia santuokos iširimo tikimybės.",
+      "source_urls": [
+        "https://publikacijos.stat.gov.lt/lietuva-skaiciais-2025/lt/categories/3"
+      ],
+      "evidence_files": [
+        "index.html"
+      ],
+      "publication": {
+        "module": "family",
+        "file": "index.html",
+        "marker": "12 890 santuokų ir 7 127 ištuokos"
+      },
+      "blocker": null,
+      "next_action": "Saugoti jau paskelbtą išvadą ir nedubliuoti; prieš kitą leidimą tikrinti modulio aprėptį."
+    },
+    {
+      "id": "FAMILY-LEAVE-POLICY-2007-2012-01",
+      "area": "family",
+      "title": "2007–2012 dosnių vaiko priežiūros išmokų istorijos ir TFR pakilimo sutapimas nėra įrodytas",
+      "period": "2005–2012",
+      "status": "PUBLISHED_CONTEXT",
+      "statement": "2007–2012 dosnių vaiko priežiūros išmokų istorijos ir TFR pakilimo sutapimas nėra įrodytas priežastinis ryšys.",
+      "source_urls": [
+        "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table?lang=en"
+      ],
+      "evidence_files": [
+        "policy-history.js",
+        "data/family-policy-history.json"
+      ],
+      "publication": {
+        "module": "family",
+        "file": "policy-history.js",
+        "marker": "2007–2012: labai dosnios vaiko priežiūros išmokos"
+      },
+      "blocker": null,
+      "next_action": "Saugoti jau paskelbtą išvadą ir nedubliuoti; prieš kitą leidimą tikrinti modulio aprėptį."
+    },
+    {
+      "id": "FAMILY-LEAVE-FRE-01",
+      "area": "family",
+      "title": "FRE išmokų normų ir mėnesių modelis: 2008 m. 22,2 pilno tarifo mėnesio; dabartinės schemos bazė 9,0",
+      "period": "2008–2026 baziniai variantai",
+      "status": "PUBLISHED_CONTEXT",
+      "statement": "FRE išmokų normų ir mėnesių modelis: 2008 m. 22,2 pilno tarifo mėnesio; dabartinės schemos bazė 9,0 neįtraukiant 2+2 neperleidžiamų mėnesių, lubų ir mokesčių.",
+      "source_urls": [
+        "https://www.oecd.org/els/family/database.htm"
+      ],
+      "evidence_files": [
+        "policy-fre.js",
+        "data/family-policy-history.json"
+      ],
+      "publication": {
+        "module": "family",
+        "file": "policy-fre.js",
+        "marker": "22,2 pilno tarifo mėnesio"
+      },
+      "blocker": null,
+      "next_action": "Saugoti jau paskelbtą išvadą ir nedubliuoti; prieš kitą leidimą tikrinti modulio aprėptį."
+    },
+    {
+      "id": "FAMILY-CHILDCARE-ACCESS-2025-01",
+      "area": "family",
+      "title": "Vilniaus 1656 laisvos darželių vietos ir 3493 vaikai eilėje tuo pačiu metu rodo pasiekiamumo, ne",
+      "period": "2025-04–05",
+      "status": "PUBLISHED_CONTEXT",
+      "statement": "Vilniaus 1656 laisvos darželių vietos ir 3493 vaikai eilėje tuo pačiu metu rodo pasiekiamumo, ne vien bendro vietų skaičiaus problemą.",
+      "source_urls": [
+        "https://vilnius.lt/"
+      ],
+      "evidence_files": [
+        "infrastructure.js"
+      ],
+      "publication": {
+        "module": "family",
+        "file": "infrastructure.js",
+        "marker": "1 656"
+      },
+      "blocker": null,
+      "next_action": "Saugoti jau paskelbtą išvadą ir nedubliuoti; prieš kitą leidimą tikrinti modulio aprėptį."
+    },
+    {
+      "id": "FAMILY-DIGITAL-HYPOTHESES-01",
+      "area": "family",
+      "title": "Skaitmeninis gyvenimas, šeimos kūrimo hipotezės ir gimstamumas: pateikiami skirtingo patikimumo",
+      "period": "2007–2025",
+      "status": "PUBLISHED_CONTEXT",
+      "statement": "Skaitmeninis gyvenimas, šeimos kūrimo hipotezės ir gimstamumas: pateikiami skirtingo patikimumo mechanizmai, o ne patvirtintas priežastinis efektas.",
+      "source_urls": [
+        "https://ec.europa.eu/eurostat/databrowser/view/isoc_ci_ifp_fu/default/table?lang=en"
+      ],
+      "evidence_files": [
+        "index.html"
+      ],
+      "publication": {
+        "module": "family",
+        "file": "index.html",
+        "marker": "Skaitmeninio naudojimo kontekstas"
+      },
+      "blocker": null,
+      "next_action": "Saugoti jau paskelbtą išvadą ir nedubliuoti; prieš kitą leidimą tikrinti modulio aprėptį."
+    },
+    {
+      "id": "HOUSING-VDA-RENT-2025-01",
+      "area": "housing",
+      "title": "VDA S7R281 penkių miestų metiniai nuomos €/m² vidurkiai; ne 1 k. nuomos segmentas, ne",
+      "period": "2025",
+      "status": "VERIFIED_UNPUBLISHED",
+      "statement": "VDA S7R281 penkių miestų metiniai nuomos €/m² vidurkiai; ne 1 k. nuomos segmentas, ne standartizuotas 10 apskričių rinkinys.",
+      "source_urls": [
+        "https://osp-sdg.stat.gov.lt/arcgis/rest/services/EVP_DB_connection/evp32/FeatureServer/0"
+      ],
+      "evidence_files": [
+        "research/historical-research-inventory-2026-10-10.md",
+        "data/housing-verified-city-benchmarks-2024-2025.json"
+      ],
+      "publication": {
+        "module": "housing",
+        "file": null,
+        "marker": null
+      },
+      "blocker": "Patikrinta tyrime, bet dar nėra atskiro viešo bloko ar apimties sprendimo.",
+      "next_action": "Po apibrėžčių patikros ir strateginio leidimo apsispręsti dėl publikavimo modulio; neparodyti kaip 10 apskričių jaunų šeimų reitingo."
+    },
+    {
+      "id": "HOUSING-PRICE-CHANGE-DERIVED-2025-01",
+      "area": "housing",
+      "title": "Iš VDA S7R280 skirtingų metų 6 miestų butų vidurkių išvesti pokyčiai: Vilnius +7,8 %, Kaunas +12,2",
+      "period": "2024–2025",
+      "status": "VERIFIED_UNPUBLISHED",
+      "statement": "Iš VDA S7R280 skirtingų metų 6 miestų butų vidurkių išvesti pokyčiai: Vilnius +7,8 %, Kaunas +12,2 %, Klaipėda +11,7 %, Šiauliai +15,0 %, Panevėžys +13,6 %, Alytus +16,7 %. NE nekintamos būsto kokybės kainų indeksas.",
+      "source_urls": [
+        "https://osp-sdg.stat.gov.lt/arcgis/rest/services/EVP_DB_connection/evp56/FeatureServer/0"
+      ],
+      "evidence_files": [
+        "research/historical-research-inventory-2026-10-10.md"
+      ],
+      "publication": {
+        "module": "housing",
+        "file": null,
+        "marker": null
+      },
+      "blocker": "Patikrinta tyrime, bet dar nėra atskiro viešo bloko ar apimties sprendimo.",
+      "next_action": "Po apibrėžčių patikros ir strateginio leidimo apsispręsti dėl publikavimo modulio; neparodyti kaip 10 apskričių jaunų šeimų reitingo.",
+      "external_research_paths": [
+        "https://github.com/olemoz1977/Demografin-situacija/blob/audit/population-standard-2024-2025/data/housing-city-market-changes-derived-2024-2025.json"
+      ]
+    },
+    {
+      "id": "HOUSING-COUNTY-HH-INCOME-2024-01",
+      "area": "housing",
+      "title": "LDP VDA S3R908: visų namų ūkių mėnesio disponuojamosios piniginės pajamos pagal 10 apskričių:",
+      "period": "2024",
+      "status": "VERIFIED_UNPUBLISHED",
+      "statement": "LDP VDA S3R908: visų namų ūkių mėnesio disponuojamosios piniginės pajamos pagal 10 apskričių: Vilniaus 2115, Klaipėdos 1823, Kauno 1660, Telšių 1241 EUR. NE jaunų šeimų pajamos; 2025 m. išrašo nėra.",
+      "source_urls": [
+        "https://dataportal.gov.lt/lt/datasets/sd003622"
+      ],
+      "evidence_files": [
+        "research/historical-research-inventory-2026-10-10.md"
+      ],
+      "publication": {
+        "module": "housing",
+        "file": null,
+        "marker": null
+      },
+      "blocker": "Patikrinta tyrime, bet dar nėra atskiro viešo bloko ar apimties sprendimo.",
+      "next_action": "Po apibrėžčių patikros ir strateginio leidimo apsispręsti dėl publikavimo modulio; neparodyti kaip 10 apskričių jaunų šeimų reitingo.",
+      "external_research_paths": [
+        "https://github.com/olemoz1977/Demografin-situacija/blob/audit/population-standard-2024-2025/data/ldp-household-disposable-income-county-2024.json"
+      ]
+    },
+    {
+      "id": "HOUSING-YOUNG-LEAVING-HOME-2025-01",
+      "area": "housing",
+      "title": "Eurostat EU-LFS yth_demo_030 LT 2024 m. 22,4 m. ir 2025 m. 22,7 m.; ES 26,2 ir 26,3 m. Tai jaunų",
+      "period": "2024–2025",
+      "status": "VERIFIED_UNPUBLISHED",
+      "statement": "Eurostat EU-LFS yth_demo_030 LT 2024 m. 22,4 m. ir 2025 m. 22,7 m.; ES 26,2 ir 26,3 m. Tai jaunų žmonių gyvenimo atskirai nuo tėvų, ne pirmojo būsto įsigijimo amžiaus įvertis.",
+      "source_urls": [
+        "https://ec.europa.eu/eurostat/databrowser/view/yth_demo_030/default/table"
+      ],
+      "evidence_files": [
+        "research/historical-research-inventory-2026-10-10.md"
+      ],
+      "publication": {
+        "module": "housing",
+        "file": null,
+        "marker": null
+      },
+      "blocker": "Patikrinta tyrime, bet dar nėra atskiro viešo bloko ar apimties sprendimo.",
+      "next_action": "Po apibrėžčių patikros ir strateginio leidimo apsispręsti dėl publikavimo modulio; neparodyti kaip 10 apskričių jaunų šeimų reitingo.",
+      "external_research_paths": [
+        "https://github.com/olemoz1977/Demografin-situacija/blob/audit/population-standard-2024-2025/data/young-adults-housing-path-eurostat-2024-2025.json"
+      ]
+    },
+    {
+      "id": "HOUSING-SAVINGS-CITY3-2025-01",
+      "area": "housing",
+      "title": "Trijų miestų hipotetinė 2×1535 EUR neto mėnesio pajamų, vieno kambario prašomos nuomos ir",
+      "period": "2025",
+      "status": "MODELLED_UNPUBLISHED",
+      "statement": "Trijų miestų hipotetinė 2×1535 EUR neto mėnesio pajamų, vieno kambario prašomos nuomos ir 1300/1700/2100 EUR KITŲ išlaidų prielaidų m²/metus jautrumo lentelė. Ne stebėtas jaunų šeimų taupymas.",
+      "source_urls": [
+        "https://osp-sdg.stat.gov.lt/arcgis/rest/services/EVP_DB_connection/evp56/FeatureServer/0"
+      ],
+      "evidence_files": [
+        "research/historical-research-inventory-2026-10-10.md"
+      ],
+      "publication": {
+        "module": "housing",
+        "file": null,
+        "marker": null
+      },
+      "blocker": "Tik audito šakos jautrumo scenarijus; prielaidos nėra oficiali statistika.",
+      "next_action": "Išsaugoti modelį ir metodinį apribojimą; nepublikuoti kaip oficialaus fakto.",
+      "external_research_paths": [
+        "https://github.com/olemoz1977/Demografin-situacija/blob/audit/population-standard-2024-2025/data/housing-first-home-saving-scenarios-city3-2025.json"
+      ]
+    },
+    {
+      "id": "HOUSING-REVERSE-BUDGET-2025-01",
+      "area": "housing",
+      "title": "Atvirkštinis modelis: 50 m² kainos orientyras, 15/20 % įnašas, 2/3/5 m. tikslas; atgal skaičiuotos",
+      "period": "2025",
+      "status": "MODELLED_UNPUBLISHED",
+      "statement": "Atvirkštinis modelis: 50 m² kainos orientyras, 15/20 % įnašas, 2/3/5 m. tikslas; atgal skaičiuotos toleruotinos kitos šeimos išlaidos, ne banko tinkamumas.",
+      "source_urls": [
+        "https://www.lb.lt/lt/paskolu-palukanu-normos"
+      ],
+      "evidence_files": [
+        "research/historical-research-inventory-2026-10-10.md"
+      ],
+      "publication": {
+        "module": "housing",
+        "file": null,
+        "marker": null
+      },
+      "blocker": "Tik audito šakos jautrumo scenarijus; prielaidos nėra oficiali statistika.",
+      "next_action": "Išsaugoti modelį ir metodinį apribojimą; nepublikuoti kaip oficialaus fakto.",
+      "external_research_paths": [
+        "https://github.com/olemoz1977/Demografin-situacija/blob/audit/population-standard-2024-2025/data/housing-first-home-reverse-budget-2025.json"
+      ]
+    },
+    {
+      "id": "HOUSING-QUALITY-COMPARABILITY-2025-01",
+      "area": "housing",
+      "title": "45–55 m², seno ir naujo būsto, dalinės apdailos ir sandorių imties jautrumo tyrimas parodo, kodėl",
+      "period": "2025",
+      "status": "MODELLED_UNPUBLISHED",
+      "statement": "45–55 m², seno ir naujo būsto, dalinės apdailos ir sandorių imties jautrumo tyrimas parodo, kodėl vienodo 10 apskričių reitingo dar nėra.",
+      "source_urls": [
+        "https://www.ober-haus.lt/wp-content/uploads/NT-kainos-2025-gruodis.pdf"
+      ],
+      "evidence_files": [
+        "research/historical-research-inventory-2026-10-10.md"
+      ],
+      "publication": {
+        "module": "housing",
+        "file": null,
+        "marker": null
+      },
+      "blocker": "Tik audito šakos jautrumo scenarijus; prielaidos nėra oficiali statistika.",
+      "next_action": "Išsaugoti modelį ir metodinį apribojimą; nepublikuoti kaip oficialaus fakto.",
+      "external_research_paths": [
+        "https://github.com/olemoz1977/Demografin-situacija/blob/audit/population-standard-2024-2025/data/housing-first-home-quality-segment-sensitivity-2025.json"
+      ]
+    },
+    {
+      "id": "HOUSING-MORTGAGE-PER-M2-2025-01",
+      "area": "housing",
+      "title": "2025 m. 15 % įnašo ir 3,69 % vidutinių naujų būsto kreditų palūkanų istoriniu pagrindu modeliuojama",
+      "period": "2025-12",
+      "status": "MODELLED_UNPUBLISHED",
+      "statement": "2025 m. 15 % įnašo ir 3,69 % vidutinių naujų būsto kreditų palūkanų istoriniu pagrindu modeliuojama paskolos įmoka per perkamą m², o ne realios šeimos banko sutartis.",
+      "source_urls": [
+        "https://www.lb.lt/lt/paskolu-palukanu-normos"
+      ],
+      "evidence_files": [
+        "research/historical-research-inventory-2026-10-10.md"
+      ],
+      "publication": {
+        "module": "housing",
+        "file": null,
+        "marker": null
+      },
+      "blocker": "Tik audito šakos jautrumo scenarijus; prielaidos nėra oficiali statistika.",
+      "next_action": "Išsaugoti modelį ir metodinį apribojimą; nepublikuoti kaip oficialaus fakto.",
+      "external_research_paths": [
+        "https://github.com/olemoz1977/Demografin-situacija/blob/audit/population-standard-2024-2025/data/housing-first-home-2025-12-per-m2-mortgage-burden.json"
+      ]
+    },
+    {
+      "id": "HOUSING-MATCHED-MARKET-2025-01",
+      "area": "housing",
+      "title": "3 miestų suderintos 1 k. nuomos ir 2 k. seno/naujo būsto orientyrų scenarijai, ne tos pačios",
+      "period": "2025-12",
+      "status": "MODELLED_UNPUBLISHED",
+      "statement": "3 miestų suderintos 1 k. nuomos ir 2 k. seno/naujo būsto orientyrų scenarijai, ne tos pačios kokybės faktiniai pirkimo sandoriai.",
+      "source_urls": [
+        "https://www.ober-haus.lt/wp-content/uploads/NT-kainos-2025-gruodis.pdf"
+      ],
+      "evidence_files": [
+        "research/historical-research-inventory-2026-10-10.md"
+      ],
+      "publication": {
+        "module": "housing",
+        "file": null,
+        "marker": null
+      },
+      "blocker": "Tik audito šakos jautrumo scenarijus; prielaidos nėra oficiali statistika.",
+      "next_action": "Išsaugoti modelį ir metodinį apribojimą; nepublikuoti kaip oficialaus fakto.",
+      "external_research_paths": [
+        "https://github.com/olemoz1977/Demografin-situacija/blob/audit/population-standard-2024-2025/data/housing-first-home-2025-12-consistent-market-snapshot-scenarios.json"
+      ]
+    },
+    {
+      "id": "HOUSING-DEMAND-SCHEMES-2026-01",
+      "area": "housing",
+      "title": "2026-05 platesnės B schemos ~1000 paraiškų per 10 minučių ir 2026-09 regioninės A schemos ~800",
+      "period": "2026-05–09",
+      "status": "VERIFIED_UNPUBLISHED",
+      "statement": "2026-05 platesnės B schemos ~1000 paraiškų per 10 minučių ir 2026-09 regioninės A schemos ~800 paraiškų skiriasi nuo 2025 m. 515 išmokų; 2026 konteksto neperkelti į 2025.",
+      "source_urls": [
+        "https://socmin.lrv.lt/lt/naujienos-1/baigtas-paraisku-priemimas-valstybes-paramai-bustui-isigyti-gIR/"
+      ],
+      "evidence_files": [
+        "research/historical-research-inventory-2026-10-10.md"
+      ],
+      "publication": {
+        "module": "housing",
+        "file": null,
+        "marker": null
+      },
+      "blocker": "Patikrinta tyrime, bet dar nėra atskiro viešo bloko ar apimties sprendimo.",
+      "next_action": "Po apibrėžčių patikros ir strateginio leidimo apsispręsti dėl publikavimo modulio; neparodyti kaip 10 apskričių jaunų šeimų reitingo.",
+      "external_research_paths": [
+        "https://github.com/olemoz1977/Demografin-situacija/blob/audit/population-standard-2024-2025/data/housing-state-support-demand-context-2025-2026.json"
+      ]
+    },
+    {
+      "id": "HOUSING-YOUNG-COUPLES-DENOMINATOR-2025-01",
+      "area": "housing",
+      "title": "Feature šakoje yra statistiškai netapatūs tikslinių porų populiacijos modeliai. Tai nėra oficialus",
+      "period": "2025",
+      "status": "RESEARCH_BLOCKED",
+      "statement": "Feature šakoje yra statistiškai netapatūs tikslinių porų populiacijos modeliai. Tai nėra oficialus visų jaunų šeimų vardiklis; negalima skaičiuoti subsidijos aprėpties procento.",
+      "source_urls": [
+        "https://ec.europa.eu/eurostat/databrowser/view/lfst_hhnhtych/default/table"
+      ],
+      "evidence_files": [
+        "research/historical-research-inventory-2026-10-10.md"
+      ],
+      "publication": {
+        "module": "housing",
+        "file": null,
+        "marker": null
+      },
+      "blocker": "Nėra validuoto vienodo statistinio vardiklio.",
+      "next_action": "Išsaugoti modelį ir metodinį apribojimą; nepublikuoti kaip oficialaus fakto.",
+      "external_research_paths": [
+        "https://github.com/olemoz1977/Demografin-situacija/blob/feature/housing-affordability/research/housing-target-couple-denominator-2025.md"
+      ]
+    },
+    {
+      "id": "FUTURE-AGEING-REPORT-2040-01",
+      "area": "future",
+      "title": "EK 2024 Ageing Report bazinėje projekcijoje LT 65+/20–64 rodiklis 2022 m. 33,1 %, 2040 m. 50,3 %.",
+      "period": "2022–2040",
+      "status": "PUBLISHED_CONTEXT",
+      "statement": "EK 2024 Ageing Report bazinėje projekcijoje LT 65+/20–64 rodiklis 2022 m. 33,1 %, 2040 m. 50,3 %. Tai projekcija, ne išmatuotas 2040 faktas.",
+      "source_urls": [
+        "https://economy-finance.ec.europa.eu/publications/2024-ageing-report-economic-and-budgetary-projections-eu-member-states-2022-2070_en"
+      ],
+      "evidence_files": [
+        "future.js"
+      ],
+      "publication": {
+        "module": "future",
+        "file": "future.js",
+        "marker": "2022 m. Lietuvos senatvės priklausomybės rodiklis"
+      },
+      "blocker": null,
+      "next_action": "Saugoti jau paskelbtą išvadą ir nedubliuoti; prieš kitą leidimą tikrinti modulio aprėptį."
+    },
+    {
+      "id": "FUTURE-ADAPTATION-SCENARIOS-01",
+      "area": "future",
+      "title": "Trys autoriaus produktyvumo, automatizacijos, migracijos ir socialinės sistemos finansavimo",
+      "period": "2025–2070",
+      "status": "PUBLISHED_CONTEXT",
+      "statement": "Trys autoriaus produktyvumo, automatizacijos, migracijos ir socialinės sistemos finansavimo scenarijai; ne oficiali EK tikimybių prognozė.",
+      "source_urls": [
+        "https://economy-finance.ec.europa.eu/publications/2024-ageing-report-economic-and-budgetary-projections-eu-member-states-2022-2070_en"
+      ],
+      "evidence_files": [
+        "future.js"
+      ],
+      "publication": {
+        "module": "future",
+        "file": "future.js",
+        "marker": "Trys Lietuvos scenarijai"
+      },
+      "blocker": null,
+      "next_action": "Saugoti jau paskelbtą išvadą ir nedubliuoti; prieš kitą leidimą tikrinti modulio aprėptį."
+    },
+    {
+      "id": "METHODS-STATUSES-2025-01",
+      "area": "methods",
+      "title": "2024 oficialus galutinis TFR, VDA 2025* preliminarus faktas, Eurostat 2025P TFR projekcija ir",
+      "period": "2024–2026",
+      "status": "PUBLISHED_CONTEXT",
+      "statement": "2024 oficialus galutinis TFR, VDA 2025* preliminarus faktas, Eurostat 2025P TFR projekcija ir EU-SILC p preliminarus namų ūkio faktas nėra viena duomenų statuso rūšis.",
+      "source_urls": [
+        "https://ec.europa.eu/eurostat/databrowser/view/proj_25naasfr/default/table?lang=en"
+      ],
+      "evidence_files": [
+        "overview-nowcast.js",
+        "data/households-single-adult-eurostat-2024-2025.json"
+      ],
+      "publication": {
+        "module": "methods",
+        "file": "overview-nowcast.js",
+        "marker": "2025P TFR = 1,03"
+      },
+      "blocker": null,
+      "next_action": "Saugoti jau paskelbtą išvadą ir nedubliuoti; prieš kitą leidimą tikrinti modulio aprėptį."
+    },
+    {
+      "id": "METHODS-DENOMINATORS-01",
+      "area": "methods",
+      "title": "Namų ūkis nelygu būsto savininkui; įvairūs gimstamumo, šeimų, pajamų, migracijos, būsto sandorių",
+      "period": "2024–2026",
+      "status": "PUBLISHED_CONTEXT",
+      "statement": "Namų ūkis nelygu būsto savininkui; įvairūs gimstamumo, šeimų, pajamų, migracijos, būsto sandorių vardikliai nesutampa, koreliacija nelygu priežastis.",
+      "source_urls": [
+        "https://ec.europa.eu/eurostat/web/income-and-living-conditions/methodology"
+      ],
+      "evidence_files": [
+        "index.html",
+        "research/historical-research-inventory-2026-10-10.md"
+      ],
+      "publication": {
+        "module": "methods",
+        "file": "index.html",
+        "marker": "Koreliacija ≠ priežastis"
+      },
+      "blocker": null,
+      "next_action": "Saugoti jau paskelbtą išvadą ir nedubliuoti; prieš kitą leidimą tikrinti modulio aprėptį."
     }
   ]
 }
