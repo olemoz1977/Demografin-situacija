@@ -373,6 +373,10 @@ class HousingPopulationStandardTest(unittest.TestCase):
             (ROOT / "data/housing-support-2025-national-reconciliation-and-maxima.json").read_text(encoding="utf-8")
         )
         a, b, combined = d["scheme_A"], d["scheme_B"], d["both_schemes"]
+        self.assertEqual(16000, d["invalid_naive_subsidy_mean"]["computed_eur"])
+        self.assertTrue(d["guards"]["do_not_divide_scheme_A_all_expenditure_by_primary_recipients_as_2025_new_regime_average"])
+        self.assertIn("8,24 mln. € išlaidų padalijus iš 515", self.housing)
+        self.assertIn("Tai nėra faktinė vidutinė subsidija", self.housing)
         self.assertEqual(515 + (556 - 32), combined["primary_support_count_official_report"])
         self.assertEqual(1039, combined["primary_support_count_official_report"])
         self.assertEqual(44 + 32, combined["additional_subsidies_count_official_report"])
