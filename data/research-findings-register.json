@@ -15,7 +15,10 @@
     "direct_live_browser_qa_pending": false,
     "publish_scope_matrix_required": true,
     "last_successful_pages_build": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/38026170535",
-    "last_live_browser_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/38026170701"
+    "last_live_browser_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/38026170701",
+    "housing_young_family_definition": "Lietuvos Respublikos finansinės paskatos pirmaji busta isigyjancioms jaunoms seimoms kontekstas (SADM): abu sutuoktiniai ar registruoti partneriai kiekvienas iki 36 m.; vienas iki 36 m. vaiką(-us) auginantis tėvas arba motina. Vertinant ankstesnių metų schemas atskirti jų metų teisines redakcijas.",
+    "housing_young_family_source": "https://socmin.lrv.lt/lt/veiklos-sritys/seima-ir-vaikai/finansine-paskata-pirmaji-busta-isigyjancioms-jaunoms-seimoms/",
+    "forbid_legacy_under30_pair_model_in_public_housing": true
   },
   "module_inventory": [
     {
@@ -289,8 +292,9 @@
         "file": null,
         "marker": null
       },
-      "blocker": "Nevaliduotas standartizuotas 10 apskričių pardavimo / nuomos / pajamų / išlaidų sluoksnis; rankability blocked.",
-      "next_action": "Tęsti nemokamų šaltinių analizę (biudžetas 0 EUR), išlaikant duomenų kokybės vartus."
+      "blocker": "Nevaliduotas standartizuotas 10 apskričių pardavimo / nuomos / pajamų / išlaidų sluoksnis; rankability blocked. Istorinis ekonominės kohortos scenarijus nėra teisinės jaunos šeimos populiacijos modelis; jis atmestas viešai interpretacijai.",
+      "next_action": "Seno dviejų dirbančių iki 30 m. žmonių scenarijaus nenaudoti ir neminėti viešame Būsto tyrime. Tik naujas tyrimas, paremtas teisine jaunos šeimos apibrėžtimi bei suderintomis šeimos pajamomis ir išlaidomis, galėtų būti svarstomas publikavimui.",
+      "legacy_scope_guard": "ARCHIVED_NOT_APPLICABLE_TO_LEGALLY_DEFINED_YOUNG_FAMILY"
     },
     {
       "id": "OVERVIEW-LATEST-2025-01",
@@ -749,11 +753,12 @@
         "file": null,
         "marker": null
       },
-      "blocker": "Tik audito šakos jautrumo scenarijus; prielaidos nėra oficiali statistika.",
-      "next_action": "Išsaugoti modelį ir metodinį apribojimą; nepublikuoti kaip oficialaus fakto.",
+      "blocker": "Tik audito šakos jautrumo scenarijus; prielaidos nėra oficiali statistika. Istorinis ekonominės kohortos scenarijus nėra teisinės jaunos šeimos populiacijos modelis; jis atmestas viešai interpretacijai.",
+      "next_action": "Seno dviejų dirbančių iki 30 m. žmonių scenarijaus nenaudoti ir neminėti viešame Būsto tyrime. Tik naujas tyrimas, paremtas teisine jaunos šeimos apibrėžtimi bei suderintomis šeimos pajamomis ir išlaidomis, galėtų būti svarstomas publikavimui.",
       "external_research_paths": [
         "https://github.com/olemoz1977/Demografin-situacija/blob/audit/population-standard-2024-2025/data/housing-first-home-saving-scenarios-city3-2025.json"
-      ]
+      ],
+      "legacy_scope_guard": "ARCHIVED_NOT_APPLICABLE_TO_LEGALLY_DEFINED_YOUNG_FAMILY"
     },
     {
       "id": "HOUSING-REVERSE-BUDGET-2025-01",
@@ -773,11 +778,12 @@
         "file": null,
         "marker": null
       },
-      "blocker": "Tik audito šakos jautrumo scenarijus; prielaidos nėra oficiali statistika.",
-      "next_action": "Išsaugoti modelį ir metodinį apribojimą; nepublikuoti kaip oficialaus fakto.",
+      "blocker": "Tik audito šakos jautrumo scenarijus; prielaidos nėra oficiali statistika. Istorinis ekonominės kohortos scenarijus nėra teisinės jaunos šeimos populiacijos modelis; jis atmestas viešai interpretacijai.",
+      "next_action": "Seno dviejų dirbančių iki 30 m. žmonių scenarijaus nenaudoti ir neminėti viešame Būsto tyrime. Tik naujas tyrimas, paremtas teisine jaunos šeimos apibrėžtimi bei suderintomis šeimos pajamomis ir išlaidomis, galėtų būti svarstomas publikavimui.",
       "external_research_paths": [
         "https://github.com/olemoz1977/Demografin-situacija/blob/audit/population-standard-2024-2025/data/housing-first-home-reverse-budget-2025.json"
-      ]
+      ],
+      "legacy_scope_guard": "ARCHIVED_NOT_APPLICABLE_TO_LEGALLY_DEFINED_YOUNG_FAMILY"
     },
     {
       "id": "HOUSING-QUALITY-COMPARABILITY-2025-01",
@@ -893,11 +899,12 @@
         "file": null,
         "marker": null
       },
-      "blocker": "Nėra validuoto vienodo statistinio vardiklio.",
-      "next_action": "Išsaugoti modelį ir metodinį apribojimą; nepublikuoti kaip oficialaus fakto.",
+      "blocker": "Nėra validuoto vienodo statistinio vardiklio. Istorinis ekonominės kohortos scenarijus nėra teisinės jaunos šeimos populiacijos modelis; jis atmestas viešai interpretacijai.",
+      "next_action": "Seno dviejų dirbančių iki 30 m. žmonių scenarijaus nenaudoti ir neminėti viešame Būsto tyrime. Tik naujas tyrimas, paremtas teisine jaunos šeimos apibrėžtimi bei suderintomis šeimos pajamomis ir išlaidomis, galėtų būti svarstomas publikavimui.",
       "external_research_paths": [
         "https://github.com/olemoz1977/Demografin-situacija/blob/feature/housing-affordability/research/housing-target-couple-denominator-2025.md"
-      ]
+      ],
+      "legacy_scope_guard": "ARCHIVED_NOT_APPLICABLE_TO_LEGALLY_DEFINED_YOUNG_FAMILY"
     },
     {
       "id": "FUTURE-AGEING-REPORT-2040-01",
