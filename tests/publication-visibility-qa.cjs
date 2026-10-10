@@ -50,7 +50,7 @@ const checks=[
     "POPULATION-REPRO-SEX-2025-01",
     "population",
     "#reproLatestNote",
-    "884"
+    "883,7"
   ],
   [
     "POPULATION-BIRTH-COHORTS-2025-01",
