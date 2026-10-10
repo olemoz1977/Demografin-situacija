@@ -368,6 +368,34 @@ class HousingPopulationStandardTest(unittest.TestCase):
         self.assertIn("mažiau nei 100", self.housing)
         self.assertIn("2025 m. keitėsi", self.housing)
 
+    def test_sadm_2025_primary_support_reconciles_and_caps_are_not_home_percentages(self):
+        d = json.loads(
+            (ROOT / "data/housing-support-2025-national-reconciliation-and-maxima.json").read_text(encoding="utf-8")
+        )
+        a, b, combined = d["scheme_A"], d["scheme_B"], d["both_schemes"]
+        self.assertEqual(515 + (556 - 32), combined["primary_support_count_official_report"])
+        self.assertEqual(1039, combined["primary_support_count_official_report"])
+        self.assertEqual(44 + 32, combined["additional_subsidies_count_official_report"])
+        self.assertEqual(76, combined["additional_subsidies_count_official_report"])
+        self.assertAlmostEqual(a["spent_m_eur"] + b["spent_m_eur"], combined["support_spend_m_eur_official_report"])
+        self.assertEqual(982, d["2024_comparison"]["primary_total_official_report"])
+        self.assertEqual(342 + (688-48), d["2024_comparison"]["primary_total_official_report"])
+        self.assertFalse(a["assess_income_and_assets"])
+        self.assertTrue(b["assess_income_and_assets"])
+        policy = d["scheme_A_2025_regulation"]
+        self.assertEqual(120000, policy["housing_purchased_value_ceiling_eur"])
+        self.assertEqual(87000, policy["subsidy_eligible_loan_portion_ceiling_eur"])
+        for row in policy["maximum_subsidy_by_children"]:
+            self.assertEqual(87000 * row["rate_pct"] / 100, row["max_eur"])
+            self.assertAlmostEqual(row["max_eur"] / 120000 * 100,
+                                   row["max_pct_of_housing_value_at_120k"])
+        self.assertTrue(d["guards"]["not_1039_young_families"])
+        self.assertTrue(d["guards"]["not_support_coverage_percentage"])
+        self.assertTrue(d["guards"]["do_not_apply_scheme_B_income_threshold_to_scheme_A"])
+        for phrase in ("1 039 pagrindinės paramos gavėjai", "76 papildomos subsidijos",
+                       "8 700 €", "10 875 €", "13 050 €", "7,25 % būsto kainos"):
+            self.assertIn(phrase, self.housing)
+
     def test_households_are_explicitly_not_owned_homes(self):
         self.assertIn("Ką reiškia „namų ūkis“?", self.housing)
         self.assertIn("Namų ūkis ≠ nuosavas būstas.", self.housing)
