@@ -10,11 +10,12 @@
     "do_not_publish_unvalidated_research_as_fact": true,
     "do_not_invent_county_rank": true,
     "external_paid_data_forbidden": true,
-    "scope": "Back inventory of main, audit/population-standard-2024-2025, feature/housing-affordability, PR #1–#5 and eight website modules; browser QA and unattached historical chats not exhaustively verified.",
+    "scope": "Back inventory covers 8 current site modules and 39 registered findings; live display verified for 27 PUBLISHED_* IDs on desktop/mobile on 2026-10-10; earlier unattached historical chats not fully recovered.",
     "inventory_document": "research/historical-research-inventory-2026-10-10.md",
-    "direct_live_browser_qa_pending": true,
+    "direct_live_browser_qa_pending": false,
     "publish_scope_matrix_required": true,
-    "last_successful_pages_build": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/38019270232"
+    "last_successful_pages_build": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/38026170535",
+    "last_live_browser_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/38026170701"
   },
   "module_inventory": [
     {
@@ -23,8 +24,9 @@
       "published": true,
       "audit_snapshot": "2026-10-10",
       "inventory_document": "research/historical-research-inventory-2026-10-10.md",
-      "direct_live_browser_checked": false,
-      "unregistered_historical_conversation_facts_possible": true
+      "direct_live_browser_checked": true,
+      "unregistered_historical_conversation_facts_possible": true,
+      "last_live_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/38026170701"
     },
     {
       "module": "fertility",
@@ -32,8 +34,9 @@
       "published": true,
       "audit_snapshot": "2026-10-10",
       "inventory_document": "research/historical-research-inventory-2026-10-10.md",
-      "direct_live_browser_checked": false,
-      "unregistered_historical_conversation_facts_possible": true
+      "direct_live_browser_checked": true,
+      "unregistered_historical_conversation_facts_possible": true,
+      "last_live_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/38026170701"
     },
     {
       "module": "population",
@@ -41,8 +44,9 @@
       "published": true,
       "audit_snapshot": "2026-10-10",
       "inventory_document": "research/historical-research-inventory-2026-10-10.md",
-      "direct_live_browser_checked": false,
-      "unregistered_historical_conversation_facts_possible": true
+      "direct_live_browser_checked": true,
+      "unregistered_historical_conversation_facts_possible": true,
+      "last_live_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/38026170701"
     },
     {
       "module": "migration",
@@ -50,8 +54,9 @@
       "published": true,
       "audit_snapshot": "2026-10-10",
       "inventory_document": "research/historical-research-inventory-2026-10-10.md",
-      "direct_live_browser_checked": false,
-      "unregistered_historical_conversation_facts_possible": true
+      "direct_live_browser_checked": true,
+      "unregistered_historical_conversation_facts_possible": true,
+      "last_live_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/38026170701"
     },
     {
       "module": "family",
@@ -59,8 +64,9 @@
       "published": true,
       "audit_snapshot": "2026-10-10",
       "inventory_document": "research/historical-research-inventory-2026-10-10.md",
-      "direct_live_browser_checked": false,
-      "unregistered_historical_conversation_facts_possible": true
+      "direct_live_browser_checked": true,
+      "unregistered_historical_conversation_facts_possible": true,
+      "last_live_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/38026170701"
     },
     {
       "module": "housing",
@@ -68,8 +74,9 @@
       "published": true,
       "audit_snapshot": "2026-10-10",
       "inventory_document": "research/historical-research-inventory-2026-10-10.md",
-      "direct_live_browser_checked": false,
-      "unregistered_historical_conversation_facts_possible": true
+      "direct_live_browser_checked": true,
+      "unregistered_historical_conversation_facts_possible": true,
+      "last_live_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/38026170701"
     },
     {
       "module": "future",
@@ -77,8 +84,9 @@
       "published": true,
       "audit_snapshot": "2026-10-10",
       "inventory_document": "research/historical-research-inventory-2026-10-10.md",
-      "direct_live_browser_checked": false,
-      "unregistered_historical_conversation_facts_possible": true
+      "direct_live_browser_checked": true,
+      "unregistered_historical_conversation_facts_possible": true,
+      "last_live_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/38026170701"
     },
     {
       "module": "methods",
@@ -86,8 +94,9 @@
       "published": true,
       "audit_snapshot": "2026-10-10",
       "inventory_document": "research/historical-research-inventory-2026-10-10.md",
-      "direct_live_browser_checked": false,
-      "unregistered_historical_conversation_facts_possible": true
+      "direct_live_browser_checked": true,
+      "unregistered_historical_conversation_facts_possible": true,
+      "last_live_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/38026170701"
     }
   ],
   "findings": [
@@ -117,11 +126,13 @@
         "marker": "id=\"populationHouseholdStructure\""
       },
       "blocker": null,
-      "next_action": "Pirminis paaiškinimas Gyventojų struktūroje; kontekstinės nuorodos Būste, Šeimoje, Migracijoje. Prieš leidimą būtina reali visų 27 PUBLISHED_* išvadų desktop ir mobile UI QA.",
+      "next_action": "Pagrindinis blokas patvirtintas viešos svetainės Gyventojų struktūros modulyje; Būsto, Šeimos ir Migracijos nuorodos liko. 2026-10-10 gyva Chromium desktop/mobile PASS; dėl rodiklio preliminarumo išlaikyti p žymas ir metodines ribas.",
       "publication_audit": {
         "merged_pr": "https://github.com/olemoz1977/Demografin-situacija/pull/4",
         "source_and_pages_deployed": true,
-        "current_browser_test": "PENDING"
+        "current_browser_test": "PASS",
+        "primary_module_merged_pr": "https://github.com/olemoz1977/Demografin-situacija/pull/7",
+        "live_browser_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/38026170701"
       }
     },
     {
