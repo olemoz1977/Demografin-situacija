@@ -59,6 +59,18 @@ if(ageSection){
         <div class="alert alert-green"><strong>Kaip skaityti piramidę:</strong> vyresnėse amžiaus grupėse moterų dalis didesnė. Vienas svarbus kontekstas – 2024 m. moterų vidutinė tikėtina gyvenimo trukmė buvo 8,6 metų ilgesnė nei vyrų.</div>
       </div>
     </div>
+    <div id="populationHouseholdStructure" style="margin-top:2.2rem">
+      <div class="section-label">Namų ūkių struktūra <span class="badge badge-prelim">EUROSTAT · 2025 (p)</span></div>
+      <h3>Vieno suaugusiojo namų ūkiai: Lietuvoje didžiausia dalis ES</h3>
+      <p class="lead">2025 m. preliminariais Eurostat duomenimis, <strong>55,7 % Lietuvos privačių namų ūkių</strong> sudarė <strong>vienas suaugęs asmuo be išlaikomų vaikų</strong>. Palyginimui, ES rodiklis – <strong>35,7 %</strong>. Tai didžiausia šio tipo namų ūkių dalis tarp ES valstybių.</p>
+      <div class="kpi-row">
+        <div class="kpi"><div class="kpi-num blue">55,7 %</div><div class="kpi-label">Lietuva · 2025 (p)</div><div class="kpi-note">Privačių namų ūkių dalis</div></div>
+        <div class="kpi"><div class="kpi-num">35,7 %</div><div class="kpi-label">ES · 2025</div><div class="kpi-note">Tas pats namų ūkių tipas</div></div>
+        <div class="kpi"><div class="kpi-num">50,5 %</div><div class="kpi-label">Lietuva · 2024 (p)</div><div class="kpi-note">Ankstesnių metų preliminarus įvertis</div></div>
+      </div>
+      <div class="alert alert-amber"><strong>Kaip nesuklysti skaitant.</strong> Tai <strong>namų ūkių, ne Lietuvos gyventojų procentas</strong>. Rodiklis neparodo vienatvės, santuokinės padėties, jauno amžiaus ar būsto nuosavybės. 2024 ir 2025 m. Lietuvos reikšmės pažymėtos <strong>(p) – preliminarios</strong>; 5,2 procentinio punkto skirtumas pats savaime neįrodo struktūrinio pokyčio priežasties ar ryšio su gimstamumu.</div>
+      <div class="source-line">Šaltiniai: <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_lvph02/default/table" target="_blank" rel="noopener">Eurostat · ilc_lvph02</a> · <a href="https://ec.europa.eu/eurostat/documents/15216629/24279737/KS-01-26-036-EN-N.pdf" target="_blank" rel="noopener">Eurostat 2026 m. leidinys, 35 psl.</a>. Namų ūkio sudėtis nėra tapati būsto nuosavybei ar jaunų porų skaičiui.</div>
+    </div>
     <div class="source-line">Šaltinis: <a href="https://publikacijos.stat.gov.lt/lietuva-skaiciais-2025/lt/categories/3" target="_blank" rel="noopener">Valstybės duomenų agentūra · Lietuva skaičiais 2025 · Nuolatiniai gyventojai</a></div>
   </div>`;
   ageSection.insertAdjacentElement('afterend',sexSection);
