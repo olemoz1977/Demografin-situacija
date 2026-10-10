@@ -81,6 +81,33 @@ class HousingSupportPublication(unittest.TestCase):
         for price in (2846,1988,1741):
             self.assertTrue(any(round(r['eur_m2_2025'])==price for r in city['sale']['places']))
 
+    def test_standard_young_family_definition_and_no_legacy_pair_model(self):
+        import re
+        js=self.js
+        self.assertIn('id="housingYoungFamilyDefinition"',js)
+        self.assertIn('registruotų partnerių šeima',js)
+        self.assertIn('kiekvienas yra iki 36 metų',js)
+        self.assertIn('vienas vaiką (-us) auginantis tėvas ar motina iki 36 metų',js)
+        self.assertIn('socmin.lrv.lt/lt/veiklos-sritys/seima-ir-vaikai/finansine-paskata-',js)
+        self.assertNotRegex(js,r'(?i)(iki 30 m\\.|jaunesnių nei 30 metų|25[–-]30 m\\.|dviejų dirbančių)')
+        self.assertNotIn('housing-first-home-fertility-question-2024-2025.md',js)
+        self.assertNotIn('housing-2025-12-zero-eur-matched-market-snapshot.md',js)
+        self.assertNotIn('Pajamų modelis iš 2025 m. lapkričio',js)
+        register=json.loads(read('data/research-findings-register.json'))
+        self.assertEqual(39,len(register['findings']))
+        self.assertTrue(register['governance']['forbid_legacy_under30_pair_model_in_public_housing'])
+        legacy_ids={'HOUSING-SAVINGS-10-COUNTIES-01',
+                    'HOUSING-SAVINGS-CITY3-2025-01',
+                    'HOUSING-REVERSE-BUDGET-2025-01',
+                    'HOUSING-YOUNG-COUPLES-DENOMINATOR-2025-01'}
+        for entry in register['findings']:
+            if entry['id'] in legacy_ids:
+                self.assertNotIn(entry['status'],('PUBLISHED_FACT','PUBLISHED_CONTEXT','PUBLISHED_METHOD_ONLY'))
+                self.assertIsNone(entry['publication']['file'])
+                self.assertEqual('ARCHIVED_NOT_APPLICABLE_TO_LEGALLY_DEFINED_YOUNG_FAMILY',
+                                 entry['legacy_scope_guard'])
+        self.assertEqual(4,len(legacy_ids))
+
     def test_three_reader_conclusions_and_housing_first(self):
         self.assertIn('id="overviewThreeFindings"',self.nav)
         self.assertEqual(3,self.nav.count('<div class="card"><div class="eyebrow">0'))
