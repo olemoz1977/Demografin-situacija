@@ -6,7 +6,7 @@
     population:{label:'Struktūra',title:'Gyventojų struktūra',desc:'Lytis, amžius, reprodukcinio amžiaus santykis ir gimimo kohortų palyginimas.'},
     migration:{label:'Migracija',title:'Migracija',desc:'Bendri srautai, 25–44 m. pjūvis pagal lytį, Lietuvos piliečių grįžimas ir užsienio piliečiai.'},
     family:{label:'Šeimos aplinka',title:'Šeimai palanki aplinka',desc:'Santuokos, šeimos politika, išmokų dosnumas, vaikų infrastruktūra ir socialinės hipotezės.'},
-    housing:{label:'Būstas',title:'Pirmas šeimos būstas',desc:'Ar jaunai dirbančiai porai pirmo nuosavo būsto įsigijimas gali būti reikšmingas materialus šeimos kūrimo aplinkos barjeras? Tarpapskritinis palyginimas kol kas tikslinamas.'},
+    housing:{label:'Būstas',title:'Pirmasis būstas jaunoms šeimoms',desc:'Valstybės parama pirmajam būstui: oficialūs 2019–2025 m. faktai, laukusių šeimų eilės ir subsidijų sąlygos. Įperkamumas pagal apskritis dar tiriamas.'},
     future:{label:'Ateitis',title:'Projekcijos ir scenarijai',desc:'Oficialios EK projekcijos, produktyvumo poreikis, automatizacija ir socialinės sistemos finansavimo hipotezė.'},
     methods:{label:'Metodika',title:'Metodika ir šaltiniai',desc:'Kas yra faktas, kas išankstinis rodiklis, kas projekcija ir kur prasideda hipotezė.'},
     all:{label:'Visas tyrimas',title:'Visas tyrimas',desc:'Visos sekcijos viename ilgame puslapyje.'}
