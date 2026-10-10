@@ -10,6 +10,9 @@ on:
       - "migration-sex.js"
       - "data/eurostat-household-composition-2024-2025.json"
       - "research-nav.js"
+      - "app-base.js"
+      - "editorial-copy.js"
+      - "research-nav.css"
       - "app.js"
       - "index.html"
       - "tests/test_housing_support_published.py"
@@ -22,6 +25,9 @@ on:
       - "migration-sex.js"
       - "data/eurostat-household-composition-2024-2025.json"
       - "research-nav.js"
+      - "app-base.js"
+      - "editorial-copy.js"
+      - "research-nav.css"
       - "index.html"
       - "app.js"
       - "data/housing-support-young-family-series-2019-2025.json"
@@ -50,6 +56,8 @@ jobs:
           node --check family-hypothesis.js
           node --check migration-sex.js
           node --check research-nav.js
+          node --check app-base.js
+          node --check editorial-copy.js
           node --check app.js
       - name: Check official support contract
         run: python -m unittest -v tests/test_housing_support_published.py
