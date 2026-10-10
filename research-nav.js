@@ -28,7 +28,7 @@
   if(!VALID_VIEWS.includes(view)) view=HASH_VIEW[location.hash]||'overview';
 
   const css=document.createElement('link');
-  css.rel='stylesheet'; css.href='research-nav.css?v=20260915a';
+  css.rel='stylesheet'; css.href='research-nav.css?v=20261010summary2';
   document.head.appendChild(css);
   document.body.classList.add('research-routed');
   const makeUrl=v=>`${location.pathname}?view=${encodeURIComponent(v)}`;
