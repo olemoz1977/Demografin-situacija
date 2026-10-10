@@ -86,7 +86,7 @@ const checks=[
     "FAMILY-LEAVE-POLICY-2007-2012-01",
     "family",
     "#parama-istorija",
-    "2007–2012: labai dosnios vaiko priežiūros išmokos"
+    "2007–2012 m. dosnios išmokos sutapo su TFR kilimu"
   ],
   [
     "FAMILY-LEAVE-FRE-01",
@@ -104,7 +104,7 @@ const checks=[
     "FAMILY-DIGITAL-HYPOTHESES-01",
     "family",
     "#skaitmena",
-    "Skaitmeninio naudojimo kontekstas"
+    "Skaitmeninis gyvenimas pasikeitė smarkiai"
   ],
   [
     "HOUSING-CITY-SALES-2025-01",
