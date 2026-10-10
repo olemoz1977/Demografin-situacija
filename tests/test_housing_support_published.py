@@ -81,7 +81,25 @@ class HousingSupportPublication(unittest.TestCase):
         for price in (2846,1988,1741):
             self.assertTrue(any(round(r['eur_m2_2025'])==price for r in city['sale']['places']))
 
-    def test_eurostat_single_adult_households_are_visible_in_three_sections(self):
+    def test_three_reader_conclusions_and_housing_first(self):
+        self.assertIn('id="overviewThreeFindings"',self.nav)
+        self.assertEqual(3,self.nav.count('<div class="card"><div class="eyebrow">0'))
+        self.assertIn('Natūralus mažėjimas viršijo migracijos prieaugį',self.nav)
+        self.assertIn('884 moterys / 1 000 vyrų',self.nav)
+        self.assertIn('55,7 % Lietuvos privačių namų ūkių',self.nav)
+        self.assertIn('Tai skirtingi rodikliai – ne gimstamumo priežasčių įrodymas',self.nav)
+        self.assertIn('Šeimos ir būsto aplinkos poveikis dar neišmatuotas',self.nav)
+        self.assertNotIn('vien piniginės priemonės nepakaks',self.nav)
+        self.assertIn('Ką jau galime pasakyti',self.js)
+        self.assertIn('Ko dar negalime',self.js)
+        market=self.js.index('id="housingMarketResearch"')
+        support=self.js.index('id="housingSupportTitle"')
+        payment=self.js.index('2025 m. regioninę paskatą gavo 515 jaunų šeimų.')
+        self.assertLess(market,support)
+        self.assertLess(support,payment)
+        self.assertIn('1 700 ankstesnių metų prašymų',self.js)
+
+    def test_eurostat_primary_in_population_with_three_context_links(self):
         d = json.loads(read('data/eurostat-household-composition-2024-2025.json'))
         self.assertEqual('Single adult without dependent children', d['category'])
         self.assertEqual(55.7, d['lithuania']['year_2025_pct'])
@@ -90,22 +108,25 @@ class HousingSupportPublication(unittest.TestCase):
         self.assertTrue(d['measuring_household_not_individual'])
         self.assertTrue(d['provisional_2025'])
         self.assertEqual(50.5, d['lithuania']['year_2024_pct'])
+        primary = read('app-base.js')
+        for fragment in ('id="populationHouseholdStructure"', '55,7 % Lietuvos privačių namų ūkių',
+                         '35,7 %', '50,5 %', 'ilc_lvph02',
+                         'namų ūkių, ne Lietuvos gyventojų procentas'):
+            self.assertIn(fragment, primary)
         for path, anchor in [('housing-affordability.js', 'housingSingleAdultHouseholds'),
                              ('family-hypothesis.js', 'familySingleAdultHouseholds'),
                              ('migration-sex.js', 'migrationHouseholdContext')]:
             src = read(path)
             self.assertIn(anchor, src)
             self.assertIn('55,7 %', src)
-            self.assertIn('35,7 %', src)
-            self.assertIn('ilc_lvph02', src)
-            self.assertIn('neįrodo', src)
-        self.assertIn('migration-sex.js?v=20261010oneadult', self.app)
-        self.assertIn('family-hypothesis.js?v=20261010oneadult', self.app)
+            self.assertIn('?view=population#populationHouseholdStructure', src)
+        for source in ('migration-sex.js', 'family-hypothesis.js', 'housing-affordability.js'):
+            self.assertRegex(self.app, re.escape(source)+r'\?v=[A-Za-z0-9_-]+')
 
     def test_active_live_routing_and_cache(self):
-        self.assertIn('app.js?v=20261010oneadult',self.html)
-        self.assertIn('housing-affordability.js?v=20261010oneadult',self.app)
-        self.assertIn('research-nav.js?v=20261010housingfull',self.app)
+        self.assertRegex(self.html, r'app\.js\?v=[A-Za-z0-9_-]+')
+        self.assertRegex(self.app, r'housing-affordability\.js\?v=[A-Za-z0-9_-]+')
+        self.assertRegex(self.app, r'research-nav\.js\?v=[A-Za-z0-9_-]+')
         self.assertIn('Visų 10 apskričių reitingas dar nepatvirtintas',self.nav)
         self.assertIn("housingAffordability:'housing'",self.nav)
         self.assertNotIn('jaunai dirbančiai porai',self.nav.lower())

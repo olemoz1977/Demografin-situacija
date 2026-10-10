@@ -8,17 +8,15 @@
     section.innerHTML=`<div class="container">
       <div class="section-label">Jaunų šeimų pirmasis būstas <span class="badge badge-official">BŪSTAS · 2024–2025 FAKTAI IR TYRIMO EIGA</span></div>
       <h2>Ar pirmasis būstas prieinamas jaunoms šeimoms?</h2>
-      <p class="lead"><strong>Pagrindinis klausimas:</strong> kiek pirmojo būsto m² kainos vertės per metus galėtų sukaupti jauna šeima, kai abu suaugusieji dirba, yra jaunesni nei 30 metų ir nuomojasi vieno kambario butą? Nagrinėjame pajamas, gyvenimo išlaidas, nuomą, pardavimo kainas, pradinį įnašą ir paskolos įmokas. <strong>Žemiau pateikiame jau surinktus būsto rinkos faktus ir valstybės paramos analizę</strong>, bet kol kas nepatvirtinome visų 10 apskričių įperkamumo reitingo.</p>
+      <p class="lead"><strong>Ką jau galime pasakyti:</strong> turime oficialius 2024–2025 m. daugiabučių butų kainų vidurkius šešiuose miestuose, 2025 m. gruodžio nuomos ir pardavimo intervalus trijuose miestuose bei valstybės paramos gavėjų duomenis. <strong>Ko dar negalime:</strong> patikimai palyginti pirmojo būsto įperkamumo visose 10 apskričių ar apskaičiuoti, kiek m² per metus iš tikrųjų galėtų sukaupti jaunos šeimos. Trūksta suderintų būsto, pajamų ir išlaidų duomenų. Dviejų dirbančių jaunesnių nei 30 metų nuomininkų scenarijus yra atskiras modelis, ne oficialus visų jaunų šeimų vidurkis.</p>
 
-      <div class="alert alert-blue">
-        <strong>2025 m. regioninę paskatą gavo 515 jaunų šeimų.</strong> 2022 m. jų buvo 1 595, o 2025 m. pradžioje apie 1 700 ankstesnių metų prašymų dar laukė nagrinėjimo. <strong>Vien +50,6 % pokytis nuo 2024 m. neparodo viso vaizdo.</strong> Tai skirtingi rodikliai, ne paramos aprėpties procentas.
-      </div>
+
 
 
       <section class="housing-research-evidence" id="housingMarketResearch" aria-labelledby="housingMarketResearchTitle">
         <div class="section-label">Pirmojo būsto įperkamumas <span class="badge badge-prelim">2024–2025 · TYRIMAS TĘSIAMAS</span></div>
         <h3 id="housingMarketResearchTitle">Ką jau ištyrėme apie būsto kainas ir nuomą?</h3>
-        <p class="small" id="housingSingleAdultHouseholds"><strong>ES kontekstas: Lietuva – pirmoji pagal vieno suaugusiojo namų ūkių dalį.</strong> Eurostat 2025 m. duomenimis, <strong>55,7 % Lietuvos privačių namų ūkių sudarė vienas suaugęs asmuo be išlaikomų vaikų</strong> (ES – <strong>35,7 %</strong>); tai didžiausia tokio tipo namų ūkių dalis ES. <strong>Rodiklis preliminarus (p)</strong>. Jis matuoja <strong>namų ūkius, ne žmonių procentą</strong>; apima įvairius amžius ir neparodo, kiek žmonių gyvena nuomojamame ar nuosavame būste. <strong>Jis neįrodo</strong> nei pirmojo būsto neprieinamumo, nei poveikio gimstamumui. <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_lvph02/default/table" target="_blank" rel="noopener">Eurostat ilc_lvph02</a>; <a href="https://ec.europa.eu/eurostat/documents/15216629/24279737/KS-01-26-036-EN-N.pdf" target="_blank" rel="noopener">2026 m. leidinys, 35 psl.</a></p>
+        <p class="small" id="housingSingleAdultHouseholds"><strong>Namų ūkių kontekstas:</strong> Eurostat 2025 m. preliminariais duomenimis, Lietuvoje <strong>55,7 % privačių namų ūkių</strong> sudarė vienas suaugęs asmuo be išlaikomų vaikų (ES – 35,7 %). Tai <strong>ne būsto įperkamumo, nuosavybės ar jaunų šeimų rodiklis</strong>. <a href="?view=population#populationHouseholdStructure">Rodiklio paaiškinimas – Gyventojų struktūroje →</a></p>
 
         <p>Čia – atskiri patikrinami <strong>rinkos faktai</strong>, o ne apskričių įperkamumo reitingas. Skirtingo laikotarpio ir standarto duomenų į vieną tariamai tikslų rodiklį nejungiame.</p>
         <h4>1. VDA: daugiabučių butų pardavimo kainos šešiuose miestuose</h4>
@@ -51,6 +49,9 @@
       <section class="housing-support-layer" aria-labelledby="housingSupportTitle">
         <div class="section-label">Valstybės parama pirmajam būstui <span class="badge badge-official">SADM · 2019–2025</span></div>
         <h3 id="housingSupportTitle">Kiek paramos realiai suteikta 2025 m.?</h3>
+      <div class="alert alert-blue">
+        <strong>2025 m. regioninę paskatą gavo 515 jaunų šeimų.</strong> 2022 m. jų buvo 1 595, o 2025 m. pradžioje apie 1 700 ankstesnių metų prašymų dar laukė nagrinėjimo. <strong>Vien +50,6 % pokytis nuo 2024 m. neparodo viso vaizdo.</strong> Tai skirtingi rodikliai, ne paramos aprėpties procentas.
+      </div>
 
         <div class="kpi-row housing-support-kpis" id="housingSupportKpis">
           <div class="kpi"><div class="kpi-num blue">515</div><div class="kpi-label">Jaunų šeimų gavo finansinę paskatą pirmajam būstui regionuose · 2025</div><div class="kpi-note">2024: 342 · +50,6 %</div></div>

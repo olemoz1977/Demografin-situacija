@@ -43,9 +43,10 @@ class ResearchContinuityTest(unittest.TestCase):
     def test_eurostat_household_finding_survives_pr4_publication(self):
         item = self.findings["EU-HH-2025-01"]
         self.assertEqual("PUBLISHED_CONTEXT", item["status"])
-        self.assertEqual("housing", item["publication"]["module"])
-        self.assertEqual("housing-affordability.js", item["publication"]["file"])
-        self.assertIn("population", item["publication"]["secondary_modules"])
+        self.assertEqual("population", item["area"])
+        self.assertEqual("population", item["publication"]["module"])
+        self.assertEqual("app-base.js", item["publication"]["file"])
+        self.assertIn("housing", item["publication"]["secondary_modules"])
         self.assertIn("family", item["publication"]["secondary_modules"])
         self.assertIn("migration", item["publication"]["secondary_modules"])
         self.assertEqual("ilc_lvph02", self.households["metric_code"])
@@ -63,8 +64,9 @@ class ResearchContinuityTest(unittest.TestCase):
         source = self.households
         rule = (ROOT / "research/RESEARCH-CONTINUITY-RULE.md").read_text(encoding="utf-8")
         self.assertEqual(item["status"], source["public_site_status"])
-        self.assertEqual(item["publication"]["module"], source["public_site_module"])
-        self.assertEqual("population", source["planned_primary_module"])
+        self.assertEqual(item["publication"]["module"], source["current_branch_primary_module"])
+        self.assertEqual("housing", source["last_confirmed_main_module_before_this_draft"])
+        self.assertTrue(source["publication_evidence"]["new_population_layout_is_on_draft_pr_7_not_main"])
         self.assertEqual("PENDING", source["publication_evidence"]["independent_live_browser_qa"])
         self.assertTrue(source["publication_evidence"]["source_in_main"])
         self.assertTrue(source["publication_evidence"]["github_pages_deployment_success"])
@@ -72,6 +74,30 @@ class ResearchContinuityTest(unittest.TestCase):
         self.assertIn("PR #4", rule)
         self.assertIn("INVENTORIED_WITH_GAPS", rule)
         self.assertNotIn("Šio fakto iki šiol nėra svetainėje", rule)
+
+
+    def test_household_primary_location_and_crosslinks_preserve_meaning(self):
+        primary = (ROOT / "app-base.js").read_text(encoding="utf-8")
+        url = "?view=population#populationHouseholdStructure"
+        self.assertIn('id="populationHouseholdStructure"', primary)
+        self.assertIn("55,7 % Lietuvos privačių namų ūkių", primary)
+        self.assertIn("50,5 %", primary)
+        self.assertIn("35,7 %", primary)
+        self.assertIn("namų ūkių, ne Lietuvos gyventojų procentas", primary)
+        for name, context_id in (
+            ("housing-affordability.js", "housingSingleAdultHouseholds"),
+            ("family-hypothesis.js", "familySingleAdultHouseholds"),
+            ("migration-sex.js", "migrationHouseholdContext"),
+        ):
+            text = (ROOT / name).read_text(encoding="utf-8")
+            self.assertIn(context_id, text)
+            self.assertIn(url, text)
+        self.assertIn("research-nav.js?v=", (ROOT / "app.js").read_text(encoding="utf-8"))
+        self.assertIn("housing-affordability.js?v=", (ROOT / "app.js").read_text(encoding="utf-8"))
+        self.assertRegex(
+            (ROOT / "index.html").read_text(encoding="utf-8"),
+            r'app\.js\?v=20261010[A-Za-z0-9_-]+',
+        )
 
     def test_housing_is_not_reduced_to_subsidies(self):
         for ident in (

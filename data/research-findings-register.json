@@ -93,7 +93,7 @@
   "findings": [
     {
       "id": "EU-HH-2025-01",
-      "area": "housing",
+      "area": "population",
       "title": "Lietuvoje didžiausia ES vieno suaugusiojo be išlaikomų vaikų namų ūkių dalis",
       "period": "2024–2025",
       "status": "PUBLISHED_CONTEXT",
@@ -107,17 +107,17 @@
         "data/households-single-adult-eurostat-2024-2025.json"
       ],
       "publication": {
-        "module": "housing",
+        "module": "population",
         "secondary_modules": [
+          "housing",
           "family",
-          "migration",
-          "population"
+          "migration"
         ],
-        "file": "housing-affordability.js",
-        "marker": "55,7 % Lietuvos"
+        "file": "app-base.js",
+        "marker": "id=\"populationHouseholdStructure\""
       },
       "blocker": null,
-      "next_action": "PR #4 ir vėlesnio main Pages deploy PASS. Pirminį aiškinimą perkelti į population, kituose moduliuose palikti kontekstines nuorodas. Prieš naują UI leidimą atlikti tikrą browser QA.",
+      "next_action": "Pirminis paaiškinimas Gyventojų struktūroje; kontekstinės nuorodos Būste, Šeimoje, Migracijoje. Prieš leidimą būtina reali visų 27 PUBLISHED_* išvadų desktop ir mobile UI QA.",
       "publication_audit": {
         "merged_pr": "https://github.com/olemoz1977/Demografin-situacija/pull/4",
         "source_and_pages_deployed": true,
@@ -420,15 +420,16 @@
       ],
       "evidence_files": [
         "research-nav.js",
-        "data/sex-ratio-history.json"
+        "data/sex-ratio-history.json",
+        "sex-history.js"
       ],
       "publication": {
         "module": "population",
-        "file": "research-nav.js",
-        "marker": "884 moterys / 1 000 vyrų"
+        "file": "sex-history.js",
+        "marker": "25–44 m. papildomame pjūvyje"
       },
       "blocker": null,
-      "next_action": "Saugoti jau paskelbtą išvadą ir nedubliuoti; prieš kitą leidimą tikrinti modulio aprėptį."
+      "next_action": "Pilna 25–44 m. 2025 m. reikšmė naršyklėje 883,7; apžvalgoje teisėtai suapvalinta iki 884. Standartinis 15–49 m. intervalas atskirtas. Tikrinti demografinį pjūvį Gyventojų struktūroje, ne vien apžvalgos kortelę."
     },
     {
       "id": "POPULATION-BIRTH-COHORTS-2025-01",
@@ -549,15 +550,16 @@
       ],
       "evidence_files": [
         "policy-history.js",
-        "data/family-policy-history.json"
+        "data/family-policy-history.json",
+        "editorial-copy.js"
       ],
       "publication": {
         "module": "family",
-        "file": "policy-history.js",
-        "marker": "2007–2012: labai dosnios vaiko priežiūros išmokos"
+        "file": "editorial-copy.js",
+        "marker": "2007–2012 m. dosnios išmokos sutapo su TFR kilimu. Sutapimas dar nėra priežastis"
       },
       "blocker": null,
-      "next_action": "Saugoti jau paskelbtą išvadą ir nedubliuoti; prieš kitą leidimą tikrinti modulio aprėptį."
+      "next_action": "Tikras naršyklės tekstas redakciniame sluoksnyje; galutiniame matomumo audite tikrinti ne pirminį perrašomą šabloną, bet redakciškai pakeistą išvadą."
     },
     {
       "id": "FAMILY-LEAVE-FRE-01",
@@ -613,15 +615,16 @@
         "https://ec.europa.eu/eurostat/databrowser/view/isoc_ci_ifp_fu/default/table?lang=en"
       ],
       "evidence_files": [
-        "index.html"
+        "index.html",
+        "editorial-copy.js"
       ],
       "publication": {
         "module": "family",
-        "file": "index.html",
-        "marker": "Skaitmeninio naudojimo kontekstas"
+        "file": "editorial-copy.js",
+        "marker": "Skaitmeninis gyvenimas pasikeitė smarkiai. Čia jį rodome kaip kontekstą, ne kaip gimstamumo priežastį"
       },
       "blocker": null,
-      "next_action": "Saugoti jau paskelbtą išvadą ir nedubliuoti; prieš kitą leidimą tikrinti modulio aprėptį."
+      "next_action": "Tikras naršyklės tekstas redakciniame sluoksnyje; galutiniame matomumo audite tikrinti ne pirminį perrašomą šabloną, bet redakciškai pakeistą išvadą."
     },
     {
       "id": "HOUSING-VDA-RENT-2025-01",
@@ -943,11 +946,11 @@
       ],
       "publication": {
         "module": "methods",
-        "file": "overview-nowcast.js",
-        "marker": "2025P TFR = 1,03"
+        "file": "index.html",
+        "marker": "2025P = Eurostat projekcinis TFR"
       },
       "blocker": null,
-      "next_action": "Saugoti jau paskelbtą išvadą ir nedubliuoti; prieš kitą leidimą tikrinti modulio aprėptį."
+      "next_action": "Metodikos skyriuje atskirtas VDA 2025* preliminarus faktinis statusas, EUROPOP2025 2025P projekcinis TFR ir EU-SILC (p) preliminarus rodiklis; prieš leidimą patikrinti naršyklės tekstą."
     },
     {
       "id": "METHODS-DENOMINATORS-01",

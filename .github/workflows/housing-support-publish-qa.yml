@@ -10,18 +10,24 @@ on:
       - "migration-sex.js"
       - "data/eurostat-household-composition-2024-2025.json"
       - "research-nav.js"
+      - "app-base.js"
+      - "editorial-copy.js"
+      - "research-nav.css"
       - "app.js"
       - "index.html"
       - "tests/test_housing_support_published.py"
+      - "tests/publication-visibility-qa.cjs"
       - ".github/workflows/housing-support-publish-qa.yml"
   pull_request:
-    branches: [main]
     paths:
       - "housing-affordability.js"
       - "family-hypothesis.js"
       - "migration-sex.js"
       - "data/eurostat-household-composition-2024-2025.json"
       - "research-nav.js"
+      - "app-base.js"
+      - "editorial-copy.js"
+      - "research-nav.css"
       - "index.html"
       - "app.js"
       - "data/housing-support-young-family-series-2019-2025.json"
@@ -29,6 +35,7 @@ on:
       - "data/housing-oberhaus-2025-12-two-room-new-vs-old-city-ranges.json"
       - "data/housing-oberhaus-2025-12-one-room-rent-city-ranges.json"
       - "tests/test_housing_support_published.py"
+      - "tests/publication-visibility-qa.cjs"
   workflow_dispatch:
 permissions:
   contents: read
@@ -50,7 +57,10 @@ jobs:
           node --check family-hypothesis.js
           node --check migration-sex.js
           node --check research-nav.js
+          node --check app-base.js
+          node --check editorial-copy.js
           node --check app.js
+          node --check tests/publication-visibility-qa.cjs
       - name: Check official support contract
         run: python -m unittest -v tests/test_housing_support_published.py
       - name: Install headless browser
@@ -78,9 +88,30 @@ jobs:
               if(!cardText.includes('Ar pirmasis būstas prieinamas jaunoms šeimoms?')||
                  !cardText.includes('VDA šešių miestų')||
                  cardText.includes('Ar jaunai porai')) throw Error(screen+' overview stale card');
+              await page.locator('#overviewThreeFindings').waitFor({state:'visible'});
+              const findings=page.locator('#researchHome .research-summary > .card');
+              if(await findings.count()!==3) throw Error(screen+' overview must have exactly 3 takeaways');
+              const summary=await page.locator('#researchHome .research-summary').innerText();
+              if(!summary.includes('−19 946')||!summary.includes('+16 165')||
+                 !summary.includes('884 moterys / 1 000 vyrų')||
+                 !summary.includes('55,7 % Lietuvos privačių namų ūkių')||
+                 !summary.includes('poveikis dar neišmatuotas')) throw Error(screen+' three reader conclusions incomplete');
               await card.click();
               await page.waitForURL('**/?view=housing');
               await page.waitForSelector('#housingAffordability',{state:'visible'});
+              const visible=await page.evaluate(()=>[...document.querySelectorAll('body > section')]
+                .filter(el=>getComputedStyle(el).display!=='none').map(el=>el.id));
+              if(visible.join('|')!=='researchTopicIntro|housingAffordability')
+                throw Error(screen+' unexpected preceding sections in Housing: '+visible.join(','));
+              const housingStart=await page.locator('#housingAffordability').innerText();
+              if(!housingStart.includes('Ką jau galime pasakyti')||
+                 !housingStart.includes('Ko dar negalime')) throw Error(screen+' housing opening is not clear');
+              const position=await page.evaluate(()=>{
+                const market=document.querySelector('#housingMarketResearch');
+                const support=document.querySelector('#housingSupportTitle');
+                return Boolean(market&&support&&(market.compareDocumentPosition(support)&Node.DOCUMENT_POSITION_FOLLOWING));
+              });
+              if(!position) throw Error(screen+' support appears before Housing market facts');
               const ok=await page.evaluate(()=>{
                 const el=document.querySelector('#housingAffordability');
                 const c=document.querySelector('#housingSupportRecipientsChart');
@@ -106,17 +137,29 @@ jobs:
               console.log('QA',screen,JSON.stringify(ok));
               if(Object.entries(ok).some(([k,v])=>k==='rootOverflow'?v>3:!v)) throw Error(screen+' failed content/scroll QA');
               const housingOneAdult=await page.locator('#housingSingleAdultHouseholds').innerText();
-              if(!housingOneAdult.includes('55,7 %')||!housingOneAdult.includes('35,7 %')||
-                 !housingOneAdult.includes('namų ūkius')) throw Error(screen+' housing household definition missing');
+              if(!housingOneAdult.includes('55,7 %')||!housingOneAdult.includes('ne būsto įperkamumo')) throw Error(screen+' housing context missing');
+              const housingLink=page.locator('#housingSingleAdultHouseholds a');
+              if(await housingLink.getAttribute('href')!=='?view=population#populationHouseholdStructure') throw Error(screen+' housing link wrong');
+              await housingLink.click();
+              await page.waitForURL('**/?view=population#populationHouseholdStructure');
+              await page.waitForSelector('#populationHouseholdStructure',{state:'visible'});
+              const structure=await page.locator('#populationHouseholdStructure').innerText();
+              const primaryLink=await page.locator('#populationHouseholdStructure a[href*="ilc_lvph02"]').count();
+              if(!structure.includes('55,7 %')||!structure.includes('35,7 %')||!structure.includes('50,5 %')||
+                 !structure.includes('namų ūkių, ne Lietuvos gyventojų procentas')||!primaryLink) throw Error(screen+' primary Eurostat explanation incomplete');
+              const structureOverflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
+              if(structureOverflow>3) throw Error(screen+' population horizontal overflow '+structureOverflow);
               await page.goto('http://127.0.0.1:8765/?view=family',{waitUntil:'networkidle'});
               await page.waitForSelector('#familySingleAdultHouseholds',{state:'visible'});
               const familyOneAdult=await page.locator('#familySingleAdultHouseholds').innerText();
-              if(!familyOneAdult.includes('55,7 %')||!familyOneAdult.includes('35,7 %')) throw Error(screen+' family context missing');
+              if(!familyOneAdult.includes('55,7 %')||
+                 await page.locator('#familySingleAdultHouseholds a').getAttribute('href')!=='?view=population#populationHouseholdStructure') throw Error(screen+' family context link missing');
               await page.goto('http://127.0.0.1:8765/?view=migration',{waitUntil:'networkidle'});
               await page.waitForSelector('#migrationHouseholdContext',{state:'visible'});
               const migrationOneAdult=await page.locator('#migrationHouseholdContext').innerText();
-              if(!migrationOneAdult.includes('55,7 %')||!migrationOneAdult.includes('35,7 %')) throw Error(screen+' migration context missing');
-              console.log('PASS:',screen,'Eurostat 2025 one-adult household fact visible in housing/family/migration');
+              if(!migrationOneAdult.includes('55,7 %')||
+                 await page.locator('#migrationHouseholdContext a').getAttribute('href')!=='?view=population#populationHouseholdStructure') throw Error(screen+' migration context link missing');
+              console.log('PASS:',screen,'Eurostat primary explanation in population and three working context links');
               if(errors.length) throw Error(screen+' page errors: '+errors.join('; '));
               await page.close();
             }
@@ -124,3 +167,5 @@ jobs:
             console.log('PASS: public housing-support desktop/mobile browser QA');
           })().catch(e=>{console.error(e);process.exit(1)});
           NODE
+      - name: Audit 27 PUBLISHED findings in all eight modules on desktop/mobile
+        run: node tests/publication-visibility-qa.cjs
