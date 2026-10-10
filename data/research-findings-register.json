@@ -93,7 +93,7 @@
   "findings": [
     {
       "id": "EU-HH-2025-01",
-      "area": "housing",
+      "area": "population",
       "title": "Lietuvoje didžiausia ES vieno suaugusiojo be išlaikomų vaikų namų ūkių dalis",
       "period": "2024–2025",
       "status": "PUBLISHED_CONTEXT",
@@ -107,17 +107,17 @@
         "data/households-single-adult-eurostat-2024-2025.json"
       ],
       "publication": {
-        "module": "housing",
+        "module": "population",
         "secondary_modules": [
+          "housing",
           "family",
-          "migration",
-          "population"
+          "migration"
         ],
-        "file": "housing-affordability.js",
-        "marker": "55,7 % Lietuvos"
+        "file": "app-base.js",
+        "marker": "id=\"populationHouseholdStructure\""
       },
       "blocker": null,
-      "next_action": "PR #4 ir vėlesnio main Pages deploy PASS. Pirminį aiškinimą perkelti į population, kituose moduliuose palikti kontekstines nuorodas. Prieš naują UI leidimą atlikti tikrą browser QA.",
+      "next_action": "Pirminis paaiškinimas Gyventojų struktūroje; kontekstinės nuorodos Būste, Šeimoje, Migracijoje. Prieš leidimą būtina reali visų 27 PUBLISHED_* išvadų desktop ir mobile UI QA.",
       "publication_audit": {
         "merged_pr": "https://github.com/olemoz1977/Demografin-situacija/pull/4",
         "source_and_pages_deployed": true,
