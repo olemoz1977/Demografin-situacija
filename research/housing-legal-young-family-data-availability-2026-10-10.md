@@ -15,6 +15,11 @@ Būsto paramos analizei „jauna šeima“ – sutuoktinių ar registruotų part
 3. **SADM / SPIS** kaupia administracinius paramos ir paraiškų duomenis, įskaitant finansinę paskatą pirmajam būstui. Tai nėra visų Lietuvoje gyvenančių jaunų šeimų pajamų statistika ir savaime negaunamas tinkamas subsidijos aprėpties vardiklis. https://socmin.lrv.lt/lt/asmens-duomenu-apsauga/asmens-duomenu-tvarkymas/ ; https://socmin.lrv.lt/lt/veiklos-sritys/seima-ir-vaikai/finansine-paskata-pirmaji-busta-isigyjancioms-jaunoms-seimoms/
 4. **Būsto kainos ir nuomos segmentai egzistuoja** – VDA S7R280, Ober-Haus; 2025 m. šeši miestai nėra dešimt apskričių, o skirtingų būstų ir laikotarpių krepšeliai nėra tarpusavyje palyginami.
 
+## Papildomai patvirtintas konkretus atviras rinkinys ir duomenų gavimo kelias
+
+- **VDA S3R908 (SD003622): „Mėnesinių piniginių disponuojamųjų pajamų sudėtis | Apskritys | Pajamų šaltinis“.** Kasmet atnaujinamas **viešas** rinkinys su **CSV / JSON / Parquet** prieiga, apima 2024 m. ir visas apskritis. Tai didelis žingsnis – teritorinių namų ūkių pajamų skaičiai **tikrai egzistuoja**, bet rinkinys nėra teisinės jaunos šeimos pajamų lentelė. https://dataportal.gov.lt/lt/datasets/sd003622
+- **VDA individualių užklausų paslauga** teikiama fiziniams / juridiniams asmenims, ir gali teikti parengtą agreguotą statistinę informaciją. Paskelbta kainodaros būsena **„nemokama / mokama“**: jau viešai paskelbta oficialioji statistika nemokama, o individualiai paruošti duomenys gali būti mokami. **Prieš užsakant nepatvirtintas 0 EUR rezultatas; iš pradžių klausti apie jau egzistuojančią nemokamą suvestinę, paslaugos įkainį bei duomenų kokybę.** https://osp.stat.gov.lt/duomenu-teikimas ; https://www.epaslaugos.lt/portal/providerServices/34820
+
 ## Ko šiame audite viešai nepatvirtinome
 
 - Vienos 2024–2025 m. **10 apskričių** atviros lentelės, kurioje kartu būtų: būtent teisines jaunas šeimas atitinkančių namų ūkių skaičius, suaugusiųjų amžius, santuokos/registruotos partnerystės/vienų vaiką auginančių globėjų statusas, vaikų skaičius, disponuojamosios namų ūkio pajamos, pagrindinės išlaidos, nuomos / būsto nuosavybės situacija.
