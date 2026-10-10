@@ -323,6 +323,26 @@ class HousingPopulationStandardTest(unittest.TestCase):
             self.assertFalse(row["construction_completion_cost_known"])
             self.assertFalse(row["between_city_comparable"])
 
+    def test_sadm_demand_2025_and_2026_support_scheme_not_confused(self):
+        demand = json.loads(
+            (ROOT / "data/housing-state-support-demand-context-2025-2026.json")
+            .read_text(encoding="utf-8")
+        )
+        self.assertTrue(demand["rules"]["do_not_compute_515_divided_by_1700"])
+        self.assertTrue(demand["rules"]["do_not_merge_A_and_B"])
+        self.assertTrue(demand["rules"]["do_not_treat_2026_05_event_as_2025_or_A"])
+        self.assertTrue(demand["rules"]["do_not_call_predicted_support_granted"])
+        self.assertTrue(demand["rules"]["do_not_call_all_2026_09_applications_funded_until_outcome_verified"])
+        cases = {(x["date"], x["scheme"], x["metric"]):x for x in demand["facts"]}
+        self.assertEqual(1700, cases["2025-01-01","A","waiting_legacy_application_families"]["value_approx"])
+        self.assertEqual(515, cases["2025","A","recipients_paid_families"]["value"])
+        self.assertEqual(10, cases["2026-05-19","B","applications_acceptance_window"]["minutes"])
+        self.assertEqual(1000, cases["2026-05-19","B","applications_submitted"]["value_approx"])
+        self.assertEqual(800, cases["2026-09-29","A","applications_submitted_2026_sept"]["value_approx"])
+        self.assertIn("515 šeimų – tai išmokų skaičius", self.housing)
+        self.assertIn("Tai NE 2025 m. 515", self.housing)
+        self.assertIn("neteisingas procentas", self.housing)
+
     def test_households_are_explicitly_not_owned_homes(self):
         self.assertIn("Ką reiškia „namų ūkis“?", self.housing)
         self.assertIn("Namų ūkis ≠ nuosavas būstas.", self.housing)
