@@ -1,7 +1,6 @@
 name: Research continuity – no lost findings
 on:
   pull_request:
-    branches: [main]
   push:
     branches: [main]
   workflow_dispatch:
@@ -21,9 +20,11 @@ jobs:
       - name: Validate register, local evidence and prior-published markers
         run: python scripts/check_registry_continuity.py
       - name: Block loss of previously committed findings
+        env:
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
         run: |
           if [ "${{ github.event_name }}" = "pull_request" ]; then
-            python scripts/check_registry_continuity.py --base origin/main
+            python scripts/check_registry_continuity.py --base "origin/${BASE_REF}"
           elif [ "${{ github.event_name }}" = "push" ]; then
             python scripts/check_registry_continuity.py --base HEAD^
           fi
