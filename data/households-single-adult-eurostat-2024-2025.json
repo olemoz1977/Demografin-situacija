@@ -36,10 +36,12 @@
     "merged_pr": "https://github.com/olemoz1977/Demografin-situacija/pull/4",
     "source_in_main": true,
     "github_pages_deployment_success": true,
-    "independent_live_browser_qa": "PENDING",
+    "independent_live_browser_qa": "PASS",
     "module_origin_pr": "https://github.com/olemoz1977/Demografin-situacija/pull/4",
-    "new_population_layout_is_on_draft_pr_7_not_main": true
+    "primary_module_merged_pr": "https://github.com/olemoz1977/Demografin-situacija/pull/7",
+    "live_browser_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/38026170701"
   },
-  "current_branch_primary_module": "population",
-  "last_confirmed_main_module_before_this_draft": "housing"
+  "public_site_module": "population",
+  "published_primary_module": "population",
+  "historical_primary_module_before_pr_7": "housing"
 }
