@@ -78,13 +78,16 @@ jobs:
                 const c=document.querySelector('#housingSupportRecipientsChart');
                 const chart=window.Chart?.getChart(c);
                 const t=el.innerText;
+                const norm=t.replace(/[\u00a0\u202f\s]+/g,' ');
+                const tables=el.querySelectorAll('#housingMarketResearch .housing-table');
                 return {heading:t.includes('Ar pirmasis būstas prieinamas jaunoms šeimoms?'),
                   research:!!el.querySelector('#housingMarketResearch'),
-                  vdaRows:el.querySelectorAll('#housingMarketResearch .housing-table:first-of-type tbody tr').length>=0,
-                  marketTables:el.querySelectorAll('#housingMarketResearch .housing-table').length===2,
-                  prices:t.includes('2 846')&&t.includes('1 988'),
-                  marketBounds:t.includes('2 500–3 300')&&t.includes('320–520'),
-                  sourceLimits:t.includes('nepublikuojami')&&t.includes('rinkos ekspertiniai'),
+                  vdaRows:tables[0]?.querySelectorAll('tbody tr').length===6,
+                  marketRows:tables[1]?.querySelectorAll('tbody tr').length===3,
+                  marketTables:tables.length===2,
+                  prices:/2\s*846/.test(norm)&&/1\s*988/.test(norm),
+                  marketBounds:/2\s*500\s*–\s*3\s*300/.test(norm)&&norm.includes('320–520'),
+                  sourceLimits:norm.includes('nepublikuojami')&&norm.toLowerCase().includes('rinkos ekspertiniai'),
                   series:chart?.data?.labels?.length===7,
                   chart2019:chart?.data?.datasets?.[0]?.data?.[0]===820,
                   chart2025:chart?.data?.datasets?.[0]?.data?.[6]===515,
