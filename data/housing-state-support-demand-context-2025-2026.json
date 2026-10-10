@@ -1,0 +1,90 @@
+{
+  "version": "2026-10-10-demand-v1",
+  "status": "OFFICIAL_SADM_CONTEXT_WITH_EXPLICIT_SCHEME_AND_PERIOD_SEPARATION",
+  "purpose": "Explain why 515 annual 2025 paid young-family subsidies does not represent demand, support coverage, acceptance rate or 2026 application dynamics.",
+  "scheme_definitions": {
+    "A": "Speciali finansinė paskata pirmąjį būstą regionuose įsigyjančioms jaunoms šeimoms",
+    "B": "Valstybės iš dalies kompensuojamas būsto kreditas ir/ar subsidija (platesnė teisę turinčių asmenų/šeimų grupė)"
+  },
+  "facts": [
+    {
+      "date": "2025-01-01",
+      "scheme": "A",
+      "metric": "waiting_legacy_application_families",
+      "value_approx": 1700,
+      "measure": "families waiting from 2023 (stock at start of year)",
+      "source_url": "https://socmin.lrv.lt/lt/naujienos/proverzis-paramos-jaunoms-seimoms-isigyjancioms-pirmaji-busta-sistemoje-C1v/",
+      "do_not_interpret_as_all_young_families": true
+    },
+    {
+      "date": "2025-09-17",
+      "scheme": "A",
+      "metric": "legacy_applications_examined",
+      "value_approx": 1700,
+      "measure": "backlogged families' applications examined in 2025; queue closed by this date; NOT same as 2025 disbursements",
+      "source_url": "https://socmin.lrv.lt/lt/naujienos/proverzis-paramos-jaunoms-seimoms-isigyjancioms-pirmaji-busta-sistemoje-C1v/"
+    },
+    {
+      "date": "2025",
+      "scheme": "A",
+      "metric": "recipients_paid_families",
+      "value": 515,
+      "measure": "paid subsidies to young families during calendar year, not all applicants or eligible families",
+      "source_url": "https://socmin.lrv.lt/public/canonical/1773646445/6523/2026%2003%2006_SADM_Veiklos%20ataskaita%202025-03-10.pdf"
+    },
+    {
+      "date": "2026-05-19",
+      "scheme": "B",
+      "metric": "applications_acceptance_window",
+      "minutes": 10,
+      "opened_at": "09:00",
+      "closed_at": "09:10",
+      "measure": "broad housing support form BP-1 stopped after budget was reserved; it was NOT special scheme A",
+      "source_url": "https://socmin.lrv.lt/lt/naujienos-1/baigtas-paraisku-priemimas-valstybes-paramai-bustui-isigyti-gIR/"
+    },
+    {
+      "date": "2026-05-19",
+      "scheme": "B",
+      "metric": "applications_submitted",
+      "value_approx": 1000,
+      "initial_predicted_satisfiable_gt": 300,
+      "initial_budget_m_eur": 5.6,
+      "measure": "nearly 1000 submitted in 10 minutes, ministry initially forecast more than 300 could be approved; PRELIMINARY and later funding increase changes result",
+      "source_url": "https://socmin.lrv.lt/lt/naujienos-1/baigtas-paraisku-priemimas-valstybes-paramai-bustui-isigyti-gIR/"
+    },
+    {
+      "date": "2026-05-20",
+      "scheme": "B",
+      "metric": "additional_budget_m_eur",
+      "value": 5,
+      "initial_budget_m_eur": 5.6,
+      "revised_budget_m_eur": 10.6,
+      "measure": "extra allocated after ten-minute halt; 300 was not final outcome",
+      "source_url": "https://socmin.lrv.lt/lt/naujienos/j-zailskiene-paramai-bustui-isigyti-papildomai-skiriami-5-mln-euru-9TZ/"
+    },
+    {
+      "date": "2026-09-29",
+      "scheme": "A",
+      "metric": "applications_submitted_2026_sept",
+      "value_approx": 800,
+      "measure": "nearly 800 for separate regional young-family scheme; ministry promises all meeting criteria will obtain subsidy after review; applications NOT actual subsidies paid",
+      "planned_budget_m_eur_gt": 6,
+      "source_url": "https://socmin.lrv.lt/lt/naujienos-1/visos-prasymus-pateikusios-ir-reikalavimus-atitinkancios-jaunos-seimos-gaus-valstybes-subsidija-pirmajam-bustui-regionuose-isigyti-i1j/"
+    }
+  ],
+  "rules": {
+    "do_not_compute_515_divided_by_1700": true,
+    "do_not_compute_515_over_country_young_families_without_denominator": true,
+    "do_not_merge_A_and_B": true,
+    "do_not_treat_2026_05_event_as_2025_or_A": true,
+    "do_not_call_predicted_support_granted": true,
+    "do_not_call_all_2026_09_applications_funded_until_outcome_verified": true,
+    "three_stages_differ": [
+      "applications",
+      "eligibility_certificates / reservation",
+      "disbursed subsidies"
+    ],
+    "not_a_causal_measure_of_housing_affordability": true
+  },
+  "publication_scope": "Research preview only; 2026 occurrences to be labelled separate CONTEXT from 2024–25 outcomes."
+}
