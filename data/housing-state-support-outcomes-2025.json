@@ -14,7 +14,11 @@
       "recipients_2025": 515,
       "funds_m_eur_2024": 7.2,
       "funds_m_eur_2025": 8.2,
-      "note": "SADM 32 pav.; gavėjai yra jaunos šeimos pagal specialią pirmo būsto paskatos priemonę."
+      "note": "SADM 32 pav.; gavėjai yra jaunos šeimos pagal specialią pirmo būsto paskatos priemonę.",
+      "population_definition_id": "LT_PARAMOS_BUSTUI_ISTATYMAS_JAUNA_SEIMA",
+      "territory": "Lietuvos finansuojamos regioninės teritorijos",
+      "measure": "per kalendorinius metus paskatą gavusių jaunų šeimų skaičius",
+      "status": "OFFICIAL"
     },
     {
       "key": "partially_compensated_housing_credit",
@@ -27,11 +31,18 @@
       "additional_subsidy_recipients_2025": 32,
       "average_subsidy_eur_2025": 19304,
       "share_30pct_subsidies_2025_pct": 55,
-      "note": "SADM 33 pav. ir tekstas; 556 nėra vien jaunos poros. Į 556 įeina 32 gavėjai, kuriems išmokėta papildoma subsidija."
+      "note": "SADM 33 pav. ir tekstas: 556 nėra visos jaunos šeimos; 32 iš 556 gavo papildomą subsidiją. Negalima šio skaičiaus vadinti naujų unikalių šeimų skaičiumi.",
+      "population_definition_id": "LT_PARAMOS_BUSTUI_ISTATYMAS_ASMENYS_AR_SEIMOS",
+      "territory": "Lietuvos Respublika",
+      "measure": "per kalendorinius metus subsidiją gavusių asmenų arba šeimų skaičius; įskaitant papildomas subsidijas",
+      "status": "OFFICIAL"
     }
   ],
   "interpretation": {
     "do_not_sum_as_young_families": true,
-    "reason": "Antroji schema apima platesnes gavėjų grupes nei analitinė 25–30 m. dirbanti pora ar teisinė jauna šeima."
-  }
+    "reason": "Schemos apima skirtingas teisines populiacijas. 2025 m. bendras teisiškai apibrėžtų jaunų šeimų skaičius (vardiklis) oficialiai viešai neskelbiamas.",
+    "official_young_family_denominator_2025": null,
+    "coverage_percentage_2025": null
+  },
+  "population_standard": "research/population-terminology-standard-2024-2025.md"
 }

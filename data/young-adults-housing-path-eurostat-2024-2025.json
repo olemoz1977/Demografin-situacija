@@ -1,0 +1,106 @@
+{
+  "status": "RESEARCH_VALIDATED_KEY_METRIC",
+  "period_scope": "2024-2025",
+  "checked_on": "2026-10-09",
+  "description_lt": "Įvertintas amžius, kai pusė jaunų žmonių nebegyvena su tėvais. Tai NE amžius įsigyjant pirmą nuosavą būstą.",
+  "method": "Eurostat calculates, separately by sex and in total, per-age exit probability (15-34) from EU-LFS shares; midpoint 50% no longer in parental household. It is not an observed average age at first purchase.",
+  "observations": [
+    {
+      "year": 2024,
+      "geo": "LT",
+      "value": 22.4,
+      "unit": "years",
+      "measurement": "estimated_age_at_which_half_no_longer_live_with_parent",
+      "dataset": "yth_demo_030",
+      "survey": "EU-LFS",
+      "statistical_unit": "people aged 15-34",
+      "source_type": "OFFICIAL_EUROSTAT",
+      "data_nature": "OBSERVED_SURVEY_DERIVED_INDICATOR",
+      "source_quality_flag": null,
+      "validation": "OFFICIAL_DATA_BROWSER_OR_2026_EUROSTAT_RELEASE",
+      "source_url": "https://ec.europa.eu/eurostat/databrowser/view/yth_demo_030/default/table"
+    },
+    {
+      "year": 2025,
+      "geo": "LT",
+      "value": 22.7,
+      "unit": "years",
+      "measurement": "estimated_age_at_which_half_no_longer_live_with_parent",
+      "dataset": "yth_demo_030",
+      "survey": "EU-LFS",
+      "statistical_unit": "people aged 15-34",
+      "source_type": "OFFICIAL_EUROSTAT",
+      "data_nature": "OBSERVED_SURVEY_DERIVED_INDICATOR",
+      "source_quality_flag": null,
+      "validation": "OFFICIAL_DATA_BROWSER_OR_2026_EUROSTAT_RELEASE",
+      "source_url": "https://ec.europa.eu/eurostat/databrowser/view/yth_demo_030/default/table"
+    },
+    {
+      "year": 2024,
+      "geo": "EU27_2020",
+      "value": 26.2,
+      "unit": "years",
+      "measurement": "estimated_age_at_which_half_no_longer_live_with_parent",
+      "dataset": "yth_demo_030",
+      "survey": "EU-LFS",
+      "statistical_unit": "people aged 15-34",
+      "source_type": "OFFICIAL_EUROSTAT",
+      "data_nature": "OBSERVED_SURVEY_DERIVED_INDICATOR",
+      "source_quality_flag": null,
+      "validation": "OFFICIAL_DATA_BROWSER_OR_2026_EUROSTAT_RELEASE",
+      "source_url": "https://ec.europa.eu/eurostat/databrowser/view/yth_demo_030/default/table"
+    },
+    {
+      "year": 2025,
+      "geo": "EU27_2020",
+      "value": 26.3,
+      "unit": "years",
+      "measurement": "estimated_age_at_which_half_no_longer_live_with_parent",
+      "dataset": "yth_demo_030",
+      "survey": "EU-LFS",
+      "statistical_unit": "people aged 15-34",
+      "source_type": "OFFICIAL_EUROSTAT",
+      "data_nature": "OBSERVED_SURVEY_DERIVED_INDICATOR",
+      "source_quality_flag": null,
+      "validation": "OFFICIAL_DATA_BROWSER_OR_2026_EUROSTAT_RELEASE",
+      "source_url": "https://ec.europa.eu/eurostat/databrowser/view/yth_demo_030/default/table"
+    }
+  ],
+  "source_release": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260915-1",
+  "dataset_last_updated": "2026-04-16",
+  "not_homeownership": true,
+  "not_young_family_population": true,
+  "not_fertility_causality": true,
+  "sources_to_read_for_future_age_stratified_analysis": [
+    {
+      "dataset": "ilc_lvps08",
+      "topic": "18-34 people with parents and/or sharing parental household income by age and sex",
+      "survey": "EU-SILC",
+      "year_2025_lt_quality": "PROVISIONAL",
+      "numeric_lithuania_age_details": "NOT_YET_VERIFIED",
+      "limitation": "May include temporary absence students and workers; distinct from EU-LFS leaving-home metric."
+    },
+    {
+      "dataset": "ilc_lvps05",
+      "topic": "Tenure status by sex and age incl. Y25-34",
+      "survey": "EU-SILC",
+      "numeric_lithuania_age_details": "NOT_YET_VERIFIED",
+      "limitation": "Measures share of PERSONS living in owner-occupied/rented dwelling, NOT whether 25-34 individual personally owns home; parent-owned dwelling counts."
+    },
+    {
+      "dataset": "ilc_lvho05a",
+      "topic": "Overcrowding by age, sex and poverty status",
+      "survey": "EU-SILC",
+      "numeric_lithuania_age_details": "NOT_YET_VERIFIED",
+      "limitation": "Crowding condition, not purchasing power; person-level denominator."
+    },
+    {
+      "dataset": "ilc_lvho07a",
+      "topic": "Housing cost overburden by age and sex",
+      "survey": "EU-SILC",
+      "numeric_lithuania_age_details": "NOT_YET_VERIFIED",
+      "limitation": ">40% household disposable income spent on housing costs, among persons of age group; not mortgage eligibility."
+    }
+  ],
+  "note": "25-34 is a standard official age grouping; do not relabel as 25-35 or legal <36 young families. No unverified LT cells populated."
+}

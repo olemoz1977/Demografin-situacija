@@ -1,5 +1,5 @@
 {
-  "audit_date": "2026-10-02",
+  "audit_date": "2026-10-10",
   "target": "10 Lithuania counties; working 25–30-year-old couple",
   "formula": "m²/year = [(2 × monthly net income × 12) – annual rent] / apartment sale price EUR/m²",
   "ready_for_publication": false,
@@ -10,7 +10,7 @@
     "decision": "BLOCKED",
     "main_live_data_ready": false,
     "main_live_publication_requires_owner_approval": true,
-    "configured_rule": "Final v1.0 remains blocked until the official/validated 2025 apartment-sale layer and publication-grade 2025 1-room rent layer cover all 10 counties."
+    "configured_rule": "Final v1.0 requires a verified free/open 2025 comparable apartment-sale layer and a reliable 2025 1-room rent layer covering the target geographies. Paid RC aggregation path CLOSED with 0 EUR budget; otherwise do not publish rankings."
   },
   "preliminary_v0_1": {
     "ready": false,
@@ -56,7 +56,8 @@
   "blockers": [
     {
       "gate": "sale_actual_apartment_transactions",
-      "reason": "Waiting for an official RC/VDA 2025 actual-apartment transaction layer covering 60 municipalities / 10 counties with a verified aggregation method. 2024 is accepted only as an explicitly labelled fallback."
+      "reason": "Waiting for an official RC/VDA 2025 actual-apartment transaction layer covering 60 municipalities / 10 counties with a verified aggregation method. 2024 is accepted only as an explicitly labelled fallback.",
+      "zero_budget_decision": "CLOSED_PAID_PATH / FREE_ALTERNATIVES_ONLY"
     },
     {
       "gate": "rent_private_1room_10_counties",
@@ -74,5 +75,14 @@
     "sale": "WAITING_OFFICIAL_RC_2025_APARTMENT_TRANSACTION_LAYER; 2024 fallback acceptable only if 2025 unavailable",
     "rent": "WAITING_PUBLICATION_GRADE_10_COUNTY_PRIVATE_RENT_LAYER; public search-index route closed at 9/10 N>=5"
   },
-  "source": "data/housing-affordability-input.json"
+  "source": "data/housing-affordability-input.json",
+  "funding_rule": {
+    "total_budget_eur": 0,
+    "financing": "voluntary_public_interest_noncommercial",
+    "paid_data_or_subscriptions_allowed": false,
+    "RC_custom_aggregate_status": "CLOSED_NO_BUDGET",
+    "RC_quote_request_status": "CLOSED_DO_NOT_SEND",
+    "request_owner_permission_for_paid_data": false,
+    "data_policy": "Publicly available no-fee datasets and their permitted reuse only; retain quality comparability gate. Missing strata must be marked NOT_COMPARABLE instead of manufactured."
+  }
 }

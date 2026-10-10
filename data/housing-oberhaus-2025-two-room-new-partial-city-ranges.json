@@ -1,0 +1,181 @@
+{
+  "version": "2026-10-10-source-verified-1",
+  "status": "PRIVATE_EXPERT_MARKET_RANGES_NOT_OFFICIAL_RC_TRANSACTIONS",
+  "provider": "UAB OBER-HAUS nekilnojamasis turtas",
+  "indicator": "Two-room apartment sale market EUR/m2 indicative lower–upper ranges",
+  "precise_segment": "naujos statybos butai (dalinė apdaila) / 2 kambarių / gyvenamieji rajonai",
+  "observations_month": [
+    "2025-01",
+    "2025-12"
+  ],
+  "source_urls": {
+    "2025-01": "https://www.ober-haus.lt/wp-content/uploads/NT-kainos-2025-sausis.pdf",
+    "2025-12": "https://www.ober-haus.lt/wp-content/uploads/NT-kainos-2025-gruodis.pdf"
+  },
+  "source_page_one_based": 1,
+  "source_visual_checked": true,
+  "geography_type": "city / Druskininkai; city never means county",
+  "licensing_note": "Naudojant apžvalgos duomenis, nuoroda į UAB OBER-HAUS nekilnojamasis turtas būtina.",
+  "do_not_relabel_as_annual_mean": true,
+  "do_not_relabel_as_transaction_median": true,
+  "do_not_relabel_as_10_counties": true,
+  "do_not_interpret_range_midpoint_as_weighted_estimate": true,
+  "same_apartment_basket_not_guaranteed": true,
+  "no_sale_count_N": true,
+  "no_actual_size_distribution": true,
+  "no_constuction_year_bounds": true,
+  "no_finish_cost_included": true,
+  "no_plot_as_official_2025_rc_price": true,
+  "partial_control": [
+    "new-build market category",
+    "partial fit-out category",
+    "two rooms",
+    "residential (non-centre) city districts",
+    "same provider and reporting month"
+  ],
+  "not_controlled": [
+    "actual floor area",
+    "individual building construction year",
+    "neighbourhood mix within residential districts",
+    "quality of construction and finish",
+    "remaining fit-out expenditure",
+    "registered transaction prices and volumes",
+    "sample size",
+    "county vs city coverage"
+  ],
+  "rows": [
+    {
+      "month": "2025-01",
+      "city": "Vilnius",
+      "district": "gyvenamieji rajonai",
+      "rooms": 2,
+      "construction_segment": "naujos statybos",
+      "finish": "dalinė apdaila",
+      "price_min_eur_m2": 2350,
+      "price_max_eur_m2": 3000,
+      "status": "PRIVATE_EXPERT_RANGE"
+    },
+    {
+      "month": "2025-01",
+      "city": "Kaunas",
+      "district": "gyvenamieji rajonai",
+      "rooms": 2,
+      "construction_segment": "naujos statybos",
+      "finish": "dalinė apdaila",
+      "price_min_eur_m2": 2000,
+      "price_max_eur_m2": 2700,
+      "status": "PRIVATE_EXPERT_RANGE"
+    },
+    {
+      "month": "2025-01",
+      "city": "Klaipėda",
+      "district": "gyvenamieji rajonai",
+      "rooms": 2,
+      "construction_segment": "naujos statybos",
+      "finish": "dalinė apdaila",
+      "price_min_eur_m2": 2050,
+      "price_max_eur_m2": 2750,
+      "status": "PRIVATE_EXPERT_RANGE"
+    },
+    {
+      "month": "2025-01",
+      "city": "Šiauliai",
+      "district": "gyvenamieji rajonai",
+      "rooms": 2,
+      "construction_segment": "naujos statybos",
+      "finish": "dalinė apdaila",
+      "price_min_eur_m2": 1650,
+      "price_max_eur_m2": 1900,
+      "status": "PRIVATE_EXPERT_RANGE"
+    },
+    {
+      "month": "2025-01",
+      "city": "Panevėžys",
+      "district": "gyvenamieji rajonai",
+      "rooms": 2,
+      "construction_segment": "naujos statybos",
+      "finish": "dalinė apdaila",
+      "price_min_eur_m2": 1650,
+      "price_max_eur_m2": 1850,
+      "status": "PRIVATE_EXPERT_RANGE"
+    },
+    {
+      "month": "2025-01",
+      "city": "Druskininkai",
+      "district": "gyvenamieji rajonai",
+      "rooms": 2,
+      "construction_segment": "naujos statybos",
+      "finish": "dalinė apdaila",
+      "price_min_eur_m2": 1900,
+      "price_max_eur_m2": 2250,
+      "status": "PRIVATE_EXPERT_RANGE"
+    },
+    {
+      "month": "2025-12",
+      "city": "Vilnius",
+      "district": "gyvenamieji rajonai",
+      "rooms": 2,
+      "construction_segment": "naujos statybos",
+      "finish": "dalinė apdaila",
+      "price_min_eur_m2": 2500,
+      "price_max_eur_m2": 3300,
+      "status": "PRIVATE_EXPERT_RANGE"
+    },
+    {
+      "month": "2025-12",
+      "city": "Kaunas",
+      "district": "gyvenamieji rajonai",
+      "rooms": 2,
+      "construction_segment": "naujos statybos",
+      "finish": "dalinė apdaila",
+      "price_min_eur_m2": 2300,
+      "price_max_eur_m2": 2950,
+      "status": "PRIVATE_EXPERT_RANGE"
+    },
+    {
+      "month": "2025-12",
+      "city": "Klaipėda",
+      "district": "gyvenamieji rajonai",
+      "rooms": 2,
+      "construction_segment": "naujos statybos",
+      "finish": "dalinė apdaila",
+      "price_min_eur_m2": 2250,
+      "price_max_eur_m2": 2950,
+      "status": "PRIVATE_EXPERT_RANGE"
+    },
+    {
+      "month": "2025-12",
+      "city": "Šiauliai",
+      "district": "gyvenamieji rajonai",
+      "rooms": 2,
+      "construction_segment": "naujos statybos",
+      "finish": "dalinė apdaila",
+      "price_min_eur_m2": 1800,
+      "price_max_eur_m2": 2100,
+      "status": "PRIVATE_EXPERT_RANGE"
+    },
+    {
+      "month": "2025-12",
+      "city": "Panevėžys",
+      "district": "gyvenamieji rajonai",
+      "rooms": 2,
+      "construction_segment": "naujos statybos",
+      "finish": "dalinė apdaila",
+      "price_min_eur_m2": 1800,
+      "price_max_eur_m2": 2100,
+      "status": "PRIVATE_EXPERT_RANGE"
+    },
+    {
+      "month": "2025-12",
+      "city": "Druskininkai",
+      "district": "gyvenamieji rajonai",
+      "rooms": 2,
+      "construction_segment": "naujos statybos",
+      "finish": "dalinė apdaila",
+      "price_min_eur_m2": 2100,
+      "price_max_eur_m2": 2350,
+      "status": "PRIVATE_EXPERT_RANGE"
+    }
+  ],
+  "purpose": "Use this more homogeneous 2025 submarket as conservative secondary diagnostic for quality-mix sensitivity; do not replace 2025 actual RC 10-county quality-matched transactions or present as measured young-family affordability."
+}

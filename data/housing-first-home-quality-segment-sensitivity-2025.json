@@ -1,0 +1,56 @@
+{
+  "version": "2026-10-10-quality-segment-v1",
+  "status": "RESEARCH_ONLY_PARTIALLY_STANDARDIZED_MARKET_RANGE_NOT_A_VALID_COUNTY_OR_FAMILY_RANKING",
+  "input_prices": "data/housing-oberhaus-2025-two-room-new-partial-city-ranges.json",
+  "input_savings": "data/housing-first-home-saving-scenarios-city3-2025.json",
+  "price_period": "2025-12",
+  "earnings": "national Sodra 2025-11 extrapolated to twelve months",
+  "rent": "Aruodas 2025 Jan-Dec mean asking price 1 room",
+  "scope": "3 city municipalities, not 10 counties",
+  "nonrent_expenses_assumption_eur_month": 1700,
+  "apartments_must_not_be_assumed_50m2": true,
+  "do_not_rank_cities": true,
+  "other_causes_of_bias": [
+    "same nominal housing type does not equate to identical apartment size or construction finish",
+    "partial fit-out not ready to occupy, missing finish cost",
+    "market bounds not price median or factual transactions",
+    "household income is hypothetical shared national proxy",
+    "nonrent expenses hypothetical",
+    "3 cities not counties"
+  ],
+  "rows": [
+    {
+      "city": "Vilnius",
+      "model_annual_savings_eur": 10815,
+      "lower_2025_12_market_range_eur_m2": 2500,
+      "upper_2025_12_market_range_eur_m2": 3300,
+      "m2_price_equivalent_lower_at_high_price": 3.28,
+      "m2_price_equivalent_upper_at_low_price": 4.33,
+      "quality_control": "PARTIAL_ROOM_AND_NEW_BUILD_UNFINISHED_CATEGORY",
+      "rankability": "BLOCKED",
+      "first_home_cost_complete": false
+    },
+    {
+      "city": "Kaunas",
+      "model_annual_savings_eur": 11835,
+      "lower_2025_12_market_range_eur_m2": 2300,
+      "upper_2025_12_market_range_eur_m2": 2950,
+      "m2_price_equivalent_lower_at_high_price": 4.01,
+      "m2_price_equivalent_upper_at_low_price": 5.15,
+      "quality_control": "PARTIAL_ROOM_AND_NEW_BUILD_UNFINISHED_CATEGORY",
+      "rankability": "BLOCKED",
+      "first_home_cost_complete": false
+    },
+    {
+      "city": "Klaipėda",
+      "model_annual_savings_eur": 11979.96,
+      "lower_2025_12_market_range_eur_m2": 2250,
+      "upper_2025_12_market_range_eur_m2": 2950,
+      "m2_price_equivalent_lower_at_high_price": 4.06,
+      "m2_price_equivalent_upper_at_low_price": 5.32,
+      "quality_control": "PARTIAL_ROOM_AND_NEW_BUILD_UNFINISHED_CATEGORY",
+      "rankability": "BLOCKED",
+      "first_home_cost_complete": false
+    }
+  ]
+}

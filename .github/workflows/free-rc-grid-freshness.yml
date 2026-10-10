@@ -1,0 +1,20 @@
+name: 2025 Free RC Grid Freshness
+on:
+  push:
+    branches: [audit/population-standard-2024-2025]
+    paths:
+      - "scripts/probe_free_rc_grid_freshness_2025.py"
+      - ".github/workflows/free-rc-grid-freshness.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/probe_free_rc_grid_freshness_2025.py

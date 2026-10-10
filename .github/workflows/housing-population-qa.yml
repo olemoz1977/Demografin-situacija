@@ -1,0 +1,135 @@
+name: Housing population QA
+
+on:
+  push:
+    branches:
+      - audit/population-standard-2024-2025
+    paths:
+      - "app.js"
+      - "research-nav.js"
+      - "housing-affordability.js"
+      - "family-hypothesis.js"
+      - "migration-sex.js"
+      - "data/housing-state-support-outcomes-2025.json"
+      - "data/housing-verified-city-benchmarks-2024-2025.json"
+      - "data/housing-city-market-changes-derived-2024-2025.json"
+      - "tests/test_housing_population_standard.py"
+      - ".github/workflows/housing-population-qa.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  population-and-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Run population contract checks
+        run: |
+          python -m unittest -v tests/test_housing_population_standard.py
+          node --check app.js
+          node --check research-nav.js
+          node --check housing-affordability.js
+          node --check family-hypothesis.js
+          node --check migration-sex.js
+      - name: Install browser QA dependencies
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Start local website
+        run: |
+          python -m http.server 8765 > /tmp/housing-population-http.log 2>&1 &
+          echo $! > /tmp/housing-population-http.pid
+      - name: Check desktop and mobile housing view
+        run: |
+          mkdir -p artifacts
+          node <<'NODE'
+          const { chromium } = require('playwright');
+          (async () => {
+            const browser = await chromium.launch({headless:true});
+            try {
+              for (const [name, viewport] of [
+                ['desktop', {width:1440,height:900}],
+                ['mobile', {width:390,height:844}]
+              ]) {
+                const page = await browser.newPage({viewport});
+                const pageerrors = [];
+                page.on('pageerror', e => pageerrors.push(e.message));
+                await page.goto('http://127.0.0.1:8765/?view=housing', {waitUntil:'networkidle',timeout:60000});
+                await page.waitForSelector('#housingAffordability', {state:'visible',timeout:30000});
+                const result = await page.evaluate(() => {
+                  const section = document.querySelector('#housingAffordability');
+                  const text = section.textContent; // include closed <details> methodological notice
+                  const canvas = section.querySelector('#housingSupportRecipientsChart');
+                  return {
+                    visible: !!section && getComputedStyle(section).display !== 'none',
+                    has515: text.includes('515 jaunų šeimų') || text.includes('515'),
+                    has556: text.includes('556'),
+                    unknownDenominator: text.includes('Paramos aprėptis tarp visų jaunų šeimų'),
+                    noOldHeadline: !text.includes('Ar jaunai dirbančiai porai'),
+                    noIncomeGraph: !section.querySelector('#housingSupportIncomeChart'),
+                    blockedCountyRanking: text.includes('Būsto kainų palyginimo dar nerodome'),
+                    chartRendered: !!canvas && !!window.Chart && !!window.Chart.getChart(canvas),
+                    cityTableRows: section.querySelectorAll('#housingCityBenchmarkTable .housing-table tbody tr').length,
+                    cityRentalAlytusBlank: section.querySelector('#housingCityBenchmarkTable .housing-table tbody tr:first-child td:last-child')?.textContent === '–',
+                    cityAlytusGrowth: section.querySelector('#housingCityBenchmarkTable .housing-table tbody tr:first-child td:nth-child(4)')?.textContent === '+16,7 %',
+                    cityVilniusGrowth: section.querySelector('#housingCityBenchmarkTable .housing-table tbody tr:last-child td:nth-child(4)')?.textContent === '+7,8 %',
+                    existingFertilityLink: !!section.querySelector('a[href="?view=fertility#amzius"]'),
+                    hasMarketCaveat: text.includes('tai nėra tų pačių butų kainų indeksas'),
+                    overflow: document.documentElement.scrollWidth - window.innerWidth,
+                    heading: section.querySelector('h2')?.innerText || ''
+                  };
+                });
+                await page.locator('#housingAffordability').screenshot({path:'artifacts/housing-population-'+name+'.png',animations:'disabled'});
+                console.log(name, JSON.stringify(result));
+                if (pageerrors.length) throw Error(name+' runtime JS errors: '+pageerrors.join('; '));
+                for (const field of ['visible','has515','has556','unknownDenominator','noOldHeadline','noIncomeGraph','blockedCountyRanking','chartRendered']) {
+                  if (!result[field]) throw Error(name+' '+field+' FAIL');
+                }
+                if (result.cityTableRows !== 6 || !result.cityRentalAlytusBlank) throw Error(name+' official city table count/NA FAIL');
+                if (!result.cityAlytusGrowth || !result.cityVilniusGrowth || !result.existingFertilityLink || !result.hasMarketCaveat) throw Error(name+' derived city growth/2024 birth/methodology FAIL');
+                if (result.overflow > 2) throw Error(name+' horizontal overflow='+result.overflow);
+                await page.locator('#housingAffordability a[href="?view=fertility#amzius"]').click();
+                await page.waitForURL(/view=fertility#amzius/, {timeout:30000});
+                await page.waitForSelector('#amzius', {state:'visible',timeout:30000});
+                console.log('PASS: '+name+' housing-to-existing-fertility navigation');
+                await page.close();
+              }
+            } finally { /* close after all route checks */ }
+            console.log('PASS: housing population desktop/mobile browser QA');
+            const sections = [
+              ['future','#familyFormationHypotheses','55,7 % privačių namų ūkių'],
+              ['population','#migrationSexBlock','Kaip migracija susijusi su namų ūkių statistika?']
+            ];
+            const verify = await browser.newPage({viewport:{width:1280,height:820}});
+            for (const [view, selector, expected] of sections) {
+              const pageErrors = [];
+              verify.removeAllListeners('pageerror');
+              verify.on('pageerror', e => pageErrors.push(e.message));
+              await verify.goto('http://127.0.0.1:8765/?view='+view,{waitUntil:'networkidle',timeout:60000});
+              await verify.waitForSelector(selector,{state:'attached',timeout:30000});
+              const text=await verify.locator(selector).textContent();
+              if(!text.includes(expected)) throw Error(view+' household context missing');
+              if(pageErrors.length) throw Error(view+' JS errors: '+pageErrors.join('; '));
+              console.log('PASS: '+view+' contextual interpretation');
+            }
+            await verify.close();
+            await browser.close();
+          })().catch(error => { console.error(error); process.exit(1); });
+          NODE
+      - name: Save QA screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: housing-population-visual-qa
+          path: artifacts/
+          if-no-files-found: warn
+          retention-days: 14

@@ -1,0 +1,80 @@
+{
+  "version": "2026-10-10-ldp-source-checked",
+  "dataset_id": "sd003622",
+  "dataset_name": "Mėnesinių piniginių disponuojamųjų pajamų sudėtis | Apskritys | Pajamų šaltinis",
+  "table": "S3R908_M3080109_lt",
+  "provider_code": "188600177",
+  "source": "https://dataportal.gov.lt/lt/datasets/sd003622",
+  "query_api": "https://api.dataportal.gov.lt/namespaces/188600177/tables/S3R908_M3080109_lt/query",
+  "query_body": {
+    "filter": "laikotarpis._co=2024",
+    "limit": 1200,
+    "offset": 0
+  },
+  "filter_category_exact": "Piniginės disponuojamosios pajamos",
+  "filter_unit_exact": "vienam namų ūkiui, EUR",
+  "period": "2024",
+  "observation_type": "OFFICIAL_SURVEY_BASED_COUNTY_ALL_HOUSEHOLDS_MEAN",
+  "unit": "EUR_PER_HOUSEHOLD_PER_MONTH",
+  "geo_level": "county",
+  "population": "ALL PRIVATE HOUSEHOLDS across income, age and composition, NOT legal young families or two earners under 30",
+  "source_quality_flag": null,
+  "data_rows_total_period": 624,
+  "county_count": 10,
+  "not_first_home_income_proxy": true,
+  "cannot_replace_2025_income": true,
+  "actual_2025_rows_in_source": 0,
+  "date_checked": "2026-10-10",
+  "rows": [
+    {
+      "county": "Alytaus apskritis",
+      "monthly_disposable_cash_income_eur_per_household": 1328,
+      "source_flag": null
+    },
+    {
+      "county": "Kauno apskritis",
+      "monthly_disposable_cash_income_eur_per_household": 1660,
+      "source_flag": null
+    },
+    {
+      "county": "Klaipėdos apskritis",
+      "monthly_disposable_cash_income_eur_per_household": 1823,
+      "source_flag": null
+    },
+    {
+      "county": "Marijampolės apskritis",
+      "monthly_disposable_cash_income_eur_per_household": 1420,
+      "source_flag": null
+    },
+    {
+      "county": "Panevėžio apskritis",
+      "monthly_disposable_cash_income_eur_per_household": 1326,
+      "source_flag": null
+    },
+    {
+      "county": "Šiaulių apskritis",
+      "monthly_disposable_cash_income_eur_per_household": 1286,
+      "source_flag": null
+    },
+    {
+      "county": "Tauragės apskritis",
+      "monthly_disposable_cash_income_eur_per_household": 1242,
+      "source_flag": null
+    },
+    {
+      "county": "Telšių apskritis",
+      "monthly_disposable_cash_income_eur_per_household": 1241,
+      "source_flag": null
+    },
+    {
+      "county": "Utenos apskritis",
+      "monthly_disposable_cash_income_eur_per_household": 1345,
+      "source_flag": null
+    },
+    {
+      "county": "Vilniaus apskritis",
+      "monthly_disposable_cash_income_eur_per_household": 2115,
+      "source_flag": null
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+# Namų ūkių struktūra Lietuvoje: oficialių 2024–2025 m. pjūvių atranka
+
+**Parengta:** 2026-10-09. **Statusas:** `RESEARCH_ONLY_NOT_PUBLIC`. **Paskirtis:** apibrėžti oficialius namų ūkius kaip **pagalbinį** pirmojo būsto prieinamumo jaunoms šeimoms ir jo ryšio su gimstamumu tyrimo sluoksnį; nekurti nesuderinamos „jaunos poros“ populiacijos. Tai **nėra** jaunų šeimų paramos gavėjų aprėpties vardiklis, pirmojo būsto įperkamumo matas ar gimstamumo priežasties įrodymas.
+
+## Kaip šį terminą pristatome skaitytojui?
+
+**Viešas skyriaus pavadinimas:** „Kaip gyvena Lietuvos žmonės?“
+
+**Statistinio pjūvio pavadinimas:** „Namų ūkių sudėtis (ne būsto nuosavybė)“.
+
+**Pirmo paminėjimo paaiškinimas:** „Namų ūkis – vienas gyvenantis žmogus arba žmonės, kurie kartu gyvena ir dalijasi bendromis būtinomis gyvenimo išlaidomis. Namų ūkis gali gyventi nuomojamame arba nuosavame būste. Vienas būstas gali talpinti kelis atskirus namų ūkius.“
+
+**Nerekomenduojama:** naudoti „namų ūkis“ be paaiškinimo, pavadinti namų ūkius „namais“, aprašyti namų ūkių procentą kaip būstų arba gyventojų procentą. Viename būste gyvenančių asmenų skaičius savaime nenustato namų ūkių skaičiaus.
+
+**Apibrėžties šaltinis:** Eurostat EU-SILC https://ec.europa.eu/eurostat/web/income-and-living-conditions/methodology
+
+## A. Kokie tikri oficialūs duomenys egzistuoja?
+
+| Šaltinis / rodiklio kodas | Populiacija ir matas | Galimi metai | Kas matuojama / apribojimas |
+|---|---|---|---|
+| **Eurostat EU-SILC `ilc_lvph02`** | Privačių **namų ūkių** dalis pagal suaugusiųjų ir išlaikomų vaikų sudėtį; % **namų ūkių** | 2024, 2025 | Duomenys Lietuvai yra **p (provisional)**. Oficialus statistinis namų ūkis, ne teisinė jauna šeima. |
+| **Eurostat EU-LFS `lfst_hhnhtych`** | Privačių namų ūkių struktūra, vaikų skaičius ir jauniausio vaiko amžius | 2024, 2025 | Vaikai <18 m.; **kitokia vaikų / namų ūkio klasifikacija nei EU-SILC**. |
+| **Eurostat EU-SILC `ilc_lvho02`** | Gyventojų dalis pagal būsto nuosavybės / nuomos statusą, namų ūkio tipą ir pajamų grupę | 2024, 2025 | **% gyventojų**, ne % namų ūkių! Neperkelti į namų ūkių skaičių. |
+| **Eurostat EU-SILC `tesov190` (šaltinis `ilc_lvps02`)** | Gyventojų pasiskirstymas pagal namų ūkio tipą | 2024, 2025 | **% gyventojų**, todėl negali būti lyginama su `ilc_lvph02` kaip identiškas matas. |
+| **VDA gyvenimo sąlygų statistika** | Pajamos, būsto sąlygos ir socialiniai rodikliai, pagal duomenų rinkinio apibrėžtį | 2024, 2025 | EU-SILC nacionalinis šaltinis; 2025 m. apklausos pajamų ataskaitinis laikotarpis gali būti ankstesni kalendoriniai metai – tikrinti metaduomenis konkrečiam rodikliui. |
+| **Sodra 2025-11** | Apdraustųjų darbo pajamos; asmenų, ne šeimų matas | 2025-11 | Nenaudoti kaip abiejų vieno namų ūkio narių tiesioginės pajamų statistikos. |
+| **SPIS / SADM paramos gavėjai** | Teisiniai paramos gavėjai | 2024, 2025 | Nėra visų Lietuvos namų ūkių ar jaunų šeimų registro. |
+
+## B. Oficialūs faktinių EU-SILC apklausų rezultatai, bet Eurostat (p)
+
+**Pakartotinė patikra 2026-10-09:** Eurostat `ilc_lvph02` (Lietuva / `LT`, namų ūkio sudėtis `A1 = One adult`, metai 2024 ir 2025) duomenų rinkinyje, atnaujintame **2026-09-17**, rodo **2024 m. 50,5 (p)** ir **2025 m. 55,7 (p)** (% namų ūkių).
+
+**Svarbiausia statuso semantika:** `p` reiškia **provisional – dar ne galutinai patvirtinta / gali būti tikslinama**, tačiau **ne prognozė**, ne hipotetinis autoriaus modelis ir ne „trūksta faktinių metų duomenų“. Tai oficialiai publikuotas 2024 ir 2025 m. faktinių EU-SILC apklausų rezultatas. Eurostat atskirai naudoja `f` prognozei ir `e` apskaičiuotam įverčiui. Todėl projekto viešas užrašas turi būti **„Oficialus faktinio tyrimo rodiklis, preliminarus (Eurostat p)“**, o duomenų kontrakte atskiriami `source_type = OFFICIAL_EUROSTAT` ir `official_release_status = OFFICIAL_PROVISIONAL`.
+
+**VDA galutinis statusas:** per šią pakartotinę patikrą nerasta atskiro VDA viešo patvirtinimo, kad **būtent Eurostat `ilc_lvph02` 2024 ir 2025 LT reikšmių statusas** jau galutinis. Tai **nereiškia**, kad VDA nėra išleidusi kitų galutinių 2024–2025 m. namų ūkių rodiklių: kito apibrėžimo, vardiklio ar tyrimo „galutinis“ rodiklis savaime nepanaikina šios Eurostat eilutės `p` žymos.
+
+**Galimos viešos interpretacijos ribos:** 2024 → 2025 +5,2 proc. punkto yra oficialiai matomas to paties paskelbto rodiklio pokytis. Kol nėra patikrinto imties tikslumo, palyginamumo, korekcijų ir Lietuvos nacionalinės metodikos paaiškinimo, **negalima skelbti**, kad „per metus 5,2 procentinio punkto daugiau Lietuvos žmonių tapo vieniši“. Rodiklio vardiklis – **namų ūkiai, ne gyventojai**, o kategorija „vienas suaugęs“, ne santykių ar santuokinės padėties matas.
+
+**Eurostat pirminis šaltinis:** https://ec.europa.eu/eurostat/databrowser/view/ilc_lvph02/default/table (paskutinis duomenų rinkinio atnaujinimas 2026-09-17). Kokybės žymos: https://ec.europa.eu/eurostat/cache/metadata/en/ilc_sieusilc.htm
+
+Eurostat `ilc_lvph02` Lietuvai:
+
+| Namų ūkio sudėtis | 2024 m. | 2025 m. | Statusas |
+|---|---:|---:|---|
+| Vienas suaugęs **be išlaikomų vaikų** | **50,5 %** | **55,7 %** | `p` / PRELIMINARY |
+| Vienas suaugęs **su išlaikomais vaikais** | **7,9 %** | **7,8 %** | `p` / PRELIMINARY |
+| Du suaugę **su išlaikomais vaikais** | netikrinta | **13,0 %** | `p` / PRELIMINARY |
+| Du suaugę **be išlaikomų vaikų** | netikrinta | **18,0 %** | `p` / PRELIMINARY |
+
+**Metodinė apsauga:** Eurostat (`ilc_lvph02`) 2024 m. 50,5 % ir 2025 m. 55,7 % skirtumas **nėra pagrindinė vieša demografinė išvada**, kol nepatikrinta 2024–2025 m. EU-SILC atrankos kaita, revizijos ir pilnos grupių sumos. Tai **procentinių dalių**, o ne absoliutus vienišų žmonių skaičius. „Vienas suaugęs“ nereiškia jaunas, nesusituokęs ar neturintis partnerio už namų ūkio ribų.
+
+**Neprilygintini alternatyvūs faktai:** Eurostat EU-LFS `lfst_hhnhtych` pranešime pateikta, kad Lietuvoje 2025 m. **18,4 % namų ūkių turėjo vaikų iki 18 m.** EU-LFS grupės skiriasi nuo EU-SILC **išlaikomų** vaikų definicijos (į ją patenka ir nedirbantys 18–24 m., gyvenantys su tėvais). Todėl `18,4 %` negalima naudoti kaip patikros `7,8 % + 13,0 %` ar bendros `ilc_lvph02` vaikų dalies.
+
+**Svarbi riba:** teisinės „jaunos šeimos“ programa neskaičiuoja visų vieno suaugusio namų ūkių, o Eurostat namų ūkiai netikrina sutuoktinių / partnerystės teisinių dokumentų ar teisės į subsidiją.
+
+## Ką reiškia emigracija, kai skaičiuojame Lietuvos namų ūkius?
+
+Eurostat EU-SILC tiriamasis vienetas – **Lietuvoje įprastai gyvenantys privatūs namų ūkiai**, ne visi Lietuvos piliečiai pasaulyje. Pilietybė nėra lemiama. Pagal Eurostat 2024 m. tyrimo metodines rekomendacijas (39 p.):
+
+| Situacija | Ar įtraukiamas į Lietuvos namų ūkį? |
+|---|---|
+| Lietuvos pilietis, **persikėlęs nuolat gyventi į užsienį** ir ten sudaręs namų ūkį | **Paprastai ne**; nėra įprastinis Lietuvos namų ūkio narys |
+| Asmuo, **laikinai užsienyje dirbantis**, reikšmingai prisidedantis prie Lietuvos šeimos ūkio ir nebūnantis įprastiniu kito privataus ūkio nariu | **Gali būti** įskaitomas Lietuvoje; būtina tikrinti specifines ES-SPGS sąlygas |
+| Studentas svetur, išlaikomas Lietuvos namų ūkio ir neturintis įprastinės gyvenamosios vietos kitame privačiame namų ūkyje | **Gali būti** įskaitomas Lietuvoje |
+| Lietuvoje įprastai gyvenantis **imigrantas**, neturintis Lietuvos pilietybės | **Taip**, patenka į tikslinę privataus namų ūkio populiaciją, jei atitinka apklausos kriterijus |
+| Lietuvoje likęs asmuo, kurio šeimos narys išvyko nuolat gyventi svetur | Jis **gali** tapti vieno asmens namų ūkiu; **negalima** vien iš 55,7 % nustatyti emigracijos įtakos dydžio |
+
+**Interpretacijos esmė:** 2025 m. Eurostat **55,7 %** (p) sudaro **vieno suaugusiojo be išlaikomų vaikų namų ūkiai**, o ne 55,7 % Lietuvos gyventojų. Eurostat 2026 m. leidinyje ES vidurkis – **35,7 %**. Savo pobūdžiu tai visų amžiaus grupių sudėties faktinis tyrimo įvertis; jis **neparodo**, kokia dalis jaunų žmonių neturi partnerio, kiek jaunų šeimų nuomojasi, kam priklauso būstas ar kiek gimimų buvo atidėta.
+
+**Šaltiniai:**
+- Eurostat EU-SILC metodinės gairės (2024 m. operacija, **39 p.**): https://ec.europa.eu/eurostat/documents/203647/22127502/Methodological%2Bguidelines%2B2024%2Boperation_v7.pdf
+- VDA pajamų ir gyvenimo sąlygų tyrimo aprašymas (Lietuvoje atliekamas **imčių** metodu): https://vda.lrv.lt/lt/veiklos-sritys/duomenu-rinkimas/duomenu-rinkimas-is-gyventoju/aprasymai/
+- Eurostat 2026 m. leidinys (**34–35 p.**, ES 35,7 %, LT 55,7 %): https://ec.europa.eu/eurostat/documents/15216629/24279737/KS-01-26-036-EN-N.pdf
+
+## C. Kaip integruosime į projektą
+
+1. Duomenis saugoti atskirame `data/household-composition-eurostat-2024-2025.json` – ne būsto paramos parametruose.
+2. Prie viešo rodiklio pateikti **populiaciją + definicijos ID + teritoriją + metus + matą + būseną + šaltinį**.
+3. Eurostat `p` rodikliai yra **oficialūs paskelbti faktinių metų tyrimo rezultatai**; visuomet rodyti ir **„preliminarus (p)“**. `p` nėra prognozės `f` žyma, bet nepatvirtina galutinio statuso.
+4. **Nekurti 2024–2025 „namų ūkių skaičiaus“ iš procentų**, kol neturimas to paties tyrimo, teritorijos ir metų oficialus absoliutus namų ūkių vardiklis.
+5. Atskirti rezultatą **% namų ūkių** nuo **% gyventojų**, ypač naudojant būsto nuosavybės statistiką.
+6. Šį sluoksnį siūloma įterpti prie **„Gyventojų struktūra“ / „Šeimos aplinka“**, o **„Būstas“** gali rodyti nuorodą tik tada, kai sukuriamas turinio ryšys ir patikrinama metodika. Nesumaišyti su paramos aprėptimi.
+7. Apskričių ir savivaldybių rezultatų nerodyti nacionalinių EU-SILC reikšmių priskyrimu visoms teritorijoms; pirmiausia patikrinti `NUTS` detalumą ir imties kokybę.
+
+## D. Pirminiai šaltiniai
+
+- Eurostat EU-SILC metodika: https://ec.europa.eu/eurostat/web/income-and-living-conditions/methodology
+- EU-SILC namų ūkių struktūra: https://ec.europa.eu/eurostat/databrowser/view/ilc_lvph02/default/table
+- Eurostat 2026 leidinys (2025 metų struktūra, 35 p.): https://ec.europa.eu/eurostat/documents/15216629/24279737/KS-01-26-036-EN-N.pdf
+- Eurostat 2025 leidinys (2024 metų struktūra, 35 p.): https://ec.europa.eu/eurostat/documents/15216629/22200086/KS-01-25-032-EN-N.pdf
+- EU-LFS 2025 metų namų ūkiai su vaikais (LT 18,4 %): https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20260513-2
+- EU-LFS namų ūkiai pagal sudėtį: https://ec.europa.eu/eurostat/databrowser/view/lfst_hhnhtych/default/table
+- EU-SILC būsto nuosavybė, gyventojų dalis: https://ec.europa.eu/eurostat/databrowser/view/ilc_lvho02/default/table
+- EU-SILC namų ūkio tipai, gyventojų dalis: https://ec.europa.eu/eurostat/databrowser/view/tesov190/default/table
+- Lietuvos EU-SILC metodika: https://ec.europa.eu/eurostat/cache/metadata/EN/ilc_simsilc_lt.htm
+
+**Sprendimas:** „Namų ūkių struktūra“ yra tik pagalbinė oficialios statistikos tyrimo kryptis. Pagrindinis projekto tyrimas – **pirmojo būsto prieinamumas jaunoms šeimoms ir galimas ryšys su gimstamumu**. Iš namų ūkių sudėties negalima automatiškai skaičiuoti visų jaunų šeimų, paramos aprėpties, pirmojo būsto įperkamumo ar priežastinio poveikio gimstamumui. Žr. [`pagrindinio būsto / gimstamumo klausimo dokumentą`](housing-first-home-fertility-question-2024-2025.md).

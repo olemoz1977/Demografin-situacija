@@ -1,0 +1,67 @@
+{
+  "version": "2026-10-10-sadm-annual-series-v1",
+  "status": "OFFICIAL_SADM_2025_REPORT_FIG_32",
+  "population": "jaunos šeimos, kurioms išmokėta pagrindinė regioninė pirmojo būsto paskata",
+  "geography": "Lietuva, programos leidžiamose regioninėse teritorijose; NE kiekviena apskritis ir ne visos jaunos šeimos",
+  "data_years": "2019–2025",
+  "source": "SADM 2025 metų veiklos ataskaita, 32 paveikslas ir aiškinamasis tekstas, p. 48",
+  "url": "https://socmin.lrv.lt/public/canonical/1773646445/6523/2026%2003%2006_SADM_Veiklos%20ataskaita%202025-03-10.pdf",
+  "definition": "Finansinę paskatą pirmam būstui regionuose gavusių šeimų skaičius per kalendorinius metus ir subsidijoms mokėti panaudotos lėšos. Išmokų srautas, NE visų jaunų šeimų skaičius, NE pateiktų prašymų dalis.",
+  "regime_change_2025": "2025-01-01 changed legal conditions and backlog transition; trends are descriptive, NOT causal proof that access improved/deteriorated",
+  "no_coverage_denominator": true,
+  "no_percent_of_young_families": true,
+  "no_regional_distribution": true,
+  "paid_data": false,
+  "rows": [
+    {
+      "year": 2019,
+      "young_families_main_subsidy_paid_n": 820,
+      "regional_subsidies_paid_million_eur": 8.1
+    },
+    {
+      "year": 2020,
+      "young_families_main_subsidy_paid_n": 1202,
+      "regional_subsidies_paid_million_eur": 13.8
+    },
+    {
+      "year": 2021,
+      "young_families_main_subsidy_paid_n": 1580,
+      "regional_subsidies_paid_million_eur": 20.9
+    },
+    {
+      "year": 2022,
+      "young_families_main_subsidy_paid_n": 1595,
+      "regional_subsidies_paid_million_eur": 23.6
+    },
+    {
+      "year": 2023,
+      "young_families_main_subsidy_paid_n": 609,
+      "regional_subsidies_paid_million_eur": 11.4
+    },
+    {
+      "year": 2024,
+      "young_families_main_subsidy_paid_n": 342,
+      "regional_subsidies_paid_million_eur": 7.2
+    },
+    {
+      "year": 2025,
+      "young_families_main_subsidy_paid_n": 515,
+      "regional_subsidies_paid_million_eur": 8.2
+    }
+  ],
+  "special_2025_notes": {
+    "additional_subsidies_paid_to_existing_regional_beneficiary_families": 44,
+    "queued_families_as_of_2025_01_01_approx": 1700,
+    "legacy_queue_processed_by_2025_09_17_approx": 1700,
+    "legacy_families_opted_into_new_2025_conditions": "fewer than 100",
+    "published_annual_spend_million_eur": 8.2,
+    "published_2025_beneficiaries_total_for_two_schemes_reported_approx": 1039,
+    "warning": "515 and 44 are distinct payment stages; 1700 is old-request queue (stock); ~1039 both schemes is not the same population; 2025 funds ALLOCATED to certificate issuance differ from funds PAID. Do not combine."
+  },
+  "guardrails": [
+    "Do not divide 515 by 1700",
+    "Do not infer 2025 share of eligible applicants",
+    "Do not equate 2026 May 10-minute B-scheme with the A-scheme in this series",
+    "Do not infer that 2019–2025 annual family support count changes alone measure programme accessibility"
+  ]
+}
