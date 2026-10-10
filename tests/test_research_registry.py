@@ -91,8 +91,12 @@ class ResearchContinuityTest(unittest.TestCase):
             text = (ROOT / name).read_text(encoding="utf-8")
             self.assertIn(context_id, text)
             self.assertIn(url, text)
-        self.assertIn("narrative1", (ROOT / "app.js").read_text(encoding="utf-8"))
-        self.assertIn("app.js?v=20261010narrative1", (ROOT / "index.html").read_text(encoding="utf-8"))
+        self.assertIn("research-nav.js?v=", (ROOT / "app.js").read_text(encoding="utf-8"))
+        self.assertIn("housing-affordability.js?v=", (ROOT / "app.js").read_text(encoding="utf-8"))
+        self.assertRegex(
+            (ROOT / "index.html").read_text(encoding="utf-8"),
+            r'app\\.js\\?v=20261010[A-Za-z0-9_-]+',
+        )
 
     def test_housing_is_not_reduced_to_subsidies(self):
         for ident in (
