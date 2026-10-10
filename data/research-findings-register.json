@@ -164,7 +164,7 @@
       "publication": {
         "module": "housing",
         "file": "housing-affordability.js",
-        "marker": "Regioninę paskatą pirmajam būstui gavusios jaunos šeimos"
+        "marker": "Kaip keitėsi jaunų šeimų regioninės paskatos mastas"
       },
       "blocker": null,
       "next_action": "Netaikyti 2025 m. vienos programos išmokų visoms Lietuvos jaunoms šeimoms."
@@ -220,7 +220,8 @@
       "status": "RESEARCH_BLOCKED",
       "statement": "Pagrindinis neužbaigtas įperkamumo klausimas. Trūksta vienodų 10 apskričių butų sandorių, 1 kamb. nuomos, jaunų šeimų pajamų ir realių būtinų išlaidų; hipotetinės metinio taupymo išvestinės nepublikuotinos kaip oficialūs faktai.",
       "source_urls": [
-        "https://ec.europa.eu/eurostat/databrowser/view/ilc_lvph02/default/table"
+        "https://osp-sdg.stat.gov.lt/arcgis/rest/services/EVP_DB_connection/evp56/FeatureServer/0",
+        "https://www.ober-haus.lt/wp-content/uploads/NT-kainos-2025-gruodis.pdf"
       ],
       "evidence_files": [
         "research/housing-affordability-methodology.md",
