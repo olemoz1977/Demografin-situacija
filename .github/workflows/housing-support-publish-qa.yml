@@ -106,6 +106,16 @@ jobs:
               const housingStart=await page.locator('#housingAffordability').innerText();
               if(!housingStart.includes('Ką jau galime pasakyti')||
                  !housingStart.includes('Ko dar negalime')) throw Error(screen+' housing opening is not clear');
+              const legalDefinition=page.locator('#housingYoungFamilyDefinition');
+              await legalDefinition.waitFor({state:'visible'});
+              const youngFamilyText=await legalDefinition.innerText();
+              if(!youngFamilyText.includes('iki 36 metų')||
+                 !youngFamilyText.includes('registruotų partnerių')||
+                 !youngFamilyText.includes('globėjas (rūpintojas)')||
+                 await legalDefinition.locator('a[href*="socmin.lrv.lt"]').count()!==1)
+                 throw Error(screen+' standard statutory young family definition not visible');
+              if(/iki 30|jaunesnių nei 30|25[–-]30|dviejų dirbančių/i.test(housingStart))
+                 throw Error(screen+' stale under-30 cohort model still visible in Housing');
               const position=await page.evaluate(()=>{
                 const market=document.querySelector('#housingMarketResearch');
                 const support=document.querySelector('#housingSupportTitle');
