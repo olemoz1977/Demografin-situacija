@@ -16,7 +16,7 @@
     "publish_scope_matrix_required": true,
     "last_successful_pages_build": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/38026170535",
     "last_live_browser_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/38026170701",
-    "housing_young_family_definition": "Lietuvos Respublikos finansinės paskatos pirmaji busta isigyjancioms jaunoms seimoms kontekstas (SADM): abu sutuoktiniai ar registruoti partneriai kiekvienas iki 36 m.; vienas iki 36 m. vaiką(-us) auginantis tėvas arba motina. Vertinant ankstesnių metų schemas atskirti jų metų teisines redakcijas.",
+    "housing_young_family_definition": "Lietuvos Respublikos finansinės paskatos pirmaji busta isigyjancioms jaunoms seimoms kontekstas (SADM): abu sutuoktiniai ar registruoti partneriai kiekvienas iki 36 m.; vienas iki 36 m. vaiką(-us) auginantis tėvas, motina arba globėjas (rūpintojas). Vertinant ankstesnių metų schemas atskirti jų metų teisines redakcijas.",
     "housing_young_family_source": "https://socmin.lrv.lt/lt/veiklos-sritys/seima-ir-vaikai/finansine-paskata-pirmaji-busta-isigyjancioms-jaunoms-seimoms/",
     "forbid_legacy_under30_pair_model_in_public_housing": true
   },
