@@ -19,7 +19,6 @@ on:
       - "tests/publication-visibility-qa.cjs"
       - ".github/workflows/housing-support-publish-qa.yml"
   pull_request:
-    branches: [main]
     paths:
       - "housing-affordability.js"
       - "family-hypothesis.js"
