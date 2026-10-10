@@ -1,0 +1,31 @@
+name: Research continuity – no lost findings
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  registry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate register, local evidence and prior-published markers
+        run: python scripts/check_registry_continuity.py
+      - name: Block loss of previously committed findings
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            python scripts/check_registry_continuity.py --base origin/main
+          elif [ "${{ github.event_name }}" = "push" ]; then
+            python scripts/check_registry_continuity.py --base HEAD^
+          fi
+      - name: Verify critical Eurostat and housing regression guards
+        run: python -m unittest -v tests/test_research_registry.py
