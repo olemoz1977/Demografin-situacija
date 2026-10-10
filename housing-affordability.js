@@ -8,7 +8,8 @@
     section.innerHTML=`<div class="container">
       <div class="section-label">Jaunų šeimų pirmasis būstas <span class="badge badge-official">BŪSTAS · 2024–2025 FAKTAI IR TYRIMO EIGA</span></div>
       <h2>Ar pirmasis būstas prieinamas jaunoms šeimoms?</h2>
-      <p class="lead"><strong>Ką jau galime pasakyti:</strong> turime oficialius 2024–2025 m. daugiabučių butų kainų vidurkius šešiuose miestuose, 2025 m. gruodžio nuomos ir pardavimo intervalus trijuose miestuose bei valstybės paramos gavėjų duomenis. <strong>Ko dar negalime:</strong> patikimai palyginti pirmojo būsto įperkamumo visose 10 apskričių ar apskaičiuoti, kiek m² per metus iš tikrųjų galėtų sukaupti jaunos šeimos. Trūksta suderintų būsto, pajamų ir išlaidų duomenų. Dviejų dirbančių jaunesnių nei 30 metų nuomininkų scenarijus yra atskiras modelis, ne oficialus visų jaunų šeimų vidurkis.</p>
+      <p class="lead"><strong>Ką jau galime pasakyti:</strong> turime 2024–2025 m. butų pardavimo kainų duomenis šešiuose miestuose, 2025 m. gruodžio nuomos ir pirkimo intervalus trijuose miestuose bei valstybės paramos gavėjų statistiką. <strong>Ko dar negalime:</strong> patikimai palyginti pirmojo būsto įperkamumo jaunoms šeimoms visose 10 apskričių. Šiuo metu neturime patvirtintos bendros apskričių lentelės, kurioje būtų suderinti teisiškai apibrėžtų jaunų šeimų sudėties, pajamų, išlaidų ir palyginamo būsto kainų rodikliai.</p>
+      <p class="small" id="housingYoungFamilyDefinition"><strong>Ką šiame tyrime vadiname jauna šeima?</strong> Remiamės Lietuvoje būsto paramai taikoma teisine sąvoka: sutuoktinių ar registruotų partnerių šeima, kurioje kiekvienas yra iki 36 metų, arba vienas iki 36 metų vaiką (-us) auginantis tėvas, motina ar globėjas (rūpintojas). Tai nėra visų jaunų asmenų ar visų pirmojo būsto pirkėjų statistinė grupė. <a href="https://socmin.lrv.lt/lt/veiklos-sritys/seima-ir-vaikai/finansine-paskata-pirmaji-busta-isigyjancioms-jaunoms-seimoms/" target="_blank" rel="noopener">SADM · apibrėžtis</a> ir <a href="https://e-seimas.lrs.lt/rs/actualedition/620cd9e0584311e49df480952cc07606/afznDiUYzN/format/ISO_PDF/" target="_blank" rel="noopener">2025 m. įstatymo redakcija</a>.</p>
 
 
 
@@ -44,7 +45,7 @@
         <p>2025 m. istoriniame scenarijuje taikomas įprastas <strong>15 % pradinis įnašas</strong>. Lietuvos banko 2025 m. gruodžio vidutinė naujų būsto paskolų palūkanų norma – <strong>3,69 %</strong>. Atlikome paskolos įmokų ir palūkanų jautrumo skaičiavimus <strong>už vieną perkamą m²</strong>, nes 50 m² nėra pagrįstas visų pirmųjų butų standartas. <a href="https://www.lb.lt/lt/paskolu-palukanu-normos" target="_blank" rel="noopener">Lietuvos banko šaltinis</a>.</p>
         <p class="small">Tai <strong>2025 m. istorinė metodika, ne šiandieninis banko pasiūlymas</strong>. Faktinių jaunų šeimų santaupų, įrengimo ir kitų išlaidų trūksta, todėl modelinių m²/metus verčių nepateikiame kaip realios statistikos.</p>
         <div class="alert alert-amber"><strong>Kas dar nepatvirtinta?</strong> Vienodo standarto parduotų butų ir 1 kambario nuomos duomenys visose 10 apskričių, jaunų šeimų faktinės pajamos ir realios pragyvenimo išlaidos. Dėl to <strong>10 apskričių įperkamumo reitingas ir metinio taupymo m² rodiklis nepublikuojami</strong>.</div>
-        <p class="small"><strong>Visas kelių dienų įdirbis išsaugotas:</strong> <a href="https://github.com/olemoz1977/Demografin-situacija/blob/audit/population-standard-2024-2025/research/housing-first-home-fertility-question-2024-2025.md" target="_blank" rel="noopener">pagrindinis tyrimas</a> · <a href="https://github.com/olemoz1977/Demografin-situacija/blob/audit/population-standard-2024-2025/research/housing-2025-12-zero-eur-matched-market-snapshot.md" target="_blank" rel="noopener">nuomos ir kainų pjūviai</a> · <a href="https://github.com/olemoz1977/Demografin-situacija/blob/audit/population-standard-2024-2025/research/housing-first-home-2025-mortgage-servicing-per-m2.md" target="_blank" rel="noopener">paskolų analizė</a>. Parengiami tik nemokami duomenys; biudžetas 0 EUR.</p>
+        <p class="small"><strong>Metodikos ir šaltinių patikra:</strong> <a href="https://github.com/olemoz1977/Demografin-situacija/blob/main/research/housing-sale-coverage-contradiction-2024.md" target="_blank" rel="noopener">butų sandorių duomenų patikra</a> · <a href="https://github.com/olemoz1977/Demografin-situacija/blob/main/research/housing-state-support-2025.md" target="_blank" rel="noopener">2025 m. paramos taisyklės</a> · <a href="https://github.com/olemoz1977/Demografin-situacija/blob/audit/population-standard-2024-2025/research/housing-first-home-2025-mortgage-servicing-per-m2.md" target="_blank" rel="noopener">paskolos metodika pagal €/m²</a>. Nei skirtingų būstų vidurkiai, nei atskiri skaičiavimo pavyzdžiai nėra jaunų šeimų įperkamumo įvertis.</p>
       </section>
       <section class="housing-support-layer" aria-labelledby="housingSupportTitle">
         <div class="section-label">Valstybės parama pirmajam būstui <span class="badge badge-official">SADM · 2019–2025</span></div>
@@ -87,7 +88,7 @@
             <p class="small"><strong>Skyrimo kriterijų skirtumas:</strong> regioninė jaunų šeimų paskata <strong>neturi atskiro pajamų ir turto ribojimo</strong>; ją riboja pirmojo būsto, teritorijos, šeimos statuso, būsto vertės ir kitos įstatymo sąlygos. Žemiau nurodyti pajamų bei turto limitai taikomi <strong>kitai</strong> – kompensuojamo kredito – programai.</p>
             <p class="small"><strong>Pereinamoji išimtis:</strong> dalis 2025 m. suteiktos paskatos buvo susijusi su iki 2024-12-31 pateiktais prašymais, nagrinėtais pagal ankstesnes nuostatas. Todėl 515 gavėjų nebūtinai visiems taikytas tas pats subsidijos tarifas.</p>
             <p class="small"><strong>Papildoma subsidija, padidėjus vaikų skaičiui:</strong> SADM duomenimis, regioninėje programoje 2024 m. ją gavo <strong>560 šeimų</strong>, o 2025 m. – <strong>44 šeimos</strong>. Tai atskira papildoma išmoka, ne naujų pagrindinės paskatos gavėjų ar gimusių vaikų skaičius; 2025 m. keitėsi subsidijų taisyklės ir ankstesnių gavėjų papildomo finansavimo galimybės.</p>
-            <p class="small">Įstatyme apibrėžta jauna šeima apima tinkamo amžiaus sutuoktinius, registruotus partnerius ir vieną vaiką auginantį asmenį; tai nėra visų kartu gyvenančių jaunų namų ūkių statistika.</p>
+            <p class="small">Regioninė paskata skiriama pagal šio puslapio pradžioje pateiktą <a href="#housingYoungFamilyDefinition">teisinę jaunos šeimos apibrėžtį</a>; gavėjų skaičiaus negalima interpretuoti kaip visų pirmąjį būstą įsigyjančių asmenų skaičiaus.</p>
           </div>
 
           <div class="card housing-support-card">
@@ -99,7 +100,7 @@
         </div>
 
         <div class="alert alert-amber">
-          <strong>Paramos aprėptis tarp visų jaunų šeimų – oficialiai neskelbiama.</strong> Turime gavėjų skaičių, bet ne patikimą visų teisiškai apibrėžtų jaunų šeimų ar teisę į paskatą turinčių šeimų skaičių 2025 m. Neskaičiuojame tariamai tikslaus procento. Pajamų modelis iš 2025 m. lapkričio paliktas tik atskirai diagnostikai, o ne paramos tinkamumui spręsti.
+          <strong>Paramos aprėptis tarp visų jaunų šeimų – oficialiai neskelbiama.</strong> Turime gavėjų skaičių, bet ne patikimą visų teisiškai apibrėžtų jaunų šeimų ar teisę į paskatą turinčių šeimų skaičių 2025 m. Neskaičiuojame tariamai tikslaus procento ir nesprendžiame apie paramos tinkamumą iš bendrų darbo pajamų vidurkių.
         </div>
 
         <p class="source-line">Šaltinis: <a href="https://socmin.lrv.lt/public/canonical/1773646445/6523/2026%2003%2006_SADM_Veiklos%20ataskaita%202025-03-10.pdf" target="_blank" rel="noopener">SADM · 2025 metų veiklos ataskaita</a>. Sąvokų paaiškinimas: šioje temoje „jauna šeima“ – teisinė paramos gavėjų kategorija; namų ūkis – atskiras statistinis analizės vienetas.</p>
@@ -108,7 +109,7 @@
       <details class="housing-details">
         <summary>Kas dar neatsakyta ir kodėl?</summary>
         <div class="housing-details-body">
-          <p><strong>Tikslinės grupės:</strong> paramos dalyje jauna šeima yra teisės aktuose apibrėžta kategorija. Būsimas dviejų iki 30 m. dirbančiųjų ekonominis scenarijus nėra visų teisiškai apibrėžtų jaunų šeimų vidurkis.</p>
+          <p><strong>Tikslinės grupės:</strong> skaičiuojant jaunų šeimų įperkamumą ar paramos pasiekiamumą reikia duomenų apie būtent teisiškai apibrėžtas šeimas ir jų sudėtį. Neturint suderintų duomenų apie tokias šeimas, įperkamumo ar aprėpties įverčio neteikiame.</p>
           <p><strong>Būsto kainų palyginimo dar nerodome.</strong> Vienodas 50 m² plotas nepadaro būstų palyginamų: apskrityse skiriasi statybos laikotarpis, naujos / antrinės rinkos dalis ir būklė. Ankstesnis pardavimo proxy buvo bendro būsto rodiklis, ne grynai daugiabučių butų sluoksnis.</p>
           <p><strong>Ko reikia:</strong> 2025 m. daugiabučių butų duomenų pagal apskritį, panašų plotą (pirminis kandidatas 45–55 m²), statybos laikotarpio grupę ir sandorių N.</p>
           <p><strong>Nuoma:</strong> bus pridedama vėliau kaip atskiras sluoksnis, kai turėsime vienodą ir pakankamai pilną 2025 m. krepšelį visoms 10 apskričių.</p>

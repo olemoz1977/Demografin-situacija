@@ -4,6 +4,12 @@
 
 > **JOKS patikrintas tyrimo atradimas negali likti tik pokalbyje. JOKS publikavimas negali tyliai pašalinti, pervadinti ar nustelbti ankstesnio darbo.**
 
+## Būsto tyrimo tikslinės populiacijos taisyklė
+
+**„Jauna šeima“ = teisinė, o ne savavališka amžiaus kohorta.** Regioninės pirmojo būsto paskatos analizėje remiamės SADM ir taikomo įstatymo apibrėžtimi: sutuoktiniai ar registruoti partneriai, kurių kiekvienas yra iki 36 metų, arba vienas iki 36 metų vaiką (-us) auginantis tėvas, motina ar globėjas (rūpintojas). Šaltinis: https://socmin.lrv.lt/lt/veiklos-sritys/seima-ir-vaikai/finansine-paskata-pirmaji-busta-isigyjancioms-jaunoms-seimoms/. Ankstesnėms 2019–2025 m. išmokoms taikoma konkrečių metų teisės redakcija, o ne automatiškai 2026 m. sąlygos.
+
+**Atsisakytas senasis modelis:** du dirbantys asmenys iki 30 metų, nuomojantys vieno kambario butą, nėra teisiškai apibrėžtų jaunų šeimų populiacija. Šio modelio išvados ir iš jo išvesti pajamų / m² rodikliai gali likti istoriniame mokslinių bandymų archyve, bet **negali būti minimi viešame Būsto pasakojime kaip veikianti metodika ar jaunos šeimos įperkamumo rodiklis**. Vien pakeisti „30“ į „36“ draudžiama: reikia iš naujo pagrįsti šeimos tipą, pajamų ir išlaidų populiaciją, laikotarpį, teritoriją ir palyginamą būsto krepšelį. Jei neįmanoma – rodiklio nepublikuojame. T0 registre paliekami nepublikuoti istoriniai ID su `legacy_scope_guard`.
+
 ## Kanoninis registras
 
 - **Vienintelis visų išvadų sąrašas:** `data/research-findings-register.json`; kiekviena išvada turi nekeičiamą `id`, tikslų teiginį / rodiklį, laikotarpį, statistinę populiaciją, šaltinį, įrodymų failus, analizės būseną, numatytą svetainės modulį, publikavimo vietą ir ribojimus.
