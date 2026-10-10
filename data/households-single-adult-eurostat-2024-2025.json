@@ -24,7 +24,19 @@
   "do_not_call_2024_to_2025_change_causal": true,
   "do_not_call_marital_status_or_loneliness": true,
   "meaning": "One-person household alone without dependent children; household does not equal dwelling ownership; includes adults of all ages",
-  "integration_suggestion": "Separate society-wide household structure context, cross-link from Housing and family context. Do not merge with 25–30 two-income young household model",
-  "public_site_status": "VERIFIED_NOT_PUBLISHED",
-  "zero_eur_source": true
+  "integration_suggestion": "Place the primary society-wide household-structure explanation in Population; retain short context in Housing, Family and Migration. Do not infer young households, loneliness, dwelling ownership or causality.",
+  "public_site_status": "PUBLISHED_CONTEXT",
+  "zero_eur_source": true,
+  "public_site_module": "housing",
+  "public_site_context_modules": [
+    "family",
+    "migration"
+  ],
+  "planned_primary_module": "population",
+  "publication_evidence": {
+    "merged_pr": "https://github.com/olemoz1977/Demografin-situacija/pull/4",
+    "source_in_main": true,
+    "github_pages_deployment_success": true,
+    "independent_live_browser_qa": "PENDING"
+  }
 }
