@@ -28,8 +28,8 @@
   }
 
   function homeCopy(){
-    text('#researchHome h2','Ne vienas skaičius. Šešios susijusios tyrimo kryptys.');
-    html('#researchHome .lead','Jei norite tik esmės, jos pakanka šiame puslapyje. Jei norite suprasti, <strong>kas slypi už skaičių</strong>, tyrimą galima atsidaryti pagal temą – nuo gimstamumo ir gyventojų struktūros iki migracijos, šeimos aplinkos, būsto ir ateities scenarijų.');
+    text('#researchHome h2','Mažas gimstamumas – tik dalis Lietuvos demografinio paveikslo.');
+    html('#researchHome .lead','<strong>Gimstamumas, natūrali kaita, migracija ir gyventojų struktūra</strong> pasakoja skirtingas to paties demografinio proceso dalis. Šeimos aplinka, būstas ir ateities scenarijai prideda kontekstą, tačiau savaime neįrodo priežasčių. Toliau – šešios analizės kryptys ir atskira Metodika.');
     replace('#researchHome .research-summary .card:nth-child(2) p','Gimimų santykis vienas to nepaaiškina; migracijos pjūvis rodo stiprų papildomą mechanizmą.','Gimimų santykis vienas to nepaaiškina. Migracijos duomenys rodo stiprų papildomą mechanizmą, kurį verta nagrinėti atskirai.');
     replace('#researchHome .topic-card:nth-child(4) p','Išmokų istorija ir FRE, infrastruktūra, santuokos, skaitmeninis kontekstas ir partnerystės hipotezės.','Išmokų istorija ir FRE, infrastruktūra, santuokos, darbo–šeimos aplinka bei partnerystės ir skaitmeninio konteksto hipotezės.');
     replace('#researchHome .alert-blue','Kaip skaityti tyrimą.','Tyrimo taisyklė.');
