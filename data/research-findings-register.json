@@ -420,15 +420,16 @@
       ],
       "evidence_files": [
         "research-nav.js",
-        "data/sex-ratio-history.json"
+        "data/sex-ratio-history.json",
+        "sex-history.js"
       ],
       "publication": {
         "module": "population",
-        "file": "research-nav.js",
-        "marker": "884 moterys / 1 000 vyrų"
+        "file": "sex-history.js",
+        "marker": "25–44 m. papildomame pjūvyje"
       },
       "blocker": null,
-      "next_action": "Saugoti jau paskelbtą išvadą ir nedubliuoti; prieš kitą leidimą tikrinti modulio aprėptį."
+      "next_action": "Pilna 25–44 m. 2025 m. reikšmė naršyklėje 883,7; apžvalgoje teisėtai suapvalinta iki 884. Standartinis 15–49 m. intervalas atskirtas. Tikrinti demografinį pjūvį Gyventojų struktūroje, ne vien apžvalgos kortelę."
     },
     {
       "id": "POPULATION-BIRTH-COHORTS-2025-01",
