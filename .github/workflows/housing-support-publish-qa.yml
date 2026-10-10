@@ -78,9 +78,30 @@ jobs:
               if(!cardText.includes('Ar pirmasis būstas prieinamas jaunoms šeimoms?')||
                  !cardText.includes('VDA šešių miestų')||
                  cardText.includes('Ar jaunai porai')) throw Error(screen+' overview stale card');
+              await page.locator('#overviewThreeFindings').waitFor({state:'visible'});
+              const findings=page.locator('#researchHome .research-summary > .card');
+              if(await findings.count()!==3) throw Error(screen+' overview must have exactly 3 takeaways');
+              const summary=await page.locator('#researchHome .research-summary').innerText();
+              if(!summary.includes('−19 946')||!summary.includes('+16 165')||
+                 !summary.includes('884 moterys / 1 000 vyrų')||
+                 !summary.includes('55,7 % Lietuvos privačių namų ūkių')||
+                 !summary.includes('poveikis dar neišmatuotas')) throw Error(screen+' three reader conclusions incomplete');
               await card.click();
               await page.waitForURL('**/?view=housing');
               await page.waitForSelector('#housingAffordability',{state:'visible'});
+              const visible=await page.evaluate(()=>[...document.querySelectorAll('body > section')]
+                .filter(el=>getComputedStyle(el).display!=='none').map(el=>el.id));
+              if(visible.join('|')!=='researchTopicIntro|housingAffordability')
+                throw Error(screen+' unexpected preceding sections in Housing: '+visible.join(','));
+              const housingStart=await page.locator('#housingAffordability').innerText();
+              if(!housingStart.includes('Ką jau galime pasakyti')||
+                 !housingStart.includes('Ko dar negalime')) throw Error(screen+' housing opening is not clear');
+              const position=await page.evaluate(()=>{
+                const market=document.querySelector('#housingMarketResearch');
+                const support=document.querySelector('#housingSupportTitle');
+                return Boolean(market&&support&&(market.compareDocumentPosition(support)&Node.DOCUMENT_POSITION_FOLLOWING));
+              });
+              if(!position) throw Error(screen+' support appears before Housing market facts');
               const ok=await page.evaluate(()=>{
                 const el=document.querySelector('#housingAffordability');
                 const c=document.querySelector('#housingSupportRecipientsChart');
