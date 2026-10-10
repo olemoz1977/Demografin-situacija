@@ -8,11 +8,9 @@
     section.innerHTML=`<div class="container">
       <div class="section-label">Jaunų šeimų pirmasis būstas <span class="badge badge-official">BŪSTAS · 2024–2025 FAKTAI IR TYRIMO EIGA</span></div>
       <h2>Ar pirmasis būstas prieinamas jaunoms šeimoms?</h2>
-      <p class="lead"><strong>Pagrindinis klausimas:</strong> kiek pirmojo būsto m² kainos vertės per metus galėtų sukaupti jauna šeima, kai abu suaugusieji dirba, yra jaunesni nei 30 metų ir nuomojasi vieno kambario butą? Nagrinėjame pajamas, gyvenimo išlaidas, nuomą, pardavimo kainas, pradinį įnašą ir paskolos įmokas. <strong>Žemiau pateikiame jau surinktus būsto rinkos faktus ir valstybės paramos analizę</strong>, bet kol kas nepatvirtinome visų 10 apskričių įperkamumo reitingo.</p>
+      <p class="lead"><strong>Ką jau galime pasakyti:</strong> turime oficialius 2024–2025 m. daugiabučių butų kainų vidurkius šešiuose miestuose, 2025 m. gruodžio nuomos ir pardavimo intervalus trijuose miestuose bei valstybės paramos gavėjų duomenis. <strong>Ko dar negalime:</strong> patikimai palyginti pirmojo būsto įperkamumo visose 10 apskričių ar apskaičiuoti, kiek m² per metus iš tikrųjų galėtų sukaupti jaunos šeimos. Trūksta suderintų būsto, pajamų ir išlaidų duomenų. Dviejų dirbančių jaunesnių nei 30 metų nuomininkų scenarijus yra atskiras modelis, ne oficialus visų jaunų šeimų vidurkis.</p>
 
-      <div class="alert alert-blue">
-        <strong>2025 m. regioninę paskatą gavo 515 jaunų šeimų.</strong> 2022 m. jų buvo 1 595, o 2025 m. pradžioje apie 1 700 ankstesnių metų prašymų dar laukė nagrinėjimo. <strong>Vien +50,6 % pokytis nuo 2024 m. neparodo viso vaizdo.</strong> Tai skirtingi rodikliai, ne paramos aprėpties procentas.
-      </div>
+
 
 
       <section class="housing-research-evidence" id="housingMarketResearch" aria-labelledby="housingMarketResearchTitle">
@@ -51,6 +49,9 @@
       <section class="housing-support-layer" aria-labelledby="housingSupportTitle">
         <div class="section-label">Valstybės parama pirmajam būstui <span class="badge badge-official">SADM · 2019–2025</span></div>
         <h3 id="housingSupportTitle">Kiek paramos realiai suteikta 2025 m.?</h3>
+      <div class="alert alert-blue">
+        <strong>2025 m. regioninę paskatą gavo 515 jaunų šeimų.</strong> 2022 m. jų buvo 1 595, o 2025 m. pradžioje apie 1 700 ankstesnių metų prašymų dar laukė nagrinėjimo. <strong>Vien +50,6 % pokytis nuo 2024 m. neparodo viso vaizdo.</strong> Tai skirtingi rodikliai, ne paramos aprėpties procentas.
+      </div>
 
         <div class="kpi-row housing-support-kpis" id="housingSupportKpis">
           <div class="kpi"><div class="kpi-num blue">515</div><div class="kpi-label">Jaunų šeimų gavo finansinę paskatą pirmajam būstui regionuose · 2025</div><div class="kpi-note">2024: 342 · +50,6 %</div></div>
