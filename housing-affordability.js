@@ -6,16 +6,48 @@
     const section=document.createElement('section');
     section.id=SECTION_ID;
     section.innerHTML=`<div class="container">
-      <div class="section-label">Jaunų šeimų pirmasis būstas <span class="badge badge-official">SADM 2019–2025 · OFICIALŪS PARAMOS FAKTAI</span></div>
+      <div class="section-label">Jaunų šeimų pirmasis būstas <span class="badge badge-official">BŪSTAS · 2024–2025 FAKTAI IR TYRIMO EIGA</span></div>
       <h2>Ar pirmasis būstas prieinamas jaunoms šeimoms?</h2>
-      <p class="lead">Publikuojame oficialius faktus apie paramą pirmam būstui: kiek šeimų ją gavo, kiek laukė ir kokios buvo 2025 m. taisyklės. <strong>Paramos gavėjų skaičius nėra paramos poreikio procentas.</strong> Patikimas būsto įperkamumo palyginimas visose 10 apskričių dar rengiamas; paramos duomenys neįrodo ryšio su gimstamumu.</p>
+      <p class="lead"><strong>Pagrindinis klausimas:</strong> kiek pirmojo būsto m² kainos vertės per metus galėtų sukaupti jauna šeima, kai abu suaugusieji dirba, yra jaunesni nei 30 metų ir nuomojasi vieno kambario butą? Nagrinėjame pajamas, gyvenimo išlaidas, nuomą, pardavimo kainas, pradinį įnašą ir paskolos įmokas. <strong>Žemiau pateikiame jau surinktus būsto rinkos faktus ir valstybės paramos analizę</strong>, bet kol kas nepatvirtinome visų 10 apskričių įperkamumo reitingo.</p>
 
       <div class="alert alert-blue">
         <strong>2025 m. regioninę paskatą gavo 515 jaunų šeimų.</strong> 2022 m. jų buvo 1 595, o 2025 m. pradžioje apie 1 700 ankstesnių metų prašymų dar laukė nagrinėjimo. <strong>Vien +50,6 % pokytis nuo 2024 m. neparodo viso vaizdo.</strong> Tai skirtingi rodikliai, ne paramos aprėpties procentas.
       </div>
 
+
+      <section class="housing-research-evidence" id="housingMarketResearch" aria-labelledby="housingMarketResearchTitle">
+        <div class="section-label">Pirmojo būsto įperkamumas <span class="badge badge-prelim">2024–2025 · TYRIMAS TĘSIAMAS</span></div>
+        <h3 id="housingMarketResearchTitle">Ką jau ištyrėme apie būsto kainas ir nuomą?</h3>
+        <p>Čia – atskiri patikrinami <strong>rinkos faktai</strong>, o ne apskričių įperkamumo reitingas. Skirtingo laikotarpio ir standarto duomenų į vieną tariamai tikslų rodiklį nejungiame.</p>
+        <h4>1. VDA: daugiabučių butų pardavimo kainos šešiuose miestuose</h4>
+        <p class="small"><strong>Oficiali 2024–2025 m. statistika, €/m².</strong> Tai visų dydžių, amžiaus ir būklės butų pardavimo vidurkiai, o ne vienodo standarto pirmojo būsto krepšelis. <strong>Miestas nėra apskritis.</strong></p>
+        <div class="housing-table-scroll" role="region" tabindex="0" aria-label="VDA 2024 ir 2025 metų butų pardavimo vidurkiai šešiuose miestuose">
+          <table class="housing-table"><thead><tr><th scope="col">Miestas</th><th scope="col">2024, €/m²</th><th scope="col">2025, €/m²</th></tr></thead><tbody><tr><th scope="row">Alytus</th><td>890</td><td>1 039</td></tr>
+<tr><th scope="row">Kaunas</th><td>1 772</td><td>1 988</td></tr>
+<tr><th scope="row">Klaipėda</th><td>1 559</td><td>1 741</td></tr>
+<tr><th scope="row">Panevėžys</th><td>1 030</td><td>1 170</td></tr>
+<tr><th scope="row">Šiauliai</th><td>1 098</td><td>1 262</td></tr>
+<tr><th scope="row">Vilnius</th><td>2 639</td><td>2 846</td></tr></tbody></table>
+        </div>
+        <p class="small">Šaltinis: <a href="https://osp-sdg.stat.gov.lt/arcgis/rest/services/EVP_DB_connection/evp56/FeatureServer/0" target="_blank" rel="noopener">VDA S7R280</a>. Dėl galimai skirtingos 2024 ir 2025 m. parduotų butų sudėties metinio kainų indekso neskaičiuojame.</p>
+
+        <h4>2. „Ober-Haus“: 2025 m. gruodžio nuomos ir pirkimo segmentai</h4>
+        <p class="small"><strong>Rinkos ekspertiniai intervalai, ne sandorių medianos.</strong> Trijuose miestuose abiejų lentelių teritorija įvardyta „gyvenamieji rajonai“. 1 kambario <strong>nuoma</strong> ir 2 kambarių <strong>pardavimas</strong> yra skirtingų butų rinkos; naujas butas – <strong>dalinės apdailos</strong>, seno būsto būklė ne visiškai suderinta.</p>
+        <div class="housing-table-scroll" role="region" tabindex="0" aria-label="Ober-Haus 2025 metų gruodžio nuomos ir pardavimo intervalai">
+          <table class="housing-table"><thead><tr><th scope="col">Miestas</th><th scope="col">1 kamb. nuoma, €/mėn.</th><th scope="col">2 kamb. naujas, dalinė apdaila, €/m²</th><th scope="col">2 kamb. senos statybos, €/m²</th></tr></thead><tbody><tr><th scope="row">Vilnius</th><td>320–520</td><td>2 500–3 300</td><td>1 660–2 550</td></tr>
+<tr><th scope="row">Kaunas</th><td>280–420</td><td>2 300–2 950</td><td>1 240–1 720</td></tr>
+<tr><th scope="row">Klaipėda</th><td>270–400</td><td>2 250–2 950</td><td>1 060–1 460</td></tr></tbody></table>
+        </div>
+        <p class="small">Šaltinis: UAB „OBER-HAUS“ nekilnojamasis turtas, <a href="https://www.ober-haus.lt/wp-content/uploads/NT-kainos-2025-gruodis.pdf" target="_blank" rel="noopener">2025 m. gruodžio kainų apžvalga, 1–2 psl.</a>. <strong>Vieno mėnesio intervalai nėra 2025 m. metiniai vidurkiai.</strong> Naujo ir seno būsto negalima laikyti vienodos būklės; neįtrauktos įrengimo ir remonto išlaidos. Duomenys nesudaro 10 apskričių imties.</p>
+
+        <h4>3. Pirmojo būsto finansavimas – metodika parengta</h4>
+        <p>2025 m. istoriniame scenarijuje taikomas įprastas <strong>15 % pradinis įnašas</strong>. Lietuvos banko 2025 m. gruodžio vidutinė naujų būsto paskolų palūkanų norma – <strong>3,69 %</strong>. Atlikome paskolos įmokų ir palūkanų jautrumo skaičiavimus <strong>už vieną perkamą m²</strong>, nes 50 m² nėra pagrįstas visų pirmųjų butų standartas. <a href="https://www.lb.lt/lt/paskolu-palukanu-normos" target="_blank" rel="noopener">Lietuvos banko šaltinis</a>.</p>
+        <p class="small">Tai <strong>2025 m. istorinė metodika, ne šiandieninis banko pasiūlymas</strong>. Faktinių jaunų šeimų santaupų, įrengimo ir kitų išlaidų trūksta, todėl modelinių m²/metus verčių nepateikiame kaip realios statistikos.</p>
+        <div class="alert alert-amber"><strong>Kas dar nepatvirtinta?</strong> Vienodo standarto parduotų butų ir 1 kambario nuomos duomenys visose 10 apskričių, jaunų šeimų faktinės pajamos ir realios pragyvenimo išlaidos. Dėl to <strong>10 apskričių įperkamumo reitingas ir metinio taupymo m² rodiklis nepublikuojami</strong>.</div>
+        <p class="small"><strong>Visas kelių dienų įdirbis išsaugotas:</strong> <a href="https://github.com/olemoz1977/Demografin-situacija/blob/audit/population-standard-2024-2025/research/housing-first-home-fertility-question-2024-2025.md" target="_blank" rel="noopener">pagrindinis tyrimas</a> · <a href="https://github.com/olemoz1977/Demografin-situacija/blob/audit/population-standard-2024-2025/research/housing-2025-12-zero-eur-matched-market-snapshot.md" target="_blank" rel="noopener">nuomos ir kainų pjūviai</a> · <a href="https://github.com/olemoz1977/Demografin-situacija/blob/audit/population-standard-2024-2025/research/housing-first-home-2025-mortgage-servicing-per-m2.md" target="_blank" rel="noopener">paskolų analizė</a>. Parengiami tik nemokami duomenys; biudžetas 0 EUR.</p>
+      </section>
       <section class="housing-support-layer" aria-labelledby="housingSupportTitle">
-        <div class="section-label">Valstybės parama būstui <span class="badge badge-official">SADM · 2025</span></div>
+        <div class="section-label">Valstybės parama pirmajam būstui <span class="badge badge-official">SADM · 2019–2025</span></div>
         <h3 id="housingSupportTitle">Kiek paramos realiai suteikta 2025 m.?</h3>
 
         <div class="kpi-row housing-support-kpis" id="housingSupportKpis">
