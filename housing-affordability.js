@@ -96,7 +96,7 @@
   function renderSupportOutcomes(data){
     const section=document.getElementById(SECTION_ID);
     const canvas=section?.querySelector('#housingSupportRecipientsChart');
-    if(!canvas || !window.Chart || !data?.rows?.length) return;
+    if(!canvas || !window.Chart || !Array.isArray(data?.rows) || data.rows.length!==7) return;
     if(data.status!=='OFFICIAL_SADM_2025_REPORT_FIG_32' || data.no_coverage_denominator!==true) return;
     const years=data.rows.map(r=>String(r.year));
     const families=data.rows.map(r=>r.young_families_main_subsidy_paid_n);
