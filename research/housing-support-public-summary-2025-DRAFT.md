@@ -45,6 +45,8 @@ Naujoms nuo **2025-01-01** galiojančioms sąlygoms:
 
 **Paprastas paaiškinimas:** parama **nėra 10–15 % nuo visos perkamo buto kainos**. Jei perkamo būsto kaina pasiektų leistiną **120 000 €** ribą, aukščiau nurodytos **maksimalios** išmokos atitiktų **7,25–10,875 % visos būsto kainos**. Tai tik hipotetinis skirtingų ribų santykis, o ne faktinių gavėjų sumokėta kaina, subsidija ar užtikrintas įnašo finansavimas. Subsidija gali būti mažesnė, jei tinkama kredito dalis <87 tūkst. €, ir šeimai dar reikia atitikti banko finansavimo sąlygas.
 
+**Kodėl negalima „apskaičiuoti vidutinės 2025 m. subsidijos“ tiesiog dalijant išlaidų sumą iš gavėjų skaičiaus?** 8,24 mln. € / 515 šeimų matematiškai sudaro **16 000 €**, nors pagal **naująją 2025 m. tvarką** maksimali pagrindinė subsidija yra **13 050 €**. Tai **nėra statistikos klaida ar įrodymas apie neteisėtai per dideles išmokas**: 2025 m. lėšos ir gavėjai apima **ankstesnių prašymų pereinamąjį laikotarpį, kitokias senąsias subsidijų taisykles ir papildomas išmokas**. Skaitiklis ir vardiklis neapibrėžia vienos naujos tvarkos vienodų išmokų kohortos; **16 000 € niekada nepateikiame kaip „vidutinės subsidijos jaunai šeimai“**.
+
 **Esminis dviejų programų skirtumas:** regioninė jaunų šeimų paskata (A) **nevertina šeimos pajamų bei turto kaip atskiros skyrimo ribos**, tačiau riboja **teritoriją, būsto vertę, šeimos statusą**. Kompensuojamas būsto kreditas (B) **vertina šeimos pajamas bei turtą**, bet taikomas platesnėse Lietuvos teritorijose. Tai **skirtingi tinkamumo filtrai**; ankstesnis hipotetinis 25–30 m. poros pajamų palyginimas su B riba **negali parodyti teisės į A paskatą**.
 
 ## Kodėl 2026 m. prašymai „išgraibstyti per 10 minučių“ nereiškia, kad 2025 m. 515 šeimų gavo tik menką savo programos dalį?
