@@ -47,14 +47,17 @@
         </div>
 
         <div class="alert alert-amber">
-          <strong>Populiacijos skiriasi.</strong> Regioninė paskata skirta teisinėms jaunoms šeimoms; kompensuojamo kredito schema apima ir kitus asmenis bei šeimas. Į 556 įskaičiuoti 32 papildomos subsidijos gavėjai. 515 + 556 negalima vadinti jaunų šeimų ar naujų unikalių gavėjų skaičiumi.
+          <strong>Populiacijos ir išmokų tipai skiriasi.</strong> Regioninė paskata skirta teisinėms jaunoms šeimoms; kompensuojamo kredito schema apima ir kitus asmenis bei šeimas. Pastarosios 556 gavėjų rodiklyje <strong>32 gavo papildomą subsidiją</strong>. Todėl aritmetinis 515 + 556 = 1 071 <strong>nėra</strong> pagrindinę paramą gavusių šeimų skaičius. SADM 2025 m. ataskaitoje nurodyta <strong>1 039 pagrindinės paramos gavėjai pagal abi programas</strong> (515 + 556 − 32) ir atskirai <strong>76 papildomos subsidijos</strong> (44 regioninėje programoje ir 32 platesnėje). <strong>1 039 nėra 1 039 jaunos šeimos</strong> ar įrodytas unikalių pirmojo būsto pirkėjų skaičius.
         </div>
 
         <div class="two-col housing-support-grid">
           <div class="card housing-support-card">
             <div class="eyebrow">1 · Finansinė paskata jaunoms šeimoms</div>
             <h4>Pirmas būstas finansuojamose teritorijose</h4>
-            <p><strong>Naujų 2025 m. prašymų sąlygos:</strong> būsto vertė iki 120 000 €, subsidija 10–15 % pagal vaikų skaičių, subsidijos bazė – iki 87 000 € kredito.</p><p class="small"><strong>Pereinamoji išimtis:</strong> dalis 2025 m. suteiktos paskatos buvo susijusi su iki 2024-12-31 pateiktais prašymais, nagrinėtais pagal ankstesnes nuostatas. Todėl 515 gavėjų nebūtinai visiems taikytas tas pats subsidijos tarifas.</p>
+            <p><strong>Naujų 2025 m. prašymų sąlygos:</strong> būsto vertė iki 120 000 €, subsidija 10–15 % pagal vaikų skaičių, subsidijos bazė – iki 87 000 € kredito. <strong>Subsidijos procentas nėra skaičiuojamas nuo visos buto kainos.</strong></p>
+            <p class="small"><strong>Didžiausios galimos subsidijos pagal naująsias 2025 m. taisykles:</strong> 0–1 vaikas – 10 %, iki <strong>8 700 €</strong>; 2 vaikai – 12,5 %, iki <strong>10 875 €</strong>; 3 ir daugiau – 15 %, iki <strong>13 050 €</strong>. Šios sumos galimos tik jeigu tinkama kredito dalis siekia bent 87 000 €; realios išmokos gali būti mažesnės. Pavyzdžiui, už 120 000 € būstą 8 700 € sudarytų <strong>7,25 % būsto kainos</strong>, ne 10 %; tai tik skaičiavimo pavyzdys.</p>
+            <p class="small"><strong>Skyrimo kriterijų skirtumas:</strong> regioninė jaunų šeimų paskata <strong>neturi atskiro pajamų ir turto ribojimo</strong>; ją riboja pirmojo būsto, teritorijos, šeimos statuso, būsto vertės ir kitos įstatymo sąlygos. Žemiau nurodyti pajamų bei turto limitai taikomi <strong>kitai</strong> – kompensuojamo kredito – programai.</p>
+            <p class="small"><strong>Pereinamoji išimtis:</strong> dalis 2025 m. suteiktos paskatos buvo susijusi su iki 2024-12-31 pateiktais prašymais, nagrinėtais pagal ankstesnes nuostatas. Todėl 515 gavėjų nebūtinai visiems taikytas tas pats subsidijos tarifas.</p>
             <p class="small">Įstatyme apibrėžta jauna šeima apima tinkamo amžiaus sutuoktinius, registruotus partnerius ir vieną vaiką auginantį asmenį; tai nėra visų kartu gyvenančių jaunų namų ūkių statistika.</p>
           </div>
 
