@@ -1,0 +1,106 @@
+{
+  "version": "2026-10-10-official-reconciliation-v1",
+  "status": "VERIFIED_SADM_2025_ANNUAL_REPORT_FIG_32_33_AND_NARRATIVE",
+  "publication_intent": "Explanatory 2025 state support facts, not % coverage of young families",
+  "year": 2025,
+  "scheme_A": {
+    "name": "Finansinė paskata jaunoms šeimoms regionuose",
+    "primary_supported_young_families": 515,
+    "additional_subsidies_existing_families": 44,
+    "spent_m_eur": 8.24,
+    "assess_income_and_assets": false
+  },
+  "scheme_B": {
+    "name": "Valstybės iš dalies kompensuojamų būsto kreditų subsidijos (platesnė grupė)",
+    "reported_people_or_families_any_subsidy": 556,
+    "of_which_received_additional_subsidy": 32,
+    "derived_main_support_people_or_families": 524,
+    "spent_m_eur": 10.32,
+    "assess_income_and_assets": true
+  },
+  "both_schemes": {
+    "primary_support_count_official_report": 1039,
+    "additional_subsidies_count_official_report": 76,
+    "support_spend_m_eur_official_report": 18.56
+  },
+  "arithmetic_check": {
+    "main_total": "515+(556-32)=1039",
+    "additional": "44+32=76",
+    "spending": "8.24+10.32=18.56",
+    "no_use_515_plus_556_as_primary_total": true
+  },
+  "scheme_A_2025_regulation": {
+    "housing_purchased_value_ceiling_eur": 120000,
+    "subsidy_eligible_loan_portion_ceiling_eur": 87000,
+    "maximum_subsidy_by_children": [
+      {
+        "children": "0–1",
+        "rate_pct": 10,
+        "max_eur": 8700,
+        "max_pct_of_housing_value_at_120k": 7.25
+      },
+      {
+        "children": "2",
+        "rate_pct": 12.5,
+        "max_eur": 10875,
+        "max_pct_of_housing_value_at_120k": 9.0625
+      },
+      {
+        "children": "3+",
+        "rate_pct": 15,
+        "max_eur": 13050,
+        "max_pct_of_housing_value_at_120k": 10.875
+      }
+    ],
+    "non_overdue_interpretation": "MAX amounts possible only with eligible loan >= 87k and qualifying home; actual subsidy may be lower; pct of 120k is merely illustrative if home value exactly at cap, not observed recipient amount",
+    "2025_most_of_changes_effective": "2025-01-01",
+    "not_all_2025_payments_new_regulation": true,
+    "territorial_rule": "Only designated financed regions; three major cities and resorts excluded; some surrounding area restrictions"
+  },
+  "2024_comparison": {
+    "scheme_A_primary_supported_young_families": 342,
+    "scheme_B_reported_people_or_families_any_subsidy": 688,
+    "scheme_B_additional": 48,
+    "scheme_B_primary_derived": 640,
+    "primary_total_official_report": 982,
+    "scheme_A_additional": 560,
+    "additional_total_official_report": 608,
+    "both_spending_m_eur_official_report": 19.4,
+    "warning": "2024 transition cohort and regulatory conditions not comparable directly with 2025; counts are annual payments not applications"
+  },
+  "sources": [
+    {
+      "title": "SADM 2025 metų veiklos ataskaita, 32–33 pav. ir tekstas",
+      "url": "https://socmin.lrv.lt/public/canonical/1773646445/6523/2026%2003%2006_SADM_Veiklos%20ataskaita%202025-03-10.pdf"
+    },
+    {
+      "title": "SADM naujos regioninės paskatos taisyklės",
+      "url": "https://socmin.lrv.lt/lt/naujienos/taiklesne-ir-efektyvesne-parama-jaunu-seimu-isigyjamam-pirmajam-bustui/"
+    },
+    {
+      "title": "SADM 2025 m. eilės nagrinėjimas",
+      "url": "https://socmin.lrv.lt/lt/naujienos/proverzis-paramos-jaunoms-seimoms-isigyjancioms-pirmaji-busta-sistemoje-C1v/"
+    },
+    {
+      "title": "SADM skaičiavimo ribų DUK",
+      "url": "https://socmin.lrv.lt/lt/duk/"
+    }
+  ],
+  "guards": {
+    "not_1039_young_families": true,
+    "not_1039_unique_first_home_buyers": true,
+    "do_not_count_32_additional_as_primary": true,
+    "not_support_coverage_percentage": true,
+    "do_not_apply_scheme_B_income_threshold_to_scheme_A": true,
+    "do_not_assume_any_house_price_120000": true,
+    "do_not_assume_all_recipients_receive_max": true,
+    "do_not_blend_2024_2025_regimes": true,
+    "no_paid_sources": true,
+    "do_not_divide_scheme_A_all_expenditure_by_primary_recipients_as_2025_new_regime_average": true
+  },
+  "invalid_naive_subsidy_mean": {
+    "formula": "8,240,000 / 515",
+    "computed_eur": 16000,
+    "interpretation": "NOT a 2025-new-rules average subsidy, because spending includes transitional 2024-and-earlier applications and additional subsidies to existing beneficiaries; new-regime maximum EUR 13050 cannot be compared as same cohort."
+  }
+}
