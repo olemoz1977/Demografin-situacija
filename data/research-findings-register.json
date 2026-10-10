@@ -550,15 +550,16 @@
       ],
       "evidence_files": [
         "policy-history.js",
-        "data/family-policy-history.json"
+        "data/family-policy-history.json",
+        "editorial-copy.js"
       ],
       "publication": {
         "module": "family",
-        "file": "policy-history.js",
-        "marker": "2007–2012: labai dosnios vaiko priežiūros išmokos"
+        "file": "editorial-copy.js",
+        "marker": "2007–2012 m. dosnios išmokos sutapo su TFR kilimu. Sutapimas dar nėra priežastis"
       },
       "blocker": null,
-      "next_action": "Saugoti jau paskelbtą išvadą ir nedubliuoti; prieš kitą leidimą tikrinti modulio aprėptį."
+      "next_action": "Tikras naršyklės tekstas redakciniame sluoksnyje; galutiniame matomumo audite tikrinti ne pirminį perrašomą šabloną, bet redakciškai pakeistą išvadą."
     },
     {
       "id": "FAMILY-LEAVE-FRE-01",
@@ -614,15 +615,16 @@
         "https://ec.europa.eu/eurostat/databrowser/view/isoc_ci_ifp_fu/default/table?lang=en"
       ],
       "evidence_files": [
-        "index.html"
+        "index.html",
+        "editorial-copy.js"
       ],
       "publication": {
         "module": "family",
-        "file": "index.html",
-        "marker": "Skaitmeninio naudojimo kontekstas"
+        "file": "editorial-copy.js",
+        "marker": "Skaitmeninis gyvenimas pasikeitė smarkiai. Čia jį rodome kaip kontekstą, ne kaip gimstamumo priežastį"
       },
       "blocker": null,
-      "next_action": "Saugoti jau paskelbtą išvadą ir nedubliuoti; prieš kitą leidimą tikrinti modulio aprėptį."
+      "next_action": "Tikras naršyklės tekstas redakciniame sluoksnyje; galutiniame matomumo audite tikrinti ne pirminį perrašomą šabloną, bet redakciškai pakeistą išvadą."
     },
     {
       "id": "HOUSING-VDA-RENT-2025-01",
