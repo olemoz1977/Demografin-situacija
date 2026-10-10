@@ -81,9 +81,30 @@ class HousingSupportPublication(unittest.TestCase):
         for price in (2846,1988,1741):
             self.assertTrue(any(round(r['eur_m2_2025'])==price for r in city['sale']['places']))
 
+    def test_eurostat_single_adult_households_are_visible_in_three_sections(self):
+        d = json.loads(read('data/eurostat-household-composition-2024-2025.json'))
+        self.assertEqual('Single adult without dependent children', d['category'])
+        self.assertEqual(55.7, d['lithuania']['year_2025_pct'])
+        self.assertEqual('p', d['lithuania']['year_2025_flag'])
+        self.assertEqual(35.7, d['eu27']['year_2025_pct'])
+        self.assertTrue(d['measuring_household_not_individual'])
+        self.assertTrue(d['provisional_2025'])
+        self.assertEqual(50.5, d['lithuania']['year_2024_pct'])
+        for path, anchor in [('housing-affordability.js', 'housingSingleAdultHouseholds'),
+                             ('family-hypothesis.js', 'familySingleAdultHouseholds'),
+                             ('migration-sex.js', 'migrationHouseholdContext')]:
+            src = read(path)
+            self.assertIn(anchor, src)
+            self.assertIn('55,7 %', src)
+            self.assertIn('35,7 %', src)
+            self.assertIn('ilc_lvph02', src)
+            self.assertIn('neįrodo', src)
+        self.assertIn('migration-sex.js?v=20261010oneadult', self.app)
+        self.assertIn('family-hypothesis.js?v=20261010oneadult', self.app)
+
     def test_active_live_routing_and_cache(self):
-        self.assertIn('app.js?v=20261010housingfull',self.html)
-        self.assertIn('housing-affordability.js?v=20261010housingfull',self.app)
+        self.assertIn('app.js?v=20261010oneadult',self.html)
+        self.assertIn('housing-affordability.js?v=20261010oneadult',self.app)
         self.assertIn('research-nav.js?v=20261010housingfull',self.app)
         self.assertIn('Visų 10 apskričių reitingas dar nepatvirtintas',self.nav)
         self.assertIn("housingAffordability:'housing'",self.nav)
