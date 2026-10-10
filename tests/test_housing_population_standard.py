@@ -343,6 +343,31 @@ class HousingPopulationStandardTest(unittest.TestCase):
         self.assertIn("Tai NE 2025 m. 515", self.housing)
         self.assertIn("neteisingas procentas", self.housing)
 
+    def test_sadm_young_families_2019_2025_series_is_one_program_and_no_coverage(self):
+        series = json.loads(
+            (ROOT / "data/housing-support-young-family-series-2019-2025.json")
+            .read_text(encoding="utf-8")
+        )
+        self.assertEqual("OFFICIAL_SADM_2025_REPORT_FIG_32", series["status"])
+        self.assertTrue(series["no_coverage_denominator"])
+        self.assertTrue(series["no_percent_of_young_families"])
+        self.assertTrue(series["no_regional_distribution"])
+        self.assertEqual(list(range(2019, 2026)), [r["year"] for r in series["rows"]])
+        self.assertEqual(
+            [820, 1202, 1580, 1595, 609, 342, 515],
+            [r["young_families_main_subsidy_paid_n"] for r in series["rows"]]
+        )
+        self.assertEqual(
+            [8.1, 13.8, 20.9, 23.6, 11.4, 7.2, 8.2],
+            [r["regional_subsidies_paid_million_eur"] for r in series["rows"]]
+        )
+        self.assertEqual(44, series["special_2025_notes"]["additional_subsidies_paid_to_existing_regional_beneficiary_families"])
+        self.assertEqual("fewer than 100", series["special_2025_notes"]["legacy_families_opted_into_new_2025_conditions"])
+        self.assertIn("data/housing-support-young-family-series-2019-2025.json", self.housing)
+        self.assertIn("2022 m. – 1 595", self.housing)
+        self.assertIn("mažiau nei 100", self.housing)
+        self.assertIn("2025 m. keitėsi", self.housing)
+
     def test_households_are_explicitly_not_owned_homes(self):
         self.assertIn("Ką reiškia „namų ūkis“?", self.housing)
         self.assertIn("Namų ūkis ≠ nuosavas būstas.", self.housing)
