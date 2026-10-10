@@ -95,6 +95,12 @@
     "do_not_assume_any_house_price_120000": true,
     "do_not_assume_all_recipients_receive_max": true,
     "do_not_blend_2024_2025_regimes": true,
-    "no_paid_sources": true
+    "no_paid_sources": true,
+    "do_not_divide_scheme_A_all_expenditure_by_primary_recipients_as_2025_new_regime_average": true
+  },
+  "invalid_naive_subsidy_mean": {
+    "formula": "8,240,000 / 515",
+    "computed_eur": 16000,
+    "interpretation": "NOT a 2025-new-rules average subsidy, because spending includes transitional 2024-and-earlier applications and additional subsidies to existing beneficiaries; new-regime maximum EUR 13050 cannot be compared as same cohort."
   }
 }
