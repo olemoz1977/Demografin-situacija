@@ -1,0 +1,126 @@
+{
+  "version": "2026-10-09-existing-data-reuse-v1",
+  "publication_state": "OFFICIAL_CONTEXT_ONLY_NOT_AFFORDABILITY_RANKING",
+  "researched_period": [
+    2024,
+    2025
+  ],
+  "purpose": "Use previously extracted official VDA housing benchmarks as transparent city-level context for first-home accessibility study; NO 10-county ranking, NO legal young-family inference.",
+  "sale": {
+    "origin": "VDA S7R280, housing_type=1123 Butas daugiabučiuose namuose",
+    "observation_type": "OFFICIAL_PUBLISHED_AVERAGE_APARTMENT_SALE_PRICE",
+    "unit": "EUR_per_m2",
+    "territory_level": "city_municipality",
+    "territory_count": 6,
+    "years": [
+      2024,
+      2025
+    ],
+    "no_quality_or_floor_area_control": true,
+    "not_first_home_transaction_subset": true,
+    "source_service": "https://osp-sdg.stat.gov.lt/arcgis/rest/services/EVP_DB_connection/evp56/FeatureServer/0",
+    "source_repo": "research/raw/vda-sale-big-cities/vda-sale-big-cities-2024-2025-comparison.json",
+    "places": [
+      {
+        "name": "Alytus",
+        "municipality": "Alytaus m. sav.",
+        "eur_m2_2024": 889.79,
+        "eur_m2_2025": 1038.74
+      },
+      {
+        "name": "Kaunas",
+        "municipality": "Kauno m. sav.",
+        "eur_m2_2024": 1771.62,
+        "eur_m2_2025": 1987.66
+      },
+      {
+        "name": "Klaipėda",
+        "municipality": "Klaipėdos m. sav.",
+        "eur_m2_2024": 1559.14,
+        "eur_m2_2025": 1740.84
+      },
+      {
+        "name": "Panevėžys",
+        "municipality": "Panevėžio m. sav.",
+        "eur_m2_2024": 1030.03,
+        "eur_m2_2025": 1170.36
+      },
+      {
+        "name": "Šiauliai",
+        "municipality": "Šiaulių m. sav.",
+        "eur_m2_2024": 1098.12,
+        "eur_m2_2025": 1262.33
+      },
+      {
+        "name": "Vilnius",
+        "municipality": "Vilniaus m. sav.",
+        "eur_m2_2024": 2639.03,
+        "eur_m2_2025": 2846.01
+      }
+    ],
+    "country_average": {
+      "2024": 1684.64,
+      "2025": 1880.13,
+      "unit": "EUR_per_m2"
+    },
+    "status": "OFFICIAL_CITY_CONTEXT",
+    "caveat": "Do not convert the 2025 six-city average prices into 10 county figures or treat as same-area 45-55m2 same-age apartment sale basket."
+  },
+  "rent": {
+    "origin": "VDA S7R281 Butų nuomos vidutinės metinės kainos",
+    "observation_type": "OFFICIAL_PUBLISHED_RENT_PRICE_INDICATOR",
+    "unit": "EUR_per_m2_per_year",
+    "year": 2025,
+    "territory_level": "city_municipality",
+    "territory_count": 5,
+    "not_one_room_basket": true,
+    "not_county_layer": true,
+    "source_repo": "research/raw/vda-rent-big-cities/vda-rent-big-cities-2025-qa.json",
+    "source_service": "https://osp-sdg.stat.gov.lt/arcgis/rest/services/EVP_DB_connection/evp32/FeatureServer/0",
+    "places": [
+      {
+        "name": "Kaunas",
+        "municipality": "Kauno m. sav.",
+        "annual_eur_m2": 124.35
+      },
+      {
+        "name": "Klaipėda",
+        "municipality": "Klaipėdos m. sav.",
+        "annual_eur_m2": 113.46
+      },
+      {
+        "name": "Panevėžys",
+        "municipality": "Panevėžio m. sav.",
+        "annual_eur_m2": 91.4
+      },
+      {
+        "name": "Šiauliai",
+        "municipality": "Šiaulių m. sav.",
+        "annual_eur_m2": 95.15
+      },
+      {
+        "name": "Vilnius",
+        "municipality": "Vilniaus m. sav.",
+        "annual_eur_m2": 155.09
+      }
+    ],
+    "status": "OFFICIAL_CITY_RENT_CONTEXT",
+    "caveat": "Not 1-room listing/lease basket; not observed pair's actual rent. Do not combine with sales into an empirically matched affordability estimate."
+  },
+  "use_rules": {
+    "no_geography_swap": true,
+    "no_first_home_claim": true,
+    "no_young_family_population_claim": true,
+    "no_one_room_rent_claim": true,
+    "no_2024_2025_mix": true,
+    "no_unverified_price_income_or_fertility_effect": true,
+    "first_home_comparable_basket_requires": [
+      "year",
+      "county",
+      "45–55 m2",
+      "construction_period",
+      "apartment_transaction_count",
+      "EUR_per_m2_median_and_mean"
+    ]
+  }
+}
