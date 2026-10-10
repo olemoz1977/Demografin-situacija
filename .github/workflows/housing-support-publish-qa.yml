@@ -16,6 +16,7 @@ on:
       - "app.js"
       - "index.html"
       - "tests/test_housing_support_published.py"
+      - "tests/publication-visibility-qa.cjs"
       - ".github/workflows/housing-support-publish-qa.yml"
   pull_request:
     branches: [main]
@@ -35,6 +36,7 @@ on:
       - "data/housing-oberhaus-2025-12-two-room-new-vs-old-city-ranges.json"
       - "data/housing-oberhaus-2025-12-one-room-rent-city-ranges.json"
       - "tests/test_housing_support_published.py"
+      - "tests/publication-visibility-qa.cjs"
   workflow_dispatch:
 permissions:
   contents: read
@@ -165,3 +167,5 @@ jobs:
             console.log('PASS: public housing-support desktop/mobile browser QA');
           })().catch(e=>{console.error(e);process.exit(1)});
           NODE
+      - name: Audit 27 PUBLISHED findings in all eight modules on desktop/mobile
+        run: node tests/publication-visibility-qa.cjs
