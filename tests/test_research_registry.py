@@ -37,7 +37,7 @@ class ResearchContinuityTest(unittest.TestCase):
         for mod in MODULES:
             self.assertEqual("INVENTORIED_WITH_GAPS", inventory[mod]["audit"])
             self.assertTrue((ROOT / inventory[mod]["inventory_document"]).is_file())
-            self.assertFalse(inventory[mod]["direct_live_browser_checked"])
+            self.assertTrue(inventory[mod]["direct_live_browser_checked"])
             self.assertTrue(any(f["area"] == mod for f in self.findings.values()))
 
     def test_eurostat_household_finding_survives_pr4_publication(self):
@@ -57,17 +57,18 @@ class ResearchContinuityTest(unittest.TestCase):
         self.assertTrue(self.households["do_not_call_people_percent"])
         self.assertTrue(self.households["do_not_call_young_adults_or_families"])
         self.assertTrue(self.households["do_not_call_marital_status_or_loneliness"])
-        self.assertEqual("PENDING", item["publication_audit"]["current_browser_test"])
+        self.assertEqual("PASS", item["publication_audit"]["current_browser_test"])
 
     def test_eurostat_publication_states_are_consistent_across_t0_data_and_registry(self):
         item = self.findings["EU-HH-2025-01"]
         source = self.households
         rule = (ROOT / "research/RESEARCH-CONTINUITY-RULE.md").read_text(encoding="utf-8")
         self.assertEqual(item["status"], source["public_site_status"])
-        self.assertEqual(item["publication"]["module"], source["current_branch_primary_module"])
-        self.assertEqual("housing", source["last_confirmed_main_module_before_this_draft"])
-        self.assertTrue(source["publication_evidence"]["new_population_layout_is_on_draft_pr_7_not_main"])
-        self.assertEqual("PENDING", source["publication_evidence"]["independent_live_browser_qa"])
+        self.assertEqual(item["publication"]["module"], source["public_site_module"])
+        self.assertEqual("housing", source["historical_primary_module_before_pr_7"])
+        self.assertEqual("population", source["published_primary_module"])
+        self.assertEqual("PASS", source["publication_evidence"]["independent_live_browser_qa"])
+        self.assertEqual("PASS", source["publication_evidence"]["independent_live_browser_qa"])
         self.assertTrue(source["publication_evidence"]["source_in_main"])
         self.assertTrue(source["publication_evidence"]["github_pages_deployment_success"])
         self.assertIn("PUBLISHED_CONTEXT", rule)
