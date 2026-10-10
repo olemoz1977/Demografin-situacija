@@ -81,6 +81,24 @@ class HousingSupportPublication(unittest.TestCase):
         for price in (2846,1988,1741):
             self.assertTrue(any(round(r['eur_m2_2025'])==price for r in city['sale']['places']))
 
+    def test_three_reader_conclusions_and_housing_first(self):
+        self.assertIn('id="overviewThreeFindings"',self.nav)
+        self.assertEqual(3,self.nav.count('<div class="card"><div class="eyebrow">0'))
+        self.assertIn('Natūralus mažėjimas viršijo migracijos prieaugį',self.nav)
+        self.assertIn('884 moterys / 1 000 vyrų',self.nav)
+        self.assertIn('55,7 % Lietuvos privačių namų ūkių',self.nav)
+        self.assertIn('Tai skirtingi rodikliai – ne gimstamumo priežasčių įrodymas',self.nav)
+        self.assertIn('Šeimos ir būsto aplinkos poveikis dar neišmatuotas',self.nav)
+        self.assertNotIn('vien piniginės priemonės nepakaks',self.nav)
+        self.assertIn('Ką jau galime pasakyti',self.js)
+        self.assertIn('Ko dar negalime',self.js)
+        market=self.js.index('id="housingMarketResearch"')
+        support=self.js.index('id="housingSupportTitle"')
+        payment=self.js.index('2025 m. regioninę paskatą gavo 515 jaunų šeimų.')
+        self.assertLess(market,support)
+        self.assertLess(support,payment)
+        self.assertIn('1 700 ankstesnių metų prašymų',self.js)
+
     def test_eurostat_primary_in_population_with_three_context_links(self):
         d = json.loads(read('data/eurostat-household-composition-2024-2025.json'))
         self.assertEqual('Single adult without dependent children', d['category'])
