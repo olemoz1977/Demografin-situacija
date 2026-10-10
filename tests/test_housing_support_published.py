@@ -89,7 +89,7 @@ class HousingSupportPublication(unittest.TestCase):
         self.assertIn('kiekvienas yra iki 36 metų',js)
         self.assertIn('vienas vaiką (-us) auginantis tėvas ar motina iki 36 metų',js)
         self.assertIn('socmin.lrv.lt/lt/veiklos-sritys/seima-ir-vaikai/finansine-paskata-',js)
-        self.assertNotRegex(js,r'(?i)(iki 30 m\\.|jaunesnių nei 30 metų|25[–-]30 m\\.|dviejų dirbančių)')
+        self.assertNotRegex(js,r'(?i)(iki 30|jaunesnių nei 30 metų|25[–-]30|dviejų dirbančių)')
         self.assertNotIn('housing-first-home-fertility-question-2024-2025.md',js)
         self.assertNotIn('housing-2025-12-zero-eur-matched-market-snapshot.md',js)
         self.assertNotIn('Pajamų modelis iš 2025 m. lapkričio',js)
