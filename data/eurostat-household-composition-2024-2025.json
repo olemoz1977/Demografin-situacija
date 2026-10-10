@@ -1,0 +1,24 @@
+{
+  "version": "2026-10-10-eurostat-eu-silc-one-adult-households",
+  "source": "Eurostat ilc_lvph02, Distribution of households by household type from 2003 onwards",
+  "source_url": "https://ec.europa.eu/eurostat/databrowser/view/ilc_lvph02/default/table",
+  "source_publication": "Eurostat Key figures on European living conditions – 2026 edition, p. 35",
+  "source_publication_url": "https://ec.europa.eu/eurostat/documents/15216629/24279737/KS-01-26-036-EN-N.pdf",
+  "unit": "percentage of private households, NOT population share",
+  "category": "Single adult without dependent children",
+  "lithuania": {
+    "year_2024_pct": 50.5,
+    "year_2024_flag": "p",
+    "year_2025_pct": 55.7,
+    "year_2025_flag": "p"
+  },
+  "eu27": {
+    "year_2025_pct": 35.7
+  },
+  "rank_2025": "Highest proportion of one-adult households without dependent children in EU, confirmed by Eurostat 2026 publication",
+  "measuring_household_not_individual": true,
+  "not_equivalent_to": "not a count/share of young single people; not the percentage of unmarried people; not the share of solo property owners; no household income or housing status; not a causal effect of migration, housing affordability or fertility",
+  "corroborating_context": "Eurostat 2026 edition confirms Lithuania has EU's highest share in this category in 2025",
+  "do_not_sum_with_other_household_categories_without_exact_definition": true,
+  "provisional_2025": true
+}
