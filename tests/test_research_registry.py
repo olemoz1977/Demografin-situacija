@@ -64,8 +64,9 @@ class ResearchContinuityTest(unittest.TestCase):
         source = self.households
         rule = (ROOT / "research/RESEARCH-CONTINUITY-RULE.md").read_text(encoding="utf-8")
         self.assertEqual(item["status"], source["public_site_status"])
-        self.assertEqual(item["publication"]["module"], source["public_site_module"])
-        self.assertEqual("population", source["published_primary_module"])
+        self.assertEqual(item["publication"]["module"], source["current_branch_primary_module"])
+        self.assertEqual("housing", source["last_confirmed_main_module_before_this_draft"])
+        self.assertTrue(source["publication_evidence"]["new_population_layout_is_on_draft_pr_7_not_main"])
         self.assertEqual("PENDING", source["publication_evidence"]["independent_live_browser_qa"])
         self.assertTrue(source["publication_evidence"]["source_in_main"])
         self.assertTrue(source["publication_evidence"]["github_pages_deployment_success"])
