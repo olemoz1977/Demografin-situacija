@@ -1,5 +1,7 @@
 # Pirmo šeimos būsto prieinamumas jaunai porai — metodika
 
+> **ARCHYVAS – 2026-10-10 ATSISAKYTA KAIP JAUNŲ ŠEIMŲ MODELIO.** Toliau pateiktas istorinis bandymas remiasi 25–30 m. dviejų dirbančių asmenų prielaida, todėl neatitinka teisinio „jaunos šeimos“ apibrėžimo. Šios formulės, hipotetinės pajamos ir iš jų gaunami m² rodikliai **nepublikuotini** kaip jaunų šeimų būsto įperkamumas ir nenaudojami dabartiniame svetainės Būsto modulyje. Dokumentas saugomas tik ankstesnio tyrimo atsekamumui. Tikslinės grupės ir naujo tyrimo vartai: [T0 taisyklė](RESEARCH-CONTINUITY-RULE.md). Dabartinis apibrėžimas: [SADM](https://socmin.lrv.lt/lt/veiklos-sritys/seima-ir-vaikai/finansine-paskata-pirmaji-busta-isigyjancioms-jaunoms-seimoms/).
+
 Statusas: research / feature branch, nepublikuota.
 
 ## Tikslinis klausimas
