@@ -13,6 +13,7 @@ on:
       - "app-base.js"
       - "editorial-copy.js"
       - "research-nav.css"
+      - "style.css"
       - "app.js"
       - "index.html"
       - "tests/test_housing_support_published.py"
@@ -28,6 +29,7 @@ on:
       - "app-base.js"
       - "editorial-copy.js"
       - "research-nav.css"
+      - "style.css"
       - "index.html"
       - "app.js"
       - "data/housing-support-young-family-series-2019-2025.json"
@@ -108,6 +110,48 @@ jobs:
               const housingStart=await page.locator('#housingAffordability').innerText();
               if(!housingStart.includes('Ką jau galime pasakyti')||
                  !housingStart.includes('Ko dar negalime')) throw Error(screen+' housing opening is not clear');
+              if(screen==='mobile'){
+                for(const width of [390,320]){
+                  await page.setViewportSize({width,height:844});
+                  const sizing=await page.evaluate(()=>{
+                    const vda=document.querySelector('.housing-table--vda');
+                    const ober=document.querySelector('.housing-table--oberhaus');
+                    const vdaWrap=vda.closest('.housing-table-scroll');
+                    const oberWrap=ober.closest('.housing-table-scroll');
+                    const hint=document.querySelector('#housingMarketSegmentsHint');
+                    const lastPrice=vda.querySelector('tbody tr:last-child td:last-child').getBoundingClientRect();
+                    const bounds=vdaWrap.getBoundingClientRect();
+                    return {
+                      priceFits:vdaWrap.scrollWidth<=vdaWrap.clientWidth+2,
+                      lastPriceVisible:lastPrice.right<=bounds.right+1,
+                      cityWidth:Math.round(vda.querySelector('tbody th').getBoundingClientRect().width),
+                      oberCityWidth:Math.round(ober.querySelector('tbody th').getBoundingClientRect().width),
+                      oberScrolls:oberWrap.scrollWidth>oberWrap.clientWidth+100,
+                      hintVisible:hint&&getComputedStyle(hint).display!=='none',
+                      rootOverflow:document.documentElement.scrollWidth-innerWidth
+                    };
+                  });
+                  console.log('MOBILE TABLES',width,JSON.stringify(sizing));
+                  if(!sizing.priceFits||!sizing.lastPriceVisible||
+                     sizing.cityWidth>111||sizing.oberCityWidth>111||
+                     !sizing.oberScrolls||!sizing.hintVisible||sizing.rootOverflow>3)
+                    throw Error('Mobile '+width+'px Housing table layout broken');
+                  const swipe=await page.locator('.housing-table--oberhaus').evaluate(table=>{
+                    const wrap=table.closest('.housing-table-scroll');
+                    wrap.scrollLeft=wrap.scrollWidth;
+                    const city=table.querySelector('tbody th').getBoundingClientRect();
+                    const viewport=wrap.getBoundingClientRect();
+                    return {
+                      moved:wrap.scrollLeft>100,
+                      stickyVisible:Math.abs(city.left-viewport.left)<4,
+                      endVisible:table.querySelector('tbody td:last-child').getBoundingClientRect().right<=viewport.right+2
+                    };
+                  });
+                  if(!swipe.moved||!swipe.stickyVisible||!swipe.endVisible)
+                    throw Error('Mobile '+width+'px Ober-Haus cannot scroll past sticky city: '+JSON.stringify(swipe));
+                }
+                await page.setViewportSize(viewport);
+              }
               const legalDefinition=page.locator('#housingYoungFamilyDefinition');
               await legalDefinition.waitFor({state:'visible'});
               const youngFamilyText=await legalDefinition.innerText();
