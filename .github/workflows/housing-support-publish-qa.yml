@@ -128,7 +128,12 @@ jobs:
                       oberCityWidth:Math.round(ober.querySelector('tbody th').getBoundingClientRect().width),
                       oberScrolls:oberWrap.scrollWidth>oberWrap.clientWidth+100,
                       hintVisible:hint&&getComputedStyle(hint).display!=='none',
-                      rootOverflow:document.documentElement.scrollWidth-innerWidth
+                      priceViewportVisible:vdaWrap.getBoundingClientRect().left>=-1&&vdaWrap.getBoundingClientRect().right<=innerWidth+1,
+                      oberViewportVisible:oberWrap.getBoundingClientRect().left>=-1&&oberWrap.getBoundingClientRect().right<=innerWidth+1,
+                      rootOverflow:document.documentElement.scrollWidth-innerWidth,
+                      overflowNodes:[...document.querySelectorAll('body *')]
+                        .filter(el=>{const b=el.getBoundingClientRect();return b.width>0&&b.right>innerWidth+3&&getComputedStyle(el).position!=='fixed'})
+                        .slice(0,10).map(el=>({tag:el.tagName,id:el.id,cls:String(el.className).slice(0,50),right:Math.round(el.getBoundingClientRect().right)}))
                     };
                   });
                   console.log('MOBILE TABLES',width,JSON.stringify(sizing));
