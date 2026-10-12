@@ -23,7 +23,7 @@
         <h4>1. VDA: daugiabučių butų pardavimo kainos šešiuose miestuose</h4>
         <p class="small"><strong>Oficiali 2024–2025 m. statistika, €/m².</strong> Tai visų dydžių, amžiaus ir būklės butų pardavimo vidurkiai, o ne vienodo standarto pirmojo būsto krepšelis. <strong>Miestas nėra apskritis.</strong></p>
         <div class="housing-table-scroll" role="region" tabindex="0" aria-label="VDA 2024 ir 2025 metų butų pardavimo vidurkiai šešiuose miestuose">
-          <table class="housing-table"><thead><tr><th scope="col">Miestas</th><th scope="col">2024, €/m²</th><th scope="col">2025, €/m²</th></tr></thead><tbody><tr><th scope="row">Alytus</th><td>890</td><td>1 039</td></tr>
+          <table class="housing-table housing-table--vda"><thead><tr><th scope="col">Miestas</th><th scope="col">2024, €/m²</th><th scope="col">2025, €/m²</th></tr></thead><tbody><tr><th scope="row">Alytus</th><td>890</td><td>1 039</td></tr>
 <tr><th scope="row">Kaunas</th><td>1 772</td><td>1 988</td></tr>
 <tr><th scope="row">Klaipėda</th><td>1 559</td><td>1 741</td></tr>
 <tr><th scope="row">Panevėžys</th><td>1 030</td><td>1 170</td></tr>
@@ -34,8 +34,9 @@
 
         <h4>2. „Ober-Haus“: 2025 m. gruodžio nuomos ir pirkimo segmentai</h4>
         <p class="small"><strong>Rinkos ekspertiniai intervalai, ne sandorių medianos.</strong> Trijuose miestuose abiejų lentelių teritorija įvardyta „gyvenamieji rajonai“. 1 kambario <strong>nuoma</strong> ir 2 kambarių <strong>pardavimas</strong> yra skirtingų butų rinkos; naujas butas – <strong>dalinės apdailos</strong>, seno būsto būklė ne visiškai suderinta.</p>
-        <div class="housing-table-scroll" role="region" tabindex="0" aria-label="Ober-Haus 2025 metų gruodžio nuomos ir pardavimo intervalai">
-          <table class="housing-table"><thead><tr><th scope="col">Miestas</th><th scope="col">1 kamb. nuoma, €/mėn.</th><th scope="col">2 kamb. naujas, dalinė apdaila, €/m²</th><th scope="col">2 kamb. senos statybos, €/m²</th></tr></thead><tbody><tr><th scope="row">Vilnius</th><td>320–520</td><td>2 500–3 300</td><td>1 660–2 550</td></tr>
+        <p class="housing-scroll-hint" id="housingMarketSegmentsHint">← Slinkite lentelę į šoną, kad matytumėte visus kainų stulpelius →</p>
+        <div class="housing-table-scroll" role="region" tabindex="0" aria-label="Ober-Haus 2025 metų gruodžio nuomos ir pardavimo intervalai" aria-describedby="housingMarketSegmentsHint">
+          <table class="housing-table housing-table--oberhaus"><thead><tr><th scope="col">Miestas</th><th scope="col">1 kamb. nuoma, €/mėn.</th><th scope="col">2 kamb. naujas, dalinė apdaila, €/m²</th><th scope="col">2 kamb. senos statybos, €/m²</th></tr></thead><tbody><tr><th scope="row">Vilnius</th><td>320–520</td><td>2 500–3 300</td><td>1 660–2 550</td></tr>
 <tr><th scope="row">Kaunas</th><td>280–420</td><td>2 300–2 950</td><td>1 240–1 720</td></tr>
 <tr><th scope="row">Klaipėda</th><td>270–400</td><td>2 250–2 950</td><td>1 060–1 460</td></tr></tbody></table>
         </div>
