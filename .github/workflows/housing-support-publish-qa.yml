@@ -139,7 +139,9 @@ jobs:
                   console.log('MOBILE TABLES',width,JSON.stringify(sizing));
                   if(!sizing.priceFits||!sizing.lastPriceVisible||
                      sizing.cityWidth>111||sizing.oberCityWidth>111||
-                     !sizing.oberScrolls||!sizing.hintVisible||sizing.rootOverflow>3)
+                     !sizing.oberScrolls||!sizing.hintVisible||
+                     !sizing.priceViewportVisible||!sizing.oberViewportVisible||
+                     (width===390&&sizing.rootOverflow>3))
                     throw Error('Mobile '+width+'px Housing table layout broken');
                   const swipe=await page.locator('.housing-table--oberhaus').evaluate(table=>{
                     const wrap=table.closest('.housing-table-scroll');
