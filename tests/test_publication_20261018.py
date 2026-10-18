@@ -42,7 +42,7 @@ class Publication20261018Test(unittest.TestCase):
         index = (ROOT / "index.html").read_text(encoding="utf-8")
         block = (ROOT / "social-risk-context.js").read_text(encoding="utf-8")
         self.assertIn("social-risk-context.js?v=20261018publish1", app)
-        self.assertIn("app.js?v=20261018publish1", index)
+        self.assertIn("app.js?v=20261019editorial1", index)
         self.assertIn("populationArope2025", block)
         self.assertIn("fertilityDevelopmentParadox2026", block)
         self.assertIn("2025 m. socialinės atskirties rizika Lietuvoje", block)

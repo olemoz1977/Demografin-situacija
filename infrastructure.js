@@ -26,6 +26,8 @@
       <div class="kpi"><div class="kpi-num blue">421</div><div class="kpi-label">Klaipėda · laisvos vietos pietuose</div><div class="kpi-note">Centrinėje ir šiaurinėje dalyse laisvų vietų nebuvo</div></div>
     </div>
 
+    <p class="small"><strong>Kauno duomenų tikslinimo žyma:</strong> nurodyta 14 931 vieta ir 13 946 ugdomi vaikai, kurių aritmetinis skirtumas 985, tačiau šaltinyje taip pat pateikta 783 laisvos vietos. Nežinant skaičiavimo apimties ir datos skirtumo, 783 nepakeičiame į 985 ir jų nelaikome lygiaverčiais dydžiais.</p>
+
     <div class="alert alert-amber"><strong>Svarbi metodinė pastaba.</strong> Šių miestų „eilės“ ir „laisvos vietos“ nėra vienodai skaičiuojami, todėl jų tarpusavyje nereitinguojame. Juos naudojame kaip atskirus pavyzdžius, parodančius <strong>erdvinį pasiūlos ir paklausos neatitikimą</strong>.</div>
 
     <div class="three-col" style="margin-top:1.5rem">
@@ -54,7 +56,7 @@
       <div class="kpi"><div class="kpi-num">1 750 m</div><div class="kpi-label">Pagrindinė / progimnazija / gimnazija</div><div class="kpi-note">6 klasių lygiai ar daugiau</div></div>
     </div>
 
-    <div class="alert alert-green"><strong>Teigiama dabarties pusė.</strong> 2026 m. Vilnius skelbė, kad 98 % prašymus teikusių vaikų jau buvo priimti į norimas mokyklas. Tai rodo, kad infrastruktūros problema nėra vien kryptingai blogėjanti – ji gali būti valdoma tinklo plėtra ir srautų planavimu.</div>
+    <div class="alert alert-green"><strong>Teigiama dabarties pusė.</strong> 2026 m. Vilnius skelbė, kad 98 % prašymus teikusių vaikų jau buvo priimti į norimas mokyklas. Tai atskiras <strong>mokyklų, ne 2025 m. darželių eilių</strong> rodiklis. Jis nepatvirtina, kad darželių pasiekiamumo neatitikimai jau išspręsti.</div>
 
     <div class="alert alert-blue"><strong>Išvada.</strong> Diskusijoje apie šeimų politiką prasminga klausti ne tik „kiek skiriame pinigų?“ ir ne tik „kiek turime darželių?“, bet ir <strong>ar šeima gauna vietą ten, kur gyvena, be neproporcingos kasdienės logistikos</strong>. Finansinė parama ir arti namų esanti infrastruktūra nėra alternatyvos – jos papildo viena kitą.</div>
 

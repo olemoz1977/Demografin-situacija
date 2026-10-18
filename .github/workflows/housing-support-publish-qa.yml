@@ -87,19 +87,18 @@ jobs:
               const card=page.locator('.topic-card[href*="view=housing"]');
               await card.waitFor({state:'visible'});
               const cardText=await card.innerText();
-              if(!cardText.includes('Ar pirmasis būstas prieinamas jaunoms šeimoms?')||
-                 !cardText.includes('VDA šešių miestų')||
-                 cardText.includes('Ar jaunai porai')) throw Error(screen+' overview stale card');
+              if(!cardText.includes('Rinkos kainos ir paramos mastas')||
+                 !cardText.includes('Jaunų šeimų įperkamumas neišmatuotas')||
+                 cardText.includes('Ar jaunai porai')) throw Error(screen+' housing topic result missing');
               await page.locator('#overviewThreeFindings').waitFor({state:'visible'});
               const findings=page.locator('#researchHome .research-summary > .card');
-              if(await findings.count()!==3) throw Error(screen+' overview must have exactly 3 takeaways');
-              if(await page.locator('#researchHome .research-summary a[href*="oecd.org"]').count()!==1) throw Error(screen+' international evidence source missing');
+              if(await findings.count()!==5) throw Error(screen+' overview must have exactly 5 takeaways');
               const summary=await page.locator('#researchHome .research-summary').innerText();
-              if(!summary.includes('−19 946')||!summary.includes('+16 165')||
-                 !summary.includes('884 moterys / 1 000 vyrų')||
-                 !summary.includes('55,7 % Lietuvos privačių namų ūkių')||
-                 !summary.includes('Tyrimai rodo sąsajas. Jų mastą Lietuvoje dar vertiname')||
-                 !summary.includes('Mūsų analizėje dar nenustatytas šių sąsajų dydis Lietuvoje')) throw Error(screen+' three reader conclusions incomplete');
+              for(const phrase of ['Žemas gimstamumas apima visas apskritis','−19 946','+16 165',
+                                   'Lyčių santykis jaunesniame amžiuje','55,7 %','35,7 %',
+                                   'Senėjimas didina prisitaikymo poreikį']){
+                if(!summary.includes(phrase)) throw Error(screen+' missing takeaway '+phrase);
+              }
               await card.click();
               await page.waitForURL('**/?view=housing');
               await page.waitForSelector('#housingAffordability',{state:'visible'});
@@ -108,8 +107,9 @@ jobs:
               if(visible.join('|')!=='researchTopicIntro|housingAffordability')
                 throw Error(screen+' unexpected preceding sections in Housing: '+visible.join(','));
               const housingStart=await page.locator('#housingAffordability').innerText();
-              if(!housingStart.includes('Ką jau galime pasakyti')||
-                 !housingStart.includes('Ko dar negalime')) throw Error(screen+' housing opening is not clear');
+              if(!housingStart.includes('Butų pardavimo vidurkiai kilo')||
+                 !housingStart.includes('Jaunų šeimų faktinių pajamų')||
+                 !housingStart.includes('515 jaunų šeimų')) throw Error(screen+' housing result opening missing');
               if(screen==='mobile'){
                 for(const width of [390,320]){
                   await page.setViewportSize({width,height:844});
@@ -182,7 +182,7 @@ jobs:
                 const t=el.innerText;
                 const norm=t.replace(/[\u00a0\u202f\s]+/g,' ');
                 const tables=el.querySelectorAll('#housingMarketResearch .housing-table');
-                return {heading:t.includes('Ar pirmasis būstas prieinamas jaunoms šeimoms?'),
+                return {heading:t.includes('Butų pardavimo vidurkiai kilo'),
                   research:!!el.querySelector('#housingMarketResearch'),
                   vdaRows:tables[0]?.querySelectorAll('tbody tr').length===6,
                   marketRows:tables[1]?.querySelectorAll('tbody tr').length===3,
@@ -230,5 +230,5 @@ jobs:
             console.log('PASS: public housing-support desktop/mobile browser QA');
           })().catch(e=>{console.error(e);process.exit(1)});
           NODE
-      - name: Audit 27 PUBLISHED findings in all eight modules on desktop/mobile
+      - name: Audit 31 PUBLISHED findings in all eight modules on desktop/mobile
         run: node tests/publication-visibility-qa.cjs

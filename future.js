@@ -11,7 +11,7 @@
   section.id='scenarijai';
   section.innerHTML=`<div class="container">
     <div class="section-label">10 · Prognozės ir prielaidos Lietuvai <span class="badge badge-official">OFICIALIOS PROJEKCIJOS</span> <span class="badge badge-prelim">SCENARIJAI ≠ FAKTAI</span></div>
-    <h2>Demografinis spaudimas didins produktyvumo poreikį. Klausimas – kaip prie to prisitaikys darbo rinka ir socialinės sistemos finansavimas</h2>
+    <h2>EK baziniame scenarijuje 2022–2040 m. užimtųjų skaičius mažėja 18,6 % – svarbu, kaip Lietuva prisitaikys</h2>
     <div class="alert alert-amber"><strong>Ši dalis sąmoningai kitokia nei visas puslapis.</strong> Skaičiai pateikiami tik iš oficialių Europos Komisijos projekcijų. Toliau esanti priežastinė grandinė ir trys scenarijai yra analitinės prielaidos, paremtos aukščiau parodyta Lietuvos statistika ir OECD aprašytais mechanizmais. Tai nėra prognozuojamos tikimybės.</div>
 
     <h3>Kas jau yra oficialiai projektuojama</h3>
@@ -42,7 +42,7 @@
 
     <h3>Nuo oficialios projekcijos – prie mūsų hipotezės</h3>
     <div class="findings">
-      <div class="finding"><div class="finding-num">01</div><div><div class="finding-title">Mažiau darbuotojų + daugiau išlaikomų vyresnio amžiaus žmonių</div><div class="finding-body"><strong>Oficiali projekcija.</strong> Užimtųjų skaičius mažėja, o 65+ / 20–64 santykis didėja. Tai reiškia didesnį poreikį vienam dirbančiajam ir vienai darbo valandai sukurti daugiau ekonominės vertės.</div></div></div>
+      <div class="finding"><div class="finding-num">01</div><div><div class="finding-title">EK baziniame scenarijuje – mažiau užimtųjų, daugiau vyresnio amžiaus gyventojų santykinai</div><div class="finding-body"><strong>Oficiali projekcija.</strong> Užimtųjų skaičius mažėja, o 65+ / 20–64 santykis didėja. Tai reiškia didesnį poreikį vienam dirbančiajam ir vienai darbo valandai sukurti daugiau ekonominės vertės.</div></div></div>
       <div class="finding"><div class="finding-num">02</div><div><div class="finding-title">Darbo jėgos trūkumas didina automatizavimo paskatą</div><div class="finding-body"><strong>Pagrįsta prielaida.</strong> Kai darbuotojų mažėja, įmonėms tampa racionaliau investuoti į procesų efektyvinimą, automatizaciją, robotizaciją ir AI. OECD pažymi, kad senėjimo sukeltas darbo jėgos trūkumas gali pats skatinti technologines inovacijas ir produktyvumo augimą.</div></div></div>
       <div class="finding"><div class="finding-num">03</div><div><div class="finding-title">Automatizacija gali išlaikyti gamybos apimtį net mažėjant darbuotojų skaičiui</div><div class="finding-body"><strong>Scenarijus, ne garantija.</strong> Jei produktyvumas augs greičiau nei trauksis darbo pasiūla, mažesnė darbo jėga nebūtinai reikš proporcingai mažesnę ekonomiką. Todėl automatizacija senstančiai Lietuvai gali būti ne problema, o būtina adaptacijos priemonė.</div></div></div>
       <div class="finding"><div class="finding-num">04</div><div><div class="finding-title">Finansavimo paradoksas</div><div class="finding-body"><strong>Sisteminė rizikos hipotezė.</strong> Jei vis didesnę vertės dalį kurs kapitalas, robotai ir programinė įranga, o socialinės apsaugos finansavimas liks stipriai susietas su darbo pajamomis, finansavimo bazė gali augti lėčiau nei socialiniai poreikiai. OECD 2026 m. būtent šį neatitikimą įvardija kaip vieną iš priežasčių svarstyti platesnę socialinės apsaugos finansavimo bazę.</div></div></div>

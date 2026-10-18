@@ -44,7 +44,7 @@ class HousingSupportPublication(unittest.TestCase):
 
     def test_visible_content_and_no_fake_eligibility_model(self):
         js=self.js
-        for expected in ('Ar pirmasis būstas prieinamas jaunoms šeimoms?',
+        for expected in ('Butų pardavimo vidurkiai kilo, bet jaunų šeimų įperkamumo dar neišmatavome',
                          '1 700', '2019–2025','10 minučių',
                          '1 039 pagrindinės paramos gavėjai',
                          '560 šeimų','44 šeimos','8 700 €','10 875 €','13 050 €',
@@ -75,7 +75,7 @@ class HousingSupportPublication(unittest.TestCase):
                      '10 apskričių įperkamumo reitingas ir metinio taupymo m² rodiklis nepublikuojami',
                      '2025 m. gruodžio kainų apžvalga'):
             self.assertIn(text,self.js)
-        self.assertIn('Ar pirmasis būstas prieinamas jaunoms šeimoms?',self.nav)
+        self.assertIn('Rinkos kainos ir paramos mastas',self.nav)
         self.assertIn('Atverti Būsto analizę',self.nav)
         self.assertNotIn('Ar jaunai porai prieinamas',self.nav)
         for price in (2846,1988,1741):
@@ -109,27 +109,28 @@ class HousingSupportPublication(unittest.TestCase):
                                  entry['legacy_scope_guard'])
         self.assertEqual(4,len(legacy_ids))
 
-    def test_three_reader_conclusions_and_housing_first(self):
-        self.assertIn('id="overviewThreeFindings"',self.nav)
-        self.assertEqual(3,self.nav.count('<div class="card"><div class="eyebrow">0'))
-        self.assertIn('Natūralus mažėjimas viršijo migracijos prieaugį',self.nav)
-        self.assertIn('884 moterys / 1 000 vyrų',self.nav)
-        self.assertIn('55,7 % Lietuvos privačių namų ūkių',self.nav)
-        self.assertIn('Tai skirtingi rodikliai – ne gimstamumo priežasčių įrodymas',self.nav)
-        self.assertIn('Tyrimai rodo sąsajas. Jų mastą Lietuvoje dar vertiname',self.nav)
-        self.assertIn('Mūsų analizėje dar nenustatytas šių sąsajų dydis Lietuvoje',self.nav)
-        self.assertIn('fertility-trends-across-the-oecd-underlying-drivers-and-the-role-for-policy',self.nav)
-        self.assertNotIn('poveikio Lietuvos gimstamumui šis tyrimas neįrodė',self.nav)
-        self.assertNotIn('Šeimos ir būsto aplinkos poveikis dar neišmatuotas',self.nav)
-        self.assertNotIn('vien piniginės priemonės nepakaks',self.nav)
-        self.assertIn('Ką jau galime pasakyti',self.js)
-        self.assertIn('Ko dar negalime',self.js)
+    def test_five_reader_conclusions_and_housing_first(self):
+        self.assertIn('id="overviewThreeFindings"', self.nav)
+        self.assertEqual(5, self.nav.count('<div class="card"><div class="eyebrow">0'))
+        for phrase in (
+            'Penkios svarbiausios tyrimo išvados',
+            'Žemas gimstamumas apima visas apskritis',
+            'Migracija nebekompensavo natūralaus mažėjimo',
+            'Lyčių santykis jaunesniame amžiuje priešingas bendram',
+            'Lietuvos namų ūkių sandara išsiskiria ES',
+            'Senėjimas didina prisitaikymo poreikį',
+            'Ką rodo šeimos paslaugų ir būsto tyrimai?',
+        ):
+            self.assertIn(phrase, self.nav)
+        self.assertNotIn('Tyrimai rodo sąsajas. Jų mastą Lietuvoje dar vertiname', self.nav)
         market=self.js.index('id="housingMarketResearch"')
         support=self.js.index('id="housingSupportTitle"')
         payment=self.js.index('2025 m. regioninę paskatą gavo 515 jaunų šeimų.')
         self.assertLess(market,support)
         self.assertLess(support,payment)
         self.assertIn('1 700 ankstesnių metų prašymų',self.js)
+        self.assertIn('visuose šešiuose pateiktuose miestuose',self.js)
+        self.assertIn('jungtis visoms 10 apskričių dar neišmatuota',self.js)
 
     def test_eurostat_primary_in_population_with_three_context_links(self):
         d = json.loads(read('data/eurostat-household-composition-2024-2025.json'))
@@ -159,7 +160,7 @@ class HousingSupportPublication(unittest.TestCase):
         self.assertRegex(self.html, r'app\.js\?v=[A-Za-z0-9_-]+')
         self.assertRegex(self.app, r'housing-affordability\.js\?v=[A-Za-z0-9_-]+')
         self.assertRegex(self.app, r'research-nav\.js\?v=[A-Za-z0-9_-]+')
-        self.assertIn('Visų 10 apskričių reitingas dar nepatvirtintas',self.nav)
+        self.assertIn('Jaunų šeimų įperkamumas dar neišmatuotas',self.nav)
         self.assertIn("housingAffordability:'housing'",self.nav)
         self.assertNotIn('jaunai dirbančiai porai',self.nav.lower())
 

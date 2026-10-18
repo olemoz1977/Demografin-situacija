@@ -7,8 +7,8 @@
     section.id=SECTION_ID;
     section.innerHTML=`<div class="container">
       <div class="section-label">Jaunų šeimų pirmasis būstas <span class="badge badge-official">BŪSTAS · 2024–2025 FAKTAI IR TYRIMO EIGA</span></div>
-      <h2>Ar pirmasis būstas prieinamas jaunoms šeimoms?</h2>
-      <p class="lead"><strong>Ką jau galime pasakyti:</strong> turime 2024–2025 m. butų pardavimo kainų duomenis šešiuose miestuose, 2025 m. gruodžio nuomos ir pirkimo intervalus trijuose miestuose bei valstybės paramos gavėjų statistiką. <strong>Ko dar negalime:</strong> patikimai palyginti pirmojo būsto įperkamumo jaunoms šeimoms visose 10 apskričių. Šiuo metu neturime patvirtintos bendros apskričių lentelės, kurioje būtų suderinti teisiškai apibrėžtų jaunų šeimų sudėties, pajamų, išlaidų ir palyginamo būsto kainų rodikliai.</p>
+      <h2>Butų pardavimo vidurkiai kilo, bet jaunų šeimų įperkamumo dar neišmatavome</h2>
+      <p class="lead">2025 m. <strong>visuose šešiuose pateiktuose miestuose</strong> butų pardavimo €/m² vidurkiai buvo didesni nei 2024 m.; didžiausias vidurkis – Vilniuje. Regioninę paskatą pirmajam būstui gavo <strong>515 jaunų šeimų 2025 m.</strong>, palyginti su <strong>1 595 šeimomis 2022 m.</strong> Tačiau tai nei vienodos kokybės būsto kainų indeksas, nei paramos poreikio procentas. <strong>Jaunų šeimų faktinių pajamų ir palyginamos būsto kainos jungtis visoms 10 apskričių dar neišmatuota.</strong></p>
       <p class="small" id="housingYoungFamilyDefinition"><strong>Ką šiame tyrime vadiname jauna šeima?</strong> Remiamės Lietuvoje būsto paramai taikoma teisine sąvoka: sutuoktinių ar registruotų partnerių šeima, kurioje kiekvienas yra iki 36 metų, arba vienas iki 36 metų vaiką (-us) auginantis tėvas, motina ar globėjas (rūpintojas). Tai nėra visų jaunų asmenų ar visų pirmojo būsto pirkėjų statistinė grupė. <a href="https://socmin.lrv.lt/lt/veiklos-sritys/seima-ir-vaikai/finansine-paskata-pirmaji-busta-isigyjancioms-jaunoms-seimoms/" target="_blank" rel="noopener">SADM · apibrėžtis</a> ir <a href="https://www.e-tar.lt/rs/legalact/fcfaa4e034f411e99595d005d42b863e/" target="_blank" rel="noopener">Teisinis apibrėžimas · įstatymas</a>.</p>
 
 
@@ -16,11 +16,11 @@
 
       <section class="housing-research-evidence" id="housingMarketResearch" aria-labelledby="housingMarketResearchTitle">
         <div class="section-label">Pirmojo būsto įperkamumas <span class="badge badge-prelim">2024–2025 · TYRIMAS TĘSIAMAS</span></div>
-        <h3 id="housingMarketResearchTitle">Ką jau ištyrėme apie būsto kainas ir nuomą?</h3>
+        <h3 id="housingMarketResearchTitle">Rinkos rezultatai: šešių miestų pardavimo vidurkiai ir atskiri nuomos segmentai</h3>
         <p class="small" id="housingSingleAdultHouseholds"><strong>Namų ūkių kontekstas:</strong> Eurostat 2025 m. preliminariais duomenimis, Lietuvoje <strong>55,7 % privačių namų ūkių</strong> sudarė vienas suaugęs asmuo be išlaikomų vaikų (ES – 35,7 %). Tai <strong>ne būsto įperkamumo, nuosavybės ar jaunų šeimų rodiklis</strong>. <a href="?view=population#populationHouseholdStructure">Rodiklio paaiškinimas – Gyventojų struktūroje →</a></p>
 
         <p>Čia – atskiri patikrinami <strong>rinkos faktai</strong>, o ne apskričių įperkamumo reitingas. Skirtingo laikotarpio ir standarto duomenų į vieną tariamai tikslų rodiklį nejungiame.</p>
-        <h4>1. VDA: daugiabučių butų pardavimo kainos šešiuose miestuose</h4>
+        <h4>1. VDA: daugiabučių butų pardavimo kainos šešiuose miestuose – 2025 m. visų šešių miestų butų pardavimo €/m² vidurkiai padidėjo</h4>
         <p class="small"><strong>Oficiali 2024–2025 m. statistika, €/m².</strong> Tai visų dydžių, amžiaus ir būklės butų pardavimo vidurkiai, o ne vienodo standarto pirmojo būsto krepšelis. <strong>Miestas nėra apskritis.</strong></p>
         <div class="housing-table-scroll" role="region" tabindex="0" aria-label="VDA 2024 ir 2025 metų butų pardavimo vidurkiai šešiuose miestuose">
           <table class="housing-table housing-table--vda"><thead><tr><th scope="col">Miestas</th><th scope="col">2024, €/m²</th><th scope="col">2025, €/m²</th></tr></thead><tbody><tr><th scope="row">Alytus</th><td>890</td><td>1 039</td></tr>
@@ -30,6 +30,7 @@
 <tr><th scope="row">Šiauliai</th><td>1 098</td><td>1 262</td></tr>
 <tr><th scope="row">Vilnius</th><td>2 639</td><td>2 846</td></tr></tbody></table>
         </div>
+        <p class="small"><strong>Išvada:</strong> visuose šešiuose miestuose 2025 m. vidurkis didesnis už 2024 m.; tai skirtingų metų parduotų butų sudėčių palyginimas, <strong>ne tos pačios kokybės buto kainos augimo matas</strong>.</p>
         <p class="small">Šaltinis: <a href="https://osp-sdg.stat.gov.lt/arcgis/rest/services/EVP_DB_connection/evp56/FeatureServer/0" target="_blank" rel="noopener">VDA S7R280</a>. Dėl galimai skirtingos 2024 ir 2025 m. parduotų butų sudėties metinio kainų indekso neskaičiuojame.</p>
 
         <h4>2. „Ober-Haus“: 2025 m. gruodžio nuomos ir pirkimo segmentai</h4>

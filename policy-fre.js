@@ -1,4 +1,4 @@
-// Normalizuotas vaiko priežiūros išmokų palyginimas be valiutos / infliacijos poveikio
+// Istorinė 2008–2011 FRE išmokų normų diagrama; 2026 dalinė bazė nelaikoma lygiaverte visa schema
 (() => {
   const section=document.getElementById('parama-istorija');
   if(!section || document.getElementById('policyFreBlock')) return;
@@ -7,12 +7,12 @@
   const block=document.createElement('div');
   block.id='policyFreBlock';
   block.innerHTML=`
-    <h3 style="margin-top:2rem">Kiek „100 % pajamų mėnesių“ atitinka skirtingos išmokų schemos?</h3>
-    <p class="lead"><strong>FRE (full-rate equivalent)</strong> – paprastas būdas skirtingas išmokų normas paversti į vieną bendrą matą. Įsivaizduojame, kad vietoj skirtingų procentų visa išmoka būtų mokama po <strong>100 % ankstesnių pajamų</strong>. Tada klausiame: kiek tokių „pilno tarifo mėnesių“ susidarytų per visą laikotarpį?</p>
+    <h3 style="margin-top:2rem">2008–2011 m. vaiko priežiūros išmokų bazinių normų FRE</h3>
+    <p class="lead"><strong>FRE (full-rate equivalent)</strong> – išmokų normų ir mokėjimo mėnesių sandaugų suma. Čia lyginamos tik <strong>2008, 2010 ir 2011 m. dvejų metų istorinės schemos</strong> pagal bazinius tarifus, ne faktinės šeimos grynosios pajamos. Dabartinės schemos visos apimties pagal šiuos duomenis neapskaičiuojame.</p>
     <div class="alert alert-blue"><strong>Pavyzdys.</strong> 2008 m. schema buvo 12 mėn. po 100 % ir dar 12 mėn. po 85 %. Skaičiuojame: 12 × 100 % + 12 × 85 % = <strong>22,2 pilno tarifo mėnesio</strong>. Tai <strong>nereiškia</strong>, kad 22,2 mėn. buvo mokama 100 % – tai tik bendras tos schemos ekvivalentas.</div>
     <div class="chart-wrap" style="height:330px"><canvas id="policyFreChart"></canvas></div>
-    <div class="chart-caption"><strong>Supaprastintas 24 mėn. FRE palyginimas.</strong> Jis leidžia palyginti sistemas nenaudojant litų ar eurų, todėl valiutos pakeitimas ir infliacija čia netrukdo. Tačiau grafikas lygina tik bazines išmokų normas: <strong>lubos, mokesčiai ir individualios taisyklės neįtrauktos</strong>.</div>
-    <div class="alert alert-amber" style="margin-top:1.2rem"><strong>Kaip skaityti.</strong> Kuo daugiau „100 % pajamų mėnesių“, tuo dosnesnė bazinė išmokų schema. 2008 m. – 22,2; 2010 m. – 19,8; 2011 m. dvejų metų variantas – 13,2; dabartinės 24 mėn. schemos bazinės 45 % / 30 % normos – 9,0. <strong>Dabartinės sistemos 2 + 2 neperleidžiami mėnesiai po 78 % į šią bazinę juostą neįtraukti</strong>, todėl 9,0 nėra visos dabartinės sistemos galutinis FRE.</div>
+    <div class="chart-caption"><strong>Istorinių bazinių normų 24 mėn. FRE.</strong> Tarifikacijos formulė parodo schemos ekvivalentą, tačiau ne realų neto pajamų pakeitimą: lubos, mokesčiai ir individualios sąlygos neįtrauktos. <strong>2026 m. bazės į šį grafiką nededame</strong>, nes jai trūksta neperleidžiamų mėnesių komponento.</div>
+    <div class="alert alert-amber" style="margin-top:1.2rem"><strong>Dabartinė schema – atskiras, nepilnas komponentas.</strong> Vien 45 % / 30 % bazinių normų formulė duoda <strong>9,0 pilno tarifo mėnesių</strong>, tačiau joje <strong>nėra 2 + 2 neperleidžiamų mėnesių po 78 %</strong>. Todėl negalima teigti, kad 2008 m. visa 22,2 mėn. schema tiesiogiai palyginama su 2026 m. „9,0“, arba pagal šį grafiką reitinguoti faktinį šeimos pajamų saugumą. Visos dabartinės schemos FRE šiame tyrime <strong>neskaičiuojamas</strong>.</div>
     <div class="source-line">Metodikos orientyras: <a href="https://www.oecd.org/els/family/PF2_4_Parental_leave_replacement_rates.pdf" target="_blank" rel="noopener">OECD Family Database · PF2.4 · Parental leave replacement rates</a> · Dabartinės normos: <a href="https://sodra.lt/ismokos/seimos-ismokos/vaiko-prieziuros-ismoka-nuo-2023-m" target="_blank" rel="noopener">Sodra · vaiko priežiūros išmoka</a>. Istorinės normos – aukščiau pateikti E-Seimo šaltiniai.</div>
   `;
 
@@ -24,11 +24,11 @@
     new Chart(c,{
       type:'bar',
       data:{
-        labels:['2008 · 100/85','2010 · 90/75','2011 · 70/40','2026 · 45/30 bazė'],
+        labels:['2008 · 100/85','2010 · 90/75','2011 · 70/40'],
         datasets:[{
           label:'100 % pajamų ekvivalento mėnesiai',
-          data:[22.2,19.8,13.2,9.0],
-          backgroundColor:['#2f6942','#4d7659','#a95d12','#b9382b'],
+          data:[22.2,19.8,13.2],
+          backgroundColor:['#2f6942','#4d7659','#a95d12'],
           borderWidth:0
         }]
       },
