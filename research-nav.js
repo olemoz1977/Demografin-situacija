@@ -2,8 +2,8 @@
   const VALID_VIEWS=['overview','fertility','population','migration','family','housing','future','methods','all'];
   const VIEW_META={
     overview:{label:'Apžvalga',title:'60 sekundžių apžvalga',desc:'Svarbiausi naujausi skaičiai ir žemėlapis į visą tyrimą.'},
-    fertility:{label:'Gimstamumas',title:'Gimstamumas',desc:'TFR, regioniniai skirtumai ir pirmojo vaiko gimdymo amžius.'},
-    population:{label:'Struktūra',title:'Gyventojų struktūra',desc:'Amžiaus ir lyties struktūra, reprodukcinio amžiaus santykis, namų ūkių sandara ir gimimo kohortų palyginimas.'},
+    fertility:{label:'Gimstamumas',title:'Gimstamumas',desc:'TFR, regioniniai skirtumai, pirmojo vaiko amžius ir ekonominio išsivystymo konteksto hipotezė.'},
+    population:{label:'Struktūra',title:'Gyventojų struktūra',desc:'Amžiaus ir lyties struktūra, namų ūkių sandara, gimimo kohortos bei 2025 m. AROPE socialinės rizikos faktai.'},
     migration:{label:'Migracija',title:'Migracija',desc:'Bendri srautai, 25–44 m. pjūvis pagal lytį, Lietuvos piliečių grįžimas ir užsienio piliečiai.'},
     family:{label:'Šeimos aplinka',title:'Šeimai palanki aplinka',desc:'Santuokos, šeimos politika, išmokų dosnumas, vaikų infrastruktūra ir socialinės hipotezės.'},
     housing:{label:'Būstas',title:'Pirmojo būsto įperkamumas ir parama',desc:'Oficialūs VDA 2024–2025 m. butų kainų faktai, „Ober-Haus“ 2025 m. gruodžio nuomos bei pardavimo segmentai, paskolos metodika ir 2019–2025 m. valstybės paramos istorija. Visų 10 apskričių reitingas dar nepatvirtintas.'},
@@ -35,7 +35,7 @@
 
   function updateHeader(){
     const right=document.querySelector('.masthead-right');
-    if(right) right.innerHTML='Atnaujinta 2026-10-10<br>2025* – išankstiniai, kai pažymėta';
+    if(right) right.innerHTML='Atnaujinta 2026-10-18<br>2025* – išankstiniai, kai pažymėta';
     const sub=document.querySelector('.masthead-sub');
     if(sub) sub.innerHTML='<span>Gimstamumas</span><span>Gyventojų struktūra</span><span>Migracija</span><span>Šeimos aplinka</span><span>Būstas</span><span>Ateitis</span>';
     document.querySelectorAll('footer').forEach(f=>{f.innerHTML=f.innerHTML.replace(/Atnaujinta\s+2026-09-13/g,'Atnaujinta 2026-09-15');});
@@ -60,7 +60,7 @@
     const section=document.createElement('section');
     section.id='researchHome'; section.className='research-home';
     section.innerHTML=`<div class="container">
-      <div class="section-label">Tyrimo žemėlapis <span class="badge badge-official">ATNAUJINTA 2026-10-10</span></div>
+      <div class="section-label">Tyrimo žemėlapis <span class="badge badge-official">ATNAUJINTA 2026-10-18</span></div>
       <h2>Mažas gimstamumas – tik dalis Lietuvos demografinio paveikslo.</h2>
       <p class="lead">Neigiama natūrali gyventojų kaita, migracijos srautai, amžiaus ir lyčių struktūra, namų ūkių sandara bei šeimos ir būsto aplinka sudaro platesnį vaizdą. Atskirai nagrinėjame, kaip visuomenė galėtų prisitaikyti prie demografinių pokyčių. Tai susijusios temos, bet ne įrodytas vienas priežastinis modelis.</p>
       <h3 id="overviewThreeFindings">Trys svarbiausios išvados</h3>

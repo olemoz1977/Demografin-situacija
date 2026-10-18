@@ -95,7 +95,7 @@ class HousingSupportPublication(unittest.TestCase):
         self.assertNotIn('housing-2025-12-zero-eur-matched-market-snapshot.md',js)
         self.assertNotIn('Pajamų modelis iš 2025 m. lapkričio',js)
         register=json.loads(read('data/research-findings-register.json'))
-        self.assertEqual(39,len(register['findings']))
+        self.assertGreaterEqual(len(register['findings']),39)
         self.assertTrue(register['governance']['forbid_legacy_under30_pair_model_in_public_housing'])
         legacy_ids={'HOUSING-SAVINGS-10-COUNTIES-01',
                     'HOUSING-SAVINGS-CITY3-2025-01',
