@@ -1,14 +1,14 @@
 (() => {
   const VALID_VIEWS=['overview','fertility','population','migration','family','housing','future','methods','all'];
   const VIEW_META={
-    overview:{label:'Apžvalga',title:'60 sekundžių apžvalga',desc:'Svarbiausi naujausi skaičiai ir žemėlapis į visą tyrimą.'},
-    fertility:{label:'Gimstamumas',title:'Gimstamumas',desc:'TFR, regioniniai skirtumai, pirmojo vaiko amžius ir ekonominio išsivystymo konteksto hipotezė.'},
-    population:{label:'Struktūra',title:'Gyventojų struktūra',desc:'Amžiaus ir lyties struktūra, namų ūkių sandara, gimimo kohortos bei 2025 m. AROPE socialinės rizikos faktai.'},
-    migration:{label:'Migracija',title:'Migracija',desc:'Bendri srautai, 25–44 m. pjūvis pagal lytį, Lietuvos piliečių grįžimas ir užsienio piliečiai.'},
-    family:{label:'Šeimos aplinka',title:'Šeimai palanki aplinka',desc:'Santuokos, šeimos politika, išmokų dosnumas, vaikų infrastruktūra ir socialinės hipotezės.'},
-    housing:{label:'Būstas',title:'Pirmojo būsto įperkamumas ir parama',desc:'Oficialūs VDA 2024–2025 m. butų kainų faktai, „Ober-Haus“ 2025 m. gruodžio nuomos bei pardavimo segmentai, paskolos metodika ir 2019–2025 m. valstybės paramos istorija. Visų 10 apskričių reitingas dar nepatvirtintas.'},
-    future:{label:'Ateitis',title:'Projekcijos ir scenarijai',desc:'Oficialios EK projekcijos, produktyvumo poreikis, automatizacija ir socialinės sistemos finansavimo hipotezė.'},
-    methods:{label:'Metodika',title:'Metodika ir šaltiniai',desc:'Kas yra faktas, kas išankstinis rodiklis, kas projekcija ir kur prasideda hipotezė.'},
+    overview:{label:'Apžvalga',title:'60 sekundžių apžvalga',desc:'2024 m. TFR 1,11; 2025* natūralaus mažėjimo migracija nekompensavo.'},
+    fertility:{label:'Gimstamumas',title:'Gimstamumas',desc:'2024 m. TFR 1,11 ir visose 10 apskričių 0,96–1,21; pirmojo vaiko gimdymo amžius 28,7 m., ES – 29,9 m.'},
+    population:{label:'Struktūra',title:'Gyventojų struktūra',desc:'2025 m. 25–44 m. grupėje 884 moterys 1 000 vyrų; 55,7 % (p) privačių namų ūkių sudarė vienas suaugęs be išlaikomų vaikų.'},
+    migration:{label:'Migracija',title:'Migracija',desc:'2025* neto migracija +16 165, palyginti su +23 140 2024 m.; atskirai analizuojami pilietybės ir lyčių srautų kontrastai.'},
+    family:{label:'Šeimos aplinka',title:'Šeimai palanki aplinka',desc:'Vaikų priežiūros pasiekiamumas ne visada sutampa su laisvų vietų skaičiumi; išmokų istorija ir partnerystės hipotezės vertinamos atskirai.'},
+    housing:{label:'Būstas',title:'Pirmojo būsto įperkamumas ir parama',desc:'2024–2025 m. padidėjo šešių miestų parduotų butų €/m² vidurkiai; regioninės paskatos gavėjų 2022 m. buvo 1 595, 2025 m. – 515. Jaunų šeimų įperkamumas dar neišmatuotas.'},
+    future:{label:'Ateitis',title:'Projekcijos ir scenarijai',desc:'EK baziniame scenarijuje 2022–2040 m. užimtųjų skaičius mažėja 18,6 %; autoriaus prisitaikymo hipotezės – atskirai.'},
+    methods:{label:'Metodika',title:'Metodika ir šaltiniai',desc:'Rodiklių statusai, vardikliai ir šaltiniai pagal temas; aprašomieji kontrastai nereiškia įrodytų priežasčių.'},
     all:{label:'Visas tyrimas',title:'Visas tyrimas',desc:'Visos sekcijos viename ilgame puslapyje.'}
   };
   const SECTION_VIEWS={
@@ -35,10 +35,10 @@
 
   function updateHeader(){
     const right=document.querySelector('.masthead-right');
-    if(right) right.innerHTML='Atnaujinta 2026-10-18<br>2025* – išankstiniai, kai pažymėta';
+    if(right) right.innerHTML='Atnaujinta 2026-10-19<br>2025* – išankstiniai, kai pažymėta';
     const sub=document.querySelector('.masthead-sub');
     if(sub) sub.innerHTML='<span>Gimstamumas</span><span>Gyventojų struktūra</span><span>Migracija</span><span>Šeimos aplinka</span><span>Būstas</span><span>Ateitis</span>';
-    document.querySelectorAll('footer').forEach(f=>{f.innerHTML=f.innerHTML.replace(/Atnaujinta\s+2026-09-13/g,'Atnaujinta 2026-09-15');});
+    document.querySelectorAll('footer').forEach(f=>{f.innerHTML=f.innerHTML.replace(/Atnaujinta\s+2026-10-02/g,'Atnaujinta 2026-10-19');});
   }
 
   function buildNav(){
@@ -60,27 +60,31 @@
     const section=document.createElement('section');
     section.id='researchHome'; section.className='research-home';
     section.innerHTML=`<div class="container">
-      <div class="section-label">Tyrimo žemėlapis <span class="badge badge-official">ATNAUJINTA 2026-10-18</span></div>
-      <h2>Mažas gimstamumas – tik dalis Lietuvos demografinio paveikslo.</h2>
-      <p class="lead">Neigiama natūrali gyventojų kaita, migracijos srautai, amžiaus ir lyčių struktūra, namų ūkių sandara bei šeimos ir būsto aplinka sudaro platesnį vaizdą. Atskirai nagrinėjame, kaip visuomenė galėtų prisitaikyti prie demografinių pokyčių. Tai susijusios temos, bet ne įrodytas vienas priežastinis modelis.</p>
-      <h3 id="overviewThreeFindings">Trys svarbiausios išvados</h3>
+      <div class="section-label">Tyrimo žemėlapis <span class="badge badge-official">REDAKCIJA 2026-10-19</span></div>
+      <h2>Žemas gimstamumas apima visą Lietuvą. 2025 m. migracija natūralaus mažėjimo nekompensavo.</h2>
+      <p class="lead">Svarbiausi jau nustatyti šalies demografiniai kontrastai: gimstamumas visose apskrityse, gyventojų balansas, lyčių santykis pagal amžių ir neįprasta namų ūkių sandara. Paskutinė išvada – aiškiai pažymėta <strong>Europos Komisijos bazinė projekcija</strong>, o ne įvykęs pokytis.</p>
+      <h3 id="overviewThreeFindings">Penkios svarbiausios tyrimo išvados</h3>
       <div class="research-summary">
-        <div class="card"><div class="eyebrow">01 · Oficialūs 2025* duomenys</div><strong>Natūralus mažėjimas viršijo migracijos prieaugį</strong><p>2025 m. išankstiniais VDA duomenimis, gimė <strong>17 478</strong> vaikai, natūrali kaita buvo <strong>−19 946</strong>, o neto tarptautinė migracija – <strong>+16 165</strong>. Teigiamos migracijos nepakako natūraliam mažėjimui kompensuoti.</p></div>
-        <div class="card"><div class="eyebrow">02 · Gyventojų ir namų ūkių struktūra</div><strong>Vien gimstamumo rodiklis neparodo viso vaizdo</strong><p>2025 m. 25–44 m. grupėje buvo <strong>884 moterys / 1 000 vyrų</strong>. Be to, <strong>55,7 % Lietuvos privačių namų ūkių</strong> 2025 m. sudarė vienas suaugęs be išlaikomų vaikų (Eurostat, preliminaru). Tai skirtingi rodikliai – ne gimstamumo priežasčių įrodymas.</p></div>
-        <div class="card"><div class="eyebrow">03 · Ryšys ir tyrimo ribos</div><strong>Tyrimai rodo sąsajas. Jų mastą Lietuvoje dar vertiname</strong><p><a href="https://www.oecd.org/en/publications/society-at-a-glance-2024_918d8db3-en/full-report/fertility-trends-across-the-oecd-underlying-drivers-and-the-role-for-policy_770679b8.html" target="_blank" rel="noopener">OECD (2024)</a> analizėje didesnės būsto išlaidos siejamos su mažesniu gimstamumu; darbo ir šeimos derinimo galimybės bei vaikų priežiūros paslaugos taip pat svarbios. <strong>Mūsų analizėje dar nenustatytas šių sąsajų dydis Lietuvoje.</strong> Palyginamo pirmojo būsto įperkamumo reitingo visose 10 apskričių dar nėra. Ateities scenarijai nėra faktinės prognozės.</p></div>
+        <div class="card"><div class="eyebrow">01 · 2024 m. · stebėtas rodiklis</div><strong>Žemas gimstamumas apima visas apskritis</strong><p>Lietuvos TFR buvo <strong>1,11</strong> – trečias mažiausias ES. Nė vienoje iš dešimties apskričių rodiklis neviršijo <strong>1,21</strong> (intervalas 0,96–1,21). <a href="${makeUrl('fertility')}">Gimstamumo tyrimas →</a></p></div>
+        <div class="card"><div class="eyebrow">02 · 2025* · išankstiniai VDA</div><strong>Migracija nebekompensavo natūralaus mažėjimo</strong><p>Natūrali kaita <strong>−19 946</strong>, neto migracija <strong>+16 165</strong>; jų balansas <strong>−3 781</strong>. Nuo 2024 m. bendras balansas pablogėjo 8 554 žmonėmis – daugiausia dėl sumažėjusio migracijos prieaugio. <a href="${makeUrl('migration')}">Migracijos tyrimas →</a></p></div>
+        <div class="card"><div class="eyebrow">03 · 2025 m. · gyventojų struktūra</div><strong>Lyčių santykis jaunesniame amžiuje priešingas bendram</strong><p>Visoje populiacijoje apie <strong>1 104 moterys / 1 000 vyrų</strong>, tačiau 25–44 m. grupėje – tik <strong>884</strong>. Tai gyventojų santykis, ne individualių partnerystės galimybių rodiklis. <a href="${makeUrl('population')}">Gyventojų struktūra →</a></p></div>
+        <div class="card"><div class="eyebrow">04 · 2025 m. (p) · Eurostat apklausos įvertis</div><strong>Lietuvos namų ūkių sandara išsiskiria ES</strong><p><strong>55,7 %</strong> Lietuvos privačių namų ūkių sudarė vienas suaugęs be išlaikomų vaikų; ES – <strong>35,7 %</strong>. Tai namų ūkių, <strong>ne vienišų gyventojų</strong> dalis. <a href="${makeUrl('population')}#populationHouseholdStructure">Rodiklio apibrėžimas →</a></p></div>
+        <div class="card"><div class="eyebrow">05 · EK bazinis scenarijus · ne stebėtas faktas</div><strong>Senėjimas didina prisitaikymo poreikį</strong><p>Europos Komisijos baziniame scenarijuje 2022–2040 m. užimtųjų skaičius mažėja <strong>18,6 %</strong>, o 65+/20–64 m. gyventojų santykis didėja <strong>33,1 → 50,3 %</strong>. Tai sąlyginė projekcija. <a href="${makeUrl('future')}">Ateities scenarijai →</a></p></div>
       </div>
-      <div class="alert alert-blue"><strong>Kaip skaityti tyrimą.</strong> Faktus, išankstinius rodiklius, oficialias projekcijas ir autoriaus hipotezes laikome atskirai. Viena kreivė savaime nėra priežasties įrodymas.</div>
+      <h3>Ką rodo šeimos paslaugų ir būsto tyrimai?</h3>
+      <p>Vaikų priežiūros vietų pasiekiamumo neatitikimai gali išlikti net esant laisvų vietų mieste (<a href="${makeUrl('family')}">Šeimos aplinka</a>). Regioninės pirmojo būsto paskatos gavėjų buvo <strong>1 595 (2022 m.)</strong> ir <strong>515 (2025 m.)</strong>; tai ne paramos poreikio ar aprėpties procentas (<a href="${makeUrl('housing')}">Būstas</a>). Palyginamų jaunų šeimų pajamų ir būsto kainų jungtis dar neišmatuota.</p>
+      <p class="small"><strong>Duomenų statusai:</strong> 2025* – išankstiniai VDA rodikliai; (p) – preliminarus Eurostat apklausos įvertis; EK bazinis scenarijus – projekcija. <a href="${makeUrl('methods')}">Visos ribos ir šaltiniai →</a></p>
       <div class="topic-grid">
-        <a class="topic-card" href="${makeUrl('fertility')}"><div class="eyebrow">01 · Gimstamumas</div><h3>Kiek problema didelė?</h3><p>TFR Lietuvoje ir ES, regioniniai skirtumai, pirmojo vaiko amžius.</p><span class="topic-link">Atverti temą →</span></a>
-        <a class="topic-card" href="${makeUrl('population')}"><div class="eyebrow">02 · Gyventojų struktūra</div><h3>Kas gyvena Lietuvoje – ir kokiuose namų ūkiuose?</h3><p>Amžiaus ir lyties struktūra, reprodukcinio amžiaus santykiai, gimimo kohortos ir preliminarūs Eurostat namų ūkių duomenys.</p><span class="topic-link">Atverti temą →</span></a>
-        <a class="topic-card" href="${makeUrl('migration')}"><div class="eyebrow">03 · Migracija</div><h3>Kas pakeitė gyventojų struktūrą?</h3><p>Bendri srautai, migracija pagal lytį, Lietuvos piliečių grįžimas ir užsienio piliečiai.</p><span class="topic-link">Atverti temą →</span></a>
-        <a class="topic-card" href="${makeUrl('family')}"><div class="eyebrow">04 · Šeimos aplinka</div><h3>Ką valstybė ir aplinka gali keisti?</h3><p>Išmokų istorija ir FRE, infrastruktūra, santuokos, skaitmeninis kontekstas ir partnerystės hipotezės.</p><span class="topic-link">Atverti temą →</span></a>
-        <a class="topic-card" href="${makeUrl('housing')}"><div class="eyebrow">05 · Būstas · NAUJA ANALIZĖ</div><h3>Ar pirmasis būstas prieinamas jaunoms šeimoms?</h3><p><strong>Jau paskelbta:</strong> 2019–2025 m. paramos analizė, VDA šešių miestų būsto kainų faktai, 2025 m. gruodžio nuomos ir pirkimo intervalai, paskolos metodika. <strong>Dar tiriama:</strong> palyginamas įperkamumas visose 10 apskričių.</p><span class="topic-link">Atverti Būsto analizę →</span></a>
-        <a class="topic-card" href="${makeUrl('future')}"><div class="eyebrow">06 · Ateitis</div><h3>Kas nutiks, jei darbuotojų mažės?</h3><p>EK projekcijos, automatizacija, produktyvumas ir socialinės sistemos finansavimo scenarijai.</p><span class="topic-link">Atverti temą →</span></a>
-        <a class="topic-card" href="${makeUrl('methods')}"><div class="eyebrow">07 · Metodika</div><h3>Kur baigiasi faktai ir prasideda hipotezės?</h3><p>Duomenų statusai, metodinės ribos ir visi pirminiai šaltiniai.</p><span class="topic-link">Atverti metodiką →</span></a>
+        <a class="topic-card" href="${makeUrl('fertility')}"><div class="eyebrow">01 · Gimstamumas</div><h3>Žemas TFR visose apskrityse</h3><p>2024 m. TFR 1,11, apskrityse 0,96–1,21; pirmojo vaiko amžius mažesnis nei ES vidurkis.</p><span class="topic-link">Atverti temą →</span></a>
+        <a class="topic-card" href="${makeUrl('population')}"><div class="eyebrow">02 · Gyventojų struktūra</div><h3>Jaunesniame amžiuje lyčių santykis kitoks</h3><p>25–44 m. – 884 moterys 1 000 vyrų; 55,7 % privačių namų ūkių sudaro vienas suaugęs be išlaikomų vaikų (p).</p><span class="topic-link">Atverti temą →</span></a>
+        <a class="topic-card" href="${makeUrl('migration')}"><div class="eyebrow">03 · Migracija</div><h3>2025 m. migracijos prieaugis susitraukė</h3><p>Neto migracija +16 165, palyginti su +23 140 2024 m.; skiriami piliečių ir lyčių srautai.</p><span class="topic-link">Atverti temą →</span></a>
+        <a class="topic-card" href="${makeUrl('family')}"><div class="eyebrow">04 · Šeimos aplinka</div><h3>Vaikų priežiūros vietos ne visada ten, kur reikia</h3><p>Paslaugų pasiekiamumas, istorinės išmokos ir atskirai pažymėtos partnerystės hipotezės.</p><span class="topic-link">Atverti temą →</span></a>
+        <a class="topic-card" href="${makeUrl('housing')}"><div class="eyebrow">05 · Būstas · NAUJA ANALIZĖ</div><h3>Rinkos kainos ir paramos mastas – bet ne įperkamumo reitingas</h3><p>2024–2025 m. visuose šešiuose miestuose pardavimo €/m² vidurkiai padidėjo; regioninės paskatos gavėjų sumažėjo nuo 1 595 (2022) iki 515 (2025). Jaunų šeimų įperkamumas neišmatuotas.</p><span class="topic-link">Atverti Būsto analizę →</span></a>
+        <a class="topic-card" href="${makeUrl('future')}"><div class="eyebrow">06 · Ateitis</div><h3>EK projektuoja −18,6 % užimtųjų iki 2040 m.</h3><p>Bazinio scenarijaus sąlyginė projekcija ir skirtingos prisitaikymo prielaidos.</p><span class="topic-link">Atverti temą →</span></a>
+        <a class="topic-card" href="${makeUrl('methods')}"><div class="eyebrow">07 · Metodika</div><h3>Rodiklių apibrėžimai ir šaltiniai</h3><p>Statusai, vardikliai ir šaltiniai pagal modulį; faktai atskiriami nuo projekcijų ir hipotezių.</p><span class="topic-link">Atverti metodiką →</span></a>
       </div>
     </div>`;
-    overview.insertAdjacentElement('afterend',section);
+    overview.insertAdjacentElement('beforebegin',section);
   }
 
   function normalizeDynamicBlocks(){
