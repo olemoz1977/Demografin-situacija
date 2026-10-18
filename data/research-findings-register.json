@@ -885,21 +885,22 @@
       "area": "housing",
       "title": "2026 m. dviejų būsto paramos schemų paraiškų paklausos signalai",
       "period": "2026-05–09",
-      "status": "VERIFIED_UNPUBLISHED",
+      "status": "PUBLISHED_CONTEXT",
       "statement": "2026-05 platesnės B schemos ~1000 paraiškų per 10 minučių ir 2026-09 regioninės A schemos ~800 paraiškų skiriasi nuo 2025 m. 515 išmokų; 2026 konteksto neperkelti į 2025.",
       "source_urls": [
-        "https://socmin.lrv.lt/lt/naujienos-1/baigtas-paraisku-priemimas-valstybes-paramai-bustui-isigyti-gIR/"
+        "https://socmin.lrv.lt/lt/naujienos-1/baigtas-paraisku-priemimas-valstybes-paramai-bustui-isigyti-gIR/",
+        "https://socmin.lrv.lt/lt/naujienos-1/visos-prasymus-pateikusios-ir-reikalavimus-atitinkancios-jaunos-seimos-gaus-valstybes-subsidija-pirmajam-bustui-regionuose-isigyti-i1j/"
       ],
       "evidence_files": [
         "research/historical-research-inventory-2026-10-10.md"
       ],
       "publication": {
         "module": "housing",
-        "file": null,
-        "marker": null
+        "file": "housing-affordability.js",
+        "marker": "2026-05-19 platesnės"
       },
-      "blocker": "Patikrinta tyrime, bet dar nėra atskiro viešo bloko ar apimties sprendimo.",
-      "next_action": "Po apibrėžčių patikros ir strateginio leidimo apsispręsti dėl publikavimo modulio; neparodyti kaip 10 apskričių jaunų šeimų reitingo.",
+      "blocker": null,
+      "next_action": "2026-10-19 redakcinis PR: viešai jau esamus 2026 m. gegužės ir rugsėjo paklausos pavyzdžius susieti su šiuo ID. Skirtingas paramos programas ir prašymus atskirti nuo 2025 m. 515 gavėjų; tai nėra jaunų šeimų poreikio procentas.",
       "external_research_paths": [
         "https://github.com/olemoz1977/Demografin-situacija/blob/audit/population-standard-2024-2025/data/housing-state-support-demand-context-2025-2026.json"
       ]
