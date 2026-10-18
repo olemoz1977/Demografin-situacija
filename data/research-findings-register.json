@@ -642,6 +642,29 @@
       "next_action": "Tikras naršyklės tekstas redakciniame sluoksnyje; galutiniame matomumo audite tikrinti ne pirminį perrašomą šabloną, bet redakciškai pakeistą išvadą."
     },
     {
+      "id": "FAMILY-IDEALIZED-ROMANCE-2025-01",
+      "area": "family",
+      "title": "Idealizuoti romantinių santykių vaizdai ir partnerio lūkesčiai: tarptautinis tyrimas",
+      "period": "2025 (pirmoji internetinė publikacija)",
+      "status": "VERIFIED_UNPUBLISHED",
+      "statement": "Skerspjūvio apklausa (N=605 jaunų suaugusiųjų iš viso) nustatė tarp vienišų respondentų ryšį tarp idealizuoto romantinių santykių turinio matymo socialiniuose tinkluose ir aukštesnių partnerio lūkesčių. Ryšys neįrodo priežasties; nepatvirtina partnerystės vėlavimo ar poveikio Lietuvos gimstamumui.",
+      "source_urls": [
+        "https://doi.org/10.1177/08944393251366234",
+        "https://research.tudelft.nl/en/publications/achieving-relationshipgoals-exploring-the-associations-between-ex/"
+      ],
+      "evidence_files": [
+        "research/partner-idealization-social-media-2026-10-18.md",
+        "family-hypothesis.js"
+      ],
+      "publication": {
+        "module": "family",
+        "file": null,
+        "marker": null
+      },
+      "blocker": "Naujas mokslinis rezultatas įrašytas į nepublikuotą PR ir jo šaltinį; viešas pateikimas reikalauja atskiro leidimo, T0 aprėpties patikros bei suderinimo su kitu nepublikuotu PR #11.",
+      "next_action": "Patikrinti pirminę publikaciją, išlaikyti skerspjūvio ir priežastingumo skirtį; prieš merge pažymėti publikavimo vietą ir statusą; nepainioti su poveikiu Lietuvos TFR."
+    },
+    {
       "id": "HOUSING-VDA-RENT-2025-01",
       "area": "housing",
       "title": "VDA 2025 m. penkių miestų oficialus nuomos kainų kontekstas",
