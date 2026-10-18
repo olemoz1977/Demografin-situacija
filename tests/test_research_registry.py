@@ -119,7 +119,7 @@ class ResearchContinuityTest(unittest.TestCase):
     def test_unpublished_models_and_verified_items_must_stay_separate(self):
         valid = {"VERIFIED_UNPUBLISHED", "MODELLED_UNPUBLISHED", "RESEARCH_BLOCKED"}
         unpublished = [f for f in self.findings.values() if f["status"] in valid]
-        self.assertGreaterEqual(len(unpublished), 12)
+        self.assertGreaterEqual(len(unpublished), 11)
         for finding in unpublished:
             self.assertTrue(finding["blocker"])
             self.assertIsNone(finding["publication"]["file"])
@@ -132,6 +132,16 @@ class ResearchContinuityTest(unittest.TestCase):
         ):
             paths = self.findings[ident]["external_research_paths"]
             self.assertTrue(any("/blob/audit/" in path for path in paths))
+
+    def test_2026_housing_demand_public_status_matches_site(self):
+        item = self.findings["HOUSING-DEMAND-SCHEMES-2026-01"]
+        self.assertEqual("PUBLISHED_CONTEXT", item["status"])
+        self.assertEqual("housing-affordability.js", item["publication"]["file"])
+        content = (ROOT / item["publication"]["file"]).read_text(encoding="utf-8")
+        self.assertIn(item["publication"]["marker"], content)
+        self.assertIn("beveik <strong>800 prašymų</strong>", content)
+        self.assertIn("NE 2025 m. 515", content)
+        self.assertEqual(42, len(self.findings))
 
     def test_qa_is_not_equivalent_to_historical_completeness(self):
         governance = self.register["governance"]
