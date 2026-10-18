@@ -165,6 +165,24 @@ const checks=[
     "methods",
     "#metodika",
     "Koreliacija ≠ priežastis"
+  ],
+  [
+    "FAMILY-IDEALIZED-ROMANCE-2025-01",
+    "family",
+    "#familyFormationHypotheses",
+    "Boeckxstaens ir kt."
+  ],
+  [
+    "EU-AROPE-2025-01",
+    "population",
+    "#populationArope2025",
+    "26,3 %"
+  ],
+  [
+    "FERTILITY-DEVELOPMENT-PARADOX-2026-01",
+    "fertility",
+    "#fertilityDevelopmentParadox2026",
+    "Šio priežastinio ryšio Lietuvos duomenimis nepatvirtinome."
   ]
 ];
 const checkMap=new Map(checks.map(([id,view,selector,phrase])=>[id,{view,selector,phrase}]));
@@ -180,7 +198,7 @@ const normalize=s=>s.replace(/[\u00a0\u202f\s]+/g," ").trim();
 (async()=>{
  const browser=await chromium.launch({headless:true});
  try{
-  for(const [screen,viewport] of [["desktop",{width:1365,height:800}],["mobile",{width:390,height:844}]]){
+  for(const [screen,viewport] of [["desktop",{width:1365,height:800}],["mobile",{width:390,height:844}],["narrowMobile",{width:320,height:720}]]){
    const page=await browser.newPage({viewport});
    const errors=[];page.on("pageerror",e=>errors.push(e.message));
    let done=0;
