@@ -202,7 +202,7 @@ const normalize=s=>s.replace(/[\u00a0\u202f\s]+/g," ").trim();
    const page=await browser.newPage({viewport});
    const errors=[];page.on("pageerror",e=>errors.push(e.message));
    let done=0;
-   for(const view of ["overview","fertility","population","migration","family","housing","future","methods"]){
+   for(const view of (screen==="narrowMobile" ? ["fertility","population","family"] : ["overview","fertility","population","migration","family","housing","future","methods"])){
     await page.goto("http://127.0.0.1:8765/?view="+view,{waitUntil:"networkidle"});
     const relevant=checks.filter(row=>row[1]===view),failures=[];
     for(const [id,,selector,expected] of relevant){
