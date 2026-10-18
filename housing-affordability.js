@@ -20,7 +20,7 @@
         <p class="small" id="housingSingleAdultHouseholds"><strong>Namų ūkių kontekstas:</strong> Eurostat 2025 m. preliminariais duomenimis, Lietuvoje <strong>55,7 % privačių namų ūkių</strong> sudarė vienas suaugęs asmuo be išlaikomų vaikų (ES – 35,7 %). Tai <strong>ne būsto įperkamumo, nuosavybės ar jaunų šeimų rodiklis</strong>. <a href="?view=population#populationHouseholdStructure">Rodiklio paaiškinimas – Gyventojų struktūroje →</a></p>
 
         <p>Čia – atskiri patikrinami <strong>rinkos faktai</strong>, o ne apskričių įperkamumo reitingas. Skirtingo laikotarpio ir standarto duomenų į vieną tariamai tikslų rodiklį nejungiame.</p>
-        <h4>1. VDA: 2025 m. visų šešių miestų butų pardavimo €/m² vidurkiai padidėjo</h4>
+        <h4>1. VDA: daugiabučių butų pardavimo kainos šešiuose miestuose – 2025 m. visų šešių miestų butų pardavimo €/m² vidurkiai padidėjo</h4>
         <p class="small"><strong>Oficiali 2024–2025 m. statistika, €/m².</strong> Tai visų dydžių, amžiaus ir būklės butų pardavimo vidurkiai, o ne vienodo standarto pirmojo būsto krepšelis. <strong>Miestas nėra apskritis.</strong></p>
         <div class="housing-table-scroll" role="region" tabindex="0" aria-label="VDA 2024 ir 2025 metų butų pardavimo vidurkiai šešiuose miestuose">
           <table class="housing-table housing-table--vda"><thead><tr><th scope="col">Miestas</th><th scope="col">2024, €/m²</th><th scope="col">2025, €/m²</th></tr></thead><tbody><tr><th scope="row">Alytus</th><td>890</td><td>1 039</td></tr>
