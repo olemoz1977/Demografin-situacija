@@ -26,6 +26,7 @@
 
     <div class="alert alert-blue" style="margin-top:1.5rem"><strong>Autoriaus hipotezė.</strong> Socialiniuose tinkluose matomi atrinkti ir pagražinti žmonių bei romantinių santykių vaizdai gali formuoti idealizuotus lūkesčius būsimam partneriui. Dėl palyginimo su tokiais vaizdais realūs potencialūs partneriai gali atrodyti mažiau tinkami. <strong>Atskiras mechanizmas:</strong> pažinčių programėlėse gausi pasirinkimo pasiūla gali skatinti dažnesnį kandidatų atmetimą. <strong>Tikrinama prielaida:</strong> šie mechanizmai gali prisidėti prie vėlesnio stabilios partnerystės susiformavimo ir netiesiogiai – prie vėlesnio pirmojo vaiko gimimo. Moksliniai tyrimai palaiko atskiras grandis, tačiau bendras priežastinis kelias ir poveikis Lietuvos gimstamumui nėra įrodyti.</div>
 
+    <details style="margin-top:1.5rem"><summary><strong>Išskleisti hipotezinę grandinę ir įrodymų lentelę</strong></summary>
     <h3 style="margin-top:2rem">Hipotezinė grandinė, kurią verta tikrinti Lietuvoje</h3>
     <div class="three-col">
       <div class="card"><h3>1 · Lūkesčiai ir pasirinkimas</h3><p>Socialinis palyginimas, filtruoti gyvenimo vaizdai ir beveik neribotos pažinčių alternatyvos gali didinti idealizuoto partnerio lūkesčius bei pasirinkimo perkrovą.</p></div>
@@ -43,6 +44,7 @@
       <tr><td>Socialinių tinklų kuriami lūkesčiai Lietuvoje atitolina partnerystę ir mažina gimstamumą</td><td><strong>Autoriaus hipotezė</strong> · visas priežastinis kelias neįrodytas</td></tr>
       <tr><td>Pati lyčių lygybė mažina gimstamumą</td><td><strong>Nepalaikoma</strong> · OECD veikiau pabrėžia darbo ir šeimos suderinamumą bei teisingesnį priežiūros pasidalijimą</td></tr>
     </tbody></table>
+    </details>
 
     <div class="source-line" style="margin-top:1.2rem">Konteksto šaltiniai: <a href="https://www.oecd.org/en/publications/2024/06/society-at-a-glance-2024_08001b73/full-report/fertility-trends-across-the-oecd-underlying-drivers-and-the-role-for-policy_770679b8.html" target="_blank" rel="noopener">OECD · Fertility trends and underlying drivers</a> · <a href="https://link.springer.com/article/10.1007/s10680-023-09664-5" target="_blank" rel="noopener">European Journal of Population · Partnership status and fertility intentions</a> · <a href="https://www.sciencedirect.com/science/article/pii/S0747563221003009" target="_blank" rel="noopener">Computers in Human Behavior · Partner choice overload</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/39480282/" target="_blank" rel="noopener">JPSP · Ideal partner preferences</a> · <a href="https://doi.org/10.1177/08944393251366234" target="_blank" rel="noopener">Boeckxstaens ir kt. · Idealizuoti santykiai socialiniuose tinkluose (2025)</a></div>
   `;
