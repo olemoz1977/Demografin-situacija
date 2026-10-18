@@ -118,8 +118,7 @@
     textAt('#familyFormationHypotheses .finding-title',3,'Daug pasirinkimo nebūtinai palengvina partnerio pasirinkimą');
     htmlAt('#familyFormationHypotheses .finding-body',3,'<strong>Tyrimų palaikymas – vidutinis ir netiesioginis.</strong> Eksperimentai su pažinčių programėlėmis rodo, kad labai didelė potencialių partnerių pasiūla gali sukelti pasirinkimo perkrovą ir apsunkinti sprendimą. Tai pagrindžia vieną grandį, bet neįrodo poveikio Lietuvos gimstamumui.');
 
-    const author=qa('#familyFormationHypotheses .alert-blue').find(el=>el.textContent.includes('Autoriaus nuomonė'));
-    if(author) author.innerHTML='<strong>Autoriaus hipotezė.</strong> Socialiniai tinklai ir pažinčių platformos gali kelti „tinkamo partnerio“ lūkesčių kartelę: realus žmogus lyginamas ne tik su artima aplinka, bet ir su nuolatiniu atrinktų bei pagražintų alternatyvų srautu. Kartu gali mažėti gyvo bendravimo praktika – gebėjimas toleruoti netobulumą, spręsti konfliktą ir atpažinti realų suderinamumą. <strong>Grandinės socialiniai tinklai → partnerio pasirinkimas → vėlesnė stabili partnerystė → vėlesnis pirmas vaikas → mažiau aukštesnio eiliškumo gimimų Lietuvai priežastiniu tyrimu nepatvirtinome.</strong>';
+    // Autoriaus hipotezės tekstas ir tyrimo šaltinis tvarkomi family-hypothesis.js.
     const chainTitle=qa('#familyFormationHypotheses h3').find(el=>el.textContent.includes('Hipotezinė grandinė'));
     if(chainTitle) chainTitle.textContent='Grandinė, kurią būtų verta patikrinti Lietuvoje';
   }
