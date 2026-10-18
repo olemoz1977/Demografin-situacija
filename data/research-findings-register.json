@@ -10,7 +10,7 @@
     "do_not_publish_unvalidated_research_as_fact": true,
     "do_not_invent_county_rank": true,
     "external_paid_data_forbidden": true,
-    "scope": "Back inventory covers 8 current site modules and 39 registered findings; live display verified for 27 PUBLISHED_* IDs on desktop/mobile on 2026-10-10; earlier unattached historical chats not fully recovered.",
+    "scope": "2026-10-18: ankstesnės 39 išvados išsaugotos; + 3 tyrimų įrašai iš PR #11/#12 (viso 42). Nauji viešai rodomi faktai/hipotezės su atskirtais statusais; istorinio inventoriaus spragos lieka.",
     "inventory_document": "research/historical-research-inventory-2026-10-10.md",
     "direct_live_browser_qa_pending": false,
     "publish_scope_matrix_required": true,
@@ -646,7 +646,7 @@
       "area": "family",
       "title": "Idealizuoti romantinių santykių vaizdai ir partnerio lūkesčiai: tarptautinis tyrimas",
       "period": "2025 (pirmoji internetinė publikacija)",
-      "status": "VERIFIED_UNPUBLISHED",
+      "status": "PUBLISHED_CONTEXT",
       "statement": "Skerspjūvio apklausa (N=605 jaunų suaugusiųjų iš viso) nustatė tarp vienišų respondentų ryšį tarp idealizuoto romantinių santykių turinio matymo socialiniuose tinkluose ir aukštesnių partnerio lūkesčių. Ryšys neįrodo priežasties; nepatvirtina partnerystės vėlavimo ar poveikio Lietuvos gimstamumui.",
       "source_urls": [
         "https://doi.org/10.1177/08944393251366234",
@@ -658,11 +658,11 @@
       ],
       "publication": {
         "module": "family",
-        "file": null,
-        "marker": null
+        "file": "family-hypothesis.js",
+        "marker": "Boeckxstaens ir kt."
       },
-      "blocker": "Naujas mokslinis rezultatas įrašytas į nepublikuotą PR ir jo šaltinį; viešas pateikimas reikalauja atskiro leidimo, T0 aprėpties patikros bei suderinimo su kitu nepublikuotu PR #11.",
-      "next_action": "Patikrinti pirminę publikaciją, išlaikyti skerspjūvio ir priežastingumo skirtį; prieš merge pažymėti publikavimo vietą ir statusą; nepainioti su poveikiu Lietuvos TFR."
+      "blocker": null,
+      "next_action": "Mokslinė sąsaja rodoma Šeimos skyriuje; visos grandinės poveikis Lietuvos gimstamumui išlieka netirtas."
     },
     {
       "id": "HOUSING-VDA-RENT-2025-01",
@@ -1014,6 +1014,60 @@
       },
       "blocker": null,
       "next_action": "Saugoti jau paskelbtą išvadą ir nedubliuoti; prieš kitą leidimą tikrinti modulio aprėptį."
+    },
+    {
+      "id": "EU-AROPE-2025-01",
+      "area": "population",
+      "title": "2025 m. ES ir Lietuvos skurdo ar socialinės atskirties rizika (AROPE)",
+      "period": "2025",
+      "status": "PUBLISHED_FACT",
+      "statement": "Eurostat 2025 m. 92,7 mln. ES gyventojų, t. y. 20,9 %, patyrė skurdo ar socialinės atskirties riziką (AROPE). Lietuva: 26,3 % (p), arba 5,4 procentinio punkto daugiau nei ES. Rodiklis apima pajamų skurdą, didelį materialinį/socialinį nepriteklių ar labai mažą namų ūkio darbo intensyvumą. Tai nėra vien pajamų skurdo rodiklis; nepatikrintų NUTS 2 regioninių reikšmių neskelbti.",
+      "source_urls": [
+        "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/edn-20261016-1",
+        "https://ec.europa.eu/eurostat/databrowser/view/ilc_peps01n/default/table"
+      ],
+      "evidence_files": [
+        "research/social-risk-fertility-development-2026-10-18.md"
+      ],
+      "publication": {
+        "module": "population",
+        "secondary_modules": [
+          "fertility",
+          "family",
+          "methods"
+        ],
+        "file": "social-risk-context.js",
+        "marker": "2025 m. socialinės atskirties rizika Lietuvoje"
+      },
+      "blocker": null,
+      "next_action": "Rodoma Gyventojų struktūros skyriuje: 2025 m. oficialus ES rodiklis ir preliminarus LT rodiklis; regioninės reikšmės lieka nepublikuotos iki patikros."
+    },
+    {
+      "id": "FERTILITY-DEVELOPMENT-PARADOX-2026-01",
+      "area": "fertility",
+      "title": "Gimstamumo ir ekonominio išsivystymo ryšio skirtingų lygmenų hipotezė",
+      "period": "2022–2025 šaltiniai; Lietuvos 2024–2025 tyrimo kryptis",
+      "status": "PUBLISHED_CONTEXT",
+      "statement": "Pasauliniu šalių palyginimo lygmeniu aukštesnis ekonominis išsivystymas dažnai siejasi su mažesniu TFR (demografinis perėjimas), bet tarp išsivysčiusių valstybių užimtumas, šeimos ir darbo suderinamumas bei ekonominis saugumas gali būti teigiamai susiję su gimstamumu. OECD 2022 m. vidutinis TFR 1,5. Lietuvos AROPE, namų ūkių struktūros ir gimstamumo priežastinis ryšys NEĮRODYTAS.",
+      "source_urls": [
+        "https://www.oecd.org/en/publications/society-at-a-glance-2024_918d8db3-en/full-report/fertility-trends-across-the-oecd-underlying-drivers-and-the-role-for-policy_770679b8.html",
+        "https://population.un.org/wpp/"
+      ],
+      "evidence_files": [
+        "research/social-risk-fertility-development-2026-10-18.md"
+      ],
+      "publication": {
+        "module": "fertility",
+        "secondary_modules": [
+          "population",
+          "family",
+          "methods"
+        ],
+        "file": "social-risk-context.js",
+        "marker": "Gimstamumo ir ekonominio išsivystymo paradoksas"
+      },
+      "blocker": null,
+      "next_action": "Publikuotas metodinis dviejų skalių palyginimas kaip tyrimo klausimas; priežastinis Lietuvos paaiškinimas neišvestas, jam reikia papildomų tyrimų."
     }
   ]
 }
