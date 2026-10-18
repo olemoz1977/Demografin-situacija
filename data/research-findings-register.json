@@ -991,6 +991,60 @@
       },
       "blocker": null,
       "next_action": "Saugoti jau paskelbtą išvadą ir nedubliuoti; prieš kitą leidimą tikrinti modulio aprėptį."
+    },
+    {
+      "id": "EU-AROPE-2025-01",
+      "area": "population",
+      "title": "2025 m. ES ir Lietuvos skurdo ar socialinės atskirties rizika (AROPE)",
+      "period": "2025",
+      "status": "VERIFIED_UNPUBLISHED",
+      "statement": "Eurostat 2025 m. 92,7 mln. ES gyventojų, t. y. 20,9 %, patyrė skurdo ar socialinės atskirties riziką (AROPE). Lietuva: 26,3 % (p), arba 5,4 procentinio punkto daugiau nei ES. Rodiklis apima pajamų skurdą, didelį materialinį/socialinį nepriteklių ar labai mažą namų ūkio darbo intensyvumą. Tai nėra vien pajamų skurdo rodiklis; nepatikrintų NUTS 2 regioninių reikšmių neskelbti.",
+      "source_urls": [
+        "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/edn-20261016-1",
+        "https://ec.europa.eu/eurostat/databrowser/view/ilc_peps01n/default/table"
+      ],
+      "evidence_files": [
+        "research/social-risk-fertility-development-2026-10-18.md"
+      ],
+      "publication": {
+        "module": "population",
+        "secondary_modules": [
+          "fertility",
+          "family",
+          "methods"
+        ],
+        "file": null,
+        "marker": null
+      },
+      "blocker": "Kol kas tik užregistruotas oficialus tyrimo faktas; nėra atskiro publikavimo aprėpties ir gyvos svetainės patikros sprendimo.",
+      "next_action": "Patikrinti Lietuvos NUTS 2 regionines reikšmes tiesiogiai ilc_peps11n, palyginamumą ir parengti aiškią socialinės rizikos kortelę Gyventojų struktūros skyriuje tik po atskiro publikavimo leidimo."
+    },
+    {
+      "id": "FERTILITY-DEVELOPMENT-PARADOX-2026-01",
+      "area": "fertility",
+      "title": "Gimstamumo ir ekonominio išsivystymo ryšio skirtingų lygmenų hipotezė",
+      "period": "2022–2025 šaltiniai; Lietuvos 2024–2025 tyrimo kryptis",
+      "status": "RESEARCH_BLOCKED",
+      "statement": "Pasauliniu šalių palyginimo lygmeniu aukštesnis ekonominis išsivystymas dažnai siejasi su mažesniu TFR (demografinis perėjimas), bet tarp išsivysčiusių valstybių užimtumas, šeimos ir darbo suderinamumas bei ekonominis saugumas gali būti teigiamai susiję su gimstamumu. OECD 2022 m. vidutinis TFR 1,5. Lietuvos AROPE, namų ūkių struktūros ir gimstamumo priežastinis ryšys NEĮRODYTAS.",
+      "source_urls": [
+        "https://www.oecd.org/en/publications/society-at-a-glance-2024_918d8db3-en/full-report/fertility-trends-across-the-oecd-underlying-drivers-and-the-role-for-policy_770679b8.html",
+        "https://population.un.org/wpp/"
+      ],
+      "evidence_files": [
+        "research/social-risk-fertility-development-2026-10-18.md"
+      ],
+      "publication": {
+        "module": "fertility",
+        "secondary_modules": [
+          "population",
+          "family",
+          "methods"
+        ],
+        "file": null,
+        "marker": null
+      },
+      "blocker": "Tai nepatikrinta Lietuvos hipotezė; nėra vienodo metų, populiacijos ir teritorijos pjūvio, leidžiančio nustatyti poveikį gimstamumui, ar priežastinio įvertinimo.",
+      "next_action": "Atskirai palyginti globalų šalių ryšį, OECD šalių ryšius ir Lietuvos namų ūkių/regionų ryšį, nepriskirti išvadų iš šalių individualioms šeimoms, po to spręsti apie publikavimą kaip hipotezę."
     }
   ]
 }
