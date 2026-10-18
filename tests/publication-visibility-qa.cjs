@@ -14,7 +14,7 @@ const checks=[
     "OVERVIEW-TFR-NOWCAST-2025-01",
     "overview",
     "#apzvalga .lead",
-    "2025P TFR = 1,03"
+    "2025P 1,03"
   ],
   [
     "FERTILITY-TFR-EU-2024-01",
@@ -110,7 +110,7 @@ const checks=[
     "HOUSING-CITY-SALES-2025-01",
     "housing",
     "#housingMarketResearch",
-    "VDA: daugiabučių butų pardavimo kainos šešiuose miestuose"
+    "2025 m. visų šešių miestų butų pardavimo €/m² vidurkiai padidėjo"
   ],
   [
     "HOUSING-RENT-SALE-2025-12-01",
@@ -141,6 +141,12 @@ const checks=[
     "housing",
     "#housingAffordability",
     "1 039 pagrindinės paramos gavėjai"
+  ],
+  [
+    "HOUSING-DEMAND-SCHEMES-2026-01",
+    "housing",
+    "#housingAffordability",
+    "2026-05-19 platesnės"
   ],
   [
     "FUTURE-AGEING-REPORT-2040-01",
