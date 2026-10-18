@@ -82,7 +82,7 @@
     html('#infrastruktura .lead','Didmiesčių duomenys rodo paprastą paradoksą: mieste vienu metu gali būti ir laisvų vietų, ir laukiančių vaikų. Vadinasi, svarbu ne tik <strong>kiek vietų yra mieste</strong>, bet ir ar šeima turi tinkamą vietą ten, kur gyvena.');
     html('#infrastruktura .alert-amber','<strong>Šių skaičių tiesiogiai nelyginame.</strong> Vilnius, Kaunas ir Klaipėda „eiles“ bei „laisvas vietas“ skaičiuoja ne visai vienodai. Čia jie rodo tą patį principą: <strong>vietų gali būti, bet ne ten, kur jų labiausiai reikia</strong>.');
     const green=q('#infrastruktura .alert-green');
-    if(green) green.innerHTML='<strong>Yra ir geras signalas.</strong> 2026 m. Vilnius skelbė, kad 98 % prašymus teikusių vaikų jau buvo priimti į norimas mokyklas. Tai primena, kad infrastruktūros problema nėra vien kryptingai blogėjanti – ją galima mažinti plečiant tinklą ir geriau planuojant srautus.';
+    if(green) green.innerHTML='<strong>Atskiras mokyklų rodiklis.</strong> 2026 m. Vilnius skelbė, kad 98 % prašymus teikusių vaikų buvo priimti į norimas mokyklas. Tai nėra 2025 m. darželių eilių išsprendimo įrodymas: skiriasi paslauga ir laikotarpis.';
     const blue=qa('#infrastruktura .alert-blue').find(el=>el.textContent.startsWith('Išvada.'));
     if(blue) blue.innerHTML='<strong>Ką tai reiškia šeimai.</strong> Svarbu ne vien bendras darželių ar mokyklų vietų skaičius. Svarbu, ar tinkama vieta yra <strong>arti namų ir nereikalauja neproporcingos kasdienės logistikos</strong>. Finansinė parama ir patogi infrastruktūra nėra alternatyvos – jos viena kitą papildo.';
   }
@@ -125,7 +125,7 @@
 
   function freCopy(){
     const lead=q('#policyFreBlock .lead');
-    if(lead) lead.innerHTML='<strong>FRE (full-rate equivalent)</strong> leidžia skirtingas išmokų schemas paversti į vieną bendrą matą. Mintis paprasta: perskaičiuojame skirtingus procentus taip, tarsi visa parama būtų mokama po <strong>100 % ankstesnių pajamų</strong>, ir pažiūrime, kiek tokių „pilno tarifo mėnesių“ susidarytų.';
+    if(lead) lead.innerHTML='<strong>FRE (full-rate equivalent)</strong> susumuoja bazinių išmokų normų ir mėnesių sandaugas. Diagramoje rodomos tik palyginamos 2008–2011 m. istorinės schemos; dabartinės sistemos dalinė 9,0 mėn. bazė pateikiama atskirai ir <strong>nėra</strong> visos dabartinės schemos FRE.';
     // Nepakeisti FRE atskiro komponentų palyginimo į tariamai bendrą dosnumo reitingą.
   }
 
