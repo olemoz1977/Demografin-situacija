@@ -10,8 +10,8 @@
   const replaceAll=(s,from,to)=>qa(s).forEach(el=>{if(el.innerHTML.includes(from)) el.innerHTML=el.innerHTML.replace(from,to);});
 
   function staticCopy(){
-    text('#apzvalga h2','Naujausias vaizdas: ką jau žinome apie 2025 metus');
-    html('#apzvalga .lead','<strong>2025P TFR = 1,03</strong> – Eurostat EUROPOP2025 bazinio scenarijaus 2025 m. įvertis. Paprastai tariant, tai dabartinis Eurostat bazinis vertinimas, o ne galutinis stebėtas 2025 m. TFR. 2024 m. galutinis rodiklis – <strong>1,11</strong>.');
+    text('#apzvalga h2','2025 m. gyventojų balansas tapo neigiamas – migracijos prieaugio nepakako');
+    html('#apzvalga .lead','2025 m. išankstiniais VDA duomenimis, <strong>natūrali kaita −19 946</strong>, neto migracija <strong>+16 165</strong>, taigi jų balansas <strong>−3 781</strong>. Palyginti su 2024 m., balansą labiausiai pablogino migracijos prieaugio sumažėjimas. Stebėtas 2024 m. TFR – <strong>1,11</strong>; 2025P <strong>1,03</strong> yra tik Eurostat scenarijaus reikšmė, ne 2025 m. stebėjimas.');
 
     html('#tfr .alert-blue','<strong>Svarbu:</strong> Lietuvos TFR 2023→2024 m. sumažėjo, tačiau negalime teigti, kad kritimas buvo sparčiausias ES. Eurostat didžiausią metinį sumažėjimą fiksuoja Rumunijoje: 1,54 → 1,39.');
 
@@ -24,12 +24,12 @@
     replace('#uzsienieciai .alert-amber','Ilgalaikės prognozės riba.','Ko čia neprognozuojame.');
 
     text('#metodika h2','Kaip skaityti šį tyrimą');
-    text('#isvados h2','Ką duomenys leidžia pasakyti – ir kur prasideda nežinomybė');
+    text('#isvados h2','Penkios pagrindinės Lietuvos demografinės išvados');
   }
 
   function homeCopy(){
-    text('#researchHome h2','Mažas gimstamumas – tik dalis Lietuvos demografinio paveikslo.');
-    html('#researchHome .lead','<strong>Gimstamumas, natūrali kaita, migracija ir gyventojų struktūra</strong> pasakoja skirtingas to paties demografinio proceso dalis. Šeimos aplinka, būstas ir ateities scenarijai prideda kontekstą, tačiau savaime neįrodo priežasčių. Toliau – šešios analizės kryptys ir atskira Metodika.');
+    text('#researchHome h2','Žemas gimstamumas apima visą Lietuvą. 2025 m. migracija natūralaus mažėjimo nekompensavo.');
+    // Įžangą ir penkias išvadas apibrėžia vienas kanoninis research-nav.js blokas.
     replace('#researchHome .topic-card:nth-child(4) p','Išmokų istorija ir FRE, infrastruktūra, santuokos, skaitmeninis kontekstas ir partnerystės hipotezės.','Išmokų istorija ir FRE, infrastruktūra, santuokos, darbo–šeimos aplinka bei partnerystės ir skaitmeninio konteksto hipotezės.');
     replace('#researchHome .alert-blue','Kaip skaityti tyrimą.','Tyrimo taisyklė.');
     const intro=q('#researchTopicIntro .eyebrow');
@@ -72,7 +72,7 @@
 
     const finTitle=qa('#parama-istorija h3').find(el=>el.textContent.trim()==='Finansinė pusė');
     if(finTitle) finTitle.textContent='Kokia buvo finansinė pusė?';
-    textAt('#parama-istorija .finding-title',0,'2008 m. išmokų sistema pareikalavo daug lėšų');
+    textAt('#parama-istorija .finding-title',0,'Ligos ir motinystės draudimo išlaidų kontekstas – ne vien reformos kaina');
     textAt('#parama-istorija .finding-title',2,'Dosnumas ir tvarumas – du skirtingi klausimai');
     const green=qa('#parama-istorija .alert-green').find(el=>el.textContent.includes('Ką verta stebėti dabar'));
     if(green) green.innerHTML='<strong>Ką verta stebėti dabar.</strong> Jei norime rimtai įvertinti 2026 m. paketą, neužteks žiūrėti tik į bendrą TFR. Reikės sekti <strong>pirmų, antrų ir trečių gimimų dalis, motinos amžių pagal gimimo eiliškumą, gimimus pagal pajamas ar užimtumo statusą (jei tokie oficialūs duomenys bus prieinami) ir realią metinę paketo kainą</strong>.';
@@ -88,7 +88,7 @@
   }
 
   function futureCopy(){
-    text('#scenarijai h2','Darbuotojų mažės. Esminis klausimas – ar produktyvumas ir socialinės sistemos finansavimas spės prisitaikyti');
+    text('#scenarijai h2','EK baziniame scenarijuje 2022–2040 m. užimtųjų skaičius mažėja 18,6 % – prisitaikymas tampa svarbesnis');
     htmlAt('#scenarijai .alert-amber',0,'<strong>Čia atskiriame du sluoksnius.</strong> Pirmiausia – oficialios Europos Komisijos projekcijos. Po jų – mūsų scenarijai, paremti šiame tyrime parodytais duomenimis ir OECD aprašytais mechanizmais. <strong>Scenarijai nėra prognozuojamos tikimybės.</strong>');
     textAt('#scenarijai h3',0,'Ką oficialiai projektuoja Europos Komisija');
     const small=qa('#scenarijai .small').find(el=>el.textContent.includes('constant policy'));
@@ -126,7 +126,7 @@
   function freCopy(){
     const lead=q('#policyFreBlock .lead');
     if(lead) lead.innerHTML='<strong>FRE (full-rate equivalent)</strong> leidžia skirtingas išmokų schemas paversti į vieną bendrą matą. Mintis paprasta: perskaičiuojame skirtingus procentus taip, tarsi visa parama būtų mokama po <strong>100 % ankstesnių pajamų</strong>, ir pažiūrime, kiek tokių „pilno tarifo mėnesių“ susidarytų.';
-    replace('#policyFreBlock .chart-caption','Jis leidžia palyginti sistemas nenaudojant litų ar eurų, todėl valiutos pakeitimas ir infliacija čia netrukdo.','Taip galime palyginti skirtingų laikotarpių schemas neversdami litų į eurus ir nekoreguodami nominalių sumų dėl infliacijos.');
+    // Nepakeisti FRE atskiro komponentų palyginimo į tariamai bendrą dosnumo reitingą.
   }
 
   function polish(){
