@@ -10,7 +10,7 @@
     "do_not_publish_unvalidated_research_as_fact": true,
     "do_not_invent_county_rank": true,
     "external_paid_data_forbidden": true,
-    "scope": "2026-10-18: ankstesnės 39 išvados išsaugotos; + 3 tyrimų įrašai iš PR #11/#12 (viso 42). Nauji viešai rodomi faktai/hipotezės su atskirtais statusais; istorinio inventoriaus spragos lieka.",
+    "scope": "2026-10-18: ankstesnės 39 išvados išsaugotos; + 3 tyrimų įrašai iš PR #11/#12 (viso 42). Nauji viešai rodomi faktai/hipotezės su atskirtais statusais; istorinio inventoriaus spragos lieka. 2026-11-09: papildomai +2 nepublikuoti fertilumo tyrimo įrašai (viso 44), seni 42 išsaugoti.",
     "inventory_document": "research/historical-research-inventory-2026-10-10.md",
     "direct_live_browser_qa_pending": false,
     "publish_scope_matrix_required": true,
@@ -1069,6 +1069,54 @@
       },
       "blocker": null,
       "next_action": "Publikuotas metodinis dviejų skalių palyginimas kaip tyrimo klausimas; priežastinis Lietuvos paaiškinimas neišvestas, jam reikia papildomų tyrimų."
+    },
+    {
+      "id": "FERTILITY-BIRTH-ORDER-LT-2013-2022-01",
+      "area": "fertility",
+      "title": "VDA gyvų gimusių kūdikių gimimo eiliškumas, istorinė 2013–2022 m. serija",
+      "period": "2013–2022",
+      "status": "VERIFIED_UNPUBLISHED",
+      "statement": "2023 m. VDA leidimo 2013–2022 istorinės serijos skaičiai: 2013 m. iš 29 885 gimimų 4 447 buvo treti ar paskesni (14,88 %), 2022 m. iš 22 068 gimimų 3 581 (16,23 %). Dalies tarp visų gimimų padidėjimas (+1,35 proc. punkto) kartu su trečių ir paskesnių gimimų skaičiaus sumažėjimu (−866, −19,5 %) NĖRA 2→3 perėjimo tikimybės įvertis. Istorinės ir naujesnės VDA serijos turi būti suderintos prieš jungimą.",
+      "source_urls": [
+        "https://osp.stat.gov.lt/lietuvos-gyventojai-2023/gimstamumas",
+        "https://publikacijos.stat.gov.lt/lietuva-skaiciais-2025/lt/categories/3"
+      ],
+      "evidence_files": [
+        "data/lt-live-birth-order-vda-2013-2022.json",
+        "research/fertility-parity-resources-and-intentions-2026-11-09.md"
+      ],
+      "publication": {
+        "module": "fertility",
+        "file": null,
+        "marker": null
+      },
+      "blocker": "Faktinė istorinių gimimų struktūra jau patikrinta, bet nėra pajamų/ketinimų/ankstesnės pariteto populiacijos vardiklio; 2020 m. skirtingų VDA leidimų gimimų skaičiai skiriasi, todėl negalima tvirtinti viso palyginamo iki 2024 m. laikotarpio ir išvadų apie elgseną.",
+      "next_action": "Patikrinti Eurostat demo_fordagec/demo_find Lietuvos 2023–2024 reikšmes ir vintages; sukurti suderintą oficialią seriją; šį rezultato aprašą iki tol laikyti nepublikuotu."
+    },
+    {
+      "id": "FERTILITY-RESOURCE-PARITY-HYPOTHESIS-2026-01",
+      "area": "fertility",
+      "title": "Antras ir trečias vaikas pasiturinčiose šeimose: išteklių, pasirinkimo ir neįgyvendintų ketinimų hipotezė",
+      "period": "2026 m. tyrimo pradžia; 2013–2025 JAV palyginimas ir 2026 LT kontekstas",
+      "status": "MODELLED_UNPUBLISHED",
+      "statement": "Hipotezė H1: didėjant šeimos ekonominiam saugumui, finansinių kliūčių reikšmė sprendimui turėti antrą ar trečią vaiką gali mažėti, bet perėjimas prie antro/trečio nebūtinai didėja proporcingai, nes svarbūs norai, laiko kaina, partnerystė, sveikata ir amžius. JAV SCF sujungtos apklausos, VDA istorinis gimimų eiliškumas, KIC 2026 ketinimų apklausa ir OECD mokslinė sintezė šio Lietuvos ryšio nepatvirtina.",
+      "source_urls": [
+        "https://newsletter.mikekonczal.com/p/what-distinguishes-the-1-from-the",
+        "https://krizesiveikimas.lt/wp-content/uploads/2026/05/HUBEL_KIC_tyrimas-gimstamumas_2026.pdf",
+        "https://vda.lrv.lt/lt/nuorodos/gimstamumo-ir-seimos-tyrimas-ggp-lt/",
+        "https://www.oecd.org/en/publications/society-at-a-glance-2024_918d8db3-en/full-report/fertility-trends-across-the-oecd-underlying-drivers-and-the-role-for-policy_770679b8.html"
+      ],
+      "evidence_files": [
+        "research/fertility-parity-resources-and-intentions-2026-11-09.md",
+        "data/lt-live-birth-order-vda-2013-2022.json"
+      ],
+      "publication": {
+        "module": "fertility",
+        "file": null,
+        "marker": null
+      },
+      "blocker": "Nėra prieinamo suderinto Lietuvos mikrolygmens pajamos/turtas × jau turimų vaikų skaičius × amžius/partnerystė × ketinimai × perėjimo prie kito vaiko rezultatas. JAV SCF imtys nėra Lietuvos gimimų priežastingumo įrodymas; KIC pogrupiuose nepakanka pariteto ir pajamų skaidymo.",
+      "next_action": "Pirma atskirti 1→2 ir 2→3 perėjimus, norimą ir realų vaikų skaičių, naudoti patikrintas GGP LT ar prieinamas ankstesnes GGS imtis (laikantis duomenų prieigos sąlygų) ir patikrinti, ar ryšys netiesinis. Viešai neskelbti kaip Lietuvos išvados."
     }
   ]
 }
