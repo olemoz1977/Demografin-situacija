@@ -12,9 +12,9 @@ class Publication20261018Test(unittest.TestCase):
         cls.register = json.loads((ROOT / "data/research-findings-register.json").read_text(encoding="utf-8"))
         cls.findings = {row["id"]: row for row in cls.register["findings"]}
 
-    def test_42_unique_findings_and_earlier_housing_household_findings_survive(self):
-        self.assertEqual(42, len(self.register["findings"]))
-        self.assertEqual(42, len(self.findings))
+    def test_historical_42_findings_and_earlier_housing_household_findings_survive(self):
+        self.assertGreaterEqual(len(self.register["findings"]), 42)
+        self.assertEqual(len(self.register["findings"]), len(self.findings))
         for ident in (
             "EU-HH-2025-01",
             "HOUSING-CITY-SALES-2025-01",

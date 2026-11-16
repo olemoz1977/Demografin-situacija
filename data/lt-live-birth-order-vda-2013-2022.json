@@ -1,0 +1,140 @@
+{
+  "research_id": "FERTILITY-BIRTH-ORDER-LT-2013-2022-01",
+  "source_org": "Valstybės duomenų agentūra (VDA)",
+  "source_url": "https://osp.stat.gov.lt/lietuvos-gyventojai-2023/gimstamumas",
+  "source_edition": "Lietuvos gyventojai (2023 m. leidimas); archival snapshot, 2013–2022",
+  "extracted_on": "2026-11-09",
+  "status": "OFFICIAL_HISTORICAL_SNAPSHOT_UNPUBLISHED",
+  "units": "live births by registered birth order; annual counts",
+  "columns": [
+    "year",
+    "total_births",
+    "order_1",
+    "order_2",
+    "order_3",
+    "order_4",
+    "order_5",
+    "order_6_plus",
+    "unknown_order"
+  ],
+  "birth_order_guard": "2023 edition table also breaks out order_6 (within order_6_plus). Do NOT add the displayed sixth-order subtotal to the sixth-and-higher total; this extracted series uses only order_6_plus.",
+  "quality_guards": [
+    "Annual births by birth order are NOT parity-specific transition probabilities and do NOT identify mothers with one/two children at risk.",
+    "No household income, assets, desired number of children or fertility intentions.",
+    "Do not combine 2023-edition 2013–2022 counts mechanically with a newer VDA 2025-edition series before revision and universe reconciliation (2020 total differs).",
+    "Do not interpret higher third-plus birth share as increased third-birth propensity.",
+    "Third-and-higher is order_3 + order_4 + order_5 + order_6_plus; unknown excluded from numerator and retained in total denominator."
+  ],
+  "rows": [
+    {
+      "year": 2013,
+      "total_births": 29885,
+      "order_1": 14411,
+      "order_2": 11014,
+      "order_3": 3132,
+      "order_4": 738,
+      "order_5": 271,
+      "order_6_plus": 306,
+      "unknown_order": 13
+    },
+    {
+      "year": 2014,
+      "total_births": 30369,
+      "order_1": 14495,
+      "order_2": 11233,
+      "order_3": 3234,
+      "order_4": 780,
+      "order_5": 327,
+      "order_6_plus": 292,
+      "unknown_order": 8
+    },
+    {
+      "year": 2015,
+      "total_births": 31475,
+      "order_1": 14928,
+      "order_2": 11847,
+      "order_3": 3341,
+      "order_4": 797,
+      "order_5": 288,
+      "order_6_plus": 263,
+      "unknown_order": 11
+    },
+    {
+      "year": 2016,
+      "total_births": 30623,
+      "order_1": 14386,
+      "order_2": 11548,
+      "order_3": 3334,
+      "order_4": 791,
+      "order_5": 268,
+      "order_6_plus": 254,
+      "unknown_order": 42
+    },
+    {
+      "year": 2017,
+      "total_births": 28696,
+      "order_1": 13286,
+      "order_2": 10959,
+      "order_3": 3191,
+      "order_4": 736,
+      "order_5": 240,
+      "order_6_plus": 248,
+      "unknown_order": 36
+    },
+    {
+      "year": 2018,
+      "total_births": 28149,
+      "order_1": 12479,
+      "order_2": 11262,
+      "order_3": 3256,
+      "order_4": 696,
+      "order_5": 239,
+      "order_6_plus": 193,
+      "unknown_order": 24
+    },
+    {
+      "year": 2019,
+      "total_births": 27393,
+      "order_1": 12501,
+      "order_2": 10646,
+      "order_3": 3149,
+      "order_4": 669,
+      "order_5": 221,
+      "order_6_plus": 168,
+      "unknown_order": 39
+    },
+    {
+      "year": 2020,
+      "total_births": 25144,
+      "order_1": 11139,
+      "order_2": 9841,
+      "order_3": 3096,
+      "order_4": 672,
+      "order_5": 216,
+      "order_6_plus": 152,
+      "unknown_order": 28
+    },
+    {
+      "year": 2021,
+      "total_births": 23330,
+      "order_1": 10202,
+      "order_2": 9253,
+      "order_3": 2909,
+      "order_4": 631,
+      "order_5": 183,
+      "order_6_plus": 151,
+      "unknown_order": 1
+    },
+    {
+      "year": 2022,
+      "total_births": 22068,
+      "order_1": 10018,
+      "order_2": 8469,
+      "order_3": 2679,
+      "order_4": 583,
+      "order_5": 187,
+      "order_6_plus": 132,
+      "unknown_order": 0
+    }
+  ]
+}

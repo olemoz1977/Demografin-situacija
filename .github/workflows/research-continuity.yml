@@ -30,3 +30,6 @@ jobs:
           fi
       - name: Verify critical Eurostat and housing regression guards
         run: python -m unittest -v tests/test_research_registry.py
+
+      - name: Verify parity data, unpublished hypothesis and historical 2026-10 publication guards
+        run: python -m unittest -v tests/test_fertility_parity_research_20261109.py tests/test_publication_20261018.py

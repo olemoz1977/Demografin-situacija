@@ -141,7 +141,7 @@ class ResearchContinuityTest(unittest.TestCase):
         self.assertIn(item["publication"]["marker"], content)
         self.assertIn("beveik <strong>800 prašymų</strong>", content)
         self.assertIn("NE 2025 m. 515", content)
-        self.assertEqual(42, len(self.findings))
+        self.assertGreaterEqual(len(self.findings), 42)
 
     def test_qa_is_not_equivalent_to_historical_completeness(self):
         governance = self.register["governance"]
