@@ -4,6 +4,8 @@ const {chromium}=require("playwright");
 const register=JSON.parse(fs.readFileSync("data/research-findings-register.json","utf8"));
 const published=register.findings.filter(f=>f.status.startsWith("PUBLISHED_"));
 const checks=[
+  ["EU-HH-LFS-2025-01", "population", "#populationHouseholdLfsComparison", "62,5 %"],
+  ["FAMILY-HOUSEHOLDS-LFS-2025-01", "family", "#familyHouseholdsChildren2025", "7,0 % Lietuvos namų ūkių su vaikais"],
   [
     "OVERVIEW-LATEST-2025-01",
     "overview",
@@ -202,7 +204,7 @@ for(const f of published)
     throw Error(f.id+": registered publication.module differs from browser route");
 const normalize=s=>s.replace(/[\u00a0\u202f\s]+/g," ").trim();
 (async()=>{
- const browser=await chromium.launch({headless:true});
+ const browser=await chromium.launch({headless:true, executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined});
  try{
   for(const [screen,viewport] of [["desktop",{width:1365,height:800}],["mobile",{width:390,height:844}],["narrowMobile",{width:320,height:720}]]){
    const page=await browser.newPage({viewport});

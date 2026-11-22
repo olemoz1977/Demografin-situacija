@@ -1,0 +1,365 @@
+{
+  "dataset": "lfst_hhnhtych",
+  "survey": "EU-LFS",
+  "source_file": "data/sources/eurostat-lfst-hhnhtych-20261122.json",
+  "updated": "2026-09-10T23:00:00+0200",
+  "unit": "THS_HH",
+  "year": 2025,
+  "child_definition": "Resident household member aged under 18; not the EU-SILC dependent-child definition.",
+  "formula": "100 * numerator / denominator; percentages rounded to one decimal only for presentation.",
+  "warning": "Cross-sectional household composition, not completed fertility, parity progression or causal evidence.",
+  "countries": {
+    "LT": {
+      "single_adult_without_children": {
+        "numerator": {
+          "selection": {
+            "freq": "A",
+            "agechild": "TOTAL",
+            "n_child": "TOTAL",
+            "phhcomp": "A1_NCH",
+            "unit": "THS_HH",
+            "geo": "LT",
+            "time": "2025"
+          },
+          "value": 1100.5,
+          "status": ""
+        },
+        "denominator": {
+          "selection": {
+            "freq": "A",
+            "agechild": "TOTAL",
+            "n_child": "TOTAL",
+            "phhcomp": "TOTAL",
+            "unit": "THS_HH",
+            "geo": "LT",
+            "time": "2025"
+          },
+          "value": 1760.2,
+          "status": ""
+        },
+        "percentage": 62.52130439722759
+      },
+      "households_with_children": {
+        "numerator": {
+          "selection": {
+            "freq": "A",
+            "agechild": "TOTAL",
+            "n_child": "TOTAL",
+            "phhcomp": "DCH",
+            "unit": "THS_HH",
+            "geo": "LT",
+            "time": "2025"
+          },
+          "value": 322.8,
+          "status": ""
+        },
+        "denominator": {
+          "selection": {
+            "freq": "A",
+            "agechild": "TOTAL",
+            "n_child": "TOTAL",
+            "phhcomp": "TOTAL",
+            "unit": "THS_HH",
+            "geo": "LT",
+            "time": "2025"
+          },
+          "value": 1760.2,
+          "status": ""
+        },
+        "percentage": 18.338825133507555
+      },
+      "one_child_among_households_with_children": {
+        "numerator": {
+          "selection": {
+            "freq": "A",
+            "agechild": "TOTAL",
+            "n_child": "1",
+            "phhcomp": "DCH",
+            "unit": "THS_HH",
+            "geo": "LT",
+            "time": "2025"
+          },
+          "value": 182.4,
+          "status": ""
+        },
+        "denominator": {
+          "selection": {
+            "freq": "A",
+            "agechild": "TOTAL",
+            "n_child": "TOTAL",
+            "phhcomp": "DCH",
+            "unit": "THS_HH",
+            "geo": "LT",
+            "time": "2025"
+          },
+          "value": 322.8,
+          "status": ""
+        },
+        "percentage": 56.50557620817844
+      },
+      "two_children_among_households_with_children": {
+        "numerator": {
+          "selection": {
+            "freq": "A",
+            "agechild": "TOTAL",
+            "n_child": "2",
+            "phhcomp": "DCH",
+            "unit": "THS_HH",
+            "geo": "LT",
+            "time": "2025"
+          },
+          "value": 117.8,
+          "status": ""
+        },
+        "denominator": {
+          "selection": {
+            "freq": "A",
+            "agechild": "TOTAL",
+            "n_child": "TOTAL",
+            "phhcomp": "DCH",
+            "unit": "THS_HH",
+            "geo": "LT",
+            "time": "2025"
+          },
+          "value": 322.8,
+          "status": ""
+        },
+        "percentage": 36.493184634448575
+      },
+      "three_plus_children_among_households_with_children": {
+        "numerator": {
+          "selection": {
+            "freq": "A",
+            "agechild": "TOTAL",
+            "n_child": "GE3",
+            "phhcomp": "DCH",
+            "unit": "THS_HH",
+            "geo": "LT",
+            "time": "2025"
+          },
+          "value": 22.7,
+          "status": ""
+        },
+        "denominator": {
+          "selection": {
+            "freq": "A",
+            "agechild": "TOTAL",
+            "n_child": "TOTAL",
+            "phhcomp": "DCH",
+            "unit": "THS_HH",
+            "geo": "LT",
+            "time": "2025"
+          },
+          "value": 322.8,
+          "status": ""
+        },
+        "percentage": 7.032218091697645
+      },
+      "single_adult_among_households_with_children": {
+        "numerator": {
+          "selection": {
+            "freq": "A",
+            "agechild": "TOTAL",
+            "n_child": "TOTAL",
+            "phhcomp": "A1_CH",
+            "unit": "THS_HH",
+            "geo": "LT",
+            "time": "2025"
+          },
+          "value": 105.7,
+          "status": ""
+        },
+        "denominator": {
+          "selection": {
+            "freq": "A",
+            "agechild": "TOTAL",
+            "n_child": "TOTAL",
+            "phhcomp": "DCH",
+            "unit": "THS_HH",
+            "geo": "LT",
+            "time": "2025"
+          },
+          "value": 322.8,
+          "status": ""
+        },
+        "percentage": 32.74473358116481
+      }
+    },
+    "EU27_2020": {
+      "single_adult_without_children": {
+        "numerator": {
+          "selection": {
+            "freq": "A",
+            "agechild": "TOTAL",
+            "n_child": "TOTAL",
+            "phhcomp": "A1_NCH",
+            "unit": "THS_HH",
+            "geo": "EU27_2020",
+            "time": "2025"
+          },
+          "value": 76157.4,
+          "status": ""
+        },
+        "denominator": {
+          "selection": {
+            "freq": "A",
+            "agechild": "TOTAL",
+            "n_child": "TOTAL",
+            "phhcomp": "TOTAL",
+            "unit": "THS_HH",
+            "geo": "EU27_2020",
+            "time": "2025"
+          },
+          "value": 203172.2,
+          "status": ""
+        },
+        "percentage": 37.48416367987352
+      },
+      "households_with_children": {
+        "numerator": {
+          "selection": {
+            "freq": "A",
+            "agechild": "TOTAL",
+            "n_child": "TOTAL",
+            "phhcomp": "DCH",
+            "unit": "THS_HH",
+            "geo": "EU27_2020",
+            "time": "2025"
+          },
+          "value": 47416.6,
+          "status": ""
+        },
+        "denominator": {
+          "selection": {
+            "freq": "A",
+            "agechild": "TOTAL",
+            "n_child": "TOTAL",
+            "phhcomp": "TOTAL",
+            "unit": "THS_HH",
+            "geo": "EU27_2020",
+            "time": "2025"
+          },
+          "value": 203172.2,
+          "status": ""
+        },
+        "percentage": 23.33813385886455
+      },
+      "one_child_among_households_with_children": {
+        "numerator": {
+          "selection": {
+            "freq": "A",
+            "agechild": "TOTAL",
+            "n_child": "1",
+            "phhcomp": "DCH",
+            "unit": "THS_HH",
+            "geo": "EU27_2020",
+            "time": "2025"
+          },
+          "value": 23749.8,
+          "status": ""
+        },
+        "denominator": {
+          "selection": {
+            "freq": "A",
+            "agechild": "TOTAL",
+            "n_child": "TOTAL",
+            "phhcomp": "DCH",
+            "unit": "THS_HH",
+            "geo": "EU27_2020",
+            "time": "2025"
+          },
+          "value": 47416.6,
+          "status": ""
+        },
+        "percentage": 50.087522091419466
+      },
+      "two_children_among_households_with_children": {
+        "numerator": {
+          "selection": {
+            "freq": "A",
+            "agechild": "TOTAL",
+            "n_child": "2",
+            "phhcomp": "DCH",
+            "unit": "THS_HH",
+            "geo": "EU27_2020",
+            "time": "2025"
+          },
+          "value": 17860.2,
+          "status": ""
+        },
+        "denominator": {
+          "selection": {
+            "freq": "A",
+            "agechild": "TOTAL",
+            "n_child": "TOTAL",
+            "phhcomp": "DCH",
+            "unit": "THS_HH",
+            "geo": "EU27_2020",
+            "time": "2025"
+          },
+          "value": 47416.6,
+          "status": ""
+        },
+        "percentage": 37.666555594454266
+      },
+      "three_plus_children_among_households_with_children": {
+        "numerator": {
+          "selection": {
+            "freq": "A",
+            "agechild": "TOTAL",
+            "n_child": "GE3",
+            "phhcomp": "DCH",
+            "unit": "THS_HH",
+            "geo": "EU27_2020",
+            "time": "2025"
+          },
+          "value": 5806.6,
+          "status": ""
+        },
+        "denominator": {
+          "selection": {
+            "freq": "A",
+            "agechild": "TOTAL",
+            "n_child": "TOTAL",
+            "phhcomp": "DCH",
+            "unit": "THS_HH",
+            "geo": "EU27_2020",
+            "time": "2025"
+          },
+          "value": 47416.6,
+          "status": ""
+        },
+        "percentage": 12.245922314126277
+      },
+      "single_adult_among_households_with_children": {
+        "numerator": {
+          "selection": {
+            "freq": "A",
+            "agechild": "TOTAL",
+            "n_child": "TOTAL",
+            "phhcomp": "A1_CH",
+            "unit": "THS_HH",
+            "geo": "EU27_2020",
+            "time": "2025"
+          },
+          "value": 6133.3,
+          "status": ""
+        },
+        "denominator": {
+          "selection": {
+            "freq": "A",
+            "agechild": "TOTAL",
+            "n_child": "TOTAL",
+            "phhcomp": "DCH",
+            "unit": "THS_HH",
+            "geo": "EU27_2020",
+            "time": "2025"
+          },
+          "value": 47416.6,
+          "status": ""
+        },
+        "percentage": 12.934921525372971
+      }
+    }
+  }
+}

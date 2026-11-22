@@ -10,6 +10,19 @@
   const block=document.createElement('div');
   block.id='familyFormationHypotheses';
   block.innerHTML=`
+
+    <div id="familyHouseholdsChildren2025" style="margin-top:2rem">
+      <h3>Trys ir daugiau vaikų: Lietuvoje tokių namų ūkių dalis mažesnė nei ES</h3>
+      <p>2025 m. <strong>7,0 % Lietuvos namų ūkių su vaikais</strong> gyveno trys ar daugiau vaikų iki 18 metų. ES dalis – <strong>12,2 %</strong>. Lietuvoje dažnesni namų ūkiai su vienu vaiku.</p>
+      <div class="table-scroll"><table><thead><tr><th>Namų ūkių su vaikais sudėtis · 2025 m.</th><th>Lietuva</th><th>ES</th></tr></thead><tbody>
+        <tr><td>Vienas vaikas</td><td>56,5 %</td><td>50,1 %</td></tr>
+        <tr><td>Du vaikai</td><td>36,5 %</td><td>37,7 %</td></tr>
+        <tr><td>Trys ir daugiau vaikų</td><td>7,0 %</td><td>12,2 %</td></tr>
+      </tbody></table></div>
+      <p>Dar vienas skirtumas: <strong>32,7 %</strong> Lietuvos namų ūkių su vaikais sudarė vienas suaugęs su vaikais; ES – <strong>12,9 %</strong>. Šio rodiklio vardiklis yra tik namų ūkiai su vaikais.</p>
+      <p class="small">Skaičiuojami kartu gyvenantys vaikai iki 18 metų. Lentelė neparodo, kiek vaikų žmonės susilaukė per gyvenimą ar kiek šeimų atsisakė antro ar trečio vaiko. Vieno suaugusiojo namų ūkis taip pat neatskleidžia kito tėvo dalyvavimo auginant vaiką.</p>
+      <p class="source-line">Šaltinis: <a href="https://ec.europa.eu/eurostat/databrowser/view/lfst_hhnhtych/default/table" target="_blank" rel="noopener">Eurostat · lfst_hhnhtych · EU-LFS</a>. Dalys apskaičiuotos iš 2026-11-22 atsisiųstų namų ūkių skaičių; dėl apvalinimo suma gali skirtis nuo 100 %. <a href="?view=population#populationHouseholdLfsComparison">Visų namų ūkių struktūra ir dviejų tyrimų palyginimas →</a></p>
+    </div>
     <h3 style="margin-top:2.4rem">Šeimos formavimosi hipotezės</h3>
     <div class="alert alert-amber"><strong>Riba tarp duomenų ir interpretacijos.</strong> Žemiau pateikti mechanizmai nėra Lietuvos TFR priežastinio modelio įrodymas. Kai kurie ryšiai gerai pagrįsti tarptautiniais tyrimais, kiti – tikėtinos hipotezės, o socialinių tinklų poveikio grandinė iki gimstamumo aiškiai pažymėta kaip autoriaus nuomonė.</div>
 
