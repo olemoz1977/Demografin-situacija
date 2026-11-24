@@ -230,6 +230,21 @@ const normalize=s=>s.replace(/[\u00a0\u202f\s]+/g," ").trim();
        failures.push({id,selector,expected,detail});
      }
     }
+    if(view==='population'||view==='family'){
+     const selector=view==='population'?'#populationHouseholdLfsComparison':'#familyHouseholdsChildren2025';
+     const block=page.locator(selector);
+     const cells=await block.locator('tbody tr').allInnerTexts();
+     const expected=view==='population'?[['55,7 %','35,7 %'],['62,5 %','37,5 %']]:[['56,5 %','50,1 %'],['36,5 %','37,7 %'],['7,0 %','12,2 %']];
+     if(cells.length!==expected.length||cells.some((row,i)=>expected[i].some(v=>!row.includes(v))))throw Error(screen+' '+view+' table mismatch '+JSON.stringify(cells));
+     const tableBounds=await block.locator('table').evaluate(el=>({left:el.getBoundingClientRect().left,right:el.getBoundingClientRect().right,width:innerWidth}));
+     if(tableBounds.left<0||tableBounds.right>tableBounds.width+2)throw Error(screen+' '+view+' clipped table '+JSON.stringify(tableBounds));
+     const link=block.locator('a[href^="?view="]');
+     const href=await link.getAttribute('href');
+     await link.click();
+     const target=href.slice(href.indexOf('#'));
+     await page.locator(target).waitFor({state:'visible'});
+     await page.goto('http://127.0.0.1:8765/?view='+view,{waitUntil:'networkidle'});
+    }
     const geometry=await page.evaluate(()=>({
       overflow:Math.max(0,document.documentElement.scrollWidth-innerWidth),
       visibleSections:[...document.querySelectorAll("body > section")]
