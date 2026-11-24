@@ -71,6 +71,17 @@ if(ageSection){
       <div class="alert alert-amber"><strong>Kaip nesuklysti skaitant.</strong> Tai <strong>namų ūkių, ne Lietuvos gyventojų procentas</strong>. Rodiklis neparodo vienatvės, santuokinės padėties, jauno amžiaus ar būsto nuosavybės. 2024 ir 2025 m. Lietuvos reikšmės pažymėtos <strong>(p) – preliminarios</strong>; 5,2 procentinio punkto skirtumas pats savaime neįrodo struktūrinio pokyčio priežasties ar ryšio su gimstamumu.</div>
       <div class="source-line">Šaltiniai: <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_lvph02/default/table" target="_blank" rel="noopener">Eurostat · ilc_lvph02</a> · <a href="https://ec.europa.eu/eurostat/documents/15216629/24279737/KS-01-26-036-EN-N.pdf" target="_blank" rel="noopener">Eurostat 2026 m. leidinys, 35 psl.</a>. Namų ūkio sudėtis nėra tapati būsto nuosavybei ar teisės aktuose apibrėžtų jaunų šeimų skaičiui.</div>
     </div>
+
+      <div id="populationHouseholdLfsComparison" style="margin-top:1.5rem">
+        <h3>Du Eurostato tyrimai patvirtina Lietuvos išskirtinumą</h3>
+        <p>Darbo jėgos tyrimo (EU-LFS) 2025 m. duomenimis, <strong>62,5 %</strong> Lietuvos namų ūkių sudarė vienas suaugęs asmuo be vaikų iki 18 metų; ES – <strong>37,5 %</strong>. Tai didžiausia dalis ES. Abu tyrimai rodo tą pačią Lietuvos padėtį, tačiau jų procentai skiriasi.</p>
+        <div class="table-scroll"><table><thead><tr><th>2025 m. rodiklis</th><th>Lietuva</th><th>ES</th></tr></thead><tbody>
+          <tr><td>EU-SILC · vienas suaugęs be išlaikomų vaikų</td><td>55,7 % (p)</td><td>35,7 %</td></tr>
+          <tr><td>EU-LFS · vienas suaugęs be vaikų iki 18 metų</td><td>62,5 %</td><td>37,5 %</td></tr>
+        </tbody></table></div>
+        <p class="small">Tai skirtingų apklausų ir vaikų apibrėžčių įverčiai. 62,5 % nėra 55,7 % patikslinimas ar pokytis per metus. Abu procentai skaičiuojami nuo namų ūkių, o ne nuo gyventojų.</p>
+        <p class="source-line">Šaltinis: <a href="https://ec.europa.eu/eurostat/databrowser/view/lfst_hhnhtych/default/table" target="_blank" rel="noopener">Eurostat · lfst_hhnhtych · EU-LFS</a>; 2026-11-22 atsisiųsto rinkinio skaičiavimas: 1 100,5 / 1 760,2 tūkst. namų ūkių. <a href="?view=family#familyHouseholdsChildren2025">Namų ūkių su vaikais sudėtis →</a></p>
+      </div>
     <div class="source-line">Šaltinis: <a href="https://publikacijos.stat.gov.lt/lietuva-skaiciais-2025/lt/categories/3" target="_blank" rel="noopener">Valstybės duomenų agentūra · Lietuva skaičiais 2025 · Nuolatiniai gyventojai</a></div>
   </div>`;
   ageSection.insertAdjacentElement('afterend',sexSection);

@@ -18,7 +18,12 @@
     "last_live_browser_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/38026170701",
     "housing_young_family_definition": "Lietuvos Respublikos finansinės paskatos pirmaji busta isigyjancioms jaunoms seimoms kontekstas (SADM): abu sutuoktiniai ar registruoti partneriai kiekvienas iki 36 m.; vienas iki 36 m. vaiką(-us) auginantis tėvas, motina arba globėjas (rūpintojas). Vertinant ankstesnių metų schemas atskirti jų metų teisines redakcijas.",
     "housing_young_family_source": "https://socmin.lrv.lt/lt/veiklos-sritys/seima-ir-vaikai/finansine-paskata-pirmaji-busta-isigyjancioms-jaunoms-seimoms/",
-    "forbid_legacy_under30_pair_model_in_public_housing": true
+    "forbid_legacy_under30_pair_model_in_public_housing": true,
+    "households_20261122": {
+      "previous_findings_preserved": 42,
+      "added_findings": 2,
+      "live_deployment_pending": true
+    }
   },
   "module_inventory": [
     {
@@ -1069,6 +1074,60 @@
       },
       "blocker": null,
       "next_action": "Publikuotas metodinis dviejų skalių palyginimas kaip tyrimo klausimas; priežastinis Lietuvos paaiškinimas neišvestas, jam reikia papildomų tyrimų."
+    },
+    {
+      "id": "EU-HH-LFS-2025-01",
+      "area": "population",
+      "title": "EU-LFS ir EU-SILC Lietuvos namų ūkių palyginimas",
+      "period": "2025",
+      "status": "PUBLISHED_CONTEXT",
+      "statement": "2025 EU-LFS: vienas suaugęs be vaikų iki 18 m. LT 62,5 %, ES 37,5 %. Tai atskiras tyrimas nuo EU-HH-2025-01 (EU-SILC LT 55,7 % (p), ES 35,7 %); ne to paties rodiklio revizija ar laiko pokytis.",
+      "source_urls": [
+        "https://ec.europa.eu/eurostat/databrowser/view/lfst_hhnhtych/default/table",
+        "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20261120-2"
+      ],
+      "evidence_files": [
+        "data/households-lfs-2025.json",
+        "research/households-eurostat-comparison-2026-11-22.md"
+      ],
+      "publication": {
+        "module": "population",
+        "file": "app-base.js",
+        "marker": "id=\"populationHouseholdLfsComparison\""
+      },
+      "blocker": null,
+      "next_action": "Parengta šakoje; prieš publikavimą patikrinti visų paskelbtų išvadų matomumą telefone ir kompiuteryje.",
+      "publication_audit": {
+        "source_in_main": false,
+        "github_pages_deployed": false
+      }
+    },
+    {
+      "id": "FAMILY-HOUSEHOLDS-LFS-2025-01",
+      "area": "family",
+      "title": "Namų ūkių su vaikais sudėtis pagal EU-LFS",
+      "period": "2025",
+      "status": "PUBLISHED_CONTEXT",
+      "statement": "2025 m. tarp namų ūkių su vaikais iki 18 m.: vienas vaikas LT 56,5 %, ES 50,1 %; du LT 36,5 %, ES 37,7 %; trys ir daugiau LT 7,0 %, ES 12,2 %. Vienas suaugęs su vaikais: LT 32,7 %, ES 12,9 %. Tai ne baigtinio vaikų skaičiaus ar perėjimo prie kito gimimo rodikliai.",
+      "source_urls": [
+        "https://ec.europa.eu/eurostat/databrowser/view/lfst_hhnhtych/default/table",
+        "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20261120-2"
+      ],
+      "evidence_files": [
+        "data/households-lfs-2025.json",
+        "research/households-eurostat-comparison-2026-11-22.md"
+      ],
+      "publication": {
+        "module": "family",
+        "file": "family-hypothesis.js",
+        "marker": "id=\"familyHouseholdsChildren2025\""
+      },
+      "blocker": null,
+      "next_action": "Parengta šakoje; prieš publikavimą patikrinti visų paskelbtų išvadų matomumą telefone ir kompiuteryje.",
+      "publication_audit": {
+        "source_in_main": false,
+        "github_pages_deployed": false
+      }
     }
   ]
 }
