@@ -73,6 +73,12 @@ jobs:
         run: |
           python -m http.server 8765 > /tmp/housing-support-preview.log 2>&1 &
           echo $! > /tmp/housing-support-preview.pid
+          for attempt in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:8765/ > /dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/housing-support-preview.log
+          exit 1
       - name: Verify published section on desktop and phone
         run: |
           node <<'NODE'

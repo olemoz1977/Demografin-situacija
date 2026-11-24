@@ -32,8 +32,8 @@ jobs:
           const src=fs.readFileSync(path,"utf8");
           const local="http://127.0.0.1:8765";
           const live="https://olemoz1977.github.io/Demografin-situacija";
-          if((src.match(/http:\/\/127\.0\.0\.1:8765/g)||[]).length!==2)
-            throw Error("STOP: expected two local QA URLs; cannot safely verify live deployment");
+          if((src.match(/http:\/\/127\.0\.0\.1:8765/g)||[]).length!==3)
+            throw Error("STOP: expected three local QA URLs; cannot safely verify live deployment");
           fs.writeFileSync("tests/publication-visibility-live.cjs",src.replaceAll(local,live));
           console.log("LIVE QA URL:",live);
           NODE
