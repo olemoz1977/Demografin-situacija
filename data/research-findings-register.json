@@ -22,7 +22,10 @@
     "households_20261122": {
       "previous_findings_preserved": 42,
       "added_findings": 2,
-      "live_deployment_pending": true
+      "live_deployment_pending": false,
+      "live_browser_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/45322311156",
+      "pages_build": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/45322309198",
+      "verified_on": "2026-11-24"
     }
   },
   "module_inventory": [
@@ -1096,10 +1099,12 @@
         "marker": "id=\"populationHouseholdLfsComparison\""
       },
       "blocker": null,
-      "next_action": "Parengta šakoje; prieš publikavimą patikrinti visų paskelbtų išvadų matomumą telefone ir kompiuteryje.",
+      "next_action": "Paskelbta per PR #17; 2026-11-24 gyvos svetainės 33 skelbiamų išvadų, visų 8 modulių, desktop/mobile ir 320 px naujų lentelių bei nuorodų QA PASS.",
       "publication_audit": {
-        "source_in_main": false,
-        "github_pages_deployed": false
+        "source_in_main": true,
+        "github_pages_deployed": true,
+        "current_browser_test": "PASS",
+        "live_browser_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/45322311156"
       }
     },
     {
@@ -1123,10 +1128,12 @@
         "marker": "id=\"familyHouseholdsChildren2025\""
       },
       "blocker": null,
-      "next_action": "Parengta šakoje; prieš publikavimą patikrinti visų paskelbtų išvadų matomumą telefone ir kompiuteryje.",
+      "next_action": "Paskelbta per PR #17; 2026-11-24 gyvos svetainės 33 skelbiamų išvadų, visų 8 modulių, desktop/mobile ir 320 px naujų lentelių bei nuorodų QA PASS.",
       "publication_audit": {
-        "source_in_main": false,
-        "github_pages_deployed": false
+        "source_in_main": true,
+        "github_pages_deployed": true,
+        "current_browser_test": "PASS",
+        "live_browser_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/45322311156"
       }
     }
   ]

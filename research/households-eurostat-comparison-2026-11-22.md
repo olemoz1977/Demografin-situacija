@@ -37,3 +37,15 @@ Momentinė namų ūkių struktūra neparodo vaikų per gyvenimą, antro ar treč
 Pakeitimai parengti atskiroje šakoje. Naujos PUBLISHED_CONTEXT žymos reiškia rodymo vietas siūlomame svetainės kode; jos nėra įrodymas, kad šaka jau paskelbta. Registro naujų įrašų publication_audit ir governance.households_20261122.live_deployment_pending tai aiškiai žymi. Prieš diegimą vykdomos registro ir desktop/mobile matomumo patikros; galutinis gyvos svetainės QA reikalingas po Pages diegimo.
 
 Vietinis Chromium paleidimas blokuotas aplinkos socket teisių; desktop/mobile QA vietoje nepavyko atlikti. PR CI gali paleisti tests/publication-visibility-qa.cjs su HTTP serveriu. Gyva svetainė šioje sesijoje nekeista.
+
+## Užbaigta 2026-11-24
+
+Ankstesnė publikavimo būsena aukščiau yra istorinė. PR #17 sujungtas. Visos 44 išvados registre išsaugotos; 33 skelbiamos patikrintos visuose 8 moduliuose desktop/mobile; papildomai naujos lentelės ir nuorodos patikrintos 320 px ekrane. Horizontalus perteklius 0 px.
+
+- PR: https://github.com/olemoz1977/Demografin-situacija/pull/17
+- Gyva svetainė, Chromium PASS: https://github.com/olemoz1977/Demografin-situacija/actions/runs/45322311156
+- Visos vietinės leidinio patikros PASS: https://github.com/olemoz1977/Demografin-situacija/actions/runs/45322311153
+- Faktinis Pages diegimas SUCCESS: https://github.com/olemoz1977/Demografin-situacija/actions/runs/45322309198
+- Tęstinumas PASS: https://github.com/olemoz1977/Demografin-situacija/actions/runs/45322311193
+
+Patikrų infrastruktūros taisymai: Ubuntu 22.04, atnaujintas tikslus vietinių adresų skaičiaus saugiklis (3), serverio pasirengimo laukimas. Nei statistiniai duomenys, nei išvados per šiuos taisymus nekeisti.
