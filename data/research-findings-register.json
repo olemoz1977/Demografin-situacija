@@ -1135,6 +1135,32 @@
         "current_browser_test": "PASS",
         "live_browser_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/45322311156"
       }
+    },
+    {
+      "id": "EU-HH-SILC-AGE-2025-01",
+      "area": "population",
+      "title": "Senjorai nėra didžioji LT–ES vieno asmens namų ūkių skirtumo dalis",
+      "period": "2025",
+      "status": "VERIFIED_UNPUBLISHED",
+      "statement": "EU-SILC ilc_lvph02: iki 65 m. vieno asmens namų ūkiai sudaro LT 33,3 % (p), ES 20,2 % VISŲ namų ūkių; 65+ LT 22,3 % (p), ES 15,5 %. Skirtumai 13,1 ir 6,8 p. p. 65+ dalis tarp vieno asmens namų ūkių LT apie 40,0 %, ES 43,4 %. Tai aritmetinis suskaidymas, ne priežastinė dekompozicija; iki 65 m. nėra jaunų šeimų grupė.",
+      "source_urls": [
+        "https://ec.europa.eu/eurostat/databrowser/view/ilc_lvph02/default/table"
+      ],
+      "evidence_files": [
+        "data/households-silc-age-source-2025.json",
+        "research/household-age-comparison-2026-11-24.md"
+      ],
+      "publication": {
+        "module": "population",
+        "file": null,
+        "marker": null
+      },
+      "blocker": "Tyrimo rezultatas išsaugotas; svetainės integracija šio amžiaus palyginimo sesijoje neatlikta.",
+      "next_action": "Panaudoti Struktūros interpretacijai; smulkesnio amžiaus ir lyties analizei rinktis suderinamą tyrimą bei vardiklį.",
+      "related_findings": [
+        "EU-HH-2025-01",
+        "EU-HH-LFS-2025-01"
+      ]
     }
   ]
 }
