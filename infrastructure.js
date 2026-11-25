@@ -16,14 +16,14 @@
   section.id='infrastruktura';
   section.innerHTML=`<div class="container">
     <div class="section-label">11 · Vaikų infrastruktūra <span class="badge badge-official">SAVIVALDYBIŲ DUOMENYS</span></div>
-    <h2>„Trūksta darželių ir mokyklų“ – per paprasta. Dažnai problema yra ne kiek vietų turime, o kur jos yra</h2>
+    <h2>Laisvos vietos mieste dar nereiškia vietos šalia namų</h2>
     <p class="lead">Didmiesčių duomenys rodo paradoksą: mieste vienu metu gali būti ir laisvų vietų, ir laukiančių vaikų. Tai reiškia, kad bendras vietų skaičius ne visada parodo realų šeimos prieinamumą prie namų.</p>
 
     <div class="kpi-row">
       <div class="kpi"><div class="kpi-num blue">1 656</div><div class="kpi-label">Vilnius · laisvos darželių vietos · 2025-04</div><div class="kpi-note">Savivaldybės įstaigose</div></div>
       <div class="kpi"><div class="kpi-num red">3 493</div><div class="kpi-label">Vilnius · vaikai eilėje · 2025-04</div><div class="kpi-note">1 705 jau lankė kitą savivaldybės darželį</div></div>
       <div class="kpi"><div class="kpi-num blue">783</div><div class="kpi-label">Kaunas · laisvos vietos · 2025-05</div><div class="kpi-note">14 931 vieta, 13 946 ugdomi vaikai</div></div>
-      <div class="kpi"><div class="kpi-num blue">421</div><div class="kpi-label">Klaipėda · laisvos vietos pietuose</div><div class="kpi-note">Centrinėje ir šiaurinėje dalyse laisvų vietų nebuvo</div></div>
+      <div class="kpi"><div class="kpi-num blue">421</div><div class="kpi-label">Klaipėda · laisvos vietos pietuose · 2024</div><div class="kpi-note">Centrinėje ir šiaurinėje dalyse laisvų vietų nebuvo</div></div>
     </div>
 
     <p class="small"><strong>Kauno duomenų tikslinimo žyma:</strong> nurodyta 14 931 vieta ir 13 946 ugdomi vaikai, kurių aritmetinis skirtumas 985, tačiau šaltinyje taip pat pateikta 783 laisvos vietos. Nežinant skaičiavimo apimties ir datos skirtumo, 783 nepakeičiame į 985 ir jų nelaikome lygiaverčiais dydžiais.</p>

@@ -75,7 +75,7 @@
     textAt('#parama-istorija .finding-title',0,'Ligos ir motinystės draudimo išlaidų kontekstas – ne vien reformos kaina');
     textAt('#parama-istorija .finding-title',2,'Dosnumas ir tvarumas – du skirtingi klausimai');
     const green=qa('#parama-istorija .alert-green').find(el=>el.textContent.includes('Ką verta stebėti dabar'));
-    if(green) green.innerHTML='<strong>Ką verta stebėti dabar.</strong> Jei norime rimtai įvertinti 2026 m. paketą, neužteks žiūrėti tik į bendrą TFR. Reikės sekti <strong>pirmų, antrų ir trečių gimimų dalis, motinos amžių pagal gimimo eiliškumą, gimimus pagal pajamas ar užimtumo statusą (jei tokie oficialūs duomenys bus prieinami) ir realią metinę paketo kainą</strong>.';
+    if(green) green.innerHTML='<strong>Ką verta stebėti dabar.</strong> Vertinant šeimos politikos priemonių poveikį, neužteks žiūrėti tik į bendrą TFR. Reikės sekti <strong>pirmų, antrų ir trečių gimimų dalis, motinos amžių pagal gimimo eiliškumą, gimimus pagal pajamas ar užimtumo statusą (jei tokie oficialūs duomenys bus prieinami) ir realią metinę paketo kainą</strong>.';
   }
 
   function infrastructureCopy(){
@@ -97,7 +97,7 @@
     textAt('#scenarijai .finding-title',0,'Mažiau darbuotojų, daugiau vyresnio amžiaus žmonių');
     textAt('#scenarijai .finding-title',2,'Mažiau darbuotojų nebūtinai reiškia mažesnę gamybą');
     htmlAt('#scenarijai .finding-body',2,'<strong>Scenarijus, ne garantija.</strong> Jei produktyvumas augs greičiau nei mažės darbo pasiūla, mažesnė darbo jėga nebūtinai reikš proporcingai mažesnę ekonomiką. Tokiu atveju automatizacija senstančiai Lietuvai būtų ne grėsmė, o viena iš prisitaikymo priemonių.');
-    htmlAt('#scenarijai .finding-body',4,'Labai automatizuota įmonė ir toliau moka pelno, vartojimo, turto bei kitus mokesčius. Klausimas ne „ar robotas moka mokesčius?“, o <em>ar socialinės sistemos pajamų bazė juda kartu su tuo, kur ekonomikoje kuriama vertė</em>.');
+    htmlAt('#scenarijai .finding-body',4,'Automatizuota įmonė gali mokėti pelno ir turto mokesčius, o jos veikla generuoti vartojimo bei kitų mokesčių pajamas. Finansavimo klausimas – <em>ar socialinės sistemos pajamų bazė keičiasi kartu su tuo, kur kuriama ekonominė vertė</em>.');
 
     const cards=qa('#scenarijai .three-col .card');
     if(cards[0]) cards[0].innerHTML='<h3>A · Prisitaikanti ekonomika</h3><p><strong>Prielaida:</strong> automatizacija ir produktyvumas auga, dalį darbo jėgos trūkumo kompensuoja migracija bei ilgesnis aktyvus amžius, o socialinės apsaugos finansavimo bazė pamažu plečiama už darbo pajamų ribų.</p><p style="margin-top:.7rem"><strong>Galima kryptis:</strong> darbuotojų mažiau, bet vienas darbuotojas sukuria daugiau vertės; demografinė našta tampa lengviau valdoma.</p>';

@@ -28,7 +28,7 @@
           <tr><td>Pensininkai / užimtieji</td><td class="td-num">0,7</td><td class="td-num">0,7</td><td class="td-num">0,8</td><td class="td-num td-red">0,9</td></tr>
           <tr><td>Viešosios pensijos / BVP</td><td class="td-num">6,4 %</td><td class="td-num">8,1 %</td><td class="td-num">9,3 %</td><td class="td-num td-red">9,8 %</td></tr>
         </tbody></table>
-        <p class="small">Tai „constant policy“ tipo ilgalaikės projekcijos, o ne garantuota ateitis. 2035 / 2045 m. reikšmių neinterpoliuojame.</p>
+        <p class="small"><strong>Skirtingi santykiai.</strong> 50,3 % reiškia maždaug 50 žmonių, kuriems 65 ar daugiau metų, šimtui 20–64 m. gyventojų. Tai ne pensininkų skaičius šimtui dirbančiųjų. Lentelės 0,8 pensininko vienam užimtajam atitiktų apie 80 pensininkų šimtui užimtųjų.</p><p class="small">Tai „constant policy“ tipo ilgalaikės projekcijos, o ne garantuota ateitis. 2035 / 2045 m. reikšmių neinterpoliuojame.</p>
       </div>
     </div>
 

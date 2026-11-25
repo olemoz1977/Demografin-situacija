@@ -112,15 +112,15 @@
         <summary>Kas dar neatsakyta ir kodėl?</summary>
         <div class="housing-details-body">
           <p><strong>Tikslinės grupės:</strong> skaičiuojant jaunų šeimų įperkamumą ar paramos pasiekiamumą reikia duomenų apie būtent teisiškai apibrėžtas šeimas ir jų sudėtį. Neturint suderintų duomenų apie tokias šeimas, įperkamumo ar aprėpties įverčio neteikiame.</p>
-          <p><strong>Būsto kainų palyginimo dar nerodome.</strong> Vienodas 50 m² plotas nepadaro būstų palyginamų: apskrityse skiriasi statybos laikotarpis, naujos / antrinės rinkos dalis ir būklė. Ankstesnis pardavimo proxy buvo bendro būsto rodiklis, ne grynai daugiabučių butų sluoksnis.</p>
+          <p><strong>Vienodo standarto visų 10 apskričių kainų palyginimo dar neturime.</strong> Vienodas 50 m² plotas nepadaro būstų palyginamų: apskrityse skiriasi statybos laikotarpis, naujos / antrinės rinkos dalis ir būklė. Aukščiau pateikti šešių miestų butų pardavimo vidurkiai yra turimi rinkos faktai, tačiau ne toks standartizuotas apskričių palyginimas.</p>
           <p><strong>Ko reikia:</strong> 2025 m. daugiabučių butų duomenų pagal apskritį, panašų plotą (pirminis kandidatas 45–55 m²), statybos laikotarpio grupę ir sandorių N.</p>
-          <p><strong>Nuoma:</strong> bus pridedama vėliau kaip atskiras sluoksnis, kai turėsime vienodą ir pakankamai pilną 2025 m. krepšelį visoms 10 apskričių.</p>
+          <p><strong>Nuoma:</strong> trijų miestų rinkos intervalai pateikti aukščiau. Vienodo ir pakankamai pilno 2025 m. nuomos krepšelio visoms 10 apskričių dar neturime.</p>
           <p><strong>Paramos aprėpties procentas nežinomas:</strong> nėra tinkamai apibrėžto paramos siekusių ir kriterijus atitikusių jaunų šeimų vardiklio bei vienos prašymų kohortos baigties duomenų.</p>
         </div>
       </details>
 
       <div class="alert alert-blue">
-        <strong>Projekto taisyklė.</strong> Jei rodiklis matuoja nepalyginamus objektus arba jo interpretacija gali klaidinti, jis nepatenka į pagrindinę išvadą. Jei paliekamas diagnostikai, turi būti aiškiai pažymėtas kaip nepalyginamas / diagnostinis.
+        <strong>Ką ši dalis jau atsako.</strong> Žinome pateiktų miestų parduotų butų vidurkius ir paramos gavėjų skaičių. Kiek teisiškai apibrėžtų jaunų šeimų gali įpirkti palyginamą būstą, dar reikia išmatuoti.
       </div>
     </div>`;
 

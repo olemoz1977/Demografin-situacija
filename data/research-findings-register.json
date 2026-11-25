@@ -38,6 +38,13 @@
       "live_browser_qa": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/45664305296",
       "live_browser_qa_result": "PASS: all 38 published findings on desktop and mobile; narrow-screen fertility/population/family checks and historical decomposition disclosure passed",
       "verified_on": "2026-11-25"
+    },
+    "full_project_review_20261125": {
+      "review_and_change_plan": "research/full-project-review-2026-11-25.md",
+      "review_items": 21,
+      "registered_findings_preserved": 49,
+      "published_findings_preserved": 38,
+      "live_browser_qa_pending": true
     }
   },
   "module_inventory": [
@@ -579,7 +586,7 @@
       "title": "2007–2012 m. vaiko priežiūros išmokų ir TFR istorinė sąsaja",
       "period": "2005–2012",
       "status": "PUBLISHED_CONTEXT",
-      "statement": "2007–2012 dosnių vaiko priežiūros išmokų istorijos ir TFR pakilimo sutapimas nėra įrodytas priežastinis ryšys.",
+      "statement": "2007–2012 dosnių vaiko priežiūros išmokų istorijos ir TFR pakilimo sutapimas nėra įrodytas priežastinis ryšys. Esamame Eurostat 2005–2012 m. rinkinyje antrų gimimų dalis 34,1 % → 37,5 % (+3,4 p. p.), trečių 10,3 % → 11,0 % (+0,7 p. p.); dalys nuo visų gimimų nėra reformos poveikio įvertis.",
       "source_urls": [
         "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table?lang=en"
       ],
@@ -594,7 +601,8 @@
         "marker": "2007–2012 m. dosnios išmokos sutapo su TFR kilimu. Sutapimas dar nėra priežastis"
       },
       "blocker": null,
-      "next_action": "Tikras naršyklės tekstas redakciniame sluoksnyje; galutiniame matomumo audite tikrinti ne pirminį perrašomą šabloną, bet redakciškai pakeistą išvadą."
+      "next_action": "Tikras naršyklės tekstas redakciniame sluoksnyje; galutiniame matomumo audite tikrinti ne pirminį perrašomą šabloną, bet redakciškai pakeistą išvadą.",
+      "editorial_revision_20261125": "R09: tekstu išryškinti jau publikuoto grafiko pradžios ir pabaigos duomenys."
     },
     {
       "id": "FAMILY-LEAVE-FRE-01",
@@ -1272,7 +1280,7 @@
       "title": "Moterų skaičiaus ir amžiaus sudėties indėlis į modeliuotą gimimų mažėjimą",
       "period": "2010–2024; 2015–2024; 2019–2024",
       "status": "PUBLISHED_CONTEXT",
-      "statement": "Autoriaus simetrinis Eurostat demo_fasec/demo_pjan gimimų pokyčio išskaidymas 20–44 m. moterų grupėje: moterų skaičiaus ir amžiaus sudėties indėlis 2010–2024 m. 43,0 %, 2015–2024 m. 21,9 %, 2019–2024 m. 10,3 %. Suapvalinta svetainėje 43 %, 22 %, 10 %. Grupė apima 95,1 % visų 2010 m. ir 98,3 % 2024 m. gimimų. Struktūra apima migraciją bei mirtingumą; gimdymo rodiklių pokytis apima ir gimdymo atidėjimą. Ne priežastinis ar galutinio vaikų skaičiaus įvertis.",
+      "statement": "Autoriaus simetrinis Eurostat demo_fasec/demo_pjan gimimų pokyčio išskaidymas 20–44 m. moterų grupėje: moterų skaičiaus ir amžiaus sudėties indėlis 2010–2024 m. 43,0 %, 2015–2024 m. 21,9 %, 2019–2024 m. 10,3 %. Suapvalinta svetainėje 43 %, 22 %, 10 %. Grupė apima 95,1 % visų 2010 m. ir 98,3 % 2024 m. gimimų. Struktūra apima migraciją bei mirtingumą; gimdymo rodiklių pokytis apima ir gimdymo atidėjimą. Ne priežastinis ar galutinio vaikų skaičiaus įvertis. Patikslintas aiškinimas: 2019–2024 m. šios grupės gimimų skaičius 24 307 → 18 758, sumažėjimas 5 549; tai tas pats validuoto rinkinio pokytis.",
       "population": "Lietuvoje gyvenančios 20–44 m. moterys; amžius pilnais metais.",
       "source_urls": [
         "https://ec.europa.eu/eurostat/databrowser/view/demo_fasec/default/table",
@@ -1295,7 +1303,8 @@
       },
       "blocker": null,
       "next_action": "20–44 m. rezultatas sutikrintas su faktiniais Eurostat gimimais pagal motinos amžių. Pilno 15–49 m. modelio ir gryno istorinių gimimų indėlio neinterpretuoti be papildomų duomenų.",
-      "result_type": "AUTHOR_CALCULATED_DESCRIPTIVE_DECOMPOSITION"
+      "result_type": "AUTHOR_CALCULATED_DESCRIPTIVE_DECOMPOSITION",
+      "editorial_revision_20261125": "R03: absoliutūs pokyčio skaičiai iš esamo validated-results.json; duomenys ir metodas nepakeisti."
     },
     {
       "id": "POPULATION-COHORT-BALANCE-2025-01",

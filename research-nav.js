@@ -23,12 +23,21 @@
     '#infrastruktura':'family','#skaitmena':'family','#familyFormationHypotheses':'family','#housing-affordability':'housing','#housingAffordability':'housing','#scenarijai':'future',
     '#metodika':'methods','#saltiniai':'methods','#isvados':'all'
   };
+  Object.assign(HASH_VIEW,{
+    '#populationHouseholdStructure':'population','#populationHouseholdLfsComparison':'population',
+    '#populationHouseholdAgeSilc':'population','#populationLivingAloneAgeSex':'population','#populationSeniorSurveyTrend':'population',
+    '#populationArope2025':'population','#sexRatioByAgeBlock':'population','#sexBirthCohortBlock':'population','#reproLatestNote':'population',
+    '#fertilityDevelopmentParadox2026':'fertility','#fertilityCohortPeriods':'fertility',
+    '#migrationSexBlock':'migration','#familyHouseholdsChildren2025':'family','#policyFreBlock':'family',
+    '#housingMarketResearch':'housing','#housingSupportTitle':'housing','#housingYoungFamilyDefinition':'housing'
+  });
   const qs=new URLSearchParams(location.search);
   let view=qs.get('view');
   if(!VALID_VIEWS.includes(view)) view=HASH_VIEW[location.hash]||'overview';
 
+  window.researchCurrentView=view;
   const css=document.createElement('link');
-  css.rel='stylesheet'; css.href='research-nav.css?v=20261125clarity1';
+  css.rel='stylesheet'; css.href='research-nav.css?v=20261125fullreview1';
   document.head.appendChild(css);
   document.body.classList.add('research-routed');
   const makeUrl=v=>`${location.pathname}?view=${encodeURIComponent(v)}`;
@@ -62,8 +71,8 @@
     section.innerHTML=`<div class="container">
       <div class="section-label">Tyrimo žemėlapis <span class="badge badge-official">REDAKCIJA 2026-11-25</span></div>
       <h2>Žemas gimstamumas apima visą Lietuvą. 2025 m. migracija natūralaus mažėjimo nekompensavo.</h2>
-      <p class="lead">Svarbiausi jau nustatyti šalies demografiniai kontrastai: gimstamumas visose apskrityse, gyventojų balansas, lyčių santykis pagal amžių ir neįprasta namų ūkių sandara. Paskutinė išvada – aiškiai pažymėta <strong>Europos Komisijos bazinė projekcija</strong>, o ne įvykęs pokytis.</p>
-      <div class="reader-map"><strong>Kokį klausimą nagrinėjame?</strong><p>Kaip keičiasi Lietuvos gyventojų skaičius ir sudėtis, ką jau galime pasakyti apie gimimų mažėjimą ir kokių prisitaikymo sprendimų gali reikėti.</p><p><strong>Kas jau aiškiau:</strong> gimimų mažėjimo išskaidymas rodo, kad vien moterų skaičiaus pokyčio neužtenka. Gyvenimo po vieną mastas skiriasi pagal amžių ir lytį. <strong>Kas dar atvira:</strong> kiek prie gimstamumo prisideda būstas, parama ar partnerystės aplinka. Šių temų išvadų nesumuojame į vieną priežasčių procentą.</p></div>
+      <p class="lead">Tyrime lyginame gimstamumą, gyventojų kaitą ir gyvenimo sąlygas. Žemiau – keturi duomenimis nustatyti rezultatai ir atskirai pažymėta Europos Komisijos ateities projekcija.</p>
+      <div class="reader-map"><strong>Tyrimo klausimas:</strong> kodėl mažėja gimimų ir kaip Lietuva keičiasi? Jau atskyrėme moterų skaičiaus bei amžiaus sudėties ir gimdymo rodiklių indėlius. Būsto, paramos ir partnerystės poveikis lieka atskirais tyrimo klausimais.</div>
       <h3 id="overviewThreeFindings">Penkios svarbiausios tyrimo išvados</h3>
       <div class="research-summary">
         <div class="card"><div class="eyebrow">01 · 2024 m. · stebėtas rodiklis</div><strong>Žemas gimstamumas apima visas apskritis</strong><p>Lietuvos suminis gimstamumo rodiklis (TFR) buvo <strong>1,11 vaiko vienai moteriai</strong> – trečias mažiausias ES. Nė vienoje iš dešimties apskričių rodiklis neviršijo <strong>1,21</strong> (intervalas 0,96–1,21). <a href="${makeUrl('fertility')}">Gimstamumo tyrimas →</a> <a href="${makeUrl('fertility')}#fertilityCohortSize">Kas sudaro gimimų mažėjimą →</a></p></div>
@@ -119,7 +128,7 @@
     let intro=document.getElementById('researchTopicIntro');
     if(view==='overview'||view==='all'){intro?.remove();return;}
     if(!intro){intro=document.createElement('section');intro.id='researchTopicIntro';intro.className='research-topic-intro';}
-    intro.innerHTML=`<div class="container"><div class="eyebrow">Teminis tyrimo puslapis</div><h2>${VIEW_META[view].title}<span class="research-view-badge">${VIEW_META[view].label}</span></h2><p class="lead">${VIEW_META[view].desc}</p><p class="reader-context">${VIEW_CONTEXT[view]||''}</p></div>`;
+    intro.innerHTML=`<div class="container"><div class="eyebrow">Teminis tyrimo puslapis</div><h2>${VIEW_META[view].title}<span class="research-view-badge">${VIEW_META[view].label}</span></h2><p class="lead">${VIEW_META[view].desc}</p><p class="reader-context">${VIEW_CONTEXT[view]||''}</p>${view==='population'?'<nav class="module-contents" aria-label="Struktūros temos"><a href="?view=population#sexRatioByAgeBlock">Lyčių santykis</a><a href="?view=population#populationCohortBalance">Moterų kartos</a><a href="?view=population#populationHouseholdStructure">Namų ūkiai</a><a href="?view=population#populationLivingAloneAgeSex">Gyvenimas po vieną</a><a href="?view=population#populationArope2025">Socialinė rizika</a></nav><p class="small">Amžiaus intervalai atitinka skirtingų rodiklių šaltinius: 20–44 m. gimimų išskaidyme, 25–44 m. lyčių ir migracijos palyginime, 25–54 m. gyvenimo po vieną lentelėje. Tai skirtingos grupės.</p>':''}</div>`;
     const first=[...document.querySelectorAll('body > section')].find(s=>SECTION_VIEWS[s.id]===view);
     if(first&&intro.nextElementSibling!==first) first.insertAdjacentElement('beforebegin',intro);
   }
@@ -147,8 +156,17 @@
     container.appendChild(div);
   }
 
+  function ensureSectionOrder(){
+    const order=['researchHome','apzvalga','tfr','regionai','amzius','lytis-amzius','gyventojai','migration-sex-section','uzsienieciai','santuokos','parama-istorija','infrastruktura','skaitmena','family-hypotheses-section','housingAffordability','scenarijai','isvados','metodika','saltiniai'];
+    const sections=order.map(id=>document.getElementById(id)).filter(Boolean);
+    const current=[...document.querySelectorAll('body>section')].filter(el=>order.includes(el.id));
+    if(current.every((el,i)=>el===sections[i]))return;
+    const footer=document.querySelector('footer');
+    if(footer)sections.forEach(section=>footer.insertAdjacentElement('beforebegin',section));
+  }
+
   function applyVisibility(){
-    normalizeDynamicBlocks(); ensureHome(); ensureTopicIntro();
+    normalizeDynamicBlocks(); ensureHome(); ensureSectionOrder(); ensureTopicIntro();
     [...document.querySelectorAll('body > section')].forEach(section=>{
       if(section.id==='researchTopicIntro') return;
       const show=view==='all'||SECTION_VIEWS[section.id]===view;
@@ -177,5 +195,16 @@
   observer.observe(document.body,{childList:true,subtree:true});
   [200,600,1200,2500].forEach(ms=>setTimeout(applyVisibility,ms));
 
-  if(location.hash) setTimeout(()=>document.querySelector(location.hash)?.scrollIntoView({block:'start'}),900);
+  const scrollToFragment=()=>{
+    let id;try{id=decodeURIComponent(location.hash.slice(1));}catch{return;}
+    document.getElementById(id)?.scrollIntoView({block:'start'});
+  };
+  window.addEventListener('hashchange',()=>{
+    const next=HASH_VIEW[location.hash];
+    if(next&&new URLSearchParams(location.search).get('view')!=='all'){
+      view=next;window.researchCurrentView=view;buildNav();applyVisibility();
+    }
+    setTimeout(scrollToFragment,100);
+  });
+  if(location.hash)setTimeout(scrollToFragment,900);
 })();
