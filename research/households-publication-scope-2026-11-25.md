@@ -14,3 +14,7 @@ Neskelbiama kaip nustatyta: šuolio priežastis, migracijos/našlystės/svorių 
 Pagrindinė vieta – Gyventojų struktūra. Apžvalgos esamoje namų ūkių kortelėje pridėta nuoroda į amžių ir lytį; Šeimos aplinkoje tik nuoroda, be pasikartojančios lentelės. Migracijoje pataisyta antraštė, kad nesusidarytų prielaida apie nustatytą ryšį.
 
 Po lygiagretaus gimstamumo papildymo išsaugomi 48 įrašai; skelbiamų išvadų skaičius didėja nuo 34 iki 37. Visų 37 matomumas tikrinamas esamame desktop/mobile audite; naujoms lentelėms papildomai tikrinamos reikšmės ir 320 px ribos. Paskelbimo žymos siūlomame kode savaime nepatvirtina įvykusio diegimo: faktinio Pages ir gyvos svetainės rezultatas užfiksuojamas po patikrų.
+
+## Patvirtintas paskelbimas
+
+PR #18 sujungtas 2026-11-25. Pages diegimas SUCCESS: https://github.com/olemoz1977/Demografin-situacija/actions/runs/45647540024 . Gyvos svetainės visų 37 skelbiamų išvadų, desktop/mobile ir naujų lentelių 320 px QA PASS: https://github.com/olemoz1977/Demografin-situacija/actions/runs/45647774642 . Horizontalus perteklius 0 px. Lygiagreti gimstamumo kohortų išvada išsaugota ir patikrinta kartu.
