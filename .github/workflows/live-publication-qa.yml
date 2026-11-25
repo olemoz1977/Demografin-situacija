@@ -40,3 +40,5 @@ jobs:
           node tests/publication-visibility-live.cjs
 
 # Recheck the deployed household age and sex publication (2026-11-25).
+
+# Verify the deployed cohort balance together with all 38 published findings (2026-11-25).
