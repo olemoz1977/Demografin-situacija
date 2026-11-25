@@ -131,3 +131,5 @@ R17 patikra aptiko tikrą klaidą: vien `#` pakeitimas tame pačiame dokumente n
 - Papildomai patikrintos grafikų tekstinės alternatyvos, lentelės atvėrimas klaviatūra, tiesioginiai fragmentai, perėjimas tarp fragmentų, viso tyrimo temų tvarka ir kontroliuojamo įkėlimo sutrikimo pranešimas.
 - Gyvoje naršyklėje vizualiai peržiūrėta Apžvalga, Struktūros temų nuorodos ir piramidės reikšmių lentelė; perskaityta nauja gimimų eiliškumo išvada.
 - Du nauji skaitiniai paaiškinimai sutikrinti su esamais šaltinių failais. Visų išorinių pirminių statistinių šaltinių pakartotinis faktinis auditas nebuvo šios redakcijos dalis.
+
+Registro patikros korekcija: „paskutinės naršyklės patikros“ laukui testas buvo pririštas prie 2026-10-10 vieno vykdymo ID. Leidžiama nauja patikros nuoroda ir tikrinama, kad ji sutaptų su baigtos peržiūros įrašu; istorinio inventoriaus `INVENTORIED_WITH_GAPS` reikalavimas išsaugotas.

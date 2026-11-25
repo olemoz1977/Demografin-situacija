@@ -146,7 +146,10 @@ class ResearchContinuityTest(unittest.TestCase):
     def test_qa_is_not_equivalent_to_historical_completeness(self):
         governance = self.register["governance"]
         self.assertFalse(governance["direct_live_browser_qa_pending"])
-        self.assertIn("38026170701", governance["last_live_browser_qa_run"])
+        self.assertRegex(governance["last_live_browser_qa_run"], r"^https://github\.com/olemoz1977/Demografin-situacija/actions/runs/[0-9]+$")
+        latest_review = governance.get("full_project_review_20261125")
+        if latest_review and not latest_review["live_browser_qa_pending"]:
+            self.assertEqual(latest_review["live_browser_qa"], governance["last_live_browser_qa_run"])
         self.assertTrue(all(x["audit"] == "INVENTORIED_WITH_GAPS" for x in self.register["module_inventory"]))
         self.assertTrue(governance["publish_scope_matrix_required"])
         self.assertIn("inventory_document", governance)
