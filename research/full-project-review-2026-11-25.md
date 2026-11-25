@@ -77,7 +77,7 @@ Visi registruoti ID ir statusai lieka. Tik esamų išvadų aiškesnė išraiška
 
 ## 3. Įgyvendinimas
 
-R01–R21 pakeitimai parengti pagal aukščiau pateiktą planą; publikavimo ir naršyklės patikros dar vykdomos. Priežastinių išvadų ar naujo tyrimo statuso šia peržiūra nesuteikiame.
+Visi R01–R21 pakeitimai įgyvendinti ir paskelbti per PR #22. Patikros baigtos sėkmingai. Priežastinių išvadų ar naujo tyrimo statuso šia peržiūra nesuteikiame.
 
 ## 4. Patikra
 
@@ -93,3 +93,41 @@ Numatyta: registro ir istorinio turinio testai, tęstinumas, visi 38 paskelbti r
 ## Papildymas po pirmos naršyklės patikros
 
 R17 patikra aptiko tikrą klaidą: vien `#` pakeitimas tame pačiame dokumente nepaleisdavo maršruto pasirinkimo iš naujo, todėl kito modulio fragmentas likdavo paslėptas. Pridėtas `hashchange` valdymas; nežinomas ar netaisyklingas fragmentas nesukelia JavaScript klaidos. „Viso tyrimo“ skyriai sudėlioti pagal temų eilę, ne pagal skirtingų scenarijų užkrovimo laiką.
+
+## Įgyvendinimo žurnalas
+
+| ID | Kur įgyvendinta | Rezultatas |
+|---|---|---|
+| R01 | research-nav.js | Įgyvendinta |
+| R02 | index.html | Įgyvendinta |
+| R03 | index.html ir esamas registro įrašas | Įgyvendinta |
+| R04 | index.html | Įgyvendinta |
+| R05 | research-nav.js | Įgyvendinta |
+| R06 | app-base.js | Įgyvendinta |
+| R07 | app-base.js | Įgyvendinta |
+| R08 | migration-sex.js | Įgyvendinta |
+| R09 | policy-history.js ir esamas registro įrašas | Įgyvendinta |
+| R10 | policy-history.js | Įgyvendinta |
+| R11 | family-hypothesis.js | Įgyvendinta |
+| R12 | infrastructure.js | Įgyvendinta |
+| R13 | housing-affordability.js | Įgyvendinta |
+| R14 | housing-affordability.js | Įgyvendinta |
+| R15 | future.js, editorial-copy.js | Įgyvendinta |
+| R16 | index.html | Įgyvendinta |
+| R17 | research-nav.js, nav-finalize.js, index.html | Įgyvendinta |
+| R18 | reader-tools.js, research-nav.css | Įgyvendinta |
+| R19 | app.js, sex-history.js, migration-sex.js | Įgyvendinta |
+| R20 | policy-history.js, editorial-copy.js | Įgyvendinta |
+| R21 | index.html, policy-history.js | Įgyvendinta |
+
+## Galutinės patikros
+
+- [PR #22](https://github.com/olemoz1977/Demografin-situacija/pull/22) sujungtas; visi 21 sąrašo punktai paskelbti.
+- 20 registro, būsto ir istorinio turinio testų: PASS. Tęstinumo patikra: 49 išvados, 8 moduliai, neprarastas nė vienas ID ar publikavimo statusas.
+- [Naršyklės patikra prieš sujungimą](https://github.com/olemoz1977/Demografin-situacija/actions/runs/45676240551): PASS.
+- [Pages diegimas](https://github.com/olemoz1977/Demografin-situacija/actions/runs/45676726098): success.
+- [Viešos svetainės patikra](https://github.com/olemoz1977/Demografin-situacija/actions/runs/45676727579): PASS, visos 38 paskelbtos išvados kompiuteryje ir telefone. Papildomai 320 px ekrane Gimstamumas, Struktūra ir Šeimos aplinka (22 paskelbti įrašai).
+- Visuose patikrintuose moduliuose: 0 px horizontalaus puslapio perpildymo; duomenų lentelės prireikus slenkamos savo viduje.
+- Papildomai patikrintos grafikų tekstinės alternatyvos, lentelės atvėrimas klaviatūra, tiesioginiai fragmentai, perėjimas tarp fragmentų, viso tyrimo temų tvarka ir kontroliuojamo įkėlimo sutrikimo pranešimas.
+- Gyvoje naršyklėje vizualiai peržiūrėta Apžvalga, Struktūros temų nuorodos ir piramidės reikšmių lentelė; perskaityta nauja gimimų eiliškumo išvada.
+- Du nauji skaitiniai paaiškinimai sutikrinti su esamais šaltinių failais. Visų išorinių pirminių statistinių šaltinių pakartotinis faktinis auditas nebuvo šios redakcijos dalis.

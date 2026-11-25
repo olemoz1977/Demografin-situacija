@@ -14,8 +14,8 @@
     "inventory_document": "research/historical-research-inventory-2026-10-10.md",
     "direct_live_browser_qa_pending": false,
     "publish_scope_matrix_required": true,
-    "last_successful_pages_build": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/38026170535",
-    "last_live_browser_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/38026170701",
+    "last_successful_pages_build": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/45676726098",
+    "last_live_browser_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/45676727579",
     "housing_young_family_definition": "Lietuvos Respublikos finansinės paskatos pirmaji busta isigyjancioms jaunoms seimoms kontekstas (SADM): abu sutuoktiniai ar registruoti partneriai kiekvienas iki 36 m.; vienas iki 36 m. vaiką(-us) auginantis tėvas, motina arba globėjas (rūpintojas). Vertinant ankstesnių metų schemas atskirti jų metų teisines redakcijas.",
     "housing_young_family_source": "https://socmin.lrv.lt/lt/veiklos-sritys/seima-ir-vaikai/finansine-paskata-pirmaji-busta-isigyjancioms-jaunoms-seimoms/",
     "forbid_legacy_under30_pair_model_in_public_housing": true,
@@ -44,7 +44,13 @@
       "review_items": 21,
       "registered_findings_preserved": 49,
       "published_findings_preserved": 38,
-      "live_browser_qa_pending": true
+      "live_browser_qa_pending": false,
+      "implemented_review_items": 21,
+      "premerge_browser_qa": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/45676240551",
+      "pages_build": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/45676726098",
+      "live_browser_qa": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/45676727579",
+      "result": "PASS: 38/38 published findings on desktop and mobile; 320px checks, chart tables, keyboard, direct fragment transitions and full-research order",
+      "verified_on": "2026-11-25"
     }
   },
   "module_inventory": [
@@ -56,7 +62,7 @@
       "inventory_document": "research/historical-research-inventory-2026-10-10.md",
       "direct_live_browser_checked": true,
       "unregistered_historical_conversation_facts_possible": true,
-      "last_live_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/38026170701"
+      "last_live_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/45676727579"
     },
     {
       "module": "fertility",
@@ -66,7 +72,7 @@
       "inventory_document": "research/historical-research-inventory-2026-10-10.md",
       "direct_live_browser_checked": true,
       "unregistered_historical_conversation_facts_possible": true,
-      "last_live_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/38026170701"
+      "last_live_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/45676727579"
     },
     {
       "module": "population",
@@ -76,7 +82,7 @@
       "inventory_document": "research/historical-research-inventory-2026-10-10.md",
       "direct_live_browser_checked": true,
       "unregistered_historical_conversation_facts_possible": true,
-      "last_live_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/38026170701"
+      "last_live_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/45676727579"
     },
     {
       "module": "migration",
@@ -86,7 +92,7 @@
       "inventory_document": "research/historical-research-inventory-2026-10-10.md",
       "direct_live_browser_checked": true,
       "unregistered_historical_conversation_facts_possible": true,
-      "last_live_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/38026170701"
+      "last_live_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/45676727579"
     },
     {
       "module": "family",
@@ -96,7 +102,7 @@
       "inventory_document": "research/historical-research-inventory-2026-10-10.md",
       "direct_live_browser_checked": true,
       "unregistered_historical_conversation_facts_possible": true,
-      "last_live_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/38026170701"
+      "last_live_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/45676727579"
     },
     {
       "module": "housing",
@@ -106,7 +112,7 @@
       "inventory_document": "research/historical-research-inventory-2026-10-10.md",
       "direct_live_browser_checked": true,
       "unregistered_historical_conversation_facts_possible": true,
-      "last_live_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/38026170701"
+      "last_live_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/45676727579"
     },
     {
       "module": "future",
@@ -116,7 +122,7 @@
       "inventory_document": "research/historical-research-inventory-2026-10-10.md",
       "direct_live_browser_checked": true,
       "unregistered_historical_conversation_facts_possible": true,
-      "last_live_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/38026170701"
+      "last_live_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/45676727579"
     },
     {
       "module": "methods",
@@ -126,7 +132,7 @@
       "inventory_document": "research/historical-research-inventory-2026-10-10.md",
       "direct_live_browser_checked": true,
       "unregistered_historical_conversation_facts_possible": true,
-      "last_live_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/38026170701"
+      "last_live_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/45676727579"
     }
   ],
   "findings": [
