@@ -293,6 +293,16 @@ const normalize=s=>s.replace(/[\u00a0\u202f\s]+/g," ").trim();
     }
     if(view==='overview'&&await page.locator('a[href*="#populationCohortBalance"]').count()===0)
       throw Error('Missing Overview link to cohort balance');
+    await page.waitForFunction(()=>[...document.querySelectorAll('canvas')].every(c=>!window.Chart?.getChart(c)||document.getElementById(c.id+'Data')),{},{timeout:10000});
+    const chartCoverage=await page.evaluate(()=>[...document.querySelectorAll('canvas')].filter(c=>c.getClientRects().length&&window.Chart?.getChart(c)).map(c=>({id:c.id,table:!!document.querySelector('#'+c.id+'Data table'),label:!!c.getAttribute('aria-label')})));
+    if(chartCoverage.some(c=>!c.table||!c.label))throw Error(screen+' '+view+' missing chart alternatives '+JSON.stringify(chartCoverage));
+    if(view==='fertility'){
+      const detail=page.locator('#tfrChartData');
+      await detail.locator('summary').focus();
+      await detail.locator('summary').press('Enter');
+      if(!(await detail.innerText()).includes('1,11'))throw Error('TFR chart table values missing');
+      await detail.locator('summary').press('Enter');
+    }
     const geometry=await page.evaluate(()=>({
       overflow:Math.max(0,document.documentElement.scrollWidth-innerWidth),
       visibleSections:[...document.querySelectorAll("body > section")]
@@ -311,9 +321,27 @@ const normalize=s=>s.replace(/[\u00a0\u202f\s]+/g," ").trim();
      housing:!!document.querySelector("#housingAffordability"),
      population:!!document.querySelector("#populationHouseholdStructure")
    }));
+   const ordering=await page.evaluate(()=>{const ids=[...document.querySelectorAll('body>section')].map(s=>s.id);return ids.indexOf('isvados')>ids.indexOf('scenarijai')&&ids.indexOf('isvados')>ids.indexOf('housingAffordability');});
+   if(!ordering)throw Error('All-research synthesis must follow topic results');
    if(archive.sections<15||!archive.housing||!archive.population)
      throw Error(screen+" all-route regression "+JSON.stringify(archive));
    console.log("PASS",screen,done+"/"+published.length,"published findings, 8 modules and archive");
+   const qaBase=page.url().split('?')[0].split('#')[0];
+   for(const [fragment,view] of [['populationLivingAloneAgeSex','population'],['familyHouseholdsChildren2025','family'],['fertilityCohortSize','fertility']]){
+     await page.goto(qaBase+'#'+fragment,{waitUntil:'networkidle'});
+     await page.locator('#'+fragment).waitFor({state:'visible'});
+     const active=await page.locator('nav.research-primary a.active').getAttribute('href');
+     if(!active.includes('view='+view))throw Error(screen+' direct fragment menu mismatch '+fragment);
+   }
+   if(screen==='desktop'){
+     const broken=await browser.newPage();
+     await broken.route('**/reader-tools.js*',route=>route.abort());
+     await broken.goto(qaBase+'?view=overview',{waitUntil:'networkidle'});
+     await broken.getByRole('alert').filter({hasText:'Dalis tyrimo turinio neįsikėlė'}).waitFor();
+     await broken.getByRole('button',{name:'Atnaujinti puslapį'}).waitFor();
+     await broken.close();
+   }
+   console.log('PASS',screen,'chart tables, keyboard, direct fragments, full-research order');
    await page.close();
   }
  }finally{await browser.close();}

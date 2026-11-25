@@ -41,16 +41,16 @@
     <h3>Ar keitėsi gimimų eiliškumas?</h3>
     <p class="lead">Eurostat duomenų rinkinyje <code>demo_find</code> yra pirmo, antro, trečio ir ketvirto ar aukštesnio eiliškumo gimimų dalys. Jas naudojame tik tada, kai oficiali metinė serija pasiekiama. Tai svarbu mūsų klausimui: finansinis saugumas teoriškai gali labiau veikti sprendimą dėl antro ar trečio vaiko nei patį pirmojo vaiko faktą.</p>
     <div class="chart-wrap" style="height:330px"><canvas id="policyBirthOrderChart"></canvas></div>
-    <div class="chart-caption" id="policyBirthOrderCaption">Laukiama Eurostat <code>demo_find</code> gimimų eiliškumo serijos. Jei duomenų nėra, grafikas nerodomas ir jokių reikšmių neinterpoliuojame.</div>
+    <div class="chart-caption" id="policyBirthOrderCaption">Gimimų eiliškumo dalys · 2005–2012 m. · Eurostat <code>demo_find</code>.</div>
 
-    <h3>2008 m. draudimo išlaidų ir viso fondo finansų kontekstas</h3>
+    <div id="policyBirthOrderFinding" class="alert alert-blue"><strong>Ką rodo gimimų eiliškumas.</strong> 2005–2012 m. antrų gimimų dalis padidėjo nuo <strong>34,1 % iki 37,5 %</strong>, trečių – nuo <strong>10,3 % iki 11,0 %</strong>. Tai atitinkamai +3,4 ir +0,7 procentinio punkto. Dalys skaičiuojamos nuo visų tų metų gimimų; jos neparodo, kiek konkreti šeima susilaukė vaikų, ir neįrodo išmokų poveikio.</div><h3>2008 m. draudimo išlaidų ir viso fondo finansų kontekstas</h3>
     <div class="findings">
       <div class="finding"><div class="finding-num">01</div><div><div class="finding-title">Ligos ir motinystės socialinio draudimo išlaidos – platesnė suma nei vaiko priežiūros išmokos</div><div class="finding-body">Vyriausybės 2008 m. veiklos ataskaitoje nurodyta, kad beveik <strong>1,7 mlrd. Lt</strong> Valstybinio socialinio draudimo fondo lėšų buvo panaudota <strong>ligos ir motinystės socialinio draudimo išmokoms</strong> mokėti ir didinti. Tai nėra atskiros vaiko priežiūros reformos kaina ir neleidžia jos apskaičiuoti.</div></div></div>
       <div class="finding"><div class="finding-num">02</div><div><div class="finding-title">„Sodros“ išlaidos viršijo pajamas</div><div class="finding-body">Toje pačioje Vyriausybės ataskaitoje nurodyta, kad per 2008 m. beveik visas fondo atsargos rezervas buvo panaudotas, o metų pabaigoje fondui teko skolintis lėšų socialinio draudimo išmokoms laiku mokėti. <strong>Ši bendra fondo padėtis neįrodo atskiros reformos indėlio į deficitą.</strong></div></div></div>
-      <div class="finding"><div class="finding-num">03</div><div><div class="finding-title">Politikos klausimas turi dvi puses</div><div class="finding-body">Vertinant naują 2026 m. šeimos paketą verta atskirai klausti: <strong>(a)</strong> ar finansinis saugumas keičia gimimų laiką ir eiliškumą, ir <strong>(b)</strong> ar pasirinktas finansavimo modelis yra tvarus senėjančiai visuomenei. Vienas teigiamas atsakymas savaime negarantuoja kito.</div></div></div>
+      <div class="finding"><div class="finding-num">03</div><div><div class="finding-title">Politikos klausimas turi dvi puses</div><div class="finding-body">Vertinant šeimos politikos priemones verta atskirai klausti: <strong>(a)</strong> ar finansinis saugumas keičia gimimų laiką ir eiliškumą, ir <strong>(b)</strong> ar pasirinktas finansavimo modelis yra tvarus senėjančiai visuomenei. Vienas teigiamas atsakymas savaime negarantuoja kito.</div></div></div>
     </div>
 
-    <div class="alert alert-green"><strong>Ką verta stebėti dabar.</strong> Jei norėsime vertinti 2026 m. paketą rimtai, svarbiausi būsimi rodikliai bus ne tik bendras TFR, bet ir <strong>pirmų / antrų / trečių gimimų dalys, motinos amžius pagal gimimo eiliškumą, gimimų skaičius pagal pajamas / užimtumo statusą (jei oficialiai prieinama) ir reali metinė paketo fiskalinė kaina</strong>.</div>
+    <div class="alert alert-green"><strong>Ką verta stebėti dabar.</strong> Vertinant šeimos politikos priemonių poveikį, svarbiausi būsimi rodikliai bus ne tik bendras TFR, bet ir <strong>pirmų / antrų / trečių gimimų dalys, motinos amžius pagal gimimo eiliškumą, gimimų skaičius pagal pajamas / užimtumo statusą (jei oficialiai prieinama) ir reali metinė paketo fiskalinė kaina</strong>.</div>
 
     <div class="source-line">Šaltiniai: <a href="https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table?lang=en" target="_blank" rel="noopener">Eurostat · demo_find</a> · <a href="https://ec.europa.eu/eurostat/documents/2995521/5181166/3-07032014-BP-EN.PDF/86db5ee8-ad86-4b92-b7de-96d4685746ac?version=1.0" target="_blank" rel="noopener">Eurostat · fertility rates 2001/2005/2010–2012</a> · <a href="https://e-seimas.lrs.lt/rs/actualedition/TAIS.119523/FEcGJWRZMz/" target="_blank" rel="noopener">E-Seimas · išmokų režimas</a> · <a href="https://e-seimas.lrs.lt/rs/legalact/TAD/TAIS.350209/" target="_blank" rel="noopener">2009 m. įstatymas · 90/75 % nuo 2010-07</a> · <a href="https://e-seimas.lrs.lt/rs/legalact/TAD/TAIS.340242/" target="_blank" rel="noopener">Vyriausybės 2008 m. veiklos ataskaita</a></div>
   </div>`;
@@ -64,10 +64,10 @@
   ];
 
   const render=(rows)=>{
-    const tfrRows=rows.filter(r=>Number.isFinite(r.tfr));
+    const tfrRows=Array.from({length:8},(_,i)=>rows.find(r=>r.year===2005+i)||{year:2005+i,tfr:null});
     const c=document.getElementById('policyTfrChart');
-    if(c && window.Chart && tfrRows.length){
-      new Chart(c,{type:'line',data:{labels:tfrRows.map(r=>String(r.year)),datasets:[{label:'Lietuvos TFR',data:tfrRows.map(r=>r.tfr),borderColor:'#b9382b',backgroundColor:'#b9382b',tension:.2,pointRadius:5,borderWidth:3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom'}},scales:{y:{min:1.1,max:1.8,title:{display:true,text:'Vaikai vienai moteriai'},grid:{color:'rgba(74,72,69,.12)'}},x:{grid:{display:false}}}}});
+    if(c && window.Chart && tfrRows.some(r=>Number.isFinite(r.tfr))){
+      new Chart(c,{type:'line',data:{labels:tfrRows.map(r=>String(r.year)),datasets:[{label:'Lietuvos TFR',data:tfrRows.map(r=>r.tfr),spanGaps:false,borderColor:'#b9382b',backgroundColor:'#b9382b',tension:.2,pointRadius:5,borderWidth:3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom'}},scales:{y:{min:1.1,max:1.8,title:{display:true,text:'Vaikai vienai moteriai'},grid:{color:'rgba(74,72,69,.12)'}},x:{grid:{display:false}}}}});
     }
 
     const hasOrders=rows.some(r=>['first_birth_share','second_birth_share','third_birth_share','fourth_plus_birth_share'].some(k=>Number.isFinite(r[k])));
@@ -75,11 +75,12 @@
     const cap=document.getElementById('policyBirthOrderCaption');
     if(oc && window.Chart && hasOrders){
       const ks=[['first_birth_share','Pirmi'],['second_birth_share','Antri'],['third_birth_share','Treti'],['fourth_plus_birth_share','Ketvirti+']];
-      const datasets=ks.map(([key,label])=>({label,data:rows.map(r=>Number.isFinite(r[key])?r[key]:null),borderWidth:2,tension:.2,pointRadius:3,spanGaps:true}));
+      const datasets=ks.map(([key,label])=>({label,data:rows.map(r=>Number.isFinite(r[key])?r[key]:null),borderWidth:2,tension:.2,pointRadius:3,spanGaps:false}));
       new Chart(oc,{type:'line',data:{labels:rows.map(r=>String(r.year)),datasets},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom'}},scales:{y:{title:{display:true,text:'Visų gyvų gimimų dalis, %'},grid:{color:'rgba(74,72,69,.12)'}},x:{grid:{display:false}}}}});
       if(cap) cap.innerHTML='Gyvų gimimų dalis pagal gimimo eiliškumą · Eurostat <code>demo_find</code>. Tarpinių trūkstamų reikšmių neinterpoliuojame.';
     } else if(oc){
       oc.closest('.chart-wrap')?.remove();
+      if(cap) cap.textContent='Gimimų eiliškumo grafiko duomenys neįsikėlė. Pagrindinis 2005–2012 m. palyginimas pateiktas žemiau; trūkstamų reikšmių nepakeičiame nuliais.';
     }
   };
 

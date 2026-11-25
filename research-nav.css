@@ -51,3 +51,18 @@ nav.research-primary a.active:after{content:'';position:absolute;left:.8rem;righ
 #fertilityCohortSize .cohort-period-table th,#fertilityCohortSize .cohort-period-table td{overflow-wrap:anywhere;padding:.65rem .4rem;letter-spacing:normal}
 .cohort-period-table caption{text-align:left;font-size:.9rem;padding:.6rem 0;color:var(--ink2)}
 @media(max-width:600px){.cohort-contributions{grid-template-columns:1fr}.cohort-period-table th{font-size:11px}.cohort-period-table td{font-size:14px}}
+
+.module-contents{position:static;background:transparent;display:flex;flex-wrap:wrap;gap:.5rem;padding:.8rem 0 0;z-index:auto;overflow:visible}
+.module-contents a,.module-contents a:first-child{font-family:inherit;color:var(--blue);font-size:.9rem;text-transform:none;letter-spacing:normal;padding:.35rem .65rem;border:1px solid var(--rule);white-space:normal}
+.module-contents a:hover{color:var(--ink);background:var(--paper)}
+.chart-data{margin:1rem 0 1.4rem;max-width:100%;min-width:0}
+.chart-data-scroll{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.chart-data table{width:100%;min-width:340px;table-layout:auto}
+.chart-data th,.chart-data td{padding:.6rem .7rem;letter-spacing:normal}
+.chart-data caption{text-align:left;padding:.7rem 0;font-size:.85rem;color:var(--ink2)}
+.chart-data th[scope=row]{font-family:inherit;font-weight:400;text-transform:none}
+#researchLoadError{margin:1rem auto;max-width:1050px}
+#researchLoadError button{font:inherit;padding:.4rem .7rem;cursor:pointer}
+a:focus-visible,summary:focus-visible,button:focus-visible,.chart-data-scroll:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+[id]{scroll-margin-top:4.5rem}
+.two-col>*{min-width:0}

@@ -37,7 +37,7 @@
         <div class="alert alert-blue" style="margin-top:1.1rem"><strong>${end} m. pjūvis.</strong> Į Lietuvą atvyko <strong>${fmt(latest.immigration_men)} vyrų</strong> ir <strong>${fmt(latest.immigration_women)} moterų</strong> 25–44 m. grupėje; išvyko atitinkamai <strong>${fmt(latest.emigration_men)}</strong> ir <strong>${fmt(latest.emigration_women)}</strong>. Metinis neto balansas: <strong>${signed(latest.net_men)} vyrams</strong> ir <strong>${signed(latest.net_women)} moterims</strong>.</div>
 
         ${lt.length?`
-        <h3 style="margin-top:2rem">O Lietuvos piliečių grįžimas?</h3>
+        <p class="small"><strong>Skirtingi palyginimai.</strong> Čia kasmet skaičiuojami tais metais 25–44 m. amžiaus žmonių atvykimai ir išvykimai. Amžiaus intervalas pastovus, bet į jį patenkantys gimimo metai keičiasi. <a href="?view=population#populationCohortBalance">Tų pačių gimimo metų moterų balansas pateiktas atskirai →</a></p><h3 style="margin-top:2rem">O Lietuvos piliečių grįžimas?</h3>
         <p>Čia „grįžtamąją migraciją“ apibrėžiame kaip <strong>Lietuvos piliečių imigraciją į Lietuvą</strong>. Tai agreguotas oficialus rodiklis – jis neseka, ar grįžo tas pats anksčiau išvykęs žmogus.</p>
         <div class="alert alert-blue"><strong>Svarbus kontrastas.</strong> Per ${start}–${end} m. 25–44 m. Lietuvos piliečių srautų balansas buvo <strong>${signed(ltMaleNet)} vyrams</strong> ir <strong>${signed(ltFemaleNet)} moterims</strong>. Vadinasi, šio laikotarpio bendro vyrų migracijos pertekliaus <strong>negalima paaiškinti Lietuvos vyrų grįžimu</strong>: Lietuvos piliečių vyrų neto balansas per visą laikotarpį buvo ${ltMaleNet<0?'neigiamas':'teigiamas'}.</div>
         <div class="chart-wrap" style="height:360px"><canvas id="ltCitizenMigrationSexChart"></canvas></div>
@@ -80,5 +80,5 @@
         });
       }
     })
-    .catch(err=>console.error('Nepavyko įkelti migracijos pagal lytį duomenų:',err));
+    .catch(err=>{window.reportResearchLoadIssue?.();console.error('Nepavyko įkelti migracijos pagal lytį duomenų:',err);});
 })();

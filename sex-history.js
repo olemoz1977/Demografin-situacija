@@ -112,12 +112,12 @@
             });
           }
         })
-        .catch(err=>console.error('Nepavyko įkelti istorinių gimimų pagal lytį:',err));
+        .catch(err=>{window.reportResearchLoadIssue?.();console.error('Nepavyko įkelti istorinių gimimų pagal lytį:',err);});
 
       const source=document.querySelector('#lytis-amzius .source-line');
       if(source && !source.innerHTML.includes('demo_pjan')){
         source.innerHTML += ' · <a href="https://ec.europa.eu/eurostat/databrowser/view/demo_pjan/default/table?lang=en" target="_blank" rel="noopener">Eurostat · demo_pjan · amžius × lytis</a>';
       }
     })
-    .catch(err => console.error('Nepavyko įkelti Eurostat lyties/amžiaus istorijos:',err));
+    .catch(err => {window.reportResearchLoadIssue?.();console.error('Nepavyko įkelti Eurostat lyties/amžiaus istorijos:',err);});
 })();

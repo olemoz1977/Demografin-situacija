@@ -33,7 +33,7 @@ if(ageSection){
       <div class="kpi"><div class="kpi-num green">20,9 %</div><div class="kpi-label">65 metų ir vyresni · 2025</div><div class="kpi-note">603,5 tūkst.</div></div>
     </div>
     <div class="chart-wrap" style="height:520px"><canvas id="sexAgeChart"></canvas></div>
-    <div class="chart-caption">Gyventojų skaičius pagal lytį ir amžiaus grupes · 2025 m. pradžia · procentais. Vyrai kairėje, moterys dešinėje.</div>
+    <div class="chart-caption">Amžiaus pasiskirstymas kiekvienos lyties viduje · 2025 m. pradžia. Vyrų procentai skaičiuojami nuo visų vyrų, moterų – nuo visų moterų. Vyrai kairėje, moterys dešinėje; minuso ženklas tik pasuka vyrų stulpelius į kairę.</div>
     <div class="two-col" style="margin-top:2rem">
       <div>
         <h3>Moterų skaičius 1 000 vyrų · 2015–2025</h3>
@@ -69,8 +69,9 @@ if(ageSection){
         <tr><td>Neto tarptautinė migracija</td><td class="td-num">−17 974</td></tr>
         <tr><td>Mirtingumas</td><td class="td-num">−1 611</td></tr>
         <tr><td>Likutinis apskaitos skirtumas</td><td class="td-num">+264</td></tr>
+        <tr><td><strong>Bendras moterų skaičiaus pokytis</strong></td><td class="td-num"><strong>−19 321</strong></td></tr>
       </tbody></table>
-      <p><strong>Šiuo laikotarpiu migracijos netekimas buvo didžiausia šių moterų kartų bendro sumažėjimo dalis.</strong> Neto balansas apskaičiuotas iš 85 630 atvykimų ir 103 604 išvykimų. Jis apima grįžimą bei kitą imigraciją ir neparodo unikalių išvykusių moterų skaičiaus.</p>
+      <p><strong>Šiuo laikotarpiu migracijos netekimas buvo didžiausia šių moterų kartų bendro sumažėjimo dalis.</strong> Neto balansas apskaičiuotas iš 85 630 atvykimų ir 103 604 išvykimų. Jis apima grįžimą bei kitą imigraciją ir neparodo unikalių išvykusių moterų skaičiaus. Likutinis +264 yra apskaitos nesutapimas tarp gyventojų pokyčio ir migracijos bei mirčių sumos, ne papildoma nustatyta migracija.</p>
       <details><summary>Laikotarpis, apskaitos skirtumas ir ryšys su gimimais</summary>
         <p class="small">Gyventojai lyginami 2012-01-01 ir 2025-01-01, o mirtys ir migracija – per 2012–2024 kalendorinius metus. Sekamos visos Lietuvoje gyvenančios šių gimimo metų moterys, įskaitant gimusias užsienyje. 264 yra gyventojų pokyčio ir suderintų srautų skirtumas; jo nepriskiriame migracijai. Lietuvos imigracijos 2012–2020 m. duomenys buvo perskaičiuoti po 2021 m. surašymo.</p>
         <p class="small">Ilgesniu 2010-01-01–2025-01-01 laikotarpiu tų pačių gimimo metų moterų skaičius sumažėjo 40 437, mirčių užregistruota 1 778. Visam laikotarpiui tiesioginis migracijos išskaidymas netaikomas: 2010–2011 m. trūksta duomenų pagal per metus pasiektą amžių. Ši analizė neapskaičiuoja, kiek vaikų būtų gimę be migracijos, ir jos negalima sumuoti su gimimų mažėjimo indėlio procentais.</p>

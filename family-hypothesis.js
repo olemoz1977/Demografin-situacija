@@ -48,7 +48,7 @@
       <div class="card"><h3>3 · Gimimų laiko langas</h3><p>Vėlesnis pirmas gimimas palieka trumpesnį laiką antram ir trečiam gimimui. Tai tikėtinas mechanizmas, tačiau jo dydį Lietuvai reikia matuoti, o ne numanyti.</p></div>
     </div>
 
-    <h3 style="margin-top:2rem">Įrodymų stiprumas</h3>
+    <h3 style="margin-top:2rem">Įrodymų stiprumas</h3><p class="small">Tai autoriaus kokybinis literatūros vertinimas, o ne standartizuotas sisteminės apžvalgos balas. Stiprus ryšys ketinimų tyrime nėra įrodytas poveikis gimimų skaičiui. Skerspjūvio apklausa parodo sąryšį, tačiau pati nenustato priežasties.</p>
     <table><thead><tr><th>Teiginys</th><th>Vertinimas šiame projekte</th></tr></thead><tbody>
       <tr><td>Gimdymai OECD šalyse persislenka į vyresnį amžių</td><td><strong>Stiprus</strong> · oficiali OECD analizė</td></tr>
       <tr><td>Darbo–šeimos konflikto ir nelygios priežiūros naštos mažinimas gali palaikyti gimstamumą</td><td><strong>Stiprus–vidutinis</strong> · OECD ir tarptautinė literatūra</td></tr>
