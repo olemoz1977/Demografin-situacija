@@ -44,3 +44,5 @@ jobs:
 # Verify the deployed cohort balance together with all 38 published findings (2026-11-25).
 
 # Verify deployed reader clarity, disclosures and all 38 published findings (2026-11-25).
+
+# Verify all 21 review improvements, chart alternatives and direct fragment navigation after deployment.
