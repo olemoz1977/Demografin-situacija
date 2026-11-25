@@ -4,6 +4,7 @@ const {chromium}=require("playwright");
 const register=JSON.parse(fs.readFileSync("data/research-findings-register.json","utf8"));
 const published=register.findings.filter(f=>f.status.startsWith("PUBLISHED_"));
 const checks=[
+  ["FERTILITY-COHORT-SIZE-2024-01", "fertility", "#fertilityCohortSize", "43 %"],
   ["EU-HH-LFS-2025-01", "population", "#populationHouseholdLfsComparison", "62,5 %"],
   ["FAMILY-HOUSEHOLDS-LFS-2025-01", "family", "#familyHouseholdsChildren2025", "7,0 % Lietuvos namų ūkių su vaikais"],
   [
