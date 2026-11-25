@@ -1244,6 +1244,37 @@
         "github_pages_deployed": false,
         "scope": "Descriptive age, sex and survey comparisons; causal explanation excluded."
       }
+    },
+    {
+      "id": "FERTILITY-COHORT-SIZE-2024-01",
+      "area": "fertility",
+      "title": "Moterų skaičiaus ir amžiaus sudėties indėlis į modeliuotą gimimų mažėjimą",
+      "period": "2010–2024; 2015–2024; 2019–2024",
+      "status": "PUBLISHED_CONTEXT",
+      "statement": "Autoriaus simetrinis Eurostat demo_fasec/demo_pjan gimimų pokyčio išskaidymas 20–44 m. moterų grupėje: moterų skaičiaus ir amžiaus sudėties indėlis 2010–2024 m. 43,0 %, 2015–2024 m. 21,9 %, 2019–2024 m. 10,3 %. Suapvalinta svetainėje 43 %, 22 %, 10 %. Grupė apima 95,1 % visų 2010 m. ir 98,3 % 2024 m. gimimų. Struktūra apima migraciją bei mirtingumą; gimdymo rodiklių pokytis apima ir gimdymo atidėjimą. Ne priežastinis ar galutinio vaikų skaičiaus įvertis.",
+      "population": "Lietuvoje gyvenančios 20–44 m. moterys; amžius pilnais metais.",
+      "source_urls": [
+        "https://ec.europa.eu/eurostat/databrowser/view/demo_fasec/default/table",
+        "https://ec.europa.eu/eurostat/databrowser/view/demo_pjan/default/table"
+      ],
+      "evidence_files": [
+        "research/cohort-size-impact-2026-11-25.md",
+        "research/raw/cohort-size-20261125/demo_pjan.json",
+        "research/raw/cohort-size-20261125/demo_frate.json",
+        "research/raw/cohort-size-20261125/results.json",
+        "scripts/analyze_cohort_size.py",
+        "research/raw/cohort-size-20261125/demo_fasec.json",
+        "research/raw/cohort-size-20261125/validated-results.json",
+        "scripts/validate_cohort_size.py"
+      ],
+      "publication": {
+        "module": "fertility",
+        "file": "index.html",
+        "marker": "id=\"fertilityCohortSize\""
+      },
+      "blocker": null,
+      "next_action": "20–44 m. rezultatas sutikrintas su faktiniais Eurostat gimimais pagal motinos amžių. Pilno 15–49 m. modelio ir gryno istorinių gimimų indėlio neinterpretuoti be papildomų duomenų.",
+      "result_type": "AUTHOR_CALCULATED_DESCRIPTIVE_DECOMPOSITION"
     }
   ]
 }

@@ -13,4 +13,4 @@ Neskelbiama kaip nustatyta: šuolio priežastis, migracijos/našlystės/svorių 
 
 Pagrindinė vieta – Gyventojų struktūra. Apžvalgos esamoje namų ūkių kortelėje pridėta nuoroda į amžių ir lytį; Šeimos aplinkoje tik nuoroda, be pasikartojančios lentelės. Migracijoje pataisyta antraštė, kad nesusidarytų prielaida apie nustatytą ryšį.
 
-47 įrašai išsaugomi; skelbiamų išvadų skaičius didėja nuo 33 iki 36. Visų 36 matomumas tikrinamas esamame desktop/mobile audite; naujoms lentelėms papildomai tikrinamos reikšmės ir 320 px ribos. Paskelbimo žymos siūlomame kode savaime nepatvirtina įvykusio diegimo: faktinio Pages ir gyvos svetainės rezultatas užfiksuojamas po patikrų.
+Po lygiagretaus gimstamumo papildymo išsaugomi 48 įrašai; skelbiamų išvadų skaičius didėja nuo 34 iki 37. Visų 37 matomumas tikrinamas esamame desktop/mobile audite; naujoms lentelėms papildomai tikrinamos reikšmės ir 320 px ribos. Paskelbimo žymos siūlomame kode savaime nepatvirtina įvykusio diegimo: faktinio Pages ir gyvos svetainės rezultatas užfiksuojamas po patikrų.

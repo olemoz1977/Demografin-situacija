@@ -7,6 +7,7 @@ const checks=[
   ["EU-HH-SILC-AGE-2025-01","population","#populationHouseholdAgeSilc","22,3 % visų Lietuvos namų ūkių"],
   ["EU-HH-LFS-AGE-SEX-2025-01","population","#populationLivingAloneAgeSex","45,0 % Lietuvos 25–54 metų vyrų"],
   ["EU-HH-LFS-TREND-QA-2025-01","population","#populationSeniorSurveyTrend","59,9 % (p)"],
+  ["FERTILITY-COHORT-SIZE-2024-01", "fertility", "#fertilityCohortSize", "43 %"],
   ["EU-HH-LFS-2025-01", "population", "#populationHouseholdLfsComparison", "62,5 %"],
   ["FAMILY-HOUSEHOLDS-LFS-2025-01", "family", "#familyHouseholdsChildren2025", "7,0 % Lietuvos namų ūkių su vaikais"],
   [

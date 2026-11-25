@@ -18,7 +18,7 @@
     scenarijai:'future',isvados:'all',metodika:'methods',saltiniai:'methods'
   };
   const HASH_VIEW={
-    '#apzvalga':'overview','#tfr':'fertility','#regionai':'fertility','#amzius':'fertility','#lytis-amzius':'population',
+    '#apzvalga':'overview','#fertilityCohortSize':'fertility','#tfr':'fertility','#regionai':'fertility','#amzius':'fertility','#lytis-amzius':'population',
     '#gyventojai':'migration','#uzsienieciai':'migration','#santuokos':'family','#parama-istorija':'family',
     '#infrastruktura':'family','#skaitmena':'family','#familyFormationHypotheses':'family','#housing-affordability':'housing','#housingAffordability':'housing','#scenarijai':'future',
     '#metodika':'methods','#saltiniai':'methods','#isvados':'all'
@@ -65,7 +65,7 @@
       <p class="lead">Svarbiausi jau nustatyti šalies demografiniai kontrastai: gimstamumas visose apskrityse, gyventojų balansas, lyčių santykis pagal amžių ir neįprasta namų ūkių sandara. Paskutinė išvada – aiškiai pažymėta <strong>Europos Komisijos bazinė projekcija</strong>, o ne įvykęs pokytis.</p>
       <h3 id="overviewThreeFindings">Penkios svarbiausios tyrimo išvados</h3>
       <div class="research-summary">
-        <div class="card"><div class="eyebrow">01 · 2024 m. · stebėtas rodiklis</div><strong>Žemas gimstamumas apima visas apskritis</strong><p>Lietuvos TFR buvo <strong>1,11</strong> – trečias mažiausias ES. Nė vienoje iš dešimties apskričių rodiklis neviršijo <strong>1,21</strong> (intervalas 0,96–1,21). <a href="${makeUrl('fertility')}">Gimstamumo tyrimas →</a></p></div>
+        <div class="card"><div class="eyebrow">01 · 2024 m. · stebėtas rodiklis</div><strong>Žemas gimstamumas apima visas apskritis</strong><p>Lietuvos TFR buvo <strong>1,11</strong> – trečias mažiausias ES. Nė vienoje iš dešimties apskričių rodiklis neviršijo <strong>1,21</strong> (intervalas 0,96–1,21). <a href="${makeUrl('fertility')}">Gimstamumo tyrimas →</a> <a href="${makeUrl('fertility')}#fertilityCohortSize">Kartų dydžio indėlis →</a></p></div>
         <div class="card"><div class="eyebrow">02 · 2025* · išankstiniai VDA</div><strong>Migracija nebekompensavo natūralaus mažėjimo</strong><p>Natūrali kaita <strong>−19 946</strong>, neto migracija <strong>+16 165</strong>; jų balansas <strong>−3 781</strong>. Nuo 2024 m. bendras balansas pablogėjo 8 554 žmonėmis – daugiausia dėl sumažėjusio migracijos prieaugio. <a href="${makeUrl('migration')}">Migracijos tyrimas →</a></p></div>
         <div class="card"><div class="eyebrow">03 · 2025 m. · gyventojų struktūra</div><strong>Lyčių santykis jaunesniame amžiuje priešingas bendram</strong><p>Visoje populiacijoje apie <strong>1 104 moterys / 1 000 vyrų</strong>, tačiau 25–44 m. grupėje – tik <strong>884</strong>. Tai gyventojų santykis, ne individualių partnerystės galimybių rodiklis. <a href="${makeUrl('population')}">Gyventojų struktūra →</a></p></div>
         <div class="card"><div class="eyebrow">04 · 2025 m. (p) · Eurostat apklausos įvertis</div><strong>Lietuvos namų ūkių sandara išsiskiria ES</strong><p><strong>55,7 %</strong> Lietuvos privačių namų ūkių sudarė vienas suaugęs be išlaikomų vaikų; ES – <strong>35,7 %</strong>. Tai namų ūkių, <strong>ne vienišų gyventojų</strong> dalis. <a href="${makeUrl('population')}#populationHouseholdStructure">Rodiklio apibrėžimas ir EU-LFS palyginimas →</a> <a href="${makeUrl('population')}#populationLivingAloneAgeSex">Amžius ir lytis →</a></p></div>
