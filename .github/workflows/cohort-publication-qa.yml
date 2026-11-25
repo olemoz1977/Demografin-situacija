@@ -28,4 +28,14 @@ jobs:
       - name: Check all published findings, modules and mobile layout
         run: |
           python -m http.server 8765 >/tmp/cohort-server.log 2>&1 &
+          for attempt in $(seq 1 30); do
+            curl --fail --silent http://127.0.0.1:8765/ >/dev/null && break
+            sleep 1
+          done
           node tests/publication-visibility-qa.cjs
+      - name: Save decomposition screenshots for editorial review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fertility-clarity-screenshots
+          path: qa-screenshots/

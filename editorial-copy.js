@@ -125,7 +125,7 @@
 
   function freCopy(){
     const lead=q('#policyFreBlock .lead');
-    if(lead) lead.innerHTML='<strong>FRE (full-rate equivalent)</strong> susumuoja bazinių išmokų normų ir mėnesių sandaugas. Diagramoje rodomos tik palyginamos 2008–2011 m. istorinės schemos; dabartinės sistemos dalinė 9,0 mėn. bazė pateikiama atskirai ir <strong>nėra</strong> visos dabartinės schemos FRE.';
+    if(lead) lead.innerHTML='<strong>FRE – išmokos perskaičiavimas į pilno tarifo mėnesius.</strong> Pavyzdžiui, 12 mėnesių mokant 50 % atlyginimo atitiktų 6 pilno tarifo mėnesius. Skaičiuojama sudedant bazinių išmokų normų ir mėnesių sandaugas. Diagramoje rodomos tik palyginamos 2008–2011 m. istorinės schemos; dabartinės sistemos dalinė 9,0 mėn. bazė pateikiama atskirai ir <strong>nėra</strong> visos dabartinės schemos FRE.';
     // Nepakeisti FRE atskiro komponentų palyginimo į tariamai bendrą dosnumo reitingą.
   }
 

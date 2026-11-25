@@ -34,3 +34,20 @@ nav.research-primary a.active:after{content:'';position:absolute;left:.8rem;righ
   nav.research-primary a:first-child{padding-left:.85rem}
   nav.research-primary a.active:after{left:.6rem;right:.6rem;bottom:-.55rem}
 }
+
+/* Reading guide and two-part decomposition, including 320 px screens. */
+.reader-map{border-left:3px solid var(--blue);padding:.7rem 1rem;margin:1.2rem 0 1.6rem;background:var(--paper)}
+.reader-map p{margin:.55rem 0 0;max-width:900px}
+.reader-context{margin-top:1rem;max-width:940px;color:var(--ink2)}
+.reader-context a{display:inline-block;margin-right:.6rem}
+.reader-details{border-top:1px solid var(--rule);margin-top:1.2rem;padding-top:.7rem}
+.reader-details summary{cursor:pointer;font-weight:600;color:var(--blue);padding:.25rem 0 .6rem}
+.reader-details p{margin:.6rem 0}
+.cohort-contributions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin:1rem 0}
+.cohort-contributions>div{background:var(--paper);border:1px solid var(--rule);padding:1rem}
+.cohort-contributions strong{font-size:1.7rem;display:block;color:var(--blue)}
+.cohort-contributions p{margin:.4rem 0 0}
+#fertilityCohortSize .cohort-period-table{table-layout:fixed;width:100%}
+#fertilityCohortSize .cohort-period-table th,#fertilityCohortSize .cohort-period-table td{overflow-wrap:anywhere;padding:.65rem .4rem;letter-spacing:normal}
+.cohort-period-table caption{text-align:left;font-size:.9rem;padding:.6rem 0;color:var(--ink2)}
+@media(max-width:600px){.cohort-contributions{grid-template-columns:1fr}.cohort-period-table th{font-size:11px}.cohort-period-table td{font-size:14px}}

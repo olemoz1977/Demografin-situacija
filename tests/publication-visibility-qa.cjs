@@ -8,7 +8,7 @@ const checks=[
   ["EU-HH-SILC-AGE-2025-01","population","#populationHouseholdAgeSilc","22,3 % visų Lietuvos namų ūkių"],
   ["EU-HH-LFS-AGE-SEX-2025-01","population","#populationLivingAloneAgeSex","45,0 % Lietuvos 25–54 metų vyrų"],
   ["EU-HH-LFS-TREND-QA-2025-01","population","#populationSeniorSurveyTrend","59,9 % (p)"],
-  ["FERTILITY-COHORT-SIZE-2024-01", "fertility", "#fertilityCohortSize", "43 %"],
+  ["FERTILITY-COHORT-SIZE-2024-01", "fertility", "#fertilityCohortSize", "Apie 90 %"],
   ["EU-HH-LFS-2025-01", "population", "#populationHouseholdLfsComparison", "62,5 %"],
   ["FAMILY-HOUSEHOLDS-LFS-2025-01", "family", "#familyHouseholdsChildren2025", "7,0 % Lietuvos namų ūkių su vaikais"],
   [
@@ -234,6 +234,27 @@ const normalize=s=>s.replace(/[\u00a0\u202f\s]+/g," ").trim();
        },selector);
        failures.push({id,selector,expected,detail});
      }
+    }
+    if(view==='fertility'){
+      const block=page.locator('#fertilityCohortSize');
+      const text=await block.innerText();
+      for(const phrase of ['2019–2024 m.','Apie 10 %','Apie 90 %','dalija gimimų sumažėjimą','1 000 trisdešimtmečių'])
+        if(!text.includes(phrase))throw Error(screen+' missing decomposition explanation '+phrase);
+      const detail=page.locator('#fertilityCohortPeriods');
+      if(await detail.getAttribute('open')!==null)throw Error('Historical comparison must start collapsed');
+      await detail.locator('summary').click();
+      const rows=await detail.locator('tbody tr').allInnerTexts();
+      const expected=[['2010–2024','43 %','57 %'],['2015–2024','22 %','78 %'],['2019–2024','10 %','90 %']];
+      if(rows.length!==3||rows.some((r,i)=>expected[i].some(v=>!r.includes(v))))throw Error(screen+' historical decomposition changed');
+      const bounds=await detail.locator('table').evaluate(el=>({left:el.getBoundingClientRect().left,right:el.getBoundingClientRect().right,width:innerWidth}));
+      if(bounds.left<0||bounds.right>bounds.width+2)throw Error(screen+' historical decomposition clipped');
+      await detail.locator('summary').click();
+      fs.mkdirSync('qa-screenshots',{recursive:true});
+      await block.screenshot({path:'qa-screenshots/fertility-clarity-'+screen+'.png'});
+    }
+    if(view!=='overview'){
+      const context=await page.locator('#researchTopicIntro .reader-context').innerText();
+      if(context.length<80)throw Error(screen+' '+view+' missing reading guide');
     }
     if(view==='population'||view==='family'){
      const selector=view==='population'?'#populationHouseholdLfsComparison':'#familyHouseholdsChildren2025';

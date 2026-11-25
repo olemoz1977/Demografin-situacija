@@ -6,7 +6,7 @@
     const section=document.createElement('section');
     section.id=SECTION_ID;
     section.innerHTML=`<div class="container">
-      <div class="section-label">Jaunų šeimų pirmasis būstas <span class="badge badge-official">BŪSTAS · 2024–2025 FAKTAI IR TYRIMO EIGA</span></div>
+      <div class="section-label">Jaunų šeimų pirmasis būstas <span class="badge badge-official">BŪSTAS · RINKA IR PARAMA</span></div>
       <h2>Butų pardavimo vidurkiai kilo, bet jaunų šeimų įperkamumo dar neišmatavome</h2>
       <p class="lead">2025 m. <strong>visuose šešiuose pateiktuose miestuose</strong> butų pardavimo €/m² vidurkiai buvo didesni nei 2024 m.; didžiausias vidurkis – Vilniuje. Regioninę paskatą pirmajam būstui gavo <strong>515 jaunų šeimų 2025 m.</strong>, palyginti su <strong>1 595 šeimomis 2022 m.</strong> Tačiau tai nei vienodos kokybės būsto kainų indeksas, nei paramos poreikio procentas. <strong>Jaunų šeimų faktinių pajamų ir palyginamos būsto kainos jungtis visoms 10 apskričių dar neišmatuota.</strong></p>
       <p class="small" id="housingYoungFamilyDefinition"><strong>Ką šiame tyrime vadiname jauna šeima?</strong> Remiamės Lietuvoje būsto paramai taikoma teisine sąvoka: sutuoktinių ar registruotų partnerių šeima, kurioje kiekvienas yra iki 36 metų, arba vienas iki 36 metų vaiką (-us) auginantis tėvas, motina ar globėjas (rūpintojas). Tai nėra visų jaunų asmenų ar visų pirmojo būsto pirkėjų statistinė grupė. <a href="https://socmin.lrv.lt/lt/veiklos-sritys/seima-ir-vaikai/finansine-paskata-pirmaji-busta-isigyjancioms-jaunoms-seimoms/" target="_blank" rel="noopener">SADM · apibrėžtis</a> ir <a href="https://www.e-tar.lt/rs/legalact/fcfaa4e034f411e99595d005d42b863e/" target="_blank" rel="noopener">Teisinis apibrėžimas · įstatymas</a>.</p>
@@ -19,7 +19,7 @@
         <h3 id="housingMarketResearchTitle">Rinkos rezultatai: šešių miestų pardavimo vidurkiai ir atskiri nuomos segmentai</h3>
         <p class="small" id="housingSingleAdultHouseholds"><strong>Namų ūkių kontekstas:</strong> Eurostat 2025 m. preliminariais duomenimis, Lietuvoje <strong>55,7 % privačių namų ūkių</strong> sudarė vienas suaugęs asmuo be išlaikomų vaikų (ES – 35,7 %). Tai <strong>ne būsto įperkamumo, nuosavybės ar jaunų šeimų rodiklis</strong>. <a href="?view=population#populationHouseholdStructure">Rodiklio paaiškinimas – Gyventojų struktūroje →</a></p>
 
-        <p>Čia – atskiri patikrinami <strong>rinkos faktai</strong>, o ne apskričių įperkamumo reitingas. Skirtingo laikotarpio ir standarto duomenų į vieną tariamai tikslų rodiklį nejungiame.</p>
+        <p>Rinkos dalyje pateikiame pardavimo kainas, atskirus nuomos segmentus ir finansavimo prielaidas. Toliau rodome, kiek šeimų faktiškai pasiekė valstybės parama.</p>
         <h4>1. VDA: daugiabučių butų pardavimo kainos šešiuose miestuose – 2025 m. visų šešių miestų butų pardavimo €/m² vidurkiai padidėjo</h4>
         <p class="small"><strong>Oficiali 2024–2025 m. statistika, €/m².</strong> Tai visų dydžių, amžiaus ir būklės butų pardavimo vidurkiai, o ne vienodo standarto pirmojo būsto krepšelis. <strong>Miestas nėra apskritis.</strong></p>
         <div class="housing-table-scroll" role="region" tabindex="0" aria-label="VDA 2024 ir 2025 metų butų pardavimo vidurkiai šešiuose miestuose">
@@ -31,7 +31,7 @@
 <tr><th scope="row">Vilnius</th><td>2 639</td><td>2 846</td></tr></tbody></table>
         </div>
         <p class="small"><strong>Išvada:</strong> visuose šešiuose miestuose 2025 m. vidurkis didesnis už 2024 m.; tai skirtingų metų parduotų butų sudėčių palyginimas, <strong>ne tos pačios kokybės buto kainos augimo matas</strong>.</p>
-        <p class="small">Šaltinis: <a href="https://osp-sdg.stat.gov.lt/arcgis/rest/services/EVP_DB_connection/evp56/FeatureServer/0" target="_blank" rel="noopener">VDA S7R280</a>. Dėl galimai skirtingos 2024 ir 2025 m. parduotų butų sudėties metinio kainų indekso neskaičiuojame.</p>
+        <p class="small">Šaltinis: <a href="https://osp-sdg.stat.gov.lt/arcgis/rest/services/EVP_DB_connection/evp56/FeatureServer/0" target="_blank" rel="noopener">VDA S7R280</a>.</p>
 
         <h4>2. „Ober-Haus“: 2025 m. gruodžio nuomos ir pirkimo segmentai</h4>
         <p class="small"><strong>Rinkos ekspertiniai intervalai, ne sandorių medianos.</strong> Trijuose miestuose abiejų lentelių teritorija įvardyta „gyvenamieji rajonai“. 1 kambario <strong>nuoma</strong> ir 2 kambarių <strong>pardavimas</strong> yra skirtingų butų rinkos; naujas butas – <strong>dalinės apdailos</strong>, seno būsto būklė ne visiškai suderinta.</p>
@@ -43,11 +43,11 @@
         </div>
         <p class="small">Šaltinis: UAB „OBER-HAUS“ nekilnojamasis turtas, <a href="https://www.ober-haus.lt/wp-content/uploads/NT-kainos-2025-gruodis.pdf" target="_blank" rel="noopener">2025 m. gruodžio kainų apžvalga, 1–2 psl.</a>. <strong>Vieno mėnesio intervalai nėra 2025 m. metiniai vidurkiai.</strong> Naujo ir seno būsto negalima laikyti vienodos būklės; neįtrauktos įrengimo ir remonto išlaidos. Duomenys nesudaro 10 apskričių imties.</p>
 
-        <h4>3. Pirmojo būsto finansavimas – metodika parengta</h4>
+        <h4>3. Kokiomis finansavimo prielaidomis remiamės</h4>
         <p>2025 m. istoriniame scenarijuje taikomas įprastas <strong>15 % pradinis įnašas</strong>. Lietuvos banko 2025 m. gruodžio vidutinė naujų būsto paskolų palūkanų norma – <strong>3,69 %</strong>. Atlikome paskolos įmokų ir palūkanų jautrumo skaičiavimus <strong>už vieną perkamą m²</strong>, nes 50 m² nėra pagrįstas visų pirmųjų butų standartas. <a href="https://www.lb.lt/lt/paskolu-palukanu-normos" target="_blank" rel="noopener">Lietuvos banko šaltinis</a>.</p>
         <p class="small">Tai <strong>2025 m. istorinė metodika, ne šiandieninis banko pasiūlymas</strong>. Faktinių jaunų šeimų santaupų, įrengimo ir kitų išlaidų trūksta, todėl modelinių m²/metus verčių nepateikiame kaip realios statistikos.</p>
         <div class="alert alert-amber"><strong>Kas dar nepatvirtinta?</strong> Vienodo standarto parduotų butų ir 1 kambario nuomos duomenys visose 10 apskričių, jaunų šeimų faktinės pajamos ir realios pragyvenimo išlaidos. Dėl to <strong>10 apskričių įperkamumo reitingas ir metinio taupymo m² rodiklis nepublikuojami</strong>.</div>
-        <p class="small"><strong>Metodikos ir šaltinių patikra:</strong> <a href="https://github.com/olemoz1977/Demografin-situacija/blob/main/research/housing-sale-coverage-contradiction-2024.md" target="_blank" rel="noopener">butų sandorių duomenų patikra</a> · <a href="https://github.com/olemoz1977/Demografin-situacija/blob/main/research/housing-state-support-2025.md" target="_blank" rel="noopener">2025 m. paramos taisyklės</a> · <a href="https://github.com/olemoz1977/Demografin-situacija/blob/audit/population-standard-2024-2025/research/housing-first-home-2025-mortgage-servicing-per-m2.md" target="_blank" rel="noopener">paskolos metodika pagal €/m²</a>. Nei skirtingų būstų vidurkiai, nei atskiri skaičiavimo pavyzdžiai nėra jaunų šeimų įperkamumo įvertis.</p>
+        <p class="small"><strong>Metodikos ir šaltinių patikra:</strong> <a href="https://github.com/olemoz1977/Demografin-situacija/blob/main/research/housing-sale-coverage-contradiction-2024.md" target="_blank" rel="noopener">butų sandorių duomenų patikra</a> · <a href="https://github.com/olemoz1977/Demografin-situacija/blob/main/research/housing-state-support-2025.md" target="_blank" rel="noopener">2025 m. paramos taisyklės</a> · <a href="https://github.com/olemoz1977/Demografin-situacija/blob/audit/population-standard-2024-2025/research/housing-first-home-2025-mortgage-servicing-per-m2.md" target="_blank" rel="noopener">paskolos metodika pagal €/m²</a>. </p>
       </section>
       <section class="housing-support-layer" aria-labelledby="housingSupportTitle">
         <div class="section-label">Valstybės parama pirmajam būstui <span class="badge badge-official">SADM · 2019–2025</span></div>
