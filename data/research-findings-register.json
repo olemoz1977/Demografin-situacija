@@ -1141,33 +1141,39 @@
       "area": "population",
       "title": "Senjorai nėra didžioji LT–ES vieno asmens namų ūkių skirtumo dalis",
       "period": "2025",
-      "status": "VERIFIED_UNPUBLISHED",
+      "status": "PUBLISHED_CONTEXT",
       "statement": "EU-SILC ilc_lvph02: iki 65 m. vieno asmens namų ūkiai sudaro LT 33,3 % (p), ES 20,2 % VISŲ namų ūkių; 65+ LT 22,3 % (p), ES 15,5 %. Skirtumai 13,1 ir 6,8 p. p. 65+ dalis tarp vieno asmens namų ūkių LT apie 40,0 %, ES 43,4 %. Tai aritmetinis suskaidymas, ne priežastinė dekompozicija; iki 65 m. nėra jaunų šeimų grupė.",
       "source_urls": [
         "https://ec.europa.eu/eurostat/databrowser/view/ilc_lvph02/default/table"
       ],
       "evidence_files": [
         "data/households-silc-age-source-2025.json",
-        "research/household-age-comparison-2026-11-24.md"
+        "research/household-age-comparison-2026-11-24.md",
+        "research/households-publication-scope-2026-11-25.md"
       ],
       "publication": {
         "module": "population",
-        "file": null,
-        "marker": null
+        "file": "app-base.js",
+        "marker": "id=\"populationHouseholdAgeSilc\""
       },
-      "blocker": "Tyrimo rezultatas išsaugotas; svetainės integracija šio amžiaus palyginimo sesijoje neatlikta.",
-      "next_action": "Panaudoti Struktūros interpretacijai; smulkesnio amžiaus ir lyties analizei rinktis suderinamą tyrimą bei vardiklį.",
+      "blocker": null,
+      "next_action": "Skelbti patikrintą aprašomąją dalį; šuolio priežasčių neteikti kaip nustatytų. Po diegimo patikrinti gyvą svetainę.",
       "related_findings": [
         "EU-HH-2025-01",
         "EU-HH-LFS-2025-01"
-      ]
+      ],
+      "publication_audit": {
+        "source_in_main": false,
+        "github_pages_deployed": false,
+        "scope": "Descriptive age, sex and survey comparisons; causal explanation excluded."
+      }
     },
     {
       "id": "EU-HH-LFS-AGE-SEX-2025-01",
       "area": "population",
       "title": "Gyvenimas po vieną: skirtingi LT vyrų ir vyresnių moterų kontrastai",
       "period": "2024–2025",
-      "status": "VERIFIED_UNPUBLISHED",
+      "status": "PUBLISHED_CONTEXT",
       "statement": "EU-LFS lfst_hhindws: 2025 m. po vieną gyveno 45,0 % LT 25–54 m. vyrų (ES 20,2 %) ir 26,1 % moterų (ES 12,2 %); tarp 65+ LT moterų 72,3 % (ES 40,4 %). Vardiklis – tos pačios amžiaus ir lyties grupės asmenys privačiuose namų ūkiuose. LT rodikliai aukštesni visose 8 plačiose grupėse; 65+ sudaro 36,3 % LT gyvenančiųjų po vieną (ES 41,0 %). Tai ne priežasčių ar partnerio nebuvimo įrodymas.",
       "source_urls": [
         "https://ec.europa.eu/eurostat/databrowser/view/lfst_hhindws/default/table",
@@ -1176,26 +1182,32 @@
       "evidence_files": [
         "data/households-lfs-age-sex-source-2024-2025.json",
         "data/households-lfs-age-sex-analysis.json",
-        "research/households-age-sex-lfs-2026-11-25.md"
+        "research/households-age-sex-lfs-2026-11-25.md",
+        "research/households-publication-scope-2026-11-25.md"
       ],
       "publication": {
         "module": "population",
-        "file": null,
-        "marker": null
+        "file": "app-base.js",
+        "marker": "id=\"populationLivingAloneAgeSex\""
       },
-      "blocker": "Išsaugotas tyrimas, dar neintegruotas į viešą svetainę; metinio LT pokyčio priežastys netirtos.",
-      "next_action": "Patikrinti ilgesnės LT laiko eilutės ir metaduomenų stabilumą; amžiaus-lyties dažnių nepaversti migracijos ar gimstamumo priežastimi.",
+      "blocker": null,
+      "next_action": "Skelbti patikrintą aprašomąją dalį; šuolio priežasčių neteikti kaip nustatytų. Po diegimo patikrinti gyvą svetainę.",
       "related_findings": [
         "EU-HH-SILC-AGE-2025-01",
         "EU-HH-LFS-2025-01"
-      ]
+      ],
+      "publication_audit": {
+        "source_in_main": false,
+        "github_pages_deployed": false,
+        "scope": "Descriptive age, sex and survey comparisons; causal explanation excluded."
+      }
     },
     {
       "id": "EU-HH-LFS-TREND-QA-2025-01",
       "area": "population",
       "title": "LT gyvenimo po vieną įverčių augimas po 2021 m. ir neišaiškintas 2024–2025 paspartėjimas",
       "period": "2014–2025",
-      "status": "VERIFIED_UNPUBLISHED",
+      "status": "PUBLISHED_CONTEXT",
       "statement": "EU-LFS LT65+ gyvenimo po vieną dažnis 2022 37,1 %, 2023 40,6 %, 2024 54,3 %, 2025 65,0 %. 2024–2025 bendras grupės įvertis +2,7 %, gyvenančių po vieną +23,0 %. 2021 LT ir ES langeliai turi b žymą; 2024/2025 atrinkti langeliai jos neturi. Lietuvos 2024 kokybės priede nedeklaruoti imties plano ar svorių schemos pakeitimai; tai nepaaiškina ir nepatvirtina 2025 priežasties. Papildoma patikra: EU-SILC ilc_lvps30 LT65+ 2023 51,0 %, 2024 54,9 % (p), 2025 59,9 % (p); 2024–2025 +5,0 p. p., kai EU-LFS +10,7. Abu tyrimai palaiko kryptį, bet ne vienodą metinio šuolio dydį ar priežastį.",
       "source_urls": [
         "https://ec.europa.eu/eurostat/databrowser/view/lfst_hhindws/default/table",
@@ -1213,19 +1225,25 @@
         "data/households-silc-65plus-sex-source-2023-2025.json",
         "data/households-senior-survey-comparison.json",
         "data/households-independent-national-evidence.json",
-        "research/households-independent-check-2026-11-25.md"
+        "research/households-independent-check-2026-11-25.md",
+        "research/households-publication-scope-2026-11-25.md"
       ],
       "publication": {
         "module": "population",
-        "file": null,
-        "marker": null
+        "file": "app-base.js",
+        "marker": "id=\"populationSeniorSurveyTrend\""
       },
-      "blocker": "Aprašomoji kryptis patikrinta antru apklausų šaltiniu; į svetainę dar neintegruota. Tikslaus šuolio priežastis ir dydžio tarp tyrimų skirtumas nenustatyti.",
-      "next_action": "Aprašomąjį rezultatą naudoti atskiriant apklausas; 2025 metinio šuolio priežasčių tyrimas sustabdytas iki naujo kokybės ar paklaidų šaltinio. Nepriklausomas surašymas yra 2021, ne 2025.",
+      "blocker": null,
+      "next_action": "Skelbti patikrintą aprašomąją dalį; šuolio priežasčių neteikti kaip nustatytų. Po diegimo patikrinti gyvą svetainę.",
       "related_findings": [
         "EU-HH-LFS-AGE-SEX-2025-01",
         "EU-HH-SILC-AGE-2025-01"
-      ]
+      ],
+      "publication_audit": {
+        "source_in_main": false,
+        "github_pages_deployed": false,
+        "scope": "Descriptive age, sex and survey comparisons; causal explanation excluded."
+      }
     }
   ]
 }

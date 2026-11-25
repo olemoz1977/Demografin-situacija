@@ -82,6 +82,42 @@ if(ageSection){
         <p class="small">Tai skirtingų apklausų ir vaikų apibrėžčių įverčiai. 62,5 % nėra 55,7 % patikslinimas ar pokytis per metus. Abu procentai skaičiuojami nuo namų ūkių, o ne nuo gyventojų.</p>
         <p class="source-line">Šaltinis: <a href="https://ec.europa.eu/eurostat/databrowser/view/lfst_hhnhtych/default/table" target="_blank" rel="noopener">Eurostat · lfst_hhnhtych · EU-LFS</a>; 2026-11-22 atsisiųsto rinkinio skaičiavimas: 1 100,5 / 1 760,2 tūkst. namų ūkių. <a href="?view=family#familyHouseholdsChildren2025">Namų ūkių su vaikais sudėtis →</a></p>
       </div>
+
+      <div id="populationHouseholdAgeSilc" style="margin-top:2rem">
+        <h3>Senjorai svarbūs, bet nesudaro daugumos vieno asmens namų ūkių</h3>
+        <p>2025 m. EU-SILC preliminariais duomenimis, vieno asmens namų ūkiai su 65 metų ar vyresniu gyventoju sudarė <strong>22,3 % visų Lietuvos namų ūkių</strong>, o su jaunesniu nei 65 metų gyventoju – <strong>33,3 %</strong>. ES atitinkamai – 15,5 % ir 20,2 %.</p>
+        <p>Tarp pačių vieno asmens namų ūkių senjorų namų ūkiai sudarė apie <strong>40 % Lietuvoje ir 43 % ES</strong>. Todėl Lietuvos išskirtinumo negalima paaiškinti vien senjorų gausa. Tačiau „iki 65 metų“ apima ir vidutinį amžių; tai nėra jaunų šeimų grupė.</p>
+        <p class="source-line">Šaltinis: <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_lvph02/default/table" target="_blank" rel="noopener">Eurostat · ilc_lvph02 · EU-SILC</a>. LT reikšmės preliminarios; dėl apvalinimo amžiaus dalių suma šiek tiek skiriasi nuo bendro 55,7 % rodiklio.</p>
+      </div>
+      <div id="populationLivingAloneAgeSex" style="margin-top:2rem">
+        <h3>25–54 metų grupėje dažniau po vieną gyvena vyrai, vyresniame amžiuje – moterys</h3>
+        <p>EU-LFS 2025 m. duomenimis, po vieną gyveno <strong>45,0 % Lietuvos 25–54 metų vyrų</strong> ir <strong>26,1 % to paties amžiaus moterų</strong>. Tarp 65 metų ir vyresnių žmonių dažniau po vieną gyveno moterys: 72,3 %, vyrų – 52,0 %.</p>
+        <p class="small"><strong>Šios lentelės vardiklis – tos pačios amžiaus ir lyties grupės žmonės privačiuose namų ūkiuose.</strong> Tai kitas rodiklis nei ankstesni procentai nuo visų namų ūkių.</p>
+        <div class="household-age-table-wrap"><table class="household-age-table"><thead><tr><th>Grupė · 2025 m.</th><th>Lietuva</th><th>ES</th></tr></thead><tbody>
+          <tr><td>18–24 m. vyrai</td><td>32,8 %</td><td>12,0 %</td></tr>
+          <tr><td>18–24 m. moterys</td><td>32,2 %</td><td>12,3 %</td></tr>
+          <tr><td>25–54 m. vyrai</td><td>45,0 %</td><td>20,2 %</td></tr>
+          <tr><td>25–54 m. moterys</td><td>26,1 %</td><td>12,2 %</td></tr>
+          <tr><td>55–64 m. vyrai</td><td>51,0 %</td><td>20,2 %</td></tr>
+          <tr><td>55–64 m. moterys</td><td>52,7 %</td><td>20,4 %</td></tr>
+          <tr><td>65+ vyrai</td><td>52,0 %</td><td>21,6 %</td></tr>
+          <tr><td>65+ moterys</td><td>72,3 %</td><td>40,4 %</td></tr>
+        </tbody></table></div>
+        <p>Lietuvos įverčiai aukštesni už ES visose šiose grupėse. Senjorai sudarė 36,3 % Lietuvos gyvenančiųjų po vieną, ES – 41,0 %. Tai EU-LFS asmenų pjūvis; jo nejungiame su ankstesniu EU-SILC namų ūkių pjūviu.</p>
+        <p class="small">Gyvenimas po vieną neparodo vienatvės, partnerio neturėjimo ar nenoro turėti vaikų. Vienas suaugęs su kartu gyvenančiais vaikais į šį rodiklį neįtrauktas. Migracijos, našlystės ar skyrybų indėlis čia nenustatytas.</p>
+        <p class="source-line">Šaltinis: <a href="https://ec.europa.eu/eurostat/databrowser/view/lfst_hhindws/default/table" target="_blank" rel="noopener">Eurostat · lfst_hhindws · EU-LFS</a>. Apskaičiuota iš tos pačios grupės asmenų skaičių; duomenys patikrinti 2026-11-25.</p>
+      </div>
+      <div id="populationSeniorSurveyTrend" style="margin-top:2rem">
+        <h3>Abu tyrimai rodo senjorų gyvenimo po vieną augimą, bet jo dydis skiriasi</h3>
+        <p>Didėjanti Lietuvos 65+ žmonių, gyvenančių po vieną, dalis matoma ir EU-LFS, ir EU-SILC. Abiejų tyrimų vardiklis šioje lentelėje – 65 metų ir vyresni žmonės privačiuose namų ūkiuose.</p>
+        <div class="household-age-table-wrap"><table class="household-age-table"><thead><tr><th>Metai</th><th>LT · EU-LFS</th><th>LT · EU-SILC</th></tr></thead><tbody>
+          <tr><td>2023</td><td>40,6 %</td><td>51,0 %</td></tr>
+          <tr><td>2024</td><td>54,3 %</td><td>54,9 % (p)</td></tr>
+          <tr><td>2025</td><td>65,0 %</td><td>59,9 % (p)</td></tr>
+        </tbody></table></div>
+        <p class="small">2024–2025 m. pokytis: EU-LFS apie +10,7 procentinio punkto, EU-SILC +5,0. Augimo kryptis sutampa, tačiau tiksli šuolio priežastis ir tyrimų skirtumo paaiškinimas dar nenustatyti. (p) – preliminaru. Tyrimų nevidurkiname ir nejungiame į vieną laiko eilutę.</p>
+        <p class="source-line">Šaltiniai: <a href="https://ec.europa.eu/eurostat/databrowser/view/lfst_hhindws/default/table" target="_blank" rel="noopener">EU-LFS · lfst_hhindws</a> ir <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_lvps30/default/table" target="_blank" rel="noopener">EU-SILC · ilc_lvps30</a>.</p>
+      </div>
     <div class="source-line">Šaltinis: <a href="https://publikacijos.stat.gov.lt/lietuva-skaiciais-2025/lt/categories/3" target="_blank" rel="noopener">Valstybės duomenų agentūra · Lietuva skaičiais 2025 · Nuolatiniai gyventojai</a></div>
   </div>`;
   ageSection.insertAdjacentElement('afterend',sexSection);

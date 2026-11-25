@@ -4,6 +4,9 @@ const {chromium}=require("playwright");
 const register=JSON.parse(fs.readFileSync("data/research-findings-register.json","utf8"));
 const published=register.findings.filter(f=>f.status.startsWith("PUBLISHED_"));
 const checks=[
+  ["EU-HH-SILC-AGE-2025-01","population","#populationHouseholdAgeSilc","22,3 % visų Lietuvos namų ūkių"],
+  ["EU-HH-LFS-AGE-SEX-2025-01","population","#populationLivingAloneAgeSex","45,0 % Lietuvos 25–54 metų vyrų"],
+  ["EU-HH-LFS-TREND-QA-2025-01","population","#populationSeniorSurveyTrend","59,9 % (p)"],
   ["EU-HH-LFS-2025-01", "population", "#populationHouseholdLfsComparison", "62,5 %"],
   ["FAMILY-HOUSEHOLDS-LFS-2025-01", "family", "#familyHouseholdsChildren2025", "7,0 % Lietuvos namų ūkių su vaikais"],
   [
@@ -244,6 +247,15 @@ const normalize=s=>s.replace(/[\u00a0\u202f\s]+/g," ").trim();
      const target=href.slice(href.indexOf('#'));
      await page.locator(target).waitFor({state:'visible'});
      await page.goto('http://127.0.0.1:8765/?view='+view,{waitUntil:'networkidle'});
+    }
+    if(view==='population'){
+     for(const selector of ['#populationLivingAloneAgeSex','#populationSeniorSurveyTrend']){
+      const sizing=await page.locator(selector+' table').evaluate(el=>({left:el.getBoundingClientRect().left,right:el.getBoundingClientRect().right,width:innerWidth}));
+      if(sizing.left<0||sizing.right>sizing.width+2)throw Error(screen+' age table clipped '+JSON.stringify(sizing));
+     }
+     const cells=await page.locator('#populationLivingAloneAgeSex tbody tr').allInnerTexts();
+     const values=[['32,8','12,0'],['32,2','12,3'],['45,0','20,2'],['26,1','12,2'],['51,0','20,2'],['52,7','20,4'],['52,0','21,6'],['72,3','40,4']];
+     if(cells.length!==8||cells.some((r,i)=>values[i].some(v=>!r.includes(v))))throw Error(screen+' age-sex table values mismatch');
     }
     const geometry=await page.evaluate(()=>({
       overflow:Math.max(0,document.documentElement.scrollWidth-innerWidth),
