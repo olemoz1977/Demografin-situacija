@@ -38,3 +38,5 @@ jobs:
           console.log("LIVE QA URL:",live);
           NODE
           node tests/publication-visibility-live.cjs
+
+# Recheck the deployed household age and sex publication (2026-11-25).
