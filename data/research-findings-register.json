@@ -1196,25 +1196,32 @@
       "title": "LT gyvenimo po vieną įverčių augimas po 2021 m. ir neišaiškintas 2024–2025 paspartėjimas",
       "period": "2014–2025",
       "status": "VERIFIED_UNPUBLISHED",
-      "statement": "EU-LFS LT65+ gyvenimo po vieną dažnis 2022 37,1 %, 2023 40,6 %, 2024 54,3 %, 2025 65,0 %. 2024–2025 bendras grupės įvertis +2,7 %, gyvenančių po vieną +23,0 %. 2021 LT ir ES langeliai turi b žymą; 2024/2025 atrinkti langeliai jos neturi. Lietuvos 2024 kokybės priede nedeklaruoti imties plano ar svorių schemos pakeitimai; tai nepaaiškina ir nepatvirtina 2025 priežasties.",
+      "statement": "EU-LFS LT65+ gyvenimo po vieną dažnis 2022 37,1 %, 2023 40,6 %, 2024 54,3 %, 2025 65,0 %. 2024–2025 bendras grupės įvertis +2,7 %, gyvenančių po vieną +23,0 %. 2021 LT ir ES langeliai turi b žymą; 2024/2025 atrinkti langeliai jos neturi. Lietuvos 2024 kokybės priede nedeklaruoti imties plano ar svorių schemos pakeitimai; tai nepaaiškina ir nepatvirtina 2025 priežasties. Papildoma patikra: EU-SILC ilc_lvps30 LT65+ 2023 51,0 %, 2024 54,9 % (p), 2025 59,9 % (p); 2024–2025 +5,0 p. p., kai EU-LFS +10,7. Abu tyrimai palaiko kryptį, bet ne vienodą metinio šuolio dydį ar priežastį.",
       "source_urls": [
         "https://ec.europa.eu/eurostat/databrowser/view/lfst_hhindws/default/table",
         "https://ec.europa.eu/eurostat/cache/metadata/en/employ_simslfs2_lt.htm",
-        "https://ec.europa.eu/eurostat/cache/metadata/Annexes/employ_simslfs2_lt_an_1.xlsm"
+        "https://ec.europa.eu/eurostat/cache/metadata/Annexes/employ_simslfs2_lt_an_1.xlsm",
+        "https://ec.europa.eu/eurostat/databrowser/view/ilc_lvps30/default/table",
+        "https://osp.stat.gov.lt/2021-gyventoju-ir-bustu-surasymo-rezultatai/namu-ukiai-ir-seimos"
       ],
       "evidence_files": [
         "data/households-lfs-history-source.json",
         "data/households-lfs-history-analysis.json",
         "data/households-lfs-lt-quality-2024-extract.json",
-        "research/households-lfs-history-quality-2026-11-25.md"
+        "research/households-lfs-history-quality-2026-11-25.md",
+        "data/households-silc-65plus-history-source.json",
+        "data/households-silc-65plus-sex-source-2023-2025.json",
+        "data/households-senior-survey-comparison.json",
+        "data/households-independent-national-evidence.json",
+        "research/households-independent-check-2026-11-25.md"
       ],
       "publication": {
         "module": "population",
         "file": null,
         "marker": null
       },
-      "blocker": "Išvada išsaugota tyrime; 2025 įverčio šuolio priežastis ir apklausos poveikio mastas nenustatyti.",
-      "next_action": "Tikrinti 2025 Lietuvos LFS kokybės dokumentus ar nepriklausomą nemokamą nacionalinį šaltinį; nekurti tariamo migracijos, našlystės ar elgesio paaiškinimo.",
+      "blocker": "Aprašomoji kryptis patikrinta antru apklausų šaltiniu; į svetainę dar neintegruota. Tikslaus šuolio priežastis ir dydžio tarp tyrimų skirtumas nenustatyti.",
+      "next_action": "Aprašomąjį rezultatą naudoti atskiriant apklausas; 2025 metinio šuolio priežasčių tyrimas sustabdytas iki naujo kokybės ar paklaidų šaltinio. Nepriklausomas surašymas yra 2021, ne 2025.",
       "related_findings": [
         "EU-HH-LFS-AGE-SEX-2025-01",
         "EU-HH-SILC-AGE-2025-01"
