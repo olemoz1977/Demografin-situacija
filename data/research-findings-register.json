@@ -1157,15 +1157,18 @@
         "marker": "id=\"populationHouseholdAgeSilc\""
       },
       "blocker": null,
-      "next_action": "Skelbti patikrintą aprašomąją dalį; šuolio priežasčių neteikti kaip nustatytų. Po diegimo patikrinti gyvą svetainę.",
+      "next_action": "Paskelbta 2026-11-25 per PR #18; gyvos svetainės desktop/mobile/320 px ir visų 37 skelbiamų išvadų QA PASS. Šuolio priežasčių tyrimui reikalingi nauji kokybės šaltiniai.",
       "related_findings": [
         "EU-HH-2025-01",
         "EU-HH-LFS-2025-01"
       ],
       "publication_audit": {
-        "source_in_main": false,
-        "github_pages_deployed": false,
-        "scope": "Descriptive age, sex and survey comparisons; causal explanation excluded."
+        "source_in_main": true,
+        "github_pages_deployed": true,
+        "scope": "Descriptive age, sex and survey comparisons; causal explanation excluded.",
+        "current_browser_test": "PASS",
+        "live_browser_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/45647774642",
+        "pages_build": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/45647540024"
       }
     },
     {
@@ -1191,15 +1194,18 @@
         "marker": "id=\"populationLivingAloneAgeSex\""
       },
       "blocker": null,
-      "next_action": "Skelbti patikrintą aprašomąją dalį; šuolio priežasčių neteikti kaip nustatytų. Po diegimo patikrinti gyvą svetainę.",
+      "next_action": "Paskelbta 2026-11-25 per PR #18; gyvos svetainės desktop/mobile/320 px ir visų 37 skelbiamų išvadų QA PASS. Šuolio priežasčių tyrimui reikalingi nauji kokybės šaltiniai.",
       "related_findings": [
         "EU-HH-SILC-AGE-2025-01",
         "EU-HH-LFS-2025-01"
       ],
       "publication_audit": {
-        "source_in_main": false,
-        "github_pages_deployed": false,
-        "scope": "Descriptive age, sex and survey comparisons; causal explanation excluded."
+        "source_in_main": true,
+        "github_pages_deployed": true,
+        "scope": "Descriptive age, sex and survey comparisons; causal explanation excluded.",
+        "current_browser_test": "PASS",
+        "live_browser_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/45647774642",
+        "pages_build": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/45647540024"
       }
     },
     {
@@ -1234,15 +1240,18 @@
         "marker": "id=\"populationSeniorSurveyTrend\""
       },
       "blocker": null,
-      "next_action": "Skelbti patikrintą aprašomąją dalį; šuolio priežasčių neteikti kaip nustatytų. Po diegimo patikrinti gyvą svetainę.",
+      "next_action": "Paskelbta 2026-11-25 per PR #18; gyvos svetainės desktop/mobile/320 px ir visų 37 skelbiamų išvadų QA PASS. Šuolio priežasčių tyrimui reikalingi nauji kokybės šaltiniai.",
       "related_findings": [
         "EU-HH-LFS-AGE-SEX-2025-01",
         "EU-HH-SILC-AGE-2025-01"
       ],
       "publication_audit": {
-        "source_in_main": false,
-        "github_pages_deployed": false,
-        "scope": "Descriptive age, sex and survey comparisons; causal explanation excluded."
+        "source_in_main": true,
+        "github_pages_deployed": true,
+        "scope": "Descriptive age, sex and survey comparisons; causal explanation excluded.",
+        "current_browser_test": "PASS",
+        "live_browser_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/45647774642",
+        "pages_build": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/45647540024"
       }
     },
     {
