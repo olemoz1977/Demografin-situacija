@@ -1,0 +1,27 @@
+name: Cohort publication browser QA
+on:
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'research-nav.js'
+      - 'tests/publication-visibility-qa.cjs'
+      - '.github/workflows/cohort-publication-qa.yml'
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-save playwright@1.55.0
+      - run: npx playwright install --with-deps chromium
+      - name: Reproduce observed births decomposition
+        run: python scripts/validate_cohort_size.py
+      - name: Check all published findings, modules and mobile layout
+        run: |
+          python -m http.server 8765 >/tmp/cohort-server.log 2>&1 &
+          node tests/publication-visibility-qa.cjs
