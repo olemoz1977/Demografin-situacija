@@ -3,6 +3,8 @@ on:
   pull_request:
     paths:
       - 'index.html'
+      - 'app-base.js'
+      - 'scripts/analyze_cohort_balance.py'
       - 'research-nav.js'
       - 'tests/publication-visibility-qa.cjs'
       - '.github/workflows/cohort-publication-qa.yml'
@@ -20,7 +22,9 @@ jobs:
       - run: npm install --no-save playwright@1.55.0
       - run: npx playwright install --with-deps chromium
       - name: Reproduce observed births decomposition
-        run: python scripts/validate_cohort_size.py
+        run: |
+          python scripts/validate_cohort_size.py
+          python scripts/analyze_cohort_balance.py
       - name: Check all published findings, modules and mobile layout
         run: |
           python -m http.server 8765 >/tmp/cohort-server.log 2>&1 &

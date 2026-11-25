@@ -59,6 +59,25 @@ if(ageSection){
         <div class="alert alert-green"><strong>Kaip skaityti piramidę:</strong> vyresnėse amžiaus grupėse moterų dalis didesnė. Vienas svarbus kontekstas – 2024 m. moterų vidutinė tikėtina gyvenimo trukmė buvo 8,6 metų ilgesnė nei vyrų.</div>
       </div>
     </div>
+
+    <div id="populationCohortBalance" style="margin-top:2.2rem">
+      <div class="section-label">Gimimo kartų dydis <span class="badge badge-official">EUROSTAT · AUTORIAUS SKAIČIAVIMAS</span></div>
+      <h3>Migracija keitė moterų kartų dydį</h3>
+      <p>1990 m. Lietuvoje gimė <strong>27 732 mergaitės</strong>, 1999 m. – <strong>17 659</strong>, arba 36,3 % mažiau. Dabartinę moterų amžiaus struktūrą veikia ir pradinis kartų dydis, ir vėlesni jų gyventojų pokyčiai.</p>
+      <p class="lead">Lietuvoje gyvenančių <strong>1985–1999 m. gimimo metų moterų</strong> skaičius nuo 2012 m. pradžios iki 2025 m. pradžios sumažėjo nuo <strong>291 401 iki 272 080</strong>. Bendras šių 15 gimimo metų grupių sumažėjimas – <strong>19 321</strong>.</p>
+      <table aria-label="1985–1999 gimimo metų moterų skaičiaus pokyčio balansas"><thead><tr><th>2012–2024 m. balanso dalis</th><th style="text-align:right">Pokytis</th></tr></thead><tbody>
+        <tr><td>Neto tarptautinė migracija</td><td class="td-num">−17 974</td></tr>
+        <tr><td>Mirtingumas</td><td class="td-num">−1 611</td></tr>
+        <tr><td>Likutinis apskaitos skirtumas</td><td class="td-num">+264</td></tr>
+      </tbody></table>
+      <p><strong>Šiuo laikotarpiu migracijos netekimas buvo didžiausia šių moterų kartų bendro sumažėjimo dalis.</strong> Neto balansas apskaičiuotas iš 85 630 atvykimų ir 103 604 išvykimų. Jis apima grįžimą bei kitą imigraciją ir neparodo unikalių išvykusių moterų skaičiaus.</p>
+      <details><summary>Laikotarpis, apskaitos skirtumas ir ryšys su gimimais</summary>
+        <p class="small">Gyventojai lyginami 2012-01-01 ir 2025-01-01, o mirtys ir migracija – per 2012–2024 kalendorinius metus. Sekamos visos Lietuvoje gyvenančios šių gimimo metų moterys, įskaitant gimusias užsienyje. 264 yra gyventojų pokyčio ir suderintų srautų skirtumas; jo nepriskiriame migracijai. Lietuvos imigracijos 2012–2020 m. duomenys buvo perskaičiuoti po 2021 m. surašymo.</p>
+        <p class="small">Ilgesniu 2010-01-01–2025-01-01 laikotarpiu tų pačių gimimo metų moterų skaičius sumažėjo 40 437, mirčių užregistruota 1 778. Visam laikotarpiui tiesioginis migracijos išskaidymas netaikomas: 2010–2011 m. trūksta duomenų pagal per metus pasiektą amžių. Ši analizė neapskaičiuoja, kiek vaikų būtų gimę be migracijos, ir jos negalima sumuoti su gimimų mažėjimo indėlio procentais.</p>
+      </details>
+      <p><a href="?view=fertility#fertilityCohortSize">Moterų amžiaus struktūros indėlis į gimimų mažėjimą →</a></p>
+      <div class="source-line">Šaltiniai: Eurostat <a href="https://ec.europa.eu/eurostat/databrowser/view/demo_pjan/default/table" target="_blank" rel="noopener">demo_pjan</a>, <a href="https://ec.europa.eu/eurostat/databrowser/view/demo_mager/default/table" target="_blank" rel="noopener">demo_mager</a>, <a href="https://ec.europa.eu/eurostat/databrowser/view/migr_imm8/default/table" target="_blank" rel="noopener">migr_imm8</a>, <a href="https://ec.europa.eu/eurostat/databrowser/view/migr_emi2/default/table" target="_blank" rel="noopener">migr_emi2</a>; <a href="https://unstats.un.org/unsd/demographic/products/dyb/DYBNat/NatStatTab01.pdf" target="_blank" rel="noopener">UN gimimų statistika</a>. <a href="https://github.com/olemoz1977/Demografin-situacija/blob/main/research/cohort-balance-2026-11-25.md" target="_blank" rel="noopener">Skaičiavimas ir metodika</a>.</div>
+    </div>
     <div id="populationHouseholdStructure" style="margin-top:2.2rem">
       <div class="section-label">Namų ūkių struktūra <span class="badge badge-prelim">EUROSTAT · 2025 (p)</span></div>
       <h3>Vieno suaugusiojo namų ūkiai: Lietuvoje didžiausia dalis ES</h3>

@@ -1,0 +1,44 @@
+{
+  "checked_on": "2026-11-25",
+  "api_filters": {
+    "geo": "LT",
+    "sex": "F",
+    "sinceTimePeriod": "2010",
+    "migration_agedef": "REACH"
+  },
+  "validated_years": [
+    2012,
+    2024
+  ],
+  "birth_years": [
+    1985,
+    1999
+  ],
+  "complete_selected_cells": {
+    "migr_imm8": 195,
+    "migr_emi2": 195
+  },
+  "selected_migration_flags": [],
+  "unavailable_migration_reach_years": [
+    2010,
+    2011
+  ],
+  "metadata_checks": [
+    {
+      "url": "https://ec.europa.eu/eurostat/cache/metadata/EN/demo_pop_esms_lt.htm",
+      "section": "17.2",
+      "finding": "Lithuania recalculated 2012-2020 immigration after the 2021 census to include estimated undeclared immigration of Lithuanian citizens."
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/cache/metadata/en/migr_ind_esmsip2.htm",
+      "section": "4.1(e)",
+      "finding": "Direct net migration is immigration minus emigration and differs from a population-balance migration-plus-adjustment residual."
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/cache/metadata/en/demo_pop_esms.htm",
+      "section": "15.2",
+      "finding": "Lithuania included among countries with revised intercensal population time series."
+    }
+  ],
+  "public_scope": "2012-01-01 to 2025-01-01 stocks and 2012-2024 events; original 2010-2025 calculation retained as documented context"
+}

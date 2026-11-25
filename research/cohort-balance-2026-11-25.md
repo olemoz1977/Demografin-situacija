@@ -1,6 +1,6 @@
 # Gimimo kartų dydis, mirtys ir gyventojų balansas, 2026-11-25
 
-Būsena: MODELLED_UNPUBLISHED. Papildomas aprašomasis tyrimas; svetainė nekeičiama. Ankstesnis paskelbtas FERTILITY-COHORT-SIZE-2024-01 (43/22/10 %) išlieka.
+Būsena: PUBLISHED_CONTEXT. Pirminė 2010–2025 m. apskaitos analizė palikta atsekamumui. Viešai rodoma papildomai sutikrinta 2012–2024 m. tiesioginių migracijos srautų versija, aprašyta failo pabaigoje. Ankstesnis paskelbtas FERTILITY-COHORT-SIZE-2024-01 (43/22/10 %) išlieka.
 
 ## Klausimas ir populiacija
 Kiek mažesnės gimusių mergaičių kartos matomos dabartinėje Lietuvos moterų struktūroje, ir kiek jau susiformavusias kartas sumažino vėlesni gyventojų pokyčiai?
@@ -50,7 +50,7 @@ Pirminiai gimimai: data/birth-sex-history.json (ankstesnis UN Demographic Yearbo
 Populiacijos API atsakymas jau saugomas research/raw/cohort-size-20261125/demo_pjan.json.
 Pridėtas naujas mirčių atsakymas demo_mager.json, rezultatai cohort-balance-results.json ir scripts/analyze_cohort_balance.py.
 Atkūrimas: python scripts/analyze_cohort_balance.py. Tikrinamos kiekvienos grupės ir bendro balanso tapatybės; trūkstami duomenys sukelia klaidą.
-Visi ankstesni 45 ID ir jų publikavimo vietos palikti. Naujas įrašas POPULATION-COHORT-BALANCE-2025-01 lieka nepublikuotas.
+Visi ankstesni 45 ID ir jų publikavimo vietos palikti. Naujas įrašas POPULATION-COHORT-BALANCE-2025-01 pirminėje versijoje buvo nepublikuotas; migracijos patikra ir publikacijos versija pateikta žemiau.
 
 Šaltiniai:
 https://ec.europa.eu/eurostat/databrowser/view/demo_pjan/default/table
@@ -58,3 +58,39 @@ https://ec.europa.eu/eurostat/databrowser/view/demo_mager/default/table
 https://ec.europa.eu/eurostat/cache/metadata/en/demo_pop_esms.htm
 https://ec.europa.eu/eurostat/cache/metadata/en/demo_mor_esms.htm
 https://unstats.un.org/unsd/demographic/products/dyb/DYBNat/NatStatTab01.pdf
+
+
+## Tiesioginių migracijos srautų patikra ir publikacijos versija
+
+Patikrinta 2026-11-25. Eurostat migr_imm8 ir migr_emi2: LT, F, NR, agedef=REACH. 2010–2011 m. reikalingi REACH langeliai neprieinami (COMPLET reikšmės yra, bet jos nesutampa su gimimo metų grupėmis ir jų nenaudojame kaip pakaitalo). Todėl migracijos išskaidymas viešinamas TIK 2012-01-01–2025-01-01 gyventojų ir 2012–2024 m. įvykių intervalui. Visos 195 kiekvieno migracijos srauto reikšmės prieinamos, pasirinktose reikšmėse status žymų nėra.
+
+| Suderinto laikotarpio rodiklis | Skaičius |
+|---|---:|
+| Gyveno 2012-01-01 | 291 401 |
+| Gyveno 2025-01-01 | 272 080 |
+| Gyventojų pokytis | −19 321 |
+| Mirtys 2012–2024 | 1 611 |
+| Atvykimai 2012–2024 | 85 630 |
+| Išvykimai 2012–2024 | 103 604 |
+| Tiesioginis neto migracijos balansas | −17 974 |
+| Likutinis apskaitos skirtumas | +264 |
+
+Patikra: −1 611 −17 974 +264 = −19 321. 264 yra paskelbtų populiacijos bei srautų duomenų nesutapimo likutis; be papildomų įrodymų jo nevadiname vien oficialia surašymo korekcija. Bendrame balanse teigiamas likutis reiškia, kad stebėtas gyventojų sumažėjimas yra 264 mažesnis už mirčių ir tiesioginės neto migracijos implikuotą sumažėjimą. Atskiros gimimo metų grupės nevienodos; neskelbiame, kad migracija sumažino kiekvieną iš jų.
+
+Patikrinta Lietuvos nacionalinė Eurostat metaduomenų ataskaita: joje nurodyta, kad po 2021 m. surašymo 2012–2020 m. imigracijos duomenys perskaičiuoti įvertinant nedeklaruotą Lietuvos piliečių atvykimą. Bendroji Eurostat populiacijos metodika taip pat aprašo tarp surašymų revizuotas Lietuvos laiko eilutes. Naudojamos dabar prieinamos duomenų versijos, o likutis aiškiai atskirtas nuo tiesioginių migracijos srautų.
+
+Gimimų, dabartinių gyventojų ir migracijos ryšys: 1990–1999 m. gimusių mergaičių skirtumas rodo pradinį kartų dydį; suderintas 2012–2024 m. migracijos balansas patvirtina atskirą vėlesnio tų kartų gyventojų skaičiaus mažėjimo sluoksnį. Iš to neišvedame papildomų ar prarastų gimimų skaičiaus. Visi šių gimimo metų rezidentai, įskaitant užsienyje gimusias moteris, lieka analizėje. Atvykimų / išvykimų skaičiai nėra unikalių visam laikui persikėlusių asmenų skaičiai.
+
+Papildomi šaltiniai:
+https://ec.europa.eu/eurostat/databrowser/view/migr_imm8/default/table
+https://ec.europa.eu/eurostat/databrowser/view/migr_emi2/default/table
+https://ec.europa.eu/eurostat/cache/metadata/en/migr_immi_esms.htm
+https://ec.europa.eu/eurostat/cache/metadata/en/migr_ind_esmsip2.htm
+https://ec.europa.eu/eurostat/cache/metadata/EN/demo_pop_esms_lt.htm
+
+### Buvo → lieka / papildoma
+- Visi ankstesni 45 registro ID ir jų viešas turinys lieka.
+- POPULATION-COHORT-BALANCE-2025-01: MODELLED_UNPUBLISHED → PUBLISHED_CONTEXT; pirminiai 2010–2025 m. skaičiai išsaugoti, papildyta tiesioginiais 2012–2024 m. migracijos srautais.
+- Naujas pagrindinis blokas Struktūros modulyje: #populationCohortBalance.
+- Apžvalgos esamoje gyventojų struktūros kortelėje ir Gimstamumo kartų indėlio bloke pridedamos nuorodos. Migracijos ir kitų modulių ankstesni skaičiai neperrašomi.
+- 2010–2011 m. tiesioginio migracijos indėlio nepublikuojame, nes nėra vienodai apibrėžtų reikšmių. 43/22/10 % gimimų išskaidymas nekeičiamas ir su šiais skaičiais nesumuojamas.

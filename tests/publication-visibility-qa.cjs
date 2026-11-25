@@ -4,6 +4,7 @@ const {chromium}=require("playwright");
 const register=JSON.parse(fs.readFileSync("data/research-findings-register.json","utf8"));
 const published=register.findings.filter(f=>f.status.startsWith("PUBLISHED_"));
 const checks=[
+  ["POPULATION-COHORT-BALANCE-2025-01", "population", "#populationCohortBalance", "291 401 iki 272 080"],
   ["FERTILITY-COHORT-SIZE-2024-01", "fertility", "#fertilityCohortSize", "43 %"],
   ["EU-HH-LFS-2025-01", "population", "#populationHouseholdLfsComparison", "62,5 %"],
   ["FAMILY-HOUSEHOLDS-LFS-2025-01", "family", "#familyHouseholdsChildren2025", "7,0 % Lietuvos namų ūkių su vaikais"],
@@ -246,6 +247,19 @@ const normalize=s=>s.replace(/[\u00a0\u202f\s]+/g," ").trim();
      await page.locator(target).waitFor({state:'visible'});
      await page.goto('http://127.0.0.1:8765/?view='+view,{waitUntil:'networkidle'});
     }
+    if(view==='population'){
+      const block=page.locator('#populationCohortBalance');
+      const values=await block.locator('tbody tr').allInnerTexts();
+      for(const expected of ['−17 974','−1 611','+264'])
+        if(!values.some(v=>v.includes(expected)))throw Error('Cohort balance table mismatch '+expected);
+      const bounds=await block.locator('table').evaluate(el=>({left:el.getBoundingClientRect().left,right:el.getBoundingClientRect().right,width:innerWidth}));
+      if(bounds.left<0||bounds.right>bounds.width+2)throw Error(screen+' cohort table clipped');
+      await block.locator('summary').click();
+      if(!(await block.innerText()).includes('2010–2011'))throw Error('Missing cohort period limit');
+      await block.locator('summary').click();
+    }
+    if(view==='overview'&&await page.locator('a[href*="#populationCohortBalance"]').count()===0)
+      throw Error('Missing Overview link to cohort balance');
     const geometry=await page.evaluate(()=>({
       overflow:Math.max(0,document.documentElement.scrollWidth-innerWidth),
       visibleSections:[...document.querySelectorAll("body > section")]

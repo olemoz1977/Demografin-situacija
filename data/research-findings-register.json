@@ -1170,16 +1170,20 @@
     {
       "id": "POPULATION-COHORT-BALANCE-2025-01",
       "area": "population",
-      "title": "1985–1999 gimimo metų moterų gyventojų ir mirčių balansas",
-      "period": "1985–1999 gimimai; 2010-01-01–2025-01-01 gyventojai; 2010–2024 mirtys",
-      "status": "MODELLED_UNPUBLISHED",
-      "statement": "Eurostat demo_pjan/demo_mager autoriaus apskaitos balansas: 1985–1999 m. gimimo metų Lietuvoje gyvenančių moterų skaičius 2010-01-01 buvo 312 517, 2025-01-01 272 080 (−40 437). Tų pačių gimimo metų moterų mirtys 2010–2024 m. 1 778; likutinis neto migracijos ir statistinių patikslinimų balansas −38 659. Mirtys sudaro 4,40 % grynojo grupių sumažėjimo. Likutis nėra emigravusių moterų skaičius, o gimimų ir rezidentų palyginimas nėra tų pačių asmenų sekimas.",
+      "title": "1985–1999 gimimo metų moterų kartų dydis ir sutikrintas migracijos balansas",
+      "period": "1985–1999 gimimai; 2012-01-01–2025-01-01 gyventojai; 2012–2024 mirtys ir migracija; papildomai 2010–2025 apskaita",
+      "status": "PUBLISHED_CONTEXT",
+      "statement": "Autoriaus Eurostat duomenų balansas: 1985–1999 m. gimimo metų Lietuvoje gyvenančių moterų skaičius 2012-01-01 buvo 291 401, 2025-01-01 272 080 (−19 321). Tų gimimo metų moterų mirtys 2012–2024 m. 1 611; migr_imm8/migr_emi2 REACH atvykimai 85 630, išvykimai 103 604, tiesioginė neto migracija −17 974. Likutinis apskaitos skirtumas +264 nepriskiriamas migracijai. Pradinio 2010–2025 m. balanso skaičiai išsaugoti tyrime; 2010–2011 m. tiesioginių REACH srautų nėra. Atvykimai ir išvykimai nėra unikalių migrantų skaičius.",
       "population": "Visos Lietuvoje gyvenančios 1985–1999 gimimo metų moterys, įskaitant užsienyje gimusias; ne tik Lietuvos pilietės ar Lietuvoje gimusios.",
       "source_urls": [
         "https://ec.europa.eu/eurostat/databrowser/view/demo_pjan/default/table",
         "https://ec.europa.eu/eurostat/databrowser/view/demo_mager/default/table",
         "https://ec.europa.eu/eurostat/cache/metadata/en/demo_pop_esms.htm",
-        "https://ec.europa.eu/eurostat/cache/metadata/en/demo_mor_esms.htm"
+        "https://ec.europa.eu/eurostat/cache/metadata/en/demo_mor_esms.htm",
+        "https://ec.europa.eu/eurostat/databrowser/view/migr_imm8/default/table",
+        "https://ec.europa.eu/eurostat/databrowser/view/migr_emi2/default/table",
+        "https://ec.europa.eu/eurostat/cache/metadata/EN/demo_pop_esms_lt.htm",
+        "https://ec.europa.eu/eurostat/cache/metadata/en/migr_ind_esmsip2.htm"
       ],
       "evidence_files": [
         "research/cohort-balance-2026-11-25.md",
@@ -1187,16 +1191,23 @@
         "research/raw/cohort-size-20261125/demo_pjan.json",
         "research/raw/cohort-size-20261125/demo_mager.json",
         "research/raw/cohort-size-20261125/cohort-balance-results.json",
-        "data/birth-sex-history.json"
+        "data/birth-sex-history.json",
+        "research/raw/cohort-size-20261125/migr_imm8.json",
+        "research/raw/cohort-size-20261125/migr_emi2.json",
+        "research/raw/cohort-size-20261125/source-validation.json"
       ],
       "publication": {
         "module": "population",
-        "file": null,
-        "marker": null
+        "secondary_modules": [
+          "fertility",
+          "overview"
+        ],
+        "file": "app-base.js",
+        "marker": "id=\"populationCohortBalance\""
       },
-      "blocker": "Likutis neatskirtas į tiesioginę neto migraciją ir statistines revizijas; neįvertintas kontrafaktinis poveikis gimimų skaičiui. Prieš publikavimą reikia suderintų migracijos srautų ir Lietuvos revizijų patikros.",
-      "next_action": "Sutikrinti tiesioginę migraciją pagal gimimo metus ar per metus pasiektą amžių ir gyventojų revizijas. Nekeičiant paskelbto 43/22/10 % modelio išsaugoti atskirą apskaitos analizę.",
-      "result_type": "AUTHOR_CALCULATED_COHORT_ACCOUNTING_RESIDUAL"
+      "blocker": null,
+      "next_action": "Publikuojamas tik suderintas 2012–2024 m. tiesioginių migracijos srautų išskaidymas; 2010–2011 m. trūkstamų REACH reikšmių nepakeisti COMPLET ar nuliais. Likutis neinterpretuojamas kaip gryna migracija; papildomų gimimų be migracijos neskaičiuojama.",
+      "result_type": "AUTHOR_CALCULATED_COHORT_ACCOUNTING_WITH_DIRECT_MIGRATION"
     }
   ]
 }

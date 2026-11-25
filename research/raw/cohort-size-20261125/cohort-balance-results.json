@@ -183,5 +183,194 @@
     "deaths_2010_2024": 1778,
     "stock_change": -40437,
     "migration_plus_adjustment_residual": -38659
+  },
+  "matched_migration_period": {
+    "stock_dates": [
+      "2012-01-01",
+      "2025-01-01"
+    ],
+    "event_years": [
+      2012,
+      2024
+    ],
+    "age_definition": "REACH",
+    "rows": [
+      {
+        "birth_year": 1985,
+        "residents_2012": 19310,
+        "residents_2025": 20781,
+        "stock_change": 1471,
+        "deaths_2012_2024": 192,
+        "immigration": 7279,
+        "emigration": 5704,
+        "net_migration": 1575,
+        "accounting_residual": 88
+      },
+      {
+        "birth_year": 1986,
+        "residents_2012": 19915,
+        "residents_2025": 21151,
+        "stock_change": 1236,
+        "deaths_2012_2024": 175,
+        "immigration": 7505,
+        "emigration": 6271,
+        "net_migration": 1234,
+        "accounting_residual": 177
+      },
+      {
+        "birth_year": 1987,
+        "residents_2012": 20297,
+        "residents_2025": 21276,
+        "stock_change": 979,
+        "deaths_2012_2024": 154,
+        "immigration": 7641,
+        "emigration": 6881,
+        "net_migration": 760,
+        "accounting_residual": 373
+      },
+      {
+        "birth_year": 1988,
+        "residents_2012": 19867,
+        "residents_2025": 20252,
+        "stock_change": 385,
+        "deaths_2012_2024": 141,
+        "immigration": 7486,
+        "emigration": 7330,
+        "net_migration": 156,
+        "accounting_residual": 370
+      },
+      {
+        "birth_year": 1989,
+        "residents_2012": 20494,
+        "residents_2025": 19978,
+        "stock_change": -516,
+        "deaths_2012_2024": 126,
+        "immigration": 7295,
+        "emigration": 8073,
+        "net_migration": -778,
+        "accounting_residual": 388
+      },
+      {
+        "birth_year": 1990,
+        "residents_2012": 21746,
+        "residents_2025": 20768,
+        "stock_change": -978,
+        "deaths_2012_2024": 127,
+        "immigration": 7023,
+        "emigration": 8267,
+        "net_migration": -1244,
+        "accounting_residual": 393
+      },
+      {
+        "birth_year": 1991,
+        "residents_2012": 22235,
+        "residents_2025": 19968,
+        "stock_change": -2267,
+        "deaths_2012_2024": 108,
+        "immigration": 6597,
+        "emigration": 8585,
+        "net_migration": -1988,
+        "accounting_residual": -171
+      },
+      {
+        "birth_year": 1992,
+        "residents_2012": 22763,
+        "residents_2025": 19707,
+        "stock_change": -3056,
+        "deaths_2012_2024": 115,
+        "immigration": 6259,
+        "emigration": 8873,
+        "net_migration": -2614,
+        "accounting_residual": -327
+      },
+      {
+        "birth_year": 1993,
+        "residents_2012": 21038,
+        "residents_2025": 17598,
+        "stock_change": -3440,
+        "deaths_2012_2024": 96,
+        "immigration": 5626,
+        "emigration": 8614,
+        "net_migration": -2988,
+        "accounting_residual": -356
+      },
+      {
+        "birth_year": 1994,
+        "residents_2012": 18978,
+        "residents_2025": 16135,
+        "stock_change": -2843,
+        "deaths_2012_2024": 80,
+        "immigration": 5238,
+        "emigration": 7836,
+        "net_migration": -2598,
+        "accounting_residual": -165
+      },
+      {
+        "birth_year": 1995,
+        "residents_2012": 18272,
+        "residents_2025": 15689,
+        "stock_change": -2583,
+        "deaths_2012_2024": 64,
+        "immigration": 4637,
+        "emigration": 7087,
+        "net_migration": -2450,
+        "accounting_residual": -69
+      },
+      {
+        "birth_year": 1996,
+        "residents_2012": 17568,
+        "residents_2025": 15345,
+        "stock_change": -2223,
+        "deaths_2012_2024": 59,
+        "immigration": 3974,
+        "emigration": 6256,
+        "net_migration": -2282,
+        "accounting_residual": 118
+      },
+      {
+        "birth_year": 1997,
+        "residents_2012": 16772,
+        "residents_2025": 14743,
+        "stock_change": -2029,
+        "deaths_2012_2024": 70,
+        "immigration": 3387,
+        "emigration": 5391,
+        "net_migration": -2004,
+        "accounting_residual": 45
+      },
+      {
+        "birth_year": 1998,
+        "residents_2012": 16183,
+        "residents_2025": 14440,
+        "stock_change": -1743,
+        "deaths_2012_2024": 54,
+        "immigration": 3160,
+        "emigration": 4611,
+        "net_migration": -1451,
+        "accounting_residual": -238
+      },
+      {
+        "birth_year": 1999,
+        "residents_2012": 15963,
+        "residents_2025": 14249,
+        "stock_change": -1714,
+        "deaths_2012_2024": 50,
+        "immigration": 2523,
+        "emigration": 3825,
+        "net_migration": -1302,
+        "accounting_residual": -362
+      }
+    ],
+    "totals": {
+      "residents_2012": 291401,
+      "residents_2025": 272080,
+      "stock_change": -19321,
+      "deaths_2012_2024": 1611,
+      "immigration": 85630,
+      "emigration": 103604,
+      "net_migration": -17974,
+      "accounting_residual": 264
+    },
+    "missing_2010_2011_reach": "Not imputed or replaced with COMPLET ages"
   }
 }
