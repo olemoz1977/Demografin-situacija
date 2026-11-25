@@ -1,0 +1,180 @@
+{
+  "rows": [
+    {
+      "geo": "LT",
+      "year": "2021",
+      "silc_pct": 44.3,
+      "silc_status": "",
+      "silc_selection": {
+        "freq": "A",
+        "sex": "T",
+        "hhcomp": "A1_GE65",
+        "unit": "PC",
+        "geo": "LT",
+        "time": "2021"
+      },
+      "lfs_pct": 34.76310122038765,
+      "lfs_numerator_status": "b",
+      "lfs_denominator_status": "b"
+    },
+    {
+      "geo": "LT",
+      "year": "2022",
+      "silc_pct": 48.6,
+      "silc_status": "",
+      "silc_selection": {
+        "freq": "A",
+        "sex": "T",
+        "hhcomp": "A1_GE65",
+        "unit": "PC",
+        "geo": "LT",
+        "time": "2022"
+      },
+      "lfs_pct": 37.08480565371025,
+      "lfs_numerator_status": "",
+      "lfs_denominator_status": ""
+    },
+    {
+      "geo": "LT",
+      "year": "2023",
+      "silc_pct": 51.0,
+      "silc_status": "",
+      "silc_selection": {
+        "freq": "A",
+        "sex": "T",
+        "hhcomp": "A1_GE65",
+        "unit": "PC",
+        "geo": "LT",
+        "time": "2023"
+      },
+      "lfs_pct": 40.64382854191771,
+      "lfs_numerator_status": "",
+      "lfs_denominator_status": ""
+    },
+    {
+      "geo": "LT",
+      "year": "2024",
+      "silc_pct": 54.9,
+      "silc_status": "p",
+      "silc_selection": {
+        "freq": "A",
+        "sex": "T",
+        "hhcomp": "A1_GE65",
+        "unit": "PC",
+        "geo": "LT",
+        "time": "2024"
+      },
+      "lfs_pct": 54.27186089282729,
+      "lfs_numerator_status": "",
+      "lfs_denominator_status": ""
+    },
+    {
+      "geo": "LT",
+      "year": "2025",
+      "silc_pct": 59.9,
+      "silc_status": "p",
+      "silc_selection": {
+        "freq": "A",
+        "sex": "T",
+        "hhcomp": "A1_GE65",
+        "unit": "PC",
+        "geo": "LT",
+        "time": "2025"
+      },
+      "lfs_pct": 65.00081393455967,
+      "lfs_numerator_status": "",
+      "lfs_denominator_status": ""
+    },
+    {
+      "geo": "EU27_2020",
+      "year": "2021",
+      "silc_pct": 31.1,
+      "silc_status": "",
+      "silc_selection": {
+        "freq": "A",
+        "sex": "T",
+        "hhcomp": "A1_GE65",
+        "unit": "PC",
+        "geo": "EU27_2020",
+        "time": "2021"
+      },
+      "lfs_pct": 31.08207250426134,
+      "lfs_numerator_status": "b",
+      "lfs_denominator_status": "b"
+    },
+    {
+      "geo": "EU27_2020",
+      "year": "2022",
+      "silc_pct": 31.7,
+      "silc_status": "",
+      "silc_selection": {
+        "freq": "A",
+        "sex": "T",
+        "hhcomp": "A1_GE65",
+        "unit": "PC",
+        "geo": "EU27_2020",
+        "time": "2022"
+      },
+      "lfs_pct": 31.850218933366133,
+      "lfs_numerator_status": "",
+      "lfs_denominator_status": ""
+    },
+    {
+      "geo": "EU27_2020",
+      "year": "2023",
+      "silc_pct": 31.5,
+      "silc_status": "",
+      "silc_selection": {
+        "freq": "A",
+        "sex": "T",
+        "hhcomp": "A1_GE65",
+        "unit": "PC",
+        "geo": "EU27_2020",
+        "time": "2023"
+      },
+      "lfs_pct": 32.099223809969615,
+      "lfs_numerator_status": "",
+      "lfs_denominator_status": ""
+    },
+    {
+      "geo": "EU27_2020",
+      "year": "2024",
+      "silc_pct": 31.9,
+      "silc_status": "",
+      "silc_selection": {
+        "freq": "A",
+        "sex": "T",
+        "hhcomp": "A1_GE65",
+        "unit": "PC",
+        "geo": "EU27_2020",
+        "time": "2024"
+      },
+      "lfs_pct": 32.05805218752682,
+      "lfs_numerator_status": "",
+      "lfs_denominator_status": ""
+    },
+    {
+      "geo": "EU27_2020",
+      "year": "2025",
+      "silc_pct": 32.2,
+      "silc_status": "",
+      "silc_selection": {
+        "freq": "A",
+        "sex": "T",
+        "hhcomp": "A1_GE65",
+        "unit": "PC",
+        "geo": "EU27_2020",
+        "time": "2025"
+      },
+      "lfs_pct": 32.16492935861948,
+      "lfs_numerator_status": "",
+      "lfs_denominator_status": ""
+    }
+  ],
+  "lt_change_2024_2025_pp": {
+    "silc": 5.0,
+    "lfs": 10.728953041732382
+  },
+  "interpretation": "Both surveys support the direction of LT growth in their estimates; they do not establish the same magnitude or its cause.",
+  "caution": "Survey sample errors and differences are not quantified; do not average surveys or label one erroneous."
+}

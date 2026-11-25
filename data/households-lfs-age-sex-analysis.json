@@ -1,0 +1,2176 @@
+{
+  "dataset": "lfst_hhindws",
+  "survey": "EU-LFS",
+  "source_file": "data/households-lfs-age-sex-source-2024-2025.json",
+  "updated": "2026-09-10T23:00:00+0200",
+  "formula": "100*A1_NCH/TOTAL within identical sex, age, year, geo, POP and THS_PER",
+  "rows": [
+    {
+      "geo": "LT",
+      "year": "2024",
+      "age": "Y18-24",
+      "sex": "T",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y18-24",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2024"
+        },
+        "value": 51.4,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y18-24",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2024"
+        },
+        "value": 188.3,
+        "status": ""
+      },
+      "pct": 27.29686670207116
+    },
+    {
+      "geo": "LT",
+      "year": "2024",
+      "age": "Y18-24",
+      "sex": "M",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y18-24",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2024"
+        },
+        "value": 26.4,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y18-24",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2024"
+        },
+        "value": 96.5,
+        "status": ""
+      },
+      "pct": 27.357512953367877
+    },
+    {
+      "geo": "LT",
+      "year": "2024",
+      "age": "Y18-24",
+      "sex": "F",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y18-24",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2024"
+        },
+        "value": 25.1,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y18-24",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2024"
+        },
+        "value": 91.7,
+        "status": ""
+      },
+      "pct": 27.371864776444927
+    },
+    {
+      "geo": "LT",
+      "year": "2024",
+      "age": "Y25-54",
+      "sex": "T",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y25-54",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2024"
+        },
+        "value": 380.5,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y25-54",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2024"
+        },
+        "value": 1180.9,
+        "status": ""
+      },
+      "pct": 32.22118723007875
+    },
+    {
+      "geo": "LT",
+      "year": "2024",
+      "age": "Y25-54",
+      "sex": "M",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y25-54",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2024"
+        },
+        "value": 247.5,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y25-54",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2024"
+        },
+        "value": 613.1,
+        "status": ""
+      },
+      "pct": 40.36861849616702
+    },
+    {
+      "geo": "LT",
+      "year": "2024",
+      "age": "Y25-54",
+      "sex": "F",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y25-54",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2024"
+        },
+        "value": 133.0,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y25-54",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2024"
+        },
+        "value": 567.8,
+        "status": ""
+      },
+      "pct": 23.423740753786547
+    },
+    {
+      "geo": "LT",
+      "year": "2024",
+      "age": "Y55-64",
+      "sex": "T",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y55-64",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2024"
+        },
+        "value": 201.0,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y55-64",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2024"
+        },
+        "value": 423.3,
+        "status": ""
+      },
+      "pct": 47.48405386250886
+    },
+    {
+      "geo": "LT",
+      "year": "2024",
+      "age": "Y55-64",
+      "sex": "M",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y55-64",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2024"
+        },
+        "value": 90.8,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y55-64",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2024"
+        },
+        "value": 194.4,
+        "status": ""
+      },
+      "pct": 46.70781893004115
+    },
+    {
+      "geo": "LT",
+      "year": "2024",
+      "age": "Y55-64",
+      "sex": "F",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y55-64",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2024"
+        },
+        "value": 110.2,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y55-64",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2024"
+        },
+        "value": 228.9,
+        "status": ""
+      },
+      "pct": 48.143294014853645
+    },
+    {
+      "geo": "LT",
+      "year": "2024",
+      "age": "Y_GE65",
+      "sex": "T",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y_GE65",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2024"
+        },
+        "value": 324.6,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y_GE65",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2024"
+        },
+        "value": 598.1,
+        "status": ""
+      },
+      "pct": 54.27186089282729
+    },
+    {
+      "geo": "LT",
+      "year": "2024",
+      "age": "Y_GE65",
+      "sex": "M",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y_GE65",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2024"
+        },
+        "value": 88.5,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y_GE65",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2024"
+        },
+        "value": 212.8,
+        "status": ""
+      },
+      "pct": 41.588345864661655
+    },
+    {
+      "geo": "LT",
+      "year": "2024",
+      "age": "Y_GE65",
+      "sex": "F",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y_GE65",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2024"
+        },
+        "value": 236.1,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y_GE65",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2024"
+        },
+        "value": 385.3,
+        "status": ""
+      },
+      "pct": 61.27692706981573
+    },
+    {
+      "geo": "LT",
+      "year": "2024",
+      "age": "Y_GE18",
+      "sex": "T",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y_GE18",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2024"
+        },
+        "value": 957.5,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y_GE18",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2024"
+        },
+        "value": 2390.7,
+        "status": ""
+      },
+      "pct": 40.05103107876354
+    },
+    {
+      "geo": "LT",
+      "year": "2024",
+      "age": "Y_GE18",
+      "sex": "M",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y_GE18",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2024"
+        },
+        "value": 453.2,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y_GE18",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2024"
+        },
+        "value": 1116.9,
+        "status": ""
+      },
+      "pct": 40.57659593517772
+    },
+    {
+      "geo": "LT",
+      "year": "2024",
+      "age": "Y_GE18",
+      "sex": "F",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y_GE18",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2024"
+        },
+        "value": 504.3,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y_GE18",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2024"
+        },
+        "value": 1273.8,
+        "status": ""
+      },
+      "pct": 39.59020254357042
+    },
+    {
+      "geo": "LT",
+      "year": "2025",
+      "age": "Y18-24",
+      "sex": "T",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y18-24",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2025"
+        },
+        "value": 61.2,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y18-24",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2025"
+        },
+        "value": 188.4,
+        "status": ""
+      },
+      "pct": 32.48407643312102
+    },
+    {
+      "geo": "LT",
+      "year": "2025",
+      "age": "Y18-24",
+      "sex": "M",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y18-24",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2025"
+        },
+        "value": 32.1,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y18-24",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2025"
+        },
+        "value": 98.0,
+        "status": ""
+      },
+      "pct": 32.755102040816325
+    },
+    {
+      "geo": "LT",
+      "year": "2025",
+      "age": "Y18-24",
+      "sex": "F",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y18-24",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2025"
+        },
+        "value": 29.1,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y18-24",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2025"
+        },
+        "value": 90.4,
+        "status": ""
+      },
+      "pct": 32.190265486725664
+    },
+    {
+      "geo": "LT",
+      "year": "2025",
+      "age": "Y25-54",
+      "sex": "T",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y25-54",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2025"
+        },
+        "value": 422.8,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y25-54",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2025"
+        },
+        "value": 1175.9,
+        "status": ""
+      },
+      "pct": 35.955438387617995
+    },
+    {
+      "geo": "LT",
+      "year": "2025",
+      "age": "Y25-54",
+      "sex": "M",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y25-54",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2025"
+        },
+        "value": 275.5,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y25-54",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2025"
+        },
+        "value": 612.2,
+        "status": ""
+      },
+      "pct": 45.001633453119894
+    },
+    {
+      "geo": "LT",
+      "year": "2025",
+      "age": "Y25-54",
+      "sex": "F",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y25-54",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2025"
+        },
+        "value": 147.4,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y25-54",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2025"
+        },
+        "value": 563.7,
+        "status": ""
+      },
+      "pct": 26.148660635089584
+    },
+    {
+      "geo": "LT",
+      "year": "2025",
+      "age": "Y55-64",
+      "sex": "T",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y55-64",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2025"
+        },
+        "value": 217.2,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y55-64",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2025"
+        },
+        "value": 418.4,
+        "status": ""
+      },
+      "pct": 51.91204588910134
+    },
+    {
+      "geo": "LT",
+      "year": "2025",
+      "age": "Y55-64",
+      "sex": "M",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y55-64",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2025"
+        },
+        "value": 98.4,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y55-64",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2025"
+        },
+        "value": 192.8,
+        "status": ""
+      },
+      "pct": 51.037344398340245
+    },
+    {
+      "geo": "LT",
+      "year": "2025",
+      "age": "Y55-64",
+      "sex": "F",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y55-64",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2025"
+        },
+        "value": 118.8,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y55-64",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2025"
+        },
+        "value": 225.6,
+        "status": ""
+      },
+      "pct": 52.65957446808511
+    },
+    {
+      "geo": "LT",
+      "year": "2025",
+      "age": "Y_GE65",
+      "sex": "T",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y_GE65",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2025"
+        },
+        "value": 399.3,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y_GE65",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2025"
+        },
+        "value": 614.3,
+        "status": ""
+      },
+      "pct": 65.00081393455967
+    },
+    {
+      "geo": "LT",
+      "year": "2025",
+      "age": "Y_GE65",
+      "sex": "M",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y_GE65",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2025"
+        },
+        "value": 114.4,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y_GE65",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2025"
+        },
+        "value": 220.2,
+        "status": ""
+      },
+      "pct": 51.952770208901
+    },
+    {
+      "geo": "LT",
+      "year": "2025",
+      "age": "Y_GE65",
+      "sex": "F",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y_GE65",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2025"
+        },
+        "value": 284.9,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y_GE65",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2025"
+        },
+        "value": 394.1,
+        "status": ""
+      },
+      "pct": 72.29129662522202
+    },
+    {
+      "geo": "LT",
+      "year": "2025",
+      "age": "Y_GE18",
+      "sex": "T",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y_GE18",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2025"
+        },
+        "value": 1100.5,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y_GE18",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2025"
+        },
+        "value": 2397.0,
+        "status": ""
+      },
+      "pct": 45.911556111806426
+    },
+    {
+      "geo": "LT",
+      "year": "2025",
+      "age": "Y_GE18",
+      "sex": "M",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y_GE18",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2025"
+        },
+        "value": 520.3,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y_GE18",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2025"
+        },
+        "value": 1123.2,
+        "status": ""
+      },
+      "pct": 46.32300569800569
+    },
+    {
+      "geo": "LT",
+      "year": "2025",
+      "age": "Y_GE18",
+      "sex": "F",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y_GE18",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2025"
+        },
+        "value": 580.3,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y_GE18",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "LT",
+          "time": "2025"
+        },
+        "value": 1273.8,
+        "status": ""
+      },
+      "pct": 45.55660229235358
+    },
+    {
+      "geo": "EU27_2020",
+      "year": "2024",
+      "age": "Y18-24",
+      "sex": "T",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y18-24",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2024"
+        },
+        "value": 4161.2,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y18-24",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2024"
+        },
+        "value": 32898.6,
+        "status": ""
+      },
+      "pct": 12.648562552813798
+    },
+    {
+      "geo": "EU27_2020",
+      "year": "2024",
+      "age": "Y18-24",
+      "sex": "M",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y18-24",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2024"
+        },
+        "value": 2094.4,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y18-24",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2024"
+        },
+        "value": 16800.7,
+        "status": ""
+      },
+      "pct": 12.466147243864839
+    },
+    {
+      "geo": "EU27_2020",
+      "year": "2024",
+      "age": "Y18-24",
+      "sex": "F",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y18-24",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2024"
+        },
+        "value": 2066.9,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y18-24",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2024"
+        },
+        "value": 16097.9,
+        "status": ""
+      },
+      "pct": 12.839562924356594
+    },
+    {
+      "geo": "EU27_2020",
+      "year": "2024",
+      "age": "Y25-54",
+      "sex": "T",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y25-54",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2024"
+        },
+        "value": 28079.2,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y25-54",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2024"
+        },
+        "value": 174436.6,
+        "status": ""
+      },
+      "pct": 16.097080543876686
+    },
+    {
+      "geo": "EU27_2020",
+      "year": "2024",
+      "age": "Y25-54",
+      "sex": "M",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y25-54",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2024"
+        },
+        "value": 17570.5,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y25-54",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2024"
+        },
+        "value": 87789.2,
+        "status": ""
+      },
+      "pct": 20.014420908266622
+    },
+    {
+      "geo": "EU27_2020",
+      "year": "2024",
+      "age": "Y25-54",
+      "sex": "F",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y25-54",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2024"
+        },
+        "value": 10508.7,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y25-54",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2024"
+        },
+        "value": 86647.4,
+        "status": ""
+      },
+      "pct": 12.128119251125828
+    },
+    {
+      "geo": "EU27_2020",
+      "year": "2024",
+      "age": "Y55-64",
+      "sex": "T",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y55-64",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2024"
+        },
+        "value": 12430.3,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y55-64",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2024"
+        },
+        "value": 61873.2,
+        "status": ""
+      },
+      "pct": 20.089958172520575
+    },
+    {
+      "geo": "EU27_2020",
+      "year": "2024",
+      "age": "Y55-64",
+      "sex": "M",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y55-64",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2024"
+        },
+        "value": 6076.2,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y55-64",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2024"
+        },
+        "value": 30197.7,
+        "status": ""
+      },
+      "pct": 20.121399974170217
+    },
+    {
+      "geo": "EU27_2020",
+      "year": "2024",
+      "age": "Y55-64",
+      "sex": "F",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y55-64",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2024"
+        },
+        "value": 6354.0,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y55-64",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2024"
+        },
+        "value": 31675.4,
+        "status": ""
+      },
+      "pct": 20.05973089526888
+    },
+    {
+      "geo": "EU27_2020",
+      "year": "2024",
+      "age": "Y_GE65",
+      "sex": "T",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y_GE65",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2024"
+        },
+        "value": 30633.2,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y_GE65",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2024"
+        },
+        "value": 95555.4,
+        "status": ""
+      },
+      "pct": 32.05805218752682
+    },
+    {
+      "geo": "EU27_2020",
+      "year": "2024",
+      "age": "Y_GE65",
+      "sex": "M",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y_GE65",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2024"
+        },
+        "value": 8953.7,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y_GE65",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2024"
+        },
+        "value": 41774.5,
+        "status": ""
+      },
+      "pct": 21.433410334055466
+    },
+    {
+      "geo": "EU27_2020",
+      "year": "2024",
+      "age": "Y_GE65",
+      "sex": "F",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y_GE65",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2024"
+        },
+        "value": 21679.5,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y_GE65",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2024"
+        },
+        "value": 53780.9,
+        "status": ""
+      },
+      "pct": 40.31077947747249
+    },
+    {
+      "geo": "EU27_2020",
+      "year": "2024",
+      "age": "Y_GE18",
+      "sex": "T",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y_GE18",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2024"
+        },
+        "value": 75303.9,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y_GE18",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2024"
+        },
+        "value": 364763.8,
+        "status": ""
+      },
+      "pct": 20.6445650582651
+    },
+    {
+      "geo": "EU27_2020",
+      "year": "2024",
+      "age": "Y_GE18",
+      "sex": "M",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y_GE18",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2024"
+        },
+        "value": 34694.8,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y_GE18",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2024"
+        },
+        "value": 176562.1,
+        "status": ""
+      },
+      "pct": 19.65019672964923
+    },
+    {
+      "geo": "EU27_2020",
+      "year": "2024",
+      "age": "Y_GE18",
+      "sex": "F",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y_GE18",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2024"
+        },
+        "value": 40609.1,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y_GE18",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2024"
+        },
+        "value": 188201.7,
+        "status": ""
+      },
+      "pct": 21.577435272901358
+    },
+    {
+      "geo": "EU27_2020",
+      "year": "2025",
+      "age": "Y18-24",
+      "sex": "T",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y18-24",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2025"
+        },
+        "value": 4004.8,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y18-24",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2025"
+        },
+        "value": 32971.0,
+        "status": ""
+      },
+      "pct": 12.146431712717236
+    },
+    {
+      "geo": "EU27_2020",
+      "year": "2025",
+      "age": "Y18-24",
+      "sex": "M",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y18-24",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2025"
+        },
+        "value": 2024.6,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y18-24",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2025"
+        },
+        "value": 16864.5,
+        "status": ""
+      },
+      "pct": 12.005099469299417
+    },
+    {
+      "geo": "EU27_2020",
+      "year": "2025",
+      "age": "Y18-24",
+      "sex": "F",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y18-24",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2025"
+        },
+        "value": 1980.2,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y18-24",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2025"
+        },
+        "value": 16106.4,
+        "status": ""
+      },
+      "pct": 12.294491630656138
+    },
+    {
+      "geo": "EU27_2020",
+      "year": "2025",
+      "age": "Y25-54",
+      "sex": "T",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y25-54",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2025"
+        },
+        "value": 28258.5,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y25-54",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2025"
+        },
+        "value": 173920.3,
+        "status": ""
+      },
+      "pct": 16.247959553887615
+    },
+    {
+      "geo": "EU27_2020",
+      "year": "2025",
+      "age": "Y25-54",
+      "sex": "M",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y25-54",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2025"
+        },
+        "value": 17685.9,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y25-54",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2025"
+        },
+        "value": 87555.4,
+        "status": ""
+      },
+      "pct": 20.199667867430225
+    },
+    {
+      "geo": "EU27_2020",
+      "year": "2025",
+      "age": "Y25-54",
+      "sex": "F",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y25-54",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2025"
+        },
+        "value": 10572.6,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y25-54",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2025"
+        },
+        "value": 86364.9,
+        "status": ""
+      },
+      "pct": 12.241778778184194
+    },
+    {
+      "geo": "EU27_2020",
+      "year": "2025",
+      "age": "Y55-64",
+      "sex": "T",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y55-64",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2025"
+        },
+        "value": 12635.9,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y55-64",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2025"
+        },
+        "value": 62289.1,
+        "status": ""
+      },
+      "pct": 20.28589271638216
+    },
+    {
+      "geo": "EU27_2020",
+      "year": "2025",
+      "age": "Y55-64",
+      "sex": "M",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y55-64",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2025"
+        },
+        "value": 6135.5,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y55-64",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2025"
+        },
+        "value": 30401.7,
+        "status": ""
+      },
+      "pct": 20.181437222260598
+    },
+    {
+      "geo": "EU27_2020",
+      "year": "2025",
+      "age": "Y55-64",
+      "sex": "F",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y55-64",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2025"
+        },
+        "value": 6500.4,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y55-64",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2025"
+        },
+        "value": 31887.4,
+        "status": ""
+      },
+      "pct": 20.38548141272101
+    },
+    {
+      "geo": "EU27_2020",
+      "year": "2025",
+      "age": "Y_GE65",
+      "sex": "T",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y_GE65",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2025"
+        },
+        "value": 31258.2,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y_GE65",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2025"
+        },
+        "value": 97181.0,
+        "status": ""
+      },
+      "pct": 32.16492935861948
+    },
+    {
+      "geo": "EU27_2020",
+      "year": "2025",
+      "age": "Y_GE65",
+      "sex": "M",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y_GE65",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2025"
+        },
+        "value": 9203.0,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y_GE65",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2025"
+        },
+        "value": 42578.3,
+        "status": ""
+      },
+      "pct": 21.614296484359404
+    },
+    {
+      "geo": "EU27_2020",
+      "year": "2025",
+      "age": "Y_GE65",
+      "sex": "F",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y_GE65",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2025"
+        },
+        "value": 22055.2,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y_GE65",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2025"
+        },
+        "value": 54602.8,
+        "status": ""
+      },
+      "pct": 40.392067806046576
+    },
+    {
+      "geo": "EU27_2020",
+      "year": "2025",
+      "age": "Y_GE18",
+      "sex": "T",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y_GE18",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2025"
+        },
+        "value": 76157.4,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "T",
+          "age": "Y_GE18",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2025"
+        },
+        "value": 366361.4,
+        "status": ""
+      },
+      "pct": 20.787506544084607
+    },
+    {
+      "geo": "EU27_2020",
+      "year": "2025",
+      "age": "Y_GE18",
+      "sex": "M",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y_GE18",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2025"
+        },
+        "value": 35048.9,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "M",
+          "age": "Y_GE18",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2025"
+        },
+        "value": 177399.8,
+        "status": ""
+      },
+      "pct": 19.75701212740939
+    },
+    {
+      "geo": "EU27_2020",
+      "year": "2025",
+      "age": "Y_GE18",
+      "sex": "F",
+      "numerator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y_GE18",
+          "phhcomp": "A1_NCH",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2025"
+        },
+        "value": 41108.5,
+        "status": ""
+      },
+      "denominator": {
+        "selection": {
+          "freq": "A",
+          "sex": "F",
+          "age": "Y_GE18",
+          "phhcomp": "TOTAL",
+          "unit": "THS_PER",
+          "wstatus": "POP",
+          "geo": "EU27_2020",
+          "time": "2025"
+        },
+        "value": 188961.6,
+        "status": ""
+      },
+      "pct": 21.754949153690486
+    }
+  ],
+  "decomposition_2025": {
+    "method": "Symmetric Kitagawa arithmetic decomposition, 8 broad age-sex groups; not causal",
+    "composition_pp": 0.4081564992308042,
+    "within_group_rates_pp": 24.720064950009572,
+    "observed_pct_from_strata": {
+      "LT": 45.915727993324985,
+      "EU27_2020": 20.787506544084614
+    },
+    "contributions": [
+      {
+        "age": "Y18-24",
+        "sex": "M",
+        "composition_pp": -0.11521222391485013,
+        "within_group_rates_pp": 0.9017624706437697
+      },
+      {
+        "age": "Y18-24",
+        "sex": "F",
+        "composition_pp": -0.1390001380836828,
+        "within_group_rates_pp": 0.8125131199335336
+      },
+      {
+        "age": "Y25-54",
+        "sex": "M",
+        "composition_pp": 0.5351776591102867,
+        "within_group_rates_pp": 6.130909583300207
+      },
+      {
+        "age": "Y25-54",
+        "sex": "F",
+        "composition_pp": -0.010901672520646506,
+        "within_group_rates_pp": 3.274416075143753
+      },
+      {
+        "age": "Y55-64",
+        "sex": "M",
+        "composition_pp": -0.09076614932007529,
+        "within_group_rates_pp": 2.521185107526764
+      },
+      {
+        "age": "Y55-64",
+        "sex": "F",
+        "composition_pp": 0.25856297214276674,
+        "within_group_rates_pp": 2.9233187115863513
+      },
+      {
+        "age": "Y_GE65",
+        "sex": "M",
+        "composition_pp": -0.8958468895698515,
+        "within_group_rates_pp": 3.1564789013462895
+      },
+      {
+        "age": "Y_GE65",
+        "sex": "F",
+        "composition_pp": 0.866142941386857,
+        "within_group_rates_pp": 4.999480980528906
+      }
+    ]
+  },
+  "limitations": [
+    "Private household survey population only; collective households excluded.",
+    "A1_NCH excludes single adults living with resident children; not a marital-status or loneliness measure.",
+    "Age bands overlap elsewhere in source: only four disjoint bands used here.",
+    "Source counts rounded to 0.1 thousand persons; direct totals may differ slightly from sums.",
+    "No sampling standard errors available; no significance or causal attribution.",
+    "EU-SILC age findings and EU-LFS results must not be joined into one series."
+  ]
+}

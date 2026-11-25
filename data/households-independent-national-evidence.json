@@ -1,0 +1,23 @@
+{
+  "checked_on": "2026-11-25",
+  "census_2021": {
+    "source_url": "https://osp.stat.gov.lt/2021-gyventoju-ir-bustu-surasymo-rezultatai/namu-ukiai-ir-seimos",
+    "total_households_thousands": 1215.0,
+    "single_person_households_pct": 35.2,
+    "single_person_households_thousands": 427.3,
+    "persons_70plus_among_single_person_households_pct": 35.5,
+    "widowed_women_to_men_ratio": 5.5,
+    "limitations": [
+      "2021 census, not 2025 survey.",
+      "70+ composition among one-person households is not the 65+ probability of living alone.",
+      "Marital status is not cross-tabulated with living alone here.",
+      "Do not join census and survey estimates into a continuous time series."
+    ]
+  },
+  "lfs_national_metadata": {
+    "source_url": "https://ec.europa.eu/eurostat/cache/metadata/en/employ_simslfs2_lt.htm",
+    "checked_last_update": "2025-06-09",
+    "reference_year_in_linked_annex": 2024,
+    "conclusion": "Rechecked public linked page still does not supply the 2025 quality annex; absence of a retrieved document is not proof no such document exists."
+  }
+}
