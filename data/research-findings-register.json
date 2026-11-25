@@ -1189,6 +1189,36 @@
         "EU-HH-SILC-AGE-2025-01",
         "EU-HH-LFS-2025-01"
       ]
+    },
+    {
+      "id": "EU-HH-LFS-TREND-QA-2025-01",
+      "area": "population",
+      "title": "LT gyvenimo po vieną įverčių augimas po 2021 m. ir neišaiškintas 2024–2025 paspartėjimas",
+      "period": "2014–2025",
+      "status": "VERIFIED_UNPUBLISHED",
+      "statement": "EU-LFS LT65+ gyvenimo po vieną dažnis 2022 37,1 %, 2023 40,6 %, 2024 54,3 %, 2025 65,0 %. 2024–2025 bendras grupės įvertis +2,7 %, gyvenančių po vieną +23,0 %. 2021 LT ir ES langeliai turi b žymą; 2024/2025 atrinkti langeliai jos neturi. Lietuvos 2024 kokybės priede nedeklaruoti imties plano ar svorių schemos pakeitimai; tai nepaaiškina ir nepatvirtina 2025 priežasties.",
+      "source_urls": [
+        "https://ec.europa.eu/eurostat/databrowser/view/lfst_hhindws/default/table",
+        "https://ec.europa.eu/eurostat/cache/metadata/en/employ_simslfs2_lt.htm",
+        "https://ec.europa.eu/eurostat/cache/metadata/Annexes/employ_simslfs2_lt_an_1.xlsm"
+      ],
+      "evidence_files": [
+        "data/households-lfs-history-source.json",
+        "data/households-lfs-history-analysis.json",
+        "data/households-lfs-lt-quality-2024-extract.json",
+        "research/households-lfs-history-quality-2026-11-25.md"
+      ],
+      "publication": {
+        "module": "population",
+        "file": null,
+        "marker": null
+      },
+      "blocker": "Išvada išsaugota tyrime; 2025 įverčio šuolio priežastis ir apklausos poveikio mastas nenustatyti.",
+      "next_action": "Tikrinti 2025 Lietuvos LFS kokybės dokumentus ar nepriklausomą nemokamą nacionalinį šaltinį; nekurti tariamo migracijos, našlystės ar elgesio paaiškinimo.",
+      "related_findings": [
+        "EU-HH-LFS-AGE-SEX-2025-01",
+        "EU-HH-SILC-AGE-2025-01"
+      ]
     }
   ]
 }
