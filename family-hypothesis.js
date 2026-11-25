@@ -27,6 +27,7 @@
     <div class="alert alert-amber"><strong>Riba tarp duomenų ir interpretacijos.</strong> Žemiau pateikti mechanizmai nėra Lietuvos TFR priežastinio modelio įrodymas. Kai kurie ryšiai gerai pagrįsti tarptautiniais tyrimais, kiti – tikėtinos hipotezės, o socialinių tinklų poveikio grandinė iki gimstamumo aiškiai pažymėta kaip autoriaus nuomonė.</div>
 
     <p class="small" id="familySingleAdultHouseholds"><strong>Namų ūkių kontekstas:</strong> 2025 m. preliminariais Eurostat duomenimis, <strong>55,7 % Lietuvos privačių namų ūkių</strong> sudarė vienas suaugęs asmuo be išlaikomų vaikų. Tai <strong>neįrodo</strong> partnerio nebuvimo ar poveikio gimstamumui. <a href="?view=population#populationHouseholdStructure">Apibrėžimas ir ES palyginimas – Gyventojų struktūroje →</a></p>
+    <p class="small"><a href="?view=population#populationLivingAloneAgeSex">Gyvenimas po vieną pagal amžių ir lytį →</a></p>
 
     <div class="findings">
       <div class="finding"><div class="finding-num">A</div><div><div class="finding-title">Vėlesnis šeimos kūrimas suspaudžia laiką aukštesnio eiliškumo gimimams</div><div class="finding-body"><strong>Pagrįstas mechanizmas.</strong> OECD fiksuoja gimdymų persislinkimą į vyresnį amžių: jaunesnių nei 30 m. moterų vaisingumas mažėjo, o 30+ grupėse didėjo. Vėlesnis pirmas vaikas savaime neįrodo, kad antras ar trečias vaikas negims, tačiau palieka mažiau biologinio ir gyvenimo ciklo laiko vėlesniems gimimams.</div></div></div>

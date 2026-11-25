@@ -94,3 +94,7 @@ https://ec.europa.eu/eurostat/cache/metadata/EN/demo_pop_esms_lt.htm
 - Naujas pagrindinis blokas Struktūros modulyje: #populationCohortBalance.
 - Apžvalgos esamoje gyventojų struktūros kortelėje ir Gimstamumo kartų indėlio bloke pridedamos nuorodos. Migracijos ir kitų modulių ankstesni skaičiai neperrašomi.
 - 2010–2011 m. tiesioginio migracijos indėlio nepublikuojame, nes nėra vienodai apibrėžtų reikšmių. 43/22/10 % gimimų išskaidymas nekeičiamas ir su šiais skaičiais nesumuojamas.
+
+
+## Lygiagretaus darbo išsaugojimas
+Prieš publikavimą įtraukta main versija 01737a9cc002c99933b654d0f3bce31b4b2254b6 su paskelbtais namų ūkių amžiaus ir lyties rezultatais. Visi 48 tos versijos registro įrašai, jų tekstai, lentelės, naršyklės patikros ir nuorodos išsaugoti. Su nauju kartų balansu registre yra 49 įrašai, iš jų 38 skelbiami. Ankstesnė šiame faile nurodyta 45 ID aprėptis aprašo pirminę šakos būseną.
