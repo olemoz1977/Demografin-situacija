@@ -26,6 +26,13 @@
       "live_browser_qa_run": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/45322311156",
       "pages_build": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/45322309198",
       "verified_on": "2026-11-24"
+    },
+    "editorial_clarity_20261125": {
+      "scope_document": "research/reader-clarity-publication-2026-11-25.md",
+      "findings_preserved": 49,
+      "published_findings_preserved": 38,
+      "data_or_status_changes": false,
+      "live_browser_qa_pending": true
     }
   },
   "module_inventory": [

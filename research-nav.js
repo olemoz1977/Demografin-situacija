@@ -28,17 +28,17 @@
   if(!VALID_VIEWS.includes(view)) view=HASH_VIEW[location.hash]||'overview';
 
   const css=document.createElement('link');
-  css.rel='stylesheet'; css.href='research-nav.css?v=20261019editorial1';
+  css.rel='stylesheet'; css.href='research-nav.css?v=20261125clarity1';
   document.head.appendChild(css);
   document.body.classList.add('research-routed');
   const makeUrl=v=>`${location.pathname}?view=${encodeURIComponent(v)}`;
 
   function updateHeader(){
     const right=document.querySelector('.masthead-right');
-    if(right) right.innerHTML='Atnaujinta 2026-10-19<br>2025* – išankstiniai, kai pažymėta';
+    if(right) right.innerHTML='Atnaujinta 2026-11-25<br>2025* – išankstiniai, kai pažymėta';
     const sub=document.querySelector('.masthead-sub');
     if(sub) sub.innerHTML='<span>Gimstamumas</span><span>Gyventojų struktūra</span><span>Migracija</span><span>Šeimos aplinka</span><span>Būstas</span><span>Ateitis</span>';
-    document.querySelectorAll('footer').forEach(f=>{f.innerHTML=f.innerHTML.replace(/Atnaujinta\s+2026-10-02/g,'Atnaujinta 2026-10-19');});
+    document.querySelectorAll('footer').forEach(f=>{f.innerHTML=f.innerHTML.replace(/Atnaujinta\s+2026-10-02/g,'Atnaujinta 2026-11-25');});
   }
 
   function buildNav(){
@@ -60,12 +60,13 @@
     const section=document.createElement('section');
     section.id='researchHome'; section.className='research-home';
     section.innerHTML=`<div class="container">
-      <div class="section-label">Tyrimo žemėlapis <span class="badge badge-official">REDAKCIJA 2026-10-19</span></div>
+      <div class="section-label">Tyrimo žemėlapis <span class="badge badge-official">REDAKCIJA 2026-11-25</span></div>
       <h2>Žemas gimstamumas apima visą Lietuvą. 2025 m. migracija natūralaus mažėjimo nekompensavo.</h2>
       <p class="lead">Svarbiausi jau nustatyti šalies demografiniai kontrastai: gimstamumas visose apskrityse, gyventojų balansas, lyčių santykis pagal amžių ir neįprasta namų ūkių sandara. Paskutinė išvada – aiškiai pažymėta <strong>Europos Komisijos bazinė projekcija</strong>, o ne įvykęs pokytis.</p>
+      <div class="reader-map"><strong>Kokį klausimą nagrinėjame?</strong><p>Kaip keičiasi Lietuvos gyventojų skaičius ir sudėtis, ką jau galime pasakyti apie gimimų mažėjimą ir kokių prisitaikymo sprendimų gali reikėti.</p><p><strong>Kas jau aiškiau:</strong> gimimų mažėjimo išskaidymas rodo, kad vien moterų skaičiaus pokyčio neužtenka. Gyvenimo po vieną mastas skiriasi pagal amžių ir lytį. <strong>Kas dar atvira:</strong> kiek prie gimstamumo prisideda būstas, parama ar partnerystės aplinka. Šių temų išvadų nesumuojame į vieną priežasčių procentą.</p></div>
       <h3 id="overviewThreeFindings">Penkios svarbiausios tyrimo išvados</h3>
       <div class="research-summary">
-        <div class="card"><div class="eyebrow">01 · 2024 m. · stebėtas rodiklis</div><strong>Žemas gimstamumas apima visas apskritis</strong><p>Lietuvos TFR buvo <strong>1,11</strong> – trečias mažiausias ES. Nė vienoje iš dešimties apskričių rodiklis neviršijo <strong>1,21</strong> (intervalas 0,96–1,21). <a href="${makeUrl('fertility')}">Gimstamumo tyrimas →</a> <a href="${makeUrl('fertility')}#fertilityCohortSize">Kartų dydžio indėlis →</a></p></div>
+        <div class="card"><div class="eyebrow">01 · 2024 m. · stebėtas rodiklis</div><strong>Žemas gimstamumas apima visas apskritis</strong><p>Lietuvos suminis gimstamumo rodiklis (TFR) buvo <strong>1,11 vaiko vienai moteriai</strong> – trečias mažiausias ES. Nė vienoje iš dešimties apskričių rodiklis neviršijo <strong>1,21</strong> (intervalas 0,96–1,21). <a href="${makeUrl('fertility')}">Gimstamumo tyrimas →</a> <a href="${makeUrl('fertility')}#fertilityCohortSize">Kas sudaro gimimų mažėjimą →</a></p></div>
         <div class="card"><div class="eyebrow">02 · 2025* · išankstiniai VDA</div><strong>Migracija nebekompensavo natūralaus mažėjimo</strong><p>Natūrali kaita <strong>−19 946</strong>, neto migracija <strong>+16 165</strong>; jų balansas <strong>−3 781</strong>. Nuo 2024 m. bendras balansas pablogėjo 8 554 žmonėmis – daugiausia dėl sumažėjusio migracijos prieaugio. <a href="${makeUrl('migration')}">Migracijos tyrimas →</a></p></div>
         <div class="card"><div class="eyebrow">03 · 2025 m. · gyventojų struktūra</div><strong>Lyčių santykis jaunesniame amžiuje priešingas bendram</strong><p>Visoje populiacijoje apie <strong>1 104 moterys / 1 000 vyrų</strong>, tačiau 25–44 m. grupėje – tik <strong>884</strong>. Tai gyventojų santykis, ne individualių partnerystės galimybių rodiklis. <a href="${makeUrl('population')}">Gyventojų struktūra →</a> <a href="${makeUrl('population')}#populationCohortBalance">Moterų kartų ir migracijos balansas →</a></p></div>
         <div class="card"><div class="eyebrow">04 · 2025 m. (p) · Eurostat apklausos įvertis</div><strong>Lietuvos namų ūkių sandara išsiskiria ES</strong><p><strong>55,7 %</strong> Lietuvos privačių namų ūkių sudarė vienas suaugęs be išlaikomų vaikų; ES – <strong>35,7 %</strong>. Tai namų ūkių, <strong>ne vienišų gyventojų</strong> dalis. <a href="${makeUrl('population')}#populationHouseholdStructure">Rodiklio apibrėžimas ir EU-LFS palyginimas →</a> <a href="${makeUrl('population')}#populationLivingAloneAgeSex">Amžius ir lytis →</a></p></div>
@@ -104,11 +105,21 @@
     }
   }
 
+  const VIEW_CONTEXT={
+    fertility:'Pirmiausia atskiriame gimimų skaičių nuo TFR. Tada tikriname, kiek sumažėjimo siejasi su moterų skaičiumi bei amžiumi, o kiek su gimdymo rodiklių pokyčiu. <a href="?view=fertility#fertilityCohortSize">Gimimų mažėjimo išskaidymas →</a>',
+    population:'Čia atskiriame tris klausimus: lyčių santykį, moterų kartų dydžio kaitą ir gyvenimą po vieną. Namų ūkių procentas skaičiuojamas nuo ūkių, o gyvenančių po vieną žmonių procentas nuo nurodytos gyventojų grupės. <a href="?view=population#populationLivingAloneAgeSex">Amžiaus ir lyties palyginimas →</a>',
+    migration:'Metinis atvykusiųjų ir išvykusiųjų skirtumas parodo gyventojų prieaugį dėl migracijos. Dabartinis lyčių santykis apima ilgesnę istoriją, todėl vienų metų srautas jo nepaaiškina. <a href="?view=population#populationCohortBalance">Moterų kartų balansas per ilgesnį laikotarpį →</a>',
+    family:'Šią temą skaitome trimis dalimis: santuokų ir namų ūkių duomenys; išmokų bei vaikų priežiūros pasiekiamumas; partnerystės ir skaitmeninio gyvenimo hipotezės. Jos padeda ieškoti paaiškinimų, bet nėra išmatuotos Lietuvos gimstamumo mažėjimo priežastys. <a href="?view=family#infrastruktura">Vaikų priežiūros rezultatai →</a> <a href="?view=family#familyFormationHypotheses">Partnerystės hipotezės →</a>',
+    housing:'Būstas svarbus šeimos gyvenimo sąlygoms. Čia jau turime parduotų butų kainų ir suteiktos paramos rezultatus. Kad išmatuotume jaunų šeimų įperkamumą, dar reikia sujungti palyginamas jų pajamų, išlaidų ir būsto kainų grupes. <a href="?view=housing#housingSupportTitle">Paramos rezultatai →</a>',
+    future:'Ankstesni moduliai rodo dabartinę padėtį. Čia klausiame, ką mažesnė ir vyresnė darbo jėga gali reikšti ekonomikai bei socialiniam finansavimui. Oficiali projekcija atskirta nuo autoriaus prisitaikymo scenarijų.',
+    methods:'Skaičius skaitykite kartu su jo metais, tiriama grupe ir statusu. Išankstinis duomuo, apklausos įvertis, autoriaus skaičiavimas, projekcija ir hipotezė reiškia skirtingus dalykus.'
+  };
+
   function ensureTopicIntro(){
     let intro=document.getElementById('researchTopicIntro');
     if(view==='overview'||view==='all'){intro?.remove();return;}
     if(!intro){intro=document.createElement('section');intro.id='researchTopicIntro';intro.className='research-topic-intro';}
-    intro.innerHTML=`<div class="container"><div class="eyebrow">Teminis tyrimo puslapis</div><h2>${VIEW_META[view].title}<span class="research-view-badge">${VIEW_META[view].label}</span></h2><p class="lead">${VIEW_META[view].desc}</p></div>`;
+    intro.innerHTML=`<div class="container"><div class="eyebrow">Teminis tyrimo puslapis</div><h2>${VIEW_META[view].title}<span class="research-view-badge">${VIEW_META[view].label}</span></h2><p class="lead">${VIEW_META[view].desc}</p><p class="reader-context">${VIEW_CONTEXT[view]||''}</p></div>`;
     const first=[...document.querySelectorAll('body > section')].find(s=>SECTION_VIEWS[s.id]===view);
     if(first&&intro.nextElementSibling!==first) first.insertAdjacentElement('beforebegin',intro);
   }
