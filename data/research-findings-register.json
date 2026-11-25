@@ -1141,27 +1141,31 @@
       "area": "fertility",
       "title": "Moterų skaičiaus ir amžiaus sudėties indėlis į modeliuotą gimimų mažėjimą",
       "period": "2010–2024; 2015–2024; 2019–2024",
-      "status": "MODELLED_UNPUBLISHED",
-      "statement": "Preliminarus Eurostat demo_pjan/demo_frate 20–44 m. modelis: simetriniame gimimų pokyčio išskaidyme moterų skaičiaus ir amžiaus sudėties dalis sudaro 43,0 % 2010–2024 m., 21,6 % 2015–2024 m. ir 10,0 % 2019–2024 m. Tai ne visų gimimų ar grynas istorinių kartų dydžio poveikis: struktūra apima migraciją ir mirtingumą. Ekspozicija apytikslė, iš dviejų sausio 1 d. populiacijų.",
+      "status": "PUBLISHED_CONTEXT",
+      "statement": "Autoriaus simetrinis Eurostat demo_fasec/demo_pjan gimimų pokyčio išskaidymas 20–44 m. moterų grupėje: moterų skaičiaus ir amžiaus sudėties indėlis 2010–2024 m. 43,0 %, 2015–2024 m. 21,9 %, 2019–2024 m. 10,3 %. Suapvalinta svetainėje 43 %, 22 %, 10 %. Grupė apima 95,1 % visų 2010 m. ir 98,3 % 2024 m. gimimų. Struktūra apima migraciją bei mirtingumą; gimdymo rodiklių pokytis apima ir gimdymo atidėjimą. Ne priežastinis ar galutinio vaikų skaičiaus įvertis.",
       "population": "Lietuvoje gyvenančios 20–44 m. moterys; amžius pilnais metais.",
       "source_urls": [
-        "https://ec.europa.eu/eurostat/databrowser/view/demo_pjan/default/table",
-        "https://ec.europa.eu/eurostat/databrowser/view/demo_frate/default/table"
+        "https://ec.europa.eu/eurostat/databrowser/view/demo_fasec/default/table",
+        "https://ec.europa.eu/eurostat/databrowser/view/demo_pjan/default/table"
       ],
       "evidence_files": [
         "research/cohort-size-impact-2026-11-25.md",
         "research/raw/cohort-size-20261125/demo_pjan.json",
         "research/raw/cohort-size-20261125/demo_frate.json",
         "research/raw/cohort-size-20261125/results.json",
-        "scripts/analyze_cohort_size.py"
+        "scripts/analyze_cohort_size.py",
+        "research/raw/cohort-size-20261125/demo_fasec.json",
+        "research/raw/cohort-size-20261125/validated-results.json",
+        "scripts/validate_cohort_size.py"
       ],
       "publication": {
         "module": "fertility",
-        "file": null,
-        "marker": null
+        "file": "index.html",
+        "marker": "id=\"fertilityCohortSize\""
       },
-      "blocker": "Nepilna 15–49 m. aprėptis dėl trūkstamų 2024 m. rodiklių. Vidutinė populiacija apytikslė. Reikia validuoti pagal oficialius gimimus ir atskirti migracijos bei mirtingumo poveikį.",
-      "next_action": "Patikrinti VDA amžiui specifinius gimimus bei vidutinę moterų populiaciją, papildyti trūkstamus amžius ir tik po to svarstyti publikavimą."
+      "blocker": null,
+      "next_action": "20–44 m. rezultatas sutikrintas su faktiniais Eurostat gimimais pagal motinos amžių. Pilno 15–49 m. modelio ir gryno istorinių gimimų indėlio neinterpretuoti be papildomų duomenų.",
+      "result_type": "AUTHOR_CALCULATED_DESCRIPTIVE_DECOMPOSITION"
     }
   ]
 }
