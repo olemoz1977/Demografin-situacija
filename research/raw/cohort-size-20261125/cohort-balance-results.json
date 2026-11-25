@@ -1,0 +1,187 @@
+{
+  "population": "LT residents, female, birth years 1985-1999",
+  "stock_dates": [
+    "2010-01-01",
+    "2025-01-01"
+  ],
+  "death_event_years": [
+    2010,
+    2024
+  ],
+  "residual_definition": "net migration plus statistical adjustments; not gross emigration",
+  "rows": [
+    {
+      "birth_year": 1985,
+      "female_births": 28676,
+      "age_jan1_2010": 24,
+      "age_jan1_2025": 39,
+      "residents_2010": 22445,
+      "residents_2025": 20781,
+      "deaths_2010_2024": 212,
+      "stock_change": -1664,
+      "migration_plus_adjustment_residual": -1452
+    },
+    {
+      "birth_year": 1986,
+      "female_births": 28675,
+      "age_jan1_2010": 23,
+      "age_jan1_2025": 38,
+      "residents_2010": 22944,
+      "residents_2025": 21151,
+      "deaths_2010_2024": 195,
+      "stock_change": -1793,
+      "migration_plus_adjustment_residual": -1598
+    },
+    {
+      "birth_year": 1987,
+      "female_births": 28943,
+      "age_jan1_2010": 22,
+      "age_jan1_2025": 37,
+      "residents_2010": 23236,
+      "residents_2025": 21276,
+      "deaths_2010_2024": 170,
+      "stock_change": -1960,
+      "migration_plus_adjustment_residual": -1790
+    },
+    {
+      "birth_year": 1988,
+      "female_births": 27637,
+      "age_jan1_2010": 21,
+      "age_jan1_2025": 36,
+      "residents_2010": 22475,
+      "residents_2025": 20252,
+      "deaths_2010_2024": 152,
+      "stock_change": -2223,
+      "migration_plus_adjustment_residual": -2071
+    },
+    {
+      "birth_year": 1989,
+      "female_births": 27103,
+      "age_jan1_2010": 20,
+      "age_jan1_2025": 35,
+      "residents_2010": 22413,
+      "residents_2025": 19978,
+      "deaths_2010_2024": 143,
+      "stock_change": -2435,
+      "migration_plus_adjustment_residual": -2292
+    },
+    {
+      "birth_year": 1990,
+      "female_births": 27732,
+      "age_jan1_2010": 19,
+      "age_jan1_2025": 34,
+      "residents_2010": 23376,
+      "residents_2025": 20768,
+      "deaths_2010_2024": 144,
+      "stock_change": -2608,
+      "migration_plus_adjustment_residual": -2464
+    },
+    {
+      "birth_year": 1991,
+      "female_births": 27324,
+      "age_jan1_2010": 18,
+      "age_jan1_2025": 33,
+      "residents_2010": 23912,
+      "residents_2025": 19968,
+      "deaths_2010_2024": 126,
+      "stock_change": -3944,
+      "migration_plus_adjustment_residual": -3818
+    },
+    {
+      "birth_year": 1992,
+      "female_births": 26209,
+      "age_jan1_2010": 17,
+      "age_jan1_2025": 32,
+      "residents_2010": 24086,
+      "residents_2025": 19707,
+      "deaths_2010_2024": 127,
+      "stock_change": -4379,
+      "migration_plus_adjustment_residual": -4252
+    },
+    {
+      "birth_year": 1993,
+      "female_births": 22984,
+      "age_jan1_2010": 16,
+      "age_jan1_2025": 31,
+      "residents_2010": 21504,
+      "residents_2025": 17598,
+      "deaths_2010_2024": 105,
+      "stock_change": -3906,
+      "migration_plus_adjustment_residual": -3801
+    },
+    {
+      "birth_year": 1994,
+      "female_births": 20699,
+      "age_jan1_2010": 15,
+      "age_jan1_2025": 30,
+      "residents_2010": 19337,
+      "residents_2025": 16135,
+      "deaths_2010_2024": 82,
+      "stock_change": -3202,
+      "migration_plus_adjustment_residual": -3120
+    },
+    {
+      "birth_year": 1995,
+      "female_births": 20024,
+      "age_jan1_2010": 14,
+      "age_jan1_2025": 29,
+      "residents_2010": 18662,
+      "residents_2025": 15689,
+      "deaths_2010_2024": 69,
+      "stock_change": -2973,
+      "migration_plus_adjustment_residual": -2904
+    },
+    {
+      "birth_year": 1996,
+      "female_births": 19096,
+      "age_jan1_2010": 13,
+      "age_jan1_2025": 28,
+      "residents_2010": 17970,
+      "residents_2025": 15345,
+      "deaths_2010_2024": 65,
+      "stock_change": -2625,
+      "migration_plus_adjustment_residual": -2560
+    },
+    {
+      "birth_year": 1997,
+      "female_births": 18312,
+      "age_jan1_2010": 12,
+      "age_jan1_2025": 27,
+      "residents_2010": 17161,
+      "residents_2025": 14743,
+      "deaths_2010_2024": 75,
+      "stock_change": -2418,
+      "migration_plus_adjustment_residual": -2343
+    },
+    {
+      "birth_year": 1998,
+      "female_births": 17799,
+      "age_jan1_2010": 11,
+      "age_jan1_2025": 26,
+      "residents_2010": 16600,
+      "residents_2025": 14440,
+      "deaths_2010_2024": 60,
+      "stock_change": -2160,
+      "migration_plus_adjustment_residual": -2100
+    },
+    {
+      "birth_year": 1999,
+      "female_births": 17659,
+      "age_jan1_2010": 10,
+      "age_jan1_2025": 25,
+      "residents_2010": 16396,
+      "residents_2025": 14249,
+      "deaths_2010_2024": 53,
+      "stock_change": -2147,
+      "migration_plus_adjustment_residual": -2094
+    }
+  ],
+  "totals": {
+    "female_births": 358872,
+    "residents_2010": 312517,
+    "residents_2025": 272080,
+    "deaths_2010_2024": 1778,
+    "stock_change": -40437,
+    "migration_plus_adjustment_residual": -38659
+  }
+}
