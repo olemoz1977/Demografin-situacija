@@ -1,6 +1,6 @@
 # Kartų dydis ir gimimų mažėjimas: preliminarus tyrimas, 2026-11-25
 
-Būsena: MODELLED_UNPUBLISHED. Svetainė nekeičiama.
+Būsena: PUBLISHED_CONTEXT. Autoriaus apskaičiuotas aprašomasis išskaidymas, ne oficialus priežasčių įvertis. Žemiau paliktas pirminis preliminarus modelis; publikacijai naudojama patikslinta faktinių gimimų versija šio failo pabaigoje.
 
 ## Ankstesnis įdirbis
 data/birth-sex-history.json (UN Demographic Yearbook): 1990 m. gimė 27 732 mergaitės, 1999 m. 17 659, skirtumas −36,32 %. 2025 m. šioms kartoms sukako 35 ir 26 m. Tai gimusių, o ne dabartinių gyventojų skaičiai. Amerikietiškos baby boom kartų ribos šiame modelyje nenaudojamos.
@@ -37,3 +37,18 @@ Visi ankstesni 44 registro ID ir jų publikavimo vietos lieka. Pridedamas vienas
 https://ec.europa.eu/eurostat/databrowser/view/demo_pjan/default/table
 https://ec.europa.eu/eurostat/databrowser/view/demo_frate/default/table
 https://unstats.un.org/unsd/demographic/products/dyb/DYBNat/NatStatTab01.pdf
+
+
+## Patikra ir publikacijos versija, 2026-11-25
+
+Eurostat demo_fasec (LT, T, NR) faktiniai gimimai pagal motinos amžių. 20–44 m. intervale nėra trūkstamų amžių. Vietoj suapvalintų demo_frate rodiklių naudojami iš gimimų ir tos pačios vidutinės populiacijos apskaičiuoti rodikliai f=B/W. Taip kiekvienų metų amžių suma tiksliai atitinka šaltinio gimimus šiai grupei. Ankstesnio modelio ir faktinių gimimų neatitikimas pradžios metais: −11 (2010), −141 (2015), −77 (2019); 2024 m. suapvalinus sutampa. Pirminiai rezultatai aukščiau palikti atsekamumui; publikacijos šaltinis yra validated-results.json.
+
+| Laikotarpis | Faktiniai gimimai grupėje pradžioje | 2024 | Struktūros indėlis | Rodiklių indėlis | Struktūros dalis |
+|---|---:|---:|---:|---:|---:|
+| 2010–2024 | 29 181 | 18 758 | −4 486,5 | −5 936,5 | 43,04 % |
+| 2015–2024 | 28 920 | 18 758 | −2 223,6 | −7 938,4 | 21,88 % |
+| 2019–2024 | 24 307 | 18 758 | −569,9 | −4 979,1 | 10,27 % |
+
+2024 m. bendras šaltinio gimimų skaičius 19 086 sutampa su projekto VDA rodikliu. 20–44 m. grupės aprėptis: 2010 m. 95,126 %, 2015 m. 96,192 %, 2019 m. 97,333 %, 2024 m. 98,281 %. Tai pakankama siaurai šios grupės išvadai; ne visos populiacijos indėlio procentas. Skaičiavimas atkuriamas python scripts/validate_cohort_size.py. Abiejų indėlių suma patikrinama lygybe su stebėtu gimimų pokyčiu. Pradinio ir patikslinto modelių išvada stabili.
+
+Dubliavimo patikra: esamas POPULATION-BIRTH-COHORTS-2025-01 aiškina lyčių santykį, ne gimimų mažėjimo indėlius. Naujas blokas pridedamas prie esamo #tfr gimstamumo modulyje; istorinių gimimų lentelė nedubliuojama. Apžvalgos esamoje gimstamumo kortelėje pridedama tik nuoroda. Visi ankstesni 44 ID, tekstai ir grafikai paliekami. Pirminė to paties 45-ojo ID modelio versija patikslinta čia išsaugant skaičius ir metodikos pakeitimo priežastį.
