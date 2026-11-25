@@ -89,3 +89,7 @@ Numatyta: registro ir istorinio turinio testai, tęstinumas, visi 38 paskelbti r
 - R09: `data/family-policy-history.json`, 2005 ir 2012 m.: antrų gimimų dalis 34,1 ir 37,5; trečių 10,3 ir 11,0. Skirtumai +3,4 ir +0,7 procentinio punkto. Tai jau buvusio grafiko duomenų paaiškinimas esamame `FAMILY-LEAVE-POLICY-2007-2012-01`, ne naujas priežastinis tyrimas.
 - Naujos grafikų lentelės skaito tas pačias Chart.js reikšmes kaip grafikai. Pirminių duomenų jos neperskaičiuoja; trūkstamas reikšmes žymi brūkšniu. Vyrų piramidės minusas tik braižymo kryptis, todėl lentelėje rodomas teigiamas procentas.
 - ID ir publikavimo statusai nepakeisti. Nepublikuotų istorinių modelių ir užblokuotų klausimų skelbiamos išvados nepakeičia.
+
+## Papildymas po pirmos naršyklės patikros
+
+R17 patikra aptiko tikrą klaidą: vien `#` pakeitimas tame pačiame dokumente nepaleisdavo maršruto pasirinkimo iš naujo, todėl kito modulio fragmentas likdavo paslėptas. Pridėtas `hashchange` valdymas; nežinomas ar netaisyklingas fragmentas nesukelia JavaScript klaidos. „Viso tyrimo“ skyriai sudėlioti pagal temų eilę, ne pagal skirtingų scenarijų užkrovimo laiką.

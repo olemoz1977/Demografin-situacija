@@ -156,10 +156,17 @@
     container.appendChild(div);
   }
 
+  function ensureSectionOrder(){
+    const order=['researchHome','apzvalga','tfr','regionai','amzius','lytis-amzius','gyventojai','migration-sex-section','uzsienieciai','santuokos','parama-istorija','infrastruktura','skaitmena','family-hypotheses-section','housingAffordability','scenarijai','isvados','metodika','saltiniai'];
+    const sections=order.map(id=>document.getElementById(id)).filter(Boolean);
+    const current=[...document.querySelectorAll('body>section')].filter(el=>order.includes(el.id));
+    if(current.every((el,i)=>el===sections[i]))return;
+    const footer=document.querySelector('footer');
+    if(footer)sections.forEach(section=>footer.insertAdjacentElement('beforebegin',section));
+  }
+
   function applyVisibility(){
-    normalizeDynamicBlocks(); ensureHome(); ensureTopicIntro();
-    const synthesis=document.getElementById('isvados'), methods=document.getElementById('metodika');
-    if(synthesis&&methods&&synthesis.nextElementSibling!==methods) methods.insertAdjacentElement('beforebegin',synthesis);
+    normalizeDynamicBlocks(); ensureHome(); ensureSectionOrder(); ensureTopicIntro();
     [...document.querySelectorAll('body > section')].forEach(section=>{
       if(section.id==='researchTopicIntro') return;
       const show=view==='all'||SECTION_VIEWS[section.id]===view;
@@ -188,5 +195,16 @@
   observer.observe(document.body,{childList:true,subtree:true});
   [200,600,1200,2500].forEach(ms=>setTimeout(applyVisibility,ms));
 
-  if(location.hash) setTimeout(()=>document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView({block:'start'}),900);
+  const scrollToFragment=()=>{
+    let id;try{id=decodeURIComponent(location.hash.slice(1));}catch{return;}
+    document.getElementById(id)?.scrollIntoView({block:'start'});
+  };
+  window.addEventListener('hashchange',()=>{
+    const next=HASH_VIEW[location.hash];
+    if(next&&new URLSearchParams(location.search).get('view')!=='all'){
+      view=next;window.researchCurrentView=view;buildNav();applyVisibility();
+    }
+    setTimeout(scrollToFragment,100);
+  });
+  if(location.hash)setTimeout(scrollToFragment,900);
 })();
