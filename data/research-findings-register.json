@@ -32,7 +32,12 @@
       "findings_preserved": 49,
       "published_findings_preserved": 38,
       "data_or_status_changes": false,
-      "live_browser_qa_pending": true
+      "live_browser_qa_pending": false,
+      "pages_build": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/45664304506",
+      "premerge_browser_qa": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/45663723609",
+      "live_browser_qa": "https://github.com/olemoz1977/Demografin-situacija/actions/runs/45664305296",
+      "live_browser_qa_result": "PASS: all 38 published findings on desktop and mobile; narrow-screen fertility/population/family checks and historical decomposition disclosure passed",
+      "verified_on": "2026-11-25"
     }
   },
   "module_inventory": [

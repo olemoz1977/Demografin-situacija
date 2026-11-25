@@ -60,4 +60,15 @@ Pirmą kartą skaitančiam žmogui paaiškinti procentų vardiklius, atskirti re
 
 ## Patikra
 
-Registro ir istorinio turinio testai; tęstinumo palyginimas su prieš redakciją buvusia main versija; visos 38 išvados kompiuteryje ir telefone. Papildomai tikrinamas išskleidžiamos lentelės išsaugojimas ir sutalpinimas 320 px ekrane. Gyvos svetainės patikros rezultatas bus įrašytas po diegimo.
+Registro ir istorinio turinio testai; tęstinumo palyginimas su prieš redakciją buvusia main versija; visos 38 išvados kompiuteryje ir telefone. Papildomai tikrinamas išskleidžiamos lentelės išsaugojimas ir sutalpinimas 320 px ekrane. Gyvos svetainės patikra baigta: PASS.
+
+
+## Publikavimo rezultatas
+
+- PR #21 sujungtas, pakeitimai vieši.
+- 20 registro, būsto ir istorinio turinio testų: PASS. Visi 49 išvadų įrašai nepakeisti; 38 paskelbtos išvados išlieka.
+- [Prieš publikavimą atlikta naršyklės patikra](https://github.com/olemoz1977/Demografin-situacija/actions/runs/45663723609): PASS, įskaitant išskleidžiamą trijų laikotarpių lentelę ir 320 px ekraną.
+- [GitHub Pages diegimas](https://github.com/olemoz1977/Demografin-situacija/actions/runs/45664304506): sėkmingas.
+- [Viešos svetainės naršyklės patikra](https://github.com/olemoz1977/Demografin-situacija/actions/runs/45664305296): PASS, visos 38 paskelbtos išvados kompiuteryje ir telefone; papildomai Gimstamumas, Struktūra ir Šeimos aplinka 320 px ekrane.
+- Papildomai vizualiai peržiūrėta vieša Apžvalga ir naujas gimimų sumažėjimo paaiškinimas; išskleista bei sutraukta ankstesnių laikotarpių lentelė.
+- Ši patikra patvirtina pateikimą ir išvadų išsaugojimą. Naujas visų pirminių statistinių šaltinių auditas neatliktas.
